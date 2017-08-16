@@ -1,0 +1,248 @@
+//
+//  ViewController.m
+//  PropzyDiy
+//
+//  Created by Dylan Bui on 1/23/17.
+//  Copyright © 2017 Propzy Viet Nam. All rights reserved.
+//
+
+#import "ViewController.h"
+#import "OMTestClass.h"
+#import "OMTestRelatedClass.h"
+#import "BaseOperation.h"
+#import "BaseOperationQueue.h"
+#import "TestBaseOperation.h"
+// -- Test --
+#import <SDWebImage/UIImageView+WebCache.h>
+
+@interface ViewController ()
+
+@property (nonatomic, strong) NSArray *arrUrl;
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.arrUrl = @[
+                     @"http://test.cdn.propzy.vn/media_test/images/diy_img_322002e1141eda32974f1b03911f0977fc1f281ba663b75285e9e728179993ec.jpeg",
+                     @"http://test.cdn.propzy.vn/media_test/images/diy_img_54a009b346444cd462e03884b8e1128d072d1a4fd03acc79c6d25b71bfec1c90.jpeg",
+                     @"http://test.cdn.propzy.vn/media_test/images/diy_img_01f66bb4bd31f0587412dd9c2a1288f9f0aba11027e7e799e816f1ff09aabd1e.jpeg",
+                     @"http://test.cdn.propzy.vn/media_test/images/diy_img_f94901ab333536f84c77e363e73c1be01dcaf073570dba4460639363bb59d53b.jpeg",
+                     @"http://test.cdn.propzy.vn/media_test/images/diy_img_3bcc49b4cba9bb0e51aa297452656b3b4c4f6214b6cf7fb39165bc6ca865b0d1.jpeg",
+                     @"http://test.cdn.propzy.vn/media_test/images/diy_img_722fcded2ad5c78f5d61896b4837e309646e18b1b37c7c2d811171e0031d60c2.jpeg",
+                     @"http://test.cdn.propzy.vn/media_test/images/diy_img_58af8732878839e1422ffcfb1882726f3e9518258a6706c15d8021d7294afab4.jpeg",
+                     @"http://test.cdn.propzy.vn/media_test/images/diy_img_895d0a7874f6c3d70aa6fdf04a3125e185251bde81182ababc67b0e713c3db7d.jpg",
+                     @"http://test.cdn.propzy.vn/media_test/images/diy_img_9090171b424cee391f514778628b2e6c1098342d39ed2f869871124b83989fe4.jpg",
+                     @"http://test.cdn.propzy.vn/media_test/images/diy_img_16e2957cea12b22d532c80d215012d8e5c049746b79c60213c433bc3b5927af4.jpg",
+                     @"http://test.cdn.propzy.vn/media_test/images/diy_img_5e4874575c0964baefc0b77d021d6e9005397255ed25a5255dfe0677ebaa7ff2.jpg"
+                     ];
+    
+    
+    OMTestRelatedClass * relatedObject = [[OMTestRelatedClass alloc] init];
+    relatedObject.anyValue = @"any string haha :)";
+    
+    OMTestClass * testObject = [[OMTestClass alloc] init];
+    
+    testObject.someInt = 67890;
+    testObject.someFloat = 67.5;
+    testObject.playerStateType = PlayerStatePlaying;
+    
+    testObject.someNumber = @12345;
+    testObject.someString = @"some string";
+    testObject.someRelated = relatedObject;
+    testObject.someArray = @[@"array_1", @"array_2", @"array_3"];
+    testObject.someDictionary = @{@"key_1" : @"val_1", @"key_2" : @"val_2", @"key_3" : @"val_3" };
+    
+    NSString *jsonString = [testObject om_mapToJSONString];
+    
+    NSLog(@"%@", @"OMTestClass");
+    NSLog(@"%@", jsonString);
+    
+    OMTestClass *resultObject = [[OMTestClass alloc] initWithJSONString_om:jsonString];
+    
+    
+    NSLog(@"%@", @"resultObject");
+    NSLog(@"%ld", resultObject.playerStateType);
+    NSLog(@"%@", resultObject.someString);
+    NSLog(@"%@", resultObject.someDictionary);
+    NSLog(@"%@", resultObject.someRelated.anyValue);
+    
+    // -- Tao loop voi Thread => chay dong thoi --
+    int count = 10;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    // -- Khng nen dung voi thread serial vi no se giong loop thuong --
+//    dispatch_queue_t queue = dispatch_queue_create("vn.prppzy.downloadImage", DISPATCH_QUEUE_SERIAL);
+    
+    dispatch_apply(count, queue, ^(size_t i) {
+        printf("%zu \n", i);
+    });
+    
+    // -- Xu dung NSOperationQueue --
+    [self testNSOperationQueue];
+  
+    // -- Xu dung Block Thread --
+    [self testBlockThread];
+    
+    // -- Xu dung Group Block Thread --
+    [self testEnterAndLeaveBlockThread];
+}
+
+- (void)testBlockThread
+{
+//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0); // IS CONCURRENT (Dong thoi) TYPE
+//    dispatch_queue_t queue = dispatch_queue_create("vn.prppzy.downloadImage", DISPATCH_QUEUE_CONCURRENT); // Chay dong thoi
+    dispatch_queue_t queue = dispatch_queue_create("vn.prppzy.downloadImage", DISPATCH_QUEUE_SERIAL); // Chay tuan tu
+    dispatch_group_t groupFinish = dispatch_group_create();
+    
+    __block int i = 1;
+    for (NSString *strUrl in self.arrUrl) {
+        dispatch_group_async(groupFinish, queue, ^{
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:strUrl]];
+            UIImage *image = [UIImage imageWithData:data];
+            NSLog(@"image.size = %@", NSStringFromCGSize(image.size));
+            NSLog(@"%d) Hoan tat : %@", i, strUrl);
+            i++;
+        });
+    }
+    
+    dispatch_group_notify(groupFinish, queue, ^{
+        NSLog(@"Final block");
+        if ([NSThread isMainThread]) {
+            NSLog(@"%@", @"MAIN THREAD");
+        } else {
+            NSLog(@"%@", @"BACKGROUND THREAD");
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"%@", @"RUN MAIN THREAD");
+        });
+    });
+    
+    
+}
+
+- (void)testEnterAndLeaveBlockThread
+{
+    dispatch_queue_t queue = dispatch_queue_create("vn.prppzy.downloadImageGroup", DISPATCH_QUEUE_CONCURRENT); // Chay dong thoi
+    dispatch_group_t groupFinish = dispatch_group_create();
+    
+    /* 
+        Van de xay ra khi ben trong 1 thread tao them 1 thread con thi khi do phai su dung group.
+        dispatch_group_enter(<group name>) => Thong bao bat dau chay code xu ly trong thread con
+        dispatch_group_leave(<group name>) => Thong bao da ket thuc chay code xu ly trong thread con
+        Khi do thi dispatch_group_notify => Thong bao cac thread trong group hoan tat moi chay chinh xac
+     */
+    
+    SDWebImageDownloader *downloader = [SDWebImageDownloader sharedDownloader];
+    for (NSString *strUrl in self.arrUrl) {
+        dispatch_group_async(groupFinish, queue, ^{
+            // -- Start group --
+            dispatch_group_enter(groupFinish);
+            [downloader downloadImageWithURL:[NSURL URLWithString:strUrl]
+                                     options:0
+                                    progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                        // progression tracking code
+                                    }
+                                   completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+                                       if (image && finished) {
+                                           // do something with image
+                                           NSLog(@"image.size = %@", NSStringFromCGSize(image.size));
+                                           NSLog(@" Hoan tat : %@", strUrl);
+                                           // -- Finish group --
+                                           dispatch_group_leave(groupFinish);
+                                       }
+                                   }];
+        });
+    }
+    
+    dispatch_group_notify(groupFinish, queue, ^{
+        NSLog(@"Final block");
+        if ([NSThread isMainThread]) {
+            NSLog(@"%@", @"MAIN THREAD");
+        } else {
+            NSLog(@"%@", @"BACKGROUND THREAD");
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"%@", @"RUN MAIN THREAD");
+        });
+    });
+}
+
+- (void)testNSOperationQueue
+{
+    BaseOperationQueue *queue = [[BaseOperationQueue alloc] init];
+    //    NSLog(@"default maxConcurrentOperationCount = %ld", (long)queue.maxConcurrentOperationCount); // default -1
+    queue.maxConcurrentOperationCount = 1; // Khi maxConcurrentOperationCount = 1 => NSOperationQueue => chay tuan tu (SERIAL)
+    
+    [queue setCompletionQueue:^{
+        NSLog(@"%@", @"Da hoan tat CompletionAllOperations");
+        // -- Run background --
+        // [NSThread detachNewThreadSelector:@selector(doneAllOperators) toTarget:self withObject:nil];
+        // -- Run main thread --
+        [self performSelectorOnMainThread:@selector(doneAllOperators) withObject:nil waitUntilDone:NO];
+    }];
+    
+    // -- Demo 1 --
+    //    for (NSString *strUrl in arr) {
+    //        TestBaseOperation *testO = [[TestBaseOperation alloc] initWithUrl:[NSURL URLWithString:strUrl]];
+    //        testO.completionOperationBlock = ^(id result, NSError *error) {
+    //            NSLog(@"Hoan tat : %@", strUrl);
+    //        };
+    //        [queue addOperation:testO];
+    //    }
+    
+    // -- Demo 2 --
+    NSBlockOperation *completionOperation = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"%@", @"Da hoanh thanh Tat ca cac dependencies operator");
+        //        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        //            NSLog(@"%@", @"Da hoanh thanh Tat ca cac dependencies operator");
+        //        }];
+    }];
+    
+    //    for (NSString *strUrl in arr) {
+    //        TestBaseOperation *testO = [[TestBaseOperation alloc] initWithUrl:[NSURL URLWithString:strUrl]];
+    //        testO.completionOperationBlock = ^(id result, NSError *error) {
+    //            NSLog(@"Hoan tat : %@", strUrl);
+    //        };
+    //        [completionOperation addDependency:testO];
+    //    }
+    
+    __block int i = 0;
+    for (NSString *strUrl in self.arrUrl) {
+        NSBlockOperation *testO = [NSBlockOperation blockOperationWithBlock:^{
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:strUrl]];
+            UIImage *image = [UIImage imageWithData:data];
+            NSLog(@"image.size = %@", NSStringFromCGSize(image.size));
+        }];
+        testO.completionBlock = ^{
+            NSLog(@"%d) Hoan tat : %@", i, strUrl);
+            i++;
+        };
+        // -- Mean : Chi run completionOperation khi hoan tat testO --
+        [completionOperation addDependency:testO];
+    }
+    
+    // -- Add dependencies operator (Phai add cac operation phu thuoc truoc) --
+    [queue addOperations:completionOperation.dependencies waitUntilFinished:NO];
+    // -- Add completion operator --
+    [queue addOperation:completionOperation];
+    
+}
+
+- (void)doneAllOperators
+{
+    NSLog(@"%@", @"Da hoan tat OPERATIORS FUNCTION");
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+@end
