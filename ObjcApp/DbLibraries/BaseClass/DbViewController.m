@@ -9,8 +9,9 @@
 #import "DbViewController.h"
 
 @interface DbViewController () {
-    
 }
+
+@property (nonatomic, assign) BOOL isNavigationBarHidden;
 
 @end
 
@@ -60,6 +61,10 @@
 
 }
 
+#pragma mark -
+#pragma mark Circle Live ViewController
+#pragma mark -
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -68,6 +73,10 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    // -- Process show/hide navigation bar --
+    // -- Default self.isNavigationBarHidden = NO => Navigation bar allways be show --
+    [self.navigationController setNavigationBarHidden:self.isNavigationBarHidden animated:YES];
+    
     [super viewWillAppear:animated];
     [DbUtils postNotification:NOTIFY_VCL_WILL_APPEAR object:self];
 }
@@ -99,6 +108,16 @@
 - (void)dealloc
 {
     [DbUtils removeNotification:self];
+}
+
+#pragma mark -
+#pragma mark Public Functions
+#pragma mark -
+
+- (void)navigationBarHiddenForThisController
+{
+    self.isNavigationBarHidden = YES;
+    //    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 
