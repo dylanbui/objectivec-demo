@@ -7,7 +7,9 @@
 //
 
 #import "RootViewController.h"
-#import "UINavigationController+Utils.h"
+#import "PathsViewController.h"
+
+//#import "UINavigationController+Utils.h"
 //
 //#import "LoginViewController.h"
 //
@@ -32,7 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+//    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self navigationBarHiddenForThisController];
     // Do any additional setup after loading the view.
     
     // -- Save RootViewController --
@@ -42,15 +45,22 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    PathsViewController *vcFirst = [[PathsViewController alloc] init];
+    [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
+    [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:NO];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
+    
+    
 //    [[UserSession instance] doLogout];
 //    [self showLoginViewController];
-    return;
+//    return;
     
     // ------------------------
 //    if ([[UserSession instance] isLogin] == NO) {

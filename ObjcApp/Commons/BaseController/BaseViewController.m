@@ -66,34 +66,32 @@
 {
     [super viewDidLoad];
     
-    // -- Config NavigationBar Background --
-    UIImage *img_bg = [[UIImage imageNamed:@"bg_top_address"]
-                       croppedImage:CGRectMake(0, 0, SCREEN_WIDTH, self.navigationController.navigationBar.frame.size.height + 20)];
-    [self.navigationController.navigationBar setBackgroundImage:img_bg forBarMetrics:UIBarMetricsDefault];
-    
-    // -- Config NavigationBar Title Font --
-    NSDictionary *titleAttributes =@{
-                                     NSFontAttributeName :FONT_NAVIGATION_TITLE_BAR,
-                                     NSForegroundColorAttributeName : [DbUtils colorWithHexString:@"#313131"] };
-    self.navigationController.navigationBar.titleTextAttributes = titleAttributes;
-    // self.navigationItem.title = @"title";
-    
-    // -- Config NavigationBar Back button (Change icon) --
-    UIImage *backBtn = [UIImage imageNamed:@"ic_arrow_back"];
-    backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    //     self.navigationItem.backBarButtonItem.title = @"";
-    //    self.navigationController.navigationBar.topItem.title = @"";
-    
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:nil
-                                                                            action:nil];
-    
-    self.navigationController.navigationBar.tintColor = [UIColor clearColor];
-    self.navigationController.navigationBar.backIndicatorImage = backBtn;
-    self.navigationController.navigationBar.backIndicatorTransitionMaskImage = backBtn;
-    
-    
+//    // -- Config NavigationBar Background --
+//    UIImage *img_bg = [[UIImage imageNamed:@"bg_top_address"]
+//                       croppedImage:CGRectMake(0, 0, SCREEN_WIDTH, self.navigationController.navigationBar.frame.size.height + 20)];
+//    [self.navigationController.navigationBar setBackgroundImage:img_bg forBarMetrics:UIBarMetricsDefault];
+//    
+//    // -- Config NavigationBar Title Font --
+//    NSDictionary *titleAttributes =@{
+//                                     NSFontAttributeName :FONT_NAVIGATION_TITLE_BAR,
+//                                     NSForegroundColorAttributeName : [DbUtils colorWithHexString:@"#313131"] };
+//    self.navigationController.navigationBar.titleTextAttributes = titleAttributes;
+//    // self.navigationItem.title = @"title";
+//    
+//    // -- Config NavigationBar Back button (Change icon) --
+//    UIImage *backBtn = [UIImage imageNamed:@"ic_arrow_back"];
+//    backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    //     self.navigationItem.backBarButtonItem.title = @"";
+//    //    self.navigationController.navigationBar.topItem.title = @"";
+//    
+//    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+//                                                                             style:UIBarButtonItemStylePlain
+//                                                                            target:nil
+//                                                                            action:nil];
+//    
+//    self.navigationController.navigationBar.tintColor = [UIColor clearColor];
+//    self.navigationController.navigationBar.backIndicatorImage = backBtn;
+//    self.navigationController.navigationBar.backIndicatorTransitionMaskImage = backBtn;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -101,7 +99,7 @@
     [super viewWillAppear:animated];
     
 //    if (self.navigationController.isNavigationBarHidden) {}
-    [self.navigationController setNavigationBarHidden:self.navigationController.isNavigationBarHidden animated:YES];
+//    [self.navigationController setNavigationBarHidden:self.navigationController.isNavigationBarHidden animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -113,8 +111,8 @@
 {
     [super viewWillDisappear:animated];
     
-    BOOL hidden = self.navigationController.isNavigationBarHidden;
-    [self.navigationController setNavigationBarHidden:!hidden animated:YES];
+//    BOOL hidden = self.navigationController.isNavigationBarHidden;
+//    [self.navigationController setNavigationBarHidden:!hidden animated:YES];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -158,27 +156,6 @@
 //        // -- Error connection wifi => Show network connection alert --
 //    }
 //}
-
-- (UILabel *) renderCountLabel
-{
-    CGSize size = [DbUtils heightOfText:self.navigationItem.title withMaxWidth:320.0 withFont:FONT_NAVIGATION_TITLE_BAR];
-    UILabel* lblBadge = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2 + size.width/2 + 5, 12, 20, 20)];
-    [lblBadge setTextColor:[UIColor whiteColor]];
-    [lblBadge setBackgroundColor:[DbUtils colorWithHexString:@"#8D8D8D"]];
-    [lblBadge setFont:[UIFont fontWithName:@"OpenSans-Semibold" size:11.0f]];
-    [lblBadge.layer setMasksToBounds:YES];
-    [lblBadge.layer setCornerRadius:lblBadge.frame.size.width/2];
-    [lblBadge setTextAlignment:NSTextAlignmentCenter];
-    
-    [self.navigationController.navigationBar addSubview:lblBadge];
-    // -- Add animation --
-    CGRect afterPosition = lblBadge.frame;
-    lblBadge.frame = (CGRect){afterPosition.origin.x, afterPosition.origin.y-5, afterPosition.size};
-    [UIView animateWithDuration:0.3 animations:^{
-        lblBadge.frame = afterPosition;
-    }];
-    return lblBadge;
-}
 
 
 @end

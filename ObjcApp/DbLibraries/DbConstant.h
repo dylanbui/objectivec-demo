@@ -35,6 +35,8 @@ __FUNCTION__,\
 // ALog always displays output regardless of the DEBUG setting
 #define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 
+#define IS_SIMULATOR                            TARGET_OS_SIMULATOR
+
 #define SYSTEM_VERSION_EQUAL_TO(v) \
 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v) \
@@ -49,7 +51,6 @@ __FUNCTION__,\
 /***************** Supported Area ******************/
 #define LOS_ANGELES_POINT CLLocationCoordinate2DMake(34.0204989, -118.4117325)
 #define ORANGE_COUNTY_POINT CLLocationCoordinate2DMake(33.6670191,-117.7646825)
-
 
 /***************** Demo status ******************/
 #pragma mark - Enum
@@ -68,19 +69,6 @@ typedef enum _CHANNELS {
     CHANNEL_NUMBEROFSOCIAL_CHANGE,
     CHANNEL_MESSAGE
 } CHANNELS;
-
-typedef enum _EVENTTYPE {
-    ET_UNKNOWN,
-    ET_MESSAGE_SEARCH_UNREADMESSAGE,
-    ET_MESSAGE_FLAG,
-    ET_MESSAGE_DELETE
-} EVENTTYPE;
-
-typedef enum _LCTYPE {
-    LCTYPE_GPS,
-    LCTYPE_PHOTOGEO,
-    LCTYPE_MANUAL
-} LCTYPE;
 
 #define ShowNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = YES
 #define HideNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = NO
@@ -120,7 +108,7 @@ typedef enum _LCTYPE {
 
 /***************** Define Notification ******************/
 
-#define NOTIFY_SERVER_PUSH_MESSAGE               @"NOTIFY_SERVER_PUSH_MESSAGE"
+#define NOTIFY_SERVER_PUSH_MESSAGE             @"NOTIFY_SERVER_PUSH_MESSAGE"
 
 #define NOTIFY_REACHABLE_NETWORK               @"NOTIFY_REACHABLE_NETWORK"
 
@@ -144,8 +132,6 @@ typedef enum _LCTYPE {
 
 #define RUN_ON_MAIN_QUEUE(BLOCK_CODE)           dispatch_async(dispatch_get_main_queue(),BLOCK_CODE)
 #define RUN_ON_BACKGROUND_QUEUE(BLOCK_CODE)     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),BLOCK_CODE)
-#define IS_SIMULATOR                            TARGET_OS_SIMULATOR
-#define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 /***************** Simple Callback Delegate ******************/
 

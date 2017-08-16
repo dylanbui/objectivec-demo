@@ -69,6 +69,16 @@
 		BB4FD4BF1F442C8A00C082C3 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4B31F442C8A00C082C3 /* OpenSans-Semibold.ttf */; };
 		BB4FD4C01F442C8A00C082C3 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4B41F442C8A00C082C3 /* OpenSans-SemiboldItalic.ttf */; };
 		BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4C31F442D1300C082C3 /* ViewController.m */; };
+		BB4FD4CF1F443BC100C082C3 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4C71F443BC100C082C3 /* CoursesViewController.m */; };
+		BB4FD4D01F443BC100C082C3 /* CoursesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4C81F443BC100C082C3 /* CoursesViewController.xib */; };
+		BB4FD4D11F443BC100C082C3 /* DetailCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4CA1F443BC100C082C3 /* DetailCoursesViewController.m */; };
+		BB4FD4D21F443BC100C082C3 /* DetailCoursesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4CB1F443BC100C082C3 /* DetailCoursesViewController.xib */; };
+		BB4FD4D31F443BC100C082C3 /* PathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4CD1F443BC100C082C3 /* PathsViewController.m */; };
+		BB4FD4D41F443BC100C082C3 /* PathsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4CE1F443BC100C082C3 /* PathsViewController.xib */; };
+		BB4FD4D91F443FEE00C082C3 /* NavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4D71F443FEE00C082C3 /* NavigationBarView.m */; };
+		BB4FD4DA1F443FEE00C082C3 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4D81F443FEE00C082C3 /* NavigationBarView.xib */; };
+		BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4DC1F444E3700C082C3 /* HeightNavigationBar.m */; };
+		BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */; };
 		D0D67C566CFEB09749ADFD21 /* Pods_ObjcAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -194,6 +204,21 @@
 		BB4FD4B41F442C8A00C082C3 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		BB4FD4C21F442D1300C082C3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BB4FD4C31F442D1300C082C3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BB4FD4C61F443BC100C082C3 /* CoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesViewController.h; sourceTree = "<group>"; };
+		BB4FD4C71F443BC100C082C3 /* CoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesViewController.m; sourceTree = "<group>"; };
+		BB4FD4C81F443BC100C082C3 /* CoursesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoursesViewController.xib; sourceTree = "<group>"; };
+		BB4FD4C91F443BC100C082C3 /* DetailCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCoursesViewController.h; sourceTree = "<group>"; };
+		BB4FD4CA1F443BC100C082C3 /* DetailCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCoursesViewController.m; sourceTree = "<group>"; };
+		BB4FD4CB1F443BC100C082C3 /* DetailCoursesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCoursesViewController.xib; sourceTree = "<group>"; };
+		BB4FD4CC1F443BC100C082C3 /* PathsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathsViewController.h; sourceTree = "<group>"; };
+		BB4FD4CD1F443BC100C082C3 /* PathsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathsViewController.m; sourceTree = "<group>"; };
+		BB4FD4CE1F443BC100C082C3 /* PathsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PathsViewController.xib; sourceTree = "<group>"; };
+		BB4FD4D61F443FEE00C082C3 /* NavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarView.h; sourceTree = "<group>"; };
+		BB4FD4D71F443FEE00C082C3 /* NavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarView.m; sourceTree = "<group>"; };
+		BB4FD4D81F443FEE00C082C3 /* NavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
+		BB4FD4DB1F444E3700C082C3 /* HeightNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeightNavigationBar.h; sourceTree = "<group>"; };
+		BB4FD4DC1F444E3700C082C3 /* HeightNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightNavigationBar.m; sourceTree = "<group>"; };
+		BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeightNavigationBar.xib; sourceTree = "<group>"; };
 		CF0433C27A628AE212F55DBF /* Pods-ObjcApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcApp/Pods-ObjcApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D2C1CC5C4A722D440973BCC1 /* Pods-ObjcApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcApp/Pods-ObjcApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -317,11 +342,11 @@
 		BB4FD40D1F442AEE00C082C3 /* DbLibraries */ = {
 			isa = PBXGroup;
 			children = (
-				BB4FD40E1F442AEE00C082C3 /* BaseClass */,
 				BB4FD41D1F442AEE00C082C3 /* DbAppSession.h */,
 				BB4FD41E1F442AEE00C082C3 /* DbAppSession.m */,
 				BB4FD41F1F442AEE00C082C3 /* DbConstant.h */,
 				BB4FD4201F442AEE00C082C3 /* DbHeader.h */,
+				BB4FD40E1F442AEE00C082C3 /* BaseClass */,
 				BB4FD4211F442AEE00C082C3 /* Utils */,
 				BB4FD42C1F442AEE00C082C3 /* WebConnection */,
 			);
@@ -560,10 +585,41 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB4FD4C51F443BC100C082C3 /* Demo-Navigation-Bar */,
 				BB4FD4C21F442D1300C082C3 /* ViewController.h */,
 				BB4FD4C31F442D1300C082C3 /* ViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BB4FD4C51F443BC100C082C3 /* Demo-Navigation-Bar */ = {
+			isa = PBXGroup;
+			children = (
+				BB4FD4D51F443FEE00C082C3 /* NavigationBar */,
+				BB4FD4CC1F443BC100C082C3 /* PathsViewController.h */,
+				BB4FD4CD1F443BC100C082C3 /* PathsViewController.m */,
+				BB4FD4CE1F443BC100C082C3 /* PathsViewController.xib */,
+				BB4FD4C61F443BC100C082C3 /* CoursesViewController.h */,
+				BB4FD4C71F443BC100C082C3 /* CoursesViewController.m */,
+				BB4FD4C81F443BC100C082C3 /* CoursesViewController.xib */,
+				BB4FD4C91F443BC100C082C3 /* DetailCoursesViewController.h */,
+				BB4FD4CA1F443BC100C082C3 /* DetailCoursesViewController.m */,
+				BB4FD4CB1F443BC100C082C3 /* DetailCoursesViewController.xib */,
+			);
+			path = "Demo-Navigation-Bar";
+			sourceTree = "<group>";
+		};
+		BB4FD4D51F443FEE00C082C3 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				BB4FD4D61F443FEE00C082C3 /* NavigationBarView.h */,
+				BB4FD4D71F443FEE00C082C3 /* NavigationBarView.m */,
+				BB4FD4D81F443FEE00C082C3 /* NavigationBarView.xib */,
+				BB4FD4DB1F444E3700C082C3 /* HeightNavigationBar.h */,
+				BB4FD4DC1F444E3700C082C3 /* HeightNavigationBar.m */,
+				BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		FC67C540BC7131A23EBD8755 /* Pods */ = {
@@ -676,10 +732,14 @@
 				BB4FD4A01F442AEE00C082C3 /* ic_show_password.png in Resources */,
 				BB4FD3C61F4429E200C082C3 /* Assets.xcassets in Resources */,
 				BB4FD48E1F442AEE00C082C3 /* apnumberpad_backspace_icon@2x.png in Resources */,
+				BB4FD4DA1F443FEE00C082C3 /* NavigationBarView.xib in Resources */,
 				BB4FD4BD1F442C8A00C082C3 /* OpenSans-LightItalic.ttf in Resources */,
 				BB4FD4C01F442C8A00C082C3 /* OpenSans-SemiboldItalic.ttf in Resources */,
+				BB4FD4D01F443BC100C082C3 /* CoursesViewController.xib in Resources */,
 				BB4FD4BA1F442C8A00C082C3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				BB4FD4BE1F442C8A00C082C3 /* OpenSans-Regular.ttf in Resources */,
+				BB4FD4D21F443BC100C082C3 /* DetailCoursesViewController.xib in Resources */,
+				BB4FD4D41F443BC100C082C3 /* PathsViewController.xib in Resources */,
 				BB4FD4A11F442AEE00C082C3 /* ic_show_password@2x.png in Resources */,
 				BB4FD4BB1F442C8A00C082C3 /* OpenSans-Italic.ttf in Resources */,
 				BB4FD4B81F442C8A00C082C3 /* OpenSans-BoldItalic.ttf in Resources */,
@@ -687,6 +747,7 @@
 				BB4FD49E1F442AEE00C082C3 /* ic_hide_password.png in Resources */,
 				BB4FD48F1F442AEE00C082C3 /* apnumberpad_backspace_icon@3x.png in Resources */,
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
+				BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */,
 				BB4FD49F1F442AEE00C082C3 /* ic_hide_password@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -804,6 +865,7 @@
 				BB4FD4911F442AEE00C082C3 /* APNumberPad.m in Sources */,
 				BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */,
 				BB4FD47F1F442AEE00C082C3 /* DbPopupView.m in Sources */,
+				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
 				BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */,
 				BB4FD4861F442AEE00C082C3 /* NSObject+Json.m in Sources */,
 				BB4FD4901F442AEE00C082C3 /* APNumberButton.m in Sources */,
@@ -816,9 +878,11 @@
 				BB4FD4951F442AEE00C082C3 /* CropPhotoViewController.m in Sources */,
 				BB4FD47C1F442AEE00C082C3 /* DbAppDelegate.m in Sources */,
 				BB4FD4801F442AEE00C082C3 /* DbTableViewCell.m in Sources */,
+				BB4FD4D91F443FEE00C082C3 /* NavigationBarView.m in Sources */,
 				BB4FD49A1F442AEE00C082C3 /* SYPhotoBrowser.m in Sources */,
 				BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */,
 				BB4FD49D1F442AEE00C082C3 /* UIImage+Resize.m in Sources */,
+				BB4FD4D31F443BC100C082C3 /* PathsViewController.m in Sources */,
 				BB4FD4A71F442B4D00C082C3 /* RootViewController.m in Sources */,
 				BB4FD4931F442AEE00C082C3 /* NSBundle+APNumberPad.m in Sources */,
 				BB4FD3BE1F4429E200C082C3 /* AppDelegate.m in Sources */,
@@ -834,7 +898,9 @@
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
 				BB4FD47D1F442AEE00C082C3 /* DbNavigationBarView.m in Sources */,
+				BB4FD4D11F443BC100C082C3 /* DetailCoursesViewController.m in Sources */,
 				BB4FD4891F442AEE00C082C3 /* DbResponseObject.m in Sources */,
+				BB4FD4CF1F443BC100C082C3 /* CoursesViewController.m in Sources */,
 				BB4FD4811F442AEE00C082C3 /* DbViewController.m in Sources */,
 				BB4FD4961F442AEE00C082C3 /* PhotoGalleryViewController.m in Sources */,
 			);

@@ -19,8 +19,6 @@
 
 - (void)initLoadDataForController:(id)params;
 
-- (UILabel *)renderCountLabel;
-
 @property (nonatomic, strong) UserSession * userSession;
 
 @end

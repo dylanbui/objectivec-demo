@@ -13,7 +13,6 @@
 - (id)initWithViewController:(UIViewController *)containerViewController
 {
     if (self = [super init]) {
-        self.tag = 1234566;
         self.vclContainer = containerViewController;
         [self initView];
     }
@@ -24,16 +23,22 @@
 - (void)initView
 {
     // -- Navigation frame --
-    self.frame = (CGRect) {0, 0, [[UIScreen mainScreen] bounds].size.width, 44};
+    CGRect viewFrame = (CGRect){
+        .origin = {0, 0},
+        .size.width = [[UIScreen mainScreen] bounds].size.width,
+        .size.height = self.frame.size.height
+    };
+    // self.frame = (CGRect) {0, 0, [[UIScreen mainScreen] bounds].size.width, 44};
+    self.frame = viewFrame;
     
     // -- Turn off back button --
     self.vclContainer.navigationItem.hidesBackButton = YES;
     // -- Set empty back title --
-    // self.vclContainer.navigationController.navigationBar.topItem.title = @"";
-    //    self.vclContainer.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
-    //                                                                             style:UIBarButtonItemStylePlain
-    //                                                                            target:nil
-    //                                                                            action:nil];
+//    self.vclContainer.navigationController.navigationBar.topItem.title = @"";
+//    self.vclContainer.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+//                                                                                          style:UIBarButtonItemStylePlain
+//                                                                                         target:nil
+//                                                                                         action:nil];
     
     // -- Hide all control --
     [self hideAllItemNavigationBar];
@@ -55,31 +60,18 @@
 - (void)controllerViewWillAppear:(NSNotification *)notification
 {
     if ([notification.object isEqual:self.vclContainer]) {
-        NSLog(@"%@", @"controllerViewWillAppear");
+        // NSLog(@"%@", @"controllerViewWillAppear");
         [self showNavigation];
     }
-    
-    //    if ([NSStringFromClass([notification.object class])
-    //         isEqualToString:NSStringFromClass([self.parentViewController class])]) {
-    //        NSLog(@"%@", @"controllerViewWillAppear");
-    //        [self showNavigation];
-    //    }
 }
 
 - (void)controllerViewWillDisappear:(NSNotification *)notification
 {
     if ([notification.object isEqual:self.vclContainer]) {
-        NSLog(@"%@", @"controllerViewWillDisappear");
+        // NSLog(@"%@", @"controllerViewWillDisappear");
         [self hideNavigation];
     }
-    
-    //    if ([NSStringFromClass([notification.object class])
-    //         isEqualToString:NSStringFromClass([self.parentViewController class])]) {
-    //        NSLog(@"%@", @"controllerViewWillDisappear");
-    //        [self hideNavigation];
-    //    }
 }
-
 
 - (void)layoutSubviews
 {
@@ -107,14 +99,13 @@
 
 - (void)hideNavigation
 {
-    UIView *view = (UIView *)[self.vclContainer.navigationController.navigationBar viewWithTag:1234566];
     [UIView animateWithDuration:0.4 animations:^{
         [self hideAllItemNavigationBar];
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.1 animations:^{
-            view.alpha = 0;
+            self.alpha = 0;
         } completion:^(BOOL finished) {
-            [view removeFromSuperview];
+            [self removeFromSuperview];
         }];
     }];
 }

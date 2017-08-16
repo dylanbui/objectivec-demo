@@ -10,10 +10,7 @@
 #import "AppDelegate.h"
 #import "DbHeader.h"
 
-
 //#import "AppDelegate.h"
-//#import "Utils.h"
-//#import "UserSession.h"
 //#import "ResponseObject.h"
 //#import "WebConnection.h"
 
@@ -27,13 +24,15 @@
 }
 
 
-
-- (void)initLoadDataForController:(id)params;
-
-//@property (nonatomic, strong) UserSession * userSession;
 @property (nonatomic, strong) NSMutableDictionary* stranferParams;
 @property (strong) AppDelegate *appDelegate;
 @property (weak) id <ICallbackParentDelegate> callbackParentDelegate;
+
+- (void)initLoadDataForController:(id)params;
+- (void)navigationBarHiddenForThisController;
+
+
+
 
 @end
 

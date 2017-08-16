@@ -45,9 +45,6 @@
 
 @interface DbNavigationBarView (Protected)
 
-- (void)showNavigation;
-- (void)hideNavigation;
-
 - (void)hideAllItemNavigationBar;
 - (void)showAllItemNavigationBar;
 
