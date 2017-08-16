@@ -26,4 +26,4 @@ xcuserdata/
 *.xcscmblueprint
 
 Pods/*
-!Pods/DKImagePickerController/*
+!Pods/DKImagePickerController/*/*
