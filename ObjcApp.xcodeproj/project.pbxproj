@@ -79,6 +79,10 @@
 		BB4FD4DA1F443FEE00C082C3 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4D81F443FEE00C082C3 /* NavigationBarView.xib */; };
 		BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4DC1F444E3700C082C3 /* HeightNavigationBar.m */; };
 		BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */; };
+		BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C471F49E718007A3B5C /* NavigationBarTitleView.m */; };
+		BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */; };
+		BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */; };
+		BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */; };
 		D0D67C566CFEB09749ADFD21 /* Pods_ObjcAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -219,6 +223,12 @@
 		BB4FD4DB1F444E3700C082C3 /* HeightNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeightNavigationBar.h; sourceTree = "<group>"; };
 		BB4FD4DC1F444E3700C082C3 /* HeightNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightNavigationBar.m; sourceTree = "<group>"; };
 		BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeightNavigationBar.xib; sourceTree = "<group>"; };
+		BBC07C461F49E718007A3B5C /* NavigationBarTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarTitleView.h; sourceTree = "<group>"; };
+		BBC07C471F49E718007A3B5C /* NavigationBarTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarTitleView.m; sourceTree = "<group>"; };
+		BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationBarTitleView.xib; sourceTree = "<group>"; };
+		BBC07C4B1F4A00B7007A3B5C /* DetailPathsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPathsViewController.h; sourceTree = "<group>"; };
+		BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPathsViewController.m; sourceTree = "<group>"; };
+		BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPathsViewController.xib; sourceTree = "<group>"; };
 		CF0433C27A628AE212F55DBF /* Pods-ObjcApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcApp/Pods-ObjcApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D2C1CC5C4A722D440973BCC1 /* Pods-ObjcApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcApp/Pods-ObjcApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -595,10 +605,14 @@
 		BB4FD4C51F443BC100C082C3 /* Demo-Navigation-Bar */ = {
 			isa = PBXGroup;
 			children = (
+				BBC07C451F49E6E7007A3B5C /* NavigationBarUseTitleView */,
 				BB4FD4D51F443FEE00C082C3 /* NavigationBar */,
 				BB4FD4CC1F443BC100C082C3 /* PathsViewController.h */,
 				BB4FD4CD1F443BC100C082C3 /* PathsViewController.m */,
 				BB4FD4CE1F443BC100C082C3 /* PathsViewController.xib */,
+				BBC07C4B1F4A00B7007A3B5C /* DetailPathsViewController.h */,
+				BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */,
+				BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */,
 				BB4FD4C61F443BC100C082C3 /* CoursesViewController.h */,
 				BB4FD4C71F443BC100C082C3 /* CoursesViewController.m */,
 				BB4FD4C81F443BC100C082C3 /* CoursesViewController.xib */,
@@ -620,6 +634,16 @@
 				BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		BBC07C451F49E6E7007A3B5C /* NavigationBarUseTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				BBC07C461F49E718007A3B5C /* NavigationBarTitleView.h */,
+				BBC07C471F49E718007A3B5C /* NavigationBarTitleView.m */,
+				BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */,
+			);
+			name = NavigationBarUseTitleView;
 			sourceTree = "<group>";
 		};
 		FC67C540BC7131A23EBD8755 /* Pods */ = {
@@ -683,7 +707,7 @@
 		BB4FD3AE1F4429E200C082C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Propzy Viet Nam";
 				TargetAttributes = {
 					BB4FD3B51F4429E200C082C3 = {
@@ -733,6 +757,7 @@
 				BB4FD3C61F4429E200C082C3 /* Assets.xcassets in Resources */,
 				BB4FD48E1F442AEE00C082C3 /* apnumberpad_backspace_icon@2x.png in Resources */,
 				BB4FD4DA1F443FEE00C082C3 /* NavigationBarView.xib in Resources */,
+				BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */,
 				BB4FD4BD1F442C8A00C082C3 /* OpenSans-LightItalic.ttf in Resources */,
 				BB4FD4C01F442C8A00C082C3 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				BB4FD4D01F443BC100C082C3 /* CoursesViewController.xib in Resources */,
@@ -746,6 +771,7 @@
 				BB4FD4B91F442C8A00C082C3 /* OpenSans-ExtraBold.ttf in Resources */,
 				BB4FD49E1F442AEE00C082C3 /* ic_hide_password.png in Resources */,
 				BB4FD48F1F442AEE00C082C3 /* apnumberpad_backspace_icon@3x.png in Resources */,
+				BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */,
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
 				BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */,
 				BB4FD49F1F442AEE00C082C3 /* ic_hide_password@2x.png in Resources */,
@@ -860,6 +886,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB4FD48C1F442AEE00C082C3 /* UIButton+Activity.m in Sources */,
+				BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */,
 				BB4FD4821F442AEE00C082C3 /* DbViewFromXib.m in Sources */,
 				BB4FD4841F442AEE00C082C3 /* DateTimeUtil.m in Sources */,
 				BB4FD4911F442AEE00C082C3 /* APNumberPad.m in Sources */,
@@ -898,6 +925,7 @@
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
 				BB4FD47D1F442AEE00C082C3 /* DbNavigationBarView.m in Sources */,
+				BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */,
 				BB4FD4D11F443BC100C082C3 /* DetailCoursesViewController.m in Sources */,
 				BB4FD4891F442AEE00C082C3 /* DbResponseObject.m in Sources */,
 				BB4FD4CF1F443BC100C082C3 /* CoursesViewController.m in Sources */,
@@ -985,7 +1013,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1027,7 +1055,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1038,6 +1066,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF0433C27A628AE212F55DBF /* Pods-ObjcApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KXK7W469S4;
 				INFOPLIST_FILE = ObjcApp/Info.plist;
@@ -1052,6 +1081,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D2C1CC5C4A722D440973BCC1 /* Pods-ObjcApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KXK7W469S4;
 				INFOPLIST_FILE = ObjcApp/Info.plist;

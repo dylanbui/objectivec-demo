@@ -10,19 +10,33 @@
 #import "CoursesViewController.h"
 //#import "NavigationBarView.h"
 //#import "Constant.h"
+#import "NavigationBarTitleView.h"
+#import "DetailPathsViewController.h"
 
 @interface PathsViewController ()
+
+@property (nonatomic, strong) NavigationBarTitleView *navBaseView;
 
 @end
 
 @implementation PathsViewController
+
+- (id)init
+{
+    if (self = [super init]) {
+        //self.navBaseView = [[NavigationBarTitleView alloc] initWithViewController:self];
+        //[self.navBaseView.lblMainTitle setText:@"CoursesViewController"];
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self navigationBarHiddenForThisController];
+    //[self navigationBarHiddenForThisController];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -66,6 +80,14 @@
     // [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushViewController:vcFirst animated:YES];
 }
+
+- (IBAction)btnDetailPaths_Click:(id)sender
+{
+    DetailPathsViewController *vcFirst = [[DetailPathsViewController alloc] init];
+    // [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
+    [self.navigationController pushViewController:vcFirst animated:YES];
+}
+
 
 - (void)styleNavBar
 {
