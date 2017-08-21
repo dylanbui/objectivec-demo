@@ -1,14 +1,14 @@
 //
-//  NavigationBarBaseView.m
-//  PropzyPama
+//  NavigationBarTitleView.m
+//  ObjcApp
 //
-//  Created by Dylan Bui on 8/11/17.
+//  Created by Dylan Bui on 8/20/17.
 //  Copyright © 2017 Propzy Viet Nam. All rights reserved.
 //
 
-#import "DbNavigationBarView.h"
+#import "NavigationBarTitleView.h"
 
-@implementation DbNavigationBarView
+@implementation NavigationBarTitleView
 
 - (id)initWithViewController:(UIViewController *)containerViewController
 {
@@ -25,33 +25,28 @@
     // -- Navigation frame --
     CGRect viewFrame = (CGRect){
         .origin = {0, 0},
-        .size.width = [[UIScreen mainScreen] bounds].size.width,
+        //.size.width = 250,//[[UIScreen mainScreen] bounds].size.width,
+        .size.width = [[UIScreen mainScreen] bounds].size.width - 30,
         .size.height = self.frame.size.height
     };
     // self.frame = (CGRect) {0, 0, [[UIScreen mainScreen] bounds].size.width, 44};
     self.frame = viewFrame;
     
     // -- Turn off back button --
-    self.vclContainer.navigationItem.hidesBackButton = YES;
+//    self.vclContainer.navigationItem.hidesBackButton = YES;
     // -- Set empty back title --
-//    self.vclContainer.navigationController.navigationBar.topItem.title = @"";
+    self.vclContainer.navigationController.navigationBar.topItem.title = @"";
 //    self.vclContainer.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
 //                                                                                          style:UIBarButtonItemStylePlain
 //                                                                                         target:nil
 //                                                                                         action:nil];
-    // -- Fix error 3 dots --
-    // https://stackoverflow.com/questions/22425356/title-shows-3-dots-instead-of-the-string-in-a-toggle-button
-//    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor clearColor]}
-//                                                forState:UIControlStateNormal];
     
-    // -- Fix error 3 dots way 2 : Remove Back Text --
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-400.f, 0) forBarMetrics:UIBarMetricsDefault];
-
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -140) forBarMetrics:UIBarMetricsDefault];
     
     // -- Hide all control --
     [self hideAllItemNavigationBar];
     
-    //self.backgroundColor = [self.vclContainer.navigationController.navigationBar barTintColor];
+    // self.backgroundColor = [self.vclContainer.navigationController.navigationBar barTintColor];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controllerViewDidLoad:)
                                                  name:NOTIFY_VCL_DID_LOAD object:nil];
@@ -71,6 +66,17 @@
 - (void)controllerViewDidLoad:(NSNotification *)notification
 {
     if ([notification.object isEqual:self.vclContainer]) {
+//        NSLog(@"frame = %@", NSStringFromCGRect(self.vclContainer.navigationItem.titleView.frame));
+//        self.vclContainer.navigationItem.titleView = self;
+
+
+//        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0 ,0 ,280 ,44)];
+//        label.backgroundColor = [UIColor redColor];
+//        label.font = [UIFont fontWithName:@"GoodMobiPro-CondBold" size:24];
+//        label.textAlignment = NSTextAlignmentCenter;
+//        self.vclContainer.navigationItem.titleView = label;
+//        label.text = @"My Custom Title";
+//        [label sizeToFit];
     }
 }
 
@@ -102,7 +108,9 @@
 
 - (void)showNavigation
 {
-    [self.vclContainer.navigationController.navigationBar addSubview:self];
+//    [self.vclContainer.navigationController.navigationBar addSubview:self];
+//    NSLog(@"frame = %@", NSStringFromCGRect(self.vclContainer.navigationItem.titleView.frame));
+    self.vclContainer.navigationItem.titleView = self;
     
     self.alpha = 0.5;
     [UIView animateWithDuration:0.1 animations:^{
@@ -154,3 +162,4 @@
 }
 
 @end
+
