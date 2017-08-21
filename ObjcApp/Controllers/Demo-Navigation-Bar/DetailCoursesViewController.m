@@ -24,7 +24,7 @@
 {
     if (self = [super init]) {
         
-        self.navBaseView = [[HeightNavigationBar alloc] initWithViewController:self];
+//        self.navBaseView = [[HeightNavigationBar alloc] initWithViewController:self];
 
         
 //        NSLog(@"%@", @"newBackButton");

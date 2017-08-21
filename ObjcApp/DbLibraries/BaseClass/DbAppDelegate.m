@@ -28,9 +28,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // -- Push notification --
-    [self registerForRemoteNotification];
-    
+    if (APPLE_PUSH_NOTIFICATION_REQUEST) {
+        // -- Push notification --
+        [self registerForRemoteNotification];
+    }
+
     return YES;
 }
 
