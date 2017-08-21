@@ -80,14 +80,14 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   DKImagePickerController: 16f28d10f4384d8c582aa05baab26fc75432a41d
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
-  FSCalendar: '09369a2bf554ba71cd8e8cfb627e2df22a2c2af4'
+  FSCalendar: 09369a2bf554ba71cd8e8cfb627e2df22a2c2af4
   IQKeyboardManager: 322c7405df3eb5f7e50dede32ea937bf3d4364e0
   ISMessages: d39098b48672813d69d30f44da06260b9920fed4
   KMPlaceholderTextView: 2bbcd19a273648a80a61e1e48f9743a24d8930e3
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
   RMUniversalAlert: ce7118101a19fa41b9adedf907b66a8cc3bd32c8
-  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwipeView: bd67cfaf7760c036438446b3ccb28a3b84fce009
   TOCropViewController: e6e31b38d785a901e5651a1e7fff71bcda6c5214
   UIActionSheet+Blocks: e180b7dad0a721ab7f212ac9742af799008bb358

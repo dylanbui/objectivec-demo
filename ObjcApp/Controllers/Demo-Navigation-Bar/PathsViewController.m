@@ -9,6 +9,7 @@
 #import "PathsViewController.h"
 #import "CoursesViewController.h"
 #import "PhotoGalleryViewController.h"
+#import "DetailPathsViewController.h"
 //#import "NavigationBarView.h"
 //#import "Constant.h"
 
@@ -31,7 +32,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self styleNavBar];
     
 //    __weak id weakSelf = self;
 //    self.navigationController.interactivePopGestureRecognizer.delegate = weakSelf;
@@ -69,6 +69,13 @@
     // [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushViewController:vcFirst animated:YES];
 }
+
+- (IBAction)btnDetailPaths_Click:(id)sender
+{
+    DetailPathsViewController *vcFirst = [[DetailPathsViewController alloc] init];
+    [self.navigationController pushViewController:vcFirst animated:YES];
+}
+
 
 - (IBAction)btnChooseImg_Click:(id)sender
 {

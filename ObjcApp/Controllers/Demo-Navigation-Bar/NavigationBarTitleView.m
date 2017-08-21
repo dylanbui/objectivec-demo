@@ -24,7 +24,7 @@
 {
     // -- Navigation frame --
     CGRect viewFrame = (CGRect){
-        .origin = {0, 0},
+        .origin = {30, 0},
         //.size.width = 250,//[[UIScreen mainScreen] bounds].size.width,
         .size.width = [[UIScreen mainScreen] bounds].size.width - 30,
         .size.height = self.frame.size.height
@@ -35,13 +35,13 @@
     // -- Turn off back button --
 //    self.vclContainer.navigationItem.hidesBackButton = YES;
     // -- Set empty back title --
-    self.vclContainer.navigationController.navigationBar.topItem.title = @"";
+    self.vclContainer.navigationController.navigationBar.topItem.title = @" ";
 //    self.vclContainer.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
 //                                                                                          style:UIBarButtonItemStylePlain
 //                                                                                         target:nil
 //                                                                                         action:nil];
     
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -140) forBarMetrics:UIBarMetricsDefault];
+//    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -140) forBarMetrics:UIBarMetricsDefault];
     
     // -- Hide all control --
     [self hideAllItemNavigationBar];
@@ -68,8 +68,6 @@
     if ([notification.object isEqual:self.vclContainer]) {
 //        NSLog(@"frame = %@", NSStringFromCGRect(self.vclContainer.navigationItem.titleView.frame));
 //        self.vclContainer.navigationItem.titleView = self;
-
-
 //        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0 ,0 ,280 ,44)];
 //        label.backgroundColor = [UIColor redColor];
 //        label.font = [UIFont fontWithName:@"GoodMobiPro-CondBold" size:24];
@@ -83,7 +81,21 @@
 - (void)controllerViewWillAppear:(NSNotification *)notification
 {
     if ([notification.object isEqual:self.vclContainer]) {
-        // NSLog(@"%@", @"controllerViewWillAppear");
+        NSLog(@"%@", @"controllerViewWillAppear");
+        // NSLog(@"frame = %f",self.vclContainer.navigationController.navigationItem.rightBarButtonItem.width);
+        // NSLog(@"%@", NSStringFromCGRect(self.vclContainer.navigationItem.leftBarButtonItem.customView.frame));
+        
+//        NSArray *classNamesToReposition = @[@"UINavigationItemView", @"UINavigationButton"];
+//        for (UIView *view in [self.vclContainer.navigationController.navigationBar subviews]) {
+//            NSLog(@"%@", NSStringFromClass([view class]));
+//            if ([classNamesToReposition containsObject:NSStringFromClass([view class])]) {
+//                CGRect frame = [view frame];
+//                NSLog(@" frame = %@", NSStringFromCGRect(frame));
+////                frame.origin.y -= VFSNavigationBarHeightIncrease;
+////                [view setFrame:frame];
+//            }
+//        }
+        
         [self showNavigation];
     }
 }
@@ -108,9 +120,9 @@
 
 - (void)showNavigation
 {
-//    [self.vclContainer.navigationController.navigationBar addSubview:self];
+    [self.vclContainer.navigationController.navigationBar addSubview:self];
 //    NSLog(@"frame = %@", NSStringFromCGRect(self.vclContainer.navigationItem.titleView.frame));
-    self.vclContainer.navigationItem.titleView = self;
+//    self.vclContainer.navigationItem.titleView = self;
     
     self.alpha = 0.5;
     [UIView animateWithDuration:0.1 animations:^{

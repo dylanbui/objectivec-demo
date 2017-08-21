@@ -21,7 +21,7 @@
 - (id)init
 {
     if (self = [super init]) {
-        self.navBaseView = [[NavigationBarTitleView alloc] initWithViewController:self];
+         self.navBaseView = [[NavigationBarTitleView alloc] initWithViewController:self];
     }
     return self;
 }
@@ -31,6 +31,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 - (IBAction)btnBack_Click:(id)sender
