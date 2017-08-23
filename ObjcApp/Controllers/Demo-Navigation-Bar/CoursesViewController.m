@@ -80,6 +80,14 @@
 //    }];    
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+//    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, 0)
+//                                                         forBarMetrics:UIBarMetricsDefault];
+
+}
+
 - (void)styleNavBar
 {
 //    [self.navigationController setNavigationBarHidden:YES animated:NO];

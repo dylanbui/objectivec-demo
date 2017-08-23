@@ -9,27 +9,29 @@
 #ifndef DbConstant_h
 #define DbConstant_h
 
-#define CONFIGURATION_DEBUG 1 // 0 : hide, 1 : show
+#define APPLE_PUSH_NOTIFICATION_REQUEST     0 // 0 : no, 1 : yes
+
+#define CONFIGURATION_DEBUG                 1 // 0 : hide, 1 : show
 
 #ifdef __OBJC__
-#import <Foundation/Foundation.h>
-#if (CONFIGURATION_DEBUG || CONFIGURATION_QC)
-#define DebugLog(format, ...) DLog((@"%s: %d: %s: " format),\
-__FILE__,\
-__LINE__,\
-__FUNCTION__,\
-##__VA_ARGS__)
-#else
-#define DebugLog(format, ...)
-#endif
+    #import <Foundation/Foundation.h>
+    #if (CONFIGURATION_DEBUG || CONFIGURATION_QC)
+        #define DebugLog(format, ...) DLog((@"%s: %d: %s: " format),\
+        __FILE__,\
+        __LINE__,\
+        __FUNCTION__,\
+        ##__VA_ARGS__)
+    #else
+        #define DebugLog(format, ...)
+    #endif
 #endif
 
 #if CONFIGURATION_DEBUG || CONFIGURATION_QC
-#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
-#define SLog(fmt, ...) NSLog((@"" fmt), ##__VA_ARGS__);
+    #define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+    #define SLog(fmt, ...) NSLog((@"" fmt), ##__VA_ARGS__);
 #else
-#define DLog(...)
-#define SLog(...)
+    #define DLog(...)
+    #define SLog(...)
 #endif
 
 // ALog always displays output regardless of the DEBUG setting

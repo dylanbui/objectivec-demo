@@ -28,11 +28,6 @@
 - (void)resetAllData
 {
     NSDictionary *mappingRules = [[self class] om_objectMapping];
-//    if (obj) {
-//        mappingRules = [[obj class] om_objectMapping];
-//    }
-    
-    //    NSDictionary *mappingRules = [self om_objectMapping];
     for (NSString *propertyName in mappingRules) {
         // -- Nhung bien nao trong ten co 'global' thi khong xoa gia tri --
         if ([propertyName containsString:@"global"])

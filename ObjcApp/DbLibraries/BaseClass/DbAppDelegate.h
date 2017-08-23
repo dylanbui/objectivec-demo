@@ -17,7 +17,5 @@
 
 @property (strong, nonatomic) RootViewController *rootViewController;
 
-- (void)registerForRemoteNotification;
-
 @end
 

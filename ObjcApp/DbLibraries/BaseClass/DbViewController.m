@@ -19,7 +19,6 @@
 
 @synthesize stranferParams;
 @synthesize appDelegate;
-//@synthesize userSession;
 
 - (id)init
 {
@@ -52,7 +51,6 @@
 - (void)initDbControllerData
 {
     self.appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-//    self.userSession = [UserSession instance];
 }
 
 // -- Should run after init and before viewDidLoad --
@@ -117,7 +115,7 @@
 - (void)navigationBarHiddenForThisController
 {
     self.isNavigationBarHidden = YES;
-    //    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 

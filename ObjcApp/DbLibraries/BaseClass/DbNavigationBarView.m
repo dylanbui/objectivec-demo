@@ -39,11 +39,22 @@
 //                                                                                          style:UIBarButtonItemStylePlain
 //                                                                                         target:nil
 //                                                                                         action:nil];
+    // -- Fix error 3 dots --
+    // https://stackoverflow.com/questions/22425356/title-shows-3-dots-instead-of-the-string-in-a-toggle-button
+//    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor clearColor]}
+//                                                forState:UIControlStateNormal];
+    
+    // -- Fix error 3 dots way 2 : Remove Back Text --
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-400.f, 0) forBarMetrics:UIBarMetricsDefault];
+
     
     // -- Hide all control --
     [self hideAllItemNavigationBar];
     
     //self.backgroundColor = [self.vclContainer.navigationController.navigationBar barTintColor];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controllerViewDidLoad:)
+                                                 name:NOTIFY_VCL_DID_LOAD object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controllerViewWillAppear:)
                                                  name:NOTIFY_VCL_WILL_APPEAR object:nil];
@@ -55,6 +66,12 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)controllerViewDidLoad:(NSNotification *)notification
+{
+    if ([notification.object isEqual:self.vclContainer]) {
+    }
 }
 
 - (void)controllerViewWillAppear:(NSNotification *)notification

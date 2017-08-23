@@ -8,41 +8,30 @@
 
 #import "PathsViewController.h"
 #import "CoursesViewController.h"
+#import "PhotoGalleryViewController.h"
+#import "DetailPathsViewController.h"
 //#import "NavigationBarView.h"
 //#import "Constant.h"
-#import "NavigationBarTitleView.h"
-#import "DetailPathsViewController.h"
 
 @interface PathsViewController ()
-
-@property (nonatomic, strong) NavigationBarTitleView *navBaseView;
 
 @end
 
 @implementation PathsViewController
-
-- (id)init
-{
-    if (self = [super init]) {
-        //self.navBaseView = [[NavigationBarTitleView alloc] initWithViewController:self];
-        //[self.navBaseView.lblMainTitle setText:@"CoursesViewController"];
-    }
-    return self;
-}
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    //[self navigationBarHiddenForThisController];
+    // [self navigationBarHiddenForThisController];
+    
+    self.title = @"Main Page";
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self styleNavBar];
     
 //    __weak id weakSelf = self;
 //    self.navigationController.interactivePopGestureRecognizer.delegate = weakSelf;
@@ -84,8 +73,26 @@
 - (IBAction)btnDetailPaths_Click:(id)sender
 {
     DetailPathsViewController *vcFirst = [[DetailPathsViewController alloc] init];
-    // [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushViewController:vcFirst animated:YES];
+}
+
+
+- (IBAction)btnChooseImg_Click:(id)sender
+{
+    PhotoGalleryViewController *vclCropPhoto = [[PhotoGalleryViewController alloc] init];
+    vclCropPhoto.singleSelect = NO;
+    vclCropPhoto.maxSelected = 5;
+    vclCropPhoto.sourceType = DKImagePickerControllerSourceTypeBoth;
+    [vclCropPhoto setDidSelectAssets:^(NSArray * __nonnull assets) {
+        if([assets count] == 0) {
+        }
+         NSLog(@"%d", (int) [assets count]);
+    }];
+    [vclCropPhoto setSetDidCancel:^{
+    }];
+    
+//    [[Utils getTopViewController] presentViewController:vclCropPhoto animated:YES completion:nil];
+    [self presentViewController:vclCropPhoto animated:YES completion:nil];
 }
 
 
