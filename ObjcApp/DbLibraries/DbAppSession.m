@@ -181,7 +181,7 @@
     return [self.extendData objectForKey:key];
 }
 
-- (void)setExtendData:(id)data forkey:(NSString *)key
+- (void)setExtendData:(id)data forKey:(NSString *)key
 {
     [self.extendData setObject:data forKey:key];
 }
@@ -229,6 +229,7 @@
 - (void)processNotificationCenter:(NSNotification *)notification
 {
     if (notification.name == UIApplicationDidBecomeActiveNotification) {
+        NSLog(@"%@", @"reloadDataFromLastSession");
         [self reloadDataFromLastSession];
     } else if (notification.name == UIApplicationWillResignActiveNotification) {
         [self saveDataFromLastSession];

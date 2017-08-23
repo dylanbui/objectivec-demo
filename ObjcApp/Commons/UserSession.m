@@ -180,6 +180,7 @@ typedef enum _USER_STATUS {
 
 - (void)processNotificationCenter:(NSNotification *)notification
 {
+    [super processNotificationCenter:notification];
 //    if (notification.name == UIApplicationDidBecomeActiveNotification) {
 //        [self reloadDataFromLastSession];
 //    } else if (notification.name == UIApplicationWillResignActiveNotification) {

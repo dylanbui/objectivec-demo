@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "PathsViewController.h"
+#import "UserSessionViewController.h"
 
 //#import "UINavigationController+Utils.h"
 //
@@ -46,10 +47,10 @@
 {
     [super viewWillAppear:animated];
     
-    PathsViewController *vcFirst = [[PathsViewController alloc] init];
+//    PathsViewController *vcFirst = [[PathsViewController alloc] init];
+    UserSessionViewController *vcFirst = [[UserSessionViewController alloc] init];
     [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:NO];
-
 }
 
 -(void)viewDidAppear:(BOOL)animated

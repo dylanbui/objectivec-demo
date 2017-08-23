@@ -35,7 +35,7 @@
 - (void)setPushNotifyInfo:(NSDictionary *)pushInfo;
 
 - (id)getExtendDataForKey:(NSString *)key;
-- (void)setExtendData:(id)data forkey:(NSString *)key;
+- (void)setExtendData:(id)data forKey:(NSString *)key;
 
 - (void)reloadDataFromLastSession;
 - (void)saveDataFromLastSession;
@@ -46,6 +46,6 @@
 - (id)getUserDefaultsDataObjectFromKey:(NSString *)key;
 - (void)setUserDefaultsDataObject:(NSObject *)obj forKey:(NSString *)key;
 
-
+- (void)processNotificationCenter:(NSNotification *)notification;
 
 @end

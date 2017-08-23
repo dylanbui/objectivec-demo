@@ -79,6 +79,8 @@
 		BB4FD4DA1F443FEE00C082C3 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4D81F443FEE00C082C3 /* NavigationBarView.xib */; };
 		BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4DC1F444E3700C082C3 /* HeightNavigationBar.m */; };
 		BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */; };
+		BBAA81A21F4DEF2800482A8A /* UserSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAA81A01F4DEF2800482A8A /* UserSessionViewController.m */; };
+		BBAA81A31F4DEF2800482A8A /* UserSessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBAA81A11F4DEF2800482A8A /* UserSessionViewController.xib */; };
 		BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C471F49E718007A3B5C /* NavigationBarTitleView.m */; };
 		BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */; };
 		BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */; };
@@ -223,6 +225,9 @@
 		BB4FD4DB1F444E3700C082C3 /* HeightNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeightNavigationBar.h; sourceTree = "<group>"; };
 		BB4FD4DC1F444E3700C082C3 /* HeightNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightNavigationBar.m; sourceTree = "<group>"; };
 		BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeightNavigationBar.xib; sourceTree = "<group>"; };
+		BBAA819F1F4DEF2800482A8A /* UserSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSessionViewController.h; sourceTree = "<group>"; };
+		BBAA81A01F4DEF2800482A8A /* UserSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSessionViewController.m; sourceTree = "<group>"; };
+		BBAA81A11F4DEF2800482A8A /* UserSessionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSessionViewController.xib; sourceTree = "<group>"; };
 		BBC07C461F49E718007A3B5C /* NavigationBarTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarTitleView.h; sourceTree = "<group>"; };
 		BBC07C471F49E718007A3B5C /* NavigationBarTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarTitleView.m; sourceTree = "<group>"; };
 		BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationBarTitleView.xib; sourceTree = "<group>"; };
@@ -595,6 +600,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBAA819E1F4DEF0300482A8A /* Demo-UserSession */,
 				BB4FD4C51F443BC100C082C3 /* Demo-Navigation-Bar */,
 				BB4FD4C21F442D1300C082C3 /* ViewController.h */,
 				BB4FD4C31F442D1300C082C3 /* ViewController.m */,
@@ -634,6 +640,16 @@
 				BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		BBAA819E1F4DEF0300482A8A /* Demo-UserSession */ = {
+			isa = PBXGroup;
+			children = (
+				BBAA819F1F4DEF2800482A8A /* UserSessionViewController.h */,
+				BBAA81A01F4DEF2800482A8A /* UserSessionViewController.m */,
+				BBAA81A11F4DEF2800482A8A /* UserSessionViewController.xib */,
+			);
+			name = "Demo-UserSession";
 			sourceTree = "<group>";
 		};
 		BBC07C451F49E6E7007A3B5C /* NavigationBarUseTitleView */ = {
@@ -761,6 +777,7 @@
 				BB4FD4BD1F442C8A00C082C3 /* OpenSans-LightItalic.ttf in Resources */,
 				BB4FD4C01F442C8A00C082C3 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				BB4FD4D01F443BC100C082C3 /* CoursesViewController.xib in Resources */,
+				BBAA81A31F4DEF2800482A8A /* UserSessionViewController.xib in Resources */,
 				BB4FD4BA1F442C8A00C082C3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				BB4FD4BE1F442C8A00C082C3 /* OpenSans-Regular.ttf in Resources */,
 				BB4FD4D21F443BC100C082C3 /* DetailCoursesViewController.xib in Resources */,
@@ -924,6 +941,7 @@
 				BB4FD4851F442AEE00C082C3 /* DbUtils.m in Sources */,
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
+				BBAA81A21F4DEF2800482A8A /* UserSessionViewController.m in Sources */,
 				BB4FD47D1F442AEE00C082C3 /* DbNavigationBarView.m in Sources */,
 				BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */,
 				BB4FD4D11F443BC100C082C3 /* DetailCoursesViewController.m in Sources */,
