@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "PathsViewController.h"
 #import "UserSessionViewController.h"
+#import "ExpandLayoutViewController.h"
 
 //#import "UINavigationController+Utils.h"
 //
@@ -48,7 +49,8 @@
     [super viewWillAppear:animated];
     
 //    PathsViewController *vcFirst = [[PathsViewController alloc] init];
-    UserSessionViewController *vcFirst = [[UserSessionViewController alloc] init];
+//    UserSessionViewController *vcFirst = [[UserSessionViewController alloc] init];
+    ExpandLayoutViewController *vcFirst = [[ExpandLayoutViewController alloc] init];
     [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:NO];
 }

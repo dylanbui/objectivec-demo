@@ -79,8 +79,10 @@
 		BB4FD4DA1F443FEE00C082C3 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4D81F443FEE00C082C3 /* NavigationBarView.xib */; };
 		BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4DC1F444E3700C082C3 /* HeightNavigationBar.m */; };
 		BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */; };
-		BBAA81A21F4DEF2800482A8A /* UserSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAA81A01F4DEF2800482A8A /* UserSessionViewController.m */; };
-		BBAA81A31F4DEF2800482A8A /* UserSessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBAA81A11F4DEF2800482A8A /* UserSessionViewController.xib */; };
+		BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */; };
+		BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */; };
+		BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */; };
+		BB999CFB1F4F4F3D00B29FDE /* UserSessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF91F4F4F3D00B29FDE /* UserSessionViewController.xib */; };
 		BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C471F49E718007A3B5C /* NavigationBarTitleView.m */; };
 		BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */; };
 		BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */; };
@@ -225,9 +227,12 @@
 		BB4FD4DB1F444E3700C082C3 /* HeightNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeightNavigationBar.h; sourceTree = "<group>"; };
 		BB4FD4DC1F444E3700C082C3 /* HeightNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightNavigationBar.m; sourceTree = "<group>"; };
 		BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeightNavigationBar.xib; sourceTree = "<group>"; };
-		BBAA819F1F4DEF2800482A8A /* UserSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSessionViewController.h; sourceTree = "<group>"; };
-		BBAA81A01F4DEF2800482A8A /* UserSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSessionViewController.m; sourceTree = "<group>"; };
-		BBAA81A11F4DEF2800482A8A /* UserSessionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSessionViewController.xib; sourceTree = "<group>"; };
+		BB999CF11F4F4F2C00B29FDE /* ExpandLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpandLayoutViewController.h; path = "Demo-Expand-Layout/ExpandLayoutViewController.h"; sourceTree = "<group>"; };
+		BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpandLayoutViewController.m; path = "Demo-Expand-Layout/ExpandLayoutViewController.m"; sourceTree = "<group>"; };
+		BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpandLayoutViewController.xib; path = "Demo-Expand-Layout/ExpandLayoutViewController.xib"; sourceTree = "<group>"; };
+		BB999CF71F4F4F3D00B29FDE /* UserSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSessionViewController.h; sourceTree = "<group>"; };
+		BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSessionViewController.m; sourceTree = "<group>"; };
+		BB999CF91F4F4F3D00B29FDE /* UserSessionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSessionViewController.xib; sourceTree = "<group>"; };
 		BBC07C461F49E718007A3B5C /* NavigationBarTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarTitleView.h; sourceTree = "<group>"; };
 		BBC07C471F49E718007A3B5C /* NavigationBarTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarTitleView.m; sourceTree = "<group>"; };
 		BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationBarTitleView.xib; sourceTree = "<group>"; };
@@ -600,7 +605,8 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BBAA819E1F4DEF0300482A8A /* Demo-UserSession */,
+				BB999CF61F4F4F3D00B29FDE /* Demo-User-Session */,
+				BB999CF01F4F4F2200B29FDE /* Demo-Expand-Layout */,
 				BB4FD4C51F443BC100C082C3 /* Demo-Navigation-Bar */,
 				BB4FD4C21F442D1300C082C3 /* ViewController.h */,
 				BB4FD4C31F442D1300C082C3 /* ViewController.m */,
@@ -642,14 +648,24 @@
 			path = NavigationBar;
 			sourceTree = "<group>";
 		};
-		BBAA819E1F4DEF0300482A8A /* Demo-UserSession */ = {
+		BB999CF01F4F4F2200B29FDE /* Demo-Expand-Layout */ = {
 			isa = PBXGroup;
 			children = (
-				BBAA819F1F4DEF2800482A8A /* UserSessionViewController.h */,
-				BBAA81A01F4DEF2800482A8A /* UserSessionViewController.m */,
-				BBAA81A11F4DEF2800482A8A /* UserSessionViewController.xib */,
+				BB999CF11F4F4F2C00B29FDE /* ExpandLayoutViewController.h */,
+				BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */,
+				BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */,
 			);
-			name = "Demo-UserSession";
+			name = "Demo-Expand-Layout";
+			sourceTree = "<group>";
+		};
+		BB999CF61F4F4F3D00B29FDE /* Demo-User-Session */ = {
+			isa = PBXGroup;
+			children = (
+				BB999CF71F4F4F3D00B29FDE /* UserSessionViewController.h */,
+				BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */,
+				BB999CF91F4F4F3D00B29FDE /* UserSessionViewController.xib */,
+			);
+			path = "Demo-User-Session";
 			sourceTree = "<group>";
 		};
 		BBC07C451F49E6E7007A3B5C /* NavigationBarUseTitleView */ = {
@@ -769,6 +785,7 @@
 				BB4FD3C91F4429E200C082C3 /* LaunchScreen.storyboard in Resources */,
 				BB4FD4BF1F442C8A00C082C3 /* OpenSans-Semibold.ttf in Resources */,
 				BB4FD4BC1F442C8A00C082C3 /* OpenSans-Light.ttf in Resources */,
+				BB999CFB1F4F4F3D00B29FDE /* UserSessionViewController.xib in Resources */,
 				BB4FD4A01F442AEE00C082C3 /* ic_show_password.png in Resources */,
 				BB4FD3C61F4429E200C082C3 /* Assets.xcassets in Resources */,
 				BB4FD48E1F442AEE00C082C3 /* apnumberpad_backspace_icon@2x.png in Resources */,
@@ -777,9 +794,9 @@
 				BB4FD4BD1F442C8A00C082C3 /* OpenSans-LightItalic.ttf in Resources */,
 				BB4FD4C01F442C8A00C082C3 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				BB4FD4D01F443BC100C082C3 /* CoursesViewController.xib in Resources */,
-				BBAA81A31F4DEF2800482A8A /* UserSessionViewController.xib in Resources */,
 				BB4FD4BA1F442C8A00C082C3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				BB4FD4BE1F442C8A00C082C3 /* OpenSans-Regular.ttf in Resources */,
+				BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */,
 				BB4FD4D21F443BC100C082C3 /* DetailCoursesViewController.xib in Resources */,
 				BB4FD4D41F443BC100C082C3 /* PathsViewController.xib in Resources */,
 				BB4FD4A11F442AEE00C082C3 /* ic_show_password@2x.png in Resources */,
@@ -926,6 +943,7 @@
 				BB4FD49A1F442AEE00C082C3 /* SYPhotoBrowser.m in Sources */,
 				BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */,
 				BB4FD49D1F442AEE00C082C3 /* UIImage+Resize.m in Sources */,
+				BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */,
 				BB4FD4D31F443BC100C082C3 /* PathsViewController.m in Sources */,
 				BB4FD4A71F442B4D00C082C3 /* RootViewController.m in Sources */,
 				BB4FD4931F442AEE00C082C3 /* NSBundle+APNumberPad.m in Sources */,
@@ -933,6 +951,7 @@
 				BB4FD48B1F442AEE00C082C3 /* ActivityIndicatorButton.m in Sources */,
 				BB4FD4991F442AEE00C082C3 /* HHSlideView.m in Sources */,
 				BB4FD4971F442AEE00C082C3 /* DACircularProgressView.m in Sources */,
+				BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */,
 				BB4FD4831F442AEE00C082C3 /* DbAppSession.m in Sources */,
 				BB4FD48A1F442AEE00C082C3 /* DbWebConnection.m in Sources */,
 				BB4FD4A21F442AEE00C082C3 /* UITextField+PasswordField.m in Sources */,
@@ -941,7 +960,6 @@
 				BB4FD4851F442AEE00C082C3 /* DbUtils.m in Sources */,
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
-				BBAA81A21F4DEF2800482A8A /* UserSessionViewController.m in Sources */,
 				BB4FD47D1F442AEE00C082C3 /* DbNavigationBarView.m in Sources */,
 				BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */,
 				BB4FD4D11F443BC100C082C3 /* DetailCoursesViewController.m in Sources */,
