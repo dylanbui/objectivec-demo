@@ -7,14 +7,18 @@
 //
 
 #import "ExpandLayoutViewController.h"
+#import "MaterialDesignSymbol.h"
+
 //#import "ThridViewController.h"
 //#import "OPCustomNavigationController.h"
 
 @interface ExpandLayoutViewController ()
-
-@property (weak, nonatomic) IBOutlet UIView *viewContainer;
-@property (weak, nonatomic) IBOutlet UILabel *lbl_1;
-@property (weak, nonatomic) IBOutlet UILabel *lbl_2;
+    
+    @property (weak, nonatomic) IBOutlet UIView *viewContainer;
+    @property (weak, nonatomic) IBOutlet UILabel *lbl_1;
+    @property (weak, nonatomic) IBOutlet UILabel *lbl_2;
+    @property (weak, nonatomic) IBOutlet UIImageView *imgIcon;
+    @property (weak, nonatomic) IBOutlet UIButton *btnIcon;
 
 @end
 
@@ -26,6 +30,22 @@
     // Do any additional setup after loading the view from its nib.
     
     self.navigationItem.title = @"ExpandLayoutViewController";
+    
+    MaterialDesignSymbol *symbol = [MaterialDesignSymbol iconWithCode:MaterialDesignIconCode.accountBox24px fontSize:40.f];
+    [symbol addAttribute:NSForegroundColorAttributeName value:[UIColor redColor]];
+    [_imgIcon setImage:[symbol image]];
+//    [_imgIcon setImage:[symbol imageWithSize:CGSizeMake(30, 30)]];
+    
+    //UIImage *image = [symbol image];
+    // UIImage *image = [symbol imageWithSize:CGSizeMake(30, 30)];
+    
+    
+    // UIButton *button = [[UIButton alloc] init];
+    // UIImage *closeImage = [[UIImage imageNamed:@"ic_card_giftcard.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    //button.tintColor = [UIColor colorWithWhite:0 alpha:0.54f];
+    // _btnIcon.tintColor = [UIColor blueColor];
+    [_btnIcon setImage:[symbol image] forState:UIControlStateNormal];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated

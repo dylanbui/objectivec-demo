@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpandLayoutViewController">
             <connections>
+                <outlet property="btnIcon" destination="jTE-1x-GzA" id="X7S-Wv-n8J"/>
+                <outlet property="imgIcon" destination="moN-WC-1uR" id="SWE-w9-SvI"/>
                 <outlet property="lbl_1" destination="OT8-Em-1Zn" id="QiN-JN-lat"/>
                 <outlet property="lbl_2" destination="6Yy-cQ-TJQ" id="7VW-hF-cuE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -32,7 +34,7 @@
                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="63" id="FvU-7w-06z"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="gN1-AB-ank"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -79,6 +81,16 @@
                         <action selector="button_click:" destination="-1" eventType="touchUpInside" id="iVh-r7-whn"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="moN-WC-1uR">
+                    <rect key="frame" x="172" y="328" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTE-1x-GzA">
+                    <rect key="frame" x="162" y="384" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <state key="normal" image="ic_card_giftcard"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -91,4 +103,7 @@
             <point key="canvasLocation" x="26.5" y="51.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_card_giftcard" width="24" height="24"/>
+    </resources>
 </document>
