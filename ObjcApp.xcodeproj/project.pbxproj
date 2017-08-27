@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		9120E771807AB7030C9F4283 /* Pods_ObjcApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D62C3C09D877F7693306C71 /* Pods_ObjcApp.framework */; };
+		BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC901F51DE330005372B /* TableExpandCellViewController.m */; };
+		BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */; };
+		BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC951F51DE850005372B /* ExpandViewCell.m */; };
+		BB25FC981F51DE850005372B /* ExpandViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC961F51DE850005372B /* ExpandViewCell.xib */; };
+		BB25FC9A1F51DFC20005372B /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC991F51DFC20005372B /* artists.json */; };
+		BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC9E1F51F46C0005372B /* ExpandTypeTwoCell.m */; };
+		BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */; };
 		BB4FD3BB1F4429E200C082C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3BA1F4429E200C082C3 /* main.m */; };
 		BB4FD3BE1F4429E200C082C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3BD1F4429E200C082C3 /* AppDelegate.m */; };
 		BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD3C21F4429E200C082C3 /* Main.storyboard */; };
@@ -79,6 +86,8 @@
 		BB4FD4DA1F443FEE00C082C3 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4D81F443FEE00C082C3 /* NavigationBarView.xib */; };
 		BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4DC1F444E3700C082C3 /* HeightNavigationBar.m */; };
 		BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */; };
+		BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDD941F5329B60009AFDC /* ScrollViewFormViewController.m */; };
+		BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */; };
 		BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */; };
 		BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */; };
 		BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */; };
@@ -105,6 +114,16 @@
 		337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjcAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D62C3C09D877F7693306C71 /* Pods_ObjcApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjcApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		806131BC8A1DA902FB1E7935 /* Pods-ObjcAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcAppTests/Pods-ObjcAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		BB25FC8F1F51DE330005372B /* TableExpandCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableExpandCellViewController.h; sourceTree = "<group>"; };
+		BB25FC901F51DE330005372B /* TableExpandCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableExpandCellViewController.m; sourceTree = "<group>"; };
+		BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableExpandCellViewController.xib; sourceTree = "<group>"; };
+		BB25FC941F51DE850005372B /* ExpandViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandViewCell.h; sourceTree = "<group>"; };
+		BB25FC951F51DE850005372B /* ExpandViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandViewCell.m; sourceTree = "<group>"; };
+		BB25FC961F51DE850005372B /* ExpandViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandViewCell.xib; sourceTree = "<group>"; };
+		BB25FC991F51DFC20005372B /* artists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = artists.json; sourceTree = "<group>"; };
+		BB25FC9D1F51F46C0005372B /* ExpandTypeTwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandTypeTwoCell.h; sourceTree = "<group>"; };
+		BB25FC9E1F51F46C0005372B /* ExpandTypeTwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandTypeTwoCell.m; sourceTree = "<group>"; };
+		BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandTypeTwoCell.xib; sourceTree = "<group>"; };
 		BB4FD3B61F4429E200C082C3 /* ObjcApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjcApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4FD3BA1F4429E200C082C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BB4FD3BC1F4429E200C082C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -227,6 +246,9 @@
 		BB4FD4DB1F444E3700C082C3 /* HeightNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeightNavigationBar.h; sourceTree = "<group>"; };
 		BB4FD4DC1F444E3700C082C3 /* HeightNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightNavigationBar.m; sourceTree = "<group>"; };
 		BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeightNavigationBar.xib; sourceTree = "<group>"; };
+		BB5DDD931F5329B60009AFDC /* ScrollViewFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewFormViewController.h; sourceTree = "<group>"; };
+		BB5DDD941F5329B60009AFDC /* ScrollViewFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewFormViewController.m; sourceTree = "<group>"; };
+		BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollViewFormViewController.xib; sourceTree = "<group>"; };
 		BB999CF11F4F4F2C00B29FDE /* ExpandLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpandLayoutViewController.h; path = "Demo-Expand-Layout/ExpandLayoutViewController.h"; sourceTree = "<group>"; };
 		BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpandLayoutViewController.m; path = "Demo-Expand-Layout/ExpandLayoutViewController.m"; sourceTree = "<group>"; };
 		BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpandLayoutViewController.xib; path = "Demo-Expand-Layout/ExpandLayoutViewController.xib"; sourceTree = "<group>"; };
@@ -270,6 +292,46 @@
 				337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB25FC8D1F51DE090005372B /* Demo-TableView */ = {
+			isa = PBXGroup;
+			children = (
+				BB25FC8E1F51DE090005372B /* TableCell */,
+				BB25FC8F1F51DE330005372B /* TableExpandCellViewController.h */,
+				BB25FC901F51DE330005372B /* TableExpandCellViewController.m */,
+				BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */,
+			);
+			path = "Demo-TableView";
+			sourceTree = "<group>";
+		};
+		BB25FC8E1F51DE090005372B /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB25FC9C1F51F4440005372B /* ExpandTypeTwo */,
+				BB25FC9B1F51F42B0005372B /* ExpandTypeOne */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		BB25FC9B1F51F42B0005372B /* ExpandTypeOne */ = {
+			isa = PBXGroup;
+			children = (
+				BB25FC941F51DE850005372B /* ExpandViewCell.h */,
+				BB25FC951F51DE850005372B /* ExpandViewCell.m */,
+				BB25FC961F51DE850005372B /* ExpandViewCell.xib */,
+			);
+			name = ExpandTypeOne;
+			sourceTree = "<group>";
+		};
+		BB25FC9C1F51F4440005372B /* ExpandTypeTwo */ = {
+			isa = PBXGroup;
+			children = (
+				BB25FC9D1F51F46C0005372B /* ExpandTypeTwoCell.h */,
+				BB25FC9E1F51F46C0005372B /* ExpandTypeTwoCell.m */,
+				BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */,
+			);
+			name = ExpandTypeTwo;
 			sourceTree = "<group>";
 		};
 		BB4FD3AD1F4429E200C082C3 = {
@@ -571,6 +633,7 @@
 		BB4FD4A81F442C8A00C082C3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB25FC991F51DFC20005372B /* artists.json */,
 				BB4FD4A91F442C8A00C082C3 /* Fonts */,
 				BB4FD4B51F442C8A00C082C3 /* Images */,
 			);
@@ -605,6 +668,8 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB5DDD921F5329950009AFDC /* Demo-ScrollView */,
+				BB25FC8D1F51DE090005372B /* Demo-TableView */,
 				BB999CF61F4F4F3D00B29FDE /* Demo-User-Session */,
 				BB999CF01F4F4F2200B29FDE /* Demo-Expand-Layout */,
 				BB4FD4C51F443BC100C082C3 /* Demo-Navigation-Bar */,
@@ -646,6 +711,16 @@
 				BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		BB5DDD921F5329950009AFDC /* Demo-ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				BB5DDD931F5329B60009AFDC /* ScrollViewFormViewController.h */,
+				BB5DDD941F5329B60009AFDC /* ScrollViewFormViewController.m */,
+				BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */,
+			);
+			path = "Demo-ScrollView";
 			sourceTree = "<group>";
 		};
 		BB999CF01F4F4F2200B29FDE /* Demo-Expand-Layout */ = {
@@ -781,6 +856,7 @@
 			files = (
 				BB4FD48D1F442AEE00C082C3 /* apnumberpad_backspace_icon.png in Resources */,
 				BB4FD4B61F442C8A00C082C3 /* FontAwesome.ttf in Resources */,
+				BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */,
 				BB4FD4B71F442C8A00C082C3 /* OpenSans-Bold.ttf in Resources */,
 				BB4FD3C91F4429E200C082C3 /* LaunchScreen.storyboard in Resources */,
 				BB4FD4BF1F442C8A00C082C3 /* OpenSans-Semibold.ttf in Resources */,
@@ -795,12 +871,15 @@
 				BB4FD4C01F442C8A00C082C3 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				BB4FD4D01F443BC100C082C3 /* CoursesViewController.xib in Resources */,
 				BB4FD4BA1F442C8A00C082C3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				BB25FC9A1F51DFC20005372B /* artists.json in Resources */,
+				BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */,
 				BB4FD4BE1F442C8A00C082C3 /* OpenSans-Regular.ttf in Resources */,
 				BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */,
 				BB4FD4D21F443BC100C082C3 /* DetailCoursesViewController.xib in Resources */,
 				BB4FD4D41F443BC100C082C3 /* PathsViewController.xib in Resources */,
 				BB4FD4A11F442AEE00C082C3 /* ic_show_password@2x.png in Resources */,
 				BB4FD4BB1F442C8A00C082C3 /* OpenSans-Italic.ttf in Resources */,
+				BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */,
 				BB4FD4B81F442C8A00C082C3 /* OpenSans-BoldItalic.ttf in Resources */,
 				BB4FD4B91F442C8A00C082C3 /* OpenSans-ExtraBold.ttf in Resources */,
 				BB4FD49E1F442AEE00C082C3 /* ic_hide_password.png in Resources */,
@@ -808,6 +887,7 @@
 				BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */,
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
 				BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */,
+				BB25FC981F51DE850005372B /* ExpandViewCell.xib in Resources */,
 				BB4FD49F1F442AEE00C082C3 /* ic_hide_password@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -920,11 +1000,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB4FD48C1F442AEE00C082C3 /* UIButton+Activity.m in Sources */,
+				BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */,
 				BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */,
 				BB4FD4821F442AEE00C082C3 /* DbViewFromXib.m in Sources */,
 				BB4FD4841F442AEE00C082C3 /* DateTimeUtil.m in Sources */,
 				BB4FD4911F442AEE00C082C3 /* APNumberPad.m in Sources */,
 				BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */,
+				BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */,
 				BB4FD47F1F442AEE00C082C3 /* DbPopupView.m in Sources */,
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
 				BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */,
@@ -947,6 +1029,7 @@
 				BB4FD4D31F443BC100C082C3 /* PathsViewController.m in Sources */,
 				BB4FD4A71F442B4D00C082C3 /* RootViewController.m in Sources */,
 				BB4FD4931F442AEE00C082C3 /* NSBundle+APNumberPad.m in Sources */,
+				BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */,
 				BB4FD3BE1F4429E200C082C3 /* AppDelegate.m in Sources */,
 				BB4FD48B1F442AEE00C082C3 /* ActivityIndicatorButton.m in Sources */,
 				BB4FD4991F442AEE00C082C3 /* HHSlideView.m in Sources */,
@@ -957,6 +1040,7 @@
 				BB4FD4A21F442AEE00C082C3 /* UITextField+PasswordField.m in Sources */,
 				BB4FD4921F442AEE00C082C3 /* APNumberPadDefaultStyle.m in Sources */,
 				BB4FD49C1F442AEE00C082C3 /* SYPhotoViewController.m in Sources */,
+				BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */,
 				BB4FD4851F442AEE00C082C3 /* DbUtils.m in Sources */,
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
