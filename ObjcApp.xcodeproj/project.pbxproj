@@ -88,6 +88,14 @@
 		BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */; };
 		BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDD941F5329B60009AFDC /* ScrollViewFormViewController.m */; };
 		BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */; };
+		BB5DDD9C1F5330590009AFDC /* DetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDD9A1F5330590009AFDC /* DetailTaskViewController.m */; };
+		BB5DDD9D1F5330590009AFDC /* DetailTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDD9B1F5330590009AFDC /* DetailTaskViewController.xib */; };
+		BB5DDDA71F5331C80009AFDC /* DetailTaskContactInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDDA51F5331C80009AFDC /* DetailTaskContactInfoCell.m */; };
+		BB5DDDA81F5331C80009AFDC /* DetailTaskContactInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDDA61F5331C80009AFDC /* DetailTaskContactInfoCell.xib */; };
+		BB5DDDAC1F5331ED0009AFDC /* DetailTaskInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDDAA1F5331ED0009AFDC /* DetailTaskInfoCell.m */; };
+		BB5DDDAD1F5331ED0009AFDC /* DetailTaskInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDDAB1F5331ED0009AFDC /* DetailTaskInfoCell.xib */; };
+		BB5DDDB11F5332870009AFDC /* DetailTaskFeeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDDAF1F5332870009AFDC /* DetailTaskFeeCell.m */; };
+		BB5DDDB21F5332870009AFDC /* DetailTaskFeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDDB01F5332870009AFDC /* DetailTaskFeeCell.xib */; };
 		BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */; };
 		BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */; };
 		BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */; };
@@ -249,6 +257,18 @@
 		BB5DDD931F5329B60009AFDC /* ScrollViewFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewFormViewController.h; sourceTree = "<group>"; };
 		BB5DDD941F5329B60009AFDC /* ScrollViewFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewFormViewController.m; sourceTree = "<group>"; };
 		BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollViewFormViewController.xib; sourceTree = "<group>"; };
+		BB5DDD991F5330590009AFDC /* DetailTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTaskViewController.h; sourceTree = "<group>"; };
+		BB5DDD9A1F5330590009AFDC /* DetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskViewController.m; sourceTree = "<group>"; };
+		BB5DDD9B1F5330590009AFDC /* DetailTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTaskViewController.xib; sourceTree = "<group>"; };
+		BB5DDDA41F5331C80009AFDC /* DetailTaskContactInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTaskContactInfoCell.h; sourceTree = "<group>"; };
+		BB5DDDA51F5331C80009AFDC /* DetailTaskContactInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskContactInfoCell.m; sourceTree = "<group>"; };
+		BB5DDDA61F5331C80009AFDC /* DetailTaskContactInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTaskContactInfoCell.xib; sourceTree = "<group>"; };
+		BB5DDDA91F5331ED0009AFDC /* DetailTaskInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTaskInfoCell.h; sourceTree = "<group>"; };
+		BB5DDDAA1F5331ED0009AFDC /* DetailTaskInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskInfoCell.m; sourceTree = "<group>"; };
+		BB5DDDAB1F5331ED0009AFDC /* DetailTaskInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTaskInfoCell.xib; sourceTree = "<group>"; };
+		BB5DDDAE1F5332870009AFDC /* DetailTaskFeeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTaskFeeCell.h; sourceTree = "<group>"; };
+		BB5DDDAF1F5332870009AFDC /* DetailTaskFeeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskFeeCell.m; sourceTree = "<group>"; };
+		BB5DDDB01F5332870009AFDC /* DetailTaskFeeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTaskFeeCell.xib; sourceTree = "<group>"; };
 		BB999CF11F4F4F2C00B29FDE /* ExpandLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpandLayoutViewController.h; path = "Demo-Expand-Layout/ExpandLayoutViewController.h"; sourceTree = "<group>"; };
 		BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpandLayoutViewController.m; path = "Demo-Expand-Layout/ExpandLayoutViewController.m"; sourceTree = "<group>"; };
 		BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpandLayoutViewController.xib; path = "Demo-Expand-Layout/ExpandLayoutViewController.xib"; sourceTree = "<group>"; };
@@ -668,6 +688,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB5DDD981F5330330009AFDC /* DetailTaskViewController */,
 				BB5DDD921F5329950009AFDC /* Demo-ScrollView */,
 				BB25FC8D1F51DE090005372B /* Demo-TableView */,
 				BB999CF61F4F4F3D00B29FDE /* Demo-User-Session */,
@@ -721,6 +742,33 @@
 				BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */,
 			);
 			path = "Demo-ScrollView";
+			sourceTree = "<group>";
+		};
+		BB5DDD981F5330330009AFDC /* DetailTaskViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BB5DDD9E1F53312A0009AFDC /* TableCell */,
+				BB5DDD991F5330590009AFDC /* DetailTaskViewController.h */,
+				BB5DDD9A1F5330590009AFDC /* DetailTaskViewController.m */,
+				BB5DDD9B1F5330590009AFDC /* DetailTaskViewController.xib */,
+			);
+			name = DetailTaskViewController;
+			sourceTree = "<group>";
+		};
+		BB5DDD9E1F53312A0009AFDC /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB5DDDA91F5331ED0009AFDC /* DetailTaskInfoCell.h */,
+				BB5DDDAA1F5331ED0009AFDC /* DetailTaskInfoCell.m */,
+				BB5DDDAB1F5331ED0009AFDC /* DetailTaskInfoCell.xib */,
+				BB5DDDA41F5331C80009AFDC /* DetailTaskContactInfoCell.h */,
+				BB5DDDA51F5331C80009AFDC /* DetailTaskContactInfoCell.m */,
+				BB5DDDA61F5331C80009AFDC /* DetailTaskContactInfoCell.xib */,
+				BB5DDDAE1F5332870009AFDC /* DetailTaskFeeCell.h */,
+				BB5DDDAF1F5332870009AFDC /* DetailTaskFeeCell.m */,
+				BB5DDDB01F5332870009AFDC /* DetailTaskFeeCell.xib */,
+			);
+			name = TableCell;
 			sourceTree = "<group>";
 		};
 		BB999CF01F4F4F2200B29FDE /* Demo-Expand-Layout */ = {
@@ -856,6 +904,8 @@
 			files = (
 				BB4FD48D1F442AEE00C082C3 /* apnumberpad_backspace_icon.png in Resources */,
 				BB4FD4B61F442C8A00C082C3 /* FontAwesome.ttf in Resources */,
+				BB5DDD9D1F5330590009AFDC /* DetailTaskViewController.xib in Resources */,
+				BB5DDDAD1F5331ED0009AFDC /* DetailTaskInfoCell.xib in Resources */,
 				BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */,
 				BB4FD4B71F442C8A00C082C3 /* OpenSans-Bold.ttf in Resources */,
 				BB4FD3C91F4429E200C082C3 /* LaunchScreen.storyboard in Resources */,
@@ -872,6 +922,7 @@
 				BB4FD4D01F443BC100C082C3 /* CoursesViewController.xib in Resources */,
 				BB4FD4BA1F442C8A00C082C3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				BB25FC9A1F51DFC20005372B /* artists.json in Resources */,
+				BB5DDDA81F5331C80009AFDC /* DetailTaskContactInfoCell.xib in Resources */,
 				BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */,
 				BB4FD4BE1F442C8A00C082C3 /* OpenSans-Regular.ttf in Resources */,
 				BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */,
@@ -881,6 +932,7 @@
 				BB4FD4BB1F442C8A00C082C3 /* OpenSans-Italic.ttf in Resources */,
 				BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */,
 				BB4FD4B81F442C8A00C082C3 /* OpenSans-BoldItalic.ttf in Resources */,
+				BB5DDDB21F5332870009AFDC /* DetailTaskFeeCell.xib in Resources */,
 				BB4FD4B91F442C8A00C082C3 /* OpenSans-ExtraBold.ttf in Resources */,
 				BB4FD49E1F442AEE00C082C3 /* ic_hide_password.png in Resources */,
 				BB4FD48F1F442AEE00C082C3 /* apnumberpad_backspace_icon@3x.png in Resources */,
@@ -1010,6 +1062,8 @@
 				BB4FD47F1F442AEE00C082C3 /* DbPopupView.m in Sources */,
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
 				BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */,
+				BB5DDDAC1F5331ED0009AFDC /* DetailTaskInfoCell.m in Sources */,
+				BB5DDDB11F5332870009AFDC /* DetailTaskFeeCell.m in Sources */,
 				BB4FD4861F442AEE00C082C3 /* NSObject+Json.m in Sources */,
 				BB4FD4901F442AEE00C082C3 /* APNumberButton.m in Sources */,
 				BB4FD4721F442AEE00C082C3 /* NSObject+PropzyApi.m in Sources */,
@@ -1026,6 +1080,7 @@
 				BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */,
 				BB4FD49D1F442AEE00C082C3 /* UIImage+Resize.m in Sources */,
 				BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */,
+				BB5DDDA71F5331C80009AFDC /* DetailTaskContactInfoCell.m in Sources */,
 				BB4FD4D31F443BC100C082C3 /* PathsViewController.m in Sources */,
 				BB4FD4A71F442B4D00C082C3 /* RootViewController.m in Sources */,
 				BB4FD4931F442AEE00C082C3 /* NSBundle+APNumberPad.m in Sources */,
@@ -1039,6 +1094,7 @@
 				BB4FD48A1F442AEE00C082C3 /* DbWebConnection.m in Sources */,
 				BB4FD4A21F442AEE00C082C3 /* UITextField+PasswordField.m in Sources */,
 				BB4FD4921F442AEE00C082C3 /* APNumberPadDefaultStyle.m in Sources */,
+				BB5DDD9C1F5330590009AFDC /* DetailTaskViewController.m in Sources */,
 				BB4FD49C1F442AEE00C082C3 /* SYPhotoViewController.m in Sources */,
 				BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */,
 				BB4FD4851F442AEE00C082C3 /* DbUtils.m in Sources */,

@@ -14,6 +14,8 @@
 
 #import "TableExpandCellViewController.h"
 
+#import "DetailTaskViewController.h"
+
 //#import "UINavigationController+Utils.h"
 //
 //#import "LoginViewController.h"
@@ -55,7 +57,8 @@
 //    UserSessionViewController *vcFirst = [[UserSessionViewController alloc] init];
 //    ExpandLayoutViewController *vcFirst = [[ExpandLayoutViewController alloc] init];
 //    TableExpandCellViewController *vcFirst = [[TableExpandCellViewController alloc] init];
-    ScrollViewFormViewController *vcFirst = [[ScrollViewFormViewController alloc] init];
+//    ScrollViewFormViewController *vcFirst = [[ScrollViewFormViewController alloc] init];
+    DetailTaskViewController *vcFirst = [[DetailTaskViewController alloc] init];
     [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:NO];
 }
