@@ -24,6 +24,10 @@ target 'ObjcApp' do
     #pod 'FontAwesomeKit', '2.2.1'
     # pod 'GoogleMaterialIconFont', '0.5.0'
     
+    #pod 'GoogleMaterialIconFont', '0.5.0'
+    pod 'MaterialDesignSymbolObjC', '1.3'
+    pod 'DLRadioButton', '1.4.9'
+    
     # Objective-C
     pod 'ISMessages', '1.2'
     # pod 'MMDrawerController', '0.5.7'
@@ -53,7 +57,6 @@ target 'ObjcApp' do
     pod 'TOCropViewController', '2.0.12' # Use cropviewcontroller with DKImagePickerController
     # Changed. Custom DKImagePickerController add new field "autoDismissViewController"
     pod 'DKImagePickerController', '3.5.5'
-
 
 
 

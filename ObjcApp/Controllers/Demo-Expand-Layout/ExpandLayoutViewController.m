@@ -7,14 +7,25 @@
 //
 
 #import "ExpandLayoutViewController.h"
+#import "MaterialDesignSymbol.h"
+
 //#import "ThridViewController.h"
 //#import "OPCustomNavigationController.h"
 
 @interface ExpandLayoutViewController ()
+    
 
 @property (weak, nonatomic) IBOutlet UIView *viewContainer;
+
 @property (weak, nonatomic) IBOutlet UILabel *lbl_1;
+
 @property (weak, nonatomic) IBOutlet UILabel *lbl_2;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgIcon;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnIcon;
+
+@property (weak, nonatomic) IBOutlet UIView *vwShadow;
 
 @end
 
@@ -26,6 +37,23 @@
     // Do any additional setup after loading the view from its nib.
     
     self.navigationItem.title = @"ExpandLayoutViewController";
+    
+    MaterialDesignSymbol *symbol = [MaterialDesignSymbol iconWithCode:MaterialDesignIconCode.accountBox24px fontSize:40.f];
+    [symbol addAttribute:NSForegroundColorAttributeName value:[UIColor redColor]];
+    [_imgIcon setImage:[symbol image]];
+//    [_imgIcon setImage:[symbol imageWithSize:CGSizeMake(30, 30)]];
+    
+    //UIImage *image = [symbol image];
+    // UIImage *image = [symbol imageWithSize:CGSizeMake(30, 30)];
+    
+    
+    // UIButton *button = [[UIButton alloc] init];
+    // UIImage *closeImage = [[UIImage imageNamed:@"ic_card_giftcard.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    //button.tintColor = [UIColor colorWithWhite:0 alpha:0.54f];
+    // _btnIcon.tintColor = [UIColor blueColor];
+    [_btnIcon setImage:[symbol image] forState:UIControlStateNormal];
+    
+    [self showShadow];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -89,6 +117,26 @@
     
     NSLog(@"2- lbl_1.frame = %@", NSStringFromCGRect(_lbl_1.frame));
     NSLog(@"2- viewContainer.frame = %@", NSStringFromCGRect(_viewContainer.frame));
+}
+
+
+- (void)showShadow
+{
+    // border radius
+    [self.vwShadow.layer setCornerRadius:5.0f];
+    
+    // border
+    [self.vwShadow.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    [self.vwShadow.layer setBorderWidth:0.5f];
+    
+    // drop shadow
+    [self.vwShadow.layer setShadowColor:[UIColor blackColor].CGColor];
+    [self.vwShadow.layer setShadowOpacity:0.2];
+    [self.vwShadow.layer setShadowRadius:2.0];
+    [self.vwShadow.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
+    [self.vwShadow.layer setShadowOffset:CGSizeMake(0, 0)];
+
+
 }
 
 @end
