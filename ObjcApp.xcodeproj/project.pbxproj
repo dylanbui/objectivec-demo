@@ -104,6 +104,8 @@
 		BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */; };
 		BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */; };
 		BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */; };
+		BBF2E8C71F548ED800064035 /* TaskTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */; };
+		BBF2E8C81F548ED800064035 /* TaskTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */; };
 		D0D67C566CFEB09749ADFD21 /* Pods_ObjcAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -281,6 +283,9 @@
 		BBC07C4B1F4A00B7007A3B5C /* DetailPathsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPathsViewController.h; sourceTree = "<group>"; };
 		BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPathsViewController.m; sourceTree = "<group>"; };
 		BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPathsViewController.xib; sourceTree = "<group>"; };
+		BBF2E8C41F548ED800064035 /* TaskTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskTableViewHeader.h; path = "Demo-Expand-Layout/TaskTableViewHeader.h"; sourceTree = "<group>"; };
+		BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskTableViewHeader.m; path = "Demo-Expand-Layout/TaskTableViewHeader.m"; sourceTree = "<group>"; };
+		BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskTableViewHeader.xib; path = "Demo-Expand-Layout/TaskTableViewHeader.xib"; sourceTree = "<group>"; };
 		CF0433C27A628AE212F55DBF /* Pods-ObjcApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcApp/Pods-ObjcApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D2C1CC5C4A722D440973BCC1 /* Pods-ObjcApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcApp/Pods-ObjcApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -774,6 +779,7 @@
 		BB999CF01F4F4F2200B29FDE /* Demo-Expand-Layout */ = {
 			isa = PBXGroup;
 			children = (
+				BBF2E8C31F548ECE00064035 /* TaskTableViewHeader */,
 				BB999CF11F4F4F2C00B29FDE /* ExpandLayoutViewController.h */,
 				BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */,
 				BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */,
@@ -799,6 +805,16 @@
 				BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */,
 			);
 			name = NavigationBarUseTitleView;
+			sourceTree = "<group>";
+		};
+		BBF2E8C31F548ECE00064035 /* TaskTableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				BBF2E8C41F548ED800064035 /* TaskTableViewHeader.h */,
+				BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */,
+				BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */,
+			);
+			name = TaskTableViewHeader;
 			sourceTree = "<group>";
 		};
 		FC67C540BC7131A23EBD8755 /* Pods */ = {
@@ -941,6 +957,7 @@
 				BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */,
 				BB25FC981F51DE850005372B /* ExpandViewCell.xib in Resources */,
 				BB4FD49F1F442AEE00C082C3 /* ic_hide_password@2x.png in Resources */,
+				BBF2E8C81F548ED800064035 /* TaskTableViewHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1102,6 +1119,7 @@
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
 				BB4FD47D1F442AEE00C082C3 /* DbNavigationBarView.m in Sources */,
 				BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */,
+				BBF2E8C71F548ED800064035 /* TaskTableViewHeader.m in Sources */,
 				BB4FD4D11F443BC100C082C3 /* DetailCoursesViewController.m in Sources */,
 				BB4FD4891F442AEE00C082C3 /* DbResponseObject.m in Sources */,
 				BB4FD4CF1F443BC100C082C3 /* CoursesViewController.m in Sources */,

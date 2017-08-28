@@ -12,6 +12,8 @@
 //#import "ThridViewController.h"
 //#import "OPCustomNavigationController.h"
 
+#import "TaskTableViewHeader.h"
+
 @interface ExpandLayoutViewController ()
     
 
@@ -26,6 +28,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnIcon;
 
 @property (weak, nonatomic) IBOutlet UIView *vwShadow;
+
+@property (weak, nonatomic) IBOutlet UIView *vwSegment;
 
 @end
 
@@ -53,7 +57,16 @@
     // _btnIcon.tintColor = [UIColor blueColor];
     [_btnIcon setImage:[symbol image] forState:UIControlStateNormal];
     
-    [self showShadow];
+
+    TaskTableViewHeader *header = [[TaskTableViewHeader alloc] init];
+    CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, self.vwSegment.frame.size.height);
+    header.frame = frame;
+    header.handleViewAction = ^(id _self, int _id, NSDictionary* _params, NSError* error){
+        
+    };
+    
+    [self.vwSegment addSubview:header];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -120,23 +133,5 @@
 }
 
 
-- (void)showShadow
-{
-    // border radius
-    [self.vwShadow.layer setCornerRadius:5.0f];
-    
-    // border
-    [self.vwShadow.layer setBorderColor:[UIColor lightGrayColor].CGColor];
-    [self.vwShadow.layer setBorderWidth:0.5f];
-    
-    // drop shadow
-    [self.vwShadow.layer setShadowColor:[UIColor blackColor].CGColor];
-    [self.vwShadow.layer setShadowOpacity:0.2];
-    [self.vwShadow.layer setShadowRadius:2.0];
-    [self.vwShadow.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
-    [self.vwShadow.layer setShadowOffset:CGSizeMake(0, 0)];
-
-
-}
 
 @end
