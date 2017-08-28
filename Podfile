@@ -21,7 +21,8 @@ target 'ObjcApp' do
     #  pod 'UIAlertController+Blocks', '0.9.2'
     #  pod 'UIAlertView+Blocks', '0.9'
     pod 'IQKeyboardManager', '4.0.9'
-    pod 'FontAwesomeKit', '2.2.1'
+    #pod 'FontAwesomeKit', '2.2.1'
+    # pod 'GoogleMaterialIconFont', '0.5.0'
     
     # Objective-C
     pod 'ISMessages', '1.2'
