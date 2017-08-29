@@ -8,6 +8,7 @@
 
 #import "ExpandLayoutViewController.h"
 #import "MaterialDesignSymbol.h"
+#import "DLRadioButton.h"
 
 //#import "ThridViewController.h"
 //#import "OPCustomNavigationController.h"
@@ -30,6 +31,8 @@
 @property (weak, nonatomic) IBOutlet UIView *vwShadow;
 
 @property (weak, nonatomic) IBOutlet UIView *vwSegment;
+
+@property (weak, nonatomic) IBOutlet DLRadioButton *btnCheckbox;
 
 @end
 
@@ -67,6 +70,13 @@
     
     [self.vwSegment addSubview:header];
     
+    [self.btnCheckbox setSelected:YES];
+    self.btnCheckbox.multipleSelectionEnabled = YES;
+//    self.btnCheckbox.animationDuration = 0.0;
+    
+    if([self.btnCheckbox isSelected]) {
+        NSLog(@"%@", @"Da chon vao checkbox");
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -91,6 +101,15 @@
 ////    NSLog(@"cons : %@",constraintArr);
 //    
 //    [_lbl_2 setText:@"Bat ngo xuat hien."];
+}
+
+- (IBAction)btnCheckbox_Click:(DLRadioButton *)sender
+{
+    if([sender isSelected]) {
+        NSLog(@"%@", @"Da chon vao checkbox");
+    } else {
+        NSLog(@"%@", @"NONE");
+    }
 }
 
 
