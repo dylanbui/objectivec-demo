@@ -104,6 +104,7 @@
 		BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */; };
 		BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */; };
 		BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */; };
+		BBE12E211F5946B200A2E611 /* DbActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE12E201F5946B200A2E611 /* DbActionView.m */; };
 		BBF2E8C71F548ED800064035 /* TaskTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */; };
 		BBF2E8C81F548ED800064035 /* TaskTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */; };
 		D0D67C566CFEB09749ADFD21 /* Pods_ObjcAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */; };
@@ -283,6 +284,8 @@
 		BBC07C4B1F4A00B7007A3B5C /* DetailPathsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPathsViewController.h; sourceTree = "<group>"; };
 		BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPathsViewController.m; sourceTree = "<group>"; };
 		BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPathsViewController.xib; sourceTree = "<group>"; };
+		BBE12E1F1F5946B200A2E611 /* DbActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbActionView.h; sourceTree = "<group>"; };
+		BBE12E201F5946B200A2E611 /* DbActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbActionView.m; sourceTree = "<group>"; };
 		BBF2E8C41F548ED800064035 /* TaskTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskTableViewHeader.h; path = "Demo-Expand-Layout/TaskTableViewHeader.h"; sourceTree = "<group>"; };
 		BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskTableViewHeader.m; path = "Demo-Expand-Layout/TaskTableViewHeader.m"; sourceTree = "<group>"; };
 		BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskTableViewHeader.xib; path = "Demo-Expand-Layout/TaskTableViewHeader.xib"; sourceTree = "<group>"; };
@@ -779,6 +782,8 @@
 		BB999CF01F4F4F2200B29FDE /* Demo-Expand-Layout */ = {
 			isa = PBXGroup;
 			children = (
+				BBE12E1F1F5946B200A2E611 /* DbActionView.h */,
+				BBE12E201F5946B200A2E611 /* DbActionView.m */,
 				BBF2E8C31F548ECE00064035 /* TaskTableViewHeader */,
 				BB999CF11F4F4F2C00B29FDE /* ExpandLayoutViewController.h */,
 				BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */,
@@ -1118,6 +1123,7 @@
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
 				BB4FD47D1F442AEE00C082C3 /* DbNavigationBarView.m in Sources */,
+				BBE12E211F5946B200A2E611 /* DbActionView.m in Sources */,
 				BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */,
 				BBF2E8C71F548ED800064035 /* TaskTableViewHeader.m in Sources */,
 				BB4FD4D11F443BC100C082C3 /* DetailCoursesViewController.m in Sources */,

@@ -18,6 +18,7 @@
                 <outlet property="lbl_2" destination="6Yy-cQ-TJQ" id="7VW-hF-cuE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewContainer" destination="paB-AU-uHs" id="uGE-R4-sZE"/>
+                <outlet property="vwGroupButton" destination="PUM-Jb-EFY" id="XDe-uU-qvG"/>
                 <outlet property="vwSegment" destination="maj-zO-tMY" id="CZx-P4-e6A"/>
             </connections>
         </placeholder>
@@ -75,8 +76,8 @@
                         <constraint firstItem="OT8-Em-1Zn" firstAttribute="leading" secondItem="paB-AU-uHs" secondAttribute="leading" constant="20" id="zK3-6h-1hf"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQN-w8-qyk">
-                    <rect key="frame" x="16" y="85" width="115" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQN-w8-qyk">
+                    <rect key="frame" x="16" y="85" width="86" height="30"/>
                     <color key="backgroundColor" red="0.3745639541529221" green="1" blue="0.16545067626851029" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Chay thu coi"/>
                     <connections>
@@ -93,13 +94,12 @@
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <state key="normal" image="ic_card_giftcard"/>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="maj-zO-tMY">
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="maj-zO-tMY">
                     <rect key="frame" x="0.0" y="320" width="375" height="66"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQa-me-EuZ" customClass="DLRadioButton">
-                    <rect key="frame" x="17" y="410" width="147" height="30"/>
+                    <rect key="frame" x="17" y="394" width="147" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" title="Button check">
@@ -121,19 +121,128 @@
                         <action selector="btnCheckbox_Click:" destination="-1" eventType="touchUpInside" id="Pih-zR-EJ9"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGN-oR-xBy">
+                    <rect key="frame" x="227" y="394" width="114" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.59002535960000002" blue="0.4515665492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button 1">
+                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YJ-8s-O6g">
+                    <rect key="frame" x="227" y="470" width="114" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.56078431370000004" green="0.84705882349999995" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="Button 2">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.96470588239999999" green="0.57254901960000004" blue="0.1176470588" alpha="0.87" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jib-jm-IE8">
+                    <rect key="frame" x="227" y="430" width="114" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.086274509799999996" green="0.62745098040000002" blue="0.52156862749999999" alpha="0.87" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="Button Moi" backgroundImage="btnBgGray"/>
+                </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUM-Jb-EFY">
+                    <rect key="frame" x="20" y="444" width="140" height="135"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wiy-OO-Uu3" customClass="DbActionView">
+                            <rect key="frame" x="0.0" y="0.0" width="140" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label button" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ak-1A-dTd">
+                                    <rect key="frame" x="20" y="13" width="97" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="touchUpInsideColor">
+                                    <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="vwAction:" destination="-1" eventType="touchUpInside" id="eP4-yE-byj"/>
+                            </connections>
+                        </view>
+                        <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d8M-B0-dE4" customClass="DbActionView">
+                            <rect key="frame" x="0.0" y="45" width="140" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label button" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZN-gN-nTj">
+                                    <rect key="frame" x="20" y="13" width="97" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="touchUpInsideColor">
+                                    <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="vwAction:" destination="-1" eventType="touchUpInside" id="78u-Lm-e3X"/>
+                            </connections>
+                        </view>
+                        <view tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fNB-vC-Q7X" customClass="DbActionView">
+                            <rect key="frame" x="0.0" y="90" width="140" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label button" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptI-1a-lcE">
+                                    <rect key="frame" x="20" y="13" width="97" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="touchUpInsideColor">
+                                    <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="vwAction:" destination="-1" eventType="touchUpInside" id="SQc-EF-NLL"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="QQN-w8-qyk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="3AA-oa-vpD"/>
+                <constraint firstItem="maj-zO-tMY" firstAttribute="top" secondItem="paB-AU-uHs" secondAttribute="bottom" constant="28" id="DMe-LD-AQh"/>
                 <constraint firstItem="QQN-w8-qyk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="cOe-ee-p9A"/>
+                <constraint firstAttribute="trailing" secondItem="maj-zO-tMY" secondAttribute="trailing" id="hKi-km-BaT"/>
                 <constraint firstItem="paB-AU-uHs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="hVL-DA-QHE"/>
                 <constraint firstItem="paB-AU-uHs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="143" id="lg4-fo-z0U"/>
                 <constraint firstAttribute="trailing" secondItem="paB-AU-uHs" secondAttribute="trailing" constant="18" id="qSf-Oj-OWc"/>
+                <constraint firstItem="maj-zO-tMY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xGO-D6-oSH"/>
             </constraints>
             <point key="canvasLocation" x="26.5" y="51.5"/>
         </view>
     </objects>
     <resources>
+        <image name="btnBgGray" width="157" height="32"/>
         <image name="ic_card_giftcard" width="24" height="24"/>
     </resources>
 </document>
