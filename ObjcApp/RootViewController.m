@@ -11,6 +11,7 @@
 #import "UserSessionViewController.h"
 #import "ExpandLayoutViewController.h"
 #import "ScrollViewFormViewController.h"
+#import "DemoButtonViewController.h"
 
 #import "TableExpandCellViewController.h"
 
@@ -55,10 +56,11 @@
     
 //    PathsViewController *vcFirst = [[PathsViewController alloc] init];
 //    UserSessionViewController *vcFirst = [[UserSessionViewController alloc] init];
-    ExpandLayoutViewController *vcFirst = [[ExpandLayoutViewController alloc] init];
+//    ExpandLayoutViewController *vcFirst = [[ExpandLayoutViewController alloc] init];
 //    TableExpandCellViewController *vcFirst = [[TableExpandCellViewController alloc] init];
 //    ScrollViewFormViewController *vcFirst = [[ScrollViewFormViewController alloc] init];
 //    DetailTaskViewController *vcFirst = [[DetailTaskViewController alloc] init];
+    DemoButtonViewController *vcFirst = [[DemoButtonViewController alloc] init];
     [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:NO];
 }

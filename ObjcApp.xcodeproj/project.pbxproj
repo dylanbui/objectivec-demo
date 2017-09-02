@@ -104,6 +104,10 @@
 		BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */; };
 		BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */; };
 		BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */; };
+		BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */; };
+		BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */; };
+		BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */; };
+		BBD965E51F5B36B800CCAF2C /* LGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965E41F5B36B800CCAF2C /* LGButton.m */; };
 		BBF2E8C71F548ED800064035 /* TaskTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */; };
 		BBF2E8C81F548ED800064035 /* TaskTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */; };
 		D0D67C566CFEB09749ADFD21 /* Pods_ObjcAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */; };
@@ -283,6 +287,13 @@
 		BBC07C4B1F4A00B7007A3B5C /* DetailPathsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPathsViewController.h; sourceTree = "<group>"; };
 		BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPathsViewController.m; sourceTree = "<group>"; };
 		BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPathsViewController.xib; sourceTree = "<group>"; };
+		BBD965DB1F5A8B6200CCAF2C /* DemoButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoButtonViewController.h; sourceTree = "<group>"; };
+		BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoButtonViewController.m; sourceTree = "<group>"; };
+		BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoButtonViewController.xib; sourceTree = "<group>"; };
+		BBD965E01F5A8C9000CCAF2C /* JTImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTImageButton.h; sourceTree = "<group>"; };
+		BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTImageButton.m; sourceTree = "<group>"; };
+		BBD965E31F5B36B800CCAF2C /* LGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGButton.h; sourceTree = "<group>"; };
+		BBD965E41F5B36B800CCAF2C /* LGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGButton.m; sourceTree = "<group>"; };
 		BBF2E8C41F548ED800064035 /* TaskTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskTableViewHeader.h; path = "Demo-Expand-Layout/TaskTableViewHeader.h"; sourceTree = "<group>"; };
 		BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskTableViewHeader.m; path = "Demo-Expand-Layout/TaskTableViewHeader.m"; sourceTree = "<group>"; };
 		BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskTableViewHeader.xib; path = "Demo-Expand-Layout/TaskTableViewHeader.xib"; sourceTree = "<group>"; };
@@ -693,6 +704,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBD965DA1F5A8B5500CCAF2C /* Demo-Button */,
 				BB5DDD981F5330330009AFDC /* DetailTaskViewController */,
 				BB5DDD921F5329950009AFDC /* Demo-ScrollView */,
 				BB25FC8D1F51DE090005372B /* Demo-TableView */,
@@ -807,6 +819,20 @@
 			name = NavigationBarUseTitleView;
 			sourceTree = "<group>";
 		};
+		BBD965DA1F5A8B5500CCAF2C /* Demo-Button */ = {
+			isa = PBXGroup;
+			children = (
+				BBD965DB1F5A8B6200CCAF2C /* DemoButtonViewController.h */,
+				BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */,
+				BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */,
+				BBD965E01F5A8C9000CCAF2C /* JTImageButton.h */,
+				BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */,
+				BBD965E31F5B36B800CCAF2C /* LGButton.h */,
+				BBD965E41F5B36B800CCAF2C /* LGButton.m */,
+			);
+			path = "Demo-Button";
+			sourceTree = "<group>";
+		};
 		BBF2E8C31F548ECE00064035 /* TaskTableViewHeader */ = {
 			isa = PBXGroup;
 			children = (
@@ -918,6 +944,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */,
 				BB4FD48D1F442AEE00C082C3 /* apnumberpad_backspace_icon.png in Resources */,
 				BB4FD4B61F442C8A00C082C3 /* FontAwesome.ttf in Resources */,
 				BB5DDD9D1F5330590009AFDC /* DetailTaskViewController.xib in Resources */,
@@ -1076,6 +1103,7 @@
 				BB4FD4911F442AEE00C082C3 /* APNumberPad.m in Sources */,
 				BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */,
 				BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */,
+				BBD965E51F5B36B800CCAF2C /* LGButton.m in Sources */,
 				BB4FD47F1F442AEE00C082C3 /* DbPopupView.m in Sources */,
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
 				BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */,
@@ -1095,6 +1123,7 @@
 				BB4FD4D91F443FEE00C082C3 /* NavigationBarView.m in Sources */,
 				BB4FD49A1F442AEE00C082C3 /* SYPhotoBrowser.m in Sources */,
 				BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */,
+				BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */,
 				BB4FD49D1F442AEE00C082C3 /* UIImage+Resize.m in Sources */,
 				BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */,
 				BB5DDDA71F5331C80009AFDC /* DetailTaskContactInfoCell.m in Sources */,
@@ -1122,6 +1151,7 @@
 				BBF2E8C71F548ED800064035 /* TaskTableViewHeader.m in Sources */,
 				BB4FD4D11F443BC100C082C3 /* DetailCoursesViewController.m in Sources */,
 				BB4FD4891F442AEE00C082C3 /* DbResponseObject.m in Sources */,
+				BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */,
 				BB4FD4CF1F443BC100C082C3 /* CoursesViewController.m in Sources */,
 				BB4FD4811F442AEE00C082C3 /* DbViewController.m in Sources */,
 				BB4FD4961F442AEE00C082C3 /* PhotoGalleryViewController.m in Sources */,
