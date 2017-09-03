@@ -32,6 +32,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *vwSegment;
 
+@property (weak, nonatomic) IBOutlet UIView *vwGroupButton;
+
 @property (weak, nonatomic) IBOutlet DLRadioButton *btnCheckbox;
 
 @end
@@ -61,14 +63,17 @@
     [_btnIcon setImage:[symbol image] forState:UIControlStateNormal];
     
 
-    TaskTableViewHeader *header = [[TaskTableViewHeader alloc] init];
-    CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, self.vwSegment.frame.size.height);
-    header.frame = frame;
+    TaskTableViewHeader *header = [[TaskTableViewHeader alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.vwSegment.frame.size.height)];
+//    TaskTableViewHeader *header = [[TaskTableViewHeader alloc] init];
     header.handleViewAction = ^(id _self, int _id, NSDictionary* _params, NSError* error){
         
     };
     
+    
     [self.vwSegment addSubview:header];
+    
+    NSLog(@"%@", NSStringFromCGRect(header.frame));
+    
     
     [self.btnCheckbox setSelected:YES];
     self.btnCheckbox.multipleSelectionEnabled = YES;
@@ -77,6 +82,26 @@
     if([self.btnCheckbox isSelected]) {
         NSLog(@"%@", @"Da chon vao checkbox");
     }
+    
+    // -- Define group button --
+    // border radius
+    [self.vwGroupButton.layer setCornerRadius:10.0f];
+    self.vwGroupButton.layer.masksToBounds = YES;
+
+    
+    // border
+    [self.vwGroupButton.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    [self.vwGroupButton.layer setBorderWidth:0.5f];
+    
+    // drop shadow
+    [self.vwGroupButton.layer setShadowColor:[UIColor blackColor].CGColor];
+    [self.vwGroupButton.layer setShadowOpacity:0.2];
+    [self.vwGroupButton.layer setShadowRadius:2.0];
+    [self.vwGroupButton.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
+    [self.vwGroupButton.layer setShadowOffset:CGSizeMake(0, 0)];
+    
+    
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -102,6 +127,10 @@
 //    
 //    [_lbl_2 setText:@"Bat ngo xuat hien."];
 }
+- (IBAction)btnPhiaTren:(id)sender
+{
+    NSLog(@"%@", @"btnPhiaTren ----|||----");
+}
 
 - (IBAction)btnCheckbox_Click:(DLRadioButton *)sender
 {
@@ -110,6 +139,10 @@
     } else {
         NSLog(@"%@", @"NONE");
     }
+}
+- (IBAction)vwAction:(id)sender
+{
+    NSLog(@"%@", @"vwAction: CLICKKKKKKKKKKK");
 }
 
 

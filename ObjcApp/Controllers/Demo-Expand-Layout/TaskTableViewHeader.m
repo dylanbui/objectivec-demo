@@ -26,13 +26,22 @@
     return self;
 }
 
-//- (id)initWithFrame:(CGRect)frame andHandleViewAction:(HandleViewAction)handle
-//{
-//    if (self = [super initWithFrame:frame andHandleViewAction:handle]) {
-//        [self setupView];
-//    }
-//    return self;
-//}
+- (id)initWithFrame:(CGRect)frame
+{
+    NSLog(@"%@", NSStringFromCGRect(frame));
+    if (self = [super initWithFrame:frame]) {
+        [self setupView];
+    }
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame andHandleViewAction:(HandleViewAction)handle
+{
+    if (self = [super initWithFrame:frame andHandleViewAction:handle]) {
+        [self setupView];
+    }
+    return self;
+}
 
 - (void)setupView
 {
