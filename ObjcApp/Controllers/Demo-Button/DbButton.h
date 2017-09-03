@@ -7,6 +7,7 @@
 //  Build on : https://github.com/kubatruhlar/JTImageButton
 //  Refer : https://github.com/Friend-LGA/LGViews/blob/master/LGViews/LGButton/LGButton.m
 //      Support icon at : top, bottom, left, right
+//  Refer : https://www.cocoacontrols.com/controls/gbflatbutton
 
 #import <UIKit/UIKit.h>
 
