@@ -185,7 +185,6 @@
 //    if (!_iconImage) { _iconImage = nil;}
     
     if (!_touchEffectEnabled) { _touchEffectEnabled = false;}
-
 }
 
 #pragma mark - JTImageButton logic
@@ -198,7 +197,8 @@
     
 //    padding = JTImageButtonPaddingBig;
     
-    iconSide = JTImageButtonIconSideRight;
+//    iconSide = JTImageButtonIconSideRight;
+    iconSide = JTImageButtonIconSideTop;
     
     iconOffsetY = -7;
     
@@ -241,7 +241,7 @@
         NSAttributedString *attachmentString = [NSAttributedString attributedStringWithAttachment:attachment];
         [finalString appendAttributedString:attachmentString];
         
-    } else {
+    } else if (iconSide == JTImageButtonIconSideLeft) {
         // Left
         NSTextAttachment *attachment = [NSTextAttachment new];
         attachment.image = image;
@@ -264,6 +264,51 @@
             aString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", string] attributes:attributes];
         }
         
+        [finalString appendAttributedString:aString];
+
+    } else if (iconSide == JTImageButtonIconSideTop) {
+        
+//        textMutableAttributedString.append(lineBreak)
+//        let imageAttachment = NSTextAttachment.init()
+//        imageAttachment.image = UIImage.init(named: "Lenna")
+//        // You can set image bounds, be attention on origin.y
+//        // imageAttachment.bounds = CGRect.init(x: 0, y: -8, width: (imageAttachment.image?.size.width)!, height: (imageAttachment.image?.size.height)!)
+//        let imageAttributedString = NSAttributedString.init(attachment: imageAttachment)
+//        let imageMutableAttributedString = NSMutableAttributedString.init(attributedString: imageAttributedString)
+//        let imageParagraphStyle = NSMutableParagraphStyle.init()
+//        imageParagraphStyle.alignment = .center
+//        // one image's length is 1
+//        imageMutableAttributedString.addAttributes([NSParagraphStyleAttributeName : imageParagraphStyle], range: NSRange.init(location: 0, length: imageAttributedString.length))
+//        textMutableAttributedString.append(imageMutableAttributedString)
+
+        
+        
+        NSTextAttachment *attachment = [NSTextAttachment new];
+        attachment.image = image;
+        
+//        attachment.bounds = CGRectMake(0, 0, attachment.image.size.width, attachment.image.size.height);
+        NSAttributedString *attachmentString = [NSAttributedString attributedStringWithAttachment:attachment];
+        
+        NSMutableParagraphStyle *imageParagraphStyle = [[NSMutableParagraphStyle alloc] init];
+        imageParagraphStyle.alignment = NSTextAlignmentCenter;
+        
+        finalString = [[NSMutableAttributedString alloc] initWithAttributedString:attachmentString];
+        [finalString addAttribute:NSParagraphStyleAttributeName value:imageParagraphStyle
+                            range:NSMakeRange(0, attachmentString.length)];
+
+        NSMutableParagraphStyle *titleParagraphStyle = [[NSMutableParagraphStyle alloc] init];
+        titleParagraphStyle.alignment = NSTextAlignmentCenter;
+        NSDictionary *attributes = @{
+                                     NSForegroundColorAttributeName : color,
+                                     NSParagraphStyleAttributeName : titleParagraphStyle};
+
+        
+        NSAttributedString *lineBreak = [[NSAttributedString alloc] initWithString:@"\n" attributes:attributes];
+        [finalString appendAttributedString:lineBreak];
+        
+        
+        NSAttributedString *aString;
+        aString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", string] attributes:attributes];
         [finalString appendAttributedString:aString];
     }
     

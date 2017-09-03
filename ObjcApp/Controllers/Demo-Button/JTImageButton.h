@@ -20,7 +20,9 @@ typedef enum : NSUInteger {
 
 typedef enum : NSUInteger {
     JTImageButtonIconSideLeft = 0,
-    JTImageButtonIconSideRight
+    JTImageButtonIconSideRight,
+    JTImageButtonIconSideTop,
+    JTImageButtonIconSideBottom
 } JTImageButtonIconSide;
 
 IB_DESIGNABLE

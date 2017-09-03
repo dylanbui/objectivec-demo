@@ -19,27 +19,31 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvE-Ac-hd1" customClass="JTImageButton">
-                    <rect key="frame" x="34" y="134" width="129" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvE-Ac-hd1" customClass="DbButton">
+                    <rect key="frame" x="16" y="74" width="175" height="91"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                    <state key="normal" title="Button2"/>
+                    <color key="backgroundColor" red="0.37456395419999999" green="1" blue="0.16545067629999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal">
+                        <color key="titleColor" red="0.36277593689999998" green="0.14472575800000001" blue="0.45314545160000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.36277593689999998" green="0.14472575800000001" blue="0.45314545160000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="2"/>
+                            <real key="value" value="3"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="touchEffectEnabled" value="NO"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="highlightAlpha">
-                            <real key="value" value="5.5"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="touchEffectEnabled" value="YES"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="imgAvatar"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iconHeight">
+                            <real key="value" value="30"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="disableAlpha">
-                            <real key="value" value="6"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iconOffsetY">
+                            <real key="value" value="-5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
@@ -88,8 +92,9 @@
                     </userDefinedRuntimeAttributes>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARK-I9-lGX" customClass="JTImageButton">
-                    <rect key="frame" x="208" y="134" width="132" height="67"/>
+                    <rect key="frame" x="208" y="74" width="132" height="121"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.37456395419999999" green="1" blue="0.16545067629999999" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" red="0.36277593689999998" green="0.14472575800000001" blue="0.45314545160000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -110,40 +115,27 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUd-Nd-3CX" customClass="JTImageButton">
-                    <rect key="frame" x="69" y="367" width="237" height="156"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JN7-aT-feW" customClass="DbButton">
+                    <rect key="frame" x="32" y="265" width="143" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Chuyen" backgroundImage="btnBgGray"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                            <color key="value" red="0.36277593689999998" green="0.14472575800000001" blue="0.45314545160000003" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="imgAvatar"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="touchEffectEnabled" value="YES"/>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                             <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2D-7W-gKi" customClass="LGButton">
-                    <rect key="frame" x="131" y="552" width="152" height="62"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.36277593689999998" green="0.14472575800000001" blue="0.45314545160000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" title="Button"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <real key="value" value="2"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="-122.5" y="-186.5"/>
+            <point key="canvasLocation" x="-479.5" y="-480.5"/>
         </view>
     </objects>
     <resources>
+        <image name="btnBgGray" width="157" height="32"/>
         <image name="ic_card_giftcard" width="24" height="24"/>
         <image name="imgAvatar" width="142" height="142"/>
     </resources>
