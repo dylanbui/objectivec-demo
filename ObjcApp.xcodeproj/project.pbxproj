@@ -96,6 +96,8 @@
 		BB5DDDAD1F5331ED0009AFDC /* DetailTaskInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDDAB1F5331ED0009AFDC /* DetailTaskInfoCell.xib */; };
 		BB5DDDB11F5332870009AFDC /* DetailTaskFeeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDDAF1F5332870009AFDC /* DetailTaskFeeCell.m */; };
 		BB5DDDB21F5332870009AFDC /* DetailTaskFeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDDB01F5332870009AFDC /* DetailTaskFeeCell.xib */; };
+		BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC51C1F5D460A0073A0C1 /* DbActionView.m */; };
+		BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC51E1F5D460A0073A0C1 /* DbButton.m */; };
 		BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */; };
 		BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */; };
 		BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */; };
@@ -104,7 +106,6 @@
 		BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */; };
 		BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */; };
 		BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */; };
-		BBD875111F5C5624009AA643 /* DbButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD875101F5C5624009AA643 /* DbButton.m */; };
 		BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */; };
 		BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */; };
 		BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */; };
@@ -276,6 +277,10 @@
 		BB5DDDAE1F5332870009AFDC /* DetailTaskFeeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTaskFeeCell.h; sourceTree = "<group>"; };
 		BB5DDDAF1F5332870009AFDC /* DetailTaskFeeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskFeeCell.m; sourceTree = "<group>"; };
 		BB5DDDB01F5332870009AFDC /* DetailTaskFeeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTaskFeeCell.xib; sourceTree = "<group>"; };
+		BB6CC51B1F5D460A0073A0C1 /* DbActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbActionView.h; sourceTree = "<group>"; };
+		BB6CC51C1F5D460A0073A0C1 /* DbActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbActionView.m; sourceTree = "<group>"; };
+		BB6CC51D1F5D460A0073A0C1 /* DbButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbButton.h; sourceTree = "<group>"; };
+		BB6CC51E1F5D460A0073A0C1 /* DbButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbButton.m; sourceTree = "<group>"; };
 		BB999CF11F4F4F2C00B29FDE /* ExpandLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpandLayoutViewController.h; path = "Demo-Expand-Layout/ExpandLayoutViewController.h"; sourceTree = "<group>"; };
 		BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpandLayoutViewController.m; path = "Demo-Expand-Layout/ExpandLayoutViewController.m"; sourceTree = "<group>"; };
 		BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpandLayoutViewController.xib; path = "Demo-Expand-Layout/ExpandLayoutViewController.xib"; sourceTree = "<group>"; };
@@ -288,8 +293,6 @@
 		BBC07C4B1F4A00B7007A3B5C /* DetailPathsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPathsViewController.h; sourceTree = "<group>"; };
 		BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPathsViewController.m; sourceTree = "<group>"; };
 		BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPathsViewController.xib; sourceTree = "<group>"; };
-		BBD8750F1F5C5624009AA643 /* DbButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbButton.h; sourceTree = "<group>"; };
-		BBD875101F5C5624009AA643 /* DbButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbButton.m; sourceTree = "<group>"; };
 		BBD965DB1F5A8B6200CCAF2C /* DemoButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoButtonViewController.h; sourceTree = "<group>"; };
 		BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoButtonViewController.m; sourceTree = "<group>"; };
 		BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoButtonViewController.xib; sourceTree = "<group>"; };
@@ -463,6 +466,7 @@
 		BB4FD40D1F442AEE00C082C3 /* DbLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				BB6CC51A1F5D460A0073A0C1 /* CustomControllClass */,
 				BB4FD41D1F442AEE00C082C3 /* DbAppSession.h */,
 				BB4FD41E1F442AEE00C082C3 /* DbAppSession.m */,
 				BB4FD41F1F442AEE00C082C3 /* DbConstant.h */,
@@ -791,6 +795,17 @@
 			name = TableCell;
 			sourceTree = "<group>";
 		};
+		BB6CC51A1F5D460A0073A0C1 /* CustomControllClass */ = {
+			isa = PBXGroup;
+			children = (
+				BB6CC51B1F5D460A0073A0C1 /* DbActionView.h */,
+				BB6CC51C1F5D460A0073A0C1 /* DbActionView.m */,
+				BB6CC51D1F5D460A0073A0C1 /* DbButton.h */,
+				BB6CC51E1F5D460A0073A0C1 /* DbButton.m */,
+			);
+			path = CustomControllClass;
+			sourceTree = "<group>";
+		};
 		BB999CF01F4F4F2200B29FDE /* Demo-Expand-Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -832,8 +847,6 @@
 				BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */,
 				BBD965E31F5B36B800CCAF2C /* LGButton.h */,
 				BBD965E41F5B36B800CCAF2C /* LGButton.m */,
-				BBD8750F1F5C5624009AA643 /* DbButton.h */,
-				BBD875101F5C5624009AA643 /* DbButton.m */,
 			);
 			path = "Demo-Button";
 			sourceTree = "<group>";
@@ -1107,6 +1120,7 @@
 				BB4FD4841F442AEE00C082C3 /* DateTimeUtil.m in Sources */,
 				BB4FD4911F442AEE00C082C3 /* APNumberPad.m in Sources */,
 				BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */,
+				BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */,
 				BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */,
 				BBD965E51F5B36B800CCAF2C /* LGButton.m in Sources */,
 				BB4FD47F1F442AEE00C082C3 /* DbPopupView.m in Sources */,
@@ -1122,6 +1136,7 @@
 				BB4FD4871F442AEE00C082C3 /* NSObject+SimpleMapping.m in Sources */,
 				BB4FD4941F442AEE00C082C3 /* ATAppUpdater.m in Sources */,
 				BB4FD4881F442AEE00C082C3 /* UINavigationController+Utils.m in Sources */,
+				BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */,
 				BB4FD4951F442AEE00C082C3 /* CropPhotoViewController.m in Sources */,
 				BB4FD47C1F442AEE00C082C3 /* DbAppDelegate.m in Sources */,
 				BB4FD4801F442AEE00C082C3 /* DbTableViewCell.m in Sources */,
@@ -1131,7 +1146,6 @@
 				BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */,
 				BB4FD49D1F442AEE00C082C3 /* UIImage+Resize.m in Sources */,
 				BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */,
-				BBD875111F5C5624009AA643 /* DbButton.m in Sources */,
 				BB5DDDA71F5331C80009AFDC /* DetailTaskContactInfoCell.m in Sources */,
 				BB4FD4D31F443BC100C082C3 /* PathsViewController.m in Sources */,
 				BB4FD4A71F442B4D00C082C3 /* RootViewController.m in Sources */,
