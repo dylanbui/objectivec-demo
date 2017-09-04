@@ -34,4 +34,10 @@
 }
 */
 
+
+- (IBAction)btnPhiaTren:(id)sender
+{
+    NSLog(@"%@", @"View Click ----|||----");
+}
+
 @end

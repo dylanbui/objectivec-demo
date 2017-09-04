@@ -120,7 +120,7 @@
     
     // Borders
     [self.layer setCornerRadius:_cornerRadius];
-    [self.layer setMasksToBounds:true];
+    [self.layer setMasksToBounds:YES];
     [self.layer setBorderWidth:_borderWidth];
     [self.layer setBorderColor:_borderColor.CGColor];
     

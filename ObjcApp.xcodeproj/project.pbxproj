@@ -98,6 +98,7 @@
 		BB5DDDB21F5332870009AFDC /* DetailTaskFeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDDB01F5332870009AFDC /* DetailTaskFeeCell.xib */; };
 		BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC51C1F5D460A0073A0C1 /* DbActionView.m */; };
 		BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC51E1F5D460A0073A0C1 /* DbButton.m */; };
+		BB6CC5231F5D46B70073A0C1 /* DbLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC5221F5D46B70073A0C1 /* DbLabel.m */; };
 		BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */; };
 		BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */; };
 		BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */; };
@@ -281,6 +282,8 @@
 		BB6CC51C1F5D460A0073A0C1 /* DbActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbActionView.m; sourceTree = "<group>"; };
 		BB6CC51D1F5D460A0073A0C1 /* DbButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbButton.h; sourceTree = "<group>"; };
 		BB6CC51E1F5D460A0073A0C1 /* DbButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbButton.m; sourceTree = "<group>"; };
+		BB6CC5211F5D46B70073A0C1 /* DbLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbLabel.h; sourceTree = "<group>"; };
+		BB6CC5221F5D46B70073A0C1 /* DbLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbLabel.m; sourceTree = "<group>"; };
 		BB999CF11F4F4F2C00B29FDE /* ExpandLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpandLayoutViewController.h; path = "Demo-Expand-Layout/ExpandLayoutViewController.h"; sourceTree = "<group>"; };
 		BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpandLayoutViewController.m; path = "Demo-Expand-Layout/ExpandLayoutViewController.m"; sourceTree = "<group>"; };
 		BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpandLayoutViewController.xib; path = "Demo-Expand-Layout/ExpandLayoutViewController.xib"; sourceTree = "<group>"; };
@@ -802,6 +805,8 @@
 				BB6CC51C1F5D460A0073A0C1 /* DbActionView.m */,
 				BB6CC51D1F5D460A0073A0C1 /* DbButton.h */,
 				BB6CC51E1F5D460A0073A0C1 /* DbButton.m */,
+				BB6CC5211F5D46B70073A0C1 /* DbLabel.h */,
+				BB6CC5221F5D46B70073A0C1 /* DbLabel.m */,
 			);
 			path = CustomControllClass;
 			sourceTree = "<group>";
@@ -1145,6 +1150,7 @@
 				BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */,
 				BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */,
 				BB4FD49D1F442AEE00C082C3 /* UIImage+Resize.m in Sources */,
+				BB6CC5231F5D46B70073A0C1 /* DbLabel.m in Sources */,
 				BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */,
 				BB5DDDA71F5331C80009AFDC /* DetailTaskContactInfoCell.m in Sources */,
 				BB4FD4D31F443BC100C082C3 /* PathsViewController.m in Sources */,
