@@ -107,6 +107,7 @@
 		BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */; };
 		BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */; };
 		BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */; };
+		BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCC62981F5E4C11006FF200 /* GBFlatButton.m */; };
 		BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */; };
 		BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */; };
 		BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */; };
@@ -296,6 +297,8 @@
 		BBC07C4B1F4A00B7007A3B5C /* DetailPathsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPathsViewController.h; sourceTree = "<group>"; };
 		BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPathsViewController.m; sourceTree = "<group>"; };
 		BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPathsViewController.xib; sourceTree = "<group>"; };
+		BBCC62971F5E4C11006FF200 /* GBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBFlatButton.h; sourceTree = "<group>"; };
+		BBCC62981F5E4C11006FF200 /* GBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBFlatButton.m; sourceTree = "<group>"; };
 		BBD965DB1F5A8B6200CCAF2C /* DemoButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoButtonViewController.h; sourceTree = "<group>"; };
 		BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoButtonViewController.m; sourceTree = "<group>"; };
 		BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoButtonViewController.xib; sourceTree = "<group>"; };
@@ -852,6 +855,8 @@
 				BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */,
 				BBD965E31F5B36B800CCAF2C /* LGButton.h */,
 				BBD965E41F5B36B800CCAF2C /* LGButton.m */,
+				BBCC62971F5E4C11006FF200 /* GBFlatButton.h */,
+				BBCC62981F5E4C11006FF200 /* GBFlatButton.m */,
 			);
 			path = "Demo-Button";
 			sourceTree = "<group>";
@@ -1171,6 +1176,7 @@
 				BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */,
 				BB4FD4851F442AEE00C082C3 /* DbUtils.m in Sources */,
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
+				BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
 				BB4FD47D1F442AEE00C082C3 /* DbNavigationBarView.m in Sources */,
 				BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */,
