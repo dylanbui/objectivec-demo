@@ -7,8 +7,10 @@
 //
 
 #import "DemoButtonViewController.h"
+#import "BTLabel.h"
 
 @interface DemoButtonViewController ()
+@property (weak, nonatomic) IBOutlet BTLabel *lblTopTitle;
 
 @end
 

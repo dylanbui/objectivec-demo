@@ -27,6 +27,7 @@ target 'ObjcApp' do
     #pod 'GoogleMaterialIconFont', '0.5.0'
     pod 'MaterialDesignSymbolObjC', '1.3'
     pod 'DLRadioButton', '1.4.9'
+    pod 'TTTAttributedLabel', '2.0.0'
     
     # Objective-C
     pod 'ISMessages', '1.2'

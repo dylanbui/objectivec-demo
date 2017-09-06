@@ -15,6 +15,7 @@
 		BB25FC9A1F51DFC20005372B /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC991F51DFC20005372B /* artists.json */; };
 		BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC9E1F51F46C0005372B /* ExpandTypeTwoCell.m */; };
 		BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */; };
+		BB345F721F606E02009B7274 /* BTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB345F711F606E02009B7274 /* BTLabel.m */; };
 		BB4FD3BB1F4429E200C082C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3BA1F4429E200C082C3 /* main.m */; };
 		BB4FD3BE1F4429E200C082C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3BD1F4429E200C082C3 /* AppDelegate.m */; };
 		BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD3C21F4429E200C082C3 /* Main.storyboard */; };
@@ -142,6 +143,8 @@
 		BB25FC9D1F51F46C0005372B /* ExpandTypeTwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandTypeTwoCell.h; sourceTree = "<group>"; };
 		BB25FC9E1F51F46C0005372B /* ExpandTypeTwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandTypeTwoCell.m; sourceTree = "<group>"; };
 		BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandTypeTwoCell.xib; sourceTree = "<group>"; };
+		BB345F701F606E02009B7274 /* BTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLabel.h; sourceTree = "<group>"; };
+		BB345F711F606E02009B7274 /* BTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLabel.m; sourceTree = "<group>"; };
 		BB4FD3B61F4429E200C082C3 /* ObjcApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjcApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4FD3BA1F4429E200C082C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BB4FD3BC1F4429E200C082C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -857,6 +860,8 @@
 				BBD965E41F5B36B800CCAF2C /* LGButton.m */,
 				BBCC62971F5E4C11006FF200 /* GBFlatButton.h */,
 				BBCC62981F5E4C11006FF200 /* GBFlatButton.m */,
+				BB345F701F606E02009B7274 /* BTLabel.h */,
+				BB345F711F606E02009B7274 /* BTLabel.m */,
 			);
 			path = "Demo-Button";
 			sourceTree = "<group>";
@@ -1159,6 +1164,7 @@
 				BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */,
 				BB5DDDA71F5331C80009AFDC /* DetailTaskContactInfoCell.m in Sources */,
 				BB4FD4D31F443BC100C082C3 /* PathsViewController.m in Sources */,
+				BB345F721F606E02009B7274 /* BTLabel.m in Sources */,
 				BB4FD4A71F442B4D00C082C3 /* RootViewController.m in Sources */,
 				BB4FD4931F442AEE00C082C3 /* NSBundle+APNumberPad.m in Sources */,
 				BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */,
