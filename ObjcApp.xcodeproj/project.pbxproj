@@ -87,6 +87,7 @@
 		BB4FD4DA1F443FEE00C082C3 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4D81F443FEE00C082C3 /* NavigationBarView.xib */; };
 		BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4DC1F444E3700C082C3 /* HeightNavigationBar.m */; };
 		BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */; };
+		BB595DB61F6303940003C0B9 /* BALabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB595DB51F6303940003C0B9 /* BALabel.m */; };
 		BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDD941F5329B60009AFDC /* ScrollViewFormViewController.m */; };
 		BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */; };
 		BB5DDD9C1F5330590009AFDC /* DetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDD9A1F5330590009AFDC /* DetailTaskViewController.m */; };
@@ -267,6 +268,8 @@
 		BB4FD4DB1F444E3700C082C3 /* HeightNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeightNavigationBar.h; sourceTree = "<group>"; };
 		BB4FD4DC1F444E3700C082C3 /* HeightNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightNavigationBar.m; sourceTree = "<group>"; };
 		BB4FD4DE1F444E4D00C082C3 /* HeightNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeightNavigationBar.xib; sourceTree = "<group>"; };
+		BB595DB41F6303940003C0B9 /* BALabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BALabel.h; sourceTree = "<group>"; };
+		BB595DB51F6303940003C0B9 /* BALabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BALabel.m; sourceTree = "<group>"; };
 		BB5DDD931F5329B60009AFDC /* ScrollViewFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewFormViewController.h; sourceTree = "<group>"; };
 		BB5DDD941F5329B60009AFDC /* ScrollViewFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewFormViewController.m; sourceTree = "<group>"; };
 		BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollViewFormViewController.xib; sourceTree = "<group>"; };
@@ -862,6 +865,8 @@
 				BBCC62981F5E4C11006FF200 /* GBFlatButton.m */,
 				BB345F701F606E02009B7274 /* BTLabel.h */,
 				BB345F711F606E02009B7274 /* BTLabel.m */,
+				BB595DB41F6303940003C0B9 /* BALabel.h */,
+				BB595DB51F6303940003C0B9 /* BALabel.m */,
 			);
 			path = "Demo-Button";
 			sourceTree = "<group>";
@@ -1139,6 +1144,7 @@
 				BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */,
 				BBD965E51F5B36B800CCAF2C /* LGButton.m in Sources */,
 				BB4FD47F1F442AEE00C082C3 /* DbPopupView.m in Sources */,
+				BB595DB61F6303940003C0B9 /* BALabel.m in Sources */,
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
 				BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */,
 				BB5DDDAC1F5331ED0009AFDC /* DetailTaskInfoCell.m in Sources */,

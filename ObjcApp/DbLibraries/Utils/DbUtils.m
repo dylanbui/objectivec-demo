@@ -22,20 +22,31 @@
 
 + (void)callPhoneNumber:(NSString *)phonenumber completionHandler:(void (^ __nullable)(BOOL success))completion
 {
+    NSURL *URL = nil;
     NSURL *phoneUrl = [NSURL URLWithString:[@"telprompt://" stringByAppendingString:phonenumber]];
     NSURL *phoneFallbackUrl = [NSURL URLWithString:[@"tel://" stringByAppendingString:phonenumber]];
     
-    if ([UIApplication.sharedApplication canOpenURL:phoneUrl]) {
-        [UIApplication.sharedApplication openURL:phoneUrl options:@{} completionHandler:^(BOOL success) {
+    UIApplication *application = [UIApplication sharedApplication];
+    
+    if ([application canOpenURL:phoneUrl]) {
+        URL = phoneUrl;
+    } else if ([application canOpenURL:phoneFallbackUrl]) {
+        URL = phoneFallbackUrl;
+    } else {
+        // Show an error message: Your device can not do phone calls.
+        completion(NO);
+        return;
+    }
+    
+    if ([application respondsToSelector:@selector(openURL:options:completionHandler:)]) {
+        [application openURL:URL options:@{} completionHandler:^(BOOL success) {
             completion(success);
-        }];
-    } else if ([UIApplication.sharedApplication canOpenURL:phoneFallbackUrl]) {
-        [UIApplication.sharedApplication openURL:phoneUrl options:@{} completionHandler:^(BOOL success) {
-            completion(success);
+            // NSLog(@"Open %@: %d",URL,success);
         }];
     } else {
-        completion(NO);
-        // Show an error message: Your device can not do phone calls.
+        BOOL success = [application openURL:URL];
+        completion(success);
+        // NSLog(@"Open %@: %d",URL,success);
     }
 }
 

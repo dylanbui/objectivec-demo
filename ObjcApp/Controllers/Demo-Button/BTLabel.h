@@ -55,34 +55,34 @@ typedef NS_ENUM(NSUInteger, BTVerticalAlignment) {
 /**
  Show image within receiver.
  */
-@property (nonatomic, assign) BOOL hasImage;
+//@property (nonatomic, assign) BOOL hasImage;
 /**
  Image size.
  @discussion Will use receiver height for image size when imagePosition is equal to UIRectEdgeLeft or UIRectEdgeRight, and imageSize.height is set to zero. Will use receiver width when imagePosition is equal to UIRectEdgeTop or UIRectEdgeBottom, and imageSize.width is set to zero.
  */
-@property (nonatomic, assign) CGSize imageSize;
+//@property (nonatomic, assign) CGSize imageSize;
 /**
  Edge of the receiver rect at which image will be placed.
  @discussion Valid values are UIRectEdgeTop, UIRectEdgeLeft, UIRectEdgeBottom and UIRectEdgeRight.
  */
-@property (nonatomic, assign) UIRectEdge imagePosition;
+//@property (nonatomic, assign) UIRectEdge imagePosition;
 /**
  Alignment of image rect.
  @discussion Valid values are NSTextAlignmentLeft, NSTextAlignmentCenter and NSTextAlignmentRight. NSTextAlignmentLeft means top and NSTextAlignmentRight means bottom when using with imagePosition set to UIRectEdgeLeft or UIRectEdgeRight.
  */
-@property (nonatomic, assign) NSTextAlignment imageAlignment;
+//@property (nonatomic, assign) NSTextAlignment imageAlignment;
 /**
  A flag used to determine how an image will be placed within its rect.
  */
-@property (nonatomic, assign) UIViewContentMode imageContentMode;
+//@property (nonatomic, assign) UIViewContentMode imageContentMode;
 /**
  Insets from the edges of label to an image.
  */
-@property (nonatomic, assign) UIEdgeInsets imageEdgeInsets;
+//@property (nonatomic, assign) UIEdgeInsets imageEdgeInsets;
 /**
  The image displayed in the label.
  */
-@property (nonatomic, strong) UIImage *image;
+//@property (nonatomic, strong) UIImage *image;
 
 #pragma mark - Height of arbitrary text
 /// @name Height of arbitrary text

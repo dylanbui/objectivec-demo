@@ -12,7 +12,7 @@
 @interface BTLabel ()
 
 @property (nonatomic, strong) UIFont *correctedFont;
-@property (nonatomic, assign) CGRect calculatedImageRect;
+//@property (nonatomic, assign) CGRect calculatedImageRect;
 
 @end
 
@@ -135,7 +135,8 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
     
     if (self) {
         self.clipsToBounds = NO;
-        self.verticalAlignment = BTVerticalAlignmentCenter;
+//        self.verticalAlignment = BTVerticalAlignmentCenter;
+        self.verticalAlignment = BTVerticalAlignmentBottom;
         self.edgeInsets = edgeInsets;
         self.font = [UIFont systemFontOfSize:12];
         self.textColor = [UIColor blackColor];
@@ -152,31 +153,31 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 
 //
 // -----------------------------------------------------------------------------
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    
-    if (self) {
-        self.edgeInsets = [aDecoder decodeUIEdgeInsetsForKey:NSStringFromSelector(@selector(edgeInsets))];
-        self.verticalAlignment = [aDecoder decodeIntegerForKey:NSStringFromSelector(@selector(verticalAlignment))];
-        self.decreasesFontSizeToFitNumberOfLines = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(decreasesFontSizeToFitNumberOfLines))];
-        self.increasesFontSizeToFitNumberOfLines = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(increasesFontSizeToFitNumberOfLines))];
-    }
-    
-    return self;
-}
+//- (instancetype)initWithCoder:(NSCoder *)aDecoder
+//{
+//    self = [super initWithCoder:aDecoder];
+//    
+//    if (self) {
+//        self.edgeInsets = [aDecoder decodeUIEdgeInsetsForKey:NSStringFromSelector(@selector(edgeInsets))];
+//        self.verticalAlignment = [aDecoder decodeIntegerForKey:NSStringFromSelector(@selector(verticalAlignment))];
+//        self.decreasesFontSizeToFitNumberOfLines = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(decreasesFontSizeToFitNumberOfLines))];
+//        self.increasesFontSizeToFitNumberOfLines = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(increasesFontSizeToFitNumberOfLines))];
+//    }
+//    
+//    return self;
+//}
 
 //
 // -----------------------------------------------------------------------------
-- (void)encodeWithCoder:(NSCoder *)aCoder
-{
-    [super encodeWithCoder:aCoder];
-    
-    [aCoder encodeUIEdgeInsets:self.edgeInsets forKey:NSStringFromSelector(@selector(edgeInsets))];
-    [aCoder encodeInteger:self.verticalAlignment forKey:NSStringFromSelector(@selector(verticalAlignment))];
-    [aCoder encodeBool:self.decreasesFontSizeToFitNumberOfLines forKey:NSStringFromSelector(@selector(decreasesFontSizeToFitNumberOfLines))];
-    [aCoder encodeBool:self.increasesFontSizeToFitNumberOfLines forKey:NSStringFromSelector(@selector(increasesFontSizeToFitNumberOfLines))];
-}
+//- (void)encodeWithCoder:(NSCoder *)aCoder
+//{
+//    [super encodeWithCoder:aCoder];
+//    
+//    [aCoder encodeUIEdgeInsets:self.edgeInsets forKey:NSStringFromSelector(@selector(edgeInsets))];
+//    [aCoder encodeInteger:self.verticalAlignment forKey:NSStringFromSelector(@selector(verticalAlignment))];
+//    [aCoder encodeBool:self.decreasesFontSizeToFitNumberOfLines forKey:NSStringFromSelector(@selector(decreasesFontSizeToFitNumberOfLines))];
+//    [aCoder encodeBool:self.increasesFontSizeToFitNumberOfLines forKey:NSStringFromSelector(@selector(increasesFontSizeToFitNumberOfLines))];
+//}
 
 
 #pragma mark - Layout
@@ -278,33 +279,33 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
     // текущие параметры
     UIEdgeInsets edgeInsets			= self.edgeInsets;
     NSInteger numberOfLines			= self.numberOfLines;
-    BOOL hasImage					= self.hasImage;
-    CGSize imageSize				= self.imageSize;
-    UIRectEdge imagePosition		= self.imagePosition;
-    UIEdgeInsets imageEdgeInsets	= self.imageEdgeInsets;
+//    BOOL hasImage					= self.hasImage;
+//    CGSize imageSize				= self.imageSize;
+//    UIRectEdge imagePosition		= self.imagePosition;
+//    UIEdgeInsets imageEdgeInsets	= self.imageEdgeInsets;
     
     // вычтем размер картинки
     CGFloat imageWidth = 0;
-    CGFloat imageHeight = 0;
+//    CGFloat imageHeight = 0;
     
-    if (hasImage) {
-        switch (imagePosition) {
-            case UIRectEdgeTop:
-            case UIRectEdgeBottom: {
-                imageHeight	= imageSize.height + imageEdgeInsets.top + imageEdgeInsets.bottom;
-                break;
-            }
-            case UIRectEdgeLeft:
-            case UIRectEdgeRight: {
-                imageWidth	= imageSize.width + imageEdgeInsets.left + imageEdgeInsets.right;
-                imageHeight	= imageSize.height + imageEdgeInsets.top + imageEdgeInsets.bottom;
-                break;
-            }
-            default: {
-                break;
-            }
-        }
-    }
+//    if (hasImage) {
+//        switch (imagePosition) {
+//            case UIRectEdgeTop:
+//            case UIRectEdgeBottom: {
+//                imageHeight	= imageSize.height + imageEdgeInsets.top + imageEdgeInsets.bottom;
+//                break;
+//            }
+//            case UIRectEdgeLeft:
+//            case UIRectEdgeRight: {
+//                imageWidth	= imageSize.width + imageEdgeInsets.left + imageEdgeInsets.right;
+//                imageHeight	= imageSize.height + imageEdgeInsets.top + imageEdgeInsets.bottom;
+//                break;
+//            }
+//            default: {
+//                break;
+//            }
+//        }
+//    }
     
     // область текста
     CGSize insettedSize = CGSizeMake(MAX(size.width - edgeInsets.left - edgeInsets.right - imageWidth, 0), CGFLOAT_MAX);
@@ -333,25 +334,25 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
     height	+= edgeInsets.top + edgeInsets.bottom;
     
     // прибавим размер картинки
-    if (hasImage) {
-        switch (imagePosition) {
-            case UIRectEdgeTop:
-            case UIRectEdgeBottom: {
-                height += imageHeight;
-                break;
-            }
-            case UIRectEdgeLeft:
-            case UIRectEdgeRight: {
-                height = MAX(height, imageHeight);
-                break;
-            }
-            default: {
-                break;
-            }
-        }
-        
-        width += imageWidth;
-    }
+//    if (hasImage) {
+//        switch (imagePosition) {
+//            case UIRectEdgeTop:
+//            case UIRectEdgeBottom: {
+//                height += imageHeight;
+//                break;
+//            }
+//            case UIRectEdgeLeft:
+//            case UIRectEdgeRight: {
+//                height = MAX(height, imageHeight);
+//                break;
+//            }
+//            default: {
+//                break;
+//            }
+//        }
+//        
+//        width += imageWidth;
+//    }
     
     return CGSizeMake(ceilf(width), ceilf(height));
 }
@@ -382,176 +383,176 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 {
     // текущие параметры
     UIEdgeInsets edgeInsets			= self.edgeInsets;
-    BOOL hasImage					= self.hasImage;
-    CGSize imageSize				= self.imageSize;
-    UIRectEdge imagePosition		= self.imagePosition;
-    NSTextAlignment imageAlignment	= self.imageAlignment;
-    UIEdgeInsets imageEdgeInsets	= self.imageEdgeInsets;
+//    BOOL hasImage					= self.hasImage;
+//    CGSize imageSize				= self.imageSize;
+//    UIRectEdge imagePosition		= self.imagePosition;
+//    NSTextAlignment imageAlignment	= self.imageAlignment;
+//    UIEdgeInsets imageEdgeInsets	= self.imageEdgeInsets;
     
     // вычислим рамку картинки и учтём её размер при вычислении рамки текста
-    CGRect imageRect = CGRectZero;
+//    CGRect imageRect = CGRectZero;
     
-    if (hasImage) {
-        
-        // авторазмер картики
-        if (imageSize.width == 0) {
-            imageSize.width = bounds.size.width - imageEdgeInsets.left - imageEdgeInsets.right;
-        }
-        
-        if (imageSize.height == 0) {
-            imageSize.height = bounds.size.height - imageEdgeInsets.top - imageEdgeInsets.bottom;
-        }
-        
-        // размер картинки вместе с отступами
-        imageSize = CGSizeMake(imageSize.width + imageEdgeInsets.left + imageEdgeInsets.right, imageSize.height + imageEdgeInsets.top + imageEdgeInsets.bottom);
-        
-        // положение картинки
-        switch (imagePosition) {
-                
-                // верхний край
-            case UIRectEdgeTop: {
-                
-                switch (imageAlignment) {
-                        // верхний край, слева
-                    case NSTextAlignmentLeft:
-                        imageRect = CGRectMake(bounds.origin.x,
-                                               bounds.origin.y,
-                                               imageSize.width,
-                                               imageSize.height);
-                        break;
-                        // верхний край, справа
-                    case NSTextAlignmentRight:
-                        imageRect = CGRectMake(bounds.origin.x + bounds.size.width - imageSize.width,
-                                               bounds.origin.y,
-                                               imageSize.width,
-                                               imageSize.height);
-                        break;
-                        // верхний край, центр
-                    case NSTextAlignmentCenter:
-                    default:
-                        imageRect = CGRectMake(bounds.origin.x + (bounds.size.width - imageSize.width) / 2,
-                                               bounds.origin.y,
-                                               imageSize.width,
-                                               imageSize.height);
-                        break;
-                }
-                
-                bounds.origin.y += imageRect.size.height;
-                bounds.size.height -= imageRect.size.height;
-                
-                break;
-            }
-                
-                // нижний край
-            case UIRectEdgeBottom: {
-                
-                switch (imageAlignment) {
-                        // нижний край, слева
-                    case NSTextAlignmentLeft:
-                        imageRect = CGRectMake(bounds.origin.x,
-                                               bounds.origin.y + bounds.size.height - imageSize.height,
-                                               imageSize.width,
-                                               imageSize.height);
-                        break;
-                        // нижний край, справа
-                    case NSTextAlignmentRight:
-                        imageRect = CGRectMake(bounds.origin.x + bounds.size.width - imageSize.width,
-                                               bounds.origin.y + bounds.size.height - imageSize.height,
-                                               imageSize.width,
-                                               imageSize.height);
-                        break;
-                        // нижний край, центр
-                    case NSTextAlignmentCenter:
-                    default:
-                        imageRect = CGRectMake(bounds.origin.x + (bounds.size.width - imageSize.width) / 2,
-                                               bounds.origin.y + bounds.size.height - imageSize.height,
-                                               imageSize.width,
-                                               imageSize.height);
-                        break;
-                }
-                
-                bounds.size.height -= imageRect.size.height;
-                
-                break;
-            }
-                
-                // левый край
-            case UIRectEdgeLeft: {
-                
-                switch (imageAlignment) {
-                        // левый край, сверху
-                    case NSTextAlignmentLeft:
-                        imageRect = CGRectMake(bounds.origin.x,
-                                               bounds.origin.y,
-                                               imageSize.width,
-                                               imageSize.height);
-                        break;
-                        // левый край, снизу
-                    case NSTextAlignmentRight:
-                        imageRect = CGRectMake(bounds.origin.x,
-                                               bounds.origin.y + bounds.size.height - imageSize.height,
-                                               imageSize.width,
-                                               imageSize.height);
-                        break;
-                        // левый край, центр
-                    case NSTextAlignmentCenter:
-                    default:
-                        imageRect = CGRectMake(bounds.origin.x,
-                                               bounds.origin.y + (bounds.size.height - imageSize.height) / 2,
-                                               imageSize.width,
-                                               imageSize.height);
-                        break;
-                }
-                
-                bounds.origin.x += imageRect.size.width;
-                bounds.size.width -= imageRect.size.width;
-                
-                break;
-            }
-                
-                // правый край
-            case UIRectEdgeRight: {
-                
-                switch (imageAlignment) {
-                        // правый край, сверху
-                    case NSTextAlignmentLeft:
-                        imageRect = CGRectMake(bounds.origin.x + bounds.size.width - imageSize.width,
-                                               bounds.origin.y,
-                                               imageSize.width,
-                                               imageSize.height);
-                        break;
-                        // правый край, снизу
-                    case NSTextAlignmentRight:
-                        imageRect = CGRectMake(bounds.origin.x + bounds.size.width - imageSize.width,
-                                               bounds.origin.y + bounds.size.height - imageSize.height,
-                                               imageSize.width,
-                                               imageSize.height);
-                        break;
-                        // правый край, центр
-                    case NSTextAlignmentCenter:
-                    default:
-                        imageRect = CGRectMake(bounds.origin.x + bounds.size.width - imageSize.width,
-                                               bounds.origin.y + (bounds.size.height - imageSize.height) / 2,
-                                               imageSize.width,
-                                               imageSize.height);
-                        break;
-                }
-                
-                bounds.size.width -= imageRect.size.width;
-                
-                break;
-            }
-            default: {
-                break;
-            }
-        }
-        
-        // вычтем отступы картинки
-        imageRect = UIEdgeInsetsInsetRect(imageRect, imageEdgeInsets);
-    }
+//    if (hasImage) {
+//        
+//        // авторазмер картики
+//        if (imageSize.width == 0) {
+//            imageSize.width = bounds.size.width - imageEdgeInsets.left - imageEdgeInsets.right;
+//        }
+//        
+//        if (imageSize.height == 0) {
+//            imageSize.height = bounds.size.height - imageEdgeInsets.top - imageEdgeInsets.bottom;
+//        }
+//        
+//        // размер картинки вместе с отступами
+//        imageSize = CGSizeMake(imageSize.width + imageEdgeInsets.left + imageEdgeInsets.right, imageSize.height + imageEdgeInsets.top + imageEdgeInsets.bottom);
+//        
+//        // положение картинки
+//        switch (imagePosition) {
+//                
+//                // верхний край
+//            case UIRectEdgeTop: {
+//                
+//                switch (imageAlignment) {
+//                        // верхний край, слева
+//                    case NSTextAlignmentLeft:
+//                        imageRect = CGRectMake(bounds.origin.x,
+//                                               bounds.origin.y,
+//                                               imageSize.width,
+//                                               imageSize.height);
+//                        break;
+//                        // верхний край, справа
+//                    case NSTextAlignmentRight:
+//                        imageRect = CGRectMake(bounds.origin.x + bounds.size.width - imageSize.width,
+//                                               bounds.origin.y,
+//                                               imageSize.width,
+//                                               imageSize.height);
+//                        break;
+//                        // верхний край, центр
+//                    case NSTextAlignmentCenter:
+//                    default:
+//                        imageRect = CGRectMake(bounds.origin.x + (bounds.size.width - imageSize.width) / 2,
+//                                               bounds.origin.y,
+//                                               imageSize.width,
+//                                               imageSize.height);
+//                        break;
+//                }
+//                
+//                bounds.origin.y += imageRect.size.height;
+//                bounds.size.height -= imageRect.size.height;
+//                
+//                break;
+//            }
+//                
+//                // нижний край
+//            case UIRectEdgeBottom: {
+//                
+//                switch (imageAlignment) {
+//                        // нижний край, слева
+//                    case NSTextAlignmentLeft:
+//                        imageRect = CGRectMake(bounds.origin.x,
+//                                               bounds.origin.y + bounds.size.height - imageSize.height,
+//                                               imageSize.width,
+//                                               imageSize.height);
+//                        break;
+//                        // нижний край, справа
+//                    case NSTextAlignmentRight:
+//                        imageRect = CGRectMake(bounds.origin.x + bounds.size.width - imageSize.width,
+//                                               bounds.origin.y + bounds.size.height - imageSize.height,
+//                                               imageSize.width,
+//                                               imageSize.height);
+//                        break;
+//                        // нижний край, центр
+//                    case NSTextAlignmentCenter:
+//                    default:
+//                        imageRect = CGRectMake(bounds.origin.x + (bounds.size.width - imageSize.width) / 2,
+//                                               bounds.origin.y + bounds.size.height - imageSize.height,
+//                                               imageSize.width,
+//                                               imageSize.height);
+//                        break;
+//                }
+//                
+//                bounds.size.height -= imageRect.size.height;
+//                
+//                break;
+//            }
+//                
+//                // левый край
+//            case UIRectEdgeLeft: {
+//                
+//                switch (imageAlignment) {
+//                        // левый край, сверху
+//                    case NSTextAlignmentLeft:
+//                        imageRect = CGRectMake(bounds.origin.x,
+//                                               bounds.origin.y,
+//                                               imageSize.width,
+//                                               imageSize.height);
+//                        break;
+//                        // левый край, снизу
+//                    case NSTextAlignmentRight:
+//                        imageRect = CGRectMake(bounds.origin.x,
+//                                               bounds.origin.y + bounds.size.height - imageSize.height,
+//                                               imageSize.width,
+//                                               imageSize.height);
+//                        break;
+//                        // левый край, центр
+//                    case NSTextAlignmentCenter:
+//                    default:
+//                        imageRect = CGRectMake(bounds.origin.x,
+//                                               bounds.origin.y + (bounds.size.height - imageSize.height) / 2,
+//                                               imageSize.width,
+//                                               imageSize.height);
+//                        break;
+//                }
+//                
+//                bounds.origin.x += imageRect.size.width;
+//                bounds.size.width -= imageRect.size.width;
+//                
+//                break;
+//            }
+//                
+//                // правый край
+//            case UIRectEdgeRight: {
+//                
+//                switch (imageAlignment) {
+//                        // правый край, сверху
+//                    case NSTextAlignmentLeft:
+//                        imageRect = CGRectMake(bounds.origin.x + bounds.size.width - imageSize.width,
+//                                               bounds.origin.y,
+//                                               imageSize.width,
+//                                               imageSize.height);
+//                        break;
+//                        // правый край, снизу
+//                    case NSTextAlignmentRight:
+//                        imageRect = CGRectMake(bounds.origin.x + bounds.size.width - imageSize.width,
+//                                               bounds.origin.y + bounds.size.height - imageSize.height,
+//                                               imageSize.width,
+//                                               imageSize.height);
+//                        break;
+//                        // правый край, центр
+//                    case NSTextAlignmentCenter:
+//                    default:
+//                        imageRect = CGRectMake(bounds.origin.x + bounds.size.width - imageSize.width,
+//                                               bounds.origin.y + (bounds.size.height - imageSize.height) / 2,
+//                                               imageSize.width,
+//                                               imageSize.height);
+//                        break;
+//                }
+//                
+//                bounds.size.width -= imageRect.size.width;
+//                
+//                break;
+//            }
+//            default: {
+//                break;
+//            }
+//        }
+//        
+//        // вычтем отступы картинки
+//        imageRect = UIEdgeInsetsInsetRect(imageRect, imageEdgeInsets);
+//    }
     
     // запомним рамку картинки
-    self.calculatedImageRect = CGRectIntegral(imageRect);
+//    self.calculatedImageRect = CGRectIntegral(imageRect);
     
     // вычтем отступы текста
     bounds = UIEdgeInsetsInsetRect(bounds, edgeInsets);
@@ -701,96 +702,96 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
     }
     
     // рисуем картинку?
-    UIImage *image = self.image;
-    CGRect imageFrame = self.calculatedImageRect;
+//    UIImage *image = self.image;
+//    CGRect imageFrame = self.calculatedImageRect;
     
-    if (self.hasImage && image && CGRectIntersectsRect(imageFrame, rect)) {
-        
-        CGSize imageSize = image.size;
-        CGRect imageRect;
-        
-        switch (self.imageContentMode) {
-            case UIViewContentModeScaleToFill: {
-                imageRect = imageFrame;
-                break;
-            }
-            case UIViewContentModeScaleAspectFit: {
-                CGFloat ratio = MIN(imageFrame.size.width / imageSize.width, imageFrame.size.height / imageSize.height);
-                CGFloat dx = (imageFrame.size.width - imageSize.width * ratio) / 2;
-                CGFloat dy = (imageFrame.size.height - imageSize.height * ratio) / 2;
-                imageRect = CGRectInset(imageFrame, dx, dy);
-                break;
-            }
-            case UIViewContentModeScaleAspectFill: {
-                CGFloat ratio = MAX(imageFrame.size.width / imageSize.width, imageFrame.size.height / imageSize.height);
-                CGFloat dx = (imageFrame.size.width - imageSize.width * ratio) / 2;
-                CGFloat dy = (imageFrame.size.height - imageSize.height * ratio) / 2;
-                imageRect = CGRectInset(imageFrame, dx, dy);
-                break;
-            }
-            case UIViewContentModeRedraw: {
-                imageRect = imageFrame;
-                break;
-            }
-            case UIViewContentModeCenter: {
-                CGFloat x = imageFrame.origin.x + (imageFrame.size.width - imageSize.width) / 2;
-                CGFloat y = imageFrame.origin.y + (imageFrame.size.height - imageSize.height) / 2;
-                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
-                break;
-            }
-            case UIViewContentModeTop: {
-                CGFloat x = imageFrame.origin.x + (imageFrame.size.width - imageSize.width) / 2;
-                CGFloat y = imageFrame.origin.y;
-                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
-                break;
-            }
-            case UIViewContentModeBottom: {
-                CGFloat x = imageFrame.origin.x + (imageFrame.size.width - imageSize.width) / 2;
-                CGFloat y = imageFrame.origin.y + imageFrame.size.height - imageSize.height;
-                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
-                break;
-            }
-            case UIViewContentModeLeft: {
-                CGFloat x = imageFrame.origin.x;
-                CGFloat y = imageFrame.origin.y + (imageFrame.size.height - imageSize.height) / 2;
-                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
-                break;
-            }
-            case UIViewContentModeRight: {
-                CGFloat x = imageFrame.origin.x + imageFrame.size.width - imageSize.width;
-                CGFloat y = imageFrame.origin.y + (imageFrame.size.height - imageSize.height) / 2;
-                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
-                break;
-            }
-            case UIViewContentModeTopLeft: {
-                CGFloat x = imageFrame.origin.x;
-                CGFloat y = imageFrame.origin.y;
-                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
-                break;
-            }
-            case UIViewContentModeTopRight: {
-                CGFloat x = imageFrame.origin.x + imageFrame.size.width - imageSize.width;
-                CGFloat y = imageFrame.origin.y;
-                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
-                break;
-            }
-            case UIViewContentModeBottomLeft: {
-                CGFloat x = imageFrame.origin.x;
-                CGFloat y = imageFrame.origin.y + imageFrame.size.height - imageSize.height;
-                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
-                break;
-            }
-            case UIViewContentModeBottomRight: {
-                CGFloat x = imageFrame.origin.x + imageFrame.size.width - imageSize.width;
-                CGFloat y = imageFrame.origin.y + imageFrame.size.height - imageSize.height;
-                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
-                break;
-            }
-        }
-        
-        UIRectClip(imageFrame);
-        [image drawInRect:CGRectIntegral(imageRect)];
-    }
+//    if (self.hasImage && image && CGRectIntersectsRect(imageFrame, rect)) {
+//        
+//        CGSize imageSize = image.size;
+//        CGRect imageRect;
+//        
+//        switch (self.imageContentMode) {
+//            case UIViewContentModeScaleToFill: {
+//                imageRect = imageFrame;
+//                break;
+//            }
+//            case UIViewContentModeScaleAspectFit: {
+//                CGFloat ratio = MIN(imageFrame.size.width / imageSize.width, imageFrame.size.height / imageSize.height);
+//                CGFloat dx = (imageFrame.size.width - imageSize.width * ratio) / 2;
+//                CGFloat dy = (imageFrame.size.height - imageSize.height * ratio) / 2;
+//                imageRect = CGRectInset(imageFrame, dx, dy);
+//                break;
+//            }
+//            case UIViewContentModeScaleAspectFill: {
+//                CGFloat ratio = MAX(imageFrame.size.width / imageSize.width, imageFrame.size.height / imageSize.height);
+//                CGFloat dx = (imageFrame.size.width - imageSize.width * ratio) / 2;
+//                CGFloat dy = (imageFrame.size.height - imageSize.height * ratio) / 2;
+//                imageRect = CGRectInset(imageFrame, dx, dy);
+//                break;
+//            }
+//            case UIViewContentModeRedraw: {
+//                imageRect = imageFrame;
+//                break;
+//            }
+//            case UIViewContentModeCenter: {
+//                CGFloat x = imageFrame.origin.x + (imageFrame.size.width - imageSize.width) / 2;
+//                CGFloat y = imageFrame.origin.y + (imageFrame.size.height - imageSize.height) / 2;
+//                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
+//                break;
+//            }
+//            case UIViewContentModeTop: {
+//                CGFloat x = imageFrame.origin.x + (imageFrame.size.width - imageSize.width) / 2;
+//                CGFloat y = imageFrame.origin.y;
+//                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
+//                break;
+//            }
+//            case UIViewContentModeBottom: {
+//                CGFloat x = imageFrame.origin.x + (imageFrame.size.width - imageSize.width) / 2;
+//                CGFloat y = imageFrame.origin.y + imageFrame.size.height - imageSize.height;
+//                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
+//                break;
+//            }
+//            case UIViewContentModeLeft: {
+//                CGFloat x = imageFrame.origin.x;
+//                CGFloat y = imageFrame.origin.y + (imageFrame.size.height - imageSize.height) / 2;
+//                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
+//                break;
+//            }
+//            case UIViewContentModeRight: {
+//                CGFloat x = imageFrame.origin.x + imageFrame.size.width - imageSize.width;
+//                CGFloat y = imageFrame.origin.y + (imageFrame.size.height - imageSize.height) / 2;
+//                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
+//                break;
+//            }
+//            case UIViewContentModeTopLeft: {
+//                CGFloat x = imageFrame.origin.x;
+//                CGFloat y = imageFrame.origin.y;
+//                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
+//                break;
+//            }
+//            case UIViewContentModeTopRight: {
+//                CGFloat x = imageFrame.origin.x + imageFrame.size.width - imageSize.width;
+//                CGFloat y = imageFrame.origin.y;
+//                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
+//                break;
+//            }
+//            case UIViewContentModeBottomLeft: {
+//                CGFloat x = imageFrame.origin.x;
+//                CGFloat y = imageFrame.origin.y + imageFrame.size.height - imageSize.height;
+//                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
+//                break;
+//            }
+//            case UIViewContentModeBottomRight: {
+//                CGFloat x = imageFrame.origin.x + imageFrame.size.width - imageSize.width;
+//                CGFloat y = imageFrame.origin.y + imageFrame.size.height - imageSize.height;
+//                imageRect = CGRectMake(x, y, imageSize.width, imageSize.height);
+//                break;
+//            }
+//        }
+//        
+//        UIRectClip(imageFrame);
+//        [image drawInRect:CGRectIntegral(imageRect)];
+//    }
 }
 
 
@@ -798,50 +799,50 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 
 //
 // -----------------------------------------------------------------------------
-- (void)setHasImage:(BOOL)hasImage
-{
-    _hasImage = hasImage;
-    [self setNeedsDisplay];
-}
-
+//- (void)setHasImage:(BOOL)hasImage
+//{
+//    _hasImage = hasImage;
+//    [self setNeedsDisplay];
+//}
 //
-// -----------------------------------------------------------------------------
-- (void)setImageSize:(CGSize)imageSize
-{
-    _imageSize = imageSize;
-    [self setNeedsDisplay];
-}
-
+////
+//// -----------------------------------------------------------------------------
+//- (void)setImageSize:(CGSize)imageSize
+//{
+//    _imageSize = imageSize;
+//    [self setNeedsDisplay];
+//}
 //
-// -----------------------------------------------------------------------------
-- (void)setImagePosition:(UIRectEdge)imagePosition
-{
-    _imagePosition = imagePosition;
-    [self setNeedsDisplay];
-}
-
+////
+//// -----------------------------------------------------------------------------
+//- (void)setImagePosition:(UIRectEdge)imagePosition
+//{
+//    _imagePosition = imagePosition;
+//    [self setNeedsDisplay];
+//}
 //
-// -----------------------------------------------------------------------------
-- (void)setImageContentMode:(UIViewContentMode)imageContentMode
-{
-    _imageContentMode = imageContentMode;
-    [self setNeedsDisplay];
-}
-
+////
+//// -----------------------------------------------------------------------------
+//- (void)setImageContentMode:(UIViewContentMode)imageContentMode
+//{
+//    _imageContentMode = imageContentMode;
+//    [self setNeedsDisplay];
+//}
 //
-// -----------------------------------------------------------------------------
-- (void)setImageEdgeInsets:(UIEdgeInsets)imageEdgeInsets
-{
-    _imageEdgeInsets = imageEdgeInsets;
-    [self setNeedsDisplay];
-}
-
+////
+//// -----------------------------------------------------------------------------
+//- (void)setImageEdgeInsets:(UIEdgeInsets)imageEdgeInsets
+//{
+//    _imageEdgeInsets = imageEdgeInsets;
+//    [self setNeedsDisplay];
+//}
 //
-// -----------------------------------------------------------------------------
-- (void)setImage:(UIImage *)image
-{
-    _image = image;
-    [self setNeedsDisplay];
-}
+////
+//// -----------------------------------------------------------------------------
+//- (void)setImage:(UIImage *)image
+//{
+//    _image = image;
+//    [self setNeedsDisplay];
+//}
 
 @end

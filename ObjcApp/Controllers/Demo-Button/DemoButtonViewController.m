@@ -8,6 +8,7 @@
 
 #import "DemoButtonViewController.h"
 #import "BTLabel.h"
+#import "BALabel.h"
 
 @interface DemoButtonViewController ()
 @property (weak, nonatomic) IBOutlet BTLabel *lblTopTitle;
@@ -16,9 +17,19 @@
 
 @implementation DemoButtonViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    
+    BALabel *lbl = [[BALabel alloc] initWithFrame:CGRectMake(10, 370, 200, 60)];
+    [lbl setBackgroundColor:[UIColor lightGrayColor]];
+//    [lbl setNumberOfLines:0];
+    [lbl setVerticalAlignment:BAVerticalAlignmentTop];
+    //[lbl setTextAlignment:NSTextAlignmentRight];
+    [lbl setText:@"Redistributions in binary form must reproduce the above copyright notice"];
+    [self.view addSubview:lbl];
 }
 
 - (void)didReceiveMemoryWarning {
