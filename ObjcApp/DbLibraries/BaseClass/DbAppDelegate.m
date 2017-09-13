@@ -138,14 +138,14 @@ fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHand
     }
     
     if (userInfo != nil) {
-        int badge = [[userInfo valueForKeyPath:@"aps.badge"] intValue];
         // -- Set BadgeNumber --
-        [UIApplication sharedApplication].applicationIconBadgeNumber += badge;
+        // int badge = [[userInfo valueForKeyPath:@"aps.badge"] intValue];
+        // [UIApplication sharedApplication].applicationIconBadgeNumber += badge;
         
         [DbUtils delayCallback:^{
             [[DbAppSession instance] setPushNotifyInfo:dictUserInfo];
             [DbUtils postNotification:NOTIFY_SERVER_PUSH_MESSAGE object:self userInfo:dictUserInfo];
-        } forSeconds:1.0];
+        } forSeconds:0.5];
     }
     // completionHandler(UIBackgroundFetchResultNewData);
     completionHandler(UIBackgroundFetchResultNoData);
@@ -171,6 +171,7 @@ fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHand
     [dictUserInfo setObject:[NSNumber numberWithBool:NO]
                      forKey:@"clickState"];
     
+
     [[DbAppSession instance] setPushNotifyInfo:dictUserInfo];
     [DbUtils postNotification:NOTIFY_SERVER_PUSH_MESSAGE object:self userInfo:dictUserInfo];
 }
@@ -183,8 +184,8 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletion
 //    NSLog( @"for handling push in background" );
 //    NSLog(@"User Info : %@",[response.notification.request.content.userInfo description]);
     
-    int badge = [[response.notification.request.content.userInfo valueForKeyPath:@"aps.badge"] intValue];
     // -- Set BadgeNumber --
+    int badge = [[response.notification.request.content.userInfo valueForKeyPath:@"aps.badge"] intValue];    
     [UIApplication sharedApplication].applicationIconBadgeNumber += badge;
     
     completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
@@ -198,7 +199,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletion
     [DbUtils delayCallback:^{
         [[DbAppSession instance] setPushNotifyInfo:dictUserInfo];
         [DbUtils postNotification:NOTIFY_SERVER_PUSH_MESSAGE object:self userInfo:dictUserInfo];
-    } forSeconds:1.0];
+    } forSeconds:0.5];
     
 }
 

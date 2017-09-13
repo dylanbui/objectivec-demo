@@ -78,7 +78,7 @@ typedef NS_ENUM(NSUInteger, DbButtonImagePadding)
 @property (nonatomic, assign) IBInspectable CGFloat borderWidth;
 
 /**
- The alpha of the button when highlighted. The default highlightAlpha is 0.7f.
+ The alpha of the button when highlighted. The default highlightAlpha is 0.5f.
  */
 @property (nonatomic, assign) IBInspectable CGFloat highlightAlpha;
 

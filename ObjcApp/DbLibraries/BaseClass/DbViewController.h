@@ -29,6 +29,8 @@
 @property (weak) id <ICallbackParentDelegate> callbackParentDelegate;
 
 - (void)initLoadDataForController:(id)params;
+
+// Hold => error
 - (void)navigationBarHiddenForThisController;
 
 

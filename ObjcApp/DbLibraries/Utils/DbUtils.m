@@ -51,6 +51,56 @@
 }
 
 #pragma mark -
+#pragma mark Utility CGRect
+#pragma mark -
+
++ (CGRect)CGRect:(CGRect)rect setSize:(CGSize)size
+{
+    return CGRectMake(rect.origin.x, rect.origin.y, size.width, size.height);
+}
+
++ (CGRect)CGRect:(CGRect)rect setOrigin:(CGPoint)origin
+{
+    return CGRectMake(origin.x, origin.y, rect.size.width, rect.size.height);
+}
+
++ (CGRect)CGRect:(CGRect)rect setWidth:(CGFloat)width
+{
+    return CGRectMake(rect.origin.x, rect.origin.y, width, rect.size.height);
+}
+
++ (CGRect)CGRect:(CGRect)rect setHeight:(CGFloat)height
+{
+    return CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, height);
+}
+
++ (CGRect)CGRect:(CGRect)rect setX:(CGFloat)x
+{
+    return CGRectMake(x, rect.origin.y, rect.size.width, rect.size.height);
+}
+
++ (CGRect)CGRect:(CGRect)rect setY:(CGFloat)y
+{
+    return CGRectMake(rect.origin.x, y, rect.size.width, rect.size.height);
+}
+
+#pragma mark -
+#pragma mark NSLayoutConstraint
+#pragma mark -
+
++ (NSLayoutConstraint *_Nullable)getNSLayoutConstraint:(NSLayoutAttribute)layoutAttribute ofView:(UIView *_Nonnull)view
+{
+    NSLayoutConstraint *returnConstraint = nil;
+    for (NSLayoutConstraint *constraint in view.constraints) {
+        if (constraint.firstAttribute == layoutAttribute) {
+            returnConstraint = constraint;
+            break;
+        }
+    }
+    return returnConstraint;
+}
+
+#pragma mark -
 #pragma mark Thread
 #pragma mark -
 
@@ -123,6 +173,12 @@ static NSTimer *processScheduleWithBlock = nil;
 {
     [[NSNotificationCenter defaultCenter] removeObserver:sender];
 }
+
++ (void)removeNotification:(id)sender name:(nullable NSNotificationName)aName
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:sender name:aName object:nil];
+}
+
 
 + (void)postNotification:(NSString *)name object:(id)object
 {
@@ -246,9 +302,14 @@ static RMUniversalAlert *alertNetworkConnection = nil;
 #pragma mark Create a color using a string with a webcolor
 #pragma mark -
 
++ (UIColor *)colorWithHexString:(NSString *)hexStr
+{
+    return [self colorWithHexString:hexStr alpha:1.0];
+}
+
 // Create a color using a string with a webcolor
 // ex. [Utils colorWithHexString:@"#03047F"]
-+ (UIColor *)colorWithHexString:(NSString *)hexStr
++ (UIColor *)colorWithHexString:(NSString *)hexStr alpha:(float)alpha
 {
     NSScanner *scanner;
     unsigned int rgbval;
@@ -257,17 +318,17 @@ static RMUniversalAlert *alertNetworkConnection = nil;
     [scanner setCharactersToBeSkipped:[NSCharacterSet characterSetWithCharactersInString:@"#"]];
     [scanner scanHexInt: &rgbval];
     
-    return [DbUtils colorWithHexValue: rgbval];
+    return [DbUtils colorWithHexValue:rgbval alpha:alpha];
 }
 
 // Create a color using a hex RGB value
 // ex. [Utils colorWithHexValue: 0x03047F]
-+ (UIColor *)colorWithHexValue: (NSInteger) rgbValue
++ (UIColor *)colorWithHexValue:(NSInteger)rgbValue alpha:(float)alpha
 {
     return [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0
                            green:((float)((rgbValue & 0xFF00) >> 8))/255.0
                             blue:((float)(rgbValue & 0xFF))/255.0
-                           alpha:1.0];
+                           alpha:alpha];
 }
 
 #pragma mark -
@@ -526,6 +587,22 @@ static MBProgressHUD *loadingView = nil;
     }];
 }
 
+#pragma mark -
+#pragma mark Fix control
+#pragma mark -
+
+// -- Refer : https://stackoverflow.com/questions/19256996/uibutton-not-showing-highlight-on-tap-in-ios7/26049216 --
++ (void)fixHighlightButtonInTableCell:(UITableView *)tableView
+{
+    tableView.delaysContentTouches = NO;
+    
+    for (UIView *currentView in tableView.subviews) {
+        if ([currentView isKindOfClass:[UIScrollView class]]) {
+            ((UIScrollView *)currentView).delaysContentTouches = NO;
+            break;
+        }
+    }
+}
 
 
 @end

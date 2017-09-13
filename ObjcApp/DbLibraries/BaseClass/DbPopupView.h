@@ -18,7 +18,10 @@
 
 @interface DbPopupView : DbViewFromXib
 
+@property (nonatomic, weak) UIViewController *containerViewController;
+
 @property (weak, nonatomic) IBOutlet UIView *vwContent;
+@property (nonatomic, strong) UIView *vwBg;
 
 - (id)init;
 - (id)initWithHandleViewAction:(HandleViewAction)handle;

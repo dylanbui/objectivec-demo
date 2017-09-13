@@ -9,7 +9,7 @@
 #import "DbPopupView.h"
 
 @interface DbPopupView() {
-    UIView *vwBg;
+
 }
 
 @end
@@ -40,14 +40,14 @@
         .size.height = mainScreen.bounds.size.height + 50,
     };
     
-    vwBg = [[UIView alloc] initWithFrame:frame];
+    self.vwBg = [[UIView alloc] initWithFrame:frame];
     
     UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
-    [visualEffectView setFrame:vwBg.bounds];
-    [vwBg addSubview:visualEffectView];
-    [vwBg setAlpha:1.0];
+    [visualEffectView setFrame:self.vwBg.bounds];
+    [self.vwBg addSubview:visualEffectView];
+    [self.vwBg setAlpha:1.0];
     
-    [self insertSubview:vwBg belowSubview:self.vwContent];
+    [self insertSubview:self.vwBg belowSubview:self.vwContent];
 }
 
 - (void)layoutSubviews
@@ -56,7 +56,7 @@
     [self.vwContent.layer setMasksToBounds:YES];
     [self.vwContent.layer setCornerRadius:6.0f];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissPopup)];
-    [vwBg addGestureRecognizer:tap];
+    [self.vwBg addGestureRecognizer:tap];
 }
 
 - (void)showPopup
@@ -66,8 +66,11 @@
 
 - (void)showPopupWithCompletion:(void (^ __nullable)(BOOL finished))completion
 {
-    UIViewController *topViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    UIView *toView = topViewController.view;
+    if (self.containerViewController == nil) {
+        self.containerViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    }
+    
+    UIView *toView = self.containerViewController.view;
 
     self.frame = CGRectMake(0, -20, toView.frame.size.width, toView.frame.size.height);
     [self layoutIfNeeded];

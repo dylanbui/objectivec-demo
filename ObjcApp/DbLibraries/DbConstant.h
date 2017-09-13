@@ -9,7 +9,7 @@
 #ifndef DbConstant_h
 #define DbConstant_h
 
-#define APPLE_PUSH_NOTIFICATION_REQUEST     0 // 0 : no, 1 : yes
+#define APPLE_PUSH_NOTIFICATION_REQUEST     1 // 0 : no, 1 : yes
 
 #define CONFIGURATION_DEBUG                 1 // 0 : hide, 1 : show
 

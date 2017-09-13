@@ -12,11 +12,16 @@
 #define DEVICE_PUSH_TOKEN @"DEVICE_PUSH_TOKEN"
 #define PUSH_NOTIFY_INFO_TOKEN @"PUSH_NOTIFY_INFO_TOKEN"
 
+@interface DbAppSession ()
+
+
+@end
+
 @implementation DbAppSession
 
-@synthesize accessToken;
 @synthesize deviceToken;
 
+@synthesize userId;
 @synthesize photo;
 @synthesize name;
 @synthesize email;
@@ -24,7 +29,6 @@
 @synthesize latitude;
 @synthesize longitude;
 
-@synthesize extendData;
 
 + (DbAppSession *)instance
 {
@@ -113,37 +117,6 @@
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:APP_SESSION_KEY];
 }
 
-//- (void)reloadDataFromLastSessionWithObject:(DbObject *)obj forKey:(NSString *)key
-//{
-//    NSString *strJsonData = [[NSUserDefaults standardUserDefaults] stringForKey:key];
-//    if (strJsonData != nil) {
-//        NSData *data = [strJsonData dataUsingEncoding:NSUTF8StringEncoding];
-//        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data
-//                                                                   options:NSJSONReadingMutableContainers
-//                                                                     error:nil];
-//        
-//        if (obj) {
-//            [obj loadPropertyValueFromDictionary_om:dictionary];
-//        } else {
-//            [self loadPropertyValueFromDictionary_om:dictionary];
-//        }
-//    }
-//}
-//
-//- (void)saveDataFromLastSessionWithObject:(DbObject *)obj forKey:(NSString *)key
-//{
-//    // -- Only save when login --
-//    NSString *strJsonData = [self om_mapToJSONString];
-//    if (obj) {
-//        strJsonData = [obj om_mapToJSONString];
-//    }
-//    
-//    // -- Save data to NSUserDefaults : khong the luu vi du lieu qua lon --
-//    [[NSUserDefaults standardUserDefaults] setObject:strJsonData forKey:key];
-//}
-
-
-
 #pragma mark -
 #pragma mark Push Notify Info
 #pragma mark -
@@ -181,8 +154,10 @@
     return [self.extendData objectForKey:key];
 }
 
-- (void)setExtendData:(id)data forKey:(NSString *)key
+- (void)setExtendData:(id)data forKey:(NSString *)key;
 {
+    if ([self.extendData isEqual:[NSNull null]])
+        self.extendData = [[NSMutableDictionary alloc] init];
     [self.extendData setObject:data forKey:key];
 }
 
@@ -208,8 +183,8 @@
         // @{ @"property_name": @"json_name"}
         NSDictionary * objectMapping = @{
                                          @"deviceToken": @"deviceToken",
-                                         @"accessToken": @"accessToken",
                                          
+                                         @"userId": @"userId",
                                          @"address": @"address",
                                          @"email": @"email",
                                          @"phone": @"phone",
@@ -229,7 +204,6 @@
 - (void)processNotificationCenter:(NSNotification *)notification
 {
     if (notification.name == UIApplicationDidBecomeActiveNotification) {
-        NSLog(@"%@", @"reloadDataFromLastSession");
         [self reloadDataFromLastSession];
     } else if (notification.name == UIApplicationWillResignActiveNotification) {
         [self saveDataFromLastSession];

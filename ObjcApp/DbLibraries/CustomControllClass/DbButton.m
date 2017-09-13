@@ -64,7 +64,7 @@
     if (!_borderColor) { _borderColor = kFlatGreenColor;}
     if (!_borderWidth) { _borderWidth = 0.0;}
     
-    if (!_highlightAlpha) { _highlightAlpha = 0.7;}
+    if (!_highlightAlpha) { _highlightAlpha = 0.5;}
     if (!_disableAlpha) { _disableAlpha = 0.5;}
     
     if (!_touchEffectEnabled) { _touchEffectEnabled = false;}
@@ -120,7 +120,7 @@
     
     // Borders
     [self.layer setCornerRadius:_cornerRadius];
-    [self.layer setMasksToBounds:YES];
+    [self.layer setMasksToBounds:true];
     [self.layer setBorderWidth:_borderWidth];
     [self.layer setBorderColor:_borderColor.CGColor];
     

@@ -155,6 +155,7 @@ withDelegate:(id<IDbWebConnectionDelegate>)delegate
                                                                                  error:&serializationError];
     // -- Use gzip decompression --
     [request setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
+    [request setValue:@"vi-VN" forHTTPHeaderField:@"Accept-Language"];
     
     if (serializationError) {
         NSLog(@"serializationError : %@", [serializationError description]);

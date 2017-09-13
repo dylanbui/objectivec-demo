@@ -1,8 +1,8 @@
 //
 //  DbLabel.m
-//  ObjcApp
+//  PropzyPama
 //
-//  Created by Dylan Bui on 9/4/17.
+//  Created by Dylan Bui on 9/11/17.
 //  Copyright © 2017 Propzy Viet Nam. All rights reserved.
 //
 
@@ -13,6 +13,30 @@
 @end
 
 @implementation DbLabel
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        _contentEdgeInsets = UIEdgeInsetsZero;
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        _contentEdgeInsets = UIEdgeInsetsZero;
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder]) {
+        _contentEdgeInsets = UIEdgeInsetsZero;
+    }
+    return self;
+}
 
 - (void)drawTextInRect:(CGRect)rect
 {
@@ -26,7 +50,8 @@
 
 - (CGSize)sizeThatFits:(CGSize)size
 {
-    CGSize sizeToFit = CGSizeMake(size.width-(_contentEdgeInsets.left+_contentEdgeInsets.right), size.height-(_contentEdgeInsets.top+_contentEdgeInsets.bottom));
+    CGSize sizeToFit = CGSizeMake(size.width-(_contentEdgeInsets.left+_contentEdgeInsets.right),
+                                  size.height-(_contentEdgeInsets.top+_contentEdgeInsets.bottom));
     
     if (sizeToFit.width < 0.f)
         sizeToFit.width = 0.f;
@@ -55,3 +80,4 @@
 }
 
 @end
+

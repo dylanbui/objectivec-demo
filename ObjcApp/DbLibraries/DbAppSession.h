@@ -10,11 +10,15 @@
 #import "DbConstant.h"
 #import "DbUtils.h"
 
+/*
+    Khi reset cac gia tri, cac gia tri la object se duoc gan  [NSNull null]
+ */
+
 @interface DbAppSession : DbObject
 
 @property (strong, nonatomic) NSString      *deviceToken;
-@property (strong, nonatomic) NSString      *accessToken;
 
+@property (strong, nonatomic) NSString      *userId;
 @property (strong, nonatomic) NSString      *address;
 @property (strong, nonatomic) NSString      *email;
 @property (strong, nonatomic) NSString      *name;

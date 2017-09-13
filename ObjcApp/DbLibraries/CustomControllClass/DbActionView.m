@@ -130,10 +130,11 @@
 
 - (IBAction)btnView_Click:(UIGestureRecognizer *)gestureRecognizer
 {
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
         [self setBackgroundColor:[dictOldProperty objectForKey:@"backgroundColor"]];
+    } completion:^(BOOL finished) {
+        [self sendActionsForControlEvents:UIControlEventTouchUpInside];
     }];
-    [self sendActionsForControlEvents:UIControlEventTouchUpInside];
     
 //    switch (gestureRecognizer.state) {
 //        case UIGestureRecognizerStatePossible:

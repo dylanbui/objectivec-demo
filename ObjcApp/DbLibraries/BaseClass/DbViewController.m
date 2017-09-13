@@ -72,7 +72,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     // -- Process show/hide navigation bar --
-    // -- Default self.isNavigationBarHidden = NO => Navigation bar allways be show --
+    // -- Default self.isNavigationBarHidden = NO => Navigation bar allways be show --        
     [self.navigationController setNavigationBarHidden:self.isNavigationBarHidden animated:YES];
     
     [super viewWillAppear:animated];
@@ -129,7 +129,7 @@
 }
 
 #pragma mark -
-#pragma mark IWebConnectionDelegate
+#pragma mark IDbWebConnectionDelegate
 #pragma mark -
 
 - (void)onRequestProgress:(NSProgress *)downloadProgress andCallerId:(int)callerId

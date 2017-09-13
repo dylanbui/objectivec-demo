@@ -18,6 +18,17 @@
 + (NSString *_Nonnull)generateRandomString:(int)num;
 + (void)callPhoneNumber:(NSString *_Nonnull)phonenumber completionHandler:(void (^ __nullable)(BOOL success))completion;
 
+// -- Utility CGRect --
++ (CGRect)CGRect:(CGRect)rect setSize:(CGSize)size;
++ (CGRect)CGRect:(CGRect)rect setOrigin:(CGPoint)origin;
++ (CGRect)CGRect:(CGRect)rect setWidth:(CGFloat)width;
++ (CGRect)CGRect:(CGRect)rect setHeight:(CGFloat)height;
++ (CGRect)CGRect:(CGRect)rect setX:(CGFloat)x;
++ (CGRect)CGRect:(CGRect)rect setY:(CGFloat)y;
+
+// -- NSLayoutConstraint --
++ (NSLayoutConstraint *_Nullable)getNSLayoutConstraint:(NSLayoutAttribute)layoutAttribute ofView:(UIView *_Nonnull)view;
+
 // -- Thread --
 + (void)dispatchToMainQueue:(_Nonnull dispatch_block_t)block;
 + (void)dispatchToBgQueue:(_Nonnull dispatch_block_t)block;
@@ -27,6 +38,7 @@
 
 // -- Notification --
 + (void)removeNotification:(_Nonnull id)sender;
++ (void)removeNotification:(_Nonnull id)sender name:(nullable NSNotificationName)aName;
 + (void)postNotification:(NSString *_Nonnull)name object:(id _Nullable)object;
 + (void)postNotification:(NSString *_Nonnull)name object:(id _Nullable)object userInfo:(NSDictionary *_Nullable)aUserInfo;
 + (void)addNotification:(NSString *_Nonnull)name observer:(_Nonnull id)sender selector:(SEL _Nullable)selector object:(id _Nullable)object;
@@ -53,8 +65,9 @@
 // -- Color --
 // Create a color using a string with a webcolor : ex. [Utils colorWithHexString:@"#03047F"]
 + (UIColor *_Nonnull)colorWithHexString:(NSString *_Nonnull)hexStr;
++ (UIColor *_Nonnull)colorWithHexString:(NSString *_Nonnull)hexStr alpha:(float)alpha;
 // Create a color using a hex RGB value : ex. [Utils colorWithHexValue: 0x03047F]
-+ (UIColor *_Nonnull)colorWithHexValue: (NSInteger) rgbValue;
++ (UIColor *_Nonnull)colorWithHexValue:(NSInteger) rgbValue alpha:(float)alpha;
 
 // -- Datetime --
 + (NSString *_Nonnull)dateToString:(NSNumber *_Nonnull)timeMiliSeconds withFormat:(NSString *_Nonnull)format;
@@ -63,7 +76,6 @@
 + (NSDate *_Nonnull)convertStringToNSDate:(NSString *_Nonnull)date withFormat:(NSString *_Nonnull)format;
 + (NSInteger)totalSecondFromNowTo:(NSString *_Nonnull)endTime andDateFormat:(NSString *_Nonnull)format;
 + (NSString *_Nonnull)formatTimeFromSeconds:(int)numberOfSeconds;
-
 
 // -- Validate --
 + (BOOL)stringEmpty:(NSString *_Nonnull)str;
@@ -86,6 +98,9 @@
 + (void)animationAddSubView:(UIView *_Nonnull)subView toView:(UIView *_Nonnull)toView completion:(void (^_Nullable)(BOOL finished))completion;
 + (void)animationRemoveSubView:(UIView *__nullable)subView completion:(void (^_Nullable)(BOOL finished))completion;
 
+// -- Fix control --
+// -- Refer : https://stackoverflow.com/questions/19256996/uibutton-not-showing-highlight-on-tap-in-ios7/26049216 --
++ (void)fixHighlightButtonInTableCell:(UITableView *_Nonnull)tableView;
 
 
 @end
