@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "DbConstant.h"
+#import "NSDictionary+DbHelper.h"
 
 @interface DbTableViewCell : UITableViewCell
 
 @property (nonatomic, assign) float rowHeight;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 @property (nonatomic, strong) NSDictionary *dictCellData;
 @property (nonatomic, strong) HandleControlAction handleControlAction;
 

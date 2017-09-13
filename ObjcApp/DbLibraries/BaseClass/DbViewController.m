@@ -67,6 +67,22 @@
 {
     [super viewDidLoad];
     [DbUtils postNotification:NOTIFY_VCL_DID_LOAD object:self];
+    
+    self.isLoadingDataSource = NO;
+    
+    self.defaultImageForEmptyDataSet = nil;
+    self.verticalOffsetForEmptyDataSet = 0;
+    
+    // -- UITableView --
+    if (self.tblContent) {
+        self.tblContent.rowHeight = UITableViewAutomaticDimension;
+        self.tblContent.estimatedRowHeight = 44;
+        self.tblContent.delegate = self;
+        self.tblContent.dataSource = self;
+        
+        self.tblContent.emptyDataSetSource = self;
+        self.tblContent.emptyDataSetDelegate = self;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -118,6 +134,65 @@
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
+#pragma mark -
+#pragma mark DZNEmptyDataSetSource methods
+#pragma mark -
+
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView
+{
+    if (self.verticalOffsetForEmptyDataSet)
+        return self.verticalOffsetForEmptyDataSet;
+    return -self.tblContent.tableHeaderView.frame.size.height/2.0f;
+}
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+    if (self.defaultImageForEmptyDataSet == nil) {
+        UIImage *image = [UIImage imageNamed:@"ic_empty_data.png"
+                                    inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+        return image;
+    }
+    else
+        return self.defaultImageForEmptyDataSet;
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"Chưa có dữ liệu.";
+    if (self.titleForEmptyDataSet) {
+        text = self.titleForEmptyDataSet;
+    }
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:15.0f],
+                                 NSForegroundColorAttributeName: [DbUtils colorWithHexString:@"#989898" alpha:0.3]};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView
+{
+    if (!self.isLoadingDataSource)
+        return nil;
+    
+    UIActivityIndicatorView *activityView =
+    [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [activityView startAnimating];
+    return activityView;
+}
+
+#pragma mark -
+#pragma mark UITableViewDataSource methods
+#pragma mark -
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
 
 #pragma mark -
 #pragma mark === ICallbackParentDelegate ===
@@ -139,11 +214,14 @@
 
 - (void)onRequestCompleteWithContent:(id)content andCallerId:(int)callerId
 {
-
+    self.isLoadingDataSource = NO;
+    [self.tblContent.pullToRefreshView stopAnimating];
 }
 
 -(void)onRequestErrorWithContent:(id)content andCallerId:(int)callerId andError:(NSError *)error
 {
+    self.isLoadingDataSource = NO;
+    [self.tblContent.pullToRefreshView stopAnimating];
     NSLog(@"DbViewController - onRequestErrorWithContent : %@",[error description]);
     if (error.code == 1005 && [error.domain isEqualToString:@"WebServiceClientErrorDomain"]) {
         // -- Error connection wifi => Show network connection alert --

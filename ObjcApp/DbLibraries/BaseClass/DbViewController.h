@@ -10,23 +10,25 @@
 #import "AppDelegate.h"
 #import "DbHeader.h"
 
-//#import "AppDelegate.h"
-//#import "ResponseObject.h"
-//#import "WebConnection.h"
 
-//@class RootViewController;
-
-@interface DbViewController : UIViewController <ICallbackParentDelegate, IDbWebConnectionDelegate> {
-    UIBarButtonItem *backButton;
-@protected
-    NSMutableDictionary *stranferParams;
-    AppDelegate *appDelegate;    
+@interface DbViewController : UIViewController <ICallbackParentDelegate, IDbWebConnectionDelegate, UITableViewDelegate, UITableViewDataSource,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate> {
+    
 }
 
 
 @property (nonatomic, strong) NSMutableDictionary* stranferParams;
 @property (strong) AppDelegate *appDelegate;
 @property (weak) id <ICallbackParentDelegate> callbackParentDelegate;
+
+
+@property (nonatomic) BOOL isLoadingDataSource;
+
+@property (weak, nonatomic) IBOutlet UITableView *tblContent;
+
+@property (nonatomic) float verticalOffsetForEmptyDataSet;
+@property (nonatomic, strong) NSString  *titleForEmptyDataSet;
+@property (nonatomic, strong) UIImage *defaultImageForEmptyDataSet;
+
 
 - (void)initLoadDataForController:(id)params;
 

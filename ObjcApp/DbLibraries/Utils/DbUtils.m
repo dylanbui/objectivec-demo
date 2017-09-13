@@ -51,40 +51,6 @@
 }
 
 #pragma mark -
-#pragma mark Utility CGRect
-#pragma mark -
-
-+ (CGRect)CGRect:(CGRect)rect setSize:(CGSize)size
-{
-    return CGRectMake(rect.origin.x, rect.origin.y, size.width, size.height);
-}
-
-+ (CGRect)CGRect:(CGRect)rect setOrigin:(CGPoint)origin
-{
-    return CGRectMake(origin.x, origin.y, rect.size.width, rect.size.height);
-}
-
-+ (CGRect)CGRect:(CGRect)rect setWidth:(CGFloat)width
-{
-    return CGRectMake(rect.origin.x, rect.origin.y, width, rect.size.height);
-}
-
-+ (CGRect)CGRect:(CGRect)rect setHeight:(CGFloat)height
-{
-    return CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, height);
-}
-
-+ (CGRect)CGRect:(CGRect)rect setX:(CGFloat)x
-{
-    return CGRectMake(x, rect.origin.y, rect.size.width, rect.size.height);
-}
-
-+ (CGRect)CGRect:(CGRect)rect setY:(CGFloat)y
-{
-    return CGRectMake(rect.origin.x, y, rect.size.width, rect.size.height);
-}
-
-#pragma mark -
 #pragma mark NSLayoutConstraint
 #pragma mark -
 
@@ -424,6 +390,12 @@ static RMUniversalAlert *alertNetworkConnection = nil;
     return [emailTest evaluateWithObject:email];
 }
 
++ (BOOL)isPhoneNumber:(NSString *)phoneNum {
+    NSString *phoneRegex = @"^((\\+)|(0))[0-9]{6,14}$";
+    NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegex];
+    
+    return [phoneTest evaluateWithObject:phoneNum];
+}
 
 #pragma mark -
 #pragma mark Loading View

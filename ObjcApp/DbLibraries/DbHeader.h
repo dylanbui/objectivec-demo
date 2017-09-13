@@ -19,4 +19,7 @@
 #import "DbResponseObject.h"
 #import "DbWebConnection.h"
 
+#import "UIScrollView+SVPullToRefresh.h"
+#import "UIScrollView+EmptyDataSet.h"
+
 #endif /* DbHeader_h */

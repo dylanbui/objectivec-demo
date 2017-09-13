@@ -18,14 +18,6 @@
 + (NSString *_Nonnull)generateRandomString:(int)num;
 + (void)callPhoneNumber:(NSString *_Nonnull)phonenumber completionHandler:(void (^ __nullable)(BOOL success))completion;
 
-// -- Utility CGRect --
-+ (CGRect)CGRect:(CGRect)rect setSize:(CGSize)size;
-+ (CGRect)CGRect:(CGRect)rect setOrigin:(CGPoint)origin;
-+ (CGRect)CGRect:(CGRect)rect setWidth:(CGFloat)width;
-+ (CGRect)CGRect:(CGRect)rect setHeight:(CGFloat)height;
-+ (CGRect)CGRect:(CGRect)rect setX:(CGFloat)x;
-+ (CGRect)CGRect:(CGRect)rect setY:(CGFloat)y;
-
 // -- NSLayoutConstraint --
 + (NSLayoutConstraint *_Nullable)getNSLayoutConstraint:(NSLayoutAttribute)layoutAttribute ofView:(UIView *_Nonnull)view;
 
@@ -81,6 +73,7 @@
 + (BOOL)stringEmpty:(NSString *_Nonnull)str;
 + (NSString*_Nonnull) trimText:(NSString*_Nonnull)str;
 + (BOOL)isEmail:(NSString*_Nonnull)email;
++ (BOOL)isPhoneNumber:(NSString *_Nonnull)phoneNum;
 
 // -- Loading View --
 + (void)showLoading:(id _Nonnull)delegateObj;

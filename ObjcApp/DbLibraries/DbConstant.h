@@ -72,9 +72,6 @@ typedef enum _CHANNELS {
     CHANNEL_MESSAGE
 } CHANNELS;
 
-#define ShowNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = YES
-#define HideNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = NO
-
 #define OS_VERSION [UIDevice currentDevice].systemVersion
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
@@ -120,6 +117,49 @@ typedef enum _CHANNELS {
 #define NOTIFY_VCL_WILL_DISAPPEAR              @"NOTIFY_VCL_WILL_DISAPPEAR"
 #define NOTIFY_VCL_DID_DISAPPEAR               @"NOTIFY_VCL_DID_DISAPPEAR"
 
+/***************** useful iOS/Objective-C Macros ******************/
+
+#define ApplicationDelegate                 ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+#define UserDefaults                        [NSUserDefaults standardUserDefaults]
+#define NotificationCenter                  [NSNotificationCenter defaultCenter]
+#define SharedApplication                   [UIApplication sharedApplication]
+#define Bundle                              [NSBundle mainBundle]
+#define MainScreen                          [UIScreen mainScreen]
+
+#define ShowNetworkActivityIndicator()      [UIApplication sharedApplication].networkActivityIndicatorVisible = YES
+#define HideNetworkActivityIndicator()      [UIApplication sharedApplication].networkActivityIndicatorVisible = NO
+#define NetworkActivityIndicatorVisible(x)  [UIApplication sharedApplication].networkActivityIndicatorVisible = x
+
+#define ViewWidth(v)                        v.frame.size.width
+#define ViewHeight(v)                       v.frame.size.height
+#define ViewX(v)                            v.frame.origin.x
+#define ViewY(v)                            v.frame.origin.y
+
+#define SelfViewWidth                       self.view.bounds.size.width
+#define SelfViewHeight                      self.view.bounds.size.height
+
+#define RectX(f)                            f.origin.x
+#define RectY(f)                            f.origin.y
+#define RectWidth(f)                        f.size.width
+#define RectHeight(f)                       f.size.height
+
+#define RectSetWidth(f, w)                  CGRectMake(RectX(f), RectY(f), w, RectHeight(f))
+#define RectSetHeight(f, h)                 CGRectMake(RectX(f), RectY(f), RectWidth(f), h)
+#define RectSetX(f, x)                      CGRectMake(x, RectY(f), RectWidth(f), RectHeight(f))
+#define RectSetY(f, y)                      CGRectMake(RectX(f), y, RectWidth(f), RectHeight(f))
+#define RectSetSize(f, w, h)                CGRectMake(RectX(f), RectY(f), w, h)
+#define RectSetOrigin(f, x, y)              CGRectMake(x, y, RectWidth(f), RectHeight(f))
+
+#define DATE_COMPONENTS                     NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+#define TIME_COMPONENTS                     NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit
+#define FlushPool(p)                        [p drain]; p = [[NSAutoreleasePool alloc] init]
+
+#define RGB(r, g, b)                        [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+#define RGBA(r, g, b, a)                    [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define HEXCOLOR(c)                         [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:(c&0xFF)/255.0 alpha:1.0];
+
+#define RUN_ON_MAIN_QUEUE(BLOCK_CODE)           dispatch_async(dispatch_get_main_queue(),BLOCK_CODE)
+#define RUN_ON_BACKGROUND_QUEUE(BLOCK_CODE)     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),BLOCK_CODE)
 
 /***************** Short Function ******************/
 
@@ -127,13 +167,12 @@ typedef enum _CHANNELS {
 #define _isNULL(OBJ)                        (OBJ == [NSNull null] ? YES : NO)
 #define _valNULL(OBJ)                       (OBJ != [NSNull null] ? OBJ : @"")
 
-#define _getObj(OBJ, defaultValue)          (_isNULL(OBJ) ? defaultValue : OBJ)
-
 #define _isNil(OBJ)                         (OBJ == nil ? YES : NO)
 #define _valNil(OBJ)                        (OBJ != nil ? OBJ : @"")
 
-#define RUN_ON_MAIN_QUEUE(BLOCK_CODE)           dispatch_async(dispatch_get_main_queue(),BLOCK_CODE)
-#define RUN_ON_BACKGROUND_QUEUE(BLOCK_CODE)     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),BLOCK_CODE)
+#define _getObj(OBJ, defaultValue)          (_isNULL(OBJ) ? defaultValue : OBJ)
+
+#define _getObjForKey(OBJ, key, defaultValue)   (_isNULL([OBJ objectForKey:key]) || _isNil([OBJ objectForKey:key]) ? defaultValue : [OBJ objectForKey:key])
 
 /***************** Simple Callback Delegate ******************/
 
