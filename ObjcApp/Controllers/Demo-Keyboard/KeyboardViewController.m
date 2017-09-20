@@ -7,6 +7,9 @@
 //
 
 #import "KeyboardViewController.h"
+#import "IQKeyboardManager.h"
+#import "IQKeyboardReturnKeyHandler.h"
+#import "IQPreviousNextView.h"
 
 @interface KeyboardViewController ()
 
@@ -17,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    ([[[IQKeyboardManager sharedManager] toolbarPreviousNextAllowedClasses] containsObject:[IQPreviousNextView class]]);
 }
 
 - (void)didReceiveMemoryWarning {
