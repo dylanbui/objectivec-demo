@@ -23,7 +23,6 @@
 		BB4FD3C91F4429E200C082C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD3C71F4429E200C082C3 /* LaunchScreen.storyboard */; };
 		BB4FD3D41F4429E200C082C3 /* ObjcAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3D31F4429E200C082C3 /* ObjcAppTests.m */; };
 		BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3EC1F442AEE00C082C3 /* BaseViewController.m */; };
-		BB4FD4721F442AEE00C082C3 /* NSObject+PropzyApi.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3F81F442AEE00C082C3 /* NSObject+PropzyApi.m */; };
 		BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3FA1F442AEE00C082C3 /* UserSession.m */; };
 		BB4FD47C1F442AEE00C082C3 /* DbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4101F442AEE00C082C3 /* DbAppDelegate.m */; };
 		BB4FD47D1F442AEE00C082C3 /* DbNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4121F442AEE00C082C3 /* DbNavigationBarView.m */; };
@@ -114,6 +113,10 @@
 		BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */; };
 		BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */; };
 		BBD965E51F5B36B800CCAF2C /* LGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965E41F5B36B800CCAF2C /* LGButton.m */; };
+		BBDBD8FA1F6A9A97009C9340 /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD8F81F6A9A97009C9340 /* KeyboardViewController.m */; };
+		BBDBD8FB1F6A9A97009C9340 /* KeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDBD8F91F6A9A97009C9340 /* KeyboardViewController.xib */; };
+		BBDBD9001F6A9B6B009C9340 /* NSDictionary+DbHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD8FD1F6A9B6B009C9340 /* NSDictionary+DbHelper.m */; };
+		BBDBD9011F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD8FF1F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.m */; };
 		BBF2E8C71F548ED800064035 /* TaskTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */; };
 		BBF2E8C81F548ED800064035 /* TaskTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */; };
 		D0D67C566CFEB09749ADFD21 /* Pods_ObjcAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */; };
@@ -159,8 +162,6 @@
 		BB4FD3D51F4429E200C082C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB4FD3EB1F442AEE00C082C3 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		BB4FD3EC1F442AEE00C082C3 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		BB4FD3F71F442AEE00C082C3 /* NSObject+PropzyApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PropzyApi.h"; sourceTree = "<group>"; };
-		BB4FD3F81F442AEE00C082C3 /* NSObject+PropzyApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PropzyApi.m"; sourceTree = "<group>"; };
 		BB4FD3F91F442AEE00C082C3 /* UserSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSession.h; sourceTree = "<group>"; };
 		BB4FD3FA1F442AEE00C082C3 /* UserSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSession.m; sourceTree = "<group>"; };
 		BB4FD40F1F442AEE00C082C3 /* DbAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbAppDelegate.h; sourceTree = "<group>"; };
@@ -312,6 +313,13 @@
 		BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTImageButton.m; sourceTree = "<group>"; };
 		BBD965E31F5B36B800CCAF2C /* LGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGButton.h; sourceTree = "<group>"; };
 		BBD965E41F5B36B800CCAF2C /* LGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGButton.m; sourceTree = "<group>"; };
+		BBDBD8F71F6A9A97009C9340 /* KeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
+		BBDBD8F81F6A9A97009C9340 /* KeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
+		BBDBD8F91F6A9A97009C9340 /* KeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardViewController.xib; sourceTree = "<group>"; };
+		BBDBD8FC1F6A9B6B009C9340 /* NSDictionary+DbHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DbHelper.h"; sourceTree = "<group>"; };
+		BBDBD8FD1F6A9B6B009C9340 /* NSDictionary+DbHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DbHelper.m"; sourceTree = "<group>"; };
+		BBDBD8FE1F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+DbHelper.h"; sourceTree = "<group>"; };
+		BBDBD8FF1F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+DbHelper.m"; sourceTree = "<group>"; };
 		BBF2E8C41F548ED800064035 /* TaskTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskTableViewHeader.h; path = "Demo-Expand-Layout/TaskTableViewHeader.h"; sourceTree = "<group>"; };
 		BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskTableViewHeader.m; path = "Demo-Expand-Layout/TaskTableViewHeader.m"; sourceTree = "<group>"; };
 		BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskTableViewHeader.xib; path = "Demo-Expand-Layout/TaskTableViewHeader.xib"; sourceTree = "<group>"; };
@@ -450,7 +458,6 @@
 			isa = PBXGroup;
 			children = (
 				BB4FD3E81F442AEE00C082C3 /* BaseController */,
-				BB4FD3F61F442AEE00C082C3 /* NSObject+PropzyApi */,
 				BB4FD3F91F442AEE00C082C3 /* UserSession.h */,
 				BB4FD3FA1F442AEE00C082C3 /* UserSession.m */,
 			);
@@ -464,15 +471,6 @@
 				BB4FD3EC1F442AEE00C082C3 /* BaseViewController.m */,
 			);
 			path = BaseController;
-			sourceTree = "<group>";
-		};
-		BB4FD3F61F442AEE00C082C3 /* NSObject+PropzyApi */ = {
-			isa = PBXGroup;
-			children = (
-				BB4FD3F71F442AEE00C082C3 /* NSObject+PropzyApi.h */,
-				BB4FD3F81F442AEE00C082C3 /* NSObject+PropzyApi.m */,
-			);
-			path = "NSObject+PropzyApi";
 			sourceTree = "<group>";
 		};
 		BB4FD40D1F442AEE00C082C3 /* DbLibraries */ = {
@@ -514,6 +512,10 @@
 		BB4FD4211F442AEE00C082C3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BBDBD8FC1F6A9B6B009C9340 /* NSDictionary+DbHelper.h */,
+				BBDBD8FD1F6A9B6B009C9340 /* NSDictionary+DbHelper.m */,
+				BBDBD8FE1F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.h */,
+				BBDBD8FF1F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.m */,
 				BB4FD4221F442AEE00C082C3 /* DateTimeUtil.h */,
 				BB4FD4231F442AEE00C082C3 /* DateTimeUtil.m */,
 				BB4FD4241F442AEE00C082C3 /* DbUtils.h */,
@@ -723,6 +725,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBDBD8F61F6A9A7F009C9340 /* Demo-Keyboard */,
 				BBD965DA1F5A8B5500CCAF2C /* Demo-Button */,
 				BB5DDD981F5330330009AFDC /* DetailTaskViewController */,
 				BB5DDD921F5329950009AFDC /* Demo-ScrollView */,
@@ -871,6 +874,16 @@
 			path = "Demo-Button";
 			sourceTree = "<group>";
 		};
+		BBDBD8F61F6A9A7F009C9340 /* Demo-Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BBDBD8F71F6A9A97009C9340 /* KeyboardViewController.h */,
+				BBDBD8F81F6A9A97009C9340 /* KeyboardViewController.m */,
+				BBDBD8F91F6A9A97009C9340 /* KeyboardViewController.xib */,
+			);
+			path = "Demo-Keyboard";
+			sourceTree = "<group>";
+		};
 		BBF2E8C31F548ECE00064035 /* TaskTableViewHeader */ = {
 			isa = PBXGroup;
 			children = (
@@ -1009,6 +1022,7 @@
 				BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */,
 				BB4FD4D21F443BC100C082C3 /* DetailCoursesViewController.xib in Resources */,
 				BB4FD4D41F443BC100C082C3 /* PathsViewController.xib in Resources */,
+				BBDBD8FB1F6A9A97009C9340 /* KeyboardViewController.xib in Resources */,
 				BB4FD4A11F442AEE00C082C3 /* ic_show_password@2x.png in Resources */,
 				BB4FD4BB1F442C8A00C082C3 /* OpenSans-Italic.ttf in Resources */,
 				BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */,
@@ -1143,6 +1157,7 @@
 				BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */,
 				BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */,
 				BBD965E51F5B36B800CCAF2C /* LGButton.m in Sources */,
+				BBDBD9001F6A9B6B009C9340 /* NSDictionary+DbHelper.m in Sources */,
 				BB4FD47F1F442AEE00C082C3 /* DbPopupView.m in Sources */,
 				BB595DB61F6303940003C0B9 /* BALabel.m in Sources */,
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
@@ -1151,7 +1166,7 @@
 				BB5DDDB11F5332870009AFDC /* DetailTaskFeeCell.m in Sources */,
 				BB4FD4861F442AEE00C082C3 /* NSObject+Json.m in Sources */,
 				BB4FD4901F442AEE00C082C3 /* APNumberButton.m in Sources */,
-				BB4FD4721F442AEE00C082C3 /* NSObject+PropzyApi.m in Sources */,
+				BBDBD9011F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.m in Sources */,
 				BB4FD4981F442AEE00C082C3 /* DALabeledCircularProgressView.m in Sources */,
 				BB4FD47E1F442AEE00C082C3 /* DbObject.m in Sources */,
 				BB4FD4871F442AEE00C082C3 /* NSObject+SimpleMapping.m in Sources */,
@@ -1175,6 +1190,7 @@
 				BB4FD4931F442AEE00C082C3 /* NSBundle+APNumberPad.m in Sources */,
 				BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */,
 				BB4FD3BE1F4429E200C082C3 /* AppDelegate.m in Sources */,
+				BBDBD8FA1F6A9A97009C9340 /* KeyboardViewController.m in Sources */,
 				BB4FD48B1F442AEE00C082C3 /* ActivityIndicatorButton.m in Sources */,
 				BB4FD4991F442AEE00C082C3 /* HHSlideView.m in Sources */,
 				BB4FD4971F442AEE00C082C3 /* DACircularProgressView.m in Sources */,

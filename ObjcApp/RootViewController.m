@@ -16,6 +16,7 @@
 #import "TableExpandCellViewController.h"
 
 #import "DetailTaskViewController.h"
+#import "KeyboardViewController.h"
 
 //#import "UINavigationController+Utils.h"
 //
@@ -60,7 +61,8 @@
 //    TableExpandCellViewController *vcFirst = [[TableExpandCellViewController alloc] init];
 //    ScrollViewFormViewController *vcFirst = [[ScrollViewFormViewController alloc] init];
 //    DetailTaskViewController *vcFirst = [[DetailTaskViewController alloc] init];
-    DemoButtonViewController *vcFirst = [[DemoButtonViewController alloc] init];
+    //DemoButtonViewController *vcFirst = [[DemoButtonViewController alloc] init];
+    KeyboardViewController *vcFirst = [[KeyboardViewController alloc] init];
     [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:NO];
 }
