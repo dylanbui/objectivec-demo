@@ -69,7 +69,7 @@ SPEC CHECKSUMS:
   DKImagePickerController: 16f28d10f4384d8c582aa05baab26fc75432a41d
   DLRadioButton: 7bb8a6e3768b572469ace553391ab4d2af6f9c19
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  FSCalendar: 09369a2bf554ba71cd8e8cfb627e2df22a2c2af4
+  FSCalendar: '09369a2bf554ba71cd8e8cfb627e2df22a2c2af4'
   IQKeyboardManager: 322c7405df3eb5f7e50dede32ea937bf3d4364e0
   ISMessages: d39098b48672813d69d30f44da06260b9920fed4
   KMPlaceholderTextView: 2bbcd19a273648a80a61e1e48f9743a24d8930e3
@@ -77,7 +77,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
   RMUniversalAlert: ce7118101a19fa41b9adedf907b66a8cc3bd32c8
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   SwipeView: bd67cfaf7760c036438446b3ccb28a3b84fce009
   TOCropViewController: e6e31b38d785a901e5651a1e7fff71bcda6c5214
