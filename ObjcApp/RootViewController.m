@@ -29,6 +29,8 @@
 //// -- Demo --
 //#import "InviteViewController.h"
 
+#import "TBTabbarViewController.h"
+
 @interface RootViewController ()
 
 @end
@@ -62,7 +64,8 @@
 //    ScrollViewFormViewController *vcFirst = [[ScrollViewFormViewController alloc] init];
 //    DetailTaskViewController *vcFirst = [[DetailTaskViewController alloc] init];
     //DemoButtonViewController *vcFirst = [[DemoButtonViewController alloc] init];
-    KeyboardViewController *vcFirst = [[KeyboardViewController alloc] init];
+    // KeyboardViewController *vcFirst = [[KeyboardViewController alloc] init];
+    TBTabbarViewController *vcFirst = [[TBTabbarViewController alloc] init];
     [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:NO];
 }

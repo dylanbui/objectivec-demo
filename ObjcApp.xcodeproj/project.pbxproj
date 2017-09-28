@@ -113,6 +113,15 @@
 		BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */; };
 		BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */; };
 		BBD965E51F5B36B800CCAF2C /* LGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965E41F5B36B800CCAF2C /* LGButton.m */; };
+		BBD99B2B1F7CD791004B20AF /* TBOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD99B291F7CD791004B20AF /* TBOneViewController.m */; };
+		BBD99B2C1F7CD791004B20AF /* TBOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD99B2A1F7CD791004B20AF /* TBOneViewController.xib */; };
+		BBD99B301F7CD7BD004B20AF /* TBTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD99B2E1F7CD7BD004B20AF /* TBTwoViewController.m */; };
+		BBD99B311F7CD7BD004B20AF /* TBTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD99B2F1F7CD7BD004B20AF /* TBTwoViewController.xib */; };
+		BBD99B351F7CD7CF004B20AF /* TBThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD99B331F7CD7CF004B20AF /* TBThreeViewController.m */; };
+		BBD99B361F7CD7CF004B20AF /* TBThreeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD99B341F7CD7CF004B20AF /* TBThreeViewController.xib */; };
+		BBD99B3A1F7CD7DE004B20AF /* TBFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD99B381F7CD7DE004B20AF /* TBFourViewController.m */; };
+		BBD99B3B1F7CD7DE004B20AF /* TBFourViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD99B391F7CD7DE004B20AF /* TBFourViewController.xib */; };
+		BBD99B401F7CD851004B20AF /* TBTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD99B3F1F7CD851004B20AF /* TBTabbarViewController.m */; };
 		BBDBD8FA1F6A9A97009C9340 /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD8F81F6A9A97009C9340 /* KeyboardViewController.m */; };
 		BBDBD8FB1F6A9A97009C9340 /* KeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDBD8F91F6A9A97009C9340 /* KeyboardViewController.xib */; };
 		BBDBD9001F6A9B6B009C9340 /* NSDictionary+DbHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD8FD1F6A9B6B009C9340 /* NSDictionary+DbHelper.m */; };
@@ -313,6 +322,20 @@
 		BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTImageButton.m; sourceTree = "<group>"; };
 		BBD965E31F5B36B800CCAF2C /* LGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGButton.h; sourceTree = "<group>"; };
 		BBD965E41F5B36B800CCAF2C /* LGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGButton.m; sourceTree = "<group>"; };
+		BBD99B281F7CD791004B20AF /* TBOneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBOneViewController.h; sourceTree = "<group>"; };
+		BBD99B291F7CD791004B20AF /* TBOneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBOneViewController.m; sourceTree = "<group>"; };
+		BBD99B2A1F7CD791004B20AF /* TBOneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBOneViewController.xib; sourceTree = "<group>"; };
+		BBD99B2D1F7CD7BD004B20AF /* TBTwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBTwoViewController.h; sourceTree = "<group>"; };
+		BBD99B2E1F7CD7BD004B20AF /* TBTwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBTwoViewController.m; sourceTree = "<group>"; };
+		BBD99B2F1F7CD7BD004B20AF /* TBTwoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBTwoViewController.xib; sourceTree = "<group>"; };
+		BBD99B321F7CD7CF004B20AF /* TBThreeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBThreeViewController.h; sourceTree = "<group>"; };
+		BBD99B331F7CD7CF004B20AF /* TBThreeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBThreeViewController.m; sourceTree = "<group>"; };
+		BBD99B341F7CD7CF004B20AF /* TBThreeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBThreeViewController.xib; sourceTree = "<group>"; };
+		BBD99B371F7CD7DE004B20AF /* TBFourViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBFourViewController.h; sourceTree = "<group>"; };
+		BBD99B381F7CD7DE004B20AF /* TBFourViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBFourViewController.m; sourceTree = "<group>"; };
+		BBD99B391F7CD7DE004B20AF /* TBFourViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBFourViewController.xib; sourceTree = "<group>"; };
+		BBD99B3E1F7CD851004B20AF /* TBTabbarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBTabbarViewController.h; sourceTree = "<group>"; };
+		BBD99B3F1F7CD851004B20AF /* TBTabbarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBTabbarViewController.m; sourceTree = "<group>"; };
 		BBDBD8F71F6A9A97009C9340 /* KeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
 		BBDBD8F81F6A9A97009C9340 /* KeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
 		BBDBD8F91F6A9A97009C9340 /* KeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardViewController.xib; sourceTree = "<group>"; };
@@ -725,6 +748,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBD99B271F7CD6D8004B20AF /* Demo-TabbarController */,
 				BBDBD8F61F6A9A7F009C9340 /* Demo-Keyboard */,
 				BBD965DA1F5A8B5500CCAF2C /* Demo-Button */,
 				BB5DDD981F5330330009AFDC /* DetailTaskViewController */,
@@ -874,6 +898,35 @@
 			path = "Demo-Button";
 			sourceTree = "<group>";
 		};
+		BBD99B271F7CD6D8004B20AF /* Demo-TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				BBD99B3D1F7CD824004B20AF /* VIewController */,
+				BBD99B3E1F7CD851004B20AF /* TBTabbarViewController.h */,
+				BBD99B3F1F7CD851004B20AF /* TBTabbarViewController.m */,
+			);
+			path = "Demo-TabbarController";
+			sourceTree = "<group>";
+		};
+		BBD99B3D1F7CD824004B20AF /* VIewController */ = {
+			isa = PBXGroup;
+			children = (
+				BBD99B281F7CD791004B20AF /* TBOneViewController.h */,
+				BBD99B291F7CD791004B20AF /* TBOneViewController.m */,
+				BBD99B2A1F7CD791004B20AF /* TBOneViewController.xib */,
+				BBD99B2D1F7CD7BD004B20AF /* TBTwoViewController.h */,
+				BBD99B2E1F7CD7BD004B20AF /* TBTwoViewController.m */,
+				BBD99B2F1F7CD7BD004B20AF /* TBTwoViewController.xib */,
+				BBD99B321F7CD7CF004B20AF /* TBThreeViewController.h */,
+				BBD99B331F7CD7CF004B20AF /* TBThreeViewController.m */,
+				BBD99B341F7CD7CF004B20AF /* TBThreeViewController.xib */,
+				BBD99B371F7CD7DE004B20AF /* TBFourViewController.h */,
+				BBD99B381F7CD7DE004B20AF /* TBFourViewController.m */,
+				BBD99B391F7CD7DE004B20AF /* TBFourViewController.xib */,
+			);
+			path = VIewController;
+			sourceTree = "<group>";
+		};
 		BBDBD8F61F6A9A7F009C9340 /* Demo-Keyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,6 +1051,7 @@
 				BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */,
 				BB4FD48D1F442AEE00C082C3 /* apnumberpad_backspace_icon.png in Resources */,
 				BB4FD4B61F442C8A00C082C3 /* FontAwesome.ttf in Resources */,
+				BBD99B311F7CD7BD004B20AF /* TBTwoViewController.xib in Resources */,
 				BB5DDD9D1F5330590009AFDC /* DetailTaskViewController.xib in Resources */,
 				BB5DDDAD1F5331ED0009AFDC /* DetailTaskInfoCell.xib in Resources */,
 				BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */,
@@ -1015,6 +1069,7 @@
 				BB4FD4C01F442C8A00C082C3 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				BB4FD4D01F443BC100C082C3 /* CoursesViewController.xib in Resources */,
 				BB4FD4BA1F442C8A00C082C3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				BBD99B361F7CD7CF004B20AF /* TBThreeViewController.xib in Resources */,
 				BB25FC9A1F51DFC20005372B /* artists.json in Resources */,
 				BB5DDDA81F5331C80009AFDC /* DetailTaskContactInfoCell.xib in Resources */,
 				BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */,
@@ -1034,8 +1089,10 @@
 				BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */,
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
 				BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */,
+				BBD99B2C1F7CD791004B20AF /* TBOneViewController.xib in Resources */,
 				BB25FC981F51DE850005372B /* ExpandViewCell.xib in Resources */,
 				BB4FD49F1F442AEE00C082C3 /* ic_hide_password@2x.png in Resources */,
+				BBD99B3B1F7CD7DE004B20AF /* TBFourViewController.xib in Resources */,
 				BBF2E8C81F548ED800064035 /* TaskTableViewHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1152,6 +1209,7 @@
 				BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */,
 				BB4FD4821F442AEE00C082C3 /* DbViewFromXib.m in Sources */,
 				BB4FD4841F442AEE00C082C3 /* DateTimeUtil.m in Sources */,
+				BBD99B301F7CD7BD004B20AF /* TBTwoViewController.m in Sources */,
 				BB4FD4911F442AEE00C082C3 /* APNumberPad.m in Sources */,
 				BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */,
 				BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */,
@@ -1188,8 +1246,10 @@
 				BB345F721F606E02009B7274 /* BTLabel.m in Sources */,
 				BB4FD4A71F442B4D00C082C3 /* RootViewController.m in Sources */,
 				BB4FD4931F442AEE00C082C3 /* NSBundle+APNumberPad.m in Sources */,
+				BBD99B401F7CD851004B20AF /* TBTabbarViewController.m in Sources */,
 				BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */,
 				BB4FD3BE1F4429E200C082C3 /* AppDelegate.m in Sources */,
+				BBD99B2B1F7CD791004B20AF /* TBOneViewController.m in Sources */,
 				BBDBD8FA1F6A9A97009C9340 /* KeyboardViewController.m in Sources */,
 				BB4FD48B1F442AEE00C082C3 /* ActivityIndicatorButton.m in Sources */,
 				BB4FD4991F442AEE00C082C3 /* HHSlideView.m in Sources */,
@@ -1203,11 +1263,13 @@
 				BB4FD49C1F442AEE00C082C3 /* SYPhotoViewController.m in Sources */,
 				BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */,
 				BB4FD4851F442AEE00C082C3 /* DbUtils.m in Sources */,
+				BBD99B3A1F7CD7DE004B20AF /* TBFourViewController.m in Sources */,
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
 				BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
 				BB4FD47D1F442AEE00C082C3 /* DbNavigationBarView.m in Sources */,
 				BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */,
+				BBD99B351F7CD7CF004B20AF /* TBThreeViewController.m in Sources */,
 				BBF2E8C71F548ED800064035 /* TaskTableViewHeader.m in Sources */,
 				BB4FD4D11F443BC100C082C3 /* DetailCoursesViewController.m in Sources */,
 				BB4FD4891F442AEE00C082C3 /* DbResponseObject.m in Sources */,

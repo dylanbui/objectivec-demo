@@ -14,7 +14,7 @@
 
 - (UIViewController *)getCurrentViewController;
 
-- (void)replaceCurrentViewController:(UIViewController*) replaceViewController;
+- (void)replaceCurrentViewController:(UIViewController*) replaceViewController animated:(BOOL)animated;
 
 - (void)pushOrReplaceToFirstViewController:(UIViewController *)replaceViewController animated:(BOOL)animated;
 
