@@ -104,22 +104,22 @@
 #pragma mark -
 #pragma UITabbarController implement
 
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+- (BOOL)tabBarController:(UITabBarController *)atabBarController shouldSelectViewController:(UIViewController *)viewController
 {
     // http://stackoverflow.com/questions/5161730/iphone-how-to-switch-tabs-with-an-animation
     NSUInteger controllerIndex = [arrControllers indexOfObject:viewController];
     
-    if (controllerIndex == tabBarController.selectedIndex) {
+    if (controllerIndex == atabBarController.selectedIndex) {
         return NO;
     }
     
     // Get the views.
-    UIView *fromView = tabBarController.selectedViewController.view;
-    UIView *toView = [tabBarController.viewControllers[controllerIndex] view];
+    UIView *fromView = atabBarController.selectedViewController.view;
+    UIView *toView = [atabBarController.viewControllers[controllerIndex] view];
     
     // Get the size of the view area.
     CGRect viewSize = fromView.frame;
-    BOOL scrollRight = controllerIndex > tabBarController.selectedIndex;
+    BOOL scrollRight = controllerIndex > atabBarController.selectedIndex;
     
     // Add the to view to the tab bar view.
     [fromView.superview addSubview:toView];
@@ -149,7 +149,7 @@
                              // Remove the old view from the tabbar view.
                              [fromView removeFromSuperview];
                              fromView.alpha = 1.0;
-                             tabBarController.selectedIndex = controllerIndex;
+                             atabBarController.selectedIndex = controllerIndex;
                          }
                      }];
     

@@ -215,13 +215,17 @@
 - (void)onRequestCompleteWithContent:(id)content andCallerId:(int)callerId
 {
     self.isLoadingDataSource = NO;
-    [self.tblContent.pullToRefreshView stopAnimating];
+    if (self.tblContent) {
+        [self.tblContent.pullToRefreshView stopAnimating];
+    }
 }
 
 -(void)onRequestErrorWithContent:(id)content andCallerId:(int)callerId andError:(NSError *)error
 {
     self.isLoadingDataSource = NO;
-    [self.tblContent.pullToRefreshView stopAnimating];
+    if (self.tblContent) {
+        [self.tblContent.pullToRefreshView stopAnimating];
+    }
     NSLog(@"DbViewController - onRequestErrorWithContent : %@",[error description]);
     if (error.code == 1005 && [error.domain isEqualToString:@"WebServiceClientErrorDomain"]) {
         // -- Error connection wifi => Show network connection alert --

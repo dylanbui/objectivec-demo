@@ -10,6 +10,6 @@
 
 @interface DetailTaskViewController : BaseViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *tblContent;
+//@property (weak, nonatomic) IBOutlet UITableView *tblContent;
 
 @end
