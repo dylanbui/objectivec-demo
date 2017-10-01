@@ -12,6 +12,7 @@
 #import "TBTwoViewController.h"
 #import "TBThreeViewController.h"
 #import "TBFourViewController.h"
+#import "TBFiveViewController.h"
 
 @interface TBTabbarViewController () {
     
@@ -87,6 +88,21 @@
     //    [listing setImage:[UIImage imageNamed:@"today.png"]];
     [Four setTitle:@"Four"];
     navigationController.tabBarItem = Four;
+    
+    [arrControllers addObject:navigationController];
+    navigationController = nil;
+    
+    // ---------------------
+    
+    TBFiveViewController* fiveViewController = [[TBFiveViewController alloc] init];
+    //profileViewController.edgesForExtendedLayout = UIRectEdgeNone; // Fix under navigation bar or tabbar
+    navigationController = [[UINavigationController alloc] initWithRootViewController:fiveViewController];
+    navigationController.navigationBar.tintColor = [UIColor blackColor];
+    
+    UITabBarItem* Five = [[UITabBarItem alloc] init];
+    //    [listing setImage:[UIImage imageNamed:@"today.png"]];
+    [Five setTitle:@"Five"];
+    navigationController.tabBarItem = Five;
     
     [arrControllers addObject:navigationController];
     navigationController = nil;

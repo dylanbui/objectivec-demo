@@ -16,6 +16,8 @@
 		BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC9E1F51F46C0005372B /* ExpandTypeTwoCell.m */; };
 		BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */; };
 		BB345F721F606E02009B7274 /* BTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB345F711F606E02009B7274 /* BTLabel.m */; };
+		BB4A3A691F814E3E0040CC61 /* TBFiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4A3A671F814E3E0040CC61 /* TBFiveViewController.m */; };
+		BB4A3A6A1F814E3E0040CC61 /* TBFiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4A3A681F814E3E0040CC61 /* TBFiveViewController.xib */; };
 		BB4FD3BB1F4429E200C082C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3BA1F4429E200C082C3 /* main.m */; };
 		BB4FD3BE1F4429E200C082C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3BD1F4429E200C082C3 /* AppDelegate.m */; };
 		BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD3C21F4429E200C082C3 /* Main.storyboard */; };
@@ -158,6 +160,9 @@
 		BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandTypeTwoCell.xib; sourceTree = "<group>"; };
 		BB345F701F606E02009B7274 /* BTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLabel.h; sourceTree = "<group>"; };
 		BB345F711F606E02009B7274 /* BTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLabel.m; sourceTree = "<group>"; };
+		BB4A3A661F814E3E0040CC61 /* TBFiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBFiveViewController.h; sourceTree = "<group>"; };
+		BB4A3A671F814E3E0040CC61 /* TBFiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBFiveViewController.m; sourceTree = "<group>"; };
+		BB4A3A681F814E3E0040CC61 /* TBFiveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBFiveViewController.xib; sourceTree = "<group>"; };
 		BB4FD3B61F4429E200C082C3 /* ObjcApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjcApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4FD3BA1F4429E200C082C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BB4FD3BC1F4429E200C082C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -923,6 +928,9 @@
 				BBD99B371F7CD7DE004B20AF /* TBFourViewController.h */,
 				BBD99B381F7CD7DE004B20AF /* TBFourViewController.m */,
 				BBD99B391F7CD7DE004B20AF /* TBFourViewController.xib */,
+				BB4A3A661F814E3E0040CC61 /* TBFiveViewController.h */,
+				BB4A3A671F814E3E0040CC61 /* TBFiveViewController.m */,
+				BB4A3A681F814E3E0040CC61 /* TBFiveViewController.xib */,
 			);
 			path = VIewController;
 			sourceTree = "<group>";
@@ -1089,6 +1097,7 @@
 				BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */,
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
 				BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */,
+				BB4A3A6A1F814E3E0040CC61 /* TBFiveViewController.xib in Resources */,
 				BBD99B2C1F7CD791004B20AF /* TBOneViewController.xib in Resources */,
 				BB25FC981F51DE850005372B /* ExpandViewCell.xib in Resources */,
 				BB4FD49F1F442AEE00C082C3 /* ic_hide_password@2x.png in Resources */,
@@ -1224,6 +1233,7 @@
 				BB5DDDB11F5332870009AFDC /* DetailTaskFeeCell.m in Sources */,
 				BB4FD4861F442AEE00C082C3 /* NSObject+Json.m in Sources */,
 				BB4FD4901F442AEE00C082C3 /* APNumberButton.m in Sources */,
+				BB4A3A691F814E3E0040CC61 /* TBFiveViewController.m in Sources */,
 				BBDBD9011F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.m in Sources */,
 				BB4FD4981F442AEE00C082C3 /* DALabeledCircularProgressView.m in Sources */,
 				BB4FD47E1F442AEE00C082C3 /* DbObject.m in Sources */,
