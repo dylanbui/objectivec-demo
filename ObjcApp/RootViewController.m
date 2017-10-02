@@ -18,29 +18,14 @@
 #import "DetailTaskViewController.h"
 #import "KeyboardViewController.h"
 
-//#import "UINavigationController+Utils.h"
-//
-//#import "LoginViewController.h"
-//
-//#import "MainTabbarViewController.h"
-//
-//#import "UserApi.h"
-//
-//// -- Demo --
-//#import "InviteViewController.h"
-
-#import "TBTabbarViewController.h"
+//#import "TBTabbarViewController.h"
+#import "STHeaderViewController.h"
 
 @interface RootViewController ()
 
 @end
 
 @implementation RootViewController
-
-
-//@synthesize loginViewController;
-//@synthesize mainTabbarViewController;
-
 
 - (void)viewDidLoad
 {
@@ -57,6 +42,8 @@
 {
     [super viewWillAppear:animated];
     
+    self.title = @"";
+    
 //    PathsViewController *vcFirst = [[PathsViewController alloc] init];
 //    UserSessionViewController *vcFirst = [[UserSessionViewController alloc] init];
 //    ExpandLayoutViewController *vcFirst = [[ExpandLayoutViewController alloc] init];
@@ -65,9 +52,10 @@
 //    DetailTaskViewController *vcFirst = [[DetailTaskViewController alloc] init];
     //DemoButtonViewController *vcFirst = [[DemoButtonViewController alloc] init];
     // KeyboardViewController *vcFirst = [[KeyboardViewController alloc] init];
-    TBTabbarViewController *vcFirst = [[TBTabbarViewController alloc] init];
-    [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
+    STHeaderViewController *vcFirst = [[STHeaderViewController alloc] init];
+    //[vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:NO];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
