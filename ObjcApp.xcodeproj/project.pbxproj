@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9120E771807AB7030C9F4283 /* Pods_ObjcApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D62C3C09D877F7693306C71 /* Pods_ObjcApp.framework */; };
+		BB121DEF1F85DEAD0053171B /* PTPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB121DED1F85DEAD0053171B /* PTPhotoViewController.m */; };
+		BB121DF01F85DEAD0053171B /* PTPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB121DEE1F85DEAD0053171B /* PTPhotoViewController.xib */; };
+		BB121DF41F861A200053171B /* PTPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB121DF21F861A200053171B /* PTPhotoDetailViewController.m */; };
+		BB121DF51F861A200053171B /* PTPhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB121DF31F861A200053171B /* PTPhotoDetailViewController.xib */; };
 		BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC901F51DE330005372B /* TableExpandCellViewController.m */; };
 		BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */; };
 		BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC951F51DE850005372B /* ExpandViewCell.m */; };
@@ -153,6 +157,12 @@
 		337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjcAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D62C3C09D877F7693306C71 /* Pods_ObjcApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjcApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		806131BC8A1DA902FB1E7935 /* Pods-ObjcAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcAppTests/Pods-ObjcAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		BB121DEC1F85DEAD0053171B /* PTPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTPhotoViewController.h; sourceTree = "<group>"; };
+		BB121DED1F85DEAD0053171B /* PTPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTPhotoViewController.m; sourceTree = "<group>"; };
+		BB121DEE1F85DEAD0053171B /* PTPhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PTPhotoViewController.xib; sourceTree = "<group>"; };
+		BB121DF11F861A200053171B /* PTPhotoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTPhotoDetailViewController.h; sourceTree = "<group>"; };
+		BB121DF21F861A200053171B /* PTPhotoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTPhotoDetailViewController.m; sourceTree = "<group>"; };
+		BB121DF31F861A200053171B /* PTPhotoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PTPhotoDetailViewController.xib; sourceTree = "<group>"; };
 		BB25FC8F1F51DE330005372B /* TableExpandCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableExpandCellViewController.h; sourceTree = "<group>"; };
 		BB25FC901F51DE330005372B /* TableExpandCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableExpandCellViewController.m; sourceTree = "<group>"; };
 		BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableExpandCellViewController.xib; sourceTree = "<group>"; };
@@ -396,6 +406,19 @@
 				337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB121DEB1F85DE7C0053171B /* Demo-PhotoController */ = {
+			isa = PBXGroup;
+			children = (
+				BB121DEC1F85DEAD0053171B /* PTPhotoViewController.h */,
+				BB121DED1F85DEAD0053171B /* PTPhotoViewController.m */,
+				BB121DEE1F85DEAD0053171B /* PTPhotoViewController.xib */,
+				BB121DF11F861A200053171B /* PTPhotoDetailViewController.h */,
+				BB121DF21F861A200053171B /* PTPhotoDetailViewController.m */,
+				BB121DF31F861A200053171B /* PTPhotoDetailViewController.xib */,
+			);
+			path = "Demo-PhotoController";
 			sourceTree = "<group>";
 		};
 		BB25FC8D1F51DE090005372B /* Demo-TableView */ = {
@@ -767,6 +790,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB121DEB1F85DE7C0053171B /* Demo-PhotoController */,
 				BBE143591F823E740020C400 /* Demo-StretchyHeaderView */,
 				BBD99B271F7CD6D8004B20AF /* Demo-TabbarController */,
 				BBDBD8F61F6A9A7F009C9340 /* Demo-Keyboard */,
@@ -1129,6 +1153,7 @@
 				BB4FD4BD1F442C8A00C082C3 /* OpenSans-LightItalic.ttf in Resources */,
 				BB4FD4C01F442C8A00C082C3 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				BB4FD4D01F443BC100C082C3 /* CoursesViewController.xib in Resources */,
+				BB121DF01F85DEAD0053171B /* PTPhotoViewController.xib in Resources */,
 				BB4FD4BA1F442C8A00C082C3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				BBD99B361F7CD7CF004B20AF /* TBThreeViewController.xib in Resources */,
 				BB25FC9A1F51DFC20005372B /* artists.json in Resources */,
@@ -1155,6 +1180,7 @@
 				BB25FC981F51DE850005372B /* ExpandViewCell.xib in Resources */,
 				BB4FD49F1F442AEE00C082C3 /* ic_hide_password@2x.png in Resources */,
 				BBD99B3B1F7CD7DE004B20AF /* TBFourViewController.xib in Resources */,
+				BB121DF51F861A200053171B /* PTPhotoDetailViewController.xib in Resources */,
 				BBF2E8C81F548ED800064035 /* TaskTableViewHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1274,6 +1300,7 @@
 				BBD99B301F7CD7BD004B20AF /* TBTwoViewController.m in Sources */,
 				BB4FD4911F442AEE00C082C3 /* APNumberPad.m in Sources */,
 				BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */,
+				BB121DF41F861A200053171B /* PTPhotoDetailViewController.m in Sources */,
 				BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */,
 				BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */,
 				BBD965E51F5B36B800CCAF2C /* LGButton.m in Sources */,
@@ -1318,6 +1345,7 @@
 				BBD99B2B1F7CD791004B20AF /* TBOneViewController.m in Sources */,
 				BBDBD8FA1F6A9A97009C9340 /* KeyboardViewController.m in Sources */,
 				BB4FD48B1F442AEE00C082C3 /* ActivityIndicatorButton.m in Sources */,
+				BB121DEF1F85DEAD0053171B /* PTPhotoViewController.m in Sources */,
 				BB4FD4991F442AEE00C082C3 /* HHSlideView.m in Sources */,
 				BB4FD4971F442AEE00C082C3 /* DACircularProgressView.m in Sources */,
 				BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */,

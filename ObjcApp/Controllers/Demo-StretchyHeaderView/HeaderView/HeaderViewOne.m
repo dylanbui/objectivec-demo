@@ -40,15 +40,12 @@
 - (void)setupButton
 {
     self.button = [[UIButton alloc] init];
-    [self.button setTitle:@"I'm a button"
-                 forState:UIControlStateNormal];
-    [self.button setTitleColor:[UIColor whiteColor]
-                      forState:UIControlStateNormal];
-    [self.button setTitleColor:[UIColor lightGrayColor]
-                      forState:UIControlStateHighlighted];
-    [self.button addTarget:self
-                    action:@selector(didTapButton:)
-          forControlEvents:UIControlEventTouchUpInside];
+    self.button.backgroundColor = [UIColor blueColor];
+    [self.button setTitle:@"I'm a button" forState:UIControlStateNormal];
+    [self.button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateSelected];
+    [self.button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    [self.button addTarget:self action:@selector(didTapButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:self.button];
     [self.button sizeToFit];
 }

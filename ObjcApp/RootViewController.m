@@ -18,8 +18,9 @@
 #import "DetailTaskViewController.h"
 #import "KeyboardViewController.h"
 
-//#import "TBTabbarViewController.h"
+#import "TBTabbarViewController.h"
 #import "STHeaderViewController.h"
+#import "PTPhotoViewController.h"
 
 @interface RootViewController ()
 
@@ -52,7 +53,8 @@
 //    DetailTaskViewController *vcFirst = [[DetailTaskViewController alloc] init];
     //DemoButtonViewController *vcFirst = [[DemoButtonViewController alloc] init];
     // KeyboardViewController *vcFirst = [[KeyboardViewController alloc] init];
-    STHeaderViewController *vcFirst = [[STHeaderViewController alloc] init];
+    // STHeaderViewController *vcFirst = [[STHeaderViewController alloc] init];
+    PTPhotoViewController *vcFirst = [[PTPhotoViewController alloc] init];
     //[vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:NO];
     

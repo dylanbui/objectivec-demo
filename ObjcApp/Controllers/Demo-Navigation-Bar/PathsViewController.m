@@ -88,7 +88,7 @@
         }
          NSLog(@"%d", (int) [assets count]);
     }];
-    [vclCropPhoto setSetDidCancel:^{
+    [vclCropPhoto setDidCancel:^{
     }];
     
 //    [[Utils getTopViewController] presentViewController:vclCropPhoto animated:YES completion:nil];

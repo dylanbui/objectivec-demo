@@ -18,10 +18,8 @@
 @property (nonatomic) BOOL singleSelect;
 @property (nonatomic) int maxSelected;
 @property (nonatomic, copy) void (^ _Nullable didSelectAssets)(NSArray<DKAsset *> * _Nonnull);
-@property (nonatomic, copy) void (^ _Nullable setDidCancel)();
+@property (nonatomic, copy) void (^ _Nullable didCancel)(void);
 
-
-- (instancetype _Nonnull )init;
-
++ (instancetype _Nonnull)sharedInstance;
 
 @end

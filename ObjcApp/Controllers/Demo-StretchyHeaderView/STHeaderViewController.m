@@ -32,21 +32,23 @@
     if (self.navigationController) {
         contentInset.top = 64;
     }
-//    if (self.tabBarController) {
-//        contentInset.bottom = 44;
-//    }
+    if (self.tabBarController) {
+        contentInset.bottom = 44;
+    }
     self.tblContent.contentInset = contentInset;
     
     _stretchyHeaderView = [self loadStretchyHeaderView];
     [self.tblContent addSubview:self.stretchyHeaderView];
+
+    // -- Must to add under stretchyHeaderView --
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(beginRefreshing:) forControlEvents:UIControlEventValueChanged];
+    [self.tblContent addSubview:self.refreshControl];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-//    [self.navigationController gsk_setNavigationBarTransparent:NO animated:YES];
-//    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
 }
 
 - (GSKStretchyHeaderView *)loadStretchyHeaderView
@@ -66,6 +68,13 @@
     return title;
 }
 
+- (void)beginRefreshing:(id)sender
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.refreshControl endRefreshing];
+    });
+}
+
 
 #pragma mark -
 #pragma mark UITableViewDataSource methods
@@ -73,7 +82,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 40;
+    return 60;
 }
 
 - (CGFloat)heightForItemAtIndexPath:(NSIndexPath *)indexPath

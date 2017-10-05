@@ -16,7 +16,25 @@
 
 @implementation CropPhotoViewController
 
+// -- Dont allow init --
 - (instancetype)init
+{
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:@"Use sharedInstance functions" userInfo:nil];
+}
+
+
++ (instancetype _Nonnull)sharedInstance
+{
+    static CropPhotoViewController *_shared = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _shared = [[self alloc] initPrivate];
+    });
+    return _shared;
+}
+
+- (instancetype)initPrivate
 {
     if (self = [super init]) {
         self.pickerController = [DKImagePickerController new];
@@ -49,16 +67,25 @@
     [self.view addSubview:self.pickerController.view];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewWillAppear:animated];
+    // -- Remove all selected items --
+    [self.pickerController deselectAllAssets];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    // -- Pop TOCropViewController --
+    [self.cropViewController.navigationController popViewControllerAnimated:NO];
 }
 
 - (void)processChoosePhoto:(DKAsset *)asset
 {
     [asset fetchOriginalImageWithCompleteBlock:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
-        NSLog(@"processChoosePhoto = %@", @"Lay duoc hinh, tao man hinh cat");
+        // NSLog(@"processChoosePhoto = %@", @"Lay duoc hinh, tao man hinh cat");
         self.cropViewController = [[TOCropViewController alloc] initWithImage:image];
         self.cropViewController.resetAspectRatioEnabled = NO;
         self.cropViewController.rotateClockwiseButtonHidden = YES;
@@ -67,10 +94,8 @@
         self.cropViewController.delegate = self;
         
         [self.pickerController pushViewController:self.cropViewController animated:YES];
-        //        [self presentViewController:self.cropViewController animated:YES completion:nil];
+        // [self presentViewController:self.cropViewController animated:YES completion:nil];
     }];
-    
-    
 }
 
 #pragma mark -
@@ -81,7 +106,9 @@
     didCropToCircularImage:(UIImage *)image withRect:(CGRect)cropRect angle:(NSInteger)angle
 {
     // 'image' is the newly cropped, circular version of the original image
-    [self.delegate cropPhotoViewController:self didCropToCircularImage:image withRect:cropRect angle:angle];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+        self.didCropToCircularImage(image, cropRect, angle);
+    }];
 }
 
 - (void)cropViewController:(nonnull TOCropViewController *)cropViewController
@@ -91,17 +118,16 @@
     // -- Hide pickerController --
     //    self.pickerController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     //    [self.pickerController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    
     [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
-        [self.delegate cropPhotoViewController:self didCropToImage:image withRect:cropRect angle:angle];
+        self.didCropToImage(image, cropRect, angle);
     }];
-    
 }
 
 - (void)cropViewController:(TOCropViewController *)cropViewController
         didFinishCancelled:(BOOL)cancelled
 {
     //    NSLog(@"didFinishCancelled - %@", @"Trong ham nay");
+    self.didCancel();
     [cropViewController.navigationController popViewControllerAnimated:YES];
 }
 

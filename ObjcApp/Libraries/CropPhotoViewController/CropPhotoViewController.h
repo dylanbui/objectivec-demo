@@ -7,37 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import <Photos/Photos.h>
 #import <DKImagePickerController/DKImagePickerController-Swift.h>
 #import "TOCropViewController.h"
-
-@class CropPhotoViewController;
-
-@protocol CropPhotoViewControllerDelegate <NSObject>
-@optional
-
-- (void)cropPhotoViewController:(nonnull CropPhotoViewController *)cropViewController didCropToCircularImage:(nonnull UIImage *)image
-                       withRect:(CGRect)cropRect angle:(NSInteger)angle;
-
-- (void)cropPhotoViewController:(nonnull CropPhotoViewController *)cropViewController didCropToImage:(nonnull UIImage *)image
-                       withRect:(CGRect)cropRect angle:(NSInteger)angle;
-
-
-- (void)cropPhotoViewController:(nonnull CropPhotoViewController *)cropViewController didFinishCancelled:(BOOL)cancelled;
-
-@end
-
 
 @interface CropPhotoViewController : UIViewController <TOCropViewControllerDelegate>
 
 @property (nonatomic, strong) DKImagePickerController * _Nullable  pickerController; // Choose image viewcontroler
 @property (nonatomic, strong) TOCropViewController * _Nullable cropViewController; // Crop image viewcontroler
 
-@property (nullable, nonatomic, weak) id <CropPhotoViewControllerDelegate> delegate;
+@property (nonatomic, copy) void (^ _Nullable didCropToCircularImage)(UIImage * _Nonnull image, CGRect cropRect, NSInteger angle);
+@property (nonatomic, copy) void (^ _Nullable didCropToImage)(UIImage * _Nonnull image, CGRect cropRect, NSInteger angle);
+@property (nonatomic, copy) void (^ _Nullable didCancel)(void);
 
-- (instancetype _Nonnull )init;
-
++ (instancetype _Nonnull)sharedInstance;
 
 @end
 

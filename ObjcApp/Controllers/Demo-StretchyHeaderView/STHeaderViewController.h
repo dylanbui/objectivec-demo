@@ -14,6 +14,9 @@
 
 @property (nonatomic, readonly) GSKStretchyHeaderView *stretchyHeaderView;
 
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
+
 - (GSKStretchyHeaderView *)loadStretchyHeaderView;
 
 @end
