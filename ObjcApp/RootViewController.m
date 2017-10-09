@@ -21,6 +21,7 @@
 #import "TBTabbarViewController.h"
 #import "STHeaderViewController.h"
 #import "PTPhotoViewController.h"
+#import "SLTableViewController.h"
 
 @interface RootViewController ()
 
@@ -54,7 +55,8 @@
     //DemoButtonViewController *vcFirst = [[DemoButtonViewController alloc] init];
     // KeyboardViewController *vcFirst = [[KeyboardViewController alloc] init];
     // STHeaderViewController *vcFirst = [[STHeaderViewController alloc] init];
-    PTPhotoViewController *vcFirst = [[PTPhotoViewController alloc] init];
+    //PTPhotoViewController *vcFirst = [[PTPhotoViewController alloc] init];
+    SLTableViewController *vcFirst = [[SLTableViewController alloc] init];
     //[vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:NO];
     

@@ -20,6 +20,10 @@
 		BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC9E1F51F46C0005372B /* ExpandTypeTwoCell.m */; };
 		BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */; };
 		BB345F721F606E02009B7274 /* BTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB345F711F606E02009B7274 /* BTLabel.m */; };
+		BB3912F91F8BE527002F1CE1 /* SLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3912F71F8BE527002F1CE1 /* SLTableViewController.m */; };
+		BB3912FA1F8BE527002F1CE1 /* SLTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB3912F81F8BE527002F1CE1 /* SLTableViewController.xib */; };
+		BB3912FE1F8BE557002F1CE1 /* SLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3912FC1F8BE557002F1CE1 /* SLTableViewCell.m */; };
+		BB3912FF1F8BE557002F1CE1 /* SLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB3912FD1F8BE557002F1CE1 /* SLTableViewCell.xib */; };
 		BB4A3A691F814E3E0040CC61 /* TBFiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4A3A671F814E3E0040CC61 /* TBFiveViewController.m */; };
 		BB4A3A6A1F814E3E0040CC61 /* TBFiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4A3A681F814E3E0040CC61 /* TBFiveViewController.xib */; };
 		BB4FD3BB1F4429E200C082C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3BA1F4429E200C082C3 /* main.m */; };
@@ -175,6 +179,12 @@
 		BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandTypeTwoCell.xib; sourceTree = "<group>"; };
 		BB345F701F606E02009B7274 /* BTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLabel.h; sourceTree = "<group>"; };
 		BB345F711F606E02009B7274 /* BTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLabel.m; sourceTree = "<group>"; };
+		BB3912F61F8BE527002F1CE1 /* SLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTableViewController.h; sourceTree = "<group>"; };
+		BB3912F71F8BE527002F1CE1 /* SLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTableViewController.m; sourceTree = "<group>"; };
+		BB3912F81F8BE527002F1CE1 /* SLTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLTableViewController.xib; sourceTree = "<group>"; };
+		BB3912FB1F8BE557002F1CE1 /* SLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTableViewCell.h; sourceTree = "<group>"; };
+		BB3912FC1F8BE557002F1CE1 /* SLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTableViewCell.m; sourceTree = "<group>"; };
+		BB3912FD1F8BE557002F1CE1 /* SLTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLTableViewCell.xib; sourceTree = "<group>"; };
 		BB4A3A661F814E3E0040CC61 /* TBFiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBFiveViewController.h; sourceTree = "<group>"; };
 		BB4A3A671F814E3E0040CC61 /* TBFiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBFiveViewController.m; sourceTree = "<group>"; };
 		BB4A3A681F814E3E0040CC61 /* TBFiveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBFiveViewController.xib; sourceTree = "<group>"; };
@@ -459,6 +469,19 @@
 				BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */,
 			);
 			name = ExpandTypeTwo;
+			sourceTree = "<group>";
+		};
+		BB3912F51F8BE504002F1CE1 /* Demo-ScrollingTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB3912F61F8BE527002F1CE1 /* SLTableViewController.h */,
+				BB3912F71F8BE527002F1CE1 /* SLTableViewController.m */,
+				BB3912F81F8BE527002F1CE1 /* SLTableViewController.xib */,
+				BB3912FB1F8BE557002F1CE1 /* SLTableViewCell.h */,
+				BB3912FC1F8BE557002F1CE1 /* SLTableViewCell.m */,
+				BB3912FD1F8BE557002F1CE1 /* SLTableViewCell.xib */,
+			);
+			path = "Demo-ScrollingTableViewCell";
 			sourceTree = "<group>";
 		};
 		BB4FD3AD1F4429E200C082C3 = {
@@ -790,6 +813,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB3912F51F8BE504002F1CE1 /* Demo-ScrollingTableViewCell */,
 				BB121DEB1F85DE7C0053171B /* Demo-PhotoController */,
 				BBE143591F823E740020C400 /* Demo-StretchyHeaderView */,
 				BBD99B271F7CD6D8004B20AF /* Demo-TabbarController */,
@@ -1142,6 +1166,7 @@
 				BB4FD4B71F442C8A00C082C3 /* OpenSans-Bold.ttf in Resources */,
 				BB4FD3C91F4429E200C082C3 /* LaunchScreen.storyboard in Resources */,
 				BB4FD4BF1F442C8A00C082C3 /* OpenSans-Semibold.ttf in Resources */,
+				BB3912FF1F8BE557002F1CE1 /* SLTableViewCell.xib in Resources */,
 				BBE1435E1F823EA30020C400 /* STHeaderViewController.xib in Resources */,
 				BB4FD4BC1F442C8A00C082C3 /* OpenSans-Light.ttf in Resources */,
 				BB999CFB1F4F4F3D00B29FDE /* UserSessionViewController.xib in Resources */,
@@ -1176,6 +1201,7 @@
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
 				BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */,
 				BB4A3A6A1F814E3E0040CC61 /* TBFiveViewController.xib in Resources */,
+				BB3912FA1F8BE527002F1CE1 /* SLTableViewController.xib in Resources */,
 				BBD99B2C1F7CD791004B20AF /* TBOneViewController.xib in Resources */,
 				BB25FC981F51DE850005372B /* ExpandViewCell.xib in Resources */,
 				BB4FD49F1F442AEE00C082C3 /* ic_hide_password@2x.png in Resources */,
@@ -1312,6 +1338,7 @@
 				BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */,
 				BB5DDDAC1F5331ED0009AFDC /* DetailTaskInfoCell.m in Sources */,
 				BB5DDDB11F5332870009AFDC /* DetailTaskFeeCell.m in Sources */,
+				BB3912F91F8BE527002F1CE1 /* SLTableViewController.m in Sources */,
 				BB4FD4861F442AEE00C082C3 /* NSObject+Json.m in Sources */,
 				BBE1435D1F823EA30020C400 /* STHeaderViewController.m in Sources */,
 				BB4FD4901F442AEE00C082C3 /* APNumberButton.m in Sources */,
@@ -1355,6 +1382,7 @@
 				BB4FD4921F442AEE00C082C3 /* APNumberPadDefaultStyle.m in Sources */,
 				BB5DDD9C1F5330590009AFDC /* DetailTaskViewController.m in Sources */,
 				BB4FD49C1F442AEE00C082C3 /* SYPhotoViewController.m in Sources */,
+				BB3912FE1F8BE557002F1CE1 /* SLTableViewCell.m in Sources */,
 				BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */,
 				BB4FD4851F442AEE00C082C3 /* DbUtils.m in Sources */,
 				BBD99B3A1F7CD7DE004B20AF /* TBFourViewController.m in Sources */,
