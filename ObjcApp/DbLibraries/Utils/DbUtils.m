@@ -102,7 +102,7 @@ static NSTimer *processScheduleWithBlock = nil;
         processScheduleWithBlock = nil;
     }
     
-    void (^block)() = [inBlock copy];
+    void (^block)(void) = [inBlock copy];
     processScheduleWithBlock = [NSTimer scheduledTimerWithTimeInterval:delayInSeconds
                                            target:self selector:@selector(executeSimpleBlock:) userInfo:block repeats:NO];
 }
@@ -111,7 +111,7 @@ static NSTimer *processScheduleWithBlock = nil;
 {
     if([inTimer userInfo])
     {
-        void (^block)() = (void (^)())[inTimer userInfo];
+        void (^block)(void) = (void (^)(void))[inTimer userInfo];
         block();
     }
 }

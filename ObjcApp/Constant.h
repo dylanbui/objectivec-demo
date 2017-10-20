@@ -25,7 +25,6 @@
 #define BLUE_COLOR [UIColor colorWithRed:0.007f green:0.24f blue:0.764f alpha:1]
 #define GREY_COLOR [UIColor colorWithRed:0.474f green:0.474f blue:0.474f alpha:1]
 
-
 #define CHECK_VERSION_RESULT                         @"versionAppStore"
 
 

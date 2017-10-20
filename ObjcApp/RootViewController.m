@@ -7,21 +7,9 @@
 //
 
 #import "RootViewController.h"
-#import "PathsViewController.h"
-#import "UserSessionViewController.h"
-#import "ExpandLayoutViewController.h"
-#import "ScrollViewFormViewController.h"
-#import "DemoButtonViewController.h"
+#import "ViewController.h"
 
-#import "TableExpandCellViewController.h"
-
-#import "DetailTaskViewController.h"
-#import "KeyboardViewController.h"
-
-#import "TBTabbarViewController.h"
-#import "STHeaderViewController.h"
-#import "PTPhotoViewController.h"
-#import "SLTableViewController.h"
+#import "STCalendarHeaderViewController.h"
 
 @interface RootViewController ()
 
@@ -37,36 +25,22 @@
     // Do any additional setup after loading the view.
     
     // -- Save RootViewController --
-//    appDelegate.rootViewController = self;    
+//    appDelegate.rootViewController = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    self.title = @"";
-    
-//    PathsViewController *vcFirst = [[PathsViewController alloc] init];
-//    UserSessionViewController *vcFirst = [[UserSessionViewController alloc] init];
-//    ExpandLayoutViewController *vcFirst = [[ExpandLayoutViewController alloc] init];
-//    TableExpandCellViewController *vcFirst = [[TableExpandCellViewController alloc] init];
-//    ScrollViewFormViewController *vcFirst = [[ScrollViewFormViewController alloc] init];
-//    DetailTaskViewController *vcFirst = [[DetailTaskViewController alloc] init];
-    //DemoButtonViewController *vcFirst = [[DemoButtonViewController alloc] init];
-    // KeyboardViewController *vcFirst = [[KeyboardViewController alloc] init];
-    // STHeaderViewController *vcFirst = [[STHeaderViewController alloc] init];
-    //PTPhotoViewController *vcFirst = [[PTPhotoViewController alloc] init];
-    SLTableViewController *vcFirst = [[SLTableViewController alloc] init];
+//    ViewController *vcFirst = [[ViewController alloc] init];
+    STCalendarHeaderViewController *vcFirst = [[STCalendarHeaderViewController alloc] init];
     //[vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:NO];
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    
     
 //    [[UserSession instance] doLogout];
 //    [self showLoginViewController];

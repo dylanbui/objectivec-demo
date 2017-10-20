@@ -6,9 +6,9 @@
 //  Copyright © 2017 Propzy Viet Nam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DbViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : DbViewController
 
 
 @end

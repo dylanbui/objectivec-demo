@@ -32,6 +32,7 @@ target 'ObjcApp' do
     pod 'MaterialDesignSymbolObjC', '1.3'
     pod 'DLRadioButton', '1.4.9'
     pod 'TTTAttributedLabel', '2.0.0'
+    pod 'FXLabel'
     
     # Objective-C
     pod 'ISMessages', '1.2'
@@ -51,6 +52,7 @@ target 'ObjcApp' do
     
     # Calendar
     pod 'FSCalendar', '2.7.8'
+    pod 'JTCalendar', '2.1.9'
     
     # Changed.
     # pod 'PNChart', '0.8.9' # Goi phu thuoc cai them UICountingLabel (1.2.0)

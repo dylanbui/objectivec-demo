@@ -99,17 +99,10 @@
 		BB595DB61F6303940003C0B9 /* BALabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB595DB51F6303940003C0B9 /* BALabel.m */; };
 		BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDD941F5329B60009AFDC /* ScrollViewFormViewController.m */; };
 		BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */; };
-		BB5DDD9C1F5330590009AFDC /* DetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDD9A1F5330590009AFDC /* DetailTaskViewController.m */; };
-		BB5DDD9D1F5330590009AFDC /* DetailTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDD9B1F5330590009AFDC /* DetailTaskViewController.xib */; };
-		BB5DDDA71F5331C80009AFDC /* DetailTaskContactInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDDA51F5331C80009AFDC /* DetailTaskContactInfoCell.m */; };
-		BB5DDDA81F5331C80009AFDC /* DetailTaskContactInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDDA61F5331C80009AFDC /* DetailTaskContactInfoCell.xib */; };
-		BB5DDDAC1F5331ED0009AFDC /* DetailTaskInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDDAA1F5331ED0009AFDC /* DetailTaskInfoCell.m */; };
-		BB5DDDAD1F5331ED0009AFDC /* DetailTaskInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDDAB1F5331ED0009AFDC /* DetailTaskInfoCell.xib */; };
-		BB5DDDB11F5332870009AFDC /* DetailTaskFeeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDDAF1F5332870009AFDC /* DetailTaskFeeCell.m */; };
-		BB5DDDB21F5332870009AFDC /* DetailTaskFeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDDB01F5332870009AFDC /* DetailTaskFeeCell.xib */; };
 		BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC51C1F5D460A0073A0C1 /* DbActionView.m */; };
 		BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC51E1F5D460A0073A0C1 /* DbButton.m */; };
 		BB6CC5231F5D46B70073A0C1 /* DbLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC5221F5D46B70073A0C1 /* DbLabel.m */; };
+		BB79D8631F95B45100A0A7C2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB79D8621F95B45100A0A7C2 /* ViewController.xib */; };
 		BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */; };
 		BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */; };
 		BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */; };
@@ -119,6 +112,9 @@
 		BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */; };
 		BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */; };
 		BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCC62981F5E4C11006FF200 /* GBFlatButton.m */; };
+		BBD1366C1F9A1187007A7763 /* HeaderJTCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1366B1F9A1187007A7763 /* HeaderJTCalendarView.m */; };
+		BBD136701F9A149D007A7763 /* STCalendarHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1366E1F9A149D007A7763 /* STCalendarHeaderViewController.m */; };
+		BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD1366F1F9A149D007A7763 /* STCalendarHeaderViewController.xib */; };
 		BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */; };
 		BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */; };
 		BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */; };
@@ -313,24 +309,13 @@
 		BB5DDD931F5329B60009AFDC /* ScrollViewFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewFormViewController.h; sourceTree = "<group>"; };
 		BB5DDD941F5329B60009AFDC /* ScrollViewFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewFormViewController.m; sourceTree = "<group>"; };
 		BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollViewFormViewController.xib; sourceTree = "<group>"; };
-		BB5DDD991F5330590009AFDC /* DetailTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTaskViewController.h; sourceTree = "<group>"; };
-		BB5DDD9A1F5330590009AFDC /* DetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskViewController.m; sourceTree = "<group>"; };
-		BB5DDD9B1F5330590009AFDC /* DetailTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTaskViewController.xib; sourceTree = "<group>"; };
-		BB5DDDA41F5331C80009AFDC /* DetailTaskContactInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTaskContactInfoCell.h; sourceTree = "<group>"; };
-		BB5DDDA51F5331C80009AFDC /* DetailTaskContactInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskContactInfoCell.m; sourceTree = "<group>"; };
-		BB5DDDA61F5331C80009AFDC /* DetailTaskContactInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTaskContactInfoCell.xib; sourceTree = "<group>"; };
-		BB5DDDA91F5331ED0009AFDC /* DetailTaskInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTaskInfoCell.h; sourceTree = "<group>"; };
-		BB5DDDAA1F5331ED0009AFDC /* DetailTaskInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskInfoCell.m; sourceTree = "<group>"; };
-		BB5DDDAB1F5331ED0009AFDC /* DetailTaskInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTaskInfoCell.xib; sourceTree = "<group>"; };
-		BB5DDDAE1F5332870009AFDC /* DetailTaskFeeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTaskFeeCell.h; sourceTree = "<group>"; };
-		BB5DDDAF1F5332870009AFDC /* DetailTaskFeeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskFeeCell.m; sourceTree = "<group>"; };
-		BB5DDDB01F5332870009AFDC /* DetailTaskFeeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTaskFeeCell.xib; sourceTree = "<group>"; };
 		BB6CC51B1F5D460A0073A0C1 /* DbActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbActionView.h; sourceTree = "<group>"; };
 		BB6CC51C1F5D460A0073A0C1 /* DbActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbActionView.m; sourceTree = "<group>"; };
 		BB6CC51D1F5D460A0073A0C1 /* DbButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbButton.h; sourceTree = "<group>"; };
 		BB6CC51E1F5D460A0073A0C1 /* DbButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbButton.m; sourceTree = "<group>"; };
 		BB6CC5211F5D46B70073A0C1 /* DbLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbLabel.h; sourceTree = "<group>"; };
 		BB6CC5221F5D46B70073A0C1 /* DbLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbLabel.m; sourceTree = "<group>"; };
+		BB79D8621F95B45100A0A7C2 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		BB999CF11F4F4F2C00B29FDE /* ExpandLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpandLayoutViewController.h; path = "Demo-Expand-Layout/ExpandLayoutViewController.h"; sourceTree = "<group>"; };
 		BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpandLayoutViewController.m; path = "Demo-Expand-Layout/ExpandLayoutViewController.m"; sourceTree = "<group>"; };
 		BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpandLayoutViewController.xib; path = "Demo-Expand-Layout/ExpandLayoutViewController.xib"; sourceTree = "<group>"; };
@@ -345,6 +330,11 @@
 		BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPathsViewController.xib; sourceTree = "<group>"; };
 		BBCC62971F5E4C11006FF200 /* GBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBFlatButton.h; sourceTree = "<group>"; };
 		BBCC62981F5E4C11006FF200 /* GBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBFlatButton.m; sourceTree = "<group>"; };
+		BBD1366A1F9A1187007A7763 /* HeaderJTCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderJTCalendarView.h; sourceTree = "<group>"; };
+		BBD1366B1F9A1187007A7763 /* HeaderJTCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderJTCalendarView.m; sourceTree = "<group>"; };
+		BBD1366D1F9A149D007A7763 /* STCalendarHeaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STCalendarHeaderViewController.h; sourceTree = "<group>"; };
+		BBD1366E1F9A149D007A7763 /* STCalendarHeaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STCalendarHeaderViewController.m; sourceTree = "<group>"; };
+		BBD1366F1F9A149D007A7763 /* STCalendarHeaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STCalendarHeaderViewController.xib; sourceTree = "<group>"; };
 		BBD965DB1F5A8B6200CCAF2C /* DemoButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoButtonViewController.h; sourceTree = "<group>"; };
 		BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoButtonViewController.m; sourceTree = "<group>"; };
 		BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoButtonViewController.xib; sourceTree = "<group>"; };
@@ -819,7 +809,6 @@
 				BBD99B271F7CD6D8004B20AF /* Demo-TabbarController */,
 				BBDBD8F61F6A9A7F009C9340 /* Demo-Keyboard */,
 				BBD965DA1F5A8B5500CCAF2C /* Demo-Button */,
-				BB5DDD981F5330330009AFDC /* DetailTaskViewController */,
 				BB5DDD921F5329950009AFDC /* Demo-ScrollView */,
 				BB25FC8D1F51DE090005372B /* Demo-TableView */,
 				BB999CF61F4F4F3D00B29FDE /* Demo-User-Session */,
@@ -827,6 +816,7 @@
 				BB4FD4C51F443BC100C082C3 /* Demo-Navigation-Bar */,
 				BB4FD4C21F442D1300C082C3 /* ViewController.h */,
 				BB4FD4C31F442D1300C082C3 /* ViewController.m */,
+				BB79D8621F95B45100A0A7C2 /* ViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -873,33 +863,6 @@
 				BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */,
 			);
 			path = "Demo-ScrollView";
-			sourceTree = "<group>";
-		};
-		BB5DDD981F5330330009AFDC /* DetailTaskViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BB5DDD9E1F53312A0009AFDC /* TableCell */,
-				BB5DDD991F5330590009AFDC /* DetailTaskViewController.h */,
-				BB5DDD9A1F5330590009AFDC /* DetailTaskViewController.m */,
-				BB5DDD9B1F5330590009AFDC /* DetailTaskViewController.xib */,
-			);
-			name = DetailTaskViewController;
-			sourceTree = "<group>";
-		};
-		BB5DDD9E1F53312A0009AFDC /* TableCell */ = {
-			isa = PBXGroup;
-			children = (
-				BB5DDDA91F5331ED0009AFDC /* DetailTaskInfoCell.h */,
-				BB5DDDAA1F5331ED0009AFDC /* DetailTaskInfoCell.m */,
-				BB5DDDAB1F5331ED0009AFDC /* DetailTaskInfoCell.xib */,
-				BB5DDDA41F5331C80009AFDC /* DetailTaskContactInfoCell.h */,
-				BB5DDDA51F5331C80009AFDC /* DetailTaskContactInfoCell.m */,
-				BB5DDDA61F5331C80009AFDC /* DetailTaskContactInfoCell.xib */,
-				BB5DDDAE1F5332870009AFDC /* DetailTaskFeeCell.h */,
-				BB5DDDAF1F5332870009AFDC /* DetailTaskFeeCell.m */,
-				BB5DDDB01F5332870009AFDC /* DetailTaskFeeCell.xib */,
-			);
-			name = TableCell;
 			sourceTree = "<group>";
 		};
 		BB6CC51A1F5D460A0073A0C1 /* CustomControllClass */ = {
@@ -1015,6 +978,9 @@
 				BBE1435A1F823EA30020C400 /* STHeaderViewController.h */,
 				BBE1435B1F823EA30020C400 /* STHeaderViewController.m */,
 				BBE1435C1F823EA30020C400 /* STHeaderViewController.xib */,
+				BBD1366D1F9A149D007A7763 /* STCalendarHeaderViewController.h */,
+				BBD1366E1F9A149D007A7763 /* STCalendarHeaderViewController.m */,
+				BBD1366F1F9A149D007A7763 /* STCalendarHeaderViewController.xib */,
 				BBE143621F823F200020C400 /* HeaderView */,
 			);
 			path = "Demo-StretchyHeaderView";
@@ -1025,6 +991,8 @@
 			children = (
 				BBE1435F1F823F170020C400 /* HeaderViewOne.h */,
 				BBE143601F823F170020C400 /* HeaderViewOne.m */,
+				BBD1366A1F9A1187007A7763 /* HeaderJTCalendarView.h */,
+				BBD1366B1F9A1187007A7763 /* HeaderJTCalendarView.m */,
 			);
 			path = HeaderView;
 			sourceTree = "<group>";
@@ -1160,8 +1128,6 @@
 				BB4FD48D1F442AEE00C082C3 /* apnumberpad_backspace_icon.png in Resources */,
 				BB4FD4B61F442C8A00C082C3 /* FontAwesome.ttf in Resources */,
 				BBD99B311F7CD7BD004B20AF /* TBTwoViewController.xib in Resources */,
-				BB5DDD9D1F5330590009AFDC /* DetailTaskViewController.xib in Resources */,
-				BB5DDDAD1F5331ED0009AFDC /* DetailTaskInfoCell.xib in Resources */,
 				BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */,
 				BB4FD4B71F442C8A00C082C3 /* OpenSans-Bold.ttf in Resources */,
 				BB4FD3C91F4429E200C082C3 /* LaunchScreen.storyboard in Resources */,
@@ -1182,7 +1148,6 @@
 				BB4FD4BA1F442C8A00C082C3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				BBD99B361F7CD7CF004B20AF /* TBThreeViewController.xib in Resources */,
 				BB25FC9A1F51DFC20005372B /* artists.json in Resources */,
-				BB5DDDA81F5331C80009AFDC /* DetailTaskContactInfoCell.xib in Resources */,
 				BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */,
 				BB4FD4BE1F442C8A00C082C3 /* OpenSans-Regular.ttf in Resources */,
 				BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */,
@@ -1193,12 +1158,13 @@
 				BB4FD4BB1F442C8A00C082C3 /* OpenSans-Italic.ttf in Resources */,
 				BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */,
 				BB4FD4B81F442C8A00C082C3 /* OpenSans-BoldItalic.ttf in Resources */,
-				BB5DDDB21F5332870009AFDC /* DetailTaskFeeCell.xib in Resources */,
 				BB4FD4B91F442C8A00C082C3 /* OpenSans-ExtraBold.ttf in Resources */,
+				BB79D8631F95B45100A0A7C2 /* ViewController.xib in Resources */,
 				BB4FD49E1F442AEE00C082C3 /* ic_hide_password.png in Resources */,
 				BB4FD48F1F442AEE00C082C3 /* apnumberpad_backspace_icon@3x.png in Resources */,
 				BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */,
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
+				BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */,
 				BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */,
 				BB4A3A6A1F814E3E0040CC61 /* TBFiveViewController.xib in Resources */,
 				BB3912FA1F8BE527002F1CE1 /* SLTableViewController.xib in Resources */,
@@ -1336,8 +1302,6 @@
 				BB595DB61F6303940003C0B9 /* BALabel.m in Sources */,
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
 				BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */,
-				BB5DDDAC1F5331ED0009AFDC /* DetailTaskInfoCell.m in Sources */,
-				BB5DDDB11F5332870009AFDC /* DetailTaskFeeCell.m in Sources */,
 				BB3912F91F8BE527002F1CE1 /* SLTableViewController.m in Sources */,
 				BB4FD4861F442AEE00C082C3 /* NSObject+Json.m in Sources */,
 				BBE1435D1F823EA30020C400 /* STHeaderViewController.m in Sources */,
@@ -1361,7 +1325,6 @@
 				BB4FD49D1F442AEE00C082C3 /* UIImage+Resize.m in Sources */,
 				BB6CC5231F5D46B70073A0C1 /* DbLabel.m in Sources */,
 				BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */,
-				BB5DDDA71F5331C80009AFDC /* DetailTaskContactInfoCell.m in Sources */,
 				BB4FD4D31F443BC100C082C3 /* PathsViewController.m in Sources */,
 				BB345F721F606E02009B7274 /* BTLabel.m in Sources */,
 				BB4FD4A71F442B4D00C082C3 /* RootViewController.m in Sources */,
@@ -1377,10 +1340,10 @@
 				BB4FD4971F442AEE00C082C3 /* DACircularProgressView.m in Sources */,
 				BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */,
 				BB4FD4831F442AEE00C082C3 /* DbAppSession.m in Sources */,
+				BBD136701F9A149D007A7763 /* STCalendarHeaderViewController.m in Sources */,
 				BB4FD48A1F442AEE00C082C3 /* DbWebConnection.m in Sources */,
 				BB4FD4A21F442AEE00C082C3 /* UITextField+PasswordField.m in Sources */,
 				BB4FD4921F442AEE00C082C3 /* APNumberPadDefaultStyle.m in Sources */,
-				BB5DDD9C1F5330590009AFDC /* DetailTaskViewController.m in Sources */,
 				BB4FD49C1F442AEE00C082C3 /* SYPhotoViewController.m in Sources */,
 				BB3912FE1F8BE557002F1CE1 /* SLTableViewCell.m in Sources */,
 				BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */,
@@ -1398,6 +1361,7 @@
 				BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */,
 				BB4FD4CF1F443BC100C082C3 /* CoursesViewController.m in Sources */,
 				BBE143691F8242C50020C400 /* UINavigationController+Transparency.m in Sources */,
+				BBD1366C1F9A1187007A7763 /* HeaderJTCalendarView.m in Sources */,
 				BB4FD4811F442AEE00C082C3 /* DbViewController.m in Sources */,
 				BB4FD4961F442AEE00C082C3 /* PhotoGalleryViewController.m in Sources */,
 			);
@@ -1550,6 +1514,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KXK7W469S4;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = ObjcApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1565,6 +1530,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KXK7W469S4;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = ObjcApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

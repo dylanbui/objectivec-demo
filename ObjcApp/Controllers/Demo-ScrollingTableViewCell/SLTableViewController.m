@@ -63,8 +63,6 @@
         
 //        [cell cellOnTableView:self.tblContent
 //              didScrollOnView:self.view];
-        
-
     }
 }
 

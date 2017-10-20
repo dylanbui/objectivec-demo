@@ -40,24 +40,71 @@
         return;
     
     CGRect rectInSuperview = [tableView convertRect:self.frame toView:view];
-    NSLog(@"%d = %f === %@", (int)self.indexPath.row, offset, NSStringFromCGRect(rectInSuperview));
-
+    // NSLog(@"%d = %f === %@", (int)self.indexPath.row, offset, NSStringFromCGRect(rectInSuperview));
+    
     currentOffset = -offset;
+    
+    
+    
+    
+    float padding = 8.f;
+    //float min = padding;
+    float max = CGRectGetHeight(rectInSuperview) - CGRectGetHeight(self.parallaxImage.frame) - 8;
 
-    float distanceFromOrigin = 8.f;
-    float difference = currentOffset - previousOffset;
-
-    if (summaryOffset <= CGRectGetHeight(rectInSuperview)) {
-        summaryOffset = summaryOffset + difference;
-    } else {
-        summaryOffset = 0.f;
-    }
+    currentOffset += padding;
+    
+//    if (currentOffset < min)
+//        currentOffset = min;
+    
+    if (currentOffset > max)
+        currentOffset = max;
     
     CGRect imageRect = self.parallaxImage.frame;
-    imageRect.origin.y = summaryOffset + distanceFromOrigin;
+    imageRect.origin.y = currentOffset;
     self.parallaxImage.frame = imageRect;
     
-    previousOffset = currentOffset;
+    
+    //float distanceFromTop = CGRectGetHeight(view.frame) - 16 - CGRectGetMinY(rectInSuperview);
+//    float difference = CGRectGetHeight(self.parallaxImage.frame) - CGRectGetHeight(self.frame);
+//    float move = (offset / CGRectGetHeight(view.frame)) * difference;
+    
+//    NSLog(@"    => %f === %f", distanceFromTop, move);
+
+//    CGRect imageRect = self.parallaxImage.frame;
+//    imageRect.origin.y = -(difference)+move;
+//    self.parallaxImage.frame = imageRect;
+    
+//    CGRect imageRect = self.parallaxImage.frame;
+//    imageRect.origin.y = distanceFromTop;
+//    self.parallaxImage.frame = imageRect;
+
+    
+
+//    currentOffset = -offset;
+    // CGRect imageRect = self.parallaxImage.frame;
+//    float padding = 8.f;
+//    float min = padding;
+//    float max = CGRectGetHeight(rectInSuperview) - CGRectGetHeight(self.parallaxImage.frame) - 8;
+//
+//    if (currentOffset > min && currentOffset < max) {
+//        CGRect imageRect = self.parallaxImage.frame;
+//        imageRect.origin.y = currentOffset;
+//        self.parallaxImage.frame = imageRect;
+//    }
+//
+//    float difference = currentOffset - previousOffset;
+//
+//    if (summaryOffset <= CGRectGetHeight(rectInSuperview)) {
+//        summaryOffset = summaryOffset + difference;
+//    } else {
+//        summaryOffset = 0.f;
+//    }
+//
+////    CGRect imageRect = self.parallaxImage.frame;
+//    imageRect.origin.y = summaryOffset + distanceFromOrigin;
+//    self.parallaxImage.frame = imageRect;
+//
+//    previousOffset = currentOffset;
 }
 
 - (void)cellOnTableView:(UITableView *)tableView didScrollOnView:(UIView *)view
