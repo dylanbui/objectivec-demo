@@ -12,6 +12,9 @@ target 'ObjcApp' do
   # use_frameworks!
 
   # Pods for ObjcApp
+  
+  # Thu vien  Constraints
+  pod 'Masonry'
 
     # Libraries system
     pod 'AFNetworking', '3.1.0'

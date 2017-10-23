@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "STCalendarHeaderViewController.h"
 @import GSKStretchyHeaderView;
 
 @interface HeaderJTCalendarView : GSKStretchyHeaderView
+
+@property (nonatomic, weak) STCalendarHeaderViewController *viewController;
+
+- (instancetype)initWithFrame:(CGRect)frame withController:(id)viewController;
 
 @end

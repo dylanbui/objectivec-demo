@@ -10,6 +10,7 @@
 #import <JTCalendar/JTCalendar.h>
 #import "Constant.h"
 #import "DbConstant.h"
+#import <Masonry/Masonry.h>
 
 @interface HeaderJTCalendarView()
 
@@ -24,14 +25,30 @@
 
 @implementation HeaderJTCalendarView
 
+- (instancetype)initWithFrame:(CGRect)frame withController:(id)viewController
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.viewController = (STCalendarHeaderViewController *) viewController;
+        
+        self.minimumContentHeight = 128 + 15;
+        // -- Phai set background color --
+        self.backgroundColor = [UIColor whiteColor];
+        [self setupImageView];
+    }
+    return self;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.minimumContentHeight = 128 + 15;
+//        self.minimumContentHeight = 64;
         // -- Phai set background color --
         self.backgroundColor = [UIColor whiteColor];
         [self setupImageView];
+//        [self setupViewConstraints];
     }
     return self;
 }
@@ -42,7 +59,9 @@
     self.calendarDayContentView = [[JTHorizontalCalendarView alloc] init];
     [self.calendarDayContentView setFrame:CGRectMake(0, 64, SCREEN_WIDTH, 85)];
     self.calendarDayContentView.alpha = 0;
-    [self.contentView addSubview:self.calendarDayContentView];
+    // [self.contentView addSubview:self.calendarDayContentView];
+    self.calendarDayContentView.backgroundColor = [UIColor whiteColor];
+    [self.viewController.view addSubview:self.calendarDayContentView];
 
     self.calendarDayManager = [JTCalendarManager new];
     // self.calendarManager.delegate = self;
@@ -61,6 +80,17 @@
     [self.calendarManager setContentView:self.calendarContentView];
     [self.calendarManager setDate:[NSDate date]];
 }
+
+//- (void)setupViewConstraints
+//{
+//    [self.calendarContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(@64);
+//        make.left.equalTo(@0);
+//        make.width.equalTo(self.contentView.mas_width);
+//        make.height.equalTo(self.contentView.mas_height);
+//    }];
+//
+//}
 
 - (void)didChangeStretchFactor:(CGFloat)stretchFactor
 {
