@@ -32,13 +32,11 @@
     
 //    self.tblContent = UITableViewStyleGrouped;
     
-    self.tblControl = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
-                                                   style:UITableViewStyleGrouped];
-
-    self.tblControl.dataSource = self;
-    self.tblControl.delegate = self;
-    
-    [self.view addSubview:self.tblControl];
+//    self.tblControl = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+//                                                   style:UITableViewStyleGrouped];
+//    self.tblControl.dataSource = self;
+//    self.tblControl.delegate = self;
+//    [self.view addSubview:self.tblControl];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     UIEdgeInsets contentInset = self.tblContent.contentInset;
@@ -48,24 +46,27 @@
     if (self.tabBarController) {
         contentInset.bottom = 44;
     }
-    self.tblControl.contentInset = contentInset;
+    self.tblContent.contentInset = contentInset;
     
 
     _stretchyHeaderView = [self loadStretchyHeaderView];
-    [self.tblControl addSubview:self.stretchyHeaderView];
+    [self.tblContent addSubview:self.stretchyHeaderView];
     
     // by setting contentInset.top, we set where the section headers will be fixed
     UIEdgeInsets _contentInset = self.tblContent.contentInset;
     _contentInset.top = self.stretchyHeaderView.minimumContentHeight;
-    self.tblControl.contentInset = _contentInset;
+    self.tblContent.contentInset = _contentInset;
     
     // we add an empty header view at the top of the table view to increase the initial offset before the first section header
     // otherwise the header view would cover the first cells
-    self.tblControl.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0,
+    self.tblContent.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0,
                                                                               0,
-                                                                              self.tblControl.width,
+                                                                              self.tblContent.width,
                                                                               self.stretchyHeaderView.maximumContentHeight - self.stretchyHeaderView.minimumContentHeight)];
     
+    
+    [self.view addSubview:self.cldMenuView];
+    [self.view bringSubviewToFront:self.cldMenuView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -81,7 +82,7 @@
 {
 //    HeaderJTCalendarView *headerView = [[HeaderJTCalendarView alloc] initWithFrame:CGRectMake(0, 64, self.tblContent.frame.size.width, 364)];
     //HeaderJTCalendarView *headerView = [[HeaderJTCalendarView alloc] initWithFrame:CGRectMake(0, 0, self.tblContent.frame.size.width, 364)];
-    HeaderJTCalendarView *headerView = [[HeaderJTCalendarView alloc] initWithFrame:CGRectMake(0, 0, self.tblContent.frame.size.width, 364)
+    HeaderJTCalendarView *headerView = [[HeaderJTCalendarView alloc] initWithFrame:CGRectMake(0, 0, self.tblContent.frame.size.width, 420)
                                         withController:self];
     //    headerView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
     
@@ -104,15 +105,6 @@
 #pragma mark -
 #pragma mark UITableViewDataSource methods
 #pragma mark -
-
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    CGFloat sectionHeaderHeight = 50;
-//    if (scrollView.contentOffset.y<=sectionHeaderHeight&&scrollView.contentOffset.y>=0) {
-//        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-//    } else if (scrollView.contentOffset.y>=sectionHeaderHeight) {
-//        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
-//    }
-//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

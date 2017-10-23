@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "DbViewController.h"
 #import "GSKStretchyHeaderView.h"
+#import <JTCalendar/JTCalendar.h>
 
 @interface STCalendarHeaderViewController : DbViewController
+
+@property (weak, nonatomic) IBOutlet JTCalendarMenuView *cldMenuView;
 
 @property (nonatomic, readonly) GSKStretchyHeaderView *stretchyHeaderView;
 
