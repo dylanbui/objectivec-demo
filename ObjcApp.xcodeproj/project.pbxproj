@@ -102,6 +102,7 @@
 		BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC51C1F5D460A0073A0C1 /* DbActionView.m */; };
 		BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC51E1F5D460A0073A0C1 /* DbButton.m */; };
 		BB6CC5231F5D46B70073A0C1 /* DbLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC5221F5D46B70073A0C1 /* DbLabel.m */; };
+		BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */; };
 		BB79D8631F95B45100A0A7C2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB79D8621F95B45100A0A7C2 /* ViewController.xib */; };
 		BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */; };
 		BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */; };
@@ -315,6 +316,8 @@
 		BB6CC51E1F5D460A0073A0C1 /* DbButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbButton.m; sourceTree = "<group>"; };
 		BB6CC5211F5D46B70073A0C1 /* DbLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbLabel.h; sourceTree = "<group>"; };
 		BB6CC5221F5D46B70073A0C1 /* DbLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbLabel.m; sourceTree = "<group>"; };
+		BB71F43F1FA89235007268BA /* UIView+LayoutHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutHelper.h"; sourceTree = "<group>"; };
+		BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutHelper.m"; sourceTree = "<group>"; };
 		BB79D8621F95B45100A0A7C2 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		BB999CF11F4F4F2C00B29FDE /* ExpandLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpandLayoutViewController.h; path = "Demo-Expand-Layout/ExpandLayoutViewController.h"; sourceTree = "<group>"; };
 		BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpandLayoutViewController.m; path = "Demo-Expand-Layout/ExpandLayoutViewController.m"; sourceTree = "<group>"; };
@@ -604,6 +607,8 @@
 				BB4FD4291F442AEE00C082C3 /* NSObject+SimpleMapping.m */,
 				BB4FD42A1F442AEE00C082C3 /* UINavigationController+Utils.h */,
 				BB4FD42B1F442AEE00C082C3 /* UINavigationController+Utils.m */,
+				BB71F43F1FA89235007268BA /* UIView+LayoutHelper.h */,
+				BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1352,6 +1357,7 @@
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
 				BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
+				BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */,
 				BB4FD47D1F442AEE00C082C3 /* DbNavigationBarView.m in Sources */,
 				BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */,
 				BBD99B351F7CD7CF004B20AF /* TBThreeViewController.m in Sources */,
