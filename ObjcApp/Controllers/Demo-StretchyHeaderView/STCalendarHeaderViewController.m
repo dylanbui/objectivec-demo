@@ -65,8 +65,8 @@
                                                                               self.stretchyHeaderView.maximumContentHeight - self.stretchyHeaderView.minimumContentHeight)];
     
     
-    [self.view addSubview:self.cldMenuView];
-    [self.view bringSubviewToFront:self.cldMenuView];
+//    [self.view addSubview:self.cldMenuView];
+//    [self.view bringSubviewToFront:self.cldMenuView];
 }
 
 - (void)viewWillAppear:(BOOL)animated

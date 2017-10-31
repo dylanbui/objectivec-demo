@@ -44,6 +44,7 @@
                       @"Demo-Keyboard",
                       @"Demo-Button",
                       @"Demo-ScrollView",
+                      @"Demo-TableView",
                       @"Demo-User-Session",
                       @"Demo-Expand-Layout",
                       @"Demo-Navigation-Bar" ];
@@ -69,7 +70,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self.navigationController pushOrReplaceToFirstViewController:[self getViewControllers:indexPath] animated:YES];    
+    [self.navigationController pushOrReplaceToFirstViewController:[self getViewControllers:indexPath] animated:YES];
 }
 
 - (UIViewController *)getViewControllers:(NSIndexPath *)indexPath

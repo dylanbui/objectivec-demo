@@ -68,7 +68,7 @@ target 'ObjcApp' do
     # Changed. Custom DKImagePickerController add new field "autoDismissViewController"
     pod 'DKImagePickerController', '3.5.5'
 
-
+    pod 'FaceAware'
 
   target 'ObjcAppTests' do
     inherit! :search_paths

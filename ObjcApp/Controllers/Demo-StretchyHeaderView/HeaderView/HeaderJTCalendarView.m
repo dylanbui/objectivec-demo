@@ -17,11 +17,11 @@
     NSDate *_dateSelected;
 }
 
-@property (nonatomic) JTCalendarManager *calendarManager;
-@property (nonatomic) JTHorizontalCalendarView *calendarContentView;
+@property (nonatomic) JTCalendarManager *calMonthManager;
+@property (nonatomic) JTHorizontalCalendarView *calMonthContentView;
 
-@property (nonatomic) JTCalendarManager *calendarDayManager;
-@property (nonatomic) JTHorizontalCalendarView *calendarDayContentView;
+@property (nonatomic) JTCalendarManager *calWeekManager;
+@property (nonatomic) JTHorizontalCalendarView *calWeekContentView;
 
 @end
 
@@ -59,32 +59,41 @@
 - (void)setupImageView
 {
     // -- Dayyyyy --
-    self.calendarDayContentView = [[JTHorizontalCalendarView alloc] init];
-    [self.calendarDayContentView setFrame:CGRectMake(0, 64 + 55, SCREEN_WIDTH, 85)];
-    self.calendarDayContentView.alpha = 0;
-    // [self.contentView addSubview:self.calendarDayContentView];
-    self.calendarDayContentView.backgroundColor = [UIColor whiteColor];
-    [self.viewController.view addSubview:self.calendarDayContentView];
+    self.calWeekContentView = [[JTHorizontalCalendarView alloc] init];
+    [self.calWeekContentView setFrame:CGRectMake(0, 64 + 55, SCREEN_WIDTH, 85)];
+    self.calWeekContentView.alpha = 0;
+    // [self.contentView addSubview:self.calWeekContentView];
+    self.calWeekContentView.backgroundColor = [UIColor whiteColor];
+    [self.viewController.view addSubview:self.calWeekContentView];
 
-    self.calendarDayManager = [JTCalendarManager new];
-    self.calendarDayManager.delegate = self;
-    self.calendarDayManager.settings.weekModeEnabled = YES;
-    [self.calendarDayManager setContentView:self.calendarDayContentView];
-    [self.calendarDayManager setDate:[NSDate date]];
+    self.calWeekManager = [JTCalendarManager new];
+    self.calWeekManager.delegate = self;
+    self.calWeekManager.settings.weekModeEnabled = YES;
+    self.calWeekManager.settings.weekDayFormat = JTCalendarWeekDayFormatSingle;
+    [self.calWeekManager setContentView:self.calWeekContentView];
+    [self.calWeekManager setDate:[NSDate date]];
     
     // -- -------------------------- --
     
-    self.calendarContentView = [[JTHorizontalCalendarView alloc] init];
-    [self.calendarContentView setFrame:CGRectMake(0, 64 + 55, SCREEN_WIDTH, 300)];
-    [self.contentView addSubview:self.calendarContentView];
+    self.calMonthContentView = [[JTHorizontalCalendarView alloc] init];
+    [self.calMonthContentView setFrame:CGRectMake(0, 64 + 55, SCREEN_WIDTH, 300)];
+    [self.contentView addSubview:self.calMonthContentView];
     
-    self.calendarManager = [JTCalendarManager new];
-    self.calendarManager.delegate = self;
-    [self.calendarManager setContentView:self.calendarContentView];
-    [self.calendarManager setDate:[NSDate date]];
+    self.calMonthManager = [JTCalendarManager new];
+    self.calMonthManager.delegate = self;
+    self.calMonthManager.settings.weekDayFormat = JTCalendarWeekDayFormatSingle;
+    [self.calMonthManager setContentView:self.calMonthContentView];
+
+    // --  --
     
-    [self.calendarManager setMenuView:self.viewController.cldMenuView];
-    [self.calendarDayManager setMenuView:self.viewController.cldMenuView];
+    self.viewController.calMenuView.contentRatio = .75;
+    
+    [self.calMonthManager setMenuView:self.viewController.calMenuView];
+    [self.calMonthManager setDate:[NSDate date]];
+    
+    [self.calWeekManager setMenuView:self.viewController.calMenuView];
+    [self.calWeekManager setDate:[NSDate date]];
+
 }
 
 //- (void)setupViewConstraints
@@ -102,9 +111,9 @@
 {
     [super didChangeStretchFactor:stretchFactor];
     CGFloat limitedStretchFactor = MIN(1, stretchFactor);
-    
-    self.calendarContentView.alpha = limitedStretchFactor;
-    self.calendarDayContentView.alpha = 1 - limitedStretchFactor;
+
+    self.calMonthContentView.alpha = limitedStretchFactor;
+    self.calWeekContentView.alpha = 1 - limitedStretchFactor;
     
     // NSLog(@"limitedStretchFactor = %f", limitedStretchFactor);
 //
@@ -137,23 +146,23 @@
 // Used to customize the appearance of dayView
 - (void)calendar:(JTCalendarManager *)calendar prepareDayView:(JTCalendarDayView *)dayView
 {
-    if (calendar == self.calendarDayManager) {
+    if (calendar == self.calWeekManager) {
         // Today
-        if([self.calendarDayManager.dateHelper date:[NSDate date] isTheSameDayThan:dayView.date]){
+        if([self.calWeekManager.dateHelper date:[NSDate date] isTheSameDayThan:dayView.date]){
             dayView.circleView.hidden = NO;
             dayView.circleView.backgroundColor = [UIColor blueColor];
             dayView.dotView.backgroundColor = [UIColor whiteColor];
             dayView.textLabel.textColor = [UIColor whiteColor];
         }
         // Selected date
-        else if(_dateSelected && [self.calendarDayManager.dateHelper date:_dateSelected isTheSameDayThan:dayView.date]){
+        else if(_dateSelected && [self.calWeekManager.dateHelper date:_dateSelected isTheSameDayThan:dayView.date]){
             dayView.circleView.hidden = NO;
             dayView.circleView.backgroundColor = [UIColor redColor];
             dayView.dotView.backgroundColor = [UIColor whiteColor];
             dayView.textLabel.textColor = [UIColor whiteColor];
         }
         // Other month
-        else if(![self.calendarDayManager.dateHelper date:self.calendarDayContentView.date isTheSameMonthThan:dayView.date]){
+        else if(![self.calWeekManager.dateHelper date:self.calWeekContentView.date isTheSameMonthThan:dayView.date]){
             dayView.circleView.hidden = YES;
             dayView.dotView.backgroundColor = [UIColor redColor];
             dayView.textLabel.textColor = [UIColor lightGrayColor];
@@ -163,21 +172,21 @@
     }
     
     // Today
-    if([_calendarManager.dateHelper date:[NSDate date] isTheSameDayThan:dayView.date]){
+    if([self.calMonthManager.dateHelper date:[NSDate date] isTheSameDayThan:dayView.date]){
         dayView.circleView.hidden = NO;
         dayView.circleView.backgroundColor = [UIColor blueColor];
         dayView.dotView.backgroundColor = [UIColor whiteColor];
         dayView.textLabel.textColor = [UIColor whiteColor];
     }
     // Selected date
-    else if(_dateSelected && [_calendarManager.dateHelper date:_dateSelected isTheSameDayThan:dayView.date]){
+    else if(_dateSelected && [self.calMonthManager.dateHelper date:_dateSelected isTheSameDayThan:dayView.date]){
         dayView.circleView.hidden = NO;
         dayView.circleView.backgroundColor = [UIColor redColor];
         dayView.dotView.backgroundColor = [UIColor whiteColor];
         dayView.textLabel.textColor = [UIColor whiteColor];
     }
     // Other month
-    else if(![_calendarManager.dateHelper date:_calendarContentView.date isTheSameMonthThan:dayView.date]){
+    else if(![self.calMonthManager.dateHelper date:self.calMonthContentView.date isTheSameMonthThan:dayView.date]){
         dayView.circleView.hidden = YES;
         dayView.dotView.backgroundColor = [UIColor redColor];
         dayView.textLabel.textColor = [UIColor lightGrayColor];
@@ -209,44 +218,61 @@
                        options:0
                     animations:^{
                         dayView.circleView.transform = CGAffineTransformIdentity;
-                        [self.calendarManager reload];
-                        [self.calendarDayManager reload];                        
+                        [self.calMonthManager reload];
+                        [self.calWeekManager reload];
                     } completion:nil];
     
     
     // Don't change page in week mode because block the selection of days in first and last weeks of the month
-    if(self.calendarManager.settings.weekModeEnabled){
-        return;
-    }
+//    if(self.calMonthManager.settings.weekModeEnabled){
+//        return;
+//    }
     
     // Load the previous or next page if touch a day from another month
     
-    if(![self.calendarManager.dateHelper date:self.calendarContentView.date isTheSameMonthThan:dayView.date]){
-        if([self.calendarContentView.date compare:dayView.date] == NSOrderedAscending){
-            [self.calendarContentView loadNextPageWithAnimation];
+    if(![self.calMonthManager.dateHelper date:self.calMonthContentView.date isTheSameMonthThan:dayView.date]){
+        if([self.calMonthContentView.date compare:dayView.date] == NSOrderedAscending){
+            [self.calMonthContentView loadNextPageWithAnimation];
         }
         else{
-            [self.calendarContentView loadPreviousPageWithAnimation];
+            [self.calMonthContentView loadPreviousPageWithAnimation];
         }
     }
 }
 
 #pragma mark - CalendarManager delegate - Page mangement
 
-// Used to limit the date for the calendar, optional
-- (BOOL)calendar:(JTCalendarManager *)calendar canDisplayPageWithDate:(NSDate *)date
+//// Used to limit the date for the calendar, optional
+//- (BOOL)calendar:(JTCalendarManager *)calendar canDisplayPageWithDate:(NSDate *)date
+//{
+//    return NO; //[_calendarManager.dateHelper date:date isEqualOrAfter:_minDate andEqualOrBefore:_maxDate];
+//}
+//
+//- (void)calendarDidLoadNextPage:(JTCalendarManager *)calendar
+//{
+//    //    NSLog(@"Next page loaded");
+//}
+//
+//- (void)calendarDidLoadPreviousPage:(JTCalendarManager *)calendar
+//{
+//    //    NSLog(@"Previous page loaded");
+//}
+
+#pragma mark - Views customization
+
+- (void)calendar:(JTCalendarManager *)calendar prepareMenuItemView:(UILabel *)menuItemView date:(NSDate *)date
 {
-    return NO; //[_calendarManager.dateHelper date:date isEqualOrAfter:_minDate andEqualOrBefore:_maxDate];
+    static NSDateFormatter *dateFormatter;
+    if(!dateFormatter){
+        dateFormatter = [NSDateFormatter new];
+        dateFormatter.dateFormat = @"dd,MMMM yyyy";
+        
+        dateFormatter.locale = calendar.dateHelper.calendar.locale;
+        dateFormatter.timeZone = calendar.dateHelper.calendar.timeZone;
+    }
+    
+    menuItemView.text = [dateFormatter stringFromDate:date];
 }
 
-- (void)calendarDidLoadNextPage:(JTCalendarManager *)calendar
-{
-    //    NSLog(@"Next page loaded");
-}
-
-- (void)calendarDidLoadPreviousPage:(JTCalendarManager *)calendar
-{
-    //    NSLog(@"Previous page loaded");
-}
 
 @end

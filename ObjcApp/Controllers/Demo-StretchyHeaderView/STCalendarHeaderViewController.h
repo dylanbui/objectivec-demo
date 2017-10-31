@@ -13,7 +13,7 @@
 
 @interface STCalendarHeaderViewController : DbViewController
 
-@property (weak, nonatomic) IBOutlet JTCalendarMenuView *cldMenuView;
+@property (weak, nonatomic) IBOutlet JTCalendarMenuView *calMenuView;
 
 @property (nonatomic, readonly) GSKStretchyHeaderView *stretchyHeaderView;
 
