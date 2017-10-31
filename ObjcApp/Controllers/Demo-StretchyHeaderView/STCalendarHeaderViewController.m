@@ -82,8 +82,10 @@
 {
 //    HeaderJTCalendarView *headerView = [[HeaderJTCalendarView alloc] initWithFrame:CGRectMake(0, 64, self.tblContent.frame.size.width, 364)];
     //HeaderJTCalendarView *headerView = [[HeaderJTCalendarView alloc] initWithFrame:CGRectMake(0, 0, self.tblContent.frame.size.width, 364)];
-    HeaderJTCalendarView *headerView = [[HeaderJTCalendarView alloc] initWithFrame:CGRectMake(0, 0, self.tblContent.frame.size.width, 420)
-                                        withController:self];
+//    HeaderJTCalendarView *headerView = [[HeaderJTCalendarView alloc] initWithFrame:CGRectMake(0, 0, self.tblContent.frame.size.width, 420)
+//                                        withController:self];
+    HeaderJTCalendarView *headerView = [[HeaderJTCalendarView alloc] initWithFrame:CGRectMake(0, 0, self.tblContent.frame.size.width, 390)
+                                                                    withController:self];
     //    headerView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
     
     // we have to set this flag before we add the header to the table view, otherwise it will change its insets immediately
