@@ -138,6 +138,9 @@
 		BBE143611F823F170020C400 /* HeaderViewOne.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE143601F823F170020C400 /* HeaderViewOne.m */; };
 		BBE143651F8240A20020C400 /* UIView+GSKLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE143631F8240A10020C400 /* UIView+GSKLayoutHelper.m */; };
 		BBE143691F8242C50020C400 /* UINavigationController+Transparency.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE143681F8242C50020C400 /* UINavigationController+Transparency.m */; };
+		BBF1BD6F1FAC81300081E179 /* MapDrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF1BD6D1FAC81300081E179 /* MapDrawingViewController.m */; };
+		BBF1BD701FAC81300081E179 /* MapDrawingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF1BD6E1FAC81300081E179 /* MapDrawingViewController.xib */; };
+		BBF1BD731FAC814A0081E179 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF1BD721FAC814A0081E179 /* CanvasView.m */; };
 		BBF2E8C71F548ED800064035 /* TaskTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */; };
 		BBF2E8C81F548ED800064035 /* TaskTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */; };
 		D0D67C566CFEB09749ADFD21 /* Pods_ObjcAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */; };
@@ -375,6 +378,11 @@
 		BBE143641F8240A20020C400 /* UIView+GSKLayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GSKLayoutHelper.h"; sourceTree = "<group>"; };
 		BBE143671F8242C50020C400 /* UINavigationController+Transparency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Transparency.h"; sourceTree = "<group>"; };
 		BBE143681F8242C50020C400 /* UINavigationController+Transparency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Transparency.m"; sourceTree = "<group>"; };
+		BBF1BD6C1FAC81300081E179 /* MapDrawingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapDrawingViewController.h; sourceTree = "<group>"; };
+		BBF1BD6D1FAC81300081E179 /* MapDrawingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapDrawingViewController.m; sourceTree = "<group>"; };
+		BBF1BD6E1FAC81300081E179 /* MapDrawingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapDrawingViewController.xib; sourceTree = "<group>"; };
+		BBF1BD711FAC814A0081E179 /* CanvasView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
+		BBF1BD721FAC814A0081E179 /* CanvasView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
 		BBF2E8C41F548ED800064035 /* TaskTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskTableViewHeader.h; path = "Demo-Expand-Layout/TaskTableViewHeader.h"; sourceTree = "<group>"; };
 		BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskTableViewHeader.m; path = "Demo-Expand-Layout/TaskTableViewHeader.m"; sourceTree = "<group>"; };
 		BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskTableViewHeader.xib; path = "Demo-Expand-Layout/TaskTableViewHeader.xib"; sourceTree = "<group>"; };
@@ -808,6 +816,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBF1BD6B1FAC80EE0081E179 /* Demo-GM-MapDrawing */,
 				BB3912F51F8BE504002F1CE1 /* Demo-ScrollingTableViewCell */,
 				BB121DEB1F85DE7C0053171B /* Demo-PhotoController */,
 				BBE143591F823E740020C400 /* Demo-StretchyHeaderView */,
@@ -1013,6 +1022,18 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		BBF1BD6B1FAC80EE0081E179 /* Demo-GM-MapDrawing */ = {
+			isa = PBXGroup;
+			children = (
+				BBF1BD6C1FAC81300081E179 /* MapDrawingViewController.h */,
+				BBF1BD6D1FAC81300081E179 /* MapDrawingViewController.m */,
+				BBF1BD6E1FAC81300081E179 /* MapDrawingViewController.xib */,
+				BBF1BD711FAC814A0081E179 /* CanvasView.h */,
+				BBF1BD721FAC814A0081E179 /* CanvasView.m */,
+			);
+			path = "Demo-GM-MapDrawing";
+			sourceTree = "<group>";
+		};
 		BBF2E8C31F548ECE00064035 /* TaskTableViewHeader */ = {
 			isa = PBXGroup;
 			children = (
@@ -1136,6 +1157,7 @@
 				BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */,
 				BB4FD4B71F442C8A00C082C3 /* OpenSans-Bold.ttf in Resources */,
 				BB4FD3C91F4429E200C082C3 /* LaunchScreen.storyboard in Resources */,
+				BBF1BD701FAC81300081E179 /* MapDrawingViewController.xib in Resources */,
 				BB4FD4BF1F442C8A00C082C3 /* OpenSans-Semibold.ttf in Resources */,
 				BB3912FF1F8BE557002F1CE1 /* SLTableViewCell.xib in Resources */,
 				BBE1435E1F823EA30020C400 /* STHeaderViewController.xib in Resources */,
@@ -1304,6 +1326,7 @@
 				BBDBD9001F6A9B6B009C9340 /* NSDictionary+DbHelper.m in Sources */,
 				BBE143651F8240A20020C400 /* UIView+GSKLayoutHelper.m in Sources */,
 				BB4FD47F1F442AEE00C082C3 /* DbPopupView.m in Sources */,
+				BBF1BD731FAC814A0081E179 /* CanvasView.m in Sources */,
 				BB595DB61F6303940003C0B9 /* BALabel.m in Sources */,
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
 				BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */,
@@ -1345,6 +1368,7 @@
 				BB4FD4971F442AEE00C082C3 /* DACircularProgressView.m in Sources */,
 				BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */,
 				BB4FD4831F442AEE00C082C3 /* DbAppSession.m in Sources */,
+				BBF1BD6F1FAC81300081E179 /* MapDrawingViewController.m in Sources */,
 				BBD136701F9A149D007A7763 /* STCalendarHeaderViewController.m in Sources */,
 				BB4FD48A1F442AEE00C082C3 /* DbWebConnection.m in Sources */,
 				BB4FD4A21F442AEE00C082C3 /* UITextField+PasswordField.m in Sources */,

@@ -10,6 +10,8 @@
 #import "UserSession.h"
 #import "IQKeyboardManager.h"
 
+@import GoogleMaps;
+
 @interface AppDelegate ()
 
 @end
@@ -20,6 +22,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [super application:application didFinishLaunchingWithOptions:launchOptions];
+    
+    // -- Google map --
+    [GMSServices provideAPIKey:@"AIzaSyBK_MVp9sT3n-klZ4BIMnKHi1cjHJyYNFA"];
     
     [[UserSession instance] sessionStart];
     

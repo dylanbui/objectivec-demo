@@ -69,6 +69,10 @@ target 'ObjcApp' do
     pod 'DKImagePickerController', '3.5.5'
 
     pod 'FaceAware'
+    
+    pod 'GoogleMaps', '2.4.0'
+    pod 'GooglePlaces', '2.4.0'
+    pod 'GooglePlacePicker', '2.4.0'
 
   target 'ObjcAppTests' do
     inherit! :search_paths
