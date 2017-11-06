@@ -65,6 +65,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // self.edgesForExtendedLayout = NO;
     
 //    // -- Config NavigationBar Background --
 //    UIImage *img_bg = [[UIImage imageNamed:@"bg_top_address"]

@@ -10,6 +10,7 @@
 #import "ViewController.h"
 
 #import "STCalendarHeaderViewController.h"
+#import "MapDrawingViewController.h"
 
 @interface RootViewController ()
 
@@ -20,6 +21,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = NO;
+    
 //    [self.navigationController setNavigationBarHidden:YES animated:NO];
     [self navigationBarHiddenForThisController];
     // Do any additional setup after loading the view.
@@ -33,8 +36,10 @@
     [super viewWillAppear:animated];
     
 //    ViewController *vcFirst = [[ViewController alloc] init];
-    STCalendarHeaderViewController *vcFirst = [[STCalendarHeaderViewController alloc] init];
-    //[vcFirst.navigationItem setHidesBackButton:YES animated:NO];
+    // STCalendarHeaderViewController *vcFirst = [[STCalendarHeaderViewController alloc] init];
+    MapDrawingViewController *vcFirst = [[MapDrawingViewController alloc] init];
+    
+//    [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:NO];
 }
 

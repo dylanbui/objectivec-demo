@@ -7,8 +7,9 @@
 //
 
 #import "BaseViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface MapDrawingViewController : BaseViewController
+@interface MapDrawingViewController : BaseViewController <GMSMapViewDelegate>
 
 - (void)touchesBegan:(UITouch*)touch;
 - (void)touchesMoved:(UITouch*)touch;
