@@ -8,6 +8,7 @@
 
 #import "MapDrawingViewController.h"
 #import "CanvasView.h"
+#import "CanvasImageView.h"
 
 @interface MapDrawingViewController () {
     CLLocationCoordinate2D currentLocation;
@@ -21,6 +22,7 @@
 @property (nonatomic) BOOL isDrawingPolygon;
 
 @property (nonatomic, strong) CanvasView *canvasView;
+@property (nonatomic, strong) CanvasImageView *canvasImageView;
 
 @property (nonatomic, strong) GMSMutablePath *arrCoordinate;
 
@@ -55,14 +57,15 @@
     //self.vwMap = [GMSMapView mapWithFrame:(CGRect){0,0,self.view.frame.size} camera:newCameraPosition];
     
     [self.vwMap setCamera:newCameraPosition];
-//    self.vwMap.delegate = self;
-//    [self.view addSubview:self.vwMap];
-//    [self.view sendSubviewToBack:self.vwMap];
     [self.vwMap animateToCameraPosition:newCameraPosition];
     
-    self.canvasView = [[CanvasView alloc] initWithFrame:self.vwMap.frame];
-    self.canvasView.userInteractionEnabled = YES;
-    self.canvasView.delegate = self;
+//    self.canvasView = [[CanvasView alloc] initWithFrame:self.vwMap.frame];
+//    self.canvasView.userInteractionEnabled = YES;
+//    self.canvasView.delegate = self;
+    
+    self.canvasImageView = [[CanvasImageView alloc] initWithFrame:self.vwMap.frame];
+    self.canvasImageView.userInteractionEnabled = YES;
+    self.canvasImageView.delegate = self;
     
     
 }
@@ -78,8 +81,11 @@
         [self.drawPolygonButton setTitle:@"Done" forState:UIControlStateNormal];
         [self.arrCoordinate removeAllCoordinates];
         
-        [self.view addSubview:self.canvasView];
-        [self.view bringSubviewToFront:self.canvasView];
+//        [self.view addSubview:self.canvasView];
+//        [self.view bringSubviewToFront:self.canvasView];
+        
+        [self.view addSubview:self.canvasImageView];
+        [self.view bringSubviewToFront:self.canvasImageView];
         
     } else {
         
@@ -99,8 +105,11 @@
         
         self.isDrawingPolygon = NO;
         [self.drawPolygonButton setTitle:@"draw" forState:UIControlStateNormal];
-        self.canvasView.image = nil;
-        [self.canvasView removeFromSuperview];
+//        self.canvasView.image = nil;
+//        [self.canvasView removeFromSuperview];
+        
+        self.canvasImageView.image = nil;
+        [self.canvasImageView removeFromSuperview];
         
     }
 }
@@ -130,7 +139,8 @@
     CGPoint mapViewPoint = [self.vwMap convertPoint:location toView:self.vwMap];
     CLLocationCoordinate2D coordinate = [self.vwMap.projection coordinateForPoint:mapViewPoint];
     [self.arrCoordinate addCoordinate:coordinate];
-    [self didTouchUpInsideDrawButton:nil];
+    
+    // [self didTouchUpInsideDrawButton:nil];
 }
 
 

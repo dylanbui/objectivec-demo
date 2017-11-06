@@ -67,4 +67,31 @@
     self.location = currentLocation;
 }
 
+/*
+ [self.arrLocation addObject:[NSValue valueWithCGPoint:self.location]];
+ 
+ CGPoint firstPoint = [[self.arrLocation firstObject] CGPointValue];
+ CGPoint lastPoint = [[self.arrLocation lastObject] CGPointValue];
+ 
+ [self drawLineFrom:firstPoint endPoint:lastPoint];
+ */
+
+- (void)drawLineFrom:(CGPoint)from endPoint:(CGPoint)to
+{
+    UIGraphicsBeginImageContext(self.frame.size);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    [self.image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    CGContextSetLineCap(ctx, kCGLineCapRound);
+    CGContextSetLineWidth(ctx, 2.0);
+    CGContextSetStrokeColorWithColor(ctx, [[UIColor blueColor] colorWithAlphaComponent:0.7].CGColor);
+    CGContextBeginPath(ctx);
+    CGContextMoveToPoint(ctx, from.x, from.y);
+    CGContextAddLineToPoint(ctx, to.x, to.y);
+    CGContextStrokePath(ctx);
+    self.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+}
+
+
+
 @end

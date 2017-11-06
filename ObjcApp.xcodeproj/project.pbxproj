@@ -143,6 +143,7 @@
 		BBF1BD731FAC814A0081E179 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF1BD721FAC814A0081E179 /* CanvasView.m */; };
 		BBF2E8C71F548ED800064035 /* TaskTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */; };
 		BBF2E8C81F548ED800064035 /* TaskTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */; };
+		BBF9A38E1FB04BEA00909F34 /* CanvasImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF9A38D1FB04BEA00909F34 /* CanvasImageView.m */; };
 		D0D67C566CFEB09749ADFD21 /* Pods_ObjcAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -386,6 +387,8 @@
 		BBF2E8C41F548ED800064035 /* TaskTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskTableViewHeader.h; path = "Demo-Expand-Layout/TaskTableViewHeader.h"; sourceTree = "<group>"; };
 		BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskTableViewHeader.m; path = "Demo-Expand-Layout/TaskTableViewHeader.m"; sourceTree = "<group>"; };
 		BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskTableViewHeader.xib; path = "Demo-Expand-Layout/TaskTableViewHeader.xib"; sourceTree = "<group>"; };
+		BBF9A38C1FB04BEA00909F34 /* CanvasImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasImageView.h; sourceTree = "<group>"; };
+		BBF9A38D1FB04BEA00909F34 /* CanvasImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasImageView.m; sourceTree = "<group>"; };
 		CF0433C27A628AE212F55DBF /* Pods-ObjcApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcApp/Pods-ObjcApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D2C1CC5C4A722D440973BCC1 /* Pods-ObjcApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcApp/Pods-ObjcApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1030,6 +1033,8 @@
 				BBF1BD6E1FAC81300081E179 /* MapDrawingViewController.xib */,
 				BBF1BD711FAC814A0081E179 /* CanvasView.h */,
 				BBF1BD721FAC814A0081E179 /* CanvasView.m */,
+				BBF9A38C1FB04BEA00909F34 /* CanvasImageView.h */,
+				BBF9A38D1FB04BEA00909F34 /* CanvasImageView.m */,
 			);
 			path = "Demo-GM-MapDrawing";
 			sourceTree = "<group>";
@@ -1393,6 +1398,7 @@
 				BBE143691F8242C50020C400 /* UINavigationController+Transparency.m in Sources */,
 				BBD1366C1F9A1187007A7763 /* HeaderJTCalendarView.m in Sources */,
 				BB4FD4811F442AEE00C082C3 /* DbViewController.m in Sources */,
+				BBF9A38E1FB04BEA00909F34 /* CanvasImageView.m in Sources */,
 				BB4FD4961F442AEE00C082C3 /* PhotoGalleryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
