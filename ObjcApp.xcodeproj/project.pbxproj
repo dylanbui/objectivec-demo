@@ -104,6 +104,9 @@
 		BB6CC5231F5D46B70073A0C1 /* DbLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC5221F5D46B70073A0C1 /* DbLabel.m */; };
 		BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */; };
 		BB79D8631F95B45100A0A7C2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB79D8621F95B45100A0A7C2 /* ViewController.xib */; };
+		BB8DCAF01FB16CA700AB337B /* PriceMapIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DCAEF1FB16CA700AB337B /* PriceMapIntroView.m */; };
+		BB8DCAF21FB16CB800AB337B /* PriceMapIntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8DCAF11FB16CB800AB337B /* PriceMapIntroView.xib */; };
+		BB8DCAF51FB16F3000AB337B /* RippleEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DCAF41FB16F3000AB337B /* RippleEffectView.m */; };
 		BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */; };
 		BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */; };
 		BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */; };
@@ -323,6 +326,11 @@
 		BB71F43F1FA89235007268BA /* UIView+LayoutHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutHelper.h"; sourceTree = "<group>"; };
 		BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutHelper.m"; sourceTree = "<group>"; };
 		BB79D8621F95B45100A0A7C2 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		BB8DCAEE1FB16CA700AB337B /* PriceMapIntroView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PriceMapIntroView.h; sourceTree = "<group>"; };
+		BB8DCAEF1FB16CA700AB337B /* PriceMapIntroView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PriceMapIntroView.m; sourceTree = "<group>"; };
+		BB8DCAF11FB16CB800AB337B /* PriceMapIntroView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceMapIntroView.xib; sourceTree = "<group>"; };
+		BB8DCAF31FB16F3000AB337B /* RippleEffectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RippleEffectView.h; sourceTree = "<group>"; };
+		BB8DCAF41FB16F3000AB337B /* RippleEffectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RippleEffectView.m; sourceTree = "<group>"; };
 		BB999CF11F4F4F2C00B29FDE /* ExpandLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpandLayoutViewController.h; path = "Demo-Expand-Layout/ExpandLayoutViewController.h"; sourceTree = "<group>"; };
 		BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpandLayoutViewController.m; path = "Demo-Expand-Layout/ExpandLayoutViewController.m"; sourceTree = "<group>"; };
 		BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpandLayoutViewController.xib; path = "Demo-Expand-Layout/ExpandLayoutViewController.xib"; sourceTree = "<group>"; };
@@ -1035,6 +1043,11 @@
 				BBF1BD721FAC814A0081E179 /* CanvasView.m */,
 				BBF9A38C1FB04BEA00909F34 /* CanvasImageView.h */,
 				BBF9A38D1FB04BEA00909F34 /* CanvasImageView.m */,
+				BB8DCAEE1FB16CA700AB337B /* PriceMapIntroView.h */,
+				BB8DCAEF1FB16CA700AB337B /* PriceMapIntroView.m */,
+				BB8DCAF11FB16CB800AB337B /* PriceMapIntroView.xib */,
+				BB8DCAF31FB16F3000AB337B /* RippleEffectView.h */,
+				BB8DCAF41FB16F3000AB337B /* RippleEffectView.m */,
 			);
 			path = "Demo-GM-MapDrawing";
 			sourceTree = "<group>";
@@ -1197,6 +1210,7 @@
 				BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */,
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
 				BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */,
+				BB8DCAF21FB16CB800AB337B /* PriceMapIntroView.xib in Resources */,
 				BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */,
 				BB4A3A6A1F814E3E0040CC61 /* TBFiveViewController.xib in Resources */,
 				BB3912FA1F8BE527002F1CE1 /* SLTableViewController.xib in Resources */,
@@ -1375,6 +1389,7 @@
 				BB4FD4831F442AEE00C082C3 /* DbAppSession.m in Sources */,
 				BBF1BD6F1FAC81300081E179 /* MapDrawingViewController.m in Sources */,
 				BBD136701F9A149D007A7763 /* STCalendarHeaderViewController.m in Sources */,
+				BB8DCAF51FB16F3000AB337B /* RippleEffectView.m in Sources */,
 				BB4FD48A1F442AEE00C082C3 /* DbWebConnection.m in Sources */,
 				BB4FD4A21F442AEE00C082C3 /* UITextField+PasswordField.m in Sources */,
 				BB4FD4921F442AEE00C082C3 /* APNumberPadDefaultStyle.m in Sources */,
@@ -1387,6 +1402,7 @@
 				BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
 				BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */,
+				BB8DCAF01FB16CA700AB337B /* PriceMapIntroView.m in Sources */,
 				BB4FD47D1F442AEE00C082C3 /* DbNavigationBarView.m in Sources */,
 				BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */,
 				BBD99B351F7CD7CF004B20AF /* TBThreeViewController.m in Sources */,

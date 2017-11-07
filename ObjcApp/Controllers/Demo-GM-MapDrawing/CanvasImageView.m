@@ -70,7 +70,7 @@
     [self.arrLocation addObject:[NSValue valueWithCGPoint:self.location]];
     
     
-    // -- Clear touch path -- 
+    // -- Clear touch path --
     self.image = nil;
     
     [self drawBezierPath];

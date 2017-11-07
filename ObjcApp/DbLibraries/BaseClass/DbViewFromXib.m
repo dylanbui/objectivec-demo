@@ -39,7 +39,8 @@
         // 2. Load xib from main bundle and assign it to self
         self = [[[NSBundle mainBundle]loadNibNamed:className owner:self options:nil] objectAtIndex:0];
         if(CGRectIsEmpty(frame)) {
-            self.bounds = _customView.bounds;
+//            self.bounds = _customView.bounds;
+            self.frame = frame;
         }
     }
     return self;

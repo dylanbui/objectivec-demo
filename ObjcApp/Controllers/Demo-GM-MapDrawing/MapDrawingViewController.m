@@ -27,6 +27,9 @@
 @property (nonatomic, strong) GMSMutablePath *arrCoordinate;
 
 
+@property (nonatomic, strong) PriceMapIntroView *vwPriceMapIntro;
+
+
 @end
 
 @implementation MapDrawingViewController
@@ -34,6 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    self.edgesForExtendedLayout = NO;
     // Do any additional setup after loading the view from its nib.
     
 //    self.coordinates = [[NSMutableArray alloc] init];
@@ -68,6 +72,32 @@
     self.canvasImageView.delegate = self;
     
     
+    
+    self.vwPriceMapIntro = [[PriceMapIntroView alloc] init];
+    self.vwPriceMapIntro.frame = self.view.frame; //[[UIScreen mainScreen] bounds];
+    [self.vwPriceMapIntro layoutIfNeeded];
+    [self.view addSubview:self.vwPriceMapIntro];
+    
+    __weak typeof(self) weakSelf = self;
+    self.vwPriceMapIntro.handleViewAction = ^(id _self, int _id, NSDictionary* _params, NSError* error) {
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            weakSelf.vwPriceMapIntro.alpha = 0;
+        } completion:^(BOOL finished) {
+            [weakSelf.vwPriceMapIntro removeFromSuperview];
+            
+            if (_id == 0) {
+                NSLog(@"%@", @"Clich ra ngoai");
+            } else {
+                NSLog(@"%@", @"Clich ra BUTTON");
+            }
+        }];
+
+    };
+    
+    [DbUtils delayCallback:^{
+        [self.vwPriceMapIntro startAnimation];
+    } forSeconds:1.2];
 }
 
 - (IBAction)didTouchUpInsideDrawButton:(UIButton*)sender
@@ -86,6 +116,9 @@
         
         [self.view addSubview:self.canvasImageView];
         [self.view bringSubviewToFront:self.canvasImageView];
+        
+        self.vwMap.layer.borderColor = [UIColor orangeColor].CGColor;
+        self.vwMap.layer.borderWidth = 3.0;
         
     } else {
         
@@ -141,6 +174,26 @@
     [self.arrCoordinate addCoordinate:coordinate];
     
     // [self didTouchUpInsideDrawButton:nil];
+    
+//    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithPath:self.arrCoordinate];
+//
+//    CLLocationCoordinate2D northEast = bounds.northEast;
+//    CLLocationCoordinate2D southWest = bounds.southWest;
+//    CLLocationCoordinate2D southEast = CLLocationCoordinate2DMake(southWest.latitude, northEast.longitude);
+//    CLLocationCoordinate2D northWest = CLLocationCoordinate2DMake(northEast.latitude, southWest.longitude);
+//
+//    // -- Test : Draw rectangle bounds --
+//    GMSMutablePath *rectPath = [GMSMutablePath path];
+//    [rectPath addCoordinate:northWest]; // Tay Bac
+//    [rectPath addCoordinate:northEast]; // Dong Bac
+//    [rectPath addCoordinate:southEast]; // Dong Nam
+//    [rectPath addCoordinate:southWest]; // Tay Nam
+//
+//    GMSPolygon *polygon = [GMSPolygon polygonWithPath:rectPath];
+//    polygon.fillColor = [UIColor colorWithRed:0.25 green:0 blue:0 alpha:0.05];
+//    polygon.strokeColor = [UIColor redColor];
+//    polygon.strokeWidth = 2;
+//    polygon.map = self.vwMap;
 }
 
 

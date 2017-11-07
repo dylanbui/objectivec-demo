@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "PriceMapIntroView.h"
 
 @interface MapDrawingViewController : BaseViewController <GMSMapViewDelegate>
 

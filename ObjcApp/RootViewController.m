@@ -39,8 +39,8 @@
     // STCalendarHeaderViewController *vcFirst = [[STCalendarHeaderViewController alloc] init];
     MapDrawingViewController *vcFirst = [[MapDrawingViewController alloc] init];
     
-//    [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
-    [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:NO];
+    [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
+    [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated
