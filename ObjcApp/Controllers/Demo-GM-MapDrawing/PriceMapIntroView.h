@@ -16,10 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgBg;
 @property (weak, nonatomic) IBOutlet UIImageView *imgIntroPopup;
-@property (weak, nonatomic) IBOutlet UIView *vwRippleRippleEffect;
-
-//@property (weak, nonatomic) IBOutlet RippleEffectView *btnRippleEffect;
-
+@property (weak, nonatomic) IBOutlet UIButton *btnRippleEffectFront;
 
 - (void)startAnimation;
 

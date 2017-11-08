@@ -11,6 +11,7 @@
 
 #import "DbAppSession.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "SearchSession.h"
 
 @interface UserSession : DbAppSession
 
@@ -23,6 +24,8 @@
 @property (assign, nonatomic) int           userType;
 
 @property (nonatomic, strong) UIImage      *imgAvatar;
+
+@property (nonatomic, strong) SearchSession      *searchSession;
 
 
 + (id)instance;

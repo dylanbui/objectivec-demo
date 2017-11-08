@@ -22,12 +22,12 @@
 - (void)startAnimation
 {
     UITapGestureRecognizer *tapGestureBg = [[UITapGestureRecognizer alloc]initWithTarget:self
-                                                                                action:@selector(buttonTapped:)];
+                                                                                  action:@selector(buttonTapped:)];
     self.imgBg.userInteractionEnabled = YES;
     [self.imgBg addGestureRecognizer:tapGestureBg];
 
     UITapGestureRecognizer *tapGesturePopup = [[UITapGestureRecognizer alloc]initWithTarget:self
-                                                                                  action:@selector(buttonTapped:)];
+                                                                                     action:@selector(buttonTapped:)];
     self.imgIntroPopup.userInteractionEnabled = YES;
     [self.imgIntroPopup addGestureRecognizer:tapGesturePopup];
     
@@ -38,23 +38,27 @@
     } forSeconds:0.7];
 }
 
-- (void)buttonTapped:(id)sender
+- (IBAction)buttonTapped:(UIButton *)sender
 {
+    if (sender == self.btnRippleEffectFront) {
+        self.handleViewAction(self, 1, nil, nil);
+        return;
+    }    
     self.handleViewAction(self, 0, nil, nil);
 }
 
 - (void)startRippleButton
 {
     self.btnRippleEffect = [[RippleEffectView alloc] initWithImage:[UIImage imageNamed:@"icon_fingue.png"]
-                                                             Frame:self.vwRippleRippleEffect.frame didEnd:^(BOOL success) {
+                                                             Frame:self.btnRippleEffectFront.frame didEnd:^(BOOL success) {
                                                                  self.handleViewAction(self, 1, nil, nil);
                                                              }];
     
     [self.btnRippleEffect setRippleColor:[UIColor orangeColor]];
     [self.btnRippleEffect setRippleTrailColor:[UIColor orangeColor]];
     
-    [self addSubview:self.btnRippleEffect];
-    //[self insertSubview:self.btnRippleEffect belowSubview:self.imgIntroPopup];
+//    [self addSubview:self.btnRippleEffect];
+    [self insertSubview:self.btnRippleEffect belowSubview:self.imgIntroPopup];
 }
 
 - (void)startPopupIntro

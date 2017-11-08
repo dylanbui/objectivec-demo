@@ -42,6 +42,7 @@ typedef enum _USER_STATUS {
 - (id)init
 {
     if (self = [super init]) {
+        self.searchSession = [SearchSession instance];
     }
     return self;
 }
@@ -163,15 +164,15 @@ typedef enum _USER_STATUS {
     if (mapping) {
         // @{ @"property_name": @"json_name"}
         NSDictionary * objectMapping = @{
-                                          @"objectType": @"objectType",
-                                          
-                                          @"accountId": @"accountId",
-                                          @"socialUid": @"socialUid",
-                                          @"userTypeId": @"userTypeId",
-                                          @"userTypeName": @"userTypeName",
-                                          
-                                          @"userType": @"userType",
-                                          };
+                                         //@"searchSession": @"searchSession",
+                                         @"objectType": @"objectType",
+                                         
+                                         @"accountId": @"accountId",
+                                         @"socialUid": @"socialUid",
+                                         @"userTypeId": @"userTypeId",
+                                         @"userTypeName": @"userTypeName",
+                                         @"userType": @"userType",
+                                         };
         [mapping addEntriesFromDictionary:objectMapping];
     }
     return mapping;

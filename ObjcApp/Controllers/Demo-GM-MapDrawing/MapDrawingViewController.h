@@ -12,6 +12,8 @@
 
 @interface MapDrawingViewController : BaseViewController <GMSMapViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *vwSearchButton;
+
 - (void)touchesBegan:(UITouch*)touch;
 - (void)touchesMoved:(UITouch*)touch;
 - (void)touchesEnded:(UITouch*)touch;

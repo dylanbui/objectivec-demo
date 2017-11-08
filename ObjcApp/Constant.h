@@ -28,17 +28,7 @@
 #define CHECK_VERSION_RESULT                         @"versionAppStore"
 
 
-//typedef enum _HORIZONTALLINE_TYPE {
-//    HORIZONTALLINE_ABOVE = 1,
-//    HORIZONTALLINE_BOTTOM = 2
-//} HORIZONTALLINE_TYPE;
 
-
-//typedef enum _PROCESSIMAGE {
-//    IMAGE_DONOTHING = 100,
-//    IMAGE_CROPCENTER,
-//    IMAGE_SCALE
-//} PROCESSIMAGE;
 
 // -- New define --
 
@@ -47,8 +37,6 @@
 #define fOpenSans(font_size)                    [UIFont fontWithName:@"OpenSans" size:[font_size doubleValue]]
 #define fOpenSansSemibold(font_size)            [UIFont fontWithName:@"OpenSans-Semibold" size:[font_size doubleValue]]
 #define fFontAwesome(font_size)                 [UIFont fontWithName:@"FontAwesome" size:[font_size float]]
-
-
 
 #define MAX_RIGHT_VIEWCONTROLLER SCREEN_WIDTH - 60
 #define MIN_RIGHT_VIEWCONTROLLER SCREEN_WIDTH - 60
@@ -65,24 +53,21 @@
 //#define APP_FORMAT_DATE @"yyyy-MM-dd HH:mm:ss"
 //#define SQLITE_FORMAT_DATE @"%Y-%m-%d %H:%M:%S"
 
-//#define PROPZY_LOCATION CLLocationCoordinate2DMake(10.79578530, 106.67530930)
-//#define PROPZY_LAT 10.79578530
-//#define PROPZY_LONG 106.67530930
-
-
-//#define PROPZY_LOCATION CLLocationCoordinate2DMake(10.794369 ,106.680117)
-//#define PROPZY_LAT 10.794369
-//#define PROPZY_LONG 106.680117
-
 #define AVATAR_SIZE  CGSizeMake(500, 500)
 
 #define UPLOAD_PHOTO_WIDTH  1798
 #define UPLOAD_PHOTO_HEIGHT 1011
 
 // Chinh xac nhat
-#define PROPZY_LOCATION CLLocationCoordinate2DMake(10.79437611, 106.68011595)
-#define PROPZY_LAT 10.79437611
-#define PROPZY_LONG 106.68011595
+#define PROPZY_LOCATION CLLocationCoordinate2DMake(10.764261, 106.656312)
+#define PROPZY_LAT 10.764261
+#define PROPZY_LONG 106.656312
+
+#define DEMO_AREA_northEast CLLocationCoordinate2DMake(10.814090, 106.684093)
+#define DEMO_AREA_southWest CLLocationCoordinate2DMake(10.707662, 106.622097)
+#define DEMO_AREA_southEast CLLocationCoordinate2DMake(10.707662, 106.684093)
+#define DEMO_AREA_northWest CLLocationCoordinate2DMake(10.814090, 106.622097)
+
 
 #define DEBUG_WEB_SERVICE 1 // 0 = NO ; 1 = YES
 //#define DEBUG_WEB_SERVICE 0 // 0 = NO ; 1 = YES

@@ -52,7 +52,9 @@
 {
     [super viewWillAppear:animated];
     
-    currentLocation = LOS_ANGELES_POINT; //CLLocationCoordinate2DMake(self.userSession.latitude ,self.userSession.longitude);
+    [self.vwSearchButton setHidden:YES];
+    
+    currentLocation = PROPZY_LOCATION; //CLLocationCoordinate2DMake(self.userSession.latitude ,self.userSession.longitude);
     
     GMSCameraPosition *newCameraPosition = [GMSCameraPosition cameraWithTarget:currentLocation
                                                                           zoom:15];
@@ -71,12 +73,16 @@
     self.canvasImageView.userInteractionEnabled = YES;
     self.canvasImageView.delegate = self;
     
+//    [self loadPriceMapIntro];
     
     
+}
+
+- (void)loadPriceMapIntro
+{
     self.vwPriceMapIntro = [[PriceMapIntroView alloc] init];
     self.vwPriceMapIntro.frame = self.view.frame; //[[UIScreen mainScreen] bounds];
     [self.vwPriceMapIntro layoutIfNeeded];
-    [self.view addSubview:self.vwPriceMapIntro];
     
     __weak typeof(self) weakSelf = self;
     self.vwPriceMapIntro.handleViewAction = ^(id _self, int _id, NSDictionary* _params, NSError* error) {
@@ -92,13 +98,32 @@
                 NSLog(@"%@", @"Clich ra BUTTON");
             }
         }];
-
+        
     };
     
-    [DbUtils delayCallback:^{
-        [self.vwPriceMapIntro startAnimation];
-    } forSeconds:1.2];
+    self.vwPriceMapIntro.alpha = 0;
+    [self.view addSubview:self.vwPriceMapIntro];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.vwPriceMapIntro.alpha = 1;
+    } completion:^(BOOL finished) {
+        [DbUtils delayCallback:^{
+            [self.vwPriceMapIntro startAnimation];
+        } forSeconds:0.5];
+    }];
+
 }
+
+- (IBAction)searchButton_Click:(UIButton*)sender
+{
+    if (sender.tag == 1) {
+        // -- Load searchControler --
+      
+        return;
+    }
+    // -- Cancel Action --
+    
+}
+
 
 - (IBAction)didTouchUpInsideDrawButton:(UIButton*)sender
 {
@@ -175,25 +200,39 @@
     
     // [self didTouchUpInsideDrawButton:nil];
     
-//    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithPath:self.arrCoordinate];
-//
-//    CLLocationCoordinate2D northEast = bounds.northEast;
-//    CLLocationCoordinate2D southWest = bounds.southWest;
-//    CLLocationCoordinate2D southEast = CLLocationCoordinate2DMake(southWest.latitude, northEast.longitude);
-//    CLLocationCoordinate2D northWest = CLLocationCoordinate2DMake(northEast.latitude, southWest.longitude);
-//
-//    // -- Test : Draw rectangle bounds --
-//    GMSMutablePath *rectPath = [GMSMutablePath path];
-//    [rectPath addCoordinate:northWest]; // Tay Bac
-//    [rectPath addCoordinate:northEast]; // Dong Bac
-//    [rectPath addCoordinate:southEast]; // Dong Nam
-//    [rectPath addCoordinate:southWest]; // Tay Nam
-//
-//    GMSPolygon *polygon = [GMSPolygon polygonWithPath:rectPath];
-//    polygon.fillColor = [UIColor colorWithRed:0.25 green:0 blue:0 alpha:0.05];
-//    polygon.strokeColor = [UIColor redColor];
-//    polygon.strokeWidth = 2;
-//    polygon.map = self.vwMap;
+    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithPath:self.arrCoordinate];
+
+    CLLocationCoordinate2D northEast = bounds.northEast;
+    CLLocationCoordinate2D southWest = bounds.southWest;
+    CLLocationCoordinate2D southEast = CLLocationCoordinate2DMake(southWest.latitude, northEast.longitude);
+    CLLocationCoordinate2D northWest = CLLocationCoordinate2DMake(northEast.latitude, southWest.longitude);
+    
+    NSLog(@"CLLocationCoordinate2DMake(%f, %f)", northEast.latitude, northEast.longitude);
+    NSLog(@"CLLocationCoordinate2DMake(%f, %f)", southWest.latitude, southWest.longitude);
+    NSLog(@"CLLocationCoordinate2DMake(%f, %f)", southEast.latitude, southEast.longitude);
+    NSLog(@"CLLocationCoordinate2DMake(%f, %f)", northWest.latitude, northWest.longitude);
+        
+    [self.userSession.searchSession setNorthEast:northEast];
+    [self.userSession.searchSession setSouthEast:southEast];
+    [self.userSession.searchSession setNorthWest:northWest];
+    [self.userSession.searchSession setSouthWest:southWest];
+
+    NSLog(@"JSON = %@", [self.userSession.searchSession om_mapToJSONString]);
+
+    NSLog(@"parseSearchParams = %@", [self.userSession.searchSession parseSearchParams]);
+
+    // -- Test : Draw rectangle bounds --
+    GMSMutablePath *rectPath = [GMSMutablePath path];
+    [rectPath addCoordinate:northWest]; // Tay Bac
+    [rectPath addCoordinate:northEast]; // Dong Bac
+    [rectPath addCoordinate:southEast]; // Dong Nam
+    [rectPath addCoordinate:southWest]; // Tay Nam
+
+    GMSPolygon *polygon = [GMSPolygon polygonWithPath:rectPath];
+    polygon.fillColor = [UIColor colorWithRed:0.25 green:0 blue:0 alpha:0.05];
+    polygon.strokeColor = [UIColor redColor];
+    polygon.strokeWidth = 2;
+    polygon.map = self.vwMap;
 }
 
 

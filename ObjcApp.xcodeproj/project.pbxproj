@@ -102,6 +102,7 @@
 		BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC51C1F5D460A0073A0C1 /* DbActionView.m */; };
 		BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC51E1F5D460A0073A0C1 /* DbButton.m */; };
 		BB6CC5231F5D46B70073A0C1 /* DbLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC5221F5D46B70073A0C1 /* DbLabel.m */; };
+		BB6EBF471FB2F7EC006CC4EA /* SearchSession.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6EBF461FB2F7EC006CC4EA /* SearchSession.m */; };
 		BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */; };
 		BB79D8631F95B45100A0A7C2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB79D8621F95B45100A0A7C2 /* ViewController.xib */; };
 		BB8DCAF01FB16CA700AB337B /* PriceMapIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DCAEF1FB16CA700AB337B /* PriceMapIntroView.m */; };
@@ -323,6 +324,8 @@
 		BB6CC51E1F5D460A0073A0C1 /* DbButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbButton.m; sourceTree = "<group>"; };
 		BB6CC5211F5D46B70073A0C1 /* DbLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbLabel.h; sourceTree = "<group>"; };
 		BB6CC5221F5D46B70073A0C1 /* DbLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbLabel.m; sourceTree = "<group>"; };
+		BB6EBF451FB2F7EC006CC4EA /* SearchSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchSession.h; sourceTree = "<group>"; };
+		BB6EBF461FB2F7EC006CC4EA /* SearchSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchSession.m; sourceTree = "<group>"; };
 		BB71F43F1FA89235007268BA /* UIView+LayoutHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutHelper.h"; sourceTree = "<group>"; };
 		BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutHelper.m"; sourceTree = "<group>"; };
 		BB79D8621F95B45100A0A7C2 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -560,6 +563,8 @@
 				BB4FD3E81F442AEE00C082C3 /* BaseController */,
 				BB4FD3F91F442AEE00C082C3 /* UserSession.h */,
 				BB4FD3FA1F442AEE00C082C3 /* UserSession.m */,
+				BB6EBF451FB2F7EC006CC4EA /* SearchSession.h */,
+				BB6EBF461FB2F7EC006CC4EA /* SearchSession.m */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -1361,6 +1366,7 @@
 				BB4FD4941F442AEE00C082C3 /* ATAppUpdater.m in Sources */,
 				BB4FD4881F442AEE00C082C3 /* UINavigationController+Utils.m in Sources */,
 				BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */,
+				BB6EBF471FB2F7EC006CC4EA /* SearchSession.m in Sources */,
 				BB4FD4951F442AEE00C082C3 /* CropPhotoViewController.m in Sources */,
 				BB4FD47C1F442AEE00C082C3 /* DbAppDelegate.m in Sources */,
 				BB4FD4801F442AEE00C082C3 /* DbTableViewCell.m in Sources */,
