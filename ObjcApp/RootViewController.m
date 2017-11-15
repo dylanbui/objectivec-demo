@@ -11,6 +11,7 @@
 
 #import "STCalendarHeaderViewController.h"
 #import "MapDrawingViewController.h"
+#import "RangeSliderViewController.h"
 
 @interface RootViewController ()
 
@@ -37,8 +38,8 @@
     
 //    ViewController *vcFirst = [[ViewController alloc] init];
     // STCalendarHeaderViewController *vcFirst = [[STCalendarHeaderViewController alloc] init];
-    MapDrawingViewController *vcFirst = [[MapDrawingViewController alloc] init];
-    
+//    MapDrawingViewController *vcFirst = [[MapDrawingViewController alloc] init];
+    RangeSliderViewController *vcFirst = [[RangeSliderViewController alloc] init];
     [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
