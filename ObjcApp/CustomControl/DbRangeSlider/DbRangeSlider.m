@@ -77,11 +77,11 @@
     
     // chieu cao toan bo 65
     self.labelSlider = [[NMRangeSlider alloc] initWithFrame:(CGRect){0, 30, self.width, 35}];
-    self.labelSlider.minimumValue = 0;
-    self.labelSlider.maximumValue = 100;
-    self.labelSlider.lowerValue = 0;
-    self.labelSlider.upperValue = 100;
-    self.labelSlider.minimumRange = 10;
+    self.labelSlider.minimumValue = 1.0;
+    self.labelSlider.maximumValue = 100.0;
+    self.labelSlider.lowerValue = 1.0;
+    self.labelSlider.upperValue = 100.0;
+    self.labelSlider.minimumRange = 5.0;
     [self.labelSlider removeTarget:self action:@selector(labelSliderChanged:) forControlEvents:UIControlEventValueChanged];
     [self.labelSlider addTarget:self action:@selector(labelSliderChanged:) forControlEvents:UIControlEventValueChanged];
     
@@ -111,6 +111,8 @@
     lowerCenter.y = (self.labelSlider.center.y - 27.0f);
     self.lowerLabel.center = lowerCenter;
     self.lowerLabel.text = [NSString stringWithFormat:@"%d", (int)self.labelSlider.lowerValue];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(updateTextForLowerLabel:lowerValue:)])
+        [self.delegate updateTextForLowerLabel:self lowerValue:self.labelSlider.lowerValue];
     
     self.imgBgLowerLabel.center = CGPointMake(lowerCenter.x, self.labelSlider.center.y - 24.0f);
     
@@ -119,6 +121,8 @@
     upperCenter.y = (self.labelSlider.center.y - 27.0f);
     self.upperLabel.center = upperCenter;
     self.upperLabel.text = [NSString stringWithFormat:@"%d", (int)self.labelSlider.upperValue];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(updateTextForUpperLabel:upperLabel:)])
+        [self.delegate updateTextForUpperLabel:self upperLabel:self.labelSlider.upperValue];
     
     self.imgBgUpperLabel.center = CGPointMake(upperCenter.x, self.labelSlider.center.y - 24.0f);
 }

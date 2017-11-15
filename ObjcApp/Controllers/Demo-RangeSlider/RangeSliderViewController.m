@@ -42,13 +42,13 @@
 
 - (void) configureLabelSlider
 {
-    self.labelSlider.minimumValue = 0;
+    self.labelSlider.minimumValue = 1;
     self.labelSlider.maximumValue = 100;
     
-    self.labelSlider.lowerValue = 0;
+    self.labelSlider.lowerValue = 1;
     self.labelSlider.upperValue = 100;
     
-    self.labelSlider.minimumRange = 10;
+    self.labelSlider.minimumRange = 5;
 }
 
 - (void)updateSliderLabels
