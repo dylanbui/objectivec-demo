@@ -14,6 +14,8 @@
 @property (strong, nonatomic) UIImageView *imgBgLowerLabel;
 @property (strong, nonatomic) UIImageView *imgBgUpperLabel;
 
+@property(assign, nonatomic) float stepValue;
+
 @end
 
 
@@ -130,6 +132,14 @@
 - (IBAction)labelSliderChanged:(NMRangeSlider*)sender
 {
     [self updateSliderLabels];
+}
+
+- (void)updateSliderValue
+{
+    _stepValue = (self.maximumValue - self.minimumValue) / 100;
+    
+    
+    
 }
 
 /*

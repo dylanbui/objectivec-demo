@@ -21,6 +21,20 @@
 
 //- (IBAction)labelSliderChanged:(NMRangeSlider*)sender;
 
+// default 0.0
+@property(assign, nonatomic) float minimumValue;
+
+// default 1.0
+@property(assign, nonatomic) float maximumValue;
+
+// default 0.0. This is the minimum distance between between the upper and lower values
+//@property(assign, nonatomic) float minimumRange;
+
+// default 0.0 (disabled)
+//@property(assign, nonatomic) float stepValue;
+
+- (void)updateSliderValue;
+
 - (void)updateSliderLabels;
 
 @end

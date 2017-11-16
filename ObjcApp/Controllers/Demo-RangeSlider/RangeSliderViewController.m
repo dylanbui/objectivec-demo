@@ -22,7 +22,7 @@
     [self configureLabelSlider];
 }
 
-- (void) viewDidAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
@@ -32,6 +32,12 @@
     {
         self.view.tintColor = [UIColor orangeColor];
     }
+    
+    
+    _dbSlider.labelSlider.lowerValue = 10.0;
+    _dbSlider.labelSlider.upperValue = 55.0;
+    [_dbSlider.labelSlider layoutIfNeeded];
+    [_dbSlider updateSliderLabels];
     
 }
 
