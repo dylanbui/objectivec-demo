@@ -9,9 +9,14 @@
 #import "DemoButtonViewController.h"
 #import "BTLabel.h"
 #import "BALabel.h"
+#import "DbLabel.h"
 
 @interface DemoButtonViewController ()
+
 @property (weak, nonatomic) IBOutlet BTLabel *lblTopTitle;
+
+@property (weak, nonatomic) IBOutlet DbLabel *lblDucBui;
+
 
 @end
 
@@ -22,6 +27,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    _lblDucBui.text = @"Tiến Đức";
+//    _lblDucBui.verticalAlignment = DBVerticalAlignmentBottom;
+//    [_lblDucBui layoutIfNeeded];
     
     BALabel *lbl = [[BALabel alloc] initWithFrame:CGRectMake(10, 370, 200, 60)];
     [lbl setBackgroundColor:[UIColor lightGrayColor]];

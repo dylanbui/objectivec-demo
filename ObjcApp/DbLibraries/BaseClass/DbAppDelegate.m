@@ -32,10 +32,9 @@
         // -- Push notification --
         [self registerForRemoteNotification];
     }
-
+    
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -70,7 +69,8 @@
         // -- Set network connection status for WebServiceClient --
         DbWebConnection *webServiceClient = [DbWebConnection instance];
         webServiceClient.isReachable = [[AFNetworkReachabilityManager sharedManager] isReachable];
-        if (status == AFNetworkReachabilityStatusReachableViaWWAN || status == AFNetworkReachabilityStatusReachableViaWiFi ) {
+        //if (status == AFNetworkReachabilityStatusReachableViaWWAN || status == AFNetworkReachabilityStatusReachableViaWiFi ) {
+        if (status != AFNetworkReachabilityStatusNotReachable) {
             // NSLog(@"connection");
             [DbUtils postNotification:NOTIFY_REACHABLE_NETWORK object:nil userInfo:nil];
         }
@@ -85,28 +85,9 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-#pragma mark - Remote Notification Delegate // <= iOS 9.x
-
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
-{
-    [application registerForRemoteNotifications];
-}
-
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
-    NSString *strDevicetoken = [[NSString alloc]initWithFormat:@"%@",[[[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""]];
-    NSLog(@"Device Token = %@",strDevicetoken);
-    [[DbAppSession instance] setDevicePushNotificationToken:strDevicetoken];
-}
-
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-{
-    NSLog(@"%@ = %@", NSStringFromSelector(_cmd), error);
-    NSLog(@"Error = %@",error);
-}
-
-
-#pragma mark - Remote Notification Delegate // <= iOS 9.x
+#pragma mark -
+#pragma mark Remote Notification Delegate // <= iOS 9.x
+#pragma mark -
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler
@@ -120,12 +101,14 @@ fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHand
     if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive)
     {
         AudioServicesPlaySystemSound(1007);
-        ISMessages *alert = [ISMessages cardAlertWithTitle:@"TAP" message:[userInfo valueForKeyPath:@"aps.alert"] iconImage:[UIImage imageNamed:@"icon_app"] duration:5.f hideOnSwipe:YES hideOnTap:YES alertType:ISAlertTypeCustom alertPosition:ISAlertPositionTop];
+        ISMessages *alert = [ISMessages cardAlertWithTitle:@"TAP" message:[userInfo valueForKeyPath:@"aps.alert"]
+                                                 iconImage:[UIImage imageNamed:@"icon_app"] duration:5.f hideOnSwipe:YES
+                                                 hideOnTap:YES alertType:ISAlertTypeCustom alertPosition:ISAlertPositionTop];
         [alert setAlertViewBackgroundColor:[DbUtils colorWithHexString:@"f1f1f1"]];
         [alert setTitleLabelTextColor:[[UIColor blackColor] colorWithAlphaComponent:0.87]];
         [alert setMessageLabelTextColor:[[UIColor blackColor] colorWithAlphaComponent:0.87]];
         [alert show:^{
-            
+            // NSLog(@"%@", @"click here");
         } didHide:^(BOOL finished) {
             
         }];
@@ -151,7 +134,9 @@ fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHand
     completionHandler(UIBackgroundFetchResultNoData);
 }
 
-#pragma mark - Remote Notification Delegate // >= iOS 10.x
+#pragma mark -
+#pragma mark Remote Notification Delegate // >= iOS 10.x
+#pragma mark -
 
 // Called when a notification is delivered to a foreground app.
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
@@ -160,8 +145,8 @@ fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHand
 {
     // State => UIApplicationStateActive;
     // NSLog( @"for handling push in foreground" );
-//    NSLog(@"User Info : %@",notification.request.content.userInfo);
-
+    //    NSLog(@"User Info : %@",notification.request.content.userInfo);
+    
     AudioServicesPlaySystemSound(1007);
     completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
     
@@ -171,24 +156,24 @@ fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHand
     [dictUserInfo setObject:[NSNumber numberWithBool:NO]
                      forKey:@"clickState"];
     
-
+    
     [[DbAppSession instance] setPushNotifyInfo:dictUserInfo];
     [DbUtils postNotification:NOTIFY_SERVER_PUSH_MESSAGE object:self userInfo:dictUserInfo];
 }
 
 // Called to let your app know which action was selected by the user for a given notification.
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center
-didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler
+didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler
 {
     // State => UIApplicationStateBackground;
-//    NSLog( @"for handling push in background" );
-//    NSLog(@"User Info : %@",[response.notification.request.content.userInfo description]);
+    //    NSLog( @"for handling push in background" );
+    //    NSLog(@"User Info : %@",[response.notification.request.content.userInfo description]);
     
     // -- Set BadgeNumber --
-    int badge = [[response.notification.request.content.userInfo valueForKeyPath:@"aps.badge"] intValue];    
-    [UIApplication sharedApplication].applicationIconBadgeNumber += badge;
+    // int badge = [[response.notification.request.content.userInfo valueForKeyPath:@"aps.badge"] intValue];
+    // [UIApplication sharedApplication].applicationIconBadgeNumber += badge;
     
-    completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
+    completionHandler();
     
     NSMutableDictionary *dictUserInfo = [[NSMutableDictionary alloc] initWithDictionary:response.notification.request.content.userInfo];
     [dictUserInfo setObject:[NSNumber numberWithInt:[[UIApplication sharedApplication] applicationState]]
@@ -199,11 +184,13 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletion
     [DbUtils delayCallback:^{
         [[DbAppSession instance] setPushNotifyInfo:dictUserInfo];
         [DbUtils postNotification:NOTIFY_SERVER_PUSH_MESSAGE object:self userInfo:dictUserInfo];
-    } forSeconds:0.5];
+    } forSeconds:0.25];
     
 }
 
-#pragma mark - Class Methods
+#pragma mark -
+#pragma mark Register Notification
+#pragma mark -
 
 /** Notification Registration */
 - (void)registerForRemoteNotification
@@ -219,7 +206,10 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletion
         [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
                               completionHandler:^(BOOL granted, NSError * _Nullable error){
                                   if( !error ){
-                                      [[UIApplication sharedApplication] registerForRemoteNotifications];
+                                      // -- [UIApplication registerForRemoteNotifications] must be used from main thread only --
+                                      dispatch_async(dispatch_get_main_queue(), ^{
+                                          [[UIApplication sharedApplication] registerForRemoteNotifications];
+                                      });
                                   }
                               }];
     }
@@ -229,7 +219,29 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletion
     }
 }
 
+#pragma mark -
+#pragma mark Register Notification Key
+#pragma mark -
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString *strDevicetoken = [[NSString alloc]initWithFormat:@"%@",[[[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""]];
+    NSLog(@"Device Token = %@",strDevicetoken);
+    [[DbAppSession instance] setDevicePushNotificationToken:strDevicetoken];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"%@ = %@", NSStringFromSelector(_cmd), error);
+    NSLog(@"Error = %@",error);
+}
 
 
 
 @end
+

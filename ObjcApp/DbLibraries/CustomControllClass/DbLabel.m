@@ -18,6 +18,7 @@
 {
     if (self = [super init]) {
         _contentEdgeInsets = UIEdgeInsetsZero;
+        self.verticalAlignment = DBVerticalAlignmentCenter;
     }
     return self;
 }
@@ -26,6 +27,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         _contentEdgeInsets = UIEdgeInsetsZero;
+        self.verticalAlignment = DBVerticalAlignmentCenter;
     }
     return self;
 }
@@ -34,6 +36,7 @@
 {
     if (self = [super initWithCoder:aDecoder]) {
         _contentEdgeInsets = UIEdgeInsetsZero;
+        self.verticalAlignment = DBVerticalAlignmentCenter;
     }
     return self;
 }
@@ -44,6 +47,16 @@
     rect.origin.y += _contentEdgeInsets.top;
     rect.size.width -= (_contentEdgeInsets.left + _contentEdgeInsets.right);
     rect.size.height -= (_contentEdgeInsets.top + _contentEdgeInsets.bottom);
+    
+    if(self.verticalAlignment == DBVerticalAlignmentTop) {
+        rect.size.height = [self sizeThatFits:rect.size].height;
+    }
+    
+    if(self.verticalAlignment == DBVerticalAlignmentBottom) {
+        CGFloat height = [self sizeThatFits:rect.size].height;
+        rect.origin.y += rect.size.height - height;
+        rect.size.height = height;
+    }
     
     [super drawTextInRect:rect];
 }
