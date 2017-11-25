@@ -24,6 +24,13 @@
 		BB3912FA1F8BE527002F1CE1 /* SLTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB3912F81F8BE527002F1CE1 /* SLTableViewController.xib */; };
 		BB3912FE1F8BE557002F1CE1 /* SLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3912FC1F8BE557002F1CE1 /* SLTableViewCell.m */; };
 		BB3912FF1F8BE557002F1CE1 /* SLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB3912FD1F8BE557002F1CE1 /* SLTableViewCell.xib */; };
+		BB3FC34C1FC957DA000D37F2 /* DbErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3FC34A1FC957DA000D37F2 /* DbErrorView.m */; };
+		BB3FC3551FC958AE000D37F2 /* db_ic_empty_data.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3FC34F1FC958AE000D37F2 /* db_ic_empty_data.png */; };
+		BB3FC3561FC958AE000D37F2 /* db_ic_empty_data@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3FC3501FC958AE000D37F2 /* db_ic_empty_data@2x.png */; };
+		BB3FC3571FC958AE000D37F2 /* db_ic_empty_data@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3FC3511FC958AE000D37F2 /* db_ic_empty_data@3x.png */; };
+		BB3FC3581FC958AE000D37F2 /* db_ic_error_wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3FC3521FC958AE000D37F2 /* db_ic_error_wifi.png */; };
+		BB3FC3591FC958AE000D37F2 /* db_ic_error_wifi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3FC3531FC958AE000D37F2 /* db_ic_error_wifi@2x.png */; };
+		BB3FC35A1FC958AE000D37F2 /* db_ic_error_wifi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3FC3541FC958AE000D37F2 /* db_ic_error_wifi@3x.png */; };
 		BB4A3A691F814E3E0040CC61 /* TBFiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4A3A671F814E3E0040CC61 /* TBFiveViewController.m */; };
 		BB4A3A6A1F814E3E0040CC61 /* TBFiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4A3A681F814E3E0040CC61 /* TBFiveViewController.xib */; };
 		BB4FD3BB1F4429E200C082C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3BA1F4429E200C082C3 /* main.m */; };
@@ -226,6 +233,14 @@
 		BB3912FB1F8BE557002F1CE1 /* SLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTableViewCell.h; sourceTree = "<group>"; };
 		BB3912FC1F8BE557002F1CE1 /* SLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTableViewCell.m; sourceTree = "<group>"; };
 		BB3912FD1F8BE557002F1CE1 /* SLTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLTableViewCell.xib; sourceTree = "<group>"; };
+		BB3FC3491FC957DA000D37F2 /* DbErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbErrorView.h; sourceTree = "<group>"; };
+		BB3FC34A1FC957DA000D37F2 /* DbErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbErrorView.m; sourceTree = "<group>"; };
+		BB3FC34F1FC958AE000D37F2 /* db_ic_empty_data.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_ic_empty_data.png; sourceTree = "<group>"; };
+		BB3FC3501FC958AE000D37F2 /* db_ic_empty_data@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_ic_empty_data@2x.png"; sourceTree = "<group>"; };
+		BB3FC3511FC958AE000D37F2 /* db_ic_empty_data@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_ic_empty_data@3x.png"; sourceTree = "<group>"; };
+		BB3FC3521FC958AE000D37F2 /* db_ic_error_wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_ic_error_wifi.png; sourceTree = "<group>"; };
+		BB3FC3531FC958AE000D37F2 /* db_ic_error_wifi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_ic_error_wifi@2x.png"; sourceTree = "<group>"; };
+		BB3FC3541FC958AE000D37F2 /* db_ic_error_wifi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_ic_error_wifi@3x.png"; sourceTree = "<group>"; };
 		BB4A3A661F814E3E0040CC61 /* TBFiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBFiveViewController.h; sourceTree = "<group>"; };
 		BB4A3A671F814E3E0040CC61 /* TBFiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBFiveViewController.m; sourceTree = "<group>"; };
 		BB4A3A681F814E3E0040CC61 /* TBFiveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBFiveViewController.xib; sourceTree = "<group>"; };
@@ -574,6 +589,28 @@
 			path = "Demo-ScrollingTableViewCell";
 			sourceTree = "<group>";
 		};
+		BB3FC3481FC957DA000D37F2 /* SupportViews */ = {
+			isa = PBXGroup;
+			children = (
+				BB3FC3491FC957DA000D37F2 /* DbErrorView.h */,
+				BB3FC34A1FC957DA000D37F2 /* DbErrorView.m */,
+			);
+			path = SupportViews;
+			sourceTree = "<group>";
+		};
+		BB3FC34E1FC958AE000D37F2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB3FC34F1FC958AE000D37F2 /* db_ic_empty_data.png */,
+				BB3FC3501FC958AE000D37F2 /* db_ic_empty_data@2x.png */,
+				BB3FC3511FC958AE000D37F2 /* db_ic_empty_data@3x.png */,
+				BB3FC3521FC958AE000D37F2 /* db_ic_error_wifi.png */,
+				BB3FC3531FC958AE000D37F2 /* db_ic_error_wifi@2x.png */,
+				BB3FC3541FC958AE000D37F2 /* db_ic_error_wifi@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		BB4FD3AD1F4429E200C082C3 = {
 			isa = PBXGroup;
 			children = (
@@ -657,6 +694,7 @@
 		BB4FD40D1F442AEE00C082C3 /* DbLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				BB3FC34E1FC958AE000D37F2 /* Resources */,
 				BB6CC51A1F5D460A0073A0C1 /* CustomControllClass */,
 				BB4FD41D1F442AEE00C082C3 /* DbAppSession.h */,
 				BB4FD41E1F442AEE00C082C3 /* DbAppSession.m */,
@@ -672,6 +710,7 @@
 		BB4FD40E1F442AEE00C082C3 /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				BB3FC3481FC957DA000D37F2 /* SupportViews */,
 				BB4FD40F1F442AEE00C082C3 /* DbAppDelegate.h */,
 				BB4FD4101F442AEE00C082C3 /* DbAppDelegate.m */,
 				BB4FD4111F442AEE00C082C3 /* DbNavigationBarView.h */,
@@ -1355,6 +1394,7 @@
 				BB4FD3C91F4429E200C082C3 /* LaunchScreen.storyboard in Resources */,
 				BBEDC43A1FBC3EEA000317FD /* slider-default7-trackBackground@2x.png in Resources */,
 				BBF1BD701FAC81300081E179 /* MapDrawingViewController.xib in Resources */,
+				BB3FC3561FC958AE000D37F2 /* db_ic_empty_data@2x.png in Resources */,
 				BB4FD4BF1F442C8A00C082C3 /* OpenSans-Semibold.ttf in Resources */,
 				BBEDC4351FBC3EEA000317FD /* slider-default7-handle.png in Resources */,
 				BB3912FF1F8BE557002F1CE1 /* SLTableViewCell.xib in Resources */,
@@ -1371,6 +1411,7 @@
 				BBEDC4341FBC3EEA000317FD /* slider-default_trackBackground@2x.png in Resources */,
 				BBEDC4551FBC543C000317FD /* db_slider_text_bg@2x.png in Resources */,
 				BBEDC43B1FBC3EEA000317FD /* slider-default7-trackCrossedOver.png in Resources */,
+				BB3FC35A1FC958AE000D37F2 /* db_ic_error_wifi@3x.png in Resources */,
 				BBEDC4591FBC543C000317FD /* db_slider_text_bg.png in Resources */,
 				BB4FD48E1F442AEE00C082C3 /* apnumberpad_backspace_icon@2x.png in Resources */,
 				BB4FD4DA1F443FEE00C082C3 /* NavigationBarView.xib in Resources */,
@@ -1381,6 +1422,7 @@
 				BB121DF01F85DEAD0053171B /* PTPhotoViewController.xib in Resources */,
 				BBEDC4401FBC3EEA000317FD /* slider-metal-handle@2x.png in Resources */,
 				BB4FD4BA1F442C8A00C082C3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				BB3FC3591FC958AE000D37F2 /* db_ic_error_wifi@2x.png in Resources */,
 				BBEDC42E1FBC3EEA000317FD /* slider-default-handle@2x.png in Resources */,
 				BBD99B361F7CD7CF004B20AF /* TBThreeViewController.xib in Resources */,
 				BBEDC4361FBC3EEA000317FD /* slider-default7-handle@2x.png in Resources */,
@@ -1398,6 +1440,7 @@
 				BBEDC42B1FBC3EEA000317FD /* slider-default-handle-highlighted.png in Resources */,
 				BB4FD4BB1F442C8A00C082C3 /* OpenSans-Italic.ttf in Resources */,
 				BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */,
+				BB3FC3551FC958AE000D37F2 /* db_ic_empty_data.png in Resources */,
 				BBEDC42F1FBC3EEA000317FD /* slider-default-track.png in Resources */,
 				BBEDC45A1FBC543C000317FD /* db_slider_handle@2x.png in Resources */,
 				BBEDC4391FBC3EEA000317FD /* slider-default7-trackBackground.png in Resources */,
@@ -1411,6 +1454,7 @@
 				BB4FD48F1F442AEE00C082C3 /* apnumberpad_backspace_icon@3x.png in Resources */,
 				BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */,
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
+				BB3FC3571FC958AE000D37F2 /* db_ic_empty_data@3x.png in Resources */,
 				BBEDC44E1FBC4060000317FD /* RangeSliderViewController.xib in Resources */,
 				BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */,
 				BB8DCAF21FB16CB800AB337B /* PriceMapIntroView.xib in Resources */,
@@ -1422,6 +1466,7 @@
 				BBEDC4371FBC3EEA000317FD /* slider-default7-track.png in Resources */,
 				BBD99B2C1F7CD791004B20AF /* TBOneViewController.xib in Resources */,
 				BB25FC981F51DE850005372B /* ExpandViewCell.xib in Resources */,
+				BB3FC3581FC958AE000D37F2 /* db_ic_error_wifi.png in Resources */,
 				BB4FD49F1F442AEE00C082C3 /* ic_hide_password@2x.png in Resources */,
 				BBD99B3B1F7CD7DE004B20AF /* TBFourViewController.xib in Resources */,
 				BBEDC42C1FBC3EEA000317FD /* slider-default-handle-highlighted@2x.png in Resources */,
@@ -1569,6 +1614,7 @@
 				BB4FD47E1F442AEE00C082C3 /* DbObject.m in Sources */,
 				BB4FD4871F442AEE00C082C3 /* NSObject+SimpleMapping.m in Sources */,
 				BB4FD4941F442AEE00C082C3 /* ATAppUpdater.m in Sources */,
+				BB3FC34C1FC957DA000D37F2 /* DbErrorView.m in Sources */,
 				BB4FD4881F442AEE00C082C3 /* UINavigationController+Utils.m in Sources */,
 				BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */,
 				BB6EBF471FB2F7EC006CC4EA /* SearchSession.m in Sources */,

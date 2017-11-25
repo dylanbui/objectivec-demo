@@ -13,13 +13,12 @@ target 'ObjcApp' do
 
   # Pods for ObjcApp
   
-  # Thu vien  Constraints
-  pod 'Masonry'
-
     # Libraries system
+    pod 'Masonry', '1.1.0' # Thu vien  Constraints
     pod 'AFNetworking', '3.1.0'
     pod 'MBProgressHUD', '1.0.0'
     pod 'RMUniversalAlert', '0.8.1'
+    # Include :
     #  pod 'UIActionSheet+Blocks', '0.9'
     #  pod 'UIAlertController+Blocks', '0.9.2'
     #  pod 'UIAlertView+Blocks', '0.9'
@@ -31,14 +30,16 @@ target 'ObjcApp' do
     pod 'SVPullToRefresh', '0.4.1'
     pod 'DZNEmptyDataSet', '1.8.1'
     
+    pod 'ISMessages', '1.2'
+    
     #pod 'GoogleMaterialIconFont', '0.5.0'
     pod 'MaterialDesignSymbolObjC', '1.3'
     pod 'DLRadioButton', '1.4.9'
     pod 'TTTAttributedLabel', '2.0.0'
-    pod 'FXLabel'
+    pod 'FXLabel' # da khong con ho tro nua, dung RTLabel
     
     # Objective-C
-    pod 'ISMessages', '1.2'
+    
     # pod 'MMDrawerController', '0.5.7'
     # pod 'INTULocationManager', '4.2.0'
     # pod 'MDHTMLLabel', '1.0.2' # Changed. Removing build warnings. Fix: https://github.com/mattdonnelly/MDHTMLLabel/ => RTLabel

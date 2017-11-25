@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"Expand cell";
-    [self doSomethingWithTheJson];
+    
     
     
     self.tblContent.rowHeight = UITableViewAutomaticDimension;
@@ -31,6 +31,12 @@
     self.tblContent.estimatedRowHeight = 85; // TypeTwo
 //    self.tblContent.rowHeight = 44;
     
+    [DbUtils delayCallback:^{
+        self.isLoadingDataSource = NO;
+        // [self doSomethingWithTheJson];
+        self.arrArtists = [[NSArray alloc] init];
+        [self.tblContent reloadData];
+    } forSeconds:0.5];
 }
 
 // Customize the number of rows in the table view.

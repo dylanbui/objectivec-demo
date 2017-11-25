@@ -32,11 +32,10 @@
 
 - (void)initLoadDataForController:(id)params;
 
-// Hold => error
 - (void)navigationBarHiddenForThisController;
 
-
-
+// -- Will be callback when network available --
+- (void)loadDataFromServer;
 
 @end
 

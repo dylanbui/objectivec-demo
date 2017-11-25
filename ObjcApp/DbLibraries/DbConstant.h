@@ -161,6 +161,15 @@ typedef enum _CHANNELS {
 #define RUN_ON_MAIN_QUEUE(BLOCK_CODE)           dispatch_async(dispatch_get_main_queue(),BLOCK_CODE)
 #define RUN_ON_BACKGROUND_QUEUE(BLOCK_CODE)     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),BLOCK_CODE)
 
+/***************** Compare Frame Size Macros ******************/
+
+#define XCTAssertEqualFrame(frame0, frame1) XCTAssertTrue(CGRectEqualToRect(frame0, frame1))
+#define XCTAssertEqualInsets(inset0, inset1) XCTAssertTrue(inset0.top == inset1.top && inset0.left == inset1.left && inset0.right == inset1.right && inset0.bottom == inset1.bottom)
+#define XCTAssertEqualPoint(p0, p1) XCTAssertTrue(CGPointEqualToPoint(p0, p1))
+#define XCTAssertEqualSize(s0, s1) XCTAssertTrue(CGSizeEqualToSize(s0, s1))
+#define XCTAssertInRange(value, min, max) XCTAssertGreaterThan(value, min); XCTAssertLessThan(value, max)
+#define XCTAssertInClosedRange(value, min, max) XCTAssertGreaterThanOrEqual(value, min); XCTAssertLessThanOrEqual(value, max)
+
 /***************** Short Function ******************/
 
 #define _NULL                               [NSNull null]
