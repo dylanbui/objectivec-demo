@@ -12,6 +12,8 @@
 		BB121DF01F85DEAD0053171B /* PTPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB121DEE1F85DEAD0053171B /* PTPhotoViewController.xib */; };
 		BB121DF41F861A200053171B /* PTPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB121DF21F861A200053171B /* PTPhotoDetailViewController.m */; };
 		BB121DF51F861A200053171B /* PTPhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB121DF31F861A200053171B /* PTPhotoDetailViewController.xib */; };
+		BB1F7E2C1FCF2173006272E5 /* AutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1F7E2A1FCF2173006272E5 /* AutoLayoutViewController.m */; };
+		BB1F7E2D1FCF2173006272E5 /* AutoLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB1F7E2B1FCF2173006272E5 /* AutoLayoutViewController.xib */; };
 		BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC901F51DE330005372B /* TableExpandCellViewController.m */; };
 		BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */; };
 		BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC951F51DE850005372B /* ExpandViewCell.m */; };
@@ -215,6 +217,9 @@
 		BB121DF11F861A200053171B /* PTPhotoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTPhotoDetailViewController.h; sourceTree = "<group>"; };
 		BB121DF21F861A200053171B /* PTPhotoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTPhotoDetailViewController.m; sourceTree = "<group>"; };
 		BB121DF31F861A200053171B /* PTPhotoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PTPhotoDetailViewController.xib; sourceTree = "<group>"; };
+		BB1F7E291FCF2173006272E5 /* AutoLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutViewController.h; sourceTree = "<group>"; };
+		BB1F7E2A1FCF2173006272E5 /* AutoLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutViewController.m; sourceTree = "<group>"; };
+		BB1F7E2B1FCF2173006272E5 /* AutoLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutoLayoutViewController.xib; sourceTree = "<group>"; };
 		BB25FC8F1F51DE330005372B /* TableExpandCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableExpandCellViewController.h; sourceTree = "<group>"; };
 		BB25FC901F51DE330005372B /* TableExpandCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableExpandCellViewController.m; sourceTree = "<group>"; };
 		BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableExpandCellViewController.xib; sourceTree = "<group>"; };
@@ -534,6 +539,16 @@
 				BB121DF31F861A200053171B /* PTPhotoDetailViewController.xib */,
 			);
 			path = "Demo-PhotoController";
+			sourceTree = "<group>";
+		};
+		BB1F7E281FCF2149006272E5 /* Demo-AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BB1F7E291FCF2173006272E5 /* AutoLayoutViewController.h */,
+				BB1F7E2A1FCF2173006272E5 /* AutoLayoutViewController.m */,
+				BB1F7E2B1FCF2173006272E5 /* AutoLayoutViewController.xib */,
+			);
+			name = "Demo-AutoLayout";
 			sourceTree = "<group>";
 		};
 		BB25FC8D1F51DE090005372B /* Demo-TableView */ = {
@@ -948,6 +963,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB1F7E281FCF2149006272E5 /* Demo-AutoLayout */,
 				BBEDC4491FBC403A000317FD /* Demo-RangeSlider */,
 				BBF1BD6B1FAC80EE0081E179 /* Demo-GM-MapDrawing */,
 				BB3912F51F8BE504002F1CE1 /* Demo-ScrollingTableViewCell */,
@@ -1385,6 +1401,7 @@
 				BBEDC4311FBC3EEA000317FD /* slider-default-trackBackground.png in Resources */,
 				BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */,
 				BB4FD48D1F442AEE00C082C3 /* apnumberpad_backspace_icon.png in Resources */,
+				BB1F7E2D1FCF2173006272E5 /* AutoLayoutViewController.xib in Resources */,
 				BB4FD4B61F442C8A00C082C3 /* FontAwesome.ttf in Resources */,
 				BBEDC4321FBC3EEA000317FD /* slider-default-trackCrossedOver.png in Resources */,
 				BBD99B311F7CD7BD004B20AF /* TBTwoViewController.xib in Resources */,
@@ -1642,6 +1659,7 @@
 				BB121DEF1F85DEAD0053171B /* PTPhotoViewController.m in Sources */,
 				BB4FD4991F442AEE00C082C3 /* HHSlideView.m in Sources */,
 				BB4FD4971F442AEE00C082C3 /* DACircularProgressView.m in Sources */,
+				BB1F7E2C1FCF2173006272E5 /* AutoLayoutViewController.m in Sources */,
 				BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */,
 				BB4FD4831F442AEE00C082C3 /* DbAppSession.m in Sources */,
 				BBF1BD6F1FAC81300081E179 /* MapDrawingViewController.m in Sources */,

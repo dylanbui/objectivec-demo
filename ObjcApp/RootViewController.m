@@ -13,6 +13,8 @@
 #import "MapDrawingViewController.h"
 #import "RangeSliderViewController.h"
 
+#import "AutoLayoutViewController.h"
+
 @interface RootViewController ()
 
 @end
@@ -36,11 +38,12 @@
 {
     [super viewWillAppear:animated];
     
-    ViewController *vcFirst = [[ViewController alloc] init];
+//    ViewController *vcFirst = [[ViewController alloc] init];
     // STCalendarHeaderViewController *vcFirst = [[STCalendarHeaderViewController alloc] init];
 //    MapDrawingViewController *vcFirst = [[MapDrawingViewController alloc] init];
 //    RangeSliderViewController *vcFirst = [[RangeSliderViewController alloc] init];
 //    [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
+    AutoLayoutViewController *vcFirst = [[AutoLayoutViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 
