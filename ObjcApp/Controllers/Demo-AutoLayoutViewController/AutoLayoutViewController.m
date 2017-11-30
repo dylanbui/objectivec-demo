@@ -43,10 +43,12 @@
     // -- Dung gia toc ke de bat su kien quay man hinh --
     // [self initializeMotionManager];
     
+    //self.view.translatesAutoresizingMaskIntoConstraints = NO;
     // Do any additional setup after loading the view from its nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:)
                                                  name:UIDeviceOrientationDidChangeNotification  object:nil];
     
+    [self orientationChanged:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -102,13 +104,32 @@
     
     if (orientation == UIInterfaceOrientationLandscapeLeft) {
         [self.btnClose mas_remakeConstraints:^(MASConstraintMaker *make) {
+            
+            make.width.and.height.equalTo(@50);
+//            make.width.equalTo(@(50));
+//            make.height.equalTo(@(50));
+            
+            make.top.equalTo(self.view.mas_top).with.offset(10);
+            make.left.equalTo(self.view.mas_left).with.offset(10);
+
+            
+//            make.top.equalTo(self.view.mas_top).with.offset(-100);
+//            make.left.equalTo(self.view.mas_left).with.offset(0);
+//            make.top.equalTo(@0);
+//            make.left.equalTo(@0);
+        }];
+    } else {
+        [self.btnClose mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@(50));
             make.height.equalTo(@(50));
-            
-            make.top.equalTo(self.view.mas_top).with.offset(100);
-            make.right.equalTo(self.view.mas_right).with.offset(250);
+
+            make.top.equalTo(self.view.mas_top).with.offset(10);
+            make.right.equalTo(self.view.mas_right).with.offset(-10);
+
+
+//            make.top.equalTo(@250);
+//            make.right.equalTo(@50);
         }];
-        
     }
 
 }
@@ -166,10 +187,31 @@
             make.width.equalTo(@(50));
             make.height.equalTo(@(50));
             
-            make.top.equalTo(self.view.mas_top).with.offset(-10);
+            make.bottom.equalTo(self.view.mas_bottom).with.offset(-10);
             make.right.equalTo(self.view.mas_right).with.offset(-10);
+            
+//            make.left.equalTo(self.left).with.offset(10);
+//            make.top.equalTo(self.top).with.offset(10);
+//
+//            make.bottom.equalTo(self.bottom).with.offset(-10);
+//            make.right.equalTo(self.right).with.offset(-10);
         }];
-
+    }
+    else {
+        [self.btnClose mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(50));
+            make.height.equalTo(@(50));
+            
+            make.top.equalTo(self.view.mas_top).with.offset(10);
+            make.left.equalTo(self.view.mas_left).with.offset(10);
+            
+            //            make.left.equalTo(self.left).with.offset(10);
+            //            make.top.equalTo(self.top).with.offset(10);
+            //
+            //            make.bottom.equalTo(self.bottom).with.offset(-10);
+            //            make.right.equalTo(self.right).with.offset(-10);
+        }];
+        
     }
 }
 

@@ -139,6 +139,8 @@
 		BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */; };
 		BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */; };
 		BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCC62981F5E4C11006FF200 /* GBFlatButton.m */; };
+		BBD1076F1FCFA74A0009BAB1 /* AutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1076D1FCFA74A0009BAB1 /* AutoLayoutViewController.m */; };
+		BBD107701FCFA74A0009BAB1 /* AutoLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD1076E1FCFA74A0009BAB1 /* AutoLayoutViewController.xib */; };
 		BBD1366C1F9A1187007A7763 /* HeaderJTCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1366B1F9A1187007A7763 /* HeaderJTCalendarView.m */; };
 		BBD136701F9A149D007A7763 /* STCalendarHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1366E1F9A149D007A7763 /* STCalendarHeaderViewController.m */; };
 		BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD1366F1F9A149D007A7763 /* STCalendarHeaderViewController.xib */; };
@@ -435,6 +437,9 @@
 		BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPathsViewController.xib; sourceTree = "<group>"; };
 		BBCC62971F5E4C11006FF200 /* GBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBFlatButton.h; sourceTree = "<group>"; };
 		BBCC62981F5E4C11006FF200 /* GBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBFlatButton.m; sourceTree = "<group>"; };
+		BBD1076C1FCFA74A0009BAB1 /* AutoLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutViewController.h; sourceTree = "<group>"; };
+		BBD1076D1FCFA74A0009BAB1 /* AutoLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutViewController.m; sourceTree = "<group>"; };
+		BBD1076E1FCFA74A0009BAB1 /* AutoLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutoLayoutViewController.xib; sourceTree = "<group>"; };
 		BBD1366A1F9A1187007A7763 /* HeaderJTCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderJTCalendarView.h; sourceTree = "<group>"; };
 		BBD1366B1F9A1187007A7763 /* HeaderJTCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderJTCalendarView.m; sourceTree = "<group>"; };
 		BBD1366D1F9A149D007A7763 /* STCalendarHeaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STCalendarHeaderViewController.h; sourceTree = "<group>"; };
@@ -991,6 +996,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBD107711FCFA7510009BAB1 /* Demo-AutoLayoutViewController */,
 				BBB751D81FCE9F46000E5A03 /* Demo-MyCameraViewController */,
 				BBEDC4491FBC403A000317FD /* Demo-RangeSlider */,
 				BBF1BD6B1FAC80EE0081E179 /* Demo-GM-MapDrawing */,
@@ -1127,6 +1133,16 @@
 				BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */,
 			);
 			name = NavigationBarUseTitleView;
+			sourceTree = "<group>";
+		};
+		BBD107711FCFA7510009BAB1 /* Demo-AutoLayoutViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BBD1076C1FCFA74A0009BAB1 /* AutoLayoutViewController.h */,
+				BBD1076D1FCFA74A0009BAB1 /* AutoLayoutViewController.m */,
+				BBD1076E1FCFA74A0009BAB1 /* AutoLayoutViewController.xib */,
+			);
+			path = "Demo-AutoLayoutViewController";
 			sourceTree = "<group>";
 		};
 		BBD965DA1F5A8B5500CCAF2C /* Demo-Button */ = {
@@ -1415,7 +1431,7 @@
 				TargetAttributes = {
 					BB4FD3B51F4429E200C082C3 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = KXK7W469S4;
+						DevelopmentTeam = 99JD3QH9V9;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1549,6 +1565,7 @@
 				BBD99B2C1F7CD791004B20AF /* TBOneViewController.xib in Resources */,
 				BB25FC981F51DE850005372B /* ExpandViewCell.xib in Resources */,
 				BB3FC3581FC958AE000D37F2 /* db_ic_error_wifi.png in Resources */,
+				BBD107701FCFA74A0009BAB1 /* AutoLayoutViewController.xib in Resources */,
 				BB4FD49F1F442AEE00C082C3 /* ic_hide_password@2x.png in Resources */,
 				BBD99B3B1F7CD7DE004B20AF /* TBFourViewController.xib in Resources */,
 				BBEDC42C1FBC3EEA000317FD /* slider-default-handle-highlighted@2x.png in Resources */,
@@ -1710,6 +1727,7 @@
 				BB4FD49A1F442AEE00C082C3 /* SYPhotoBrowser.m in Sources */,
 				BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */,
 				BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */,
+				BBD1076F1FCFA74A0009BAB1 /* AutoLayoutViewController.m in Sources */,
 				BBE143611F823F170020C400 /* HeaderViewOne.m in Sources */,
 				BB4FD49D1F442AEE00C082C3 /* UIImage+Resize.m in Sources */,
 				BB6CC5231F5D46B70073A0C1 /* DbLabel.m in Sources */,
@@ -1911,7 +1929,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KXK7W469S4;
+				DEVELOPMENT_TEAM = 99JD3QH9V9;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = ObjcApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1927,7 +1945,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KXK7W469S4;
+				DEVELOPMENT_TEAM = 99JD3QH9V9;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = ObjcApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

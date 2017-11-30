@@ -51,24 +51,41 @@
     [_clvSelectedImage registerNib:[UINib nibWithNibName:@"ImageCollectionViewCell"
                                                   bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"imageCell"];
     
-    [self.view setHidden:YES];
     [self setSelectedBtn];
+    
+    [self updateConstraints];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-//    [self adjustViewsForOrientation];
+    // -- Create gray mask on previewView --
+    // create the mask that will be applied to the layer on top of the
+    // yellow background
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.fillRule = kCAFillRuleEvenOdd;
+    maskLayer.frame = self.view.frame;
+
+    // -- Sub mask --
+    UIBezierPath *maskLayerPath = [UIBezierPath bezierPath];
+    [maskLayerPath appendPath:[UIBezierPath bezierPathWithRect:self.previewView.frame]];
+    [maskLayerPath appendPath:[UIBezierPath bezierPathWithRect:self.cameraFrame.frame]];
+    maskLayer.path = maskLayerPath.CGPath;
+    
+    // create the layer on top of the yellow background
+    CALayer *imageLayer = [CALayer layer];
+    imageLayer.frame = self.view.layer.bounds;
+    imageLayer.backgroundColor = [[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor];
+    
+    // apply the mask to the layer
+    imageLayer.mask = maskLayer;
+    [self.previewView.layer addSublayer:imageLayer];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-//    [self adjustViewsForOrientation];
-
-    [self.view setHidden:NO];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -132,9 +149,14 @@
     CGRect imageRect = CGRectMake(_cameraFrame.frame.origin.x*scaleX, _cameraFrame.frame.origin.y*scaleX, itemSize.width, itemSize.height);
     
     [self.listImage addObject:[self.selectedImage cropImageToRect:imageRect orientation:self.selectedImage.imageOrientation]];
-    [self.listImageSelected addObject:[NSIndexPath indexPathForRow:[self.listImage count] - 1 inSection:0]];
+    NSIndexPath *lastItem = [NSIndexPath indexPathForRow:[self.listImage count] - 1 inSection:0];
+    [self.listImageSelected addObject:lastItem];
     [self setSelectedBtn];
     [_clvSelectedImage reloadData];
+    
+    // -- Scroll to end --
+    [_clvSelectedImage scrollToItemAtIndexPath:lastItem
+                              atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
 }
 
 - (IBAction)btnFlash_Click:(id)sender
@@ -156,7 +178,6 @@
             break;
     }
 }
-
 
 - (IBAction)btnSaveImage_Click:(id)sender
 {
@@ -212,9 +233,8 @@
 
 - (void)orientationChanged:(NSNotification *)notification
 {
-//    [self adjustViewsForOrientation];
-    //[self needsUpdateConstraints];
     [self updateConstraints];
+    [_clvSelectedImage reloadData];
 }
 
 #pragma mark -
@@ -232,6 +252,18 @@
     if(![self.listImageSelected containsObject:indexPath]) {
         [cell.imgSelected setHidden:YES];
     }
+    
+    // -- Rotate subview --
+    CGAffineTransform transform = [self getCGAffineTransform];
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    
+    for (UIView *view in [cell subviews]) {
+        view.transform = transform;
+    }
+    
+    [UIView commitAnimations];
     
     return cell;
 }
@@ -264,6 +296,26 @@
     return YES;
 }
 
+- (CGAffineTransform)getCGAffineTransform
+{
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+//    CGRect viewFrame = [[UIScreen mainScreen] bounds];
+//    NSLog(@"viewFrame = %@", NSStringFromCGRect(viewFrame));
+    
+    CGAffineTransform transform = self.view.transform;
+    
+    if (orientation == UIDeviceOrientationPortraitUpsideDown)
+        transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(180));
+    
+    else if (orientation == UIDeviceOrientationLandscapeLeft)
+        transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(90));
+    
+    else if (orientation == UIDeviceOrientationLandscapeRight)
+        transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(-90));
+    
+    return transform;
+}
+
 // this is Apple's recommended place for adding/updating constraints
 - (void)updateConstraints
 {
@@ -273,24 +325,22 @@
     CGRect viewFrame = [[UIScreen mainScreen] bounds];
     NSLog(@"viewFrame = %@", NSStringFromCGRect(viewFrame));
     
-    
-    CGAffineTransform aa = self.view.transform;
+    CGAffineTransform transform = self.view.transform;
     
     if (orientation == UIDeviceOrientationPortraitUpsideDown)
-        aa = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(180));
+        transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(180));
     
     else if (orientation == UIDeviceOrientationLandscapeLeft)
-        aa = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(90));
+        transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(90));
     
     else if (orientation == UIDeviceOrientationLandscapeRight)
-        aa = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(-90));
-    
+        transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(-90));
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
     
     for (UIView *view in [self.vwBottom subviews]) {
-        view.transform = aa;
+        view.transform = transform;
     }
 
     [UIView commitAnimations];
@@ -299,7 +349,8 @@
         
         [self.btnClose mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(@30);
-            make.trailing.equalTo(@30);
+            make.left.equalTo(@30);
+            
             make.width.equalTo(@35);
             make.height.equalTo(@35);
         }];
@@ -308,15 +359,15 @@
         
         [self.btnClose mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(@30);
-            make.trailing.equalTo(@30);
+            make.right.equalTo(@-30);
+            
             make.width.equalTo(@35);
             make.height.equalTo(@35);
         }];
         
     }
     
-    if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
-        
+//    if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
 //        [self.vwBottom mas_updateConstraints:^(MASConstraintMaker *make) {
 //            make.top.equalTo(@0);
 //            make.left.equalTo(@0);
@@ -338,10 +389,7 @@
 //            make.right.equalTo(@15);
 //
 //        }];
-
-        
-    } else { // UIInterfaceOrientationPortrait
-
+//    } else { // UIInterfaceOrientationPortrait
 //        [self.vwBottom mas_updateConstraints:^(MASConstraintMaker *make) {
 //            make.bottom.equalTo(@0);
 //            make.left.equalTo(@0);
@@ -362,8 +410,7 @@
 //            make.bottom.equalTo(self.clvSelectedImage.mas_top).with.offset(15.0);
 //            make.right.equalTo(@15);
 //        }];
-        
-    }
+//    }
 
     
     
@@ -388,56 +435,6 @@
 
 }
 
-//- (void)adjustViewsForOrientation
-//{
-//    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-//    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)[self.clvSelectedImage collectionViewLayout];
-//
-//    CGRect viewFrame = [[UIScreen mainScreen] bounds];
-//     if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
-//
-//        [self.vwBottom setFrame:CGRectMake(viewFrame.size.width - 107, 0, 107, viewFrame.size.height)];
-//        [self.clvSelectedImage setFrame:CGRectMake(viewFrame.size.width - 182, 0, 75, viewFrame.size.height)];
-//        [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
-//        [self.btnClose setFrame:CGRectMake(20, 20, 35, 35)];
-//
-//        CGSize cameraSize = CGSizeMake(viewFrame.size.height, (viewFrame.size.height)*215/324);
-//        [self.cameraFrame setFrame:CGRectMake((viewFrame.size.width - 182 - cameraSize.width)/2, (viewFrame.size.height - cameraSize.height)/2, cameraSize.width, cameraSize.height)];
-//        int originY = (viewFrame.size.height/2 - 35 - 35)/2;
-//        [self.btnSaveImage setFrame:CGRectMake(36, originY, 35, 35)];
-//        [self.btnFlash setFrame:CGRectMake(36,viewFrame.size.height - originY - 35, 35, 35)];
-//     } else {
-//
-//         [self.vwBottom setFrame:CGRectMake(0, viewFrame.size.height - 107, viewFrame.size.width, 107)];
-//         [self.clvSelectedImage setFrame:CGRectMake(0, viewFrame.size.height - 182, viewFrame.size.width, 75)];
-//         [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-//         [self.btnClose setFrame:CGRectMake(viewFrame.size.width - 55, 20, 35, 35)];
-//         CGSize cameraSize = CGSizeMake(viewFrame.size.width - 32, (viewFrame.size.width - 32)*215/324);
-//         [self.cameraFrame setFrame:CGRectMake(16, (viewFrame.size.height - 182 - cameraSize.height)/2, cameraSize.width, cameraSize.height)];
-//         int originX = (viewFrame.size.width/2 - 35 - 35)/2;
-//         [self.btnFlash setFrame:CGRectMake(originX, 36, 35, 35)];
-//         [self.btnSaveImage setFrame:CGRectMake(viewFrame.size.width - originX - 35, 36, 35, 35)];
-//     }
-//    [self setShadowFrame];
-//}
-//
-//- (void)setShadowFrame
-//{
-//    CGRect viewFrame = [[UIScreen mainScreen] bounds];
-//    CGRect cameraFrame = self.cameraFrame.frame;
-//    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-//    if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
-////        [self.vwShadowTop setFrame:CGRectMake(0, 0, cameraFrame.origin.x, viewFrame.size.height)];
-////        [self.vwShadowBot setFrame:CGRectMake(cameraFrame.origin.x + cameraFrame.size.width, 0, viewFrame.size.width - cameraFrame.origin.x - cameraFrame.size.width, viewFrame.size.height)];
-////        [self.vwShadowLeft setFrame:CGRectMake(cameraFrame.origin.x, cameraFrame.origin.y + cameraFrame.size.height, cameraFrame.size.width, cameraFrame.origin.y)];
-////        [self.vwShadowRight setFrame:CGRectMake(cameraFrame.origin.x, 0, cameraFrame.size.width, viewFrame.size.height - cameraFrame.size.height - cameraFrame.origin.y)];
-//    } else {
-////        [self.vwShadowTop setFrame:CGRectMake(0, 0, viewFrame.size.width, cameraFrame.origin.y)];
-////        [self.vwShadowBot setFrame:CGRectMake(0, cameraFrame.origin.y + cameraFrame.size.height, viewFrame.size.width, viewFrame.size.height - cameraFrame.origin.y - cameraFrame.size.height)];
-////        [self.vwShadowLeft setFrame:CGRectMake(0, cameraFrame.origin.y, 16, cameraFrame.size.height)];
-////        [self.vwShadowRight setFrame:CGRectMake(viewFrame.size.width - 16, cameraFrame.origin.y, 16, cameraFrame.size.height)];
-//    }
-//}
 
 
 @end

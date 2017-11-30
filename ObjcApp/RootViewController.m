@@ -14,6 +14,7 @@
 #import "RangeSliderViewController.h"
 #import "DemoMyCameraViewController.h"
 
+#import "DemoMyCameraViewController.h"
 #import "AutoLayoutViewController.h"
 
 @interface RootViewController ()
@@ -43,9 +44,10 @@
     // STCalendarHeaderViewController *vcFirst = [[STCalendarHeaderViewController alloc] init];
 //    MapDrawingViewController *vcFirst = [[MapDrawingViewController alloc] init];
 //    RangeSliderViewController *vcFirst = [[RangeSliderViewController alloc] init];
-    DemoMyCameraViewController *vcFirst = [[DemoMyCameraViewController alloc] init];
+    //DemoMyCameraViewController *vcFirst = [[DemoMyCameraViewController alloc] init];
 //    [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
-    AutoLayoutViewController *vcFirst = [[AutoLayoutViewController alloc] init];
+//    AutoLayoutViewController *vcFirst = [[AutoLayoutViewController alloc] init];
+    DemoMyCameraViewController *vcFirst = [[DemoMyCameraViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 
