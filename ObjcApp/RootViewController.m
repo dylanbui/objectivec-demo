@@ -12,6 +12,7 @@
 #import "STCalendarHeaderViewController.h"
 #import "MapDrawingViewController.h"
 #import "RangeSliderViewController.h"
+#import "DemoMyCameraViewController.h"
 
 @interface RootViewController ()
 
@@ -36,10 +37,11 @@
 {
     [super viewWillAppear:animated];
     
-    ViewController *vcFirst = [[ViewController alloc] init];
+//    ViewController *vcFirst = [[ViewController alloc] init];
     // STCalendarHeaderViewController *vcFirst = [[STCalendarHeaderViewController alloc] init];
 //    MapDrawingViewController *vcFirst = [[MapDrawingViewController alloc] init];
 //    RangeSliderViewController *vcFirst = [[RangeSliderViewController alloc] init];
+    DemoMyCameraViewController *vcFirst = [[DemoMyCameraViewController alloc] init];
 //    [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }

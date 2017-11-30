@@ -119,6 +119,21 @@
 		BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */; };
 		BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */; };
 		BB999CFB1F4F4F3D00B29FDE /* UserSessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF91F4F4F3D00B29FDE /* UserSessionViewController.xib */; };
+		BBB751DF1FCE9F46000E5A03 /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB751DA1FCE9F46000E5A03 /* ImageCollectionViewCell.m */; };
+		BBB751E01FCE9F46000E5A03 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB751DB1FCE9F46000E5A03 /* ImageCollectionViewCell.xib */; };
+		BBB751E11FCE9F46000E5A03 /* MyCameraControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB751DD1FCE9F46000E5A03 /* MyCameraControllerViewController.m */; };
+		BBB751E21FCE9F46000E5A03 /* MyCameraControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB751DE1FCE9F46000E5A03 /* MyCameraControllerViewController.xib */; };
+		BBB751E71FCE9F87000E5A03 /* main_gate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E31FCE9F86000E5A03 /* main_gate@2x.png */; };
+		BBB751E81FCE9F87000E5A03 /* main_gate.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E41FCE9F86000E5A03 /* main_gate.png */; };
+		BBB751E91FCE9F87000E5A03 /* main_gate_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E51FCE9F87000E5A03 /* main_gate_img@2x.png */; };
+		BBB751EA1FCE9F87000E5A03 /* main_gate_img.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E61FCE9F87000E5A03 /* main_gate_img.png */; };
+		BBB751FC1FCEA04F000E5A03 /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB751F41FCEA04E000E5A03 /* AVCamPreviewView.m */; };
+		BBB751FD1FCEA04F000E5A03 /* AVCamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB751F61FCEA04E000E5A03 /* AVCamViewController.m */; };
+		BBB751FE1FCEA04F000E5A03 /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB751F81FCEA04E000E5A03 /* UIImage+Crop.m */; };
+		BBB752021FCEA85C000E5A03 /* DemoMyCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB752001FCEA85C000E5A03 /* DemoMyCameraViewController.m */; };
+		BBB752031FCEA85C000E5A03 /* DemoMyCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB752011FCEA85C000E5A03 /* DemoMyCameraViewController.xib */; };
+		BBB752061FCEAA76000E5A03 /* demo_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBB752041FCEAA76000E5A03 /* demo_2.jpg */; };
+		BBB752071FCEAA76000E5A03 /* demo_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBB752051FCEAA76000E5A03 /* demo_1.jpg */; };
 		BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C471F49E718007A3B5C /* NavigationBarTitleView.m */; };
 		BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */; };
 		BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */; };
@@ -391,6 +406,27 @@
 		BB999CF71F4F4F3D00B29FDE /* UserSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSessionViewController.h; sourceTree = "<group>"; };
 		BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSessionViewController.m; sourceTree = "<group>"; };
 		BB999CF91F4F4F3D00B29FDE /* UserSessionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSessionViewController.xib; sourceTree = "<group>"; };
+		BBB751D91FCE9F46000E5A03 /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
+		BBB751DA1FCE9F46000E5A03 /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
+		BBB751DB1FCE9F46000E5A03 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		BBB751DC1FCE9F46000E5A03 /* MyCameraControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCameraControllerViewController.h; sourceTree = "<group>"; };
+		BBB751DD1FCE9F46000E5A03 /* MyCameraControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCameraControllerViewController.m; sourceTree = "<group>"; };
+		BBB751DE1FCE9F46000E5A03 /* MyCameraControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCameraControllerViewController.xib; sourceTree = "<group>"; };
+		BBB751E31FCE9F86000E5A03 /* main_gate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_gate@2x.png"; sourceTree = "<group>"; };
+		BBB751E41FCE9F86000E5A03 /* main_gate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_gate.png; sourceTree = "<group>"; };
+		BBB751E51FCE9F87000E5A03 /* main_gate_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_gate_img@2x.png"; sourceTree = "<group>"; };
+		BBB751E61FCE9F87000E5A03 /* main_gate_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_gate_img.png; sourceTree = "<group>"; };
+		BBB751F31FCEA04E000E5A03 /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
+		BBB751F41FCEA04E000E5A03 /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
+		BBB751F51FCEA04E000E5A03 /* AVCamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamViewController.h; sourceTree = "<group>"; };
+		BBB751F61FCEA04E000E5A03 /* AVCamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamViewController.m; sourceTree = "<group>"; };
+		BBB751F71FCEA04E000E5A03 /* UIImage+Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Crop.h"; sourceTree = "<group>"; };
+		BBB751F81FCEA04E000E5A03 /* UIImage+Crop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Crop.m"; sourceTree = "<group>"; };
+		BBB751FF1FCEA85C000E5A03 /* DemoMyCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoMyCameraViewController.h; sourceTree = "<group>"; };
+		BBB752001FCEA85C000E5A03 /* DemoMyCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoMyCameraViewController.m; sourceTree = "<group>"; };
+		BBB752011FCEA85C000E5A03 /* DemoMyCameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoMyCameraViewController.xib; sourceTree = "<group>"; };
+		BBB752041FCEAA76000E5A03 /* demo_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo_2.jpg; sourceTree = "<group>"; };
+		BBB752051FCEAA76000E5A03 /* demo_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo_1.jpg; sourceTree = "<group>"; };
 		BBC07C461F49E718007A3B5C /* NavigationBarTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarTitleView.h; sourceTree = "<group>"; };
 		BBC07C471F49E718007A3B5C /* NavigationBarTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarTitleView.m; sourceTree = "<group>"; };
 		BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationBarTitleView.xib; sourceTree = "<group>"; };
@@ -766,6 +802,7 @@
 		BB4FD4311F442AEE00C082C3 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BBB751EB1FCEA04E000E5A03 /* CustomCamera */,
 				BBEDC40B1FBC3EEA000317FD /* NMRangeSlider */,
 				BB4FD4321F442AEE00C082C3 /* ActivityIndicatorButton */,
 				BB4FD4371F442AEE00C082C3 /* APNumberPad */,
@@ -941,6 +978,12 @@
 		BB4FD4B51F442C8A00C082C3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BBB752051FCEAA76000E5A03 /* demo_1.jpg */,
+				BBB752041FCEAA76000E5A03 /* demo_2.jpg */,
+				BBB751E61FCE9F87000E5A03 /* main_gate_img.png */,
+				BBB751E51FCE9F87000E5A03 /* main_gate_img@2x.png */,
+				BBB751E41FCE9F86000E5A03 /* main_gate.png */,
+				BBB751E31FCE9F86000E5A03 /* main_gate@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -948,6 +991,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBB751D81FCE9F46000E5A03 /* Demo-MyCameraViewController */,
 				BBEDC4491FBC403A000317FD /* Demo-RangeSlider */,
 				BBF1BD6B1FAC80EE0081E179 /* Demo-GM-MapDrawing */,
 				BB3912F51F8BE504002F1CE1 /* Demo-ScrollingTableViewCell */,
@@ -1044,6 +1088,35 @@
 				BB999CF91F4F4F3D00B29FDE /* UserSessionViewController.xib */,
 			);
 			path = "Demo-User-Session";
+			sourceTree = "<group>";
+		};
+		BBB751D81FCE9F46000E5A03 /* Demo-MyCameraViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BBB751D91FCE9F46000E5A03 /* ImageCollectionViewCell.h */,
+				BBB751DA1FCE9F46000E5A03 /* ImageCollectionViewCell.m */,
+				BBB751DB1FCE9F46000E5A03 /* ImageCollectionViewCell.xib */,
+				BBB751DC1FCE9F46000E5A03 /* MyCameraControllerViewController.h */,
+				BBB751DD1FCE9F46000E5A03 /* MyCameraControllerViewController.m */,
+				BBB751DE1FCE9F46000E5A03 /* MyCameraControllerViewController.xib */,
+				BBB751FF1FCEA85C000E5A03 /* DemoMyCameraViewController.h */,
+				BBB752001FCEA85C000E5A03 /* DemoMyCameraViewController.m */,
+				BBB752011FCEA85C000E5A03 /* DemoMyCameraViewController.xib */,
+			);
+			path = "Demo-MyCameraViewController";
+			sourceTree = "<group>";
+		};
+		BBB751EB1FCEA04E000E5A03 /* CustomCamera */ = {
+			isa = PBXGroup;
+			children = (
+				BBB751F31FCEA04E000E5A03 /* AVCamPreviewView.h */,
+				BBB751F41FCEA04E000E5A03 /* AVCamPreviewView.m */,
+				BBB751F51FCEA04E000E5A03 /* AVCamViewController.h */,
+				BBB751F61FCEA04E000E5A03 /* AVCamViewController.m */,
+				BBB751F71FCEA04E000E5A03 /* UIImage+Crop.h */,
+				BBB751F81FCEA04E000E5A03 /* UIImage+Crop.m */,
+			);
+			path = CustomCamera;
 			sourceTree = "<group>";
 		};
 		BBC07C451F49E6E7007A3B5C /* NavigationBarUseTitleView */ = {
@@ -1383,17 +1456,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBEDC4311FBC3EEA000317FD /* slider-default-trackBackground.png in Resources */,
+				BBB751E21FCE9F46000E5A03 /* MyCameraControllerViewController.xib in Resources */,
 				BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */,
 				BB4FD48D1F442AEE00C082C3 /* apnumberpad_backspace_icon.png in Resources */,
 				BB4FD4B61F442C8A00C082C3 /* FontAwesome.ttf in Resources */,
 				BBEDC4321FBC3EEA000317FD /* slider-default-trackCrossedOver.png in Resources */,
 				BBD99B311F7CD7BD004B20AF /* TBTwoViewController.xib in Resources */,
+				BBB751E01FCE9F46000E5A03 /* ImageCollectionViewCell.xib in Resources */,
 				BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */,
 				BBEDC4411FBC3EEA000317FD /* slider-metal-track.png in Resources */,
 				BB4FD4B71F442C8A00C082C3 /* OpenSans-Bold.ttf in Resources */,
 				BB4FD3C91F4429E200C082C3 /* LaunchScreen.storyboard in Resources */,
 				BBEDC43A1FBC3EEA000317FD /* slider-default7-trackBackground@2x.png in Resources */,
 				BBF1BD701FAC81300081E179 /* MapDrawingViewController.xib in Resources */,
+				BBB751EA1FCE9F87000E5A03 /* main_gate_img.png in Resources */,
 				BB3FC3561FC958AE000D37F2 /* db_ic_empty_data@2x.png in Resources */,
 				BB4FD4BF1F442C8A00C082C3 /* OpenSans-Semibold.ttf in Resources */,
 				BBEDC4351FBC3EEA000317FD /* slider-default7-handle.png in Resources */,
@@ -1424,6 +1500,7 @@
 				BB4FD4BA1F442C8A00C082C3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				BB3FC3591FC958AE000D37F2 /* db_ic_error_wifi@2x.png in Resources */,
 				BBEDC42E1FBC3EEA000317FD /* slider-default-handle@2x.png in Resources */,
+				BBB751E71FCE9F87000E5A03 /* main_gate@2x.png in Resources */,
 				BBD99B361F7CD7CF004B20AF /* TBThreeViewController.xib in Resources */,
 				BBEDC4361FBC3EEA000317FD /* slider-default7-handle@2x.png in Resources */,
 				BB25FC9A1F51DFC20005372B /* artists.json in Resources */,
@@ -1432,7 +1509,9 @@
 				BB4FD4BE1F442C8A00C082C3 /* OpenSans-Regular.ttf in Resources */,
 				BBEDC43F1FBC3EEA000317FD /* slider-metal-handle.png in Resources */,
 				BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */,
+				BBB751E81FCE9F87000E5A03 /* main_gate.png in Resources */,
 				BBEDC4581FBC543C000317FD /* db_slider_handle@3x.png in Resources */,
+				BBB752061FCEAA76000E5A03 /* demo_2.jpg in Resources */,
 				BB4FD4D21F443BC100C082C3 /* DetailCoursesViewController.xib in Resources */,
 				BB4FD4D41F443BC100C082C3 /* PathsViewController.xib in Resources */,
 				BBDBD8FB1F6A9A97009C9340 /* KeyboardViewController.xib in Resources */,
@@ -1454,12 +1533,15 @@
 				BB4FD48F1F442AEE00C082C3 /* apnumberpad_backspace_icon@3x.png in Resources */,
 				BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */,
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
+				BBB752071FCEAA76000E5A03 /* demo_1.jpg in Resources */,
 				BB3FC3571FC958AE000D37F2 /* db_ic_empty_data@3x.png in Resources */,
 				BBEDC44E1FBC4060000317FD /* RangeSliderViewController.xib in Resources */,
 				BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */,
 				BB8DCAF21FB16CB800AB337B /* PriceMapIntroView.xib in Resources */,
 				BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */,
+				BBB752031FCEA85C000E5A03 /* DemoMyCameraViewController.xib in Resources */,
 				BB4A3A6A1F814E3E0040CC61 /* TBFiveViewController.xib in Resources */,
+				BBB751E91FCE9F87000E5A03 /* main_gate_img@2x.png in Resources */,
 				BB3912FA1F8BE527002F1CE1 /* SLTableViewController.xib in Resources */,
 				BBEDC43E1FBC3EEA000317FD /* slider-metal-handle-highlighted@2x.png in Resources */,
 				BBEDC43D1FBC3EEA000317FD /* slider-metal-handle-highlighted.png in Resources */,
@@ -1585,6 +1667,7 @@
 			files = (
 				BB4FD48C1F442AEE00C082C3 /* UIButton+Activity.m in Sources */,
 				BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */,
+				BBB751DF1FCE9F46000E5A03 /* ImageCollectionViewCell.m in Sources */,
 				BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */,
 				BB4FD4821F442AEE00C082C3 /* DbViewFromXib.m in Sources */,
 				BB4FD4841F442AEE00C082C3 /* DateTimeUtil.m in Sources */,
@@ -1595,6 +1678,7 @@
 				BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */,
 				BB121DF41F861A200053171B /* PTPhotoDetailViewController.m in Sources */,
 				BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */,
+				BBB752021FCEA85C000E5A03 /* DemoMyCameraViewController.m in Sources */,
 				BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */,
 				BBD965E51F5B36B800CCAF2C /* LGButton.m in Sources */,
 				BBDBD9001F6A9B6B009C9340 /* NSDictionary+DbHelper.m in Sources */,
@@ -1614,6 +1698,7 @@
 				BB4FD47E1F442AEE00C082C3 /* DbObject.m in Sources */,
 				BB4FD4871F442AEE00C082C3 /* NSObject+SimpleMapping.m in Sources */,
 				BB4FD4941F442AEE00C082C3 /* ATAppUpdater.m in Sources */,
+				BBB751FC1FCEA04F000E5A03 /* AVCamPreviewView.m in Sources */,
 				BB3FC34C1FC957DA000D37F2 /* DbErrorView.m in Sources */,
 				BB4FD4881F442AEE00C082C3 /* UINavigationController+Utils.m in Sources */,
 				BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */,
@@ -1652,11 +1737,14 @@
 				BB4FD4921F442AEE00C082C3 /* APNumberPadDefaultStyle.m in Sources */,
 				BB4FD49C1F442AEE00C082C3 /* SYPhotoViewController.m in Sources */,
 				BB3912FE1F8BE557002F1CE1 /* SLTableViewCell.m in Sources */,
+				BBB751E11FCE9F46000E5A03 /* MyCameraControllerViewController.m in Sources */,
+				BBB751FD1FCEA04F000E5A03 /* AVCamViewController.m in Sources */,
 				BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */,
 				BBEDC44D1FBC4060000317FD /* RangeSliderViewController.m in Sources */,
 				BB4FD4851F442AEE00C082C3 /* DbUtils.m in Sources */,
 				BBD99B3A1F7CD7DE004B20AF /* TBFourViewController.m in Sources */,
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
+				BBB751FE1FCEA04F000E5A03 /* UIImage+Crop.m in Sources */,
 				BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
 				BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */,

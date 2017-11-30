@@ -7,21 +7,31 @@
 //
 
 #import "DemoMyCameraViewController.h"
+#import "MyCameraControllerViewController.h"
 
-@interface DemoMyCameraViewController ()
+@interface DemoMyCameraViewController () <ImagePickerViewControllerDelegate>
 
 @end
 
 @implementation DemoMyCameraViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)btnShowCamera_Click:(id)sender
+{
+    MyCameraControllerViewController *cam = [[MyCameraControllerViewController alloc] init];
+    cam.imagePickerDelegate = self;
+    [self presentViewController:cam animated:YES completion:nil];
 }
 
 /*
@@ -33,5 +43,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)imageSelectionCancelled
+{
+    
+}
+
+- (void)imagesSelected:(NSMutableArray *)images
+{
+    NSLog(@"images = %d", (int) [images count]);
+}
+
 
 @end

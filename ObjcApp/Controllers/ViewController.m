@@ -19,6 +19,7 @@
 #import "STHeaderViewController.h"
 #import "PTPhotoViewController.h"
 #import "SLTableViewController.h"
+#import "DemoMyCameraViewController.h"
 
 
 @interface ViewController ()
@@ -47,6 +48,7 @@
                       @"Demo-TableView",
                       @"Demo-User-Session",
                       @"Demo-Expand-Layout",
+                      @"Demo-MyCameraViewController",
                       @"Demo-Navigation-Bar" ];
 }
 
@@ -98,6 +100,8 @@
     } else if (indexPath.row == 9) {
         vcFirst = [[ExpandLayoutViewController alloc] init];
     } else if (indexPath.row == 10) {
+        vcFirst = [[DemoMyCameraViewController alloc] init];
+    } else if (indexPath.row == 11) {
         vcFirst = [[PathsViewController alloc] init];
     }
     
