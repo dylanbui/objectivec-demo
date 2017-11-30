@@ -14,6 +14,8 @@
 #import "RangeSliderViewController.h"
 #import "DemoMyCameraViewController.h"
 
+#import "AutoLayoutViewController.h"
+
 @interface RootViewController ()
 
 @end
@@ -43,6 +45,7 @@
 //    RangeSliderViewController *vcFirst = [[RangeSliderViewController alloc] init];
     DemoMyCameraViewController *vcFirst = [[DemoMyCameraViewController alloc] init];
 //    [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
+    AutoLayoutViewController *vcFirst = [[AutoLayoutViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 
