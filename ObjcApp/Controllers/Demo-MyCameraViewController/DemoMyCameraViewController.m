@@ -7,9 +7,10 @@
 //
 
 #import "DemoMyCameraViewController.h"
-#import "MyCameraControllerViewController.h"
+//#import "MyCameraControllerViewController.h"
+#import "DbCameraViewController.h"
 
-@interface DemoMyCameraViewController () <ImagePickerViewControllerDelegate>
+@interface DemoMyCameraViewController () <DbCameraImageDelegate>
 
 @end
 
@@ -29,8 +30,8 @@
 
 - (IBAction)btnShowCamera_Click:(id)sender
 {
-    MyCameraControllerViewController *cam = [[MyCameraControllerViewController alloc] init];
-    cam.imagePickerDelegate = self;
+    DbCameraViewController *cam = [[DbCameraViewController alloc] init];
+    cam.imageCameraDelegate = self;
     [self presentViewController:cam animated:YES completion:nil];
 }
 
@@ -44,12 +45,12 @@
 }
 */
 
-- (void)imageSelectionCancelled
+- (void)cameraImageCancelled
 {
-    
+    NSLog(@"%@", @"imageSelectionCancelled");
 }
 
-- (void)imagesSelected:(NSMutableArray *)images
+- (void)cameraImagesSelected:(NSMutableArray *)images
 {
     NSLog(@"images = %d", (int) [images count]);
 }

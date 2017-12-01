@@ -77,7 +77,10 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 @property (nonatomic, getter = isDeviceAuthorized) BOOL deviceAuthorized;
 @property (nonatomic, readonly, getter = isSessionRunningAndDeviceAuthorized) BOOL sessionRunningAndDeviceAuthorized;
 @property (nonatomic) BOOL lockInterfaceRotation;
+@property (nonatomic) BOOL allowRecordingVideo;
 @property (nonatomic) id runtimeErrorHandlingObserver;
+
+@property (nonatomic, strong) AVCameraFocusSquare *focusSquare;
 
 // -- Flash --
 @property (nonatomic) AVCaptureFlashMode flashMode;
@@ -158,30 +161,33 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 			});
 		}
 		
-		AVCaptureDevice *audioDevice = [[AVCaptureDevice devicesWithMediaType:AVMediaTypeAudio] firstObject];
-		AVCaptureDeviceInput *audioDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:audioDevice error:&error];
-		
-		if (error)
-		{
-			NSLog(@"%@", error);
-		}
-		
-		if ([session canAddInput:audioDeviceInput])
-		{
-			[session addInput:audioDeviceInput];
-		}
-		
-		AVCaptureMovieFileOutput *movieFileOutput = [[AVCaptureMovieFileOutput alloc] init];
-		if ([session canAddOutput:movieFileOutput])
-		{
-			[session addOutput:movieFileOutput];
-			AVCaptureConnection *connection = [movieFileOutput connectionWithMediaType:AVMediaTypeVideo];
-            if ([connection isVideoStabilizationSupported]) {
-            	// [connection setEnablesVideoStabilizationWhenAvailable:YES]; // Fix warning
-                [connection setPreferredVideoStabilizationMode:AVCaptureVideoStabilizationModeAuto];
+        // -- Default self.allowRecordingVideo == NO --
+        if (self.allowRecordingVideo) {
+            AVCaptureDevice *audioDevice = [[AVCaptureDevice devicesWithMediaType:AVMediaTypeAudio] firstObject];
+            AVCaptureDeviceInput *audioDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:audioDevice error:&error];
+            
+            if (error)
+            {
+                NSLog(@"%@", error);
             }
-			[self setMovieFileOutput:movieFileOutput];
-		}
+            
+            if ([session canAddInput:audioDeviceInput])
+            {
+                [session addInput:audioDeviceInput];
+            }
+            
+            AVCaptureMovieFileOutput *movieFileOutput = [[AVCaptureMovieFileOutput alloc] init];
+            if ([session canAddOutput:movieFileOutput])
+            {
+                [session addOutput:movieFileOutput];
+                AVCaptureConnection *connection = [movieFileOutput connectionWithMediaType:AVMediaTypeVideo];
+                if ([connection isVideoStabilizationSupported]) {
+                    // [connection setEnablesVideoStabilizationWhenAvailable:YES]; // Fix warning
+                    [connection setPreferredVideoStabilizationMode:AVCaptureVideoStabilizationModeAuto];
+                }
+                [self setMovieFileOutput:movieFileOutput];
+            }
+        }
 		
 		AVCaptureStillImageOutput *stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
 		if ([session canAddOutput:stillImageOutput])
@@ -322,6 +328,11 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 
 #pragma mark Actions
 
+- (void)setAllowRecordingVideo:(BOOL)allow
+{
+    self.allowRecordingVideo = allow;
+}
+
 - (void)setCameraFlashMode:(AVCaptureFlashMode)flashMode
 {
     self.flashMode = flashMode;
@@ -439,7 +450,17 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     
 	dispatch_async([self sessionQueue], ^{
 		// Update the orientation on the still image output video connection before capturing.
-		[[[self stillImageOutput] connectionWithMediaType:AVMediaTypeVideo] setVideoOrientation:[[(AVCaptureVideoPreviewLayer *)[[self previewView] layer] connection] videoOrientation]];
+        // -- Old code --
+//        [[[self stillImageOutput] connectionWithMediaType:AVMediaTypeVideo] setVideoOrientation:[[(AVCaptureVideoPreviewLayer *)[[self previewView] layer] connection] videoOrientation]];
+        
+        UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
+        AVCaptureVideoOrientation avcaptureOrientation = [[(AVCaptureVideoPreviewLayer *)[[self previewView] layer] connection] videoOrientation];
+        if ( deviceOrientation == UIDeviceOrientationLandscapeLeft)
+            avcaptureOrientation  = AVCaptureVideoOrientationLandscapeRight;
+        else if ( deviceOrientation == UIDeviceOrientationLandscapeRight)
+            avcaptureOrientation  = AVCaptureVideoOrientationLandscapeLeft;
+        
+        [[[self stillImageOutput] connectionWithMediaType:AVMediaTypeVideo] setVideoOrientation:avcaptureOrientation];
 		
 		// Flash set to Auto for Still Capture
 //		[AVCamViewController setFlashMode:AVCaptureFlashModeAuto forDevice:[[self videoDeviceInput] device]];
@@ -452,9 +473,13 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 			{
 				NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
 				UIImage *image = [[UIImage alloc] initWithData:imageData];
-				[[[ALAssetsLibrary alloc] init] writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:^(NSURL *assetURL, NSError *error) {
-                    // -- Call back --
-                    captureHandler(imageData, error);
+				[[[ALAssetsLibrary alloc] init] writeImageToSavedPhotosAlbum:[image CGImage]
+                                                                 orientation:(ALAssetOrientation)[image imageOrientation]
+                                                             completionBlock:^(NSURL *assetURL, NSError *error) {
+                    
+                                                                 // -- Call back --
+                                                                 // UIImagePNGRepresentation(image);
+                                                                 captureHandler(imageData, error);
                 }];
             } else {
                 // -- Call back --
@@ -466,7 +491,19 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 
 - (void)focusAndExposeTap:(UIGestureRecognizer *)gestureRecognizer
 {
-	CGPoint devicePoint = [(AVCaptureVideoPreviewLayer *)[[self previewView] layer] captureDevicePointOfInterestForPoint:[gestureRecognizer locationInView:[gestureRecognizer view]]];
+    CGPoint touchPoint = [gestureRecognizer locationOfTouch:0 inView:self.view];
+    if (!self.focusSquare) {
+        self.focusSquare = [[AVCameraFocusSquare alloc] initWithTouchPoint:touchPoint];
+        [self.view addSubview:self.focusSquare];
+        [self.focusSquare setNeedsDisplay];
+    }
+    else {
+        [self.focusSquare updatePoint:touchPoint];
+    }
+    [self.focusSquare animateFocusingAction];
+    
+    // -- Focus --
+    CGPoint devicePoint = [(AVCaptureVideoPreviewLayer *)[[self previewView] layer] captureDevicePointOfInterestForPoint:[gestureRecognizer locationInView:[gestureRecognizer view]]];
 	[self focusWithMode:AVCaptureFocusModeAutoFocus exposeWithMode:AVCaptureExposureModeAutoExpose atDevicePoint:devicePoint monitorSubjectAreaChange:YES];
 }
 

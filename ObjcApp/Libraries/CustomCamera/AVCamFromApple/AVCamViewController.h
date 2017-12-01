@@ -51,6 +51,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 
 #import "AVCamPreviewView.h"
+#import "AVCameraFocusSquare.h"
 
 
 @interface AVCamViewController : UIViewController
@@ -61,6 +62,7 @@
 @property (nonatomic, weak) IBOutlet AVCamPreviewView *previewView;
 
 - (void)setLockInterfaceRotation:(BOOL)lock;
+- (void)setAllowRecordingVideo:(BOOL)allow;
 
 - (void)toggleMovieRecording;
 
