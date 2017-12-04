@@ -12,6 +12,7 @@
 		BB121DF01F85DEAD0053171B /* PTPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB121DEE1F85DEAD0053171B /* PTPhotoViewController.xib */; };
 		BB121DF41F861A200053171B /* PTPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB121DF21F861A200053171B /* PTPhotoDetailViewController.m */; };
 		BB121DF51F861A200053171B /* PTPhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB121DF31F861A200053171B /* PTPhotoDetailViewController.xib */; };
+		BB1B90411FD4F8E900425FAA /* AVCamAssetLib.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1B90401FD4F8E900425FAA /* AVCamAssetLib.m */; };
 		BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC901F51DE330005372B /* TableExpandCellViewController.m */; };
 		BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */; };
 		BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC951F51DE850005372B /* ExpandViewCell.m */; };
@@ -232,6 +233,8 @@
 		BB121DF11F861A200053171B /* PTPhotoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTPhotoDetailViewController.h; sourceTree = "<group>"; };
 		BB121DF21F861A200053171B /* PTPhotoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTPhotoDetailViewController.m; sourceTree = "<group>"; };
 		BB121DF31F861A200053171B /* PTPhotoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PTPhotoDetailViewController.xib; sourceTree = "<group>"; };
+		BB1B903F1FD4F8E900425FAA /* AVCamAssetLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVCamAssetLib.h; sourceTree = "<group>"; };
+		BB1B90401FD4F8E900425FAA /* AVCamAssetLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVCamAssetLib.m; sourceTree = "<group>"; };
 		BB25FC8F1F51DE330005372B /* TableExpandCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableExpandCellViewController.h; sourceTree = "<group>"; };
 		BB25FC901F51DE330005372B /* TableExpandCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableExpandCellViewController.m; sourceTree = "<group>"; };
 		BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableExpandCellViewController.xib; sourceTree = "<group>"; };
@@ -1369,6 +1372,8 @@
 				BBB751F41FCEA04E000E5A03 /* AVCamPreviewView.m */,
 				BBFC34E51FD160A4008AA266 /* AVCameraFocusSquare.h */,
 				BBFC34E61FD160A4008AA266 /* AVCameraFocusSquare.m */,
+				BB1B903F1FD4F8E900425FAA /* AVCamAssetLib.h */,
+				BB1B90401FD4F8E900425FAA /* AVCamAssetLib.m */,
 			);
 			path = AVCamFromApple;
 			sourceTree = "<group>";
@@ -1710,6 +1715,7 @@
 				BBE143651F8240A20020C400 /* UIView+GSKLayoutHelper.m in Sources */,
 				BB4FD47F1F442AEE00C082C3 /* DbPopupView.m in Sources */,
 				BBF1BD731FAC814A0081E179 /* CanvasView.m in Sources */,
+				BB1B90411FD4F8E900425FAA /* AVCamAssetLib.m in Sources */,
 				BB595DB61F6303940003C0B9 /* BALabel.m in Sources */,
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
 				BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */,

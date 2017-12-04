@@ -24,4 +24,20 @@
     [self.imgContent.layer setBorderColor:[UIColor whiteColor].CGColor];
 }
 
+- (void)setTransform:(CGAffineTransform)transform withAnimation:(BOOL)animation
+{
+    if (animation) {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.3];
+    }
+    
+    for (UIView *view in [self subviews]) {
+        view.transform = transform;
+    }
+    
+    if (animation) {
+        [UIView commitAnimations];
+    }
+}
+
 @end

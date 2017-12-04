@@ -13,4 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgContent;
 @property (weak, nonatomic) IBOutlet UIImageView *imgSelected;
 
+- (void)setTransform:(CGAffineTransform)value withAnimation:(BOOL)animation;
+
+
 @end

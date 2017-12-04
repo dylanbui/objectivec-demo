@@ -79,6 +79,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 @property (nonatomic) BOOL lockInterfaceRotation;
 @property (nonatomic) BOOL allowRecordingVideo;
 @property (nonatomic) id runtimeErrorHandlingObserver;
+@property (nonatomic) CGFloat prevZoomFactor;
 
 @property (nonatomic, strong) AVCameraFocusSquare *focusSquare;
 
@@ -88,6 +89,31 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 @end
 
 @implementation AVCamViewController
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        // -- Record status --
+        self.isRecording = NO;
+        
+        // -- Set flash mode --
+        self.flashMode = AVCaptureFlashModeAuto;
+        
+        // -- Default Allow Interface Rotation --
+        self.lockInterfaceRotation = NO;
+        
+        // -- Allow video --
+        _allowRecordingVideo = NO;
+        
+        // -- Camera image quality --
+        self.cameraSessionPreset = AVCaptureSessionPresetHigh; // Full Screen
+        // cameraSessionPreset = AVCaptureSessionPresetPhoto;
+        
+        _prevZoomFactor = 1.0;
+    }
+    return self;
+}
+
 
 - (BOOL)isSessionRunningAndDeviceAuthorized
 {
@@ -104,19 +130,19 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 	[super viewDidLoad];
     
     // -- Record status --
-    self.isRecording = NO;
+    //self.isRecording = NO;
     
     // -- Set flash mode --
-    self.flashMode = AVCaptureFlashModeAuto;
+    //self.flashMode = AVCaptureFlashModeAuto;
     
     // -- Default Allow Interface Rotation --
-    [self setLockInterfaceRotation:NO];
+    //[self setLockInterfaceRotation:NO];
 	
 	// Create the AVCaptureSession
 	AVCaptureSession *session = [[AVCaptureSession alloc] init];
-    //	self.session.sessionPreset = AVCaptureSessionPresetPhoto;
-    // self.session.sessionPreset = AVCaptureSessionPresetHigh; // Full Screen
-    session.sessionPreset = AVCaptureSessionPresetHigh; // Full Screen
+    // session.sessionPreset = AVCaptureSessionPresetPhoto;
+    // session.sessionPreset = AVCaptureSessionPresetHigh; // Full Screen
+    session.sessionPreset = self.cameraSessionPreset; // Full Screen
 	[self setSession:session];
 	
 	// Setup the preview view
@@ -453,6 +479,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
         // -- Old code --
 //        [[[self stillImageOutput] connectionWithMediaType:AVMediaTypeVideo] setVideoOrientation:[[(AVCaptureVideoPreviewLayer *)[[self previewView] layer] connection] videoOrientation]];
         
+        // -- Xoay anh dung huong da chup -- 
         UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
         AVCaptureVideoOrientation avcaptureOrientation = [[(AVCaptureVideoPreviewLayer *)[[self previewView] layer] connection] videoOrientation];
         if ( deviceOrientation == UIDeviceOrientationLandscapeLeft)
@@ -473,14 +500,20 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 			{
 				NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
 				UIImage *image = [[UIImage alloc] initWithData:imageData];
-				[[[ALAssetsLibrary alloc] init] writeImageToSavedPhotosAlbum:[image CGImage]
-                                                                 orientation:(ALAssetOrientation)[image imageOrientation]
-                                                             completionBlock:^(NSURL *assetURL, NSError *error) {
-                    
-                                                                 // -- Call back --
-                                                                 // UIImagePNGRepresentation(image);
-                                                                 captureHandler(imageData, error);
-                }];
+                AVCamAssetLib *asset = [[AVCamAssetLib alloc] init];
+                [asset saveImage:image onCompletion:^{
+                    // -- Call back --
+                    // UIImagePNGRepresentation(image);
+                    captureHandler(imageData, error);
+                }];                
+//                [[[ALAssetsLibrary alloc] init] writeImageToSavedPhotosAlbum:[image CGImage]
+//                                                                 orientation:(ALAssetOrientation)[image imageOrientation]
+//                                                             completionBlock:^(NSURL *assetURL, NSError *error) {
+//
+//                                                                 // -- Call back --
+//                                                                 // UIImagePNGRepresentation(image);
+//                                                                 captureHandler(imageData, error);
+//                }];
             } else {
                 // -- Call back --
                 captureHandler(nil, error);
@@ -538,6 +571,45 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 }
 
 #pragma mark Device Configuration
+
+- (void)pinchToZoom:(UIPinchGestureRecognizer *)pinchGestureRecognizer
+{
+    // Here we multiply vZoomFactor with the previous zoom factor if it exist.
+    // Else just multiply by 1
+    CGFloat vZoomFactor = pinchGestureRecognizer.scale * _prevZoomFactor;
+    
+    // If the pinching has ended, update prevZoomFactor.
+    // Note that we set the limit at 1, because zoom factor cannot be less than 1 or the setting device.videoZoomFactor will crash
+    if (pinchGestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        _prevZoomFactor = vZoomFactor >= 1 ? vZoomFactor : 1;
+    }
+    
+    vZoomFactor = MIN(vZoomFactor, 3.5);
+    
+    [self setZoomFactor:vZoomFactor];
+}
+
+- (void)setZoomFactor:(CGFloat)zoomFactor
+{
+    dispatch_async([self sessionQueue], ^{
+        AVCaptureDevice *device = [[self videoDeviceInput] device];
+        NSError *error = nil;
+        if ([device lockForConfiguration:&error])
+        {
+            // NSLog(@"zoomFactor = %f", zoomFactor);
+            // NSLog(@"videoMaxZoomFactor = %f", device.activeFormat.videoMaxZoomFactor);
+            if (zoomFactor <= device.activeFormat.videoMaxZoomFactor) {
+                // Note that we set the limit at 1, because zoom factor cannot be less than 1 or the setting device.videoZoomFactor will crash
+                device.videoZoomFactor = MAX(zoomFactor, 1.0);
+            }
+            [device unlockForConfiguration];          
+        }
+        else
+        {
+            NSLog(@"%@", error);
+        }
+    });
+}
 
 - (void)focusWithMode:(AVCaptureFocusMode)focusMode exposeWithMode:(AVCaptureExposureMode)exposureMode atDevicePoint:(CGPoint)point monitorSubjectAreaChange:(BOOL)monitorSubjectAreaChange
 {

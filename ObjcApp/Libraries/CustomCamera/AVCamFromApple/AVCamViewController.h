@@ -52,11 +52,12 @@
 
 #import "AVCamPreviewView.h"
 #import "AVCameraFocusSquare.h"
-
+#import "AVCamAssetLib.h"
 
 @interface AVCamViewController : UIViewController
 
 @property (nonatomic, assign) BOOL isRecording;
+@property (nonatomic, assign) AVCaptureSessionPreset cameraSessionPreset;
 
 // For use in the storyboards.
 @property (nonatomic, weak) IBOutlet AVCamPreviewView *previewView;
@@ -72,6 +73,12 @@
 - (void)changeCamera:(void (^)(AVCaptureDevicePosition newPosition))completeHandler;
 - (void)capturePhoto:(void (^)(NSData *photoData, NSError *error))captureHandler;
 - (void)focusAndExposeTap:(UIGestureRecognizer *)gestureRecognizer;
+
+// -- Set zoom by pinchGesture --
+- (void)pinchToZoom:(UIPinchGestureRecognizer *)pinchGestureRecognizer;
+// -- Set zoom by number --
+- (void)setZoomFactor:(CGFloat)scale;
+
 
 
 
