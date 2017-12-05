@@ -7,6 +7,7 @@
 //
 
 #import "DbCameraViewController.h"
+#import <CoreMotion/CoreMotion.h>
 
 #import "Masonry.h"
 #import "DbImageCollectionViewCell.h"
@@ -15,7 +16,11 @@
 
 @import AVFoundation;
 
-@interface DbCameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
+@interface DbCameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate> {
+    UIInterfaceOrientation orientationLast;
+    UIDeviceOrientation orientationLastaaa;
+    CMMotionManager *motionManager;
+}
 
 @property (nonatomic, weak) IBOutlet UIImageView *cameraFrame;
 @property (nonatomic, weak) IBOutlet UIView *vwBottom;
@@ -33,10 +38,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Do any additional setup after loading the view from its nib.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:)
-                                                 name:UIDeviceOrientationDidChangeNotification  object:nil];
+    
+    if (!IS_SIMULATOR) { // Real device use CoreMotion Task - UIAccelerometer callback
+        // Initialize Motion Manager
+        [self initializeMotionManager];
+    } else {
+        // Do any additional setup after loading the view from its nib.
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:)
+                                                     name:UIDeviceOrientationDidChangeNotification object:nil];
+    }
     
     self.listImage = [[NSMutableArray alloc] init];
     self.listImageSelected = [[NSMutableArray alloc] init];
@@ -119,7 +129,7 @@
         [self addImagesToList:photoData];
         sender.enabled = YES;
         sender.selected = YES;
-    }];
+    } withInterfaceOrientation:orientationLast];
 }
 
 - (IBAction)btnFlash_Click:(id)sender
@@ -172,9 +182,23 @@
     
     // -- Crop Image Conform cameraFrame --
     CGSize imageSize = captureImage.size;
+    
     float scaleX = imageSize.width/self.view.frame.size.width;
+    // Capture image at UIDeviceOrientationLandscape Mode
+    if (imageSize.width > imageSize.height) {
+        scaleX = imageSize.height/self.view.frame.size.width;
+    }
+    
     CGSize itemSize = CGSizeMake(_cameraFrame.frame.size.width*scaleX, _cameraFrame.frame.size.height*scaleX);
+    
     CGRect imageRect = CGRectMake(_cameraFrame.frame.origin.x*scaleX, _cameraFrame.frame.origin.y*scaleX, itemSize.width, itemSize.height);
+    // Capture image at UIDeviceOrientationLandscape Mode
+    if (imageSize.width > imageSize.height) {
+        imageRect = CGRectMake(_cameraFrame.frame.origin.x*scaleX, _cameraFrame.frame.origin.y*scaleX, itemSize.height, itemSize.width);
+    }
+    
+    //    NSLog(@"imageRect = %@", NSStringFromCGRect(imageRect));
+    //    NSLog(@"captureImage.imageOrientation = %d", (int)captureImage.imageOrientation);
     
     UIImage *cropImage = [self cropImage:captureImage ToRect:imageRect orientation:captureImage.imageOrientation];
     
@@ -193,6 +217,7 @@
                               atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
 }
 
+
 - (void)setSelectedBtn
 {
     if([self.listImageSelected count] == 0) {
@@ -204,10 +229,12 @@
     }
 }
 
-- (CGAffineTransform)getCGAffineTransform:(UIDeviceOrientation)orientation
+//- (CGAffineTransform)getCGAffineTransform:(UIDeviceOrientation)orientation
+- (CGAffineTransform)getCGAffineTransform:(UIInterfaceOrientation)orientation
 {
-    if (orientation == UIDeviceOrientationUnknown)
-        orientation = [[UIDevice currentDevice] orientation];
+//    if (orientation == UIDeviceOrientationUnknown) {
+//        orientation = [[UIDevice currentDevice] orientation];
+//    }
     
     CGAffineTransform transform = self.view.transform;
     
@@ -221,6 +248,32 @@
         transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(-90));
     
     return transform;
+
+//    UIInterfaceOrientationUnknown            = UIDeviceOrientationUnknown,
+//    UIInterfaceOrientationPortrait           = UIDeviceOrientationPortrait,
+//    UIInterfaceOrientationPortraitUpsideDown = UIDeviceOrientationPortraitUpsideDown,
+//    UIInterfaceOrientationLandscapeLeft      = UIDeviceOrientationLandscapeRight,
+//    UIInterfaceOrientationLandscapeRight     = UIDeviceOrientationLandscapeLeft
+
+    
+    
+    
+//    if (orientation == UIDeviceOrientationUnknown) {
+//        orientation = [[UIDevice currentDevice] orientation];
+//    }
+//
+//    CGAffineTransform transform = self.view.transform;
+//
+//    if (orientation == UIDeviceOrientationPortraitUpsideDown)
+//        transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(180));
+//
+//    else if (orientation == UIDeviceOrientationLandscapeLeft)
+//        transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(90));
+//
+//    else if (orientation == UIDeviceOrientationLandscapeRight)
+//        transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(-90));
+//
+//    return transform;
 }
 
 - (UIImage *)cropImage:(UIImage*)img ToRect:(CGRect)rect orientation:(UIImageOrientation)orientation;
@@ -258,6 +311,24 @@
     return croppedImage;
 }
 
+// -- Debug orientation device --
+- (NSString*)orientationToText:(const UIInterfaceOrientation)ORIENTATION
+{
+    switch (ORIENTATION) {
+        case UIInterfaceOrientationPortrait:
+            return @"UIInterfaceOrientationPortrait";
+        case UIInterfaceOrientationPortraitUpsideDown:
+            return @"UIInterfaceOrientationPortraitUpsideDown";
+        case UIInterfaceOrientationLandscapeLeft:
+            return @"UIInterfaceOrientationLandscapeLeft";
+        case UIInterfaceOrientationLandscapeRight:
+            return @"UIInterfaceOrientationLandscapeRight";
+        case UIInterfaceOrientationUnknown:
+            return @"UIInterfaceOrientationUnknown";
+    }
+    return @"Unknown orientation!";
+}
+
 #pragma mark -
 #pragma mark Rotate Device
 #pragma mark -
@@ -284,6 +355,61 @@
 
 - (void)orientationChanged:(NSNotification *)notification
 {
+    // -- Only use for SIMULATOR --
+    orientationLast = [UIApplication sharedApplication].statusBarOrientation;
+    // Or UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    [self updateLayoutConstraints];
+}
+
+#pragma mark -
+#pragma mark CoreMotion Task - UIAccelerometer callback
+#pragma mark -
+
+- (void)initializeMotionManager
+{
+    motionManager = [[CMMotionManager alloc] init];
+    motionManager.accelerometerUpdateInterval = .2;
+    motionManager.gyroUpdateInterval = .2;
+    
+    [motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue]
+                                        withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
+                                            if (!error) {
+                                                [self outputAccelertionData:accelerometerData.acceleration];
+                                            }
+                                            else{
+                                                NSLog(@"%@", error);
+                                            }
+                                        }];
+}
+
+- (void)outputAccelertionData:(CMAcceleration)acceleration
+{
+    UIInterfaceOrientation orientationNew;
+    
+    if (acceleration.x >= 0.75) {
+        orientationNew = UIInterfaceOrientationLandscapeLeft;
+    }
+    else if (acceleration.x <= -0.75) {
+        orientationNew = UIInterfaceOrientationLandscapeRight;
+    }
+    else if (acceleration.y <= -0.75) {
+        orientationNew = UIInterfaceOrientationPortrait;
+    }
+    else if (acceleration.y >= 0.75) {
+        orientationNew = UIInterfaceOrientationPortraitUpsideDown;
+    }
+    else {
+        // Consider same as last time
+        return;
+    }
+    
+    if (orientationNew == orientationLast)
+        return;
+    
+    NSLog(@"Going from %@ to %@!", [self orientationToText:orientationLast], [self orientationToText:orientationNew]);
+    
+    orientationLast = orientationNew;
+    
     [self updateLayoutConstraints];
 }
 
@@ -304,7 +430,7 @@
     }
     
     // -- Rotate subview --
-    CGAffineTransform transform = [self getCGAffineTransform:UIDeviceOrientationUnknown];
+    CGAffineTransform transform = [self getCGAffineTransform:orientationLast];
     [cell setTransform:transform withAnimation:NO];
     
     return cell;
@@ -345,7 +471,7 @@
 - (void)updateLayoutConstraints
 {
     // -- Update images icon rotate --
-    CGAffineTransform transform = [self getCGAffineTransform:UIDeviceOrientationUnknown];
+    CGAffineTransform transform = [self getCGAffineTransform:orientationLast];
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
@@ -362,8 +488,8 @@
     }
     
     // -- Update constraint close button --
-    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-    if (orientation == UIInterfaceOrientationLandscapeLeft) {
+    // UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    if (orientationLast == UIInterfaceOrientationLandscapeLeft) {
         
         [self.btnClose mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(@30);
