@@ -12,6 +12,8 @@
 #import "Masonry.h"
 #import "DbImageCollectionViewCell.h"
 
+#define LIMIT_CAPTURE_IMAGES    10
+
 #define DegreesToRadians(x) (M_PI * x / 180.0)
 
 @import AVFoundation;
@@ -112,27 +114,34 @@
 - (IBAction)btnTakePhoto_Click:(UIButton *)sender
 {
     // -- Disable capture image button -- 
-    sender.enabled = NO;
-    sender.selected = NO;
+//    sender.enabled = NO;
+//    sender.selected = NO;
+    [self doButton:sender enabled:NO];
+    __weak typeof(self) weakSelf = self;
     
     if (IS_SIMULATOR) {
         UIImage *capturedImage = [UIImage imageNamed:@"demo_1.jpg"];
-        [self addImagesToList:UIImageJPEGRepresentation(capturedImage, 1.0)];
-        sender.enabled = YES;
-        sender.selected = YES;
+        [self addImagesToList:UIImageJPEGRepresentation(capturedImage, 1.0) withCompletionHandler:^{
+//            sender.enabled = YES;
+//            sender.selected = YES;
+            [weakSelf doButton:sender enabled:YES];
+        }];
         return;
     }
     
     [super capturePhoto:^(NSData *photoData, NSError *error) {
         if (error) {
             NSLog(@"DbCameraViewController [error] = %@", [error description]);
-            sender.enabled = YES;
-            sender.selected = YES;
+//            sender.enabled = YES;
+//            sender.selected = YES;
+            [weakSelf doButton:sender enabled:YES];
         }
         
-        [self addImagesToList:photoData];
-        sender.enabled = YES;
-        sender.selected = YES;
+        [self addImagesToList:photoData withCompletionHandler:^{
+//            sender.enabled = YES;
+//            sender.selected = YES;
+            [weakSelf doButton:sender enabled:YES];
+        }];
     } withInterfaceOrientation:(UIInterfaceOrientation)currentOrientation];
 }
 
@@ -180,7 +189,7 @@
 #pragma mark Private Functions
 #pragma mark -
 
-- (void)addImagesToList:(NSData *)photoData
+- (void)addImagesToList:(NSData *)photoData withCompletionHandler:(void (^)(void))completionHandler
 {
     UIImage *captureImage = [[UIImage alloc] initWithData:photoData];
     
@@ -219,17 +228,27 @@
     // -- Scroll to end --
     [_clvSelectedImage scrollToItemAtIndexPath:lastItem
                               atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
+    
+    if ([self.listImage count] >= LIMIT_CAPTURE_IMAGES) {
+        // -- Hide take button --
+        [self.btnTakePhoto setHidden:YES];
+    }
+    
+    if (completionHandler)
+        completionHandler();
 }
 
 
 - (void)setSelectedBtn
 {
     if([self.listImageSelected count] == 0) {
-        [self.btnSaveImage setSelected:NO];
-        [self.btnSaveImage setEnabled:NO];
+        [self doButton:self.btnSaveImage enabled:NO];
+//        [self.btnSaveImage setSelected:NO];
+//        [self.btnSaveImage setEnabled:NO];
     } else {
-        [self.btnSaveImage setSelected:YES];
-        [self.btnSaveImage setEnabled:YES];
+        [self doButton:self.btnSaveImage enabled:YES];
+//        [self.btnSaveImage setSelected:YES];
+//        [self.btnSaveImage setEnabled:YES];
     }
 }
 
@@ -304,6 +323,12 @@
             return @"UIDeviceOrientationUnknown";
     }
     return @"Unknown orientation!";
+}
+
+- (void)doButton:(UIButton *)button enabled:(BOOL)enabled
+{
+    button.enabled = enabled;
+    button.selected = enabled;
 }
 
 #pragma mark -

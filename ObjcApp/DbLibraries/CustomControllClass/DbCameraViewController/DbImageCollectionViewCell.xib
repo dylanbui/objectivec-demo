@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_checked" translatesAutoresizingMaskIntoConstraints="NO" id="Ytt-ov-sUo">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="db_ic_checked" translatesAutoresizingMaskIntoConstraints="NO" id="Ytt-ov-sUo">
                         <rect key="frame" x="50" y="50" width="21" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     </imageView>
@@ -35,7 +35,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="ic_checked" width="21" height="21"/>
+        <image name="db_ic_checked" width="16" height="16"/>
         <image name="main_gate_img.png" width="250" height="125"/>
     </resources>
 </document>
