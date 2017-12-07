@@ -22,33 +22,7 @@
 		BB1320E61FD930F8003CCCA3 /* DbImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB1320D71FD930F8003CCCA3 /* DbImageCollectionViewCell.xib */; };
 		BB1320E71FD930F8003CCCA3 /* DbBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1320D91FD930F8003CCCA3 /* DbBarButtonItem.m */; };
 		BB1320E81FD930F8003CCCA3 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1320DB1FD930F8003CCCA3 /* UIBarButtonItem+Badge.m */; };
-		BB1320FA1FD9310C003CCCA3 /* db_camera-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320EA1FD9310C003CCCA3 /* db_camera-icon.png */; };
-		BB1320FB1FD9310C003CCCA3 /* db_camera-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320EB1FD9310C003CCCA3 /* db_camera-icon@2x.png */; };
-		BB1320FC1FD9310C003CCCA3 /* db_camera_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320EC1FD9310C003CCCA3 /* db_camera_btn.png */; };
-		BB1320FD1FD9310C003CCCA3 /* db_camera_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320ED1FD9310C003CCCA3 /* db_camera_btn@2x.png */; };
-		BB1320FE1FD9310C003CCCA3 /* db_camera_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320EE1FD9310C003CCCA3 /* db_camera_frame.png */; };
-		BB1320FF1FD9310C003CCCA3 /* db_camera_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320EF1FD9310C003CCCA3 /* db_camera_frame@2x.png */; };
-		BB1321001FD9310C003CCCA3 /* db_flash_off.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320F01FD9310C003CCCA3 /* db_flash_off.png */; };
-		BB1321011FD9310C003CCCA3 /* db_flash_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320F11FD9310C003CCCA3 /* db_flash_off@2x.png */; };
-		BB1321021FD9310C003CCCA3 /* db_flash_on.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320F21FD9310C003CCCA3 /* db_flash_on.png */; };
-		BB1321031FD9310C003CCCA3 /* db_flash_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320F31FD9310C003CCCA3 /* db_flash_on@2x.png */; };
-		BB1321041FD9310C003CCCA3 /* db_ic_close_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320F41FD9310C003CCCA3 /* db_ic_close_camera.png */; };
-		BB1321051FD9310C003CCCA3 /* db_ic_close_camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320F51FD9310C003CCCA3 /* db_ic_close_camera@2x.png */; };
-		BB1321061FD9310C003CCCA3 /* db_save_img_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320F61FD9310C003CCCA3 /* db_save_img_btn.png */; };
-		BB1321071FD9310C003CCCA3 /* db_save_img_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320F71FD9310C003CCCA3 /* db_save_img_btn@2x.png */; };
-		BB1321081FD9310C003CCCA3 /* db_save_img_btn_unable.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320F81FD9310C003CCCA3 /* db_save_img_btn_unable.png */; };
-		BB1321091FD9310C003CCCA3 /* db_save_img_btn_unable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1320F91FD9310C003CCCA3 /* db_save_img_btn_unable@2x.png */; };
-		BB13210C1FD93211003CCCA3 /* db_ic_checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB13210A1FD93210003CCCA3 /* db_ic_checked@2x.png */; };
-		BB13210D1FD93211003CCCA3 /* db_ic_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = BB13210B1FD93211003CCCA3 /* db_ic_checked.png */; };
-		BB1321171FD932B0003CCCA3 /* db_flash_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB13210E1FD932AE003CCCA3 /* db_flash_off@3x.png */; };
-		BB1321181FD932B0003CCCA3 /* db_flash_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB13210F1FD932AE003CCCA3 /* db_flash_on@3x.png */; };
-		BB1321191FD932B0003CCCA3 /* db_ic_checked@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1321101FD932AE003CCCA3 /* db_ic_checked@3x.png */; };
-		BB13211A1FD932B0003CCCA3 /* db_save_img_btn_unable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1321111FD932AF003CCCA3 /* db_save_img_btn_unable@3x.png */; };
-		BB13211B1FD932B0003CCCA3 /* db_camera-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1321121FD932AF003CCCA3 /* db_camera-icon@3x.png */; };
-		BB13211C1FD932B0003CCCA3 /* db_camera_frame@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1321131FD932AF003CCCA3 /* db_camera_frame@3x.png */; };
-		BB13211D1FD932B0003CCCA3 /* db_ic_close_camera@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1321141FD932AF003CCCA3 /* db_ic_close_camera@3x.png */; };
-		BB13211E1FD932B0003CCCA3 /* db_camera_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1321151FD932AF003CCCA3 /* db_camera_btn@3x.png */; };
-		BB13211F1FD932B0003CCCA3 /* db_save_img_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB1321161FD932B0003CCCA3 /* db_save_img_btn@3x.png */; };
+		BB1321211FD93406003CCCA3 /* DbAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1321201FD93406003CCCA3 /* DbAssets.xcassets */; };
 		BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC901F51DE330005372B /* TableExpandCellViewController.m */; };
 		BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */; };
 		BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC951F51DE850005372B /* ExpandViewCell.m */; };
@@ -62,12 +36,6 @@
 		BB3912FE1F8BE557002F1CE1 /* SLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3912FC1F8BE557002F1CE1 /* SLTableViewCell.m */; };
 		BB3912FF1F8BE557002F1CE1 /* SLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB3912FD1F8BE557002F1CE1 /* SLTableViewCell.xib */; };
 		BB3FC34C1FC957DA000D37F2 /* DbErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3FC34A1FC957DA000D37F2 /* DbErrorView.m */; };
-		BB3FC3551FC958AE000D37F2 /* db_ic_empty_data.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3FC34F1FC958AE000D37F2 /* db_ic_empty_data.png */; };
-		BB3FC3561FC958AE000D37F2 /* db_ic_empty_data@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3FC3501FC958AE000D37F2 /* db_ic_empty_data@2x.png */; };
-		BB3FC3571FC958AE000D37F2 /* db_ic_empty_data@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3FC3511FC958AE000D37F2 /* db_ic_empty_data@3x.png */; };
-		BB3FC3581FC958AE000D37F2 /* db_ic_error_wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3FC3521FC958AE000D37F2 /* db_ic_error_wifi.png */; };
-		BB3FC3591FC958AE000D37F2 /* db_ic_error_wifi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3FC3531FC958AE000D37F2 /* db_ic_error_wifi@2x.png */; };
-		BB3FC35A1FC958AE000D37F2 /* db_ic_error_wifi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3FC3541FC958AE000D37F2 /* db_ic_error_wifi@3x.png */; };
 		BB4A3A691F814E3E0040CC61 /* TBFiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4A3A671F814E3E0040CC61 /* TBFiveViewController.m */; };
 		BB4A3A6A1F814E3E0040CC61 /* TBFiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4A3A681F814E3E0040CC61 /* TBFiveViewController.xib */; };
 		BB4FD3BB1F4429E200C082C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3BA1F4429E200C082C3 /* main.m */; };
@@ -282,33 +250,7 @@
 		BB1320D91FD930F8003CCCA3 /* DbBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbBarButtonItem.m; sourceTree = "<group>"; };
 		BB1320DA1FD930F8003CCCA3 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
 		BB1320DB1FD930F8003CCCA3 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
-		BB1320EA1FD9310C003CCCA3 /* db_camera-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_camera-icon.png"; sourceTree = "<group>"; };
-		BB1320EB1FD9310C003CCCA3 /* db_camera-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_camera-icon@2x.png"; sourceTree = "<group>"; };
-		BB1320EC1FD9310C003CCCA3 /* db_camera_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_camera_btn.png; sourceTree = "<group>"; };
-		BB1320ED1FD9310C003CCCA3 /* db_camera_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_camera_btn@2x.png"; sourceTree = "<group>"; };
-		BB1320EE1FD9310C003CCCA3 /* db_camera_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_camera_frame.png; sourceTree = "<group>"; };
-		BB1320EF1FD9310C003CCCA3 /* db_camera_frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_camera_frame@2x.png"; sourceTree = "<group>"; };
-		BB1320F01FD9310C003CCCA3 /* db_flash_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_flash_off.png; sourceTree = "<group>"; };
-		BB1320F11FD9310C003CCCA3 /* db_flash_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_flash_off@2x.png"; sourceTree = "<group>"; };
-		BB1320F21FD9310C003CCCA3 /* db_flash_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_flash_on.png; sourceTree = "<group>"; };
-		BB1320F31FD9310C003CCCA3 /* db_flash_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_flash_on@2x.png"; sourceTree = "<group>"; };
-		BB1320F41FD9310C003CCCA3 /* db_ic_close_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_ic_close_camera.png; sourceTree = "<group>"; };
-		BB1320F51FD9310C003CCCA3 /* db_ic_close_camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_ic_close_camera@2x.png"; sourceTree = "<group>"; };
-		BB1320F61FD9310C003CCCA3 /* db_save_img_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_save_img_btn.png; sourceTree = "<group>"; };
-		BB1320F71FD9310C003CCCA3 /* db_save_img_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_save_img_btn@2x.png"; sourceTree = "<group>"; };
-		BB1320F81FD9310C003CCCA3 /* db_save_img_btn_unable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_save_img_btn_unable.png; sourceTree = "<group>"; };
-		BB1320F91FD9310C003CCCA3 /* db_save_img_btn_unable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_save_img_btn_unable@2x.png"; sourceTree = "<group>"; };
-		BB13210A1FD93210003CCCA3 /* db_ic_checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_ic_checked@2x.png"; sourceTree = "<group>"; };
-		BB13210B1FD93211003CCCA3 /* db_ic_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_ic_checked.png; sourceTree = "<group>"; };
-		BB13210E1FD932AE003CCCA3 /* db_flash_off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_flash_off@3x.png"; sourceTree = "<group>"; };
-		BB13210F1FD932AE003CCCA3 /* db_flash_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_flash_on@3x.png"; sourceTree = "<group>"; };
-		BB1321101FD932AE003CCCA3 /* db_ic_checked@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_ic_checked@3x.png"; sourceTree = "<group>"; };
-		BB1321111FD932AF003CCCA3 /* db_save_img_btn_unable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_save_img_btn_unable@3x.png"; sourceTree = "<group>"; };
-		BB1321121FD932AF003CCCA3 /* db_camera-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_camera-icon@3x.png"; sourceTree = "<group>"; };
-		BB1321131FD932AF003CCCA3 /* db_camera_frame@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_camera_frame@3x.png"; sourceTree = "<group>"; };
-		BB1321141FD932AF003CCCA3 /* db_ic_close_camera@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_ic_close_camera@3x.png"; sourceTree = "<group>"; };
-		BB1321151FD932AF003CCCA3 /* db_camera_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_camera_btn@3x.png"; sourceTree = "<group>"; };
-		BB1321161FD932B0003CCCA3 /* db_save_img_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_save_img_btn@3x.png"; sourceTree = "<group>"; };
+		BB1321201FD93406003CCCA3 /* DbAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DbAssets.xcassets; sourceTree = "<group>"; };
 		BB25FC8F1F51DE330005372B /* TableExpandCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableExpandCellViewController.h; sourceTree = "<group>"; };
 		BB25FC901F51DE330005372B /* TableExpandCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableExpandCellViewController.m; sourceTree = "<group>"; };
 		BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableExpandCellViewController.xib; sourceTree = "<group>"; };
@@ -329,12 +271,6 @@
 		BB3912FD1F8BE557002F1CE1 /* SLTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLTableViewCell.xib; sourceTree = "<group>"; };
 		BB3FC3491FC957DA000D37F2 /* DbErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbErrorView.h; sourceTree = "<group>"; };
 		BB3FC34A1FC957DA000D37F2 /* DbErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbErrorView.m; sourceTree = "<group>"; };
-		BB3FC34F1FC958AE000D37F2 /* db_ic_empty_data.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_ic_empty_data.png; sourceTree = "<group>"; };
-		BB3FC3501FC958AE000D37F2 /* db_ic_empty_data@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_ic_empty_data@2x.png"; sourceTree = "<group>"; };
-		BB3FC3511FC958AE000D37F2 /* db_ic_empty_data@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_ic_empty_data@3x.png"; sourceTree = "<group>"; };
-		BB3FC3521FC958AE000D37F2 /* db_ic_error_wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db_ic_error_wifi.png; sourceTree = "<group>"; };
-		BB3FC3531FC958AE000D37F2 /* db_ic_error_wifi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_ic_error_wifi@2x.png"; sourceTree = "<group>"; };
-		BB3FC3541FC958AE000D37F2 /* db_ic_error_wifi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "db_ic_error_wifi@3x.png"; sourceTree = "<group>"; };
 		BB4A3A661F814E3E0040CC61 /* TBFiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBFiveViewController.h; sourceTree = "<group>"; };
 		BB4A3A671F814E3E0040CC61 /* TBFiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBFiveViewController.m; sourceTree = "<group>"; };
 		BB4A3A681F814E3E0040CC61 /* TBFiveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBFiveViewController.xib; sourceTree = "<group>"; };
@@ -674,40 +610,6 @@
 			path = AVCamFromApple;
 			sourceTree = "<group>";
 		};
-		BB1320E91FD9310C003CCCA3 /* _camera */ = {
-			isa = PBXGroup;
-			children = (
-				BB1321151FD932AF003CCCA3 /* db_camera_btn@3x.png */,
-				BB1321131FD932AF003CCCA3 /* db_camera_frame@3x.png */,
-				BB1321121FD932AF003CCCA3 /* db_camera-icon@3x.png */,
-				BB13210E1FD932AE003CCCA3 /* db_flash_off@3x.png */,
-				BB13210F1FD932AE003CCCA3 /* db_flash_on@3x.png */,
-				BB1321101FD932AE003CCCA3 /* db_ic_checked@3x.png */,
-				BB1321141FD932AF003CCCA3 /* db_ic_close_camera@3x.png */,
-				BB1321111FD932AF003CCCA3 /* db_save_img_btn_unable@3x.png */,
-				BB1321161FD932B0003CCCA3 /* db_save_img_btn@3x.png */,
-				BB13210B1FD93211003CCCA3 /* db_ic_checked.png */,
-				BB13210A1FD93210003CCCA3 /* db_ic_checked@2x.png */,
-				BB1320EA1FD9310C003CCCA3 /* db_camera-icon.png */,
-				BB1320EB1FD9310C003CCCA3 /* db_camera-icon@2x.png */,
-				BB1320EC1FD9310C003CCCA3 /* db_camera_btn.png */,
-				BB1320ED1FD9310C003CCCA3 /* db_camera_btn@2x.png */,
-				BB1320EE1FD9310C003CCCA3 /* db_camera_frame.png */,
-				BB1320EF1FD9310C003CCCA3 /* db_camera_frame@2x.png */,
-				BB1320F01FD9310C003CCCA3 /* db_flash_off.png */,
-				BB1320F11FD9310C003CCCA3 /* db_flash_off@2x.png */,
-				BB1320F21FD9310C003CCCA3 /* db_flash_on.png */,
-				BB1320F31FD9310C003CCCA3 /* db_flash_on@2x.png */,
-				BB1320F41FD9310C003CCCA3 /* db_ic_close_camera.png */,
-				BB1320F51FD9310C003CCCA3 /* db_ic_close_camera@2x.png */,
-				BB1320F61FD9310C003CCCA3 /* db_save_img_btn.png */,
-				BB1320F71FD9310C003CCCA3 /* db_save_img_btn@2x.png */,
-				BB1320F81FD9310C003CCCA3 /* db_save_img_btn_unable.png */,
-				BB1320F91FD9310C003CCCA3 /* db_save_img_btn_unable@2x.png */,
-			);
-			path = _camera;
-			sourceTree = "<group>";
-		};
 		BB25FC8D1F51DE090005372B /* Demo-TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,13 +675,6 @@
 		BB3FC34E1FC958AE000D37F2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BB1320E91FD9310C003CCCA3 /* _camera */,
-				BB3FC34F1FC958AE000D37F2 /* db_ic_empty_data.png */,
-				BB3FC3501FC958AE000D37F2 /* db_ic_empty_data@2x.png */,
-				BB3FC3511FC958AE000D37F2 /* db_ic_empty_data@3x.png */,
-				BB3FC3521FC958AE000D37F2 /* db_ic_error_wifi.png */,
-				BB3FC3531FC958AE000D37F2 /* db_ic_error_wifi@2x.png */,
-				BB3FC3541FC958AE000D37F2 /* db_ic_error_wifi@3x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -876,6 +771,7 @@
 				BB4FD40E1F442AEE00C082C3 /* BaseClass */,
 				BB4FD4211F442AEE00C082C3 /* Utils */,
 				BB4FD42C1F442AEE00C082C3 /* WebConnection */,
+				BB1321201FD93406003CCCA3 /* DbAssets.xcassets */,
 			);
 			path = DbLibraries;
 			sourceTree = "<group>";
@@ -1603,7 +1499,6 @@
 				BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */,
 				BB4FD48D1F442AEE00C082C3 /* apnumberpad_backspace_icon.png in Resources */,
 				BB4FD4B61F442C8A00C082C3 /* FontAwesome.ttf in Resources */,
-				BB13211A1FD932B0003CCCA3 /* db_save_img_btn_unable@3x.png in Resources */,
 				BBEDC4321FBC3EEA000317FD /* slider-default-trackCrossedOver.png in Resources */,
 				BBD99B311F7CD7BD004B20AF /* TBTwoViewController.xib in Resources */,
 				BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */,
@@ -1613,10 +1508,7 @@
 				BBEDC43A1FBC3EEA000317FD /* slider-default7-trackBackground@2x.png in Resources */,
 				BBF1BD701FAC81300081E179 /* MapDrawingViewController.xib in Resources */,
 				BBB751EA1FCE9F87000E5A03 /* main_gate_img.png in Resources */,
-				BB3FC3561FC958AE000D37F2 /* db_ic_empty_data@2x.png in Resources */,
-				BB1321071FD9310C003CCCA3 /* db_save_img_btn@2x.png in Resources */,
 				BB4FD4BF1F442C8A00C082C3 /* OpenSans-Semibold.ttf in Resources */,
-				BB1320FA1FD9310C003CCCA3 /* db_camera-icon.png in Resources */,
 				BBEDC4351FBC3EEA000317FD /* slider-default7-handle.png in Resources */,
 				BB3912FF1F8BE557002F1CE1 /* SLTableViewCell.xib in Resources */,
 				BBEDC4331FBC3EEA000317FD /* slider-default-trackCrossedOver@2x.png in Resources */,
@@ -1631,31 +1523,22 @@
 				BBEDC43C1FBC3EEA000317FD /* slider-default7-trackCrossedOver@2x.png in Resources */,
 				BBEDC4341FBC3EEA000317FD /* slider-default_trackBackground@2x.png in Resources */,
 				BBEDC4551FBC543C000317FD /* db_slider_text_bg@2x.png in Resources */,
-				BB1321031FD9310C003CCCA3 /* db_flash_on@2x.png in Resources */,
 				BBEDC43B1FBC3EEA000317FD /* slider-default7-trackCrossedOver.png in Resources */,
-				BB3FC35A1FC958AE000D37F2 /* db_ic_error_wifi@3x.png in Resources */,
-				BB13211E1FD932B0003CCCA3 /* db_camera_btn@3x.png in Resources */,
 				BBEDC4591FBC543C000317FD /* db_slider_text_bg.png in Resources */,
 				BB4FD48E1F442AEE00C082C3 /* apnumberpad_backspace_icon@2x.png in Resources */,
 				BB4FD4DA1F443FEE00C082C3 /* NavigationBarView.xib in Resources */,
-				BB13210C1FD93211003CCCA3 /* db_ic_checked@2x.png in Resources */,
 				BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */,
-				BB1321081FD9310C003CCCA3 /* db_save_img_btn_unable.png in Resources */,
 				BB4FD4BD1F442C8A00C082C3 /* OpenSans-LightItalic.ttf in Resources */,
 				BB4FD4C01F442C8A00C082C3 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				BB4FD4D01F443BC100C082C3 /* CoursesViewController.xib in Resources */,
-				BB13211C1FD932B0003CCCA3 /* db_camera_frame@3x.png in Resources */,
 				BB121DF01F85DEAD0053171B /* PTPhotoViewController.xib in Resources */,
-				BB1321091FD9310C003CCCA3 /* db_save_img_btn_unable@2x.png in Resources */,
+				BB1321211FD93406003CCCA3 /* DbAssets.xcassets in Resources */,
 				BBEDC4401FBC3EEA000317FD /* slider-metal-handle@2x.png in Resources */,
 				BB4FD4BA1F442C8A00C082C3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
-				BB1321041FD9310C003CCCA3 /* db_ic_close_camera.png in Resources */,
-				BB3FC3591FC958AE000D37F2 /* db_ic_error_wifi@2x.png in Resources */,
 				BBEDC42E1FBC3EEA000317FD /* slider-default-handle@2x.png in Resources */,
 				BBB751E71FCE9F87000E5A03 /* main_gate@2x.png in Resources */,
 				BBD99B361F7CD7CF004B20AF /* TBThreeViewController.xib in Resources */,
 				BBEDC4361FBC3EEA000317FD /* slider-default7-handle@2x.png in Resources */,
-				BB1321011FD9310C003CCCA3 /* db_flash_off@2x.png in Resources */,
 				BB25FC9A1F51DFC20005372B /* artists.json in Resources */,
 				BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */,
 				BBEDC42D1FBC3EEA000317FD /* slider-default-handle.png in Resources */,
@@ -1663,44 +1546,31 @@
 				BBEDC43F1FBC3EEA000317FD /* slider-metal-handle.png in Resources */,
 				BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */,
 				BBB751E81FCE9F87000E5A03 /* main_gate.png in Resources */,
-				BB13211F1FD932B0003CCCA3 /* db_save_img_btn@3x.png in Resources */,
 				BBEDC4581FBC543C000317FD /* db_slider_handle@3x.png in Resources */,
-				BB1320FF1FD9310C003CCCA3 /* db_camera_frame@2x.png in Resources */,
 				BBB752061FCEAA76000E5A03 /* demo_2.jpg in Resources */,
 				BB9A74351FD80BBE004BEE9D /* UploadFileViewController.xib in Resources */,
 				BB4FD4D21F443BC100C082C3 /* DetailCoursesViewController.xib in Resources */,
-				BB1321051FD9310C003CCCA3 /* db_ic_close_camera@2x.png in Resources */,
-				BB13210D1FD93211003CCCA3 /* db_ic_checked.png in Resources */,
 				BB4FD4D41F443BC100C082C3 /* PathsViewController.xib in Resources */,
 				BBDBD8FB1F6A9A97009C9340 /* KeyboardViewController.xib in Resources */,
 				BB4FD4A11F442AEE00C082C3 /* ic_show_password@2x.png in Resources */,
-				BB1321181FD932B0003CCCA3 /* db_flash_on@3x.png in Resources */,
 				BBEDC42B1FBC3EEA000317FD /* slider-default-handle-highlighted.png in Resources */,
-				BB13211B1FD932B0003CCCA3 /* db_camera-icon@3x.png in Resources */,
 				BB4FD4BB1F442C8A00C082C3 /* OpenSans-Italic.ttf in Resources */,
 				BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */,
-				BB3FC3551FC958AE000D37F2 /* db_ic_empty_data.png in Resources */,
 				BBEDC42F1FBC3EEA000317FD /* slider-default-track.png in Resources */,
 				BBEDC45A1FBC543C000317FD /* db_slider_handle@2x.png in Resources */,
 				BBEDC4391FBC3EEA000317FD /* slider-default7-trackBackground.png in Resources */,
 				BB4FD4B81F442C8A00C082C3 /* OpenSans-BoldItalic.ttf in Resources */,
 				BBEDC4571FBC543C000317FD /* db_slider_handle.png in Resources */,
-				BB1320FE1FD9310C003CCCA3 /* db_camera_frame.png in Resources */,
 				BB4FD4B91F442C8A00C082C3 /* OpenSans-ExtraBold.ttf in Resources */,
 				BB79D8631F95B45100A0A7C2 /* ViewController.xib in Resources */,
-				BB1321001FD9310C003CCCA3 /* db_flash_off.png in Resources */,
 				BBEDC4431FBC3EEA000317FD /* slider-metal-trackBackground.png in Resources */,
 				BBEDC4421FBC3EEA000317FD /* slider-metal-track@2x.png in Resources */,
 				BB4FD49E1F442AEE00C082C3 /* ic_hide_password.png in Resources */,
-				BB1321171FD932B0003CCCA3 /* db_flash_off@3x.png in Resources */,
 				BB1320E61FD930F8003CCCA3 /* DbImageCollectionViewCell.xib in Resources */,
 				BB4FD48F1F442AEE00C082C3 /* apnumberpad_backspace_icon@3x.png in Resources */,
-				BB1320FC1FD9310C003CCCA3 /* db_camera_btn.png in Resources */,
 				BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */,
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
 				BBB752071FCEAA76000E5A03 /* demo_1.jpg in Resources */,
-				BB3FC3571FC958AE000D37F2 /* db_ic_empty_data@3x.png in Resources */,
-				BB1320FD1FD9310C003CCCA3 /* db_camera_btn@2x.png in Resources */,
 				BBEDC44E1FBC4060000317FD /* RangeSliderViewController.xib in Resources */,
 				BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */,
 				BB8DCAF21FB16CB800AB337B /* PriceMapIntroView.xib in Resources */,
@@ -1714,18 +1584,12 @@
 				BB1320E41FD930F8003CCCA3 /* DbCameraViewController.xib in Resources */,
 				BBEDC4371FBC3EEA000317FD /* slider-default7-track.png in Resources */,
 				BBD99B2C1F7CD791004B20AF /* TBOneViewController.xib in Resources */,
-				BB1320FB1FD9310C003CCCA3 /* db_camera-icon@2x.png in Resources */,
 				BB25FC981F51DE850005372B /* ExpandViewCell.xib in Resources */,
-				BB3FC3581FC958AE000D37F2 /* db_ic_error_wifi.png in Resources */,
-				BB1321191FD932B0003CCCA3 /* db_ic_checked@3x.png in Resources */,
 				BBD107701FCFA74A0009BAB1 /* AutoLayoutViewController.xib in Resources */,
-				BB13211D1FD932B0003CCCA3 /* db_ic_close_camera@3x.png in Resources */,
-				BB1321021FD9310C003CCCA3 /* db_flash_on.png in Resources */,
 				BB4FD49F1F442AEE00C082C3 /* ic_hide_password@2x.png in Resources */,
 				BBD99B3B1F7CD7DE004B20AF /* TBFourViewController.xib in Resources */,
 				BBEDC42C1FBC3EEA000317FD /* slider-default-handle-highlighted@2x.png in Resources */,
 				BBEDC4381FBC3EEA000317FD /* slider-default7-track@2x.png in Resources */,
-				BB1321061FD9310C003CCCA3 /* db_save_img_btn.png in Resources */,
 				BB121DF51F861A200053171B /* PTPhotoDetailViewController.xib in Resources */,
 				BBF2E8C81F548ED800064035 /* TaskTableViewHeader.xib in Resources */,
 			);

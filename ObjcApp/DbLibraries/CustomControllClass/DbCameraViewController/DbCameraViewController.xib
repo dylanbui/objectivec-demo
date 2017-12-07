@@ -116,11 +116,11 @@
         </view>
     </objects>
     <resources>
-        <image name="db_camera_btn" width="16" height="16"/>
-        <image name="db_camera_frame" width="16" height="16"/>
-        <image name="db_flash_off" width="16" height="16"/>
-        <image name="db_ic_close_camera" width="16" height="16"/>
-        <image name="db_save_img_btn_unable" width="16" height="16"/>
+        <image name="db_camera_btn" width="70" height="70"/>
+        <image name="db_camera_frame" width="342" height="215"/>
+        <image name="db_flash_off" width="35" height="35"/>
+        <image name="db_ic_close_camera" width="35" height="34"/>
+        <image name="db_save_img_btn_unable" width="35" height="35"/>
         <image name="flash_on" width="35" height="35"/>
         <image name="save_img_btn" width="35" height="35"/>
     </resources>
