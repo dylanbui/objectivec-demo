@@ -21,24 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piI-O1-0Fw">
-                    <rect key="frame" x="210" y="289" width="50" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Upload"/>
-                    <connections>
-                        <action selector="btnDoUpoad_Click:" destination="-1" eventType="touchUpInside" id="cut-cf-z1C"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY1-bF-qKR">
-                    <rect key="frame" x="107" y="289" width="53" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Choose"/>
-                    <connections>
-                        <action selector="btnChooseImage_Click:" destination="-1" eventType="touchUpInside" id="WCz-pA-Rdh"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="demo_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="in2-Ms-wwx">
-                    <rect key="frame" x="87" y="50" width="200" height="200"/>
+                    <rect key="frame" x="87" y="70" width="200" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vDn-gQ-vlP">
@@ -55,6 +39,14 @@
                     <state key="normal" title="Post Data"/>
                     <connections>
                         <action selector="btnDoPost_Click:" destination="-1" eventType="touchUpInside" id="o7E-Gv-Wro"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piI-O1-0Fw">
+                    <rect key="frame" x="128" y="300" width="125" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Upload"/>
+                    <connections>
+                        <action selector="btnDoUpoad_Click:" destination="-1" eventType="touchUpInside" id="cut-cf-z1C"/>
                     </connections>
                 </button>
             </subviews>

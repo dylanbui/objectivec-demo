@@ -10,6 +10,9 @@
 #import "CropPhotoViewController.h"
 #import "UIImage+Resize.h"
 
+#import "DbBarButtonItem.h"
+#import "UIBarButtonItem+Badge.h"
+
 @interface UploadFileViewController ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *imgUpload;
@@ -24,13 +27,25 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    DbBarButtonItem *btiCapture = [DbBarButtonItem barItemWithImage:[UIImage imageNamed:@"db_camera-icon"]
+                                                      selectedImage:[UIImage imageNamed:@"db_camera-icon"]
+                                                             target:self action:@selector(btnChooseImage_Click:)];
+    btiCapture.badgeBGColor = [UIColor grayColor];
+    btiCapture.badgeTextColor = [UIColor whiteColor];
+    
+    self.navigationItem.rightBarButtonItem = btiCapture;
 }
 
 - (IBAction)btnChooseImage_Click:(id)sender
 {
+    UIBarButtonItem *btiCapture = self.navigationItem.rightBarButtonItem;
+    
     CropPhotoViewController *vclCropPhoto = [CropPhotoViewController sharedInstance];
     vclCropPhoto.didCropToImage = ^(UIImage * _Nonnull image, CGRect cropRect, NSInteger angle){
         self.imgUpload.image = [image cropCenterToSize:AVATAR_SIZE];
+        btiCapture.tag = btiCapture.tag + 1;
+        btiCapture.badgeValue = [NSString stringWithFormat:@"%d", (int)btiCapture.tag];
     };
     [[DbUtils getTopViewController] presentViewController:vclCropPhoto animated:YES completion:nil];
 }
