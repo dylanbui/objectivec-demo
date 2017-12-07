@@ -72,6 +72,7 @@
 
 - (void)changeCamera:(void (^)(AVCaptureDevicePosition newPosition))completeHandler;
 - (void)capturePhoto:(void (^)(NSData *photoData, NSError *error))captureHandler;
+- (void)capturePhoto:(void (^)(NSData *photoData, NSError *error))captureHandler withInterfaceOrientation:(UIInterfaceOrientation)deviceOrientation;
 - (void)focusAndExposeTap:(UIGestureRecognizer *)gestureRecognizer;
 
 // -- Set zoom by pinchGesture --

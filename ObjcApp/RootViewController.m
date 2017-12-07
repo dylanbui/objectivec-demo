@@ -16,6 +16,7 @@
 
 #import "DemoMyCameraViewController.h"
 #import "AutoLayoutViewController.h"
+#import "UploadFileViewController.h"
 
 @interface RootViewController ()
 
@@ -47,7 +48,8 @@
     //DemoMyCameraViewController *vcFirst = [[DemoMyCameraViewController alloc] init];
 //    [vcFirst.navigationItem setHidesBackButton:YES animated:NO];
 //    AutoLayoutViewController *vcFirst = [[AutoLayoutViewController alloc] init];
-    DemoMyCameraViewController *vcFirst = [[DemoMyCameraViewController alloc] init];
+    // DemoMyCameraViewController *vcFirst = [[DemoMyCameraViewController alloc] init];
+    UploadFileViewController *vcFirst = [[UploadFileViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 

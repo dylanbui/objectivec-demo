@@ -470,6 +470,12 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 
 - (void)capturePhoto:(void (^)(NSData *photoData, NSError *error))captureHandler
 {
+    [self capturePhoto:captureHandler withInterfaceOrientation:[UIApplication sharedApplication].statusBarOrientation];
+    // Or UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+}
+
+- (void)capturePhoto:(void (^)(NSData *photoData, NSError *error))captureHandler withInterfaceOrientation:(UIInterfaceOrientation)deviceOrientation
+{
     // -- Recording dont snap image -- 
     if (self.isRecording)
         return;
@@ -479,8 +485,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
         // -- Old code --
 //        [[[self stillImageOutput] connectionWithMediaType:AVMediaTypeVideo] setVideoOrientation:[[(AVCaptureVideoPreviewLayer *)[[self previewView] layer] connection] videoOrientation]];
         
-        // -- Xoay anh dung huong da chup -- 
-        UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
+        // -- Xoay anh dung huong da chup ve Portrait Mode giong anh trong photo --
         AVCaptureVideoOrientation avcaptureOrientation = [[(AVCaptureVideoPreviewLayer *)[[self previewView] layer] connection] videoOrientation];
         if ( deviceOrientation == UIDeviceOrientationLandscapeLeft)
             avcaptureOrientation  = AVCaptureVideoOrientationLandscapeRight;

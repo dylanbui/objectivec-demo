@@ -17,8 +17,7 @@
 @import AVFoundation;
 
 @interface DbCameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate> {
-    UIInterfaceOrientation orientationLast;
-    UIDeviceOrientation orientationLastaaa;
+    UIDeviceOrientation currentOrientation;
     CMMotionManager *motionManager;
 }
 
@@ -38,13 +37,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    
+    // -- Dont run when lock portrait orientation of device, but run on simulator -- 
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationOrientationChanged:)
+//                                                 name:UIDeviceOrientationDidChangeNotification object:nil];
     
     if (!IS_SIMULATOR) { // Real device use CoreMotion Task - UIAccelerometer callback
         // Initialize Motion Manager
         [self initializeMotionManager];
     } else {
         // Do any additional setup after loading the view from its nib.
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:)
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationOrientationChanged:)
                                                      name:UIDeviceOrientationDidChangeNotification object:nil];
     }
     
@@ -129,7 +133,7 @@
         [self addImagesToList:photoData];
         sender.enabled = YES;
         sender.selected = YES;
-    } withInterfaceOrientation:orientationLast];
+    } withInterfaceOrientation:(UIInterfaceOrientation)currentOrientation];
 }
 
 - (IBAction)btnFlash_Click:(id)sender
@@ -229,13 +233,8 @@
     }
 }
 
-//- (CGAffineTransform)getCGAffineTransform:(UIDeviceOrientation)orientation
-- (CGAffineTransform)getCGAffineTransform:(UIInterfaceOrientation)orientation
+- (CGAffineTransform)getCGAffineTransform:(UIDeviceOrientation)orientation
 {
-//    if (orientation == UIDeviceOrientationUnknown) {
-//        orientation = [[UIDevice currentDevice] orientation];
-//    }
-    
     CGAffineTransform transform = self.view.transform;
     
     if (orientation == UIDeviceOrientationPortraitUpsideDown)
@@ -248,32 +247,6 @@
         transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(-90));
     
     return transform;
-
-//    UIInterfaceOrientationUnknown            = UIDeviceOrientationUnknown,
-//    UIInterfaceOrientationPortrait           = UIDeviceOrientationPortrait,
-//    UIInterfaceOrientationPortraitUpsideDown = UIDeviceOrientationPortraitUpsideDown,
-//    UIInterfaceOrientationLandscapeLeft      = UIDeviceOrientationLandscapeRight,
-//    UIInterfaceOrientationLandscapeRight     = UIDeviceOrientationLandscapeLeft
-
-    
-    
-    
-//    if (orientation == UIDeviceOrientationUnknown) {
-//        orientation = [[UIDevice currentDevice] orientation];
-//    }
-//
-//    CGAffineTransform transform = self.view.transform;
-//
-//    if (orientation == UIDeviceOrientationPortraitUpsideDown)
-//        transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(180));
-//
-//    else if (orientation == UIDeviceOrientationLandscapeLeft)
-//        transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(90));
-//
-//    else if (orientation == UIDeviceOrientationLandscapeRight)
-//        transform = CGAffineTransformRotate(CGAffineTransformIdentity, DegreesToRadians(-90));
-//
-//    return transform;
 }
 
 - (UIImage *)cropImage:(UIImage*)img ToRect:(CGRect)rect orientation:(UIImageOrientation)orientation;
@@ -312,19 +285,23 @@
 }
 
 // -- Debug orientation device --
-- (NSString*)orientationToText:(const UIInterfaceOrientation)ORIENTATION
+- (NSString*)orientationToText:(const UIDeviceOrientation)ORIENTATION
 {
     switch (ORIENTATION) {
-        case UIInterfaceOrientationPortrait:
-            return @"UIInterfaceOrientationPortrait";
-        case UIInterfaceOrientationPortraitUpsideDown:
-            return @"UIInterfaceOrientationPortraitUpsideDown";
-        case UIInterfaceOrientationLandscapeLeft:
-            return @"UIInterfaceOrientationLandscapeLeft";
-        case UIInterfaceOrientationLandscapeRight:
-            return @"UIInterfaceOrientationLandscapeRight";
-        case UIInterfaceOrientationUnknown:
-            return @"UIInterfaceOrientationUnknown";
+        case UIDeviceOrientationPortrait:
+            return @"UIDeviceOrientationPortrait";
+        case UIDeviceOrientationPortraitUpsideDown:
+            return @"UIDeviceOrientationPortraitUpsideDown";
+        case UIDeviceOrientationLandscapeLeft:
+            return @"UIDeviceOrientationLandscapeLeft";
+        case UIDeviceOrientationLandscapeRight:
+            return @"UIDeviceOrientationLandscapeRight";
+        case UIDeviceOrientationFaceUp:
+            return @"UIDeviceOrientationFaceUp";
+        case UIDeviceOrientationFaceDown:
+            return @"UIDeviceOrientationFaceDown";
+        case UIDeviceOrientationUnknown:
+            return @"UIDeviceOrientationUnknown";
     }
     return @"Unknown orientation!";
 }
@@ -353,11 +330,18 @@
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 }
 
-- (void)orientationChanged:(NSNotification *)notification
+- (void)notificationOrientationChanged:(NSNotification *)notification
 {
     // -- Only use for SIMULATOR --
-    orientationLast = [UIApplication sharedApplication].statusBarOrientation;
-    // Or UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    // currentOrientation = [UIApplication sharedApplication].statusBarOrientation;
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    // NSLog(@"Going from %@ to %@ !", [self orientationToText:currentOrientation], [self orientationToText:orientation]);
+    currentOrientation = orientation;
+    [self updateLayoutConstraints];
+}
+
+- (void)orientationDidChange:(UIDeviceOrientation)orientation
+{
     [self updateLayoutConstraints];
 }
 
@@ -384,33 +368,63 @@
 
 - (void)outputAccelertionData:(CMAcceleration)acceleration
 {
-    UIInterfaceOrientation orientationNew;
+    float const threshold = 40.0;
     
-    if (acceleration.x >= 0.75) {
-        orientationNew = UIInterfaceOrientationLandscapeLeft;
+    BOOL (^isNearValue) (float value1, float value2) = ^BOOL(float value1, float value2)
+    {
+        return fabsf(value1 - value2) < threshold;
+    };
+    
+    BOOL (^isNearValueABS) (float value1, float value2) = ^BOOL(float value1, float value2)
+    {
+        return isNearValue(fabsf(value1), fabsf(value2));
+    };
+    
+    float yxAtan = (atan2(acceleration.y, acceleration.x)) * 180 / M_PI;
+    float zyAtan = (atan2(acceleration.z, acceleration.y)) * 180 / M_PI;
+    float zxAtan = (atan2(acceleration.z, acceleration.x)) * 180 / M_PI;
+    
+    UIDeviceOrientation orientation = currentOrientation;
+    
+    if (isNearValue(-90.0, yxAtan) && isNearValueABS(180.0, zyAtan))
+    {
+        orientation = UIDeviceOrientationPortrait;
     }
-    else if (acceleration.x <= -0.75) {
-        orientationNew = UIInterfaceOrientationLandscapeRight;
+    else if (isNearValueABS(180.0, yxAtan) && isNearValueABS(180.0, zxAtan))
+    {
+        orientation = UIDeviceOrientationLandscapeLeft;
     }
-    else if (acceleration.y <= -0.75) {
-        orientationNew = UIInterfaceOrientationPortrait;
+    else if (isNearValueABS(0.0, yxAtan) && isNearValueABS(0.0, zxAtan))
+    {
+        orientation = UIDeviceOrientationLandscapeRight;
     }
-    else if (acceleration.y >= 0.75) {
-        orientationNew = UIInterfaceOrientationPortraitUpsideDown;
+    else if (isNearValue(90.0, yxAtan) && isNearValueABS(0.0, zyAtan))
+    {
+        orientation = UIDeviceOrientationPortraitUpsideDown;
     }
-    else {
-        // Consider same as last time
+    else if (isNearValue(-90.0, zyAtan) && isNearValue(-90.0, zxAtan))
+    {
+        orientation = UIDeviceOrientationFaceUp;
+    }
+    else if (isNearValue(90.0, zyAtan) && isNearValue(90.0, zxAtan))
+    {
+        orientation = UIDeviceOrientationFaceDown;
+    }
+    
+    // NSLog(@"Going from %@ to %@!", [self orientationToText:currentOrientation], [self orientationToText:orientation]);
+    
+    // -- Dont process when FaceUp, FaceDown device --
+    if (orientation == UIDeviceOrientationFaceUp || orientation == UIDeviceOrientationFaceDown)
         return;
+    
+    if (currentOrientation != orientation)
+    {
+        currentOrientation = orientation;
+        // -- Sure code run on main thread --
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self orientationDidChange:currentOrientation];
+        });
     }
-    
-    if (orientationNew == orientationLast)
-        return;
-    
-    NSLog(@"Going from %@ to %@!", [self orientationToText:orientationLast], [self orientationToText:orientationNew]);
-    
-    orientationLast = orientationNew;
-    
-    [self updateLayoutConstraints];
 }
 
 #pragma mark -
@@ -430,7 +444,7 @@
     }
     
     // -- Rotate subview --
-    CGAffineTransform transform = [self getCGAffineTransform:orientationLast];
+    CGAffineTransform transform = [self getCGAffineTransform:currentOrientation];
     [cell setTransform:transform withAnimation:NO];
     
     return cell;
@@ -471,7 +485,7 @@
 - (void)updateLayoutConstraints
 {
     // -- Update images icon rotate --
-    CGAffineTransform transform = [self getCGAffineTransform:orientationLast];
+    CGAffineTransform transform = [self getCGAffineTransform:currentOrientation];
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
@@ -488,8 +502,7 @@
     }
     
     // -- Update constraint close button --
-    // UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-    if (orientationLast == UIInterfaceOrientationLandscapeLeft) {
+    if (currentOrientation == UIDeviceOrientationLandscapeRight) {
         
         [self.btnClose mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(@30);

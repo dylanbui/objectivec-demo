@@ -8,6 +8,25 @@
 
 #import "DbWebConnection.h"
 
+// -- DbUploadData --
+
+@interface DbUploadData()
+
+@end
+
+@implementation DbUploadData
+
+- (NSString *)description
+{
+    NSDictionary *dict = @{@"fileId": self.fileId, @"mimeType": self.mimeType,
+                           @"fileName": self.fileName, @"fileLength": @(self.fileData.length)};
+    return [dict description];
+}
+
+@end
+
+// -- DbWebConnection --
+
 @interface DbWebConnection ()
 
 @property (nonatomic,strong) AFHTTPSessionManager* sessionManager;
@@ -225,25 +244,26 @@ completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError 
         
         // -- Convert to array --
         NSArray *arrUploadData;
-        if ([uploadData isKindOfClass:[NSDictionary class]]) {
+        if ([uploadData isKindOfClass:[DbUploadData class]]) {
             arrUploadData = [[NSArray alloc] initWithObjects:uploadData, nil];
         } else if ([uploadData isKindOfClass:[NSArray class]]) {
             arrUploadData = (NSArray *) uploadData;
         }
         
-        for (NSDictionary *data in arrUploadData) {
+        for (DbUploadData *data in arrUploadData) {
             @autoreleasepool {
-                NSData *fileData = (NSData*) [data objectForKey:@"file_data"];
-                [formData appendPartWithFileData:fileData
-                                            name:[data objectForKey:@"file_id"]
-                                        fileName:[data objectForKey:@"file_name"]
-                                        mimeType:[data objectForKey:@"mime_type"]];
+                [formData appendPartWithFileData:data.fileData
+                                            name:data.fileId
+                                        fileName:data.fileName
+                                        mimeType:data.mimeType];
             }
-        //            [formData appendPartWithFileData:fileData
-        //                                        name:@"file"
-        //                                    fileName:@"bg_merge_1.png"
-        //                                    mimeType:@"image/png"];
+//                        [formData appendPartWithFileData:UIImageJPEGRepresentation([UIImage imageNamed:@"demo_1.jpg"], 1.0)
+//                                                    name:@"image_file"
+//                                                fileName:@"bg_merge_1.jpg"
+//                                                mimeType:@"image/jpeg"];
         }
+        
+        
     } error:nil];
     
     NSURLSessionUploadTask *uploadTask;

@@ -11,6 +11,15 @@
 #import "AFNetworking.h"
 #import "AFNetworkReachabilityManager.h"
 
+@interface DbUploadData : NSObject
+
+@property (nonatomic, strong) NSData *fileData;
+@property (nonatomic, strong) NSString *fileId;
+@property (nonatomic, strong) NSString *fileName;
+@property (nonatomic, strong) NSString *mimeType;
+
+@end
+
 #define WS_DEFAULT_HTTP_ERROR 1000
 #define WS_CONNECTION_HTTP_ERROR WS_DEFAULT_HTTP_ERROR + 1
 #define WS_URL_ERROR WS_CONNECTION_HTTP_ERROR + 1

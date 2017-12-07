@@ -120,6 +120,8 @@
 		BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */; };
 		BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */; };
 		BB999CFB1F4F4F3D00B29FDE /* UserSessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF91F4F4F3D00B29FDE /* UserSessionViewController.xib */; };
+		BB9A74341FD80BBE004BEE9D /* UploadFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9A74321FD80BBE004BEE9D /* UploadFileViewController.m */; };
+		BB9A74351FD80BBE004BEE9D /* UploadFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB9A74331FD80BBE004BEE9D /* UploadFileViewController.xib */; };
 		BBB751E71FCE9F87000E5A03 /* main_gate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E31FCE9F86000E5A03 /* main_gate@2x.png */; };
 		BBB751E81FCE9F87000E5A03 /* main_gate.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E41FCE9F86000E5A03 /* main_gate.png */; };
 		BBB751E91FCE9F87000E5A03 /* main_gate_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E51FCE9F87000E5A03 /* main_gate_img@2x.png */; };
@@ -411,6 +413,9 @@
 		BB999CF71F4F4F3D00B29FDE /* UserSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSessionViewController.h; sourceTree = "<group>"; };
 		BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSessionViewController.m; sourceTree = "<group>"; };
 		BB999CF91F4F4F3D00B29FDE /* UserSessionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSessionViewController.xib; sourceTree = "<group>"; };
+		BB9A74311FD80BBE004BEE9D /* UploadFileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadFileViewController.h; sourceTree = "<group>"; };
+		BB9A74321FD80BBE004BEE9D /* UploadFileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadFileViewController.m; sourceTree = "<group>"; };
+		BB9A74331FD80BBE004BEE9D /* UploadFileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadFileViewController.xib; sourceTree = "<group>"; };
 		BBB751E31FCE9F86000E5A03 /* main_gate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_gate@2x.png"; sourceTree = "<group>"; };
 		BBB751E41FCE9F86000E5A03 /* main_gate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_gate.png; sourceTree = "<group>"; };
 		BBB751E51FCE9F87000E5A03 /* main_gate_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_gate_img@2x.png"; sourceTree = "<group>"; };
@@ -999,6 +1004,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB9A74361FD80BC6004BEE9D /* Demo-UploadFileViewController */,
 				BBD107711FCFA7510009BAB1 /* Demo-AutoLayoutViewController */,
 				BBB751D81FCE9F46000E5A03 /* Demo-MyCameraViewController */,
 				BBEDC4491FBC403A000317FD /* Demo-RangeSlider */,
@@ -1097,6 +1103,16 @@
 				BB999CF91F4F4F3D00B29FDE /* UserSessionViewController.xib */,
 			);
 			path = "Demo-User-Session";
+			sourceTree = "<group>";
+		};
+		BB9A74361FD80BC6004BEE9D /* Demo-UploadFileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BB9A74311FD80BBE004BEE9D /* UploadFileViewController.h */,
+				BB9A74321FD80BBE004BEE9D /* UploadFileViewController.m */,
+				BB9A74331FD80BBE004BEE9D /* UploadFileViewController.xib */,
+			);
+			path = "Demo-UploadFileViewController";
 			sourceTree = "<group>";
 		};
 		BBB751D81FCE9F46000E5A03 /* Demo-MyCameraViewController */ = {
@@ -1541,6 +1557,7 @@
 				BBB751E81FCE9F87000E5A03 /* main_gate.png in Resources */,
 				BBEDC4581FBC543C000317FD /* db_slider_handle@3x.png in Resources */,
 				BBB752061FCEAA76000E5A03 /* demo_2.jpg in Resources */,
+				BB9A74351FD80BBE004BEE9D /* UploadFileViewController.xib in Resources */,
 				BB4FD4D21F443BC100C082C3 /* DetailCoursesViewController.xib in Resources */,
 				BB4FD4D41F443BC100C082C3 /* PathsViewController.xib in Resources */,
 				BBDBD8FB1F6A9A97009C9340 /* KeyboardViewController.xib in Resources */,
@@ -1752,6 +1769,7 @@
 				BB4FD4931F442AEE00C082C3 /* NSBundle+APNumberPad.m in Sources */,
 				BBD99B401F7CD851004B20AF /* TBTabbarViewController.m in Sources */,
 				BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */,
+				BB9A74341FD80BBE004BEE9D /* UploadFileViewController.m in Sources */,
 				BB4FD3BE1F4429E200C082C3 /* AppDelegate.m in Sources */,
 				BBD99B2B1F7CD791004B20AF /* TBOneViewController.m in Sources */,
 				BBDBD8FA1F6A9A97009C9340 /* KeyboardViewController.m in Sources */,
