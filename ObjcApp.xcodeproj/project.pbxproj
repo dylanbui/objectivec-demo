@@ -121,6 +121,12 @@
 		BB85E16B1FDBCC6100FFA738 /* ImageAnimViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB85E1691FDBCC6100FFA738 /* ImageAnimViewController.xib */; };
 		BB85E1731FDBCFC600FFA738 /* demo_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB85E1711FDBCFC600FFA738 /* demo_3.jpg */; };
 		BB85E1741FDBCFC600FFA738 /* demo_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB85E1721FDBCFC600FFA738 /* demo_4.jpg */; };
+		BB85E1771FDBE2F400FFA738 /* demo_5_line.png in Resources */ = {isa = PBXBuildFile; fileRef = BB85E1751FDBE2F400FFA738 /* demo_5_line.png */; };
+		BB85E1781FDBE2F400FFA738 /* demo_5.png in Resources */ = {isa = PBXBuildFile; fileRef = BB85E1761FDBE2F400FFA738 /* demo_5.png */; };
+		BB85E17D1FDBE50700FFA738 /* demo_6_line.png in Resources */ = {isa = PBXBuildFile; fileRef = BB85E1791FDBE50700FFA738 /* demo_6_line.png */; };
+		BB85E17E1FDBE50700FFA738 /* demo_6_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB85E17A1FDBE50700FFA738 /* demo_6_line@2x.png */; };
+		BB85E17F1FDBE50700FFA738 /* demo_6.png in Resources */ = {isa = PBXBuildFile; fileRef = BB85E17B1FDBE50700FFA738 /* demo_6.png */; };
+		BB85E1801FDBE50700FFA738 /* demo_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB85E17C1FDBE50700FFA738 /* demo_6@2x.png */; };
 		BB8DCAF01FB16CA700AB337B /* PriceMapIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DCAEF1FB16CA700AB337B /* PriceMapIntroView.m */; };
 		BB8DCAF21FB16CB800AB337B /* PriceMapIntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8DCAF11FB16CB800AB337B /* PriceMapIntroView.xib */; };
 		BB8DCAF51FB16F3000AB337B /* RippleEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DCAF41FB16F3000AB337B /* RippleEffectView.m */; };
@@ -419,6 +425,12 @@
 		BB85E1691FDBCC6100FFA738 /* ImageAnimViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageAnimViewController.xib; sourceTree = "<group>"; };
 		BB85E1711FDBCFC600FFA738 /* demo_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo_3.jpg; sourceTree = "<group>"; };
 		BB85E1721FDBCFC600FFA738 /* demo_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo_4.jpg; sourceTree = "<group>"; };
+		BB85E1751FDBE2F400FFA738 /* demo_5_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo_5_line.png; sourceTree = "<group>"; };
+		BB85E1761FDBE2F400FFA738 /* demo_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo_5.png; sourceTree = "<group>"; };
+		BB85E1791FDBE50700FFA738 /* demo_6_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo_6_line.png; sourceTree = "<group>"; };
+		BB85E17A1FDBE50700FFA738 /* demo_6_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_6_line@2x.png"; sourceTree = "<group>"; };
+		BB85E17B1FDBE50700FFA738 /* demo_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo_6.png; sourceTree = "<group>"; };
+		BB85E17C1FDBE50700FFA738 /* demo_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_6@2x.png"; sourceTree = "<group>"; };
 		BB8DCAEE1FB16CA700AB337B /* PriceMapIntroView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PriceMapIntroView.h; sourceTree = "<group>"; };
 		BB8DCAEF1FB16CA700AB337B /* PriceMapIntroView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PriceMapIntroView.m; sourceTree = "<group>"; };
 		BB8DCAF11FB16CB800AB337B /* PriceMapIntroView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceMapIntroView.xib; sourceTree = "<group>"; };
@@ -1019,6 +1031,12 @@
 		BB4FD4B51F442C8A00C082C3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BB85E1791FDBE50700FFA738 /* demo_6_line.png */,
+				BB85E17A1FDBE50700FFA738 /* demo_6_line@2x.png */,
+				BB85E17B1FDBE50700FFA738 /* demo_6.png */,
+				BB85E17C1FDBE50700FFA738 /* demo_6@2x.png */,
+				BB85E1751FDBE2F400FFA738 /* demo_5_line.png */,
+				BB85E1761FDBE2F400FFA738 /* demo_5.png */,
 				BB85E1711FDBCFC600FFA738 /* demo_3.jpg */,
 				BB85E1721FDBCFC600FFA738 /* demo_4.jpg */,
 				BBB752051FCEAA76000E5A03 /* demo_1.jpg */,
@@ -1518,8 +1536,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBEDC4311FBC3EEA000317FD /* slider-default-trackBackground.png in Resources */,
+				BB85E1771FDBE2F400FFA738 /* demo_5_line.png in Resources */,
 				BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */,
 				BB4FD48D1F442AEE00C082C3 /* apnumberpad_backspace_icon.png in Resources */,
+				BB85E1801FDBE50700FFA738 /* demo_6@2x.png in Resources */,
 				BB4FD4B61F442C8A00C082C3 /* FontAwesome.ttf in Resources */,
 				BBEDC4321FBC3EEA000317FD /* slider-default-trackCrossedOver.png in Resources */,
 				BBD99B311F7CD7BD004B20AF /* TBTwoViewController.xib in Resources */,
@@ -1579,6 +1599,7 @@
 				BBDBD8FB1F6A9A97009C9340 /* KeyboardViewController.xib in Resources */,
 				BB4FD4A11F442AEE00C082C3 /* ic_show_password@2x.png in Resources */,
 				BBEDC42B1FBC3EEA000317FD /* slider-default-handle-highlighted.png in Resources */,
+				BB85E17D1FDBE50700FFA738 /* demo_6_line.png in Resources */,
 				BB4FD4BB1F442C8A00C082C3 /* OpenSans-Italic.ttf in Resources */,
 				BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */,
 				BBEDC42F1FBC3EEA000317FD /* slider-default-track.png in Resources */,
@@ -1598,8 +1619,10 @@
 				BBB752071FCEAA76000E5A03 /* demo_1.jpg in Resources */,
 				BBEDC44E1FBC4060000317FD /* RangeSliderViewController.xib in Resources */,
 				BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */,
+				BB85E17F1FDBE50700FFA738 /* demo_6.png in Resources */,
 				BB8DCAF21FB16CB800AB337B /* PriceMapIntroView.xib in Resources */,
 				BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */,
+				BB85E1781FDBE2F400FFA738 /* demo_5.png in Resources */,
 				BBB752031FCEA85C000E5A03 /* DemoMyCameraViewController.xib in Resources */,
 				BB4A3A6A1F814E3E0040CC61 /* TBFiveViewController.xib in Resources */,
 				BBB751E91FCE9F87000E5A03 /* main_gate_img@2x.png in Resources */,
@@ -1610,6 +1633,7 @@
 				BBEDC4371FBC3EEA000317FD /* slider-default7-track.png in Resources */,
 				BBD99B2C1F7CD791004B20AF /* TBOneViewController.xib in Resources */,
 				BB25FC981F51DE850005372B /* ExpandViewCell.xib in Resources */,
+				BB85E17E1FDBE50700FFA738 /* demo_6_line@2x.png in Resources */,
 				BBD107701FCFA74A0009BAB1 /* AutoLayoutViewController.xib in Resources */,
 				BB4FD49F1F442AEE00C082C3 /* ic_hide_password@2x.png in Resources */,
 				BBD99B3B1F7CD7DE004B20AF /* TBFourViewController.xib in Resources */,

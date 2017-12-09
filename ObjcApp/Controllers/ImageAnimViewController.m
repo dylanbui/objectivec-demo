@@ -29,9 +29,9 @@
 {
     [super viewWillAppear:animated];
     
-    _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"demo_4.jpg"]];
+    _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"demo_6_line.png"]];
     //_imageView.frame = self.view.frame;
-    _imageView.alpha = 0.5;
+    //_imageView.alpha = 0.5;
     _imageView.center = self.view.center;
     _imageView.contentMode = UIViewContentModeBottom; // Quan trong, tao anh tu bottom to top
     
@@ -60,7 +60,7 @@
          frame.size.height = _height;
          frame.origin.y -= _height;
          
-         _imageView.alpha = 1.0;
+         //_imageView.alpha = 1.0;
          _imageView.frame = frame;
          
      }];
