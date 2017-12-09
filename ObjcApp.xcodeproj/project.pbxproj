@@ -117,6 +117,10 @@
 		BB6EBF471FB2F7EC006CC4EA /* SearchSession.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6EBF461FB2F7EC006CC4EA /* SearchSession.m */; };
 		BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */; };
 		BB79D8631F95B45100A0A7C2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB79D8621F95B45100A0A7C2 /* ViewController.xib */; };
+		BB85E16A1FDBCC6100FFA738 /* ImageAnimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB85E1681FDBCC6100FFA738 /* ImageAnimViewController.m */; };
+		BB85E16B1FDBCC6100FFA738 /* ImageAnimViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB85E1691FDBCC6100FFA738 /* ImageAnimViewController.xib */; };
+		BB85E1731FDBCFC600FFA738 /* demo_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB85E1711FDBCFC600FFA738 /* demo_3.jpg */; };
+		BB85E1741FDBCFC600FFA738 /* demo_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB85E1721FDBCFC600FFA738 /* demo_4.jpg */; };
 		BB8DCAF01FB16CA700AB337B /* PriceMapIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DCAEF1FB16CA700AB337B /* PriceMapIntroView.m */; };
 		BB8DCAF21FB16CB800AB337B /* PriceMapIntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8DCAF11FB16CB800AB337B /* PriceMapIntroView.xib */; };
 		BB8DCAF51FB16F3000AB337B /* RippleEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DCAF41FB16F3000AB337B /* RippleEffectView.m */; };
@@ -410,6 +414,11 @@
 		BB71F43F1FA89235007268BA /* UIView+LayoutHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutHelper.h"; sourceTree = "<group>"; };
 		BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutHelper.m"; sourceTree = "<group>"; };
 		BB79D8621F95B45100A0A7C2 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		BB85E1671FDBCC6100FFA738 /* ImageAnimViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAnimViewController.h; sourceTree = "<group>"; };
+		BB85E1681FDBCC6100FFA738 /* ImageAnimViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAnimViewController.m; sourceTree = "<group>"; };
+		BB85E1691FDBCC6100FFA738 /* ImageAnimViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageAnimViewController.xib; sourceTree = "<group>"; };
+		BB85E1711FDBCFC600FFA738 /* demo_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo_3.jpg; sourceTree = "<group>"; };
+		BB85E1721FDBCFC600FFA738 /* demo_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo_4.jpg; sourceTree = "<group>"; };
 		BB8DCAEE1FB16CA700AB337B /* PriceMapIntroView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PriceMapIntroView.h; sourceTree = "<group>"; };
 		BB8DCAEF1FB16CA700AB337B /* PriceMapIntroView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PriceMapIntroView.m; sourceTree = "<group>"; };
 		BB8DCAF11FB16CB800AB337B /* PriceMapIntroView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceMapIntroView.xib; sourceTree = "<group>"; };
@@ -1010,6 +1019,8 @@
 		BB4FD4B51F442C8A00C082C3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BB85E1711FDBCFC600FFA738 /* demo_3.jpg */,
+				BB85E1721FDBCFC600FFA738 /* demo_4.jpg */,
 				BBB752051FCEAA76000E5A03 /* demo_1.jpg */,
 				BBB752041FCEAA76000E5A03 /* demo_2.jpg */,
 				BBB751E61FCE9F87000E5A03 /* main_gate_img.png */,
@@ -1042,6 +1053,7 @@
 				BB4FD4C21F442D1300C082C3 /* ViewController.h */,
 				BB4FD4C31F442D1300C082C3 /* ViewController.m */,
 				BB79D8621F95B45100A0A7C2 /* ViewController.xib */,
+				BB85E16C1FDBCC6800FFA738 /* ImageAnimViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1106,6 +1118,16 @@
 				BB6CC5221F5D46B70073A0C1 /* DbLabel.m */,
 			);
 			path = CustomControllClass;
+			sourceTree = "<group>";
+		};
+		BB85E16C1FDBCC6800FFA738 /* ImageAnimViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BB85E1671FDBCC6100FFA738 /* ImageAnimViewController.h */,
+				BB85E1681FDBCC6100FFA738 /* ImageAnimViewController.m */,
+				BB85E1691FDBCC6100FFA738 /* ImageAnimViewController.xib */,
+			);
+			name = ImageAnimViewController;
 			sourceTree = "<group>";
 		};
 		BB999CF01F4F4F2200B29FDE /* Demo-Expand-Layout */ = {
@@ -1450,7 +1472,7 @@
 		BB4FD3AE1F4429E200C082C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Propzy Viet Nam";
 				TargetAttributes = {
 					BB4FD3B51F4429E200C082C3 = {
@@ -1502,6 +1524,7 @@
 				BBEDC4321FBC3EEA000317FD /* slider-default-trackCrossedOver.png in Resources */,
 				BBD99B311F7CD7BD004B20AF /* TBTwoViewController.xib in Resources */,
 				BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */,
+				BB85E1731FDBCFC600FFA738 /* demo_3.jpg in Resources */,
 				BBEDC4411FBC3EEA000317FD /* slider-metal-track.png in Resources */,
 				BB4FD4B71F442C8A00C082C3 /* OpenSans-Bold.ttf in Resources */,
 				BB4FD3C91F4429E200C082C3 /* LaunchScreen.storyboard in Resources */,
@@ -1510,6 +1533,7 @@
 				BBB751EA1FCE9F87000E5A03 /* main_gate_img.png in Resources */,
 				BB4FD4BF1F442C8A00C082C3 /* OpenSans-Semibold.ttf in Resources */,
 				BBEDC4351FBC3EEA000317FD /* slider-default7-handle.png in Resources */,
+				BB85E16B1FDBCC6100FFA738 /* ImageAnimViewController.xib in Resources */,
 				BB3912FF1F8BE557002F1CE1 /* SLTableViewCell.xib in Resources */,
 				BBEDC4331FBC3EEA000317FD /* slider-default-trackCrossedOver@2x.png in Resources */,
 				BBE1435E1F823EA30020C400 /* STHeaderViewController.xib in Resources */,
@@ -1546,6 +1570,7 @@
 				BBEDC43F1FBC3EEA000317FD /* slider-metal-handle.png in Resources */,
 				BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */,
 				BBB751E81FCE9F87000E5A03 /* main_gate.png in Resources */,
+				BB85E1741FDBCFC600FFA738 /* demo_4.jpg in Resources */,
 				BBEDC4581FBC543C000317FD /* db_slider_handle@3x.png in Resources */,
 				BBB752061FCEAA76000E5A03 /* demo_2.jpg in Resources */,
 				BB9A74351FD80BBE004BEE9D /* UploadFileViewController.xib in Resources */,
@@ -1748,6 +1773,7 @@
 				BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */,
 				BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */,
 				BBD1076F1FCFA74A0009BAB1 /* AutoLayoutViewController.m in Sources */,
+				BB85E16A1FDBCC6100FFA738 /* ImageAnimViewController.m in Sources */,
 				BBE143611F823F170020C400 /* HeaderViewOne.m in Sources */,
 				BB4FD49D1F442AEE00C082C3 /* UIImage+Resize.m in Sources */,
 				BB6CC5231F5D46B70073A0C1 /* DbLabel.m in Sources */,

@@ -57,7 +57,7 @@
 @interface AVCamViewController : UIViewController
 
 @property (nonatomic, assign) BOOL isRecording;
-@property (nonatomic, assign) AVCaptureSessionPreset cameraSessionPreset;
+@property (nonatomic, assign) AVCaptureSession *cameraSessionPreset;
 
 // For use in the storyboards.
 @property (nonatomic, weak) IBOutlet AVCamPreviewView *previewView;
