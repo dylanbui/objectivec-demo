@@ -18,6 +18,7 @@
 #import "AutoLayoutViewController.h"
 #import "UploadFileViewController.h"
 #import "ImageAnimViewController.h"
+#import "STMapHeaderViewController.h"
 
 @interface RootViewController ()
 
@@ -51,7 +52,8 @@
 //    AutoLayoutViewController *vcFirst = [[AutoLayoutViewController alloc] init];
     // DemoMyCameraViewController *vcFirst = [[DemoMyCameraViewController alloc] init];
     // UploadFileViewController *vcFirst = [[UploadFileViewController alloc] init];
-    ImageAnimViewController *vcFirst = [[ImageAnimViewController alloc] init];
+    // ImageAnimViewController *vcFirst = [[ImageAnimViewController alloc] init];
+    STMapHeaderViewController *vcFirst = [[STMapHeaderViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 

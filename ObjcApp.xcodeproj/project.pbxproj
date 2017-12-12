@@ -176,6 +176,11 @@
 		BBE143611F823F170020C400 /* HeaderViewOne.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE143601F823F170020C400 /* HeaderViewOne.m */; };
 		BBE143651F8240A20020C400 /* UIView+GSKLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE143631F8240A10020C400 /* UIView+GSKLayoutHelper.m */; };
 		BBE143691F8242C50020C400 /* UINavigationController+Transparency.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE143681F8242C50020C400 /* UINavigationController+Transparency.m */; };
+		BBE5EF6E1FDFCE57005F3900 /* STMapHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE5EF6C1FDFCE57005F3900 /* STMapHeaderViewController.m */; };
+		BBE5EF6F1FDFCE57005F3900 /* STMapHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE5EF6D1FDFCE57005F3900 /* STMapHeaderViewController.xib */; };
+		BBE5EF721FDFD018005F3900 /* HeaderMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE5EF711FDFD018005F3900 /* HeaderMapView.m */; };
+		BBE5EF7B1FDFD1B6005F3900 /* SLParallaxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE5EF791FDFD1B6005F3900 /* SLParallaxViewController.m */; };
+		BBE5EF7C1FDFD1B6005F3900 /* SLParallaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE5EF7A1FDFD1B6005F3900 /* SLParallaxViewController.xib */; };
 		BBEDC42B1FBC3EEA000317FD /* slider-default-handle-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = BBEDC40D1FBC3EEA000317FD /* slider-default-handle-highlighted.png */; };
 		BBEDC42C1FBC3EEA000317FD /* slider-default-handle-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBEDC40E1FBC3EEA000317FD /* slider-default-handle-highlighted@2x.png */; };
 		BBEDC42D1FBC3EEA000317FD /* slider-default-handle.png in Resources */ = {isa = PBXBuildFile; fileRef = BBEDC40F1FBC3EEA000317FD /* slider-default-handle.png */; };
@@ -507,6 +512,14 @@
 		BBE143641F8240A20020C400 /* UIView+GSKLayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GSKLayoutHelper.h"; sourceTree = "<group>"; };
 		BBE143671F8242C50020C400 /* UINavigationController+Transparency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Transparency.h"; sourceTree = "<group>"; };
 		BBE143681F8242C50020C400 /* UINavigationController+Transparency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Transparency.m"; sourceTree = "<group>"; };
+		BBE5EF6B1FDFCE57005F3900 /* STMapHeaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMapHeaderViewController.h; sourceTree = "<group>"; };
+		BBE5EF6C1FDFCE57005F3900 /* STMapHeaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMapHeaderViewController.m; sourceTree = "<group>"; };
+		BBE5EF6D1FDFCE57005F3900 /* STMapHeaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STMapHeaderViewController.xib; sourceTree = "<group>"; };
+		BBE5EF701FDFD018005F3900 /* HeaderMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderMapView.h; sourceTree = "<group>"; };
+		BBE5EF711FDFD018005F3900 /* HeaderMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderMapView.m; sourceTree = "<group>"; };
+		BBE5EF781FDFD1B6005F3900 /* SLParallaxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLParallaxViewController.h; sourceTree = "<group>"; };
+		BBE5EF791FDFD1B6005F3900 /* SLParallaxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLParallaxViewController.m; sourceTree = "<group>"; };
+		BBE5EF7A1FDFD1B6005F3900 /* SLParallaxViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SLParallaxViewController.xib; sourceTree = "<group>"; };
 		BBEDC40D1FBC3EEA000317FD /* slider-default-handle-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle-highlighted.png"; sourceTree = "<group>"; };
 		BBEDC40E1FBC3EEA000317FD /* slider-default-handle-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle-highlighted@2x.png"; sourceTree = "<group>"; };
 		BBEDC40F1FBC3EEA000317FD /* slider-default-handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle.png"; sourceTree = "<group>"; };
@@ -1052,6 +1065,8 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBE5EF7D1FDFD1BD005F3900 /* Demo-SLParallaxViewController */,
+				BB85E16C1FDBCC6800FFA738 /* Demo-ImageAnimViewController */,
 				BB9A74361FD80BC6004BEE9D /* Demo-UploadFileViewController */,
 				BBD107711FCFA7510009BAB1 /* Demo-AutoLayoutViewController */,
 				BBB751D81FCE9F46000E5A03 /* Demo-MyCameraViewController */,
@@ -1071,7 +1086,6 @@
 				BB4FD4C21F442D1300C082C3 /* ViewController.h */,
 				BB4FD4C31F442D1300C082C3 /* ViewController.m */,
 				BB79D8621F95B45100A0A7C2 /* ViewController.xib */,
-				BB85E16C1FDBCC6800FFA738 /* ImageAnimViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1138,14 +1152,14 @@
 			path = CustomControllClass;
 			sourceTree = "<group>";
 		};
-		BB85E16C1FDBCC6800FFA738 /* ImageAnimViewController */ = {
+		BB85E16C1FDBCC6800FFA738 /* Demo-ImageAnimViewController */ = {
 			isa = PBXGroup;
 			children = (
 				BB85E1671FDBCC6100FFA738 /* ImageAnimViewController.h */,
 				BB85E1681FDBCC6100FFA738 /* ImageAnimViewController.m */,
 				BB85E1691FDBCC6100FFA738 /* ImageAnimViewController.xib */,
 			);
-			name = ImageAnimViewController;
+			name = "Demo-ImageAnimViewController";
 			sourceTree = "<group>";
 		};
 		BB999CF01F4F4F2200B29FDE /* Demo-Expand-Layout */ = {
@@ -1281,6 +1295,9 @@
 				BBD1366D1F9A149D007A7763 /* STCalendarHeaderViewController.h */,
 				BBD1366E1F9A149D007A7763 /* STCalendarHeaderViewController.m */,
 				BBD1366F1F9A149D007A7763 /* STCalendarHeaderViewController.xib */,
+				BBE5EF6B1FDFCE57005F3900 /* STMapHeaderViewController.h */,
+				BBE5EF6C1FDFCE57005F3900 /* STMapHeaderViewController.m */,
+				BBE5EF6D1FDFCE57005F3900 /* STMapHeaderViewController.xib */,
 				BBE143621F823F200020C400 /* HeaderView */,
 			);
 			path = "Demo-StretchyHeaderView";
@@ -1289,6 +1306,8 @@
 		BBE143621F823F200020C400 /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
+				BBE5EF701FDFD018005F3900 /* HeaderMapView.h */,
+				BBE5EF711FDFD018005F3900 /* HeaderMapView.m */,
 				BBE1435F1F823F170020C400 /* HeaderViewOne.h */,
 				BBE143601F823F170020C400 /* HeaderViewOne.m */,
 				BBD1366A1F9A1187007A7763 /* HeaderJTCalendarView.h */,
@@ -1306,6 +1325,16 @@
 				BBE143631F8240A10020C400 /* UIView+GSKLayoutHelper.m */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BBE5EF7D1FDFD1BD005F3900 /* Demo-SLParallaxViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BBE5EF781FDFD1B6005F3900 /* SLParallaxViewController.h */,
+				BBE5EF791FDFD1B6005F3900 /* SLParallaxViewController.m */,
+				BBE5EF7A1FDFD1B6005F3900 /* SLParallaxViewController.xib */,
+			);
+			path = "Demo-SLParallaxViewController";
 			sourceTree = "<group>";
 		};
 		BBEDC40A1FBC3EB5000317FD /* CustomControl */ = {
@@ -1566,6 +1595,7 @@
 				BBEDC4301FBC3EEA000317FD /* slider-default-track@2x.png in Resources */,
 				BBEDC43C1FBC3EEA000317FD /* slider-default7-trackCrossedOver@2x.png in Resources */,
 				BBEDC4341FBC3EEA000317FD /* slider-default_trackBackground@2x.png in Resources */,
+				BBE5EF6F1FDFCE57005F3900 /* STMapHeaderViewController.xib in Resources */,
 				BBEDC4551FBC543C000317FD /* db_slider_text_bg@2x.png in Resources */,
 				BBEDC43B1FBC3EEA000317FD /* slider-default7-trackCrossedOver.png in Resources */,
 				BBEDC4591FBC543C000317FD /* db_slider_text_bg.png in Resources */,
@@ -1606,6 +1636,7 @@
 				BBEDC45A1FBC543C000317FD /* db_slider_handle@2x.png in Resources */,
 				BBEDC4391FBC3EEA000317FD /* slider-default7-trackBackground.png in Resources */,
 				BB4FD4B81F442C8A00C082C3 /* OpenSans-BoldItalic.ttf in Resources */,
+				BBE5EF7C1FDFD1B6005F3900 /* SLParallaxViewController.xib in Resources */,
 				BBEDC4571FBC543C000317FD /* db_slider_handle.png in Resources */,
 				BB4FD4B91F442C8A00C082C3 /* OpenSans-ExtraBold.ttf in Resources */,
 				BB79D8631F95B45100A0A7C2 /* ViewController.xib in Resources */,
@@ -1753,8 +1784,10 @@
 			files = (
 				BB4FD48C1F442AEE00C082C3 /* UIButton+Activity.m in Sources */,
 				BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */,
+				BBE5EF7B1FDFD1B6005F3900 /* SLParallaxViewController.m in Sources */,
 				BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */,
 				BB4FD4821F442AEE00C082C3 /* DbViewFromXib.m in Sources */,
+				BBE5EF721FDFD018005F3900 /* HeaderMapView.m in Sources */,
 				BB4FD4841F442AEE00C082C3 /* DateTimeUtil.m in Sources */,
 				BBEDC4451FBC3EEA000317FD /* NMRangeSlider.m in Sources */,
 				BBD99B301F7CD7BD004B20AF /* TBTwoViewController.m in Sources */,
@@ -1850,6 +1883,7 @@
 				BBE143691F8242C50020C400 /* UINavigationController+Transparency.m in Sources */,
 				BB1320E11FD930F8003CCCA3 /* AVCamPreviewView.m in Sources */,
 				BBD1366C1F9A1187007A7763 /* HeaderJTCalendarView.m in Sources */,
+				BBE5EF6E1FDFCE57005F3900 /* STMapHeaderViewController.m in Sources */,
 				BB4FD4811F442AEE00C082C3 /* DbViewController.m in Sources */,
 				BBF9A38E1FB04BEA00909F34 /* CanvasImageView.m in Sources */,
 				BB4FD4961F442AEE00C082C3 /* PhotoGalleryViewController.m in Sources */,
