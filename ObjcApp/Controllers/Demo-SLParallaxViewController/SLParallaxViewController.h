@@ -6,8 +6,9 @@
 //  Copyright © 2017 Propzy Viet Nam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+#import "DbViewController.h"
+#import "Constant.h"
+#import "UIView+LayoutHelper.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import <MapKit/MapKit.h>
 // #import <INTULocationManager/INTULocationManager.h>
@@ -23,7 +24,7 @@
 
 @end
 
-@interface SLParallaxViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, GMSMapViewDelegate>
+@interface SLParallaxViewController : DbViewController <UITableViewDelegate, UITableViewDataSource, GMSMapViewDelegate>
 
 @property (nonatomic, weak)     id<SLParallaxViewControllerDelegate>    delegate;
 @property (nonatomic, strong)   UITableView                         *tableView;
@@ -43,6 +44,7 @@
 
 // Move the map in terms of user location
 // @minLatitude : subtract to the current user's latitude to move it on Y axis in order to view it when the map move
-- (void)zoomToUserLocation:(MKUserLocation *)userLocation minLatitude:(float)minLatitude animated:(BOOL)anim;
+//- (void)zoomToUserLocation:(MKUserLocation *)userLocation minLatitude:(float)minLatitude animated:(BOOL)anim;
+//- (void)zoomToUserLocation:(CLLocation *)userLocation minLatitude:(float)minLatitude animated:(BOOL)anim;
 
 @end

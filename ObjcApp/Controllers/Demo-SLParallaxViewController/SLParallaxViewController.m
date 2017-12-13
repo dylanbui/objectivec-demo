@@ -9,14 +9,14 @@
 #import "SLParallaxViewController.h"
 
 #define SCREEN_HEIGHT_WITHOUT_STATUS_BAR     [[UIScreen mainScreen] bounds].size.height - 20
-#define SCREEN_WIDTH                         [[UIScreen mainScreen] bounds].size.width
+//#define SCREEN_WIDTH                         [[UIScreen mainScreen] bounds].size.width
 #define HEIGHT_STATUS_BAR                    20
-#define Y_DOWN_TABLEVIEW                     SCREEN_HEIGHT_WITHOUT_STATUS_BAR - 40
-#define DEFAULT_HEIGHT_HEADER                100.0f
+#define Y_DOWN_TABLEVIEW                     SCREEN_HEIGHT_WITHOUT_STATUS_BAR - 35
+#define DEFAULT_HEIGHT_HEADER                200.0f
 #define MIN_HEIGHT_HEADER                    10.0f
 #define DEFAULT_Y_OFFSET                     ([[UIScreen mainScreen] bounds].size.height == 480.0f) ? -200.0f : -250.0f
 #define FULL_Y_OFFSET                        -200.0f
-#define MIN_Y_OFFSET_TO_REACH                -30
+#define MIN_Y_OFFSET_TO_REACH                -100
 #define OPEN_SHUTTER_LATITUDE_MINUS          .005
 #define CLOSE_SHUTTER_LATITUDE_MINUS         .018
 
@@ -30,6 +30,9 @@
 @property (nonatomic)           BOOL                    isShutterOpen;
 @property (nonatomic)           BOOL                    displayMap;
 @property (nonatomic)           float                   heightMap;
+
+@property (nonatomic, strong)   UIImageView             *imgStaticPin;
+@property (nonatomic, strong)   UIButton                *cmdCurrentLocation;
 
 @end
 
@@ -48,19 +51,19 @@
 // Set all view we will need
 - (void)setup
 {
-    _heighTableViewHeader       = DEFAULT_HEIGHT_HEADER;
-    _heighTableView             = SCREEN_HEIGHT_WITHOUT_STATUS_BAR;
-    _minHeighTableViewHeader    = MIN_HEIGHT_HEADER;
-    _default_Y_tableView        = HEIGHT_STATUS_BAR;
-    _Y_tableViewOnBottom        = Y_DOWN_TABLEVIEW;
-    _minYOffsetToReach          = MIN_Y_OFFSET_TO_REACH;
-    _latitudeUserUp             = CLOSE_SHUTTER_LATITUDE_MINUS;
-    _latitudeUserDown           = OPEN_SHUTTER_LATITUDE_MINUS;
-    _default_Y_mapView          = DEFAULT_Y_OFFSET;
-    _headerYOffSet              = DEFAULT_Y_OFFSET;
-    _heightMap                  = 1000.0f;
-    _regionAnimated             = YES;
-    _userLocationUpdateAnimated = YES;
+    self.heighTableViewHeader       = DEFAULT_HEIGHT_HEADER;
+    self.heighTableView             = SCREEN_HEIGHT_WITHOUT_STATUS_BAR;
+    self.minHeighTableViewHeader    = MIN_HEIGHT_HEADER;
+    self.default_Y_tableView        = HEIGHT_STATUS_BAR;
+    self.Y_tableViewOnBottom        = Y_DOWN_TABLEVIEW;
+    self.minYOffsetToReach          = MIN_Y_OFFSET_TO_REACH;
+    self.latitudeUserUp             = CLOSE_SHUTTER_LATITUDE_MINUS;
+    self.latitudeUserDown           = OPEN_SHUTTER_LATITUDE_MINUS;
+    self.default_Y_mapView          = DEFAULT_Y_OFFSET;
+    self.headerYOffSet              = DEFAULT_Y_OFFSET;
+    self.heightMap                  = 1000.0f;
+    self.regionAnimated             = YES;
+    self.userLocationUpdateAnimated = YES;
 }
 
 - (void)setupTableView
@@ -86,14 +89,34 @@
 
 - (void)setupMapView
 {
-    GMSCameraPosition *newCameraPosition = [GMSCameraPosition cameraWithTarget:CLLocationCoordinate2DMake(10.764261, 106.656312)
+    GMSCameraPosition *newCameraPosition = [GMSCameraPosition cameraWithTarget:PROPZY_LOCATION
                                                                           zoom:15];
     self.mapView = [GMSMapView mapWithFrame:CGRectMake(0, self.default_Y_mapView, SCREEN_WIDTH, self.heighTableView)
                                      camera:newCameraPosition];
-//    [self.mapView setShowsUserLocation:YES];
+    
+    // self.mapView.center
+    
     self.mapView.delegate = self;
     [self.view insertSubview:self.mapView
                 belowSubview: self.tableView];
+    
+    self.imgStaticPin = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ic_pin_local"]];
+    self.imgStaticPin.center = self.mapView.center;
+
+    [self.view insertSubview:self.imgStaticPin
+                aboveSubview:self.mapView];
+    
+    self.cmdCurrentLocation = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.cmdCurrentLocation setFrame:CGRectMake(0, 0, 75, 75)];
+    // self.cmdCurrentLocation.center = CGPointMake(self.mapView.width - 100, self.mapView.height - 100);
+    self.cmdCurrentLocation.center = CGPointMake(self.tableView.tableHeaderView.width - 100, self.mapView.height - self.tableView.tableHeaderView.height - 100);
+    [self.cmdCurrentLocation setBackgroundImage:[UIImage imageNamed:@"ic_location"] forState:UIControlStateNormal];
+    // self.cmdCurrentLocation.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
+    // add targets and actions
+    [self.cmdCurrentLocation addTarget:self action:@selector(btnCurrentLocation_Click:) forControlEvents:UIControlEventTouchUpInside];
+
+    [self.view insertSubview:self.cmdCurrentLocation
+                aboveSubview:self.mapView];
 }
 
 #pragma mark - Internal Methods
@@ -129,7 +152,13 @@
                      animations:^{
                          self.tableView.tableHeaderView     = [[UIView alloc] initWithFrame: CGRectMake(0.0, 0.0, self.view.frame.size.width, self.minHeighTableViewHeader)];
                          self.mapView.frame                 = CGRectMake(0, FULL_Y_OFFSET, self.mapView.frame.size.width, self.heightMap);
+                         NSLog(@"self.mapView.frame = %@", NSStringFromCGRect(self.mapView.frame));
+                         
                          self.tableView.frame               = CGRectMake(0, self.Y_tableViewOnBottom, self.tableView.frame.size.width, self.tableView.frame.size.height);
+                         NSLog(@"self.tableView.frame = %@", NSStringFromCGRect(self.tableView.frame));
+                         
+                         self.imgStaticPin.center = self.mapView.center;
+                         self.cmdCurrentLocation.center = CGPointMake(self.tableView.tableHeaderView.width - 100, self.tableView.tableHeaderView.height - 100);
                      }
                      completion:^(BOOL finished){
                          // Disable cells selection
@@ -157,7 +186,11 @@
                      animations:^{
                          self.mapView.frame             = CGRectMake(0, self.default_Y_mapView, self.mapView.frame.size.width, self.heighTableView);
                          self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0, self.headerYOffSet, self.view.frame.size.width, self.heighTableViewHeader)];
+                         
                          self.tableView.frame           = CGRectMake(0, self.default_Y_tableView, self.tableView.frame.size.width, self.tableView.frame.size.height);
+                         
+                         self.imgStaticPin.center = self.mapView.center;
+                         self.cmdCurrentLocation.center = CGPointMake(self.tableView.tableHeaderView.width - 100, self.tableView.tableHeaderView.height - 100);
                      }
                      completion:^(BOOL finished){
                          // Enable cells selection
@@ -177,37 +210,101 @@
                      }];
 }
 
+#pragma mark -
+#pragma mark GMSMapViewDelegate
+#pragma mark -
+
+- (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
+{
+    return NO;
+}
+
+-(void)mapView:(GMSMapView *)mapView didChangeCameraPosition:(GMSCameraPosition *)position
+{
+    // -- Tam khong su dung --
+    //    if (processScheduleGetAddress) {
+    //        [processScheduleGetAddress invalidate];
+    //        processScheduleGetAddress = nil;
+    //    }
+}
+
+- (void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(GMSCameraPosition *)position
+{
+    // -- Khi di chuyen pin, thay doi vi tri he thong --
+    //    self.userSession.latitude = position.target.latitude;
+    //    self.userSession.longitude = position.target.longitude;
+    
+    // -- DucBui : 05/08 --
+//    self.userSession.lastedLatitude = position.target.latitude;
+//    self.userSession.lastedLongitude = position.target.longitude;
+    
+    //    if ([DbUtils stringEmpty:self.userSession.lastedAddress]) {
+    //        [self getAddress];
+    //    }
+}
+
+- (IBAction)btnCurrentLocation_Click:(UIButton *)sender
+{
+    // -- Show UpdateAddress View --
+//    [self showUpdateAddressView];
+    
+    //    INTULocationManager *locMgr = [INTULocationManager sharedInstance];
+    //    [locMgr requestLocationWithDesiredAccuracy:INTULocationAccuracyHouse timeout:10.0
+    //                                         block:^(CLLocation *location, INTULocationAccuracy achievedAccuracy, INTULocationStatus status) {
+    //                                             currentLocation = CLLocationCoordinate2DMake(location.coordinate.latitude ,location.coordinate.longitude);
+    //                                             self.userSession.latitude = location.coordinate.latitude;
+    //                                             self.userSession.longitude = location.coordinate.longitude;
+    //
+    //                                             [self loadNewMarkerAndMoveTo:currentLocation];
+    //                                             [self getAddress];
+    //                                         }];
+    
+    // -- Lay lai dia chi ban dau --
+//    currentLocation = CLLocationCoordinate2DMake(self.userSession.latitude ,self.userSession.longitude);
+    
+//    [self loadNewMarkerAndMoveTo:currentLocation];
+//    [self getAddress];
+    
+    NSLog(@"%@", @"btnCurrentLocation_Click");
+    
+    GMSCameraPosition *newCameraPosition = [GMSCameraPosition cameraWithTarget:PROPZY_LOCATION
+                                                                          zoom:self.mapView.camera.zoom];
+    [self.mapView animateToCameraPosition:newCameraPosition];
+}
+
 #pragma mark - MapView Delegate
 
-- (void)zoomToUserLocation:(MKUserLocation *)userLocation minLatitude:(float)minLatitude animated:(BOOL)anim
-{
-    if (!userLocation)
-        return;
-    
-    
-    
-    
-//    MKCoordinateRegion region;
-//    CLLocationCoordinate2D loc  = userLocation.location.coordinate;
-//    loc.latitude                = loc.latitude - minLatitude;
-//    region.center               = loc;
-//    region.span                 = MKCoordinateSpanMake(.05, .05);       //Zoom distance
-//    region                      = [self.mapView regionThatFits:region];
-//    [self.mapView setRegion:region
-//                   animated:anim];
-}
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    if(_isShutterOpen)
-        [self zoomToUserLocation:self.mapView.userLocation
-                     minLatitude:self.latitudeUserDown
-                        animated:self.userLocationUpdateAnimated];
-    else
-        [self zoomToUserLocation:self.mapView.userLocation
-                     minLatitude:self.latitudeUserUp
-                        animated:self.userLocationUpdateAnimated];
-}
+//- (void)zoomToUserLocation:(CLLocation *)userLocation minLatitude:(float)minLatitude animated:(BOOL)anim
+//{
+//    if (!userLocation)
+//        return;
+//
+//
+//
+//
+////    MKCoordinateRegion region;
+////    CLLocationCoordinate2D loc  = userLocation.location.coordinate;
+////    loc.latitude                = loc.latitude - minLatitude;
+////    region.center               = loc;
+////    region.span                 = MKCoordinateSpanMake(.05, .05);       //Zoom distance
+////    region                      = [self.mapView regionThatFits:region];
+////    [self.mapView setRegion:region
+////                   animated:anim];
+//}
+//
+//- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+//{
+//    if(_isShutterOpen)
+////        [self zoomToUserLocation:self.mapView.userLocation
+//        [self zoomToUserLocation:self.mapView.myLocation
+//                     minLatitude:self.latitudeUserDown
+//                        animated:self.userLocationUpdateAnimated];
+//    else
+////        [self zoomToUserLocation:self.mapView.userLocation
+//        [self zoomToUserLocation:self.mapView.myLocation
+//                     minLatitude:self.latitudeUserUp
+//                        animated:self.userLocationUpdateAnimated];
+//}
 
 #pragma mark - UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
@@ -217,6 +314,39 @@
     }
     return YES;
 }
+
+#pragma mark - Table view Delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat scrollOffset        = scrollView.contentOffset.y;
+    CGRect headerMapViewFrame   = self.mapView.frame;
+    
+    if (scrollOffset < 0) {
+        // Adjust map
+        headerMapViewFrame.origin.y = self.headerYOffSet - ((scrollOffset / 2));
+    } else {
+        // Scrolling Up -> normal behavior
+        headerMapViewFrame.origin.y = self.headerYOffSet - scrollOffset;
+    }
+    self.mapView.frame = headerMapViewFrame;
+    
+    // check if the Y offset is under the minus Y to reach
+    if (self.tableView.contentOffset.y < self.minYOffsetToReach) {
+        if(!self.displayMap)
+            self.displayMap = YES;
+    } else {
+        if(self.displayMap)
+            self.displayMap = NO;
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if(self.displayMap)
+        [self openShutter];
+}
+
 
 #pragma mark - Table view data source
 
@@ -253,7 +383,7 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                           reuseIdentifier:identifier];
     }
-    [[cell textLabel] setText:@"Hello World !"];
+    [[cell textLabel] setText:[NSString stringWithFormat:@"Hello World ! - %ld", indexPath.row]];
     return cell;
 }
 
