@@ -91,10 +91,10 @@
 {
     GMSCameraPosition *newCameraPosition = [GMSCameraPosition cameraWithTarget:PROPZY_LOCATION
                                                                           zoom:15];
-    self.mapView = [GMSMapView mapWithFrame:CGRectMake(0, self.default_Y_mapView, SCREEN_WIDTH, self.heighTableView)
+    self.mapView = [GMSMapView mapWithFrame:CGRectMake(0, 0, 1000, 1000)
                                      camera:newCameraPosition];
     
-    // self.mapView.center
+    self.mapView.center = self.tableView.tableHeaderView.center;
     
     self.mapView.delegate = self;
     [self.view insertSubview:self.mapView
@@ -151,11 +151,14 @@
                         options: UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          self.tableView.tableHeaderView     = [[UIView alloc] initWithFrame: CGRectMake(0.0, 0.0, self.view.frame.size.width, self.minHeighTableViewHeader)];
-                         self.mapView.frame                 = CGRectMake(0, FULL_Y_OFFSET, self.mapView.frame.size.width, self.heightMap);
-                         NSLog(@"self.mapView.frame = %@", NSStringFromCGRect(self.mapView.frame));
+//                         self.mapView.frame                 = CGRectMake(0, FULL_Y_OFFSET, self.mapView.frame.size.width, self.heightMap);
+//                         NSLog(@"self.mapView.frame = %@", NSStringFromCGRect(self.mapView.frame));
                          
                          self.tableView.frame               = CGRectMake(0, self.Y_tableViewOnBottom, self.tableView.frame.size.width, self.tableView.frame.size.height);
-                         NSLog(@"self.tableView.frame = %@", NSStringFromCGRect(self.tableView.frame));
+//                         NSLog(@"self.tableView.frame = %@", NSStringFromCGRect(self.tableView.frame));
+                         
+                         self.mapView.centerX = self.tableView.frame.size.width/2;
+                         self.mapView.centerY = self.Y_tableViewOnBottom/2;
                          
                          self.imgStaticPin.center = self.mapView.center;
                          self.cmdCurrentLocation.center = CGPointMake(self.tableView.tableHeaderView.width - 100, self.tableView.tableHeaderView.height - 100);
@@ -184,8 +187,10 @@
                           delay:0.1
                         options: UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         self.mapView.frame             = CGRectMake(0, self.default_Y_mapView, self.mapView.frame.size.width, self.heighTableView);
+//                         self.mapView.frame             = CGRectMake(0, self.default_Y_mapView, self.mapView.frame.size.width, self.heighTableView);
                          self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0, self.headerYOffSet, self.view.frame.size.width, self.heighTableViewHeader)];
+                         
+                         self.mapView.center = self.tableView.tableHeaderView.center;
                          
                          self.tableView.frame           = CGRectMake(0, self.default_Y_tableView, self.tableView.frame.size.width, self.tableView.frame.size.height);
                          
@@ -271,40 +276,6 @@
                                                                           zoom:self.mapView.camera.zoom];
     [self.mapView animateToCameraPosition:newCameraPosition];
 }
-
-#pragma mark - MapView Delegate
-
-//- (void)zoomToUserLocation:(CLLocation *)userLocation minLatitude:(float)minLatitude animated:(BOOL)anim
-//{
-//    if (!userLocation)
-//        return;
-//
-//
-//
-//
-////    MKCoordinateRegion region;
-////    CLLocationCoordinate2D loc  = userLocation.location.coordinate;
-////    loc.latitude                = loc.latitude - minLatitude;
-////    region.center               = loc;
-////    region.span                 = MKCoordinateSpanMake(.05, .05);       //Zoom distance
-////    region                      = [self.mapView regionThatFits:region];
-////    [self.mapView setRegion:region
-////                   animated:anim];
-//}
-//
-//- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-//{
-//    if(_isShutterOpen)
-////        [self zoomToUserLocation:self.mapView.userLocation
-//        [self zoomToUserLocation:self.mapView.myLocation
-//                     minLatitude:self.latitudeUserDown
-//                        animated:self.userLocationUpdateAnimated];
-//    else
-////        [self zoomToUserLocation:self.mapView.userLocation
-//        [self zoomToUserLocation:self.mapView.myLocation
-//                     minLatitude:self.latitudeUserUp
-//                        animated:self.userLocationUpdateAnimated];
-//}
 
 #pragma mark - UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
