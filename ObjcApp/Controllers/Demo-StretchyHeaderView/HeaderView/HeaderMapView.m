@@ -55,6 +55,7 @@
 {
     [super didChangeStretchFactor:stretchFactor];
     CGFloat limitedStretchFactor = MIN(1, stretchFactor);
+//    NSLog(@"stretchFactor = %f; limitedStretchFactor = %f", stretchFactor, limitedStretchFactor);
     
     CGSize minImageSize = CGSizeMake(32, 32);
     CGSize maxImageSize = CGSizeMake(96, 96);
@@ -67,10 +68,12 @@
     self.imageView.top = CGFloatInterpolate(stretchFactor, minImageOrigin.y, maxImageOrigin.y);
     
     if (stretchFactor < 1) {
+        // -- Scroll top --
         self.button.top = CGFloatInterpolate(stretchFactor,
                                              self.imageView.centerY - self.button.height / 2,
                                              self.imageView.bottom + 4);
     } else {
+        // -- Scroll down --
         self.button.top = self.imageView.bottom + 4;
     }
     
