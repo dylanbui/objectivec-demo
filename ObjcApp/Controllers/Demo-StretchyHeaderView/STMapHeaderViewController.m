@@ -9,6 +9,7 @@
 #import "STMapHeaderViewController.h"
 #import "UINavigationController+Transparency.h"
 #import "HeaderViewOne.h"
+#import "HeaderMapView.h"
 
 @interface STMapHeaderViewController ()
 
@@ -22,11 +23,11 @@
     // Do any additional setup after loading the view from its nib.
     
     // Allow UITableView under UINavigationBar
-    [self.navigationController gsk_setNavigationBarTransparent:YES animated:NO];
+    // [self.navigationController gsk_setNavigationBarTransparent:YES animated:NO];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    //self.automaticallyAdjustsScrollViewInsets = NO;
     UIEdgeInsets contentInset = self.tblContent.contentInset;
     if (self.navigationController) {
         contentInset.top = 64;
@@ -39,7 +40,7 @@
 
 - (GSKStretchyHeaderView *)loadStretchyHeaderView
 {
-    HeaderViewOne *headerView = [[HeaderViewOne alloc] initWithFrame:CGRectMake(0, 64, self.tblContent.frame.size.width, 200)];
+    HeaderMapView *headerView = [[HeaderMapView alloc] initWithFrame:CGRectMake(0, 64, self.tblContent.frame.size.width, 200)];
     //    headerView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
     return headerView;
 }
