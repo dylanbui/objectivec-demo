@@ -13,6 +13,8 @@
 
 @interface STMapHeaderViewController ()
 
+@property (nonatomic)           BOOL                    displayMap;
+
 @end
 
 @implementation STMapHeaderViewController
@@ -54,6 +56,45 @@
     title = [title stringByReplacingOccurrencesOfString:@"GSK" withString:@""];
     return title;
 }
+
+#pragma mark - Table view Delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat scrollOffset        = scrollView.contentOffset.y;
+    
+    NSLog(@"scrollOffset = %f", scrollOffset);
+    
+//    CGRect headerMapViewFrame   = self.mapView.frame;
+//    
+//    if (scrollOffset < 0) {
+//        // Adjust map
+//        headerMapViewFrame.origin.y = self.headerYOffSet - ((scrollOffset / 2));
+//    } else {
+//        // Scrolling Up -> normal behavior
+//        headerMapViewFrame.origin.y = self.headerYOffSet - scrollOffset;
+//    }
+//    self.mapView.frame = headerMapViewFrame;
+//    
+    // check if the Y offset is under the minus Y to reach
+    if (self.tblContent.contentOffset.y < -364) {
+        if(!self.displayMap)
+            self.displayMap = YES;
+    } else {
+        if(self.displayMap)
+            self.displayMap = NO;
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if(self.displayMap) {
+        NSLog(@"%@", @"Dang rong ra");
+        [_stretchyHeaderView setMaximumContentHeight:600 resetAnimated:YES];
+    }
+
+}
+
 
 #pragma mark -
 #pragma mark UITableViewDataSource methods
