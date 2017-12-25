@@ -54,8 +54,8 @@
     // DemoMyCameraViewController *vcFirst = [[DemoMyCameraViewController alloc] init];
 //     UploadFileViewController *vcFirst = [[UploadFileViewController alloc] init];
     // ImageAnimViewController *vcFirst = [[ImageAnimViewController alloc] init];
-    STMapHeaderViewController *vcFirst = [[STMapHeaderViewController alloc] init];
-    // SLParallaxViewController *vcFirst = [[SLParallaxViewController alloc] init];
+//    STMapHeaderViewController *vcFirst = [[STMapHeaderViewController alloc] init];
+    SLParallaxViewController *vcFirst = [[SLParallaxViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 

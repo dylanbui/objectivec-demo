@@ -136,6 +136,11 @@
 		BB999CFB1F4F4F3D00B29FDE /* UserSessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF91F4F4F3D00B29FDE /* UserSessionViewController.xib */; };
 		BB9A74341FD80BBE004BEE9D /* UploadFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9A74321FD80BBE004BEE9D /* UploadFileViewController.m */; };
 		BB9A74351FD80BBE004BEE9D /* UploadFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB9A74331FD80BBE004BEE9D /* UploadFileViewController.xib */; };
+		BBA7960E1FF0B45B00066B73 /* DbRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA7960D1FF0B45B00066B73 /* DbRequest.m */; };
+		BBA796111FF0BCEC00066B73 /* DbResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA796101FF0BCEC00066B73 /* DbResponse.m */; };
+		BBA796141FF0DEB700066B73 /* DbConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA796131FF0DEB700066B73 /* DbConnection.m */; };
+		BBA796171FF0DF0C00066B73 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA796151FF0DF0B00066B73 /* Reachability.m */; };
+		BBA7961A1FF0F67200066B73 /* DbUploadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA796191FF0F67200066B73 /* DbUploadRequest.m */; };
 		BBB751E71FCE9F87000E5A03 /* main_gate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E31FCE9F86000E5A03 /* main_gate@2x.png */; };
 		BBB751E81FCE9F87000E5A03 /* main_gate.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E41FCE9F86000E5A03 /* main_gate.png */; };
 		BBB751E91FCE9F87000E5A03 /* main_gate_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E51FCE9F87000E5A03 /* main_gate_img@2x.png */; };
@@ -450,6 +455,16 @@
 		BB9A74311FD80BBE004BEE9D /* UploadFileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadFileViewController.h; sourceTree = "<group>"; };
 		BB9A74321FD80BBE004BEE9D /* UploadFileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadFileViewController.m; sourceTree = "<group>"; };
 		BB9A74331FD80BBE004BEE9D /* UploadFileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadFileViewController.xib; sourceTree = "<group>"; };
+		BBA7960C1FF0B45B00066B73 /* DbRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbRequest.h; sourceTree = "<group>"; };
+		BBA7960D1FF0B45B00066B73 /* DbRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbRequest.m; sourceTree = "<group>"; };
+		BBA7960F1FF0BCEC00066B73 /* DbResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbResponse.h; sourceTree = "<group>"; };
+		BBA796101FF0BCEC00066B73 /* DbResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbResponse.m; sourceTree = "<group>"; };
+		BBA796121FF0DEB700066B73 /* DbConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbConnection.h; sourceTree = "<group>"; };
+		BBA796131FF0DEB700066B73 /* DbConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbConnection.m; sourceTree = "<group>"; };
+		BBA796151FF0DF0B00066B73 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		BBA796161FF0DF0C00066B73 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		BBA796181FF0F67200066B73 /* DbUploadRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbUploadRequest.h; sourceTree = "<group>"; };
+		BBA796191FF0F67200066B73 /* DbUploadRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbUploadRequest.m; sourceTree = "<group>"; };
 		BBB751E31FCE9F86000E5A03 /* main_gate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_gate@2x.png"; sourceTree = "<group>"; };
 		BBB751E41FCE9F86000E5A03 /* main_gate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_gate.png; sourceTree = "<group>"; };
 		BBB751E51FCE9F87000E5A03 /* main_gate_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_gate_img@2x.png"; sourceTree = "<group>"; };
@@ -858,10 +873,20 @@
 		BB4FD42C1F442AEE00C082C3 /* WebConnection */ = {
 			isa = PBXGroup;
 			children = (
+				BBA796161FF0DF0C00066B73 /* Reachability.h */,
+				BBA796151FF0DF0B00066B73 /* Reachability.m */,
 				BB4FD42D1F442AEE00C082C3 /* DbResponseObject.h */,
 				BB4FD42E1F442AEE00C082C3 /* DbResponseObject.m */,
 				BB4FD42F1F442AEE00C082C3 /* DbWebConnection.h */,
 				BB4FD4301F442AEE00C082C3 /* DbWebConnection.m */,
+				BBA7960C1FF0B45B00066B73 /* DbRequest.h */,
+				BBA7960D1FF0B45B00066B73 /* DbRequest.m */,
+				BBA7960F1FF0BCEC00066B73 /* DbResponse.h */,
+				BBA796101FF0BCEC00066B73 /* DbResponse.m */,
+				BBA796121FF0DEB700066B73 /* DbConnection.h */,
+				BBA796131FF0DEB700066B73 /* DbConnection.m */,
+				BBA796181FF0F67200066B73 /* DbUploadRequest.h */,
+				BBA796191FF0F67200066B73 /* DbUploadRequest.m */,
 			);
 			path = WebConnection;
 			sourceTree = "<group>";
@@ -1786,14 +1811,17 @@
 				BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */,
 				BBE5EF7B1FDFD1B6005F3900 /* SLParallaxViewController.m in Sources */,
 				BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */,
+				BBA796141FF0DEB700066B73 /* DbConnection.m in Sources */,
 				BB4FD4821F442AEE00C082C3 /* DbViewFromXib.m in Sources */,
 				BBE5EF721FDFD018005F3900 /* HeaderMapView.m in Sources */,
 				BB4FD4841F442AEE00C082C3 /* DateTimeUtil.m in Sources */,
 				BBEDC4451FBC3EEA000317FD /* NMRangeSlider.m in Sources */,
+				BBA796111FF0BCEC00066B73 /* DbResponse.m in Sources */,
 				BBD99B301F7CD7BD004B20AF /* TBTwoViewController.m in Sources */,
 				BB1320E31FD930F8003CCCA3 /* DbCameraViewController.m in Sources */,
 				BB4FD4911F442AEE00C082C3 /* APNumberPad.m in Sources */,
 				BBEDC4481FBC3F41000317FD /* DbRangeSlider.m in Sources */,
+				BBA796171FF0DF0C00066B73 /* Reachability.m in Sources */,
 				BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */,
 				BB121DF41F861A200053171B /* PTPhotoDetailViewController.m in Sources */,
 				BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */,
@@ -1879,6 +1907,8 @@
 				BB4FD4D11F443BC100C082C3 /* DetailCoursesViewController.m in Sources */,
 				BB4FD4891F442AEE00C082C3 /* DbResponseObject.m in Sources */,
 				BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */,
+				BBA7960E1FF0B45B00066B73 /* DbRequest.m in Sources */,
+				BBA7961A1FF0F67200066B73 /* DbUploadRequest.m in Sources */,
 				BB4FD4CF1F443BC100C082C3 /* CoursesViewController.m in Sources */,
 				BBE143691F8242C50020C400 /* UINavigationController+Transparency.m in Sources */,
 				BB1320E11FD930F8003CCCA3 /* AVCamPreviewView.m in Sources */,

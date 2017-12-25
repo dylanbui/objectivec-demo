@@ -16,7 +16,7 @@
 #define MIN_HEIGHT_HEADER                    10.0f
 #define DEFAULT_Y_OFFSET                     ([[UIScreen mainScreen] bounds].size.height == 480.0f) ? -200.0f : -250.0f
 #define FULL_Y_OFFSET                        -200.0f
-#define MIN_Y_OFFSET_TO_REACH                -100
+#define MIN_Y_OFFSET_TO_REACH                -100 // -50
 #define OPEN_SHUTTER_LATITUDE_MINUS          .005
 #define CLOSE_SHUTTER_LATITUDE_MINUS         .018
 
@@ -46,6 +46,19 @@
     
     [self setupTableView];
     [self setupMapView];
+    
+    
+    // Allow UITableView under UINavigationBar
+    // [self.navigationController gsk_setNavigationBarTransparent:YES animated:NO];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    //self.automaticallyAdjustsScrollViewInsets = NO;
+//    UIEdgeInsets contentInset = self.tblContent.contentInset;
+//    if (self.navigationController) {
+//        contentInset.top = 64;
+//    }
+//    self.tableView.contentInset = contentInset;
 }
 
 // Set all view we will need
@@ -91,10 +104,11 @@
 {
     GMSCameraPosition *newCameraPosition = [GMSCameraPosition cameraWithTarget:PROPZY_LOCATION
                                                                           zoom:15];
-    self.mapView = [GMSMapView mapWithFrame:CGRectMake(0, 0, 1000, 1000)
+    self.mapView = [GMSMapView mapWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
                                      camera:newCameraPosition];
     
     self.mapView.center = self.tableView.tableHeaderView.center;
+    self.mapView.centerY += 20;
     
     self.mapView.delegate = self;
     [self.view insertSubview:self.mapView
@@ -107,16 +121,21 @@
                 aboveSubview:self.mapView];
     
     self.cmdCurrentLocation = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.cmdCurrentLocation.alpha = 0;
     [self.cmdCurrentLocation setFrame:CGRectMake(0, 0, 75, 75)];
     // self.cmdCurrentLocation.center = CGPointMake(self.mapView.width - 100, self.mapView.height - 100);
-    self.cmdCurrentLocation.center = CGPointMake(self.tableView.tableHeaderView.width - 100, self.mapView.height - self.tableView.tableHeaderView.height - 100);
+    self.cmdCurrentLocation.center = CGPointMake(self.tableView.tableHeaderView.width - 50,
+                                                 self.tableView.tableHeaderView.height - 40);
     [self.cmdCurrentLocation setBackgroundImage:[UIImage imageNamed:@"ic_location"] forState:UIControlStateNormal];
     // self.cmdCurrentLocation.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
     // add targets and actions
     [self.cmdCurrentLocation addTarget:self action:@selector(btnCurrentLocation_Click:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:self.cmdCurrentLocation];
+    [self.view bringSubviewToFront:self.cmdCurrentLocation];
 
-    [self.view insertSubview:self.cmdCurrentLocation
-                aboveSubview:self.mapView];
+//    [self.view insertSubview:self.cmdCurrentLocation
+//                aboveSubview:self.mapView];
 }
 
 #pragma mark - Internal Methods
@@ -158,10 +177,12 @@
 //                         NSLog(@"self.tableView.frame = %@", NSStringFromCGRect(self.tableView.frame));
                          
                          self.mapView.centerX = self.tableView.frame.size.width/2;
-                         self.mapView.centerY = self.Y_tableViewOnBottom/2;
+                         self.mapView.centerY = self.Y_tableViewOnBottom/2 + 20;
                          
                          self.imgStaticPin.center = self.mapView.center;
-                         self.cmdCurrentLocation.center = CGPointMake(self.tableView.tableHeaderView.width - 100, self.tableView.tableHeaderView.height - 100);
+                         self.cmdCurrentLocation.alpha = 1.0;
+                         self.cmdCurrentLocation.center = CGPointMake(self.tableView.tableHeaderView.width - 50,
+                                                                      self.Y_tableViewOnBottom - 40);
                      }
                      completion:^(BOOL finished){
                          // Disable cells selection
@@ -191,11 +212,14 @@
                          self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0, self.headerYOffSet, self.view.frame.size.width, self.heighTableViewHeader)];
                          
                          self.mapView.center = self.tableView.tableHeaderView.center;
+                         self.mapView.centerY += 20;
                          
-                         self.tableView.frame           = CGRectMake(0, self.default_Y_tableView, self.tableView.frame.size.width, self.tableView.frame.size.height);
+                         self.tableView.frame = CGRectMake(0, self.default_Y_tableView, self.tableView.frame.size.width, self.tableView.frame.size.height);
                          
                          self.imgStaticPin.center = self.mapView.center;
-                         self.cmdCurrentLocation.center = CGPointMake(self.tableView.tableHeaderView.width - 100, self.tableView.tableHeaderView.height - 100);
+                         self.cmdCurrentLocation.alpha = 0.0;
+                         self.cmdCurrentLocation.center = CGPointMake(self.tableView.tableHeaderView.width - 50,
+                                                                      self.tableView.tableHeaderView.height - 40);
                      }
                      completion:^(BOOL finished){
                          // Enable cells selection
@@ -235,6 +259,8 @@
 
 - (void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(GMSCameraPosition *)position
 {
+    NSLog(@"[position description] = %@", [position description]);
+    
     // -- Khi di chuyen pin, thay doi vi tri he thong --
     //    self.userSession.latitude = position.target.latitude;
     //    self.userSession.longitude = position.target.longitude;
@@ -290,17 +316,23 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat scrollOffset        = scrollView.contentOffset.y;
-    CGRect headerMapViewFrame   = self.mapView.frame;
+    CGFloat scrollOffset = scrollView.contentOffset.y;
     
-    if (scrollOffset < 0) {
-        // Adjust map
-        headerMapViewFrame.origin.y = self.headerYOffSet - ((scrollOffset / 2));
-    } else {
-        // Scrolling Up -> normal behavior
-        headerMapViewFrame.origin.y = self.headerYOffSet - scrollOffset;
+    if (scrollOffset > 0) {  // Scrolling Up -> normal behavior
+        return;
     }
-    self.mapView.frame = headerMapViewFrame;
+   
+    // -- Animation option 1 : con loi, phai xu ly them --
+//    self.mapView.centerY = (self.tableView.tableHeaderView.centerY+20) - ((scrollOffset / 2));
+//    self.imgStaticPin.center = self.mapView.center;
+
+    // -- Animation option 2 : scale --
+    // this is just a demo method on how to compute the scale factor based on the current contentOffset
+    float scale = 1.0f + fabs(scrollView.contentOffset.y)  / scrollView.frame.size.height;
+    //Cap the scaling between zero and 1
+    scale = MAX(0.0f, scale);
+    // Set the scale to the imageView
+    self.mapView.transform = CGAffineTransformMakeScale(scale, scale);
     
     // check if the Y offset is under the minus Y to reach
     if (self.tableView.contentOffset.y < self.minYOffsetToReach) {
