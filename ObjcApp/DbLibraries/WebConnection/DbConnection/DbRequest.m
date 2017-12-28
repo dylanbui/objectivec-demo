@@ -7,6 +7,7 @@
 //
 
 #import "DbRequest.h"
+#import "NSDictionary+DbHelper.h"
 
 @interface DbRequest()
 
@@ -38,30 +39,64 @@
     return (NSString *)[arr objectAtIndex:self.method];
 }
 
+- (NSString *)getRequestTypeName
+{
+    NSArray *rqType = @[@"NORMAL", @"JSON"];
+    return (NSString *)[rqType objectAtIndex:self.requestType];
+}
+
+- (void)addAdditionalHeaders:(NSDictionary *)dict
+{
+    [self.dictAdditionalHeaders addEntriesFromDictionary:dict];
+}
+
+- (void)addAdditionalHeaders:(NSString *)value forKey:(NSString *)key
+{
+    [self.dictAdditionalHeaders setObject:value forKey:key];
+}
+
 #pragma mark - Private methods
 
 - (void)addParamsToUrl:(NSDictionary *)params
 {
-    NSMutableString *strParams = [[NSMutableString alloc] init];
-    NSArray *allkeys = [params allKeys];
-    
-    for (NSInteger index = 0; index < allkeys.count; index ++) {
-        NSString *key = [allkeys objectAtIndex:index];
-        id value = [params objectForKey:key];
-        if ([value isKindOfClass:[NSString class]]) {
-            // value = [self urlEncodeUsingEncoding:NSUTF8StringEncoding];
-            value = [value stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        }
-        if (index == 0) {
-            [strParams appendFormat:@"%@=%@", key, value];
-        }
-        else {
-            [strParams appendFormat:@"&%@=%@", key, value];
-        }
-        
+    if ([self.requestUrl rangeOfString:@"?"].location == NSNotFound) {
+        self.requestUrl = [NSString stringWithFormat:@"%@?%@", self.requestUrl, [params encodeParamsForUrl]];
+    } else {
+        self.requestUrl = [NSString stringWithFormat:@"%@%@", self.requestUrl, [params encodeParamsForUrl]];
     }
-    self.requestUrl = [NSString stringWithFormat:@"%@%@", self.requestUrl, strParams];
 }
+
+- (NSString *)description
+{
+    NSDictionary *dict = @{
+                           @"url": self.requestUrl,
+                           @"method": [self getMethodName],
+                           @"type": [self getRequestTypeName],
+                           @"headers": self.dictAdditionalHeaders,
+                           @"params": self.dictParams
+                           };
+    
+    return [dict description];
+}
+
+//- (NSString *)generateParams:(NSDictionary*)params
+//{
+//    NSMutableArray* pairs = [NSMutableArray array];
+//    for (NSString* key in params.keyEnumerator) {
+//        NSString* value = [params objectForKey:key];
+//        if (!value) {
+//            continue;
+//        }
+//        // deprecated in iOS 9.0
+//        //            NSString* escaped_value = (__bridge_transfer  NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)value, NULL,(CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
+//        NSString* escaped_value = (NSString *) [value stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"!*'();:@&=+$,/?%#[]"]];
+//        
+//        [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, escaped_value]];
+//    }
+//    
+//    return [pairs componentsJoinedByString:@"&"];
+//}
+
 
 //- (NSString *)urlEncodeUsingEncoding:(NSString *)unencodedString with:(NSStringEncoding)encoding
 //{

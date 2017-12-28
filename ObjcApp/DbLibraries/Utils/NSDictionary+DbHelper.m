@@ -516,4 +516,24 @@
     return [self db_URLForPath:path defaultValue:nil];
 }
 
+#pragma mark - Util
+#pragma mark -
+
+- (NSString *)encodeParamsForUrl
+{
+    NSMutableArray* pairs = [NSMutableArray array];
+    for (NSString* key in self.keyEnumerator) {
+        NSString* value = [self db_stringForKey:key defaultValue:@""];
+        if (!value) {
+            continue;
+        }
+        // deprecated in iOS 9.0
+        //            NSString* escaped_value = (__bridge_transfer  NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)value, NULL,(CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
+        NSString* escaped_value = (NSString *) [value stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"!*'();:@&=+$,/?%#[]"]];
+        
+        [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, escaped_value]];
+    }
+    return [pairs componentsJoinedByString:@"&"];
+}
+
 @end

@@ -28,7 +28,11 @@
 
 - (NSString *)description
 {
-    return @"";
+    NSDictionary * dict = @{ @"message": self.message,
+                             @"result": @(self.result),
+                             @"code": @(self.code),
+                             @"data": self.data};
+    return [dict description];
 }
 
 + (NSMutableDictionary *)om_objectMapping

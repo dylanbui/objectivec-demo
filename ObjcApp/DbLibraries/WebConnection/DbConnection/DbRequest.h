@@ -57,7 +57,8 @@ typedef enum _CACHETYPE {
 //@property (nonatomic, assign)   CACHETYPE               cacheType;
 //@property (nonatomic, assign)   BOOL                    shouldSilentLogin;
 
-@property (nonatomic, strong)   NSMutableDictionary     *dictParams;
+//@property (nonatomic, strong)   NSMutableDictionary     *dictParams;
+@property (nonatomic, strong)   NSDictionary     *dictParams;
 @property (nonatomic, strong)   NSMutableDictionary     *dictAdditionalHeaders;
 
 //@property (nonatomic, strong)   NSData                  *customBody;
@@ -66,6 +67,11 @@ typedef enum _CACHETYPE {
 - (void)addParamsToUrl:(NSDictionary *)params;
 
 - (NSString *)getMethodName;
+- (NSString *)getRequestTypeName;
+
+- (void)addAdditionalHeaders:(NSDictionary *)dict;
+- (void)addAdditionalHeaders:(NSString *)value forKey:(NSString *)key;
+
 
 //- (BOOL)hasBody;
 //- (void)addParameter:(NSString *)name value:(id)val;

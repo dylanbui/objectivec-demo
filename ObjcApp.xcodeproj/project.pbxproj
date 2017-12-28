@@ -227,6 +227,8 @@
 		BBF1BD731FAC814A0081E179 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF1BD721FAC814A0081E179 /* CanvasView.m */; };
 		BBF2E8C71F548ED800064035 /* TaskTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */; };
 		BBF2E8C81F548ED800064035 /* TaskTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */; };
+		BBF8264E1FF4DB9600D25AD7 /* DemoDbConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF8264C1FF4DB9600D25AD7 /* DemoDbConnectionViewController.m */; };
+		BBF8264F1FF4DB9600D25AD7 /* DemoDbConnectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF8264D1FF4DB9600D25AD7 /* DemoDbConnectionViewController.xib */; };
 		BBF9A38E1FB04BEA00909F34 /* CanvasImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF9A38D1FB04BEA00909F34 /* CanvasImageView.m */; };
 		D0D67C566CFEB09749ADFD21 /* Pods_ObjcAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -582,6 +584,9 @@
 		BBF2E8C41F548ED800064035 /* TaskTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskTableViewHeader.h; path = "Demo-Expand-Layout/TaskTableViewHeader.h"; sourceTree = "<group>"; };
 		BBF2E8C51F548ED800064035 /* TaskTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskTableViewHeader.m; path = "Demo-Expand-Layout/TaskTableViewHeader.m"; sourceTree = "<group>"; };
 		BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskTableViewHeader.xib; path = "Demo-Expand-Layout/TaskTableViewHeader.xib"; sourceTree = "<group>"; };
+		BBF8264B1FF4DB9600D25AD7 /* DemoDbConnectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoDbConnectionViewController.h; sourceTree = "<group>"; };
+		BBF8264C1FF4DB9600D25AD7 /* DemoDbConnectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoDbConnectionViewController.m; sourceTree = "<group>"; };
+		BBF8264D1FF4DB9600D25AD7 /* DemoDbConnectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoDbConnectionViewController.xib; sourceTree = "<group>"; };
 		BBF9A38C1FB04BEA00909F34 /* CanvasImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasImageView.h; sourceTree = "<group>"; };
 		BBF9A38D1FB04BEA00909F34 /* CanvasImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasImageView.m; sourceTree = "<group>"; };
 		CF0433C27A628AE212F55DBF /* Pods-ObjcApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcApp/Pods-ObjcApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1104,6 +1109,7 @@
 				BB4FD4C21F442D1300C082C3 /* ViewController.h */,
 				BB4FD4C31F442D1300C082C3 /* ViewController.m */,
 				BB79D8621F95B45100A0A7C2 /* ViewController.xib */,
+				BBF826501FF4DB9E00D25AD7 /* Demo-DbConnectionViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1491,6 +1497,16 @@
 			path = DbConnection;
 			sourceTree = "<group>";
 		};
+		BBF826501FF4DB9E00D25AD7 /* Demo-DbConnectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BBF8264B1FF4DB9600D25AD7 /* DemoDbConnectionViewController.h */,
+				BBF8264C1FF4DB9600D25AD7 /* DemoDbConnectionViewController.m */,
+				BBF8264D1FF4DB9600D25AD7 /* DemoDbConnectionViewController.xib */,
+			);
+			path = "Demo-DbConnectionViewController";
+			sourceTree = "<group>";
+		};
 		FC67C540BC7131A23EBD8755 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1552,7 +1568,7 @@
 		BB4FD3AE1F4429E200C082C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Propzy Viet Nam";
 				TargetAttributes = {
 					BB4FD3B51F4429E200C082C3 = {
@@ -1691,6 +1707,7 @@
 				BB4A3A6A1F814E3E0040CC61 /* TBFiveViewController.xib in Resources */,
 				BBB751E91FCE9F87000E5A03 /* main_gate_img@2x.png in Resources */,
 				BB3912FA1F8BE527002F1CE1 /* SLTableViewController.xib in Resources */,
+				BBF8264F1FF4DB9600D25AD7 /* DemoDbConnectionViewController.xib in Resources */,
 				BBEDC43E1FBC3EEA000317FD /* slider-metal-handle-highlighted@2x.png in Resources */,
 				BBEDC43D1FBC3EEA000317FD /* slider-metal-handle-highlighted.png in Resources */,
 				BB1320E41FD930F8003CCCA3 /* DbCameraViewController.xib in Resources */,
@@ -1905,6 +1922,7 @@
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
 				BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */,
 				BB1320E51FD930F8003CCCA3 /* DbImageCollectionViewCell.m in Sources */,
+				BBF8264E1FF4DB9600D25AD7 /* DemoDbConnectionViewController.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
 				BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */,
 				BB8DCAF01FB16CA700AB337B /* PriceMapIntroView.m in Sources */,

@@ -34,9 +34,17 @@ typedef void (^DbConnectionBlock)(DbResponse *response, NSError *error);
 
 + (id)instance;
 
+// -- Main function --
+
 - (void)dispatchRequest:(DbRequest *)request onResponse:(DbResponse *)response withDelegate:(id<IDbConnectionDelegate>)delegate;
 - (void)dispatchRequest:(DbRequest *)request onResponse:(DbResponse *)response withBlock:(DbConnectionBlock)block;
 
+- (void)dispatchUploadRequest:(DbUploadRequest *)uploadRequest
+                   onResponse:(DbResponse *)response
+                     progress:(void (^)(NSProgress *uploadProgress))progress
+            completionHandler:(void (^)(DbResponse *response, NSError *error))completion;
+
+// -- Extended function --
 
 - (void)get:(NSString *)strURL
  parameters:(NSDictionary *)dictParams
@@ -48,12 +56,6 @@ andCallerId:(int)callerId;
 withDelegate:(id<IDbConnectionDelegate>)delegate
  andCallerId:(int)callerId;
 
-//- (void)request:(NSString *)strURL
-//         method:(NSString *)method
-//     parameters:(NSDictionary *)dictParams
-//   withDelegate:(id<IDbConnectionDelegate>)delegate
-//    andCallerId:(int)callerId;
-
 - (void)get:(NSString *)strURL
  parameters:(NSDictionary *)dictParams
   withBlock:(DbConnectionBlock)block;
@@ -62,24 +64,11 @@ withDelegate:(id<IDbConnectionDelegate>)delegate
   parameters:(NSDictionary *)dictParams
    withBlock:(DbConnectionBlock)block;
 
-//- (void)request:(NSString *)strURL
-//         method:(NSString *)method
-//     parameters:(NSDictionary *)dictParams
-//       progress:(void (^)(NSProgress *))downloadProgress
-//        success:(void (^)(NSURLSessionDataTask *, id))success
-//        failure:(void (^)(NSURLSessionDataTask *, NSError *))failure;
-
-- (void)dispatchUploadRequest:(DbUploadRequest *)uploadRequest
-                   onResponse:(DbResponse *)response
-                     progress:(void (^)(NSProgress *uploadProgress))progress
-            completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completion;
-
 - (void)upload:(NSString *)strUrl
 withParameters:(NSDictionary *)dictParams
  andUploadData:(id)uploadData
       progress:(void (^)(NSProgress *uploadProgress))progress
-completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completion;
-
+completionHandler:(void (^)(DbResponse *response, NSError *error))completion;
 
 #pragma mark Sync Request
 
@@ -102,6 +91,8 @@ completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError 
  }
  
  */
+
+- (DbResponse *)syncRequest:(DbRequest *)request error:(NSError **)error;
 
 - (NSDictionary *)syncRequestJsonWithUrl:(NSString *)requestString
                                 response:(NSURLResponse **)response
@@ -126,8 +117,8 @@ completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError 
 - (void)onRequest:(DbRequest *)request completeWithResponse:(DbResponse *)response;
 - (void)onRequest:(DbRequest *)request withError:(NSError*)error;
 
-- (void)onRequestCompleteWithContent:(id)content andCallerId:(int)callerId;
-- (void)onRequestErrorWithContent:(id)content andCallerId:(int)callerId andError:(NSError*) error;
+//- (void)onRequestCompleteWithContent:(id)content andCallerId:(int)callerId;
+//- (void)onRequestErrorWithContent:(id)content andCallerId:(int)callerId andError:(NSError*) error;
 
 @optional
 

@@ -8,6 +8,7 @@
 
 #import "DbConnection.h"
 #import "Reachability.h"
+#import "NSDictionary+DbHelper.h"
 
 // -- DbConnection --
 
@@ -417,13 +418,13 @@ withDelegate:(id<IDbConnectionDelegate>)delegate
 
 - (void)dispatchUploadRequest:(DbUploadRequest *)uploadRequest onResponse:(DbResponse *)response
                      progress:(void (^)(NSProgress *uploadProgress))progress
-            completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completion
+            completionHandler:(void (^)(DbResponse *response, NSError *error))completion
 {
     // -- Cellular Data Is Turned Off --
     if (!self.isReachable)
     {
         NSError* error = [self errorNetworkConnection];
-        completion(nil, nil, error);
+        completion(nil, error);
         return;
     }
     
@@ -485,9 +486,11 @@ withDelegate:(id<IDbConnectionDelegate>)delegate
                   }
                   completionHandler:^(NSURLResponse * _Nonnull urlResponse, id  _Nullable responseObject, NSError * _Nullable error) {
                       
+                      response.request = uploadRequest;
+                      
                       // -- Error --
                       if (error) {
-                          completion(nil, nil, error);
+                          completion(nil, error);
                           return;
                       }
                       
@@ -496,7 +499,7 @@ withDelegate:(id<IDbConnectionDelegate>)delegate
                              || [responseObject isKindOfClass:[NSArray class]]) {
                               // -- Success --
                               [response parseResponseBody:responseObject];
-                              completion(urlResponse, response, nil);
+                              completion(response, nil);
                               return;
                           }
                           
@@ -505,13 +508,13 @@ withDelegate:(id<IDbConnectionDelegate>)delegate
                                                                      link:uploadRequest.requestUrl
                                                              transferData:uploadRequest.dictParams
                                                                returnData:responseObject code:WS_RETURN_ERROR];
-                          completion(nil, nil, err);
+                          completion(nil, err);
                           return;
                       }
                       
                       // -- Success --
                       [response parseResponseBody:responseObject];
-                      completion(urlResponse, response, nil);
+                      completion(response, nil);
                       return;
                       
                   }];
@@ -524,7 +527,7 @@ withDelegate:(id<IDbConnectionDelegate>)delegate
 withParameters:(NSDictionary *)dictParams
  andUploadData:(id)uploadData
       progress:(void (^)(NSProgress *uploadProgress))progress
-completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completion
+completionHandler:(void (^)(DbResponse *response, NSError *error))completion
 {
     DbUploadRequest *uploadRequest = [[DbUploadRequest alloc] init];
     uploadRequest.requestUrl = strUrl;
@@ -536,8 +539,8 @@ completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError 
     
     [self dispatchUploadRequest:uploadRequest onResponse:response progress:^(NSProgress *uploadProgress) {
         progress(uploadProgress);
-    } completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-        completion(response, responseObject, error);
+    } completionHandler:^(DbResponse *response, NSError *error) {
+        completion(response, error);
     }];
     
     // -- Cellular Data Is Turned Off --
@@ -624,7 +627,7 @@ completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError 
     
     [theRequest setHTTPMethod:@"POST"];
     [theRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    NSString *postString = [self generateParams:params];
+    NSString *postString = [params encodeParamsForUrl]; //[self generateParams:params];
     
     [theRequest setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -632,6 +635,42 @@ completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError 
     NSError *e = nil;
     NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&e];
     return jsonData;
+}
+
+- (DbResponse *)syncRequest:(DbRequest *)request error:(NSError **)error
+{
+    NSURL *url = [NSURL URLWithString:request.requestUrl];
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url
+                                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                          timeoutInterval:10];
+    
+    [theRequest setHTTPMethod:request.getMethodName];
+    
+    if (request.dictAdditionalHeaders) {
+        for (NSString *key in request.dictAdditionalHeaders.allKeys) {
+            // NSLog(@"%@ is %@",key, [request.additionalHeaders objectForKey:key]);
+            //[urlRequest setValue:[request.dictAdditionalHeaders objectForKey:key] forHTTPHeaderField:key];
+            [theRequest setValue:[request.dictAdditionalHeaders objectForKey:key] forHTTPHeaderField:key];
+        }
+    }
+    
+    if (request.requestType == DBRQ_JSON) {
+        [theRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    }
+    
+    // -- Add params --
+    if (request.dictParams) {
+        NSString *postString = [request.dictParams encodeParamsForUrl]; //[self generateParams:request.dictParams];
+        [theRequest setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
+    NSURLResponse *response = nil;
+    NSData *data = [self syncRequest:theRequest response:&response error:error];
+    
+    DbResponse *returnResponse = [[DbResponse alloc] init];
+    [returnResponse parseResponseBody:data];
+    
+    return returnResponse;
 }
 
 - (NSData *)syncRequest:(NSURLRequest *)request
@@ -692,22 +731,22 @@ completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError 
     return [NSError errorWithDomain:@"WebConnectionErrorDomain" code:code userInfo:errorDetail];
 }
 
-- (NSString *)generateParams:(NSDictionary*)params
-{
-    NSMutableArray* pairs = [NSMutableArray array];
-    for (NSString* key in params.keyEnumerator) {
-        NSString* value = [params objectForKey:key];
-        if (!value) {
-            continue;
-        }
-        // deprecated in iOS 9.0
-        //            NSString* escaped_value = (__bridge_transfer  NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)value, NULL,(CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
-        NSString* escaped_value = (NSString *) [value stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"!*'();:@&=+$,/?%#[]"]];
-        
-        [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, escaped_value]];
-    }
-    
-    return [pairs componentsJoinedByString:@"&"];
-}
+//- (NSString *)generateParams:(NSDictionary*)params
+//{
+//    NSMutableArray* pairs = [NSMutableArray array];
+//    for (NSString* key in params.keyEnumerator) {
+//        NSString* value = [params objectForKey:key];
+//        if (!value) {
+//            continue;
+//        }
+//        // deprecated in iOS 9.0
+//        //            NSString* escaped_value = (__bridge_transfer  NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)value, NULL,(CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
+//        NSString* escaped_value = (NSString *) [value stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"!*'();:@&=+$,/?%#[]"]];
+//
+//        [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, escaped_value]];
+//    }
+//
+//    return [pairs componentsJoinedByString:@"&"];
+//}
 
 @end

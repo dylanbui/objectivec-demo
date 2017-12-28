@@ -93,4 +93,9 @@
 - (NSURL *)db_URLForPath:(NSString *)key defaultValue:(NSURL *)defaultValue;
 - (NSURL *)db_URLForPath:(NSString *)key;
 
+#pragma mark - Util
+#pragma mark -
+
+- (NSString *)encodeParamsForUrl;
+
 @end

@@ -20,6 +20,7 @@
 #import "ImageAnimViewController.h"
 #import "STMapHeaderViewController.h"
 #import "SLParallaxViewController.h"
+#import "DemoDbConnectionViewController.h"
 
 @interface RootViewController ()
 
@@ -55,7 +56,8 @@
 //     UploadFileViewController *vcFirst = [[UploadFileViewController alloc] init];
     // ImageAnimViewController *vcFirst = [[ImageAnimViewController alloc] init];
 //    STMapHeaderViewController *vcFirst = [[STMapHeaderViewController alloc] init];
-    SLParallaxViewController *vcFirst = [[SLParallaxViewController alloc] init];
+//    SLParallaxViewController *vcFirst = [[SLParallaxViewController alloc] init];
+    DemoDbConnectionViewController *vcFirst = [[DemoDbConnectionViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 

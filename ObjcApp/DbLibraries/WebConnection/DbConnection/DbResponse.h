@@ -27,7 +27,7 @@ typedef enum _DB_RESPONSE_TYPE {
 
 
 @property (nonatomic, strong) NSURLSessionDataTask          *dataTask;
-@property (nonatomic, strong) DbRequest          *request;
+@property (nonatomic, strong) id          request;
 @property (nonatomic) id                        responseBody;
 @property (nonatomic, assign)   DB_RESPONSE_TYPE                 responseType;
 
