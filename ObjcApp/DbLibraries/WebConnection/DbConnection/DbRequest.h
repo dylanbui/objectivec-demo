@@ -36,6 +36,11 @@ typedef enum _CACHETYPE {
 
 //AFHTTPRequestSerializer
 
+@protocol IDbRequest <NSObject>
+
+@end
+
+
 @interface DbRequest : DbObject
 
 @property (nonatomic, assign)   int                 requestId;

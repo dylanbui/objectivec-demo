@@ -57,11 +57,20 @@
          }
           success:^(NSURLSessionDataTask *task, id responseObject) {
               if ([delegate respondsToSelector:@selector(onRequest:completeWithResponse:)]) {
-                  [delegate onRequest:request completeWithResponse:responseObject];
+                  // -- Load data --
+                  response.dataTask = task;
+                  response.request = request;
+                  [response parseResponseBody:responseObject];
+                  
+                  [delegate onRequest:request completeWithResponse:response];
               }
           }
           failure:^(NSURLSessionDataTask *task, NSError *error) {
               if ([delegate respondsToSelector:@selector(onRequest:withError:)]) {
+                  // -- Load data --
+                  response.dataTask = task;
+                  response.request = request;
+                  
                   [delegate onRequest:request withError:error];
               }
           }];
@@ -71,9 +80,18 @@
 {
     [self dispatchRequest:request onResponse:response progress:nil
                   success:^(NSURLSessionDataTask *task, id responseObject) {
-                      block(responseObject, nil);
+                      
+                      response.dataTask = task;
+                      response.request = request;
+                      [response parseResponseBody:responseObject];
+                      
+                      block(response, nil);
                   }
                   failure:^(NSURLSessionDataTask *task, NSError *error) {
+                      
+                      response.dataTask = task;
+                      response.request = request;
+                      
                       block(nil, error);
                   }];
 }
@@ -171,8 +189,18 @@ withDelegate:(id<IDbConnectionDelegate>)delegate
 
     [self dispatchRequest:request onResponse:response progress:nil
                   success:^(NSURLSessionDataTask *task, id responseObject) {
-        block(responseObject, nil);
+                      
+                      response.dataTask = task;
+                      response.request = request;
+                      [response parseResponseBody:responseObject];
+                      
+                      block(response, nil);
+                      
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        response.dataTask = task;
+        response.request = request;
+        
         block(nil, error);
     }];
     
@@ -199,8 +227,18 @@ withDelegate:(id<IDbConnectionDelegate>)delegate
     
     [self dispatchRequest:request onResponse:response progress:nil
                   success:^(NSURLSessionDataTask *task, id responseObject) {
-                      block(responseObject, nil);
+                      
+                      response.dataTask = task;
+                      response.request = request;
+                      [response parseResponseBody:responseObject];
+                      
+                      block(response, nil);
+
                   } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                      
+                      response.dataTask = task;
+                      response.request = request;
+                      
                       block(nil, error);
                   }];
     

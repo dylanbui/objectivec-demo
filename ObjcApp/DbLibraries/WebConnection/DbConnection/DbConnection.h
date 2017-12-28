@@ -21,7 +21,8 @@
 #define WS_RETURN_ERROR WS_JSON_PARSING_FAILED + 1
 #define WS_NETWORK_CONNECTION_ERROR WS_RETURN_ERROR + 1
 
-typedef void (^DbConnectionBlock)(id response, NSError *error);
+//typedef void (^DbConnectionBlock)(id response, NSError *error);
+typedef void (^DbConnectionBlock)(DbResponse *response, NSError *error);
 
 @protocol IDbConnectionDelegate;
 

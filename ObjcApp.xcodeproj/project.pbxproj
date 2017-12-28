@@ -879,14 +879,7 @@
 				BB4FD42E1F442AEE00C082C3 /* DbResponseObject.m */,
 				BB4FD42F1F442AEE00C082C3 /* DbWebConnection.h */,
 				BB4FD4301F442AEE00C082C3 /* DbWebConnection.m */,
-				BBA7960C1FF0B45B00066B73 /* DbRequest.h */,
-				BBA7960D1FF0B45B00066B73 /* DbRequest.m */,
-				BBA7960F1FF0BCEC00066B73 /* DbResponse.h */,
-				BBA796101FF0BCEC00066B73 /* DbResponse.m */,
-				BBA796121FF0DEB700066B73 /* DbConnection.h */,
-				BBA796131FF0DEB700066B73 /* DbConnection.m */,
-				BBA796181FF0F67200066B73 /* DbUploadRequest.h */,
-				BBA796191FF0F67200066B73 /* DbUploadRequest.m */,
+				BBF8264A1FF4954D00D25AD7 /* DbConnection */,
 			);
 			path = WebConnection;
 			sourceTree = "<group>";
@@ -1481,6 +1474,21 @@
 				BBF2E8C61F548ED800064035 /* TaskTableViewHeader.xib */,
 			);
 			name = TaskTableViewHeader;
+			sourceTree = "<group>";
+		};
+		BBF8264A1FF4954D00D25AD7 /* DbConnection */ = {
+			isa = PBXGroup;
+			children = (
+				BBA7960C1FF0B45B00066B73 /* DbRequest.h */,
+				BBA7960D1FF0B45B00066B73 /* DbRequest.m */,
+				BBA7960F1FF0BCEC00066B73 /* DbResponse.h */,
+				BBA796101FF0BCEC00066B73 /* DbResponse.m */,
+				BBA796121FF0DEB700066B73 /* DbConnection.h */,
+				BBA796131FF0DEB700066B73 /* DbConnection.m */,
+				BBA796181FF0F67200066B73 /* DbUploadRequest.h */,
+				BBA796191FF0F67200066B73 /* DbUploadRequest.m */,
+			);
+			path = DbConnection;
 			sourceTree = "<group>";
 		};
 		FC67C540BC7131A23EBD8755 /* Pods */ = {

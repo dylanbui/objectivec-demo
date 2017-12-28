@@ -16,11 +16,17 @@ typedef enum _DB_RESPONSE_TYPE {
 } DB_RESPONSE_TYPE;
 
 
+@protocol IDbResponse <NSObject>
+
+- (void)parseResponseBody:(id)request;
+
+@end
 
 
+@interface DbResponse : DbObject <IDbResponse>
 
-@interface DbResponse : DbObject
 
+@property (nonatomic, strong) NSURLSessionDataTask          *dataTask;
 @property (nonatomic, strong) DbRequest          *request;
 @property (nonatomic) id                        responseBody;
 @property (nonatomic, assign)   DB_RESPONSE_TYPE                 responseType;
@@ -31,7 +37,7 @@ typedef enum _DB_RESPONSE_TYPE {
 @property (nonatomic) int                       code;
 @property (nonatomic) id                        data;
 
-- (void)parseResponseBody:(id)data;
+// - (void)parseResponseBody:(id)data;
 
 @end
 
