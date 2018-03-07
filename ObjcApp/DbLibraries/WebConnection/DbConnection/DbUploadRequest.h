@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "DbRequest.h"
 
-@interface DbUploadData : NSObject
-
-@property (nonatomic, strong) NSData *fileData;
-@property (nonatomic, strong) NSString *fileId;
-@property (nonatomic, strong) NSString *fileName;
-@property (nonatomic, strong) NSString *mimeType;
-
-@end
+//@interface DbUploadData : NSObject
+//
+//@property (nonatomic, strong) NSData *fileData;
+//@property (nonatomic, strong) NSString *fileId;
+//@property (nonatomic, strong) NSString *fileName;
+//@property (nonatomic, strong) NSString *mimeType;
+//
+//@end
 
 
 @interface DbUploadRequest : DbRequest

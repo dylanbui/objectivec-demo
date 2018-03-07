@@ -14,6 +14,8 @@
 #import "DbUploadRequest.h"
 #import "DbResponse.h"
 
+#import "DbWebConnection.h"
+
 #define WS_DEFAULT_HTTP_ERROR 1000
 #define WS_CONNECTION_HTTP_ERROR WS_DEFAULT_HTTP_ERROR + 1
 #define WS_URL_ERROR WS_CONNECTION_HTTP_ERROR + 1

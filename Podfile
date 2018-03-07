@@ -31,6 +31,7 @@ target 'ObjcApp' do
     pod 'DZNEmptyDataSet', '1.8.1'
     
     pod 'ISMessages', '1.2'
+    #pod 'LGButton', '~> 1.0'
     
     #pod 'GoogleMaterialIconFont', '0.5.0'
     pod 'MaterialDesignSymbolObjC', '1.3'
@@ -60,6 +61,7 @@ target 'ObjcApp' do
     
     # Changed.
     # pod 'PNChart', '0.8.9' # Goi phu thuoc cai them UICountingLabel (1.2.0)
+    # pod 'Charts', '3.0.4' # Fix issue Swift 4 : https://github.com/danielgindi/Charts/issues/2876 Only run Xcode 9
     
     # pod 'MPNumericTextField', '1.4.0'
     # Swift
@@ -74,6 +76,7 @@ target 'ObjcApp' do
     pod 'GoogleMaps', '2.4.0'
     pod 'GooglePlaces', '2.4.0'
     pod 'GooglePlacePicker', '2.4.0'
+    
 
   target 'ObjcAppTests' do
     inherit! :search_paths

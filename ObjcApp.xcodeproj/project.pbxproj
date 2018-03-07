@@ -141,6 +141,17 @@
 		BBA796141FF0DEB700066B73 /* DbConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA796131FF0DEB700066B73 /* DbConnection.m */; };
 		BBA796171FF0DF0C00066B73 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA796151FF0DF0B00066B73 /* Reachability.m */; };
 		BBA7961A1FF0F67200066B73 /* DbUploadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA796191FF0F67200066B73 /* DbUploadRequest.m */; };
+		BBB01879204F961F00153BD6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBB01870204F961E00153BD6 /* Images.xcassets */; };
+		BBB0187A204F961F00153BD6 /* NSDate+Difference.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB01872204F961E00153BD6 /* NSDate+Difference.m */; };
+		BBB0187B204F961F00153BD6 /* THDateDay.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB01874204F961F00153BD6 /* THDateDay.m */; };
+		BBB0187C204F961F00153BD6 /* THDateDay.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB01875204F961F00153BD6 /* THDateDay.xib */; };
+		BBB0187D204F961F00153BD6 /* THDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB01877204F961F00153BD6 /* THDatePickerViewController.m */; };
+		BBB0187E204F961F00153BD6 /* THDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB01878204F961F00153BD6 /* THDatePickerViewController.xib */; };
+		BBB01882204F962C00153BD6 /* UIViewController+KNSemiModal.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB01881204F962C00153BD6 /* UIViewController+KNSemiModal.m */; };
+		BBB01886204F972200153BD6 /* CalendarActionSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB01884204F972200153BD6 /* CalendarActionSheetViewController.m */; };
+		BBB01887204F972200153BD6 /* CalendarActionSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB01885204F972200153BD6 /* CalendarActionSheetViewController.xib */; };
+		BBB0188D204F9D6B00153BD6 /* DemoCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB0188B204F9D6B00153BD6 /* DemoCalendarViewController.m */; };
+		BBB0188E204F9D6B00153BD6 /* DemoCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB0188C204F9D6B00153BD6 /* DemoCalendarViewController.xib */; };
 		BBB751E71FCE9F87000E5A03 /* main_gate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E31FCE9F86000E5A03 /* main_gate@2x.png */; };
 		BBB751E81FCE9F87000E5A03 /* main_gate.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E41FCE9F86000E5A03 /* main_gate.png */; };
 		BBB751E91FCE9F87000E5A03 /* main_gate_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E51FCE9F87000E5A03 /* main_gate_img@2x.png */; };
@@ -467,6 +478,23 @@
 		BBA796161FF0DF0C00066B73 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		BBA796181FF0F67200066B73 /* DbUploadRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbUploadRequest.h; sourceTree = "<group>"; };
 		BBA796191FF0F67200066B73 /* DbUploadRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbUploadRequest.m; sourceTree = "<group>"; };
+		BBB01870204F961E00153BD6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BBB01871204F961E00153BD6 /* NSDate+Difference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Difference.h"; sourceTree = "<group>"; };
+		BBB01872204F961E00153BD6 /* NSDate+Difference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Difference.m"; sourceTree = "<group>"; };
+		BBB01873204F961E00153BD6 /* THDateDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDateDay.h; sourceTree = "<group>"; };
+		BBB01874204F961F00153BD6 /* THDateDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDateDay.m; sourceTree = "<group>"; };
+		BBB01875204F961F00153BD6 /* THDateDay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THDateDay.xib; sourceTree = "<group>"; };
+		BBB01876204F961F00153BD6 /* THDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDatePickerViewController.h; sourceTree = "<group>"; };
+		BBB01877204F961F00153BD6 /* THDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDatePickerViewController.m; sourceTree = "<group>"; };
+		BBB01878204F961F00153BD6 /* THDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THDatePickerViewController.xib; sourceTree = "<group>"; };
+		BBB01880204F962C00153BD6 /* UIViewController+KNSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KNSemiModal.h"; sourceTree = "<group>"; };
+		BBB01881204F962C00153BD6 /* UIViewController+KNSemiModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KNSemiModal.m"; sourceTree = "<group>"; };
+		BBB01883204F972200153BD6 /* CalendarActionSheetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarActionSheetViewController.h; sourceTree = "<group>"; };
+		BBB01884204F972200153BD6 /* CalendarActionSheetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarActionSheetViewController.m; sourceTree = "<group>"; };
+		BBB01885204F972200153BD6 /* CalendarActionSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarActionSheetViewController.xib; sourceTree = "<group>"; };
+		BBB0188A204F9D6B00153BD6 /* DemoCalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCalendarViewController.h; sourceTree = "<group>"; };
+		BBB0188B204F9D6B00153BD6 /* DemoCalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCalendarViewController.m; sourceTree = "<group>"; };
+		BBB0188C204F9D6B00153BD6 /* DemoCalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoCalendarViewController.xib; sourceTree = "<group>"; };
 		BBB751E31FCE9F86000E5A03 /* main_gate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_gate@2x.png"; sourceTree = "<group>"; };
 		BBB751E41FCE9F86000E5A03 /* main_gate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_gate.png; sourceTree = "<group>"; };
 		BBB751E51FCE9F87000E5A03 /* main_gate_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_gate_img@2x.png"; sourceTree = "<group>"; };
@@ -892,6 +920,7 @@
 		BB4FD4311F442AEE00C082C3 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BBB0187F204F962C00153BD6 /* UIViewController+KNSemiModal */,
 				BBEDC40B1FBC3EEA000317FD /* NMRangeSlider */,
 				BB4FD4321F442AEE00C082C3 /* ActivityIndicatorButton */,
 				BB4FD4371F442AEE00C082C3 /* APNumberPad */,
@@ -1088,6 +1117,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBB01889204F9D4600153BD6 /* Demo-CalendarActionSheet */,
 				BBE5EF7D1FDFD1BD005F3900 /* Demo-SLParallaxViewController */,
 				BB85E16C1FDBCC6800FFA738 /* Demo-ImageAnimViewController */,
 				BB9A74361FD80BC6004BEE9D /* Demo-UploadFileViewController */,
@@ -1215,6 +1245,51 @@
 				BB9A74331FD80BBE004BEE9D /* UploadFileViewController.xib */,
 			);
 			path = "Demo-UploadFileViewController";
+			sourceTree = "<group>";
+		};
+		BBB0186F204F961E00153BD6 /* THCalendarDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				BBB01870204F961E00153BD6 /* Images.xcassets */,
+				BBB01871204F961E00153BD6 /* NSDate+Difference.h */,
+				BBB01872204F961E00153BD6 /* NSDate+Difference.m */,
+				BBB01873204F961E00153BD6 /* THDateDay.h */,
+				BBB01874204F961F00153BD6 /* THDateDay.m */,
+				BBB01875204F961F00153BD6 /* THDateDay.xib */,
+				BBB01876204F961F00153BD6 /* THDatePickerViewController.h */,
+				BBB01877204F961F00153BD6 /* THDatePickerViewController.m */,
+				BBB01878204F961F00153BD6 /* THDatePickerViewController.xib */,
+			);
+			path = THCalendarDatePicker;
+			sourceTree = "<group>";
+		};
+		BBB0187F204F962C00153BD6 /* UIViewController+KNSemiModal */ = {
+			isa = PBXGroup;
+			children = (
+				BBB01880204F962C00153BD6 /* UIViewController+KNSemiModal.h */,
+				BBB01881204F962C00153BD6 /* UIViewController+KNSemiModal.m */,
+			);
+			path = "UIViewController+KNSemiModal";
+			sourceTree = "<group>";
+		};
+		BBB01888204F972900153BD6 /* CalendarActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				BBB01883204F972200153BD6 /* CalendarActionSheetViewController.h */,
+				BBB01884204F972200153BD6 /* CalendarActionSheetViewController.m */,
+				BBB01885204F972200153BD6 /* CalendarActionSheetViewController.xib */,
+			);
+			path = CalendarActionSheet;
+			sourceTree = "<group>";
+		};
+		BBB01889204F9D4600153BD6 /* Demo-CalendarActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				BBB0188A204F9D6B00153BD6 /* DemoCalendarViewController.h */,
+				BBB0188B204F9D6B00153BD6 /* DemoCalendarViewController.m */,
+				BBB0188C204F9D6B00153BD6 /* DemoCalendarViewController.xib */,
+			);
+			path = "Demo-CalendarActionSheet";
 			sourceTree = "<group>";
 		};
 		BBB751D81FCE9F46000E5A03 /* Demo-MyCameraViewController */ = {
@@ -1364,7 +1439,9 @@
 		BBEDC40A1FBC3EB5000317FD /* CustomControl */ = {
 			isa = PBXGroup;
 			children = (
+				BBB0186F204F961E00153BD6 /* THCalendarDatePicker */,
 				BBEDC45B1FBC5440000317FD /* DbRangeSlider */,
+				BBB01888204F972900153BD6 /* CalendarActionSheet */,
 			);
 			path = CustomControl;
 			sourceTree = "<group>";
@@ -1635,6 +1712,7 @@
 				BB3912FF1F8BE557002F1CE1 /* SLTableViewCell.xib in Resources */,
 				BBEDC4331FBC3EEA000317FD /* slider-default-trackCrossedOver@2x.png in Resources */,
 				BBE1435E1F823EA30020C400 /* STHeaderViewController.xib in Resources */,
+				BBB0187E204F961F00153BD6 /* THDatePickerViewController.xib in Resources */,
 				BB4FD4BC1F442C8A00C082C3 /* OpenSans-Light.ttf in Resources */,
 				BB999CFB1F4F4F3D00B29FDE /* UserSessionViewController.xib in Resources */,
 				BB4FD4A01F442AEE00C082C3 /* ic_show_password.png in Resources */,
@@ -1654,6 +1732,7 @@
 				BB4FD4BD1F442C8A00C082C3 /* OpenSans-LightItalic.ttf in Resources */,
 				BB4FD4C01F442C8A00C082C3 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				BB4FD4D01F443BC100C082C3 /* CoursesViewController.xib in Resources */,
+				BBB01887204F972200153BD6 /* CalendarActionSheetViewController.xib in Resources */,
 				BB121DF01F85DEAD0053171B /* PTPhotoViewController.xib in Resources */,
 				BB1321211FD93406003CCCA3 /* DbAssets.xcassets in Resources */,
 				BBEDC4401FBC3EEA000317FD /* slider-metal-handle@2x.png in Resources */,
@@ -1694,6 +1773,7 @@
 				BB4FD49E1F442AEE00C082C3 /* ic_hide_password.png in Resources */,
 				BB1320E61FD930F8003CCCA3 /* DbImageCollectionViewCell.xib in Resources */,
 				BB4FD48F1F442AEE00C082C3 /* apnumberpad_backspace_icon@3x.png in Resources */,
+				BBB01879204F961F00153BD6 /* Images.xcassets in Resources */,
 				BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */,
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
 				BBB752071FCEAA76000E5A03 /* demo_1.jpg in Resources */,
@@ -1701,6 +1781,7 @@
 				BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */,
 				BB85E17F1FDBE50700FFA738 /* demo_6.png in Resources */,
 				BB8DCAF21FB16CB800AB337B /* PriceMapIntroView.xib in Resources */,
+				BBB0188E204F9D6B00153BD6 /* DemoCalendarViewController.xib in Resources */,
 				BB4FD4DF1F444E4D00C082C3 /* HeightNavigationBar.xib in Resources */,
 				BB85E1781FDBE2F400FFA738 /* demo_5.png in Resources */,
 				BBB752031FCEA85C000E5A03 /* DemoMyCameraViewController.xib in Resources */,
@@ -1721,6 +1802,7 @@
 				BBEDC42C1FBC3EEA000317FD /* slider-default-handle-highlighted@2x.png in Resources */,
 				BBEDC4381FBC3EEA000317FD /* slider-default7-track@2x.png in Resources */,
 				BB121DF51F861A200053171B /* PTPhotoDetailViewController.xib in Resources */,
+				BBB0187C204F961F00153BD6 /* THDateDay.xib in Resources */,
 				BBF2E8C81F548ED800064035 /* TaskTableViewHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1837,6 +1919,7 @@
 				BBE5EF7B1FDFD1B6005F3900 /* SLParallaxViewController.m in Sources */,
 				BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */,
 				BBA796141FF0DEB700066B73 /* DbConnection.m in Sources */,
+				BBB0187D204F961F00153BD6 /* THDatePickerViewController.m in Sources */,
 				BB4FD4821F442AEE00C082C3 /* DbViewFromXib.m in Sources */,
 				BBE5EF721FDFD018005F3900 /* HeaderMapView.m in Sources */,
 				BB4FD4841F442AEE00C082C3 /* DateTimeUtil.m in Sources */,
@@ -1850,6 +1933,7 @@
 				BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */,
 				BB121DF41F861A200053171B /* PTPhotoDetailViewController.m in Sources */,
 				BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */,
+				BBB0188D204F9D6B00153BD6 /* DemoCalendarViewController.m in Sources */,
 				BBB752021FCEA85C000E5A03 /* DemoMyCameraViewController.m in Sources */,
 				BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */,
 				BBD965E51F5B36B800CCAF2C /* LGButton.m in Sources */,
@@ -1868,6 +1952,7 @@
 				BBDBD9011F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.m in Sources */,
 				BB4FD4981F442AEE00C082C3 /* DALabeledCircularProgressView.m in Sources */,
 				BB4FD47E1F442AEE00C082C3 /* DbObject.m in Sources */,
+				BBB01886204F972200153BD6 /* CalendarActionSheetViewController.m in Sources */,
 				BB4FD4871F442AEE00C082C3 /* NSObject+SimpleMapping.m in Sources */,
 				BB4FD4941F442AEE00C082C3 /* ATAppUpdater.m in Sources */,
 				BB3FC34C1FC957DA000D37F2 /* DbErrorView.m in Sources */,
@@ -1879,6 +1964,7 @@
 				BB1320E21FD930F8003CCCA3 /* AVCamViewController.m in Sources */,
 				BB4FD4801F442AEE00C082C3 /* DbTableViewCell.m in Sources */,
 				BB4FD4D91F443FEE00C082C3 /* NavigationBarView.m in Sources */,
+				BBB0187A204F961F00153BD6 /* NSDate+Difference.m in Sources */,
 				BB4FD49A1F442AEE00C082C3 /* SYPhotoBrowser.m in Sources */,
 				BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */,
 				BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */,
@@ -1895,8 +1981,10 @@
 				BB4FD4931F442AEE00C082C3 /* NSBundle+APNumberPad.m in Sources */,
 				BBD99B401F7CD851004B20AF /* TBTabbarViewController.m in Sources */,
 				BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */,
+				BBB01882204F962C00153BD6 /* UIViewController+KNSemiModal.m in Sources */,
 				BB9A74341FD80BBE004BEE9D /* UploadFileViewController.m in Sources */,
 				BB4FD3BE1F4429E200C082C3 /* AppDelegate.m in Sources */,
+				BBB0187B204F961F00153BD6 /* THDateDay.m in Sources */,
 				BBD99B2B1F7CD791004B20AF /* TBOneViewController.m in Sources */,
 				BBDBD8FA1F6A9A97009C9340 /* KeyboardViewController.m in Sources */,
 				BB4FD48B1F442AEE00C082C3 /* ActivityIndicatorButton.m in Sources */,

@@ -21,6 +21,7 @@
 #import "STMapHeaderViewController.h"
 #import "SLParallaxViewController.h"
 #import "DemoDbConnectionViewController.h"
+#import "DemoCalendarViewController.h"
 
 @interface RootViewController ()
 
@@ -57,7 +58,8 @@
     // ImageAnimViewController *vcFirst = [[ImageAnimViewController alloc] init];
 //    STMapHeaderViewController *vcFirst = [[STMapHeaderViewController alloc] init];
 //    SLParallaxViewController *vcFirst = [[SLParallaxViewController alloc] init];
-    DemoDbConnectionViewController *vcFirst = [[DemoDbConnectionViewController alloc] init];
+//    DemoDbConnectionViewController *vcFirst = [[DemoDbConnectionViewController alloc] init];
+    DemoCalendarViewController *vcFirst = [[DemoCalendarViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 
