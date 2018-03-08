@@ -18,6 +18,7 @@ const struct KNSemiModalOption KNSemiModalOptionKeys = {
     .parentScale              = @"KNSemiModalOptionParentScale",
     .shadowOpacity           = @"KNSemiModalOptionShadowOpacity",
     .transitionStyle         = @"KNSemiModalTransitionStyle",
+    .position                = @"KNSemiModalPosition",
     .disableCancel           = @"KNSemiModalOptionDisableCancel",
     .backgroundView          = @"KNSemiModelOptionBackgroundView",
 };
@@ -74,6 +75,7 @@ const struct KNSemiModalOption KNSemiModalOptionKeys = {
                                                                          KNSemiModalOptionKeys.parentScale : @(0.8),
                                                                          KNSemiModalOptionKeys.shadowOpacity : @(0.8),
                                                                          KNSemiModalOptionKeys.transitionStyle : @(KNSemiModalTransitionStyleSlideUp),
+                                                                         KNSemiModalOptionKeys.position : @(KNSemiModalPositionBottom),
                                                                          KNSemiModalOptionKeys.disableCancel : @(NO),
                                                                          }];
 }
@@ -236,10 +238,22 @@ const struct KNSemiModalOption KNSemiModalOptionKeys = {
             // We center the view and mantain aspect ration
             semiViewFrame = CGRectMake((vf.size.width - view.frame.size.width) / 2.0, vf.size.height-semiViewHeight, view.frame.size.width, semiViewHeight);
         } else {
+            // -- Only process position for iPhone. Add by DucBui 08/03/2018 --
+            // -- Default bottom --
             semiViewFrame = CGRectMake(0, vf.size.height-semiViewHeight, vf.size.width, semiViewHeight);
+            // Get position
+            NSUInteger position = [[[self kn_targetToStoreValues] ym_optionOrDefaultForKey:KNSemiModalOptionKeys.position] unsignedIntegerValue];
+            if (position == KNSemiModalPositionTop) {
+                semiViewFrame = CGRectMake(0, 0, vf.size.width, semiViewHeight);
+            } else if (position == KNSemiModalPositionCenter) {
+                semiViewFrame = CGRectMake(0, (vf.size.height-semiViewHeight)/2.0, vf.size.width, semiViewHeight);
+            }
         }
         
-        CGRect overlayFrame = CGRectMake(0, 0, vf.size.width, vf.size.height-semiViewHeight);
+        // -- Old code --
+        // CGRect overlayFrame = CGRectMake(0, 0, vf.size.width, vf.size.height-semiViewHeight);
+        // -- New code: add by DucBui 08/03/2018 --
+        CGRect overlayFrame = CGRectMake(0, 0, vf.size.width, vf.size.height);
         
         // Add semi overlay
         UIView *overlay;
@@ -286,6 +300,7 @@ const struct KNSemiModalOption KNSemiModalOptionKeys = {
 //        view.frame = (transitionStyle == KNSemiModalTransitionStyleSlideUp
 //                      ? CGRectOffset(semiViewFrame, 0, +semiViewHeight)
 //                      : semiViewFrame);
+        
         view.frame = semiViewFrame; // Default
         if (transitionStyle == KNSemiModalTransitionStyleSlideUp) {
             view.frame = CGRectOffset(semiViewFrame, 0, +semiViewHeight);
@@ -376,6 +391,23 @@ const struct KNSemiModalOption KNSemiModalOptionKeys = {
                 modal.frame = CGRectMake((target.bounds.size.width - modal.frame.size.width) / 2.0, target.bounds.size.height, modal.frame.size.width, modal.frame.size.height);
             } else {
                 modal.frame = CGRectMake(0, target.bounds.size.height, modal.frame.size.width, modal.frame.size.height);
+            }
+        } else if (transitionStyle == KNSemiModalTransitionStyleSlideDown) {
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+                // As the view is centered, we perform a vertical translation
+                modal.frame = CGRectMake((target.bounds.size.width - modal.frame.size.width) / 2.0, -target.bounds.size.height, modal.frame.size.width, modal.frame.size.height);
+            } else {
+                modal.frame = CGRectMake(0, -modal.frame.size.height, modal.frame.size.width, modal.frame.size.height);
+            }
+        } else if (transitionStyle == KNSemiModalTransitionStyleSlideSmallDown) {
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+                // As the view is centered, we perform a vertical translation
+                modal.frame = CGRectMake((target.bounds.size.width - modal.frame.size.width) / 2.0, modal.frame.origin.y - 20, modal.frame.size.width, modal.frame.size.height);
+                modal.alpha = 0.0;
+            } else {
+                modal.frame = CGRectMake(0, modal.frame.origin.y - 20
+                                         , modal.frame.size.width, modal.frame.size.height);
+                modal.alpha = 0.0;
             }
         } else if (transitionStyle == KNSemiModalTransitionStyleFadeOut || transitionStyle == KNSemiModalTransitionStyleFadeInOut) {
             modal.alpha = 0.0;

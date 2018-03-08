@@ -44,6 +44,7 @@ extern const struct KNSemiModalOption {
     __unsafe_unretained NSString *parentScale;       // boxed double default is 0.8
     __unsafe_unretained NSString *shadowOpacity;     // default is 0.8
     __unsafe_unretained NSString *transitionStyle;     // boxed NSNumber - one of the KNSemiModalTransitionStyle values.
+    __unsafe_unretained NSString *position;     // boxed NSNumber - one of the KNSemiModalPosition values. Add by DucBui
     __unsafe_unretained NSString *disableCancel;     // boxed BOOL. default is NO.
     __unsafe_unretained NSString *backgroundView;     // UIView, custom background.
 } KNSemiModalOptionKeys;
@@ -55,6 +56,12 @@ typedef NS_ENUM(NSUInteger, KNSemiModalTransitionStyle) {
     KNSemiModalTransitionStyleFadeInOut,
     KNSemiModalTransitionStyleFadeIn,
     KNSemiModalTransitionStyleFadeOut,
+};
+
+typedef NS_ENUM(NSUInteger, KNSemiModalPosition) {
+    KNSemiModalPositionTop,
+    KNSemiModalPositionBottom,
+    KNSemiModalPositionCenter
 };
 
 typedef void (^KNTransitionCompletionBlock)(void);

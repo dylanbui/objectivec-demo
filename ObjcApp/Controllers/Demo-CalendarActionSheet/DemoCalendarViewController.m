@@ -8,6 +8,7 @@
 
 #import "DemoCalendarViewController.h"
 #import "CalendarActionSheetViewController.h"
+#import "CalendarView.h"
 
 @interface DemoCalendarViewController ()
 
@@ -22,7 +23,7 @@
 
 
 
-- (IBAction)btnShow_Click:(id)sender
+- (IBAction)btnShow_Click:(UIButton *)sender
 {
     NSCalendar *gregorian = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -48,12 +49,62 @@
     };
     
 //    [self presentSemiViewControllerDefaultPickerOption:picker];
+    NSDictionary *option;
+    if (sender.tag == 1) {
+        option = @{
+                   KNSemiModalOptionKeys.pushParentBack    : @(NO),
+                   KNSemiModalOptionKeys.animationDuration : @(1.0),
+                   KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
+                   KNSemiModalOptionKeys.transitionStyle : @(KNSemiModalTransitionStyleSlideUp),
+                   KNSemiModalOptionKeys.position : @(KNSemiModalPositionBottom),
+                   };
+    } else if (sender.tag == 2) {
+        option = @{
+                   KNSemiModalOptionKeys.pushParentBack    : @(NO),
+                   KNSemiModalOptionKeys.animationDuration : @(1.0),
+                   KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
+                   KNSemiModalOptionKeys.transitionStyle : @(KNSemiModalTransitionStyleSlideDown),
+                   KNSemiModalOptionKeys.position : @(KNSemiModalPositionTop),
+                   };
+    } else if (sender.tag == 3) {
+        option = @{
+                   KNSemiModalOptionKeys.pushParentBack    : @(NO),
+                   KNSemiModalOptionKeys.animationDuration : @(1.0),
+                   KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
+                   KNSemiModalOptionKeys.transitionStyle : @(KNSemiModalTransitionStyleSlideUp),
+                   KNSemiModalOptionKeys.position : @(KNSemiModalPositionCenter),
+                   };
+    } else if (sender.tag == 4) {
+        option = @{
+                   KNSemiModalOptionKeys.pushParentBack    : @(NO),
+                   KNSemiModalOptionKeys.animationDuration : @(1.0),
+                   KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
+                   KNSemiModalOptionKeys.transitionStyle : @(KNSemiModalTransitionStyleFadeInOut),
+                   KNSemiModalOptionKeys.position : @(KNSemiModalPositionCenter),
+                   };
+    } else if (sender.tag == 5) {
+        option = @{
+                   KNSemiModalOptionKeys.pushParentBack    : @(NO),
+                   KNSemiModalOptionKeys.animationDuration : @(1.0),
+                   KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
+                   KNSemiModalOptionKeys.transitionStyle : @(KNSemiModalTransitionStyleSlideSmallDown),
+                   KNSemiModalOptionKeys.position : @(KNSemiModalPositionCenter),
+                   };
+    }
     
-    [self presentSemiViewController:picker withOptions:@{
-                                                     KNSemiModalOptionKeys.pushParentBack    : @(NO),
-                                                     KNSemiModalOptionKeys.animationDuration : @(1.0),
-                                                     KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
-                                                     KNSemiModalOptionKeys.transitionStyle : @(KNSemiModalTransitionStyleSlideSmallDown)}];
+    //[self presentSemiViewController:picker withOptions:option];
+    
+    CalendarView *calView = [[CalendarView alloc] init];
+    [self presentSemiView:calView withOptions:option];
+    
+    
+//    [self presentSemiViewController:picker withOptions:@{
+//                                                     KNSemiModalOptionKeys.pushParentBack    : @(YES),
+//                                                     KNSemiModalOptionKeys.animationDuration : @(1.0),
+//                                                     KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
+//                                                     KNSemiModalOptionKeys.transitionStyle : @(KNSemiModalTransitionStyleSlideSmallDown),
+//                                                     KNSemiModalOptionKeys.position : @(KNSemiModalPositionBottom),
+//                                                     }];
 
     
     

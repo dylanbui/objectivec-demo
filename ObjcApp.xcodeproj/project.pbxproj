@@ -170,6 +170,8 @@
 		BBD1366C1F9A1187007A7763 /* HeaderJTCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1366B1F9A1187007A7763 /* HeaderJTCalendarView.m */; };
 		BBD136701F9A149D007A7763 /* STCalendarHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1366E1F9A149D007A7763 /* STCalendarHeaderViewController.m */; };
 		BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD1366F1F9A149D007A7763 /* STCalendarHeaderViewController.xib */; };
+		BBD289C1205116E100045830 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD289C0205116E100045830 /* CalendarView.m */; };
+		BBD289C52051170E00045830 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD289C42051170E00045830 /* CalendarView.xib */; };
 		BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */; };
 		BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */; };
 		BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */; };
@@ -520,6 +522,9 @@
 		BBD1366D1F9A149D007A7763 /* STCalendarHeaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STCalendarHeaderViewController.h; sourceTree = "<group>"; };
 		BBD1366E1F9A149D007A7763 /* STCalendarHeaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STCalendarHeaderViewController.m; sourceTree = "<group>"; };
 		BBD1366F1F9A149D007A7763 /* STCalendarHeaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STCalendarHeaderViewController.xib; sourceTree = "<group>"; };
+		BBD289BF205116E100045830 /* CalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarView.h; sourceTree = "<group>"; };
+		BBD289C0205116E100045830 /* CalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
+		BBD289C42051170E00045830 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
 		BBD965DB1F5A8B6200CCAF2C /* DemoButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoButtonViewController.h; sourceTree = "<group>"; };
 		BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoButtonViewController.m; sourceTree = "<group>"; };
 		BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoButtonViewController.xib; sourceTree = "<group>"; };
@@ -1288,6 +1293,9 @@
 				BBB0188A204F9D6B00153BD6 /* DemoCalendarViewController.h */,
 				BBB0188B204F9D6B00153BD6 /* DemoCalendarViewController.m */,
 				BBB0188C204F9D6B00153BD6 /* DemoCalendarViewController.xib */,
+				BBD289BF205116E100045830 /* CalendarView.h */,
+				BBD289C0205116E100045830 /* CalendarView.m */,
+				BBD289C42051170E00045830 /* CalendarView.xib */,
 			);
 			path = "Demo-CalendarActionSheet";
 			sourceTree = "<group>";
@@ -1697,6 +1705,7 @@
 				BB85E1801FDBE50700FFA738 /* demo_6@2x.png in Resources */,
 				BB4FD4B61F442C8A00C082C3 /* FontAwesome.ttf in Resources */,
 				BBEDC4321FBC3EEA000317FD /* slider-default-trackCrossedOver.png in Resources */,
+				BBD289C52051170E00045830 /* CalendarView.xib in Resources */,
 				BBD99B311F7CD7BD004B20AF /* TBTwoViewController.xib in Resources */,
 				BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */,
 				BB85E1731FDBCFC600FFA738 /* demo_3.jpg in Resources */,
@@ -1943,6 +1952,7 @@
 				BBF1BD731FAC814A0081E179 /* CanvasView.m in Sources */,
 				BB595DB61F6303940003C0B9 /* BALabel.m in Sources */,
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
+				BBD289C1205116E100045830 /* CalendarView.m in Sources */,
 				BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */,
 				BB3912F91F8BE527002F1CE1 /* SLTableViewController.m in Sources */,
 				BB4FD4861F442AEE00C082C3 /* NSObject+Json.m in Sources */,
