@@ -41,6 +41,18 @@
     return self;
 }
 
+- (instancetype)initFromDeviceNib
+{
+    NSString *nibName = [DbUtils nibNamedForDevice:NSStringFromClass([self class])];
+    NSLog(@"initFromDeviceNib with nibName = %@", nibName);
+    self = [super initWithNibName:nibName bundle:nil];
+    if (self) {
+        [self initDbControllerData];
+    }
+    return self;
+}
+
+
 // -- Tu dong chay khi tao giao dien XIB -- 
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 //{

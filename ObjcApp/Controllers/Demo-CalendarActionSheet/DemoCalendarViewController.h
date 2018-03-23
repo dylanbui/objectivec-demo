@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "DbTextField.h"
 
 @interface DemoCalendarViewController : BaseViewController
+
+@property (weak, nonatomic) IBOutlet DbTextField *txtBorder;
 
 @end

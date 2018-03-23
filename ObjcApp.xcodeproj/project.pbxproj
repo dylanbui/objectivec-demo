@@ -172,6 +172,7 @@
 		BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD1366F1F9A149D007A7763 /* STCalendarHeaderViewController.xib */; };
 		BBD289C1205116E100045830 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD289C0205116E100045830 /* CalendarView.m */; };
 		BBD289C52051170E00045830 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD289C42051170E00045830 /* CalendarView.xib */; };
+		BBD5C8082064FA7D00037E84 /* DbTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD5C8072064FA7D00037E84 /* DbTextField.m */; };
 		BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */; };
 		BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */; };
 		BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965E11F5A8C9000CCAF2C /* JTImageButton.m */; };
@@ -525,6 +526,8 @@
 		BBD289BF205116E100045830 /* CalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarView.h; sourceTree = "<group>"; };
 		BBD289C0205116E100045830 /* CalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
 		BBD289C42051170E00045830 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
+		BBD5C8062064FA7D00037E84 /* DbTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbTextField.h; sourceTree = "<group>"; };
+		BBD5C8072064FA7D00037E84 /* DbTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbTextField.m; sourceTree = "<group>"; };
 		BBD965DB1F5A8B6200CCAF2C /* DemoButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoButtonViewController.h; sourceTree = "<group>"; };
 		BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoButtonViewController.m; sourceTree = "<group>"; };
 		BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoButtonViewController.xib; sourceTree = "<group>"; };
@@ -1207,6 +1210,8 @@
 				BB6CC51E1F5D460A0073A0C1 /* DbButton.m */,
 				BB6CC5211F5D46B70073A0C1 /* DbLabel.h */,
 				BB6CC5221F5D46B70073A0C1 /* DbLabel.m */,
+				BBD5C8062064FA7D00037E84 /* DbTextField.h */,
+				BBD5C8072064FA7D00037E84 /* DbTextField.m */,
 			);
 			path = CustomControllClass;
 			sourceTree = "<group>";
@@ -2034,6 +2039,7 @@
 				BBA7960E1FF0B45B00066B73 /* DbRequest.m in Sources */,
 				BBA7961A1FF0F67200066B73 /* DbUploadRequest.m in Sources */,
 				BB4FD4CF1F443BC100C082C3 /* CoursesViewController.m in Sources */,
+				BBD5C8082064FA7D00037E84 /* DbTextField.m in Sources */,
 				BBE143691F8242C50020C400 /* UINavigationController+Transparency.m in Sources */,
 				BB1320E11FD930F8003CCCA3 /* AVCamPreviewView.m in Sources */,
 				BBD1366C1F9A1187007A7763 /* HeaderJTCalendarView.m in Sources */,

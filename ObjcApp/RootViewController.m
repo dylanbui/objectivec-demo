@@ -59,7 +59,11 @@
 //    STMapHeaderViewController *vcFirst = [[STMapHeaderViewController alloc] init];
 //    SLParallaxViewController *vcFirst = [[SLParallaxViewController alloc] init];
 //    DemoDbConnectionViewController *vcFirst = [[DemoDbConnectionViewController alloc] init];
-    DemoCalendarViewController *vcFirst = [[DemoCalendarViewController alloc] init];
+    
+//    id a = [DemoCalendarViewController createInstance];
+    
+//    DemoCalendarViewController *vcFirst = [[DemoCalendarViewController alloc] init];
+    DemoCalendarViewController *vcFirst = [[DemoCalendarViewController alloc] initFromDeviceNib];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 

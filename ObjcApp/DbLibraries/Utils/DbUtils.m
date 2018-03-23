@@ -11,6 +11,33 @@
 
 @implementation DbUtils
 
++ (NSString *)nibNamedForDevice:(NSString *)name
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        if ([UIScreen mainScreen].bounds.size.height == 568)
+        {
+            //Check if there's a path extension or not
+            if (name.pathExtension.length) {
+                name = [name stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@".%@", name.pathExtension]
+                                                       withString:[NSString stringWithFormat:@"-568h.%@", name.pathExtension]];
+                
+            } else {
+                name = [name stringByAppendingString:@"-568h"];
+            }
+            NSLog(@"LOG VAL nibNamedForDevice : %@",name); /* DEBUG LOG */
+            // if 568h nib is found
+            NSString *nibExists = [[NSBundle mainBundle] pathForResource:name ofType:@"nib"];
+            if (nibExists) {
+                return name;
+            }
+        }
+    }
+    return name;
+    // just default to ios universal app naming convention for xibs
+    //    return Nil;
+}
+
 + (NSString *)generateRandomString:(int)num
 {
     NSMutableString* string = [NSMutableString stringWithCapacity:num];

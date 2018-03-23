@@ -16,9 +16,17 @@
 
 @implementation DemoCalendarViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    
+
+    [self.txtBorder setContentEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 0)];
+    [self.txtBorder drawBorderWithColor:[UIColor grayColor] borderWidth:1.0 cornerRadius:5.0];
+//    [self.txtBorder sizeToFit];
+    
 }
 
 

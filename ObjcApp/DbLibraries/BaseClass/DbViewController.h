@@ -29,6 +29,7 @@
 @property (nonatomic, strong) NSString  *titleForEmptyDataSet;
 @property (nonatomic, strong) UIImage *defaultImageForEmptyDataSet;
 
+- (instancetype)initFromDeviceNib;
 
 - (void)initLoadDataForController:(id)params;
 
