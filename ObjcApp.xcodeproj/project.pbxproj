@@ -160,11 +160,22 @@
 		BBB752031FCEA85C000E5A03 /* DemoMyCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB752011FCEA85C000E5A03 /* DemoMyCameraViewController.xib */; };
 		BBB752061FCEAA76000E5A03 /* demo_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBB752041FCEAA76000E5A03 /* demo_2.jpg */; };
 		BBB752071FCEAA76000E5A03 /* demo_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBB752051FCEAA76000E5A03 /* demo_1.jpg */; };
+		BBB9774C207CB21400992CE0 /* DbPlaceSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB9774A207CB21400992CE0 /* DbPlaceSearchViewController.m */; };
+		BBB9774D207CB21400992CE0 /* DbPlaceSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB9774B207CB21400992CE0 /* DbPlaceSearchViewController.xib */; };
 		BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C471F49E718007A3B5C /* NavigationBarTitleView.m */; };
 		BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */; };
 		BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */; };
 		BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */; };
 		BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCC62981F5E4C11006FF200 /* GBFlatButton.m */; };
+		BBCFCA4F207B193C0091C01A /* MVPlaceSearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFCA48207B193C0091C01A /* MVPlaceSearchTextField.m */; };
+		BBCFCA50207B193C0091C01A /* PlaceDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFCA4A207B193C0091C01A /* PlaceDetail.m */; };
+		BBCFCA51207B193C0091C01A /* PlaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFCA4C207B193C0091C01A /* PlaceObject.m */; };
+		BBCFCA56207B19B70091C01A /* DemoTextSearchGGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFCA54207B19B70091C01A /* DemoTextSearchGGViewController.m */; };
+		BBCFCA57207B19B70091C01A /* DemoTextSearchGGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCFCA55207B19B70091C01A /* DemoTextSearchGGViewController.xib */; };
+		BBCFCA6C207B2A450091C01A /* MLPAutoCompleteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFCA66207B2A450091C01A /* MLPAutoCompleteTextField.m */; };
+		BBCFCA6D207B2A450091C01A /* NSString+Levenshtein.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFCA6B207B2A450091C01A /* NSString+Levenshtein.m */; };
+		BBCFCA71207B66020091C01A /* AddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFCA6F207B66020091C01A /* AddressTableViewCell.m */; };
+		BBCFCA72207B66020091C01A /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCFCA70207B66020091C01A /* AddressTableViewCell.xib */; };
 		BBD1076F1FCFA74A0009BAB1 /* AutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1076D1FCFA74A0009BAB1 /* AutoLayoutViewController.m */; };
 		BBD107701FCFA74A0009BAB1 /* AutoLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD1076E1FCFA74A0009BAB1 /* AutoLayoutViewController.xib */; };
 		BBD1366C1F9A1187007A7763 /* HeaderJTCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1366B1F9A1187007A7763 /* HeaderJTCalendarView.m */; };
@@ -507,6 +518,9 @@
 		BBB752011FCEA85C000E5A03 /* DemoMyCameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoMyCameraViewController.xib; sourceTree = "<group>"; };
 		BBB752041FCEAA76000E5A03 /* demo_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo_2.jpg; sourceTree = "<group>"; };
 		BBB752051FCEAA76000E5A03 /* demo_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo_1.jpg; sourceTree = "<group>"; };
+		BBB97749207CB21400992CE0 /* DbPlaceSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbPlaceSearchViewController.h; sourceTree = "<group>"; };
+		BBB9774A207CB21400992CE0 /* DbPlaceSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbPlaceSearchViewController.m; sourceTree = "<group>"; };
+		BBB9774B207CB21400992CE0 /* DbPlaceSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DbPlaceSearchViewController.xib; sourceTree = "<group>"; };
 		BBC07C461F49E718007A3B5C /* NavigationBarTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarTitleView.h; sourceTree = "<group>"; };
 		BBC07C471F49E718007A3B5C /* NavigationBarTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarTitleView.m; sourceTree = "<group>"; };
 		BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationBarTitleView.xib; sourceTree = "<group>"; };
@@ -515,6 +529,25 @@
 		BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPathsViewController.xib; sourceTree = "<group>"; };
 		BBCC62971F5E4C11006FF200 /* GBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBFlatButton.h; sourceTree = "<group>"; };
 		BBCC62981F5E4C11006FF200 /* GBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBFlatButton.m; sourceTree = "<group>"; };
+		BBCFCA47207B193C0091C01A /* MVPlaceSearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVPlaceSearchTextField.h; sourceTree = "<group>"; };
+		BBCFCA48207B193C0091C01A /* MVPlaceSearchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVPlaceSearchTextField.m; sourceTree = "<group>"; };
+		BBCFCA49207B193C0091C01A /* PlaceDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceDetail.h; sourceTree = "<group>"; };
+		BBCFCA4A207B193C0091C01A /* PlaceDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceDetail.m; sourceTree = "<group>"; };
+		BBCFCA4B207B193C0091C01A /* PlaceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceObject.h; sourceTree = "<group>"; };
+		BBCFCA4C207B193C0091C01A /* PlaceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceObject.m; sourceTree = "<group>"; };
+		BBCFCA53207B19B70091C01A /* DemoTextSearchGGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTextSearchGGViewController.h; sourceTree = "<group>"; };
+		BBCFCA54207B19B70091C01A /* DemoTextSearchGGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTextSearchGGViewController.m; sourceTree = "<group>"; };
+		BBCFCA55207B19B70091C01A /* DemoTextSearchGGViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoTextSearchGGViewController.xib; sourceTree = "<group>"; };
+		BBCFCA65207B2A450091C01A /* MLPAutoCompleteTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompleteTextField.h; sourceTree = "<group>"; };
+		BBCFCA66207B2A450091C01A /* MLPAutoCompleteTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPAutoCompleteTextField.m; sourceTree = "<group>"; };
+		BBCFCA67207B2A450091C01A /* MLPAutoCompleteTextFieldDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompleteTextFieldDataSource.h; sourceTree = "<group>"; };
+		BBCFCA68207B2A450091C01A /* MLPAutoCompleteTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompleteTextFieldDelegate.h; sourceTree = "<group>"; };
+		BBCFCA69207B2A450091C01A /* MLPAutoCompletionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompletionObject.h; sourceTree = "<group>"; };
+		BBCFCA6A207B2A450091C01A /* NSString+Levenshtein.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Levenshtein.h"; sourceTree = "<group>"; };
+		BBCFCA6B207B2A450091C01A /* NSString+Levenshtein.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Levenshtein.m"; sourceTree = "<group>"; };
+		BBCFCA6E207B66020091C01A /* AddressTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressTableViewCell.h; sourceTree = "<group>"; };
+		BBCFCA6F207B66020091C01A /* AddressTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressTableViewCell.m; sourceTree = "<group>"; };
+		BBCFCA70207B66020091C01A /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
 		BBD1076C1FCFA74A0009BAB1 /* AutoLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutViewController.h; sourceTree = "<group>"; };
 		BBD1076D1FCFA74A0009BAB1 /* AutoLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutViewController.m; sourceTree = "<group>"; };
 		BBD1076E1FCFA74A0009BAB1 /* AutoLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutoLayoutViewController.xib; sourceTree = "<group>"; };
@@ -928,6 +961,7 @@
 		BB4FD4311F442AEE00C082C3 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BBCFCA3E207B193C0091C01A /* MVPlaceSearchTextField */,
 				BBB0187F204F962C00153BD6 /* UIViewController+KNSemiModal */,
 				BBEDC40B1FBC3EEA000317FD /* NMRangeSlider */,
 				BB4FD4321F442AEE00C082C3 /* ActivityIndicatorButton */,
@@ -1125,6 +1159,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBCFCA52207B198B0091C01A /* Demo-SearchGoogle */,
 				BBB01889204F9D4600153BD6 /* Demo-CalendarActionSheet */,
 				BBE5EF7D1FDFD1BD005F3900 /* Demo-SLParallaxViewController */,
 				BB85E16C1FDBCC6800FFA738 /* Demo-ImageAnimViewController */,
@@ -1323,6 +1358,50 @@
 				BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */,
 			);
 			name = NavigationBarUseTitleView;
+			sourceTree = "<group>";
+		};
+		BBCFCA3E207B193C0091C01A /* MVPlaceSearchTextField */ = {
+			isa = PBXGroup;
+			children = (
+				BBCFCA64207B2A450091C01A /* MLPAutoCompleteTextField */,
+				BBCFCA47207B193C0091C01A /* MVPlaceSearchTextField.h */,
+				BBCFCA48207B193C0091C01A /* MVPlaceSearchTextField.m */,
+				BBCFCA49207B193C0091C01A /* PlaceDetail.h */,
+				BBCFCA4A207B193C0091C01A /* PlaceDetail.m */,
+				BBCFCA4B207B193C0091C01A /* PlaceObject.h */,
+				BBCFCA4C207B193C0091C01A /* PlaceObject.m */,
+				BBB97749207CB21400992CE0 /* DbPlaceSearchViewController.h */,
+				BBB9774A207CB21400992CE0 /* DbPlaceSearchViewController.m */,
+				BBB9774B207CB21400992CE0 /* DbPlaceSearchViewController.xib */,
+			);
+			path = MVPlaceSearchTextField;
+			sourceTree = "<group>";
+		};
+		BBCFCA52207B198B0091C01A /* Demo-SearchGoogle */ = {
+			isa = PBXGroup;
+			children = (
+				BBCFCA53207B19B70091C01A /* DemoTextSearchGGViewController.h */,
+				BBCFCA54207B19B70091C01A /* DemoTextSearchGGViewController.m */,
+				BBCFCA55207B19B70091C01A /* DemoTextSearchGGViewController.xib */,
+				BBCFCA6E207B66020091C01A /* AddressTableViewCell.h */,
+				BBCFCA6F207B66020091C01A /* AddressTableViewCell.m */,
+				BBCFCA70207B66020091C01A /* AddressTableViewCell.xib */,
+			);
+			path = "Demo-SearchGoogle";
+			sourceTree = "<group>";
+		};
+		BBCFCA64207B2A450091C01A /* MLPAutoCompleteTextField */ = {
+			isa = PBXGroup;
+			children = (
+				BBCFCA65207B2A450091C01A /* MLPAutoCompleteTextField.h */,
+				BBCFCA66207B2A450091C01A /* MLPAutoCompleteTextField.m */,
+				BBCFCA67207B2A450091C01A /* MLPAutoCompleteTextFieldDataSource.h */,
+				BBCFCA68207B2A450091C01A /* MLPAutoCompleteTextFieldDelegate.h */,
+				BBCFCA69207B2A450091C01A /* MLPAutoCompletionObject.h */,
+				BBCFCA6A207B2A450091C01A /* NSString+Levenshtein.h */,
+				BBCFCA6B207B2A450091C01A /* NSString+Levenshtein.m */,
+			);
+			path = MLPAutoCompleteTextField;
 			sourceTree = "<group>";
 		};
 		BBD107711FCFA7510009BAB1 /* Demo-AutoLayoutViewController */ = {
@@ -1731,6 +1810,7 @@
 				BB999CFB1F4F4F3D00B29FDE /* UserSessionViewController.xib in Resources */,
 				BB4FD4A01F442AEE00C082C3 /* ic_show_password.png in Resources */,
 				BB4FD3C61F4429E200C082C3 /* Assets.xcassets in Resources */,
+				BBCFCA72207B66020091C01A /* AddressTableViewCell.xib in Resources */,
 				BBEDC4561FBC543C000317FD /* db_slider_text_bg@3x.png in Resources */,
 				BBEDC4441FBC3EEA000317FD /* slider-metal-trackBackground@2x.png in Resources */,
 				BBEDC4301FBC3EEA000317FD /* slider-default-track@2x.png in Resources */,
@@ -1738,6 +1818,7 @@
 				BBEDC4341FBC3EEA000317FD /* slider-default_trackBackground@2x.png in Resources */,
 				BBE5EF6F1FDFCE57005F3900 /* STMapHeaderViewController.xib in Resources */,
 				BBEDC4551FBC543C000317FD /* db_slider_text_bg@2x.png in Resources */,
+				BBB9774D207CB21400992CE0 /* DbPlaceSearchViewController.xib in Resources */,
 				BBEDC43B1FBC3EEA000317FD /* slider-default7-trackCrossedOver.png in Resources */,
 				BBEDC4591FBC543C000317FD /* db_slider_text_bg.png in Resources */,
 				BB4FD48E1F442AEE00C082C3 /* apnumberpad_backspace_icon@2x.png in Resources */,
@@ -1767,6 +1848,7 @@
 				BBB752061FCEAA76000E5A03 /* demo_2.jpg in Resources */,
 				BB9A74351FD80BBE004BEE9D /* UploadFileViewController.xib in Resources */,
 				BB4FD4D21F443BC100C082C3 /* DetailCoursesViewController.xib in Resources */,
+				BBCFCA57207B19B70091C01A /* DemoTextSearchGGViewController.xib in Resources */,
 				BB4FD4D41F443BC100C082C3 /* PathsViewController.xib in Resources */,
 				BBDBD8FB1F6A9A97009C9340 /* KeyboardViewController.xib in Resources */,
 				BB4FD4A11F442AEE00C082C3 /* ic_show_password@2x.png in Resources */,
@@ -1931,6 +2013,7 @@
 				BB4FD48C1F442AEE00C082C3 /* UIButton+Activity.m in Sources */,
 				BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */,
 				BBE5EF7B1FDFD1B6005F3900 /* SLParallaxViewController.m in Sources */,
+				BBCFCA6D207B2A450091C01A /* NSString+Levenshtein.m in Sources */,
 				BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */,
 				BBA796141FF0DEB700066B73 /* DbConnection.m in Sources */,
 				BBB0187D204F961F00153BD6 /* THDatePickerViewController.m in Sources */,
@@ -1959,6 +2042,7 @@
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
 				BBD289C1205116E100045830 /* CalendarView.m in Sources */,
 				BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */,
+				BBCFCA4F207B193C0091C01A /* MVPlaceSearchTextField.m in Sources */,
 				BB3912F91F8BE527002F1CE1 /* SLTableViewController.m in Sources */,
 				BB4FD4861F442AEE00C082C3 /* NSObject+Json.m in Sources */,
 				BBE1435D1F823EA30020C400 /* STHeaderViewController.m in Sources */,
@@ -1974,6 +2058,7 @@
 				BB4FD4881F442AEE00C082C3 /* UINavigationController+Utils.m in Sources */,
 				BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */,
 				BB6EBF471FB2F7EC006CC4EA /* SearchSession.m in Sources */,
+				BBCFCA50207B193C0091C01A /* PlaceDetail.m in Sources */,
 				BB4FD4951F442AEE00C082C3 /* CropPhotoViewController.m in Sources */,
 				BB4FD47C1F442AEE00C082C3 /* DbAppDelegate.m in Sources */,
 				BB1320E21FD930F8003CCCA3 /* AVCamViewController.m in Sources */,
@@ -1990,9 +2075,11 @@
 				BB6CC5231F5D46B70073A0C1 /* DbLabel.m in Sources */,
 				BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */,
 				BB4FD4D31F443BC100C082C3 /* PathsViewController.m in Sources */,
+				BBCFCA6C207B2A450091C01A /* MLPAutoCompleteTextField.m in Sources */,
 				BB1320E81FD930F8003CCCA3 /* UIBarButtonItem+Badge.m in Sources */,
 				BB345F721F606E02009B7274 /* BTLabel.m in Sources */,
 				BB4FD4A71F442B4D00C082C3 /* RootViewController.m in Sources */,
+				BBCFCA56207B19B70091C01A /* DemoTextSearchGGViewController.m in Sources */,
 				BB4FD4931F442AEE00C082C3 /* NSBundle+APNumberPad.m in Sources */,
 				BBD99B401F7CD851004B20AF /* TBTabbarViewController.m in Sources */,
 				BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */,
@@ -2011,6 +2098,7 @@
 				BB4FD4831F442AEE00C082C3 /* DbAppSession.m in Sources */,
 				BBF1BD6F1FAC81300081E179 /* MapDrawingViewController.m in Sources */,
 				BBD136701F9A149D007A7763 /* STCalendarHeaderViewController.m in Sources */,
+				BBB9774C207CB21400992CE0 /* DbPlaceSearchViewController.m in Sources */,
 				BB8DCAF51FB16F3000AB337B /* RippleEffectView.m in Sources */,
 				BB4FD48A1F442AEE00C082C3 /* DbWebConnection.m in Sources */,
 				BB4FD4A21F442AEE00C082C3 /* UITextField+PasswordField.m in Sources */,
@@ -2028,6 +2116,7 @@
 				BBF8264E1FF4DB9600D25AD7 /* DemoDbConnectionViewController.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
 				BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */,
+				BBCFCA51207B193C0091C01A /* PlaceObject.m in Sources */,
 				BB8DCAF01FB16CA700AB337B /* PriceMapIntroView.m in Sources */,
 				BB4FD47D1F442AEE00C082C3 /* DbNavigationBarView.m in Sources */,
 				BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */,
@@ -2037,6 +2126,7 @@
 				BB4FD4891F442AEE00C082C3 /* DbResponseObject.m in Sources */,
 				BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */,
 				BBA7960E1FF0B45B00066B73 /* DbRequest.m in Sources */,
+				BBCFCA71207B66020091C01A /* AddressTableViewCell.m in Sources */,
 				BBA7961A1FF0F67200066B73 /* DbUploadRequest.m in Sources */,
 				BB4FD4CF1F443BC100C082C3 /* CoursesViewController.m in Sources */,
 				BBD5C8082064FA7D00037E84 /* DbTextField.m in Sources */,

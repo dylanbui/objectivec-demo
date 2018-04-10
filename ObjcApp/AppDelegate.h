@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DbAppDelegate.h"
+#import "IQKeyboardManager.h"
 
 @interface AppDelegate : DbAppDelegate
 

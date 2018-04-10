@@ -8,9 +8,9 @@
 
 #import "AppDelegate.h"
 #import "UserSession.h"
-#import "IQKeyboardManager.h"
 
 @import GoogleMaps;
+@import GooglePlaces;
 
 @interface AppDelegate ()
 
@@ -25,6 +25,7 @@
     
     // -- Google map --
     [GMSServices provideAPIKey:@"AIzaSyBK_MVp9sT3n-klZ4BIMnKHi1cjHJyYNFA"];
+    [GMSPlacesClient provideAPIKey:@"AIzaSyBK_MVp9sT3n-klZ4BIMnKHi1cjHJyYNFA"];
     
     [[UserSession instance] sessionStart];
     

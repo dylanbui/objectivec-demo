@@ -11,7 +11,7 @@
 @interface DbTextField : UITextField
 
 // -- Fix content in label : contentEdgeInsets = top, left, bottom, right --
-// -- Neu left content qua nhieu th chuyen wa dung leftView lam padding -- 
+// -- Neu left content qua nhieu th chuyen wa dung leftView lam padding --
 @property (assign, nonatomic) IBInspectable UIEdgeInsets contentEdgeInsets;
 
 - (void)drawBorderWithColor:(UIColor *)color borderWidth:(CGFloat)width cornerRadius:(CGFloat)corner;

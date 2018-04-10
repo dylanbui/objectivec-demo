@@ -22,6 +22,7 @@
 #import "SLParallaxViewController.h"
 #import "DemoDbConnectionViewController.h"
 #import "DemoCalendarViewController.h"
+#import "DemoTextSearchGGViewController.h"
 
 @interface RootViewController ()
 
@@ -63,7 +64,8 @@
 //    id a = [DemoCalendarViewController createInstance];
     
 //    DemoCalendarViewController *vcFirst = [[DemoCalendarViewController alloc] init];
-    DemoCalendarViewController *vcFirst = [[DemoCalendarViewController alloc] initFromDeviceNib];
+//    DemoCalendarViewController *vcFirst = [[DemoCalendarViewController alloc] initFromDeviceNib];
+    DemoTextSearchGGViewController *vcFirst = [[DemoTextSearchGGViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 

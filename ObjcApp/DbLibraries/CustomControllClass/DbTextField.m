@@ -37,14 +37,18 @@
 // placeholder position
 - (CGRect)textRectForBounds:(CGRect)bounds
 {
-    return CGRectInset(bounds, _contentEdgeInsets.left, _contentEdgeInsets.right);
+    return UIEdgeInsetsInsetRect(bounds, _contentEdgeInsets);
 }
 
 // text position
 - (CGRect)editingRectForBounds:(CGRect)bounds
 {
-//    return CGRectInset(bounds, 10, 10);
-    return CGRectInset(bounds, _contentEdgeInsets.left, _contentEdgeInsets.right);
+    return UIEdgeInsetsInsetRect(bounds, _contentEdgeInsets);
+}
+
+- (CGRect)placeholderRectForBounds:(CGRect)bounds
+{
+    return UIEdgeInsetsInsetRect(bounds, _contentEdgeInsets);
 }
 
 #pragma mark -
