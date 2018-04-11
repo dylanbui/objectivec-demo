@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GooglePlacesApiClient.h"
 @import GooglePlaces;
 
 @interface DbPlaceSearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
-@property (nonatomic,strong) IBOutlet UITextField* txtAutoComplete;
-@property (nonatomic,strong) IBOutlet UITableView* tblContent;
+@property (nonatomic, strong) NSString *apiKey;
 
 @end

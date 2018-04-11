@@ -11,13 +11,19 @@
 
 @interface DbPlaceSearchViewController ()
 
-@property (nonatomic, strong) NSArray *arrContents;
+@property (nonatomic, strong) NSMutableArray *arrContents;
 @property (nonatomic, strong) UIActivityIndicatorView *searchLoadingActivityIndicator;
 
 @property (nonatomic, strong) NSTimer *autoCompleteTimer;
 @property (nonatomic, strong) NSString *substring;
 
 @property (nonatomic, strong) GMSPlacesClient *placesClient;
+@property (nonatomic, strong) GooglePlacesApiClient *placeApiClient;
+
+@property (nonatomic,strong) IBOutlet UITextField* txtAutoComplete;
+@property (nonatomic,strong) IBOutlet UITableView* tblContent;
+@property (nonatomic,strong) IBOutlet UIButton* btnBack;
+@property (nonatomic,strong) IBOutlet UIButton* btnCurrentLocation;
 
 @end
 
@@ -27,17 +33,27 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     
-    self.placesClient = [GMSPlacesClient sharedClient];
+    // self.placesClient = [GMSPlacesClient sharedClient];
+    self.placeApiClient = [GooglePlacesApiClient sharedInstance];
+    self.placeApiClient.apiKey = self.apiKey;
+    self.placeApiClient.apiKey = @"AIzaSyBK_MVp9sT3n-klZ4BIMnKHi1cjHJyYNFA";
+    self.placeApiClient.country = @"VN";
+    self.placeApiClient.language = @"vi";
     
-    [self.tblContent setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    self.arrContents = [[NSMutableArray alloc] init];
+    
+//    [self.tblContent setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.tblContent setDelegate:self];
     [self.tblContent setDataSource:self];
+    self.tblContent.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(textFieldDidChangeWithNotification:)
-                                                 name:UITextFieldTextDidChangeNotification object:self];
+                                                 name:UITextFieldTextDidChangeNotification object:self.txtAutoComplete];
     
+    self.btnCurrentLocation.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -64,8 +80,17 @@
 
 - (void)textFieldDidChangeWithNotification:(NSNotification *)aNotification
 {
-    if(aNotification.object == self){
-        [self reloadData];
+    if(aNotification.object == self.txtAutoComplete){
+//        [self reloadData];
+
+        [NSObject cancelPreviousPerformRequestsWithTarget:self
+                                                 selector:@selector(fetchAutoCompleteSuggestions)
+                                                   object:nil];
+        
+        [self performSelector:@selector(fetchAutoCompleteSuggestions)
+                   withObject:nil
+                   afterDelay:0.65];
+
     }
 }
 
@@ -77,7 +102,7 @@
     
     [self performSelector:@selector(fetchAutoCompleteSuggestions)
                withObject:nil
-               afterDelay:0.65];
+               afterDelay:0.5];
 }
 
 #pragma mark - Getters
@@ -85,36 +110,27 @@
 - (void)fetchAutoCompleteSuggestions
 {
     NSString *searchWordProtection = [self.txtAutoComplete.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-    
-    GMSAutocompleteFilter *filter = [[GMSAutocompleteFilter alloc] init];
-    // filter.type = kGMSPlacesAutocompleteTypeFilterNoFilter;
-    filter.type = kGMSPlacesAutocompleteTypeFilterAddress;
-    filter.country = @"VN";
     if(searchWordProtection.length > 0) {
-        [self.placesClient autocompleteQuery:searchWordProtection
-                              bounds:nil
-                              filter:filter
-                            callback:^(NSArray *results, NSError *error) {
-                                if (error != nil) {
-                                    NSLog(@"Autocomplete error %@", [error localizedDescription]);
-                                    return;
-                                }
-                                if(results.count>0){
-                                    NSMutableArray *arrfinal=[NSMutableArray array];
-                                    for (GMSAutocompletePrediction* result in results) {
-                                        NSDictionary *aTempDict =  [NSDictionary dictionaryWithObjectsAndKeys:result.attributedFullText.string,@"description",result.placeID,@"reference", nil];
-                                        PlaceObject *placeObj=[[PlaceObject alloc]initWithPlaceName:[aTempDict objectForKey:@"description"]];
-                                        placeObj.userInfo=aTempDict;
-                                        [arrfinal addObject:placeObj];
-                                        
-                                    }
-                                    // handler(arrfinal);
-                                }else{
-                                    // handler(nil);
-                                }
-                            }];
-    }else{
-        // handler(nil);
+    
+        [self.placeApiClient retrieveGooglePlaceInformation:searchWordProtection withCompletion:^(NSArray *searchResults, NSError *error) {
+            
+            if (error != nil) {
+                NSLog(@"Autocomplete error %@", [error localizedDescription]);
+                return;
+            }
+            
+            if (searchResults.count > 0) {
+                self.arrContents = [[NSMutableArray alloc] initWithArray:searchResults];
+            } else {
+                [self.arrContents removeAllObjects];
+            }
+            
+            [self.tblContent reloadData];
+        }];
+        
+    } else {
+        [self.arrContents removeAllObjects];
+        [self.tblContent reloadData];
     }
 }
 #pragma mark - UITableView
@@ -135,9 +151,9 @@
 }
 
 
-- (UITableViewCell *)locationSearchResultCellForIndexPath:(NSIndexPath *)indexPath {
-    
-//    ABCGoogleAutoCompleteResult *autoCompleteResult = [[ABCGooglePlacesAPIClient sharedInstance].searchResults objectAtIndex:indexPath.row];
+- (UITableViewCell *)locationSearchResultCellForIndexPath:(NSIndexPath *)indexPath
+{
+    GoogleAutoCompleteResult *placeObj = [self.arrContents objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [self.tblContent dequeueReusableCellWithIdentifier:@"Cell"];
     
@@ -145,8 +161,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
     }
     
-//    [cell.textLabel setText:autoCompleteResult.name];
-//    [cell.detailTextLabel setText:autoCompleteResult.description];
+    [cell.textLabel setText:placeObj.mainAddress];
+    [cell.detailTextLabel setText:placeObj.secondaryAddress];
     
     return cell;
 }
@@ -157,7 +173,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    GoogleAutoCompleteResult *placeObj = [self.arrContents objectAtIndex:indexPath.row];
+    NSLog(@"didSelectRowAtIndexPath = %@", placeObj.placeID);
 }
 
 #pragma mark - Properties
@@ -167,7 +184,7 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     [cell setBackgroundColor:[UIColor clearColor]];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    [cell.contentView addSubview:self.searchLoadingActivityIndicator ];
+    [cell.contentView addSubview:self.searchLoadingActivityIndicator];
     
     return cell;
 }

@@ -23,6 +23,7 @@
 #import "DemoDbConnectionViewController.h"
 #import "DemoCalendarViewController.h"
 #import "DemoTextSearchGGViewController.h"
+#import "DbPlaceSearchViewController.h"
 
 @interface RootViewController ()
 
@@ -65,7 +66,9 @@
     
 //    DemoCalendarViewController *vcFirst = [[DemoCalendarViewController alloc] init];
 //    DemoCalendarViewController *vcFirst = [[DemoCalendarViewController alloc] initFromDeviceNib];
-    DemoTextSearchGGViewController *vcFirst = [[DemoTextSearchGGViewController alloc] init];
+//    DemoTextSearchGGViewController *vcFirst = [[DemoTextSearchGGViewController alloc] init];
+    
+    DbPlaceSearchViewController *vcFirst = [[DbPlaceSearchViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 
