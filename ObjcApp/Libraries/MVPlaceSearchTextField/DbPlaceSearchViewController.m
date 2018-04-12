@@ -7,8 +7,9 @@
 //
 
 #import "DbPlaceSearchViewController.h"
+#import "DbUtils.h"
+#import "DbFontAwesomeKit.h"
 #import "UIView+LayoutHelper.h"
-//#import "UIViewController+KNSemiModal.h"
 
 @interface DbPlaceSearchViewController ()
 
@@ -52,6 +53,12 @@
     self.placeApiClient.country = self.country;
     self.placeApiClient.language = self.language;
     
+    // -- Define back button --
+    DbFontAwesome *backIcon = [DbFontAwesome chevronLeftIconWithSize:7];
+    [backIcon addAttribute:NSForegroundColorAttributeName value:[DbUtils colorWithHexString:@"#2196F3"]];
+    UIImage *backImage = [backIcon imageWithSize:CGSizeMake(20, 20)];
+    [self.btnBack setBackgroundImage:backImage forState:UIControlStateNormal];
+    
     self.arrContents = [[NSMutableArray alloc] init];
     
 //    [self.tblContent setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -71,7 +78,11 @@
     [super viewWillDisappear:animated];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
@@ -113,7 +124,7 @@
 
 - (void)addSubViewPlaceSearch
 {
-    UIViewController *topVcl =  [DbUtils getTopViewController];
+    UIViewController *topVcl = [DbUtils getTopViewController];
     // NSLog(@"vcl.view.frame = %@", NSStringFromCGRect(topVcl.view.frame));
     
     // -- Set view --

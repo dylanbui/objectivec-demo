@@ -31,6 +31,9 @@
 		BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC9E1F51F46C0005372B /* ExpandTypeTwoCell.m */; };
 		BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */; };
 		BB345F721F606E02009B7274 /* BTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB345F711F606E02009B7274 /* BTLabel.m */; };
+		BB3889EE207F67E300F1DC1D /* DbFontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3889E9207F67E300F1DC1D /* DbFontAwesome.m */; };
+		BB3889EF207F67E300F1DC1D /* DbKitIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3889EC207F67E300F1DC1D /* DbKitIcon.m */; };
+		BB3889F0207F67E300F1DC1D /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB3889ED207F67E300F1DC1D /* FontAwesome.ttf */; };
 		BB3912F91F8BE527002F1CE1 /* SLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3912F71F8BE527002F1CE1 /* SLTableViewController.m */; };
 		BB3912FA1F8BE527002F1CE1 /* SLTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB3912F81F8BE527002F1CE1 /* SLTableViewController.xib */; };
 		BB3912FE1F8BE557002F1CE1 /* SLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3912FC1F8BE557002F1CE1 /* SLTableViewCell.m */; };
@@ -86,7 +89,6 @@
 		BB4FD4A11F442AEE00C082C3 /* ic_show_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4641F442AEE00C082C3 /* ic_show_password@2x.png */; };
 		BB4FD4A21F442AEE00C082C3 /* UITextField+PasswordField.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4661F442AEE00C082C3 /* UITextField+PasswordField.m */; };
 		BB4FD4A71F442B4D00C082C3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD4A61F442B4D00C082C3 /* RootViewController.m */; };
-		BB4FD4B61F442C8A00C082C3 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4AA1F442C8A00C082C3 /* FontAwesome.ttf */; };
 		BB4FD4B71F442C8A00C082C3 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4AB1F442C8A00C082C3 /* OpenSans-Bold.ttf */; };
 		BB4FD4B81F442C8A00C082C3 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4AC1F442C8A00C082C3 /* OpenSans-BoldItalic.ttf */; };
 		BB4FD4B91F442C8A00C082C3 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD4AD1F442C8A00C082C3 /* OpenSans-ExtraBold.ttf */; };
@@ -314,6 +316,12 @@
 		BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandTypeTwoCell.xib; sourceTree = "<group>"; };
 		BB345F701F606E02009B7274 /* BTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLabel.h; sourceTree = "<group>"; };
 		BB345F711F606E02009B7274 /* BTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLabel.m; sourceTree = "<group>"; };
+		BB3889E8207F67E300F1DC1D /* DbFontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbFontAwesome.h; sourceTree = "<group>"; };
+		BB3889E9207F67E300F1DC1D /* DbFontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbFontAwesome.m; sourceTree = "<group>"; };
+		BB3889EA207F67E300F1DC1D /* DbFontAwesomeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbFontAwesomeKit.h; sourceTree = "<group>"; };
+		BB3889EB207F67E300F1DC1D /* DbKitIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbKitIcon.h; sourceTree = "<group>"; };
+		BB3889EC207F67E300F1DC1D /* DbKitIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbKitIcon.m; sourceTree = "<group>"; };
+		BB3889ED207F67E300F1DC1D /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		BB3912F61F8BE527002F1CE1 /* SLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTableViewController.h; sourceTree = "<group>"; };
 		BB3912F71F8BE527002F1CE1 /* SLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTableViewController.m; sourceTree = "<group>"; };
 		BB3912F81F8BE527002F1CE1 /* SLTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLTableViewController.xib; sourceTree = "<group>"; };
@@ -417,7 +425,6 @@
 		BB4FD4A41F442B4D00C082C3 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		BB4FD4A51F442B4D00C082C3 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		BB4FD4A61F442B4D00C082C3 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		BB4FD4AA1F442C8A00C082C3 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		BB4FD4AB1F442C8A00C082C3 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		BB4FD4AC1F442C8A00C082C3 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		BB4FD4AD1F442C8A00C082C3 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -785,6 +792,27 @@
 			name = ExpandTypeTwo;
 			sourceTree = "<group>";
 		};
+		BB3889E7207F67E300F1DC1D /* FontAwesomeKit */ = {
+			isa = PBXGroup;
+			children = (
+				BB3889EA207F67E300F1DC1D /* DbFontAwesomeKit.h */,
+				BB3889E8207F67E300F1DC1D /* DbFontAwesome.h */,
+				BB3889E9207F67E300F1DC1D /* DbFontAwesome.m */,
+				BB3889EB207F67E300F1DC1D /* DbKitIcon.h */,
+				BB3889EC207F67E300F1DC1D /* DbKitIcon.m */,
+				BB3889F1207F694600F1DC1D /* IconFonts */,
+			);
+			path = FontAwesomeKit;
+			sourceTree = "<group>";
+		};
+		BB3889F1207F694600F1DC1D /* IconFonts */ = {
+			isa = PBXGroup;
+			children = (
+				BB3889ED207F67E300F1DC1D /* FontAwesome.ttf */,
+			);
+			path = IconFonts;
+			sourceTree = "<group>";
+		};
 		BB3912F51F8BE504002F1CE1 /* Demo-ScrollingTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -897,6 +925,7 @@
 		BB4FD40D1F442AEE00C082C3 /* DbLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				BB3889E7207F67E300F1DC1D /* FontAwesomeKit */,
 				BB3FC34E1FC958AE000D37F2 /* Resources */,
 				BB6CC51A1F5D460A0073A0C1 /* CustomControllClass */,
 				BB4FD41D1F442AEE00C082C3 /* DbAppSession.h */,
@@ -1133,7 +1162,6 @@
 		BB4FD4A91F442C8A00C082C3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				BB4FD4AA1F442C8A00C082C3 /* FontAwesome.ttf */,
 				BB4FD4AB1F442C8A00C082C3 /* OpenSans-Bold.ttf */,
 				BB4FD4AC1F442C8A00C082C3 /* OpenSans-BoldItalic.ttf */,
 				BB4FD4AD1F442C8A00C082C3 /* OpenSans-ExtraBold.ttf */,
@@ -1815,7 +1843,6 @@
 				BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */,
 				BB4FD48D1F442AEE00C082C3 /* apnumberpad_backspace_icon.png in Resources */,
 				BB85E1801FDBE50700FFA738 /* demo_6@2x.png in Resources */,
-				BB4FD4B61F442C8A00C082C3 /* FontAwesome.ttf in Resources */,
 				BBEDC4321FBC3EEA000317FD /* slider-default-trackCrossedOver.png in Resources */,
 				BBD289C52051170E00045830 /* CalendarView.xib in Resources */,
 				BBD99B311F7CD7BD004B20AF /* TBTwoViewController.xib in Resources */,
@@ -1912,6 +1939,7 @@
 				BB4A3A6A1F814E3E0040CC61 /* TBFiveViewController.xib in Resources */,
 				BBB751E91FCE9F87000E5A03 /* main_gate_img@2x.png in Resources */,
 				BB3912FA1F8BE527002F1CE1 /* SLTableViewController.xib in Resources */,
+				BB3889F0207F67E300F1DC1D /* FontAwesome.ttf in Resources */,
 				BBF8264F1FF4DB9600D25AD7 /* DemoDbConnectionViewController.xib in Resources */,
 				BBEDC43E1FBC3EEA000317FD /* slider-metal-handle-highlighted@2x.png in Resources */,
 				BBEDC43D1FBC3EEA000317FD /* slider-metal-handle-highlighted.png in Resources */,
@@ -2127,6 +2155,7 @@
 				BBD6CA9A207E168B004129BE /* GoogleMapUtils.m in Sources */,
 				BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */,
 				BB4FD4831F442AEE00C082C3 /* DbAppSession.m in Sources */,
+				BB3889EE207F67E300F1DC1D /* DbFontAwesome.m in Sources */,
 				BBF1BD6F1FAC81300081E179 /* MapDrawingViewController.m in Sources */,
 				BBD136701F9A149D007A7763 /* STCalendarHeaderViewController.m in Sources */,
 				BBB9774C207CB21400992CE0 /* DbPlaceSearchViewController.m in Sources */,
@@ -2169,6 +2198,7 @@
 				BB4FD4811F442AEE00C082C3 /* DbViewController.m in Sources */,
 				BBF9A38E1FB04BEA00909F34 /* CanvasImageView.m in Sources */,
 				BB4FD4961F442AEE00C082C3 /* PhotoGalleryViewController.m in Sources */,
+				BB3889EF207F67E300F1DC1D /* DbKitIcon.m in Sources */,
 				BB1320E01FD930F8003CCCA3 /* AVCameraFocusSquare.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
