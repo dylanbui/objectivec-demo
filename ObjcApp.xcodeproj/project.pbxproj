@@ -186,7 +186,7 @@
 		BBD5C8082064FA7D00037E84 /* DbTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD5C8072064FA7D00037E84 /* DbTextField.m */; };
 		BBD6CA99207E168B004129BE /* GoogleAutoCompleteResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD6CA92207E168B004129BE /* GoogleAutoCompleteResult.m */; };
 		BBD6CA9A207E168B004129BE /* GoogleMapUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD6CA94207E168B004129BE /* GoogleMapUtils.m */; };
-		BBD6CA9B207E168B004129BE /* GooglePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD6CA96207E168B004129BE /* GooglePlace.m */; };
+		BBD6CA9B207E168B004129BE /* GooglePlaceDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD6CA96207E168B004129BE /* GooglePlaceDetail.m */; };
 		BBD6CA9C207E168B004129BE /* GooglePlacesApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD6CA98207E168B004129BE /* GooglePlacesApiClient.m */; };
 		BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */; };
 		BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */; };
@@ -569,8 +569,8 @@
 		BBD6CA92207E168B004129BE /* GoogleAutoCompleteResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleAutoCompleteResult.m; sourceTree = "<group>"; };
 		BBD6CA93207E168B004129BE /* GoogleMapUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapUtils.h; sourceTree = "<group>"; };
 		BBD6CA94207E168B004129BE /* GoogleMapUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapUtils.m; sourceTree = "<group>"; };
-		BBD6CA95207E168B004129BE /* GooglePlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooglePlace.h; sourceTree = "<group>"; };
-		BBD6CA96207E168B004129BE /* GooglePlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GooglePlace.m; sourceTree = "<group>"; };
+		BBD6CA95207E168B004129BE /* GooglePlaceDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooglePlaceDetail.h; sourceTree = "<group>"; };
+		BBD6CA96207E168B004129BE /* GooglePlaceDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GooglePlaceDetail.m; sourceTree = "<group>"; };
 		BBD6CA97207E168B004129BE /* GooglePlacesApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooglePlacesApiClient.h; sourceTree = "<group>"; };
 		BBD6CA98207E168B004129BE /* GooglePlacesApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GooglePlacesApiClient.m; sourceTree = "<group>"; };
 		BBD965DB1F5A8B6200CCAF2C /* DemoButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoButtonViewController.h; sourceTree = "<group>"; };
@@ -1434,8 +1434,8 @@
 				BBD6CA92207E168B004129BE /* GoogleAutoCompleteResult.m */,
 				BBD6CA93207E168B004129BE /* GoogleMapUtils.h */,
 				BBD6CA94207E168B004129BE /* GoogleMapUtils.m */,
-				BBD6CA95207E168B004129BE /* GooglePlace.h */,
-				BBD6CA96207E168B004129BE /* GooglePlace.m */,
+				BBD6CA95207E168B004129BE /* GooglePlaceDetail.h */,
+				BBD6CA96207E168B004129BE /* GooglePlaceDetail.m */,
 				BBD6CA97207E168B004129BE /* GooglePlacesApiClient.h */,
 				BBD6CA98207E168B004129BE /* GooglePlacesApiClient.m */,
 			);
@@ -2141,7 +2141,7 @@
 				BB4FD4851F442AEE00C082C3 /* DbUtils.m in Sources */,
 				BBD99B3A1F7CD7DE004B20AF /* TBFourViewController.m in Sources */,
 				BB1320DF1FD930F8003CCCA3 /* AVCamAssetLib.m in Sources */,
-				BBD6CA9B207E168B004129BE /* GooglePlace.m in Sources */,
+				BBD6CA9B207E168B004129BE /* GooglePlaceDetail.m in Sources */,
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
 				BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */,
 				BB1320E51FD930F8003CCCA3 /* DbImageCollectionViewCell.m in Sources */,

@@ -6,9 +6,9 @@
 //  Copyright © 2018 Propzy Viet Nam. All rights reserved.
 //
 
-#import "GooglePlace.h"
+#import "GooglePlaceDetail.h"
 
-@implementation GooglePlace {
+@implementation GooglePlaceDetail {
     NSDictionary *_jsonDictionary;
 }
 
@@ -22,6 +22,15 @@
 }
 
 #pragma mark - Properties
+
+- (NSString *)placeId
+{
+    NSString *place_id = [NSString new];
+    if(_jsonDictionary[@"place_id"] != [NSNull null]){
+        place_id = _jsonDictionary[@"place_id"];
+    }
+    return place_id;
+}
 
 - (NSString *)name
 {

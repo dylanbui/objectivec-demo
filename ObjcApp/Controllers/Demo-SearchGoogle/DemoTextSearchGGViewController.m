@@ -9,6 +9,7 @@
 #import "DemoTextSearchGGViewController.h"
 #import "UIView+LayoutHelper.h"
 #import "AddressTableViewCell.h"
+#import "DbPlaceSearchViewController.h"
 
 @interface DemoTextSearchGGViewController ()
 
@@ -64,12 +65,6 @@
     self.txtAutoCompletePlace.footerView = footerView;
 }
 
-- (IBAction)buttonClicked:(UIButton *)sender
-{
-    NSLog(@"%@", @"buttonClicked");
-    [self.txtAutoCompletePlace closeAutoCompleteTableView];
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -88,6 +83,28 @@
     self.txtAutoCompletePlace.autoCompleteTableFrame = tableFrame;
     //self.txtAutoCompletePlace.delegate = self;
 }
+
+- (IBAction)buttonClicked:(UIButton *)sender
+{
+    NSLog(@"%@", @"buttonClicked");
+    [self.txtAutoCompletePlace closeAutoCompleteTableView];
+}
+
+- (IBAction)btnSearch_Click:(id)sender
+{
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(10.794369, 106.680117);
+    
+    DbPlaceSearchViewController *vcl = [[DbPlaceSearchViewController alloc] init];
+    vcl.apiKey = @"AIzaSyBK_MVp9sT3n-klZ4BIMnKHi1cjHJyYNFA";
+    vcl.currentLocation = location;
+    vcl.didReturnPlace = ^(DbPlaceSearchViewController *owner, GooglePlaceDetail *place) {
+        NSLog(@"Tra ve = %@", place.formattedAddress);
+    };
+//    [vcl addSubViewPlaceSearch];
+    
+    [self.navigationController pushViewController:vcl animated:YES];
+}
+
 
 #pragma mark - Place search Textfield Delegates
 

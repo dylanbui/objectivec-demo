@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+//#import <CoreLocation/CoreLocation.h>
 
 #import "GoogleAutoCompleteResult.h"
-#import "GooglePlace.h"
+#import "GooglePlaceDetail.h"
 
 @interface GooglePlacesApiClient : NSObject
 
@@ -22,6 +23,8 @@
 
 - (void)retrieveGooglePlaceInformation:(NSString *)searchWord withCompletion:(void (^)(NSArray *searchResults, NSError *error))completion;
 
-- (void)retrieveJsonDetailsAbout:(NSString *)place withCompletion:(void (^)(GooglePlace *place, NSError *error))completion;
+- (void)retrievePlaceDetailsById:(NSString *)placeId withCompletion:(void (^)(GooglePlaceDetail *place, NSError *error))completion;
+
+- (void)retrievePlaceDetailsByGps:(CLLocationCoordinate2D)location withCompletion:(void (^)(GooglePlaceDetail *place, NSError *error))completion;
 
 @end

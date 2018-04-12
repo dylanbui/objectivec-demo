@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface GooglePlace : NSObject
+@interface GooglePlaceDetail : NSObject
 
+@property (readonly) NSString *placeId;
 @property (readonly) NSString *name;
 @property (readonly) NSString *formattedAddress;
 @property (readonly) CLLocation *location;

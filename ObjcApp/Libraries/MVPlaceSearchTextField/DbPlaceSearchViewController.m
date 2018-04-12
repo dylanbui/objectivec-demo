@@ -7,17 +7,16 @@
 //
 
 #import "DbPlaceSearchViewController.h"
-#import "PlaceObject.h"
+#import "UIView+LayoutHelper.h"
+//#import "UIViewController+KNSemiModal.h"
 
 @interface DbPlaceSearchViewController ()
 
 @property (nonatomic, strong) NSMutableArray *arrContents;
 @property (nonatomic, strong) UIActivityIndicatorView *searchLoadingActivityIndicator;
 
-@property (nonatomic, strong) NSTimer *autoCompleteTimer;
 @property (nonatomic, strong) NSString *substring;
 
-@property (nonatomic, strong) GMSPlacesClient *placesClient;
 @property (nonatomic, strong) GooglePlacesApiClient *placeApiClient;
 
 @property (nonatomic,strong) IBOutlet UITextField* txtAutoComplete;
@@ -25,22 +24,33 @@
 @property (nonatomic,strong) IBOutlet UIButton* btnBack;
 @property (nonatomic,strong) IBOutlet UIButton* btnCurrentLocation;
 
+@property (nonatomic) BOOL isAddSubViewAction;
+
 @end
 
 @implementation DbPlaceSearchViewController
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        // -- Default value --
+        self.country = @"VN";
+        self.language = @"vi";
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+    self.isAddSubViewAction = NO;
     
-    // self.placesClient = [GMSPlacesClient sharedClient];
     self.placeApiClient = [GooglePlacesApiClient sharedInstance];
     self.placeApiClient.apiKey = self.apiKey;
-    self.placeApiClient.apiKey = @"AIzaSyBK_MVp9sT3n-klZ4BIMnKHi1cjHJyYNFA";
-    self.placeApiClient.country = @"VN";
-    self.placeApiClient.language = @"vi";
+    self.placeApiClient.country = self.country;
+    self.placeApiClient.language = self.language;
     
     self.arrContents = [[NSMutableArray alloc] init];
     
@@ -61,16 +71,66 @@
     [super viewWillDisappear:animated];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 - (IBAction)btnBack_Click:(id)sender
 {
+    if (self.isAddSubViewAction == NO) {
+        [self.navigationController popViewControllerAnimated:YES];
+        return;
+    }
     
+    // -- Animation remove view --
+    [self willMoveToParentViewController:nil];  // 1
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.view.origin = CGPointMake(10, 10);
+        self.view.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [self.view removeFromSuperview];            // 2
+        [self removeFromParentViewController];      // 3
+    }];
 }
 
 - (IBAction)btnCurrentLocation_Click:(id)sender
 {
+    // CLLocationCoordinate2D location = CLLocationCoordinate2DMake(10.794369, 106.680117);
+    // -- Show loading if need --
+    [self.placeApiClient retrievePlaceDetailsByGps:self.currentLocation withCompletion:^(GooglePlaceDetail *place, NSError *error) {
+//        NSLog(@"%@", @"CurrentLocation");
+//        NSLog(@"name = %@", place.name);
+//        NSLog(@"formatedAddress = %@", place.formattedAddress);
+//        NSLog(@"location = %@", place.location);
+//        [self.delegate searchViewController:self didReturnPlace:place];
+        if (self.didReturnPlace != nil) {
+            self.didReturnPlace(self, place);
+        }
+        [self btnBack_Click:nil];
+    }];
+}
+
+- (void)addSubViewPlaceSearch
+{
+    UIViewController *topVcl =  [DbUtils getTopViewController];
+    // NSLog(@"vcl.view.frame = %@", NSStringFromCGRect(topVcl.view.frame));
     
+    // -- Set view --
+    self.view.frame = topVcl.view.frame;
+    self.view.alpha = 0;
+    // -- Add subview --
+    [topVcl addChildViewController:self];
+    [topVcl.view addSubview:self.view];
+    
+    // -- Animation display view --
+    self.view.origin = CGPointMake(10, 10);
+    [UIView animateWithDuration:0.3 animations:^{
+        self.view.origin = CGPointMake(0, 0);
+        self.view.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        self.isAddSubViewAction = YES;
+    }];
 }
 
 #pragma mark - UITextField
@@ -81,8 +141,6 @@
 - (void)textFieldDidChangeWithNotification:(NSNotification *)aNotification
 {
     if(aNotification.object == self.txtAutoComplete){
-//        [self reloadData];
-
         [NSObject cancelPreviousPerformRequestsWithTarget:self
                                                  selector:@selector(fetchAutoCompleteSuggestions)
                                                    object:nil];
@@ -90,19 +148,7 @@
         [self performSelector:@selector(fetchAutoCompleteSuggestions)
                    withObject:nil
                    afterDelay:0.65];
-
     }
-}
-
-- (void)reloadData
-{
-    [NSObject cancelPreviousPerformRequestsWithTarget:self
-                                             selector:@selector(fetchAutoCompleteSuggestions)
-                                               object:nil];
-    
-    [self performSelector:@selector(fetchAutoCompleteSuggestions)
-               withObject:nil
-               afterDelay:0.5];
 }
 
 #pragma mark - Getters
@@ -150,7 +196,6 @@
     }
 }
 
-
 - (UITableViewCell *)locationSearchResultCellForIndexPath:(NSIndexPath *)indexPath
 {
     GoogleAutoCompleteResult *placeObj = [self.arrContents objectAtIndex:indexPath.row];
@@ -174,7 +219,24 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GoogleAutoCompleteResult *placeObj = [self.arrContents objectAtIndex:indexPath.row];
-    NSLog(@"didSelectRowAtIndexPath = %@", placeObj.placeID);
+    // NSLog(@"didSelectRowAtIndexPath = %@", placeObj.placeID);
+    
+    [self.placeApiClient retrievePlaceDetailsById:placeObj.placeID withCompletion:^(GooglePlaceDetail *place, NSError *error) {
+        if (error != nil) {
+            NSLog(@"Autocomplete error %@", [error localizedDescription]);
+            return;
+        }
+
+//        NSLog(@"name = %@", place.name);
+//        NSLog(@"formatedAddress = %@", place.formattedAddress);
+//        NSLog(@"location = %@", place.location);
+//        [self.delegate searchViewController:self didReturnPlace:place];
+        
+        if (self.didReturnPlace != nil) {
+            self.didReturnPlace(self, place);
+        }
+        [self btnBack_Click:nil];
+    }];
 }
 
 #pragma mark - Properties

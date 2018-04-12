@@ -9,6 +9,7 @@
 #import "GooglePlacesApiClient.h"
 
 #define apiUrlPlaceDetail @"https://maps.googleapis.com/maps/api/place/details/json?placeid=%@&sensor=true&key=%@"
+#define apiUrlPlaceDetailByGps @"https://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=true&key=%@"
 #define apiUrlAutoComplete @"https://maps.googleapis.com/maps/api/place/autocomplete/json?input=%@&types=geocode&sensor=true&key=%@"
 
 @interface GooglePlacesApiClient ()
@@ -42,106 +43,78 @@
 
 #pragma mark - Network Methods
 
--(void)retrieveGooglePlaceInformation:(NSString *)searchWord withCompletion:(void (^)(NSArray *searchResults, NSError *error))completion {
-    
+// Demo : https://maps.googleapis.com/maps/api/place/autocomplete/json?input=50nhat&types=geocode&sensor=true&key=AIzaSyBK_MVp9sT3n-klZ4BIMnKHi1cjHJyYNFA&components=country:VN&language=vi
+- (void)retrieveGooglePlaceInformation:(NSString *)searchWord withCompletion:(void (^)(NSArray *searchResults, NSError *error))completion
+{
     if (!searchWord) {
         return;
     }
     
     searchWord = searchWord.lowercaseString;
-    
     self.searchResults = [NSMutableArray array];
     
     if ([self.searchResultsCache objectForKey:searchWord]) {
         NSArray * pastResults = [self.searchResultsCache objectForKey:searchWord];
         self.searchResults = [NSMutableArray arrayWithArray:pastResults];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completion(self.searchResults, nil);
-        });
+        completion(self.searchResults, nil);
     } else {
-        
         NSString *urlString = [NSString stringWithFormat:apiUrlAutoComplete, searchWord, self.apiKey];
         urlString = [self addOptions:urlString];
-        NSLog(@"%@", urlString);
         
-        NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-            NSDictionary *jSONresult = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];;
-            
-            if (error || [jSONresult[@"status"] isEqualToString:@"NOT_FOUND"] || [jSONresult[@"status"] isEqualToString:@"REQUEST_DENIED"]){
-                if (!error){
-                    NSDictionary *userInfo = @{@"error":jSONresult[@"status"]};
-                    NSError *newError = [NSError errorWithDomain:@"API Error" code:666 userInfo:userInfo];
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        completion(nil, newError);
-                    });
-                    return;
-                }
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    completion(nil, error);
-                });
+        [self callGoogleServerApi:urlString withCompletion:^(NSDictionary *result, NSError *error) {
+            if (error != nil) {
+                completion(nil, error);
                 return;
-            } else {
-                
-                NSArray *results = [jSONresult valueForKey:@"predictions"];
-                for (NSDictionary *jsonDictionary in results) {
-                    GoogleAutoCompleteResult *location = [[GoogleAutoCompleteResult alloc] initWithJSONData:jsonDictionary];
-                    [self.searchResults addObject:location];
-                }
-                
-                // -- Save to cache --
-                [self.searchResultsCache setObject:self.searchResults forKey:searchWord];
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    completion(self.searchResults, nil);
-                });
             }
+            
+            NSArray *results = [result valueForKey:@"predictions"];
+            for (NSDictionary *jsonDictionary in results) {
+                GoogleAutoCompleteResult *location = [[GoogleAutoCompleteResult alloc] initWithJSONData:jsonDictionary];
+                [self.searchResults addObject:location];
+            }
+            
+            // -- Save to cache --
+            [self.searchResultsCache setObject:self.searchResults forKey:searchWord];
+            completion(self.searchResults, nil);
         }];
-        
-        [task resume];
     }
 }
 
-- (void)retrieveJsonDetailsAbout:(NSString *)place withCompletion:(void (^)(GooglePlace *place, NSError *error))completion
+// Demo : https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJG0cCweYudTERk2_SnTRQJ0A&sensor=true&key=AIzaSyBK_MVp9sT3n-klZ4BIMnKHi1cjHJyYNFA&components=country:VN&language=vi
+- (void)retrievePlaceDetailsById:(NSString *)placeId withCompletion:(void (^)(GooglePlaceDetail *place, NSError *error))completion
 {
-    // NSString *urlString = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/details/json?placeid=%@&key=%@",place,apiKey];
-    NSString *urlString = [NSString stringWithFormat:apiUrlPlaceDetail, place, self.apiKey];
+    NSString *urlString = [NSString stringWithFormat:apiUrlPlaceDetail, placeId, self.apiKey];
     urlString = [self addOptions:urlString];
     
-    NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        
-        if (error || [result[@"status"] isEqualToString:@"NOT_FOUND"] || [result[@"status"] isEqualToString:@"REQUEST_DENIED"]){
-            if (!error){
-                NSDictionary *userInfo = @{@"error":result[@"status"]};
-                NSError *newError = [NSError errorWithDomain:@"API Error" code:666 userInfo:userInfo];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    completion(nil, newError);
-                });
-                return;
-            }            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                completion(nil, error);
-            });
+    [self callGoogleServerApi:urlString withCompletion:^(NSDictionary *result, NSError *error) {
+        if (error != nil) {
+            completion(nil, error);
             return;
-        }else{
-            // NSDictionary *placeDictionary = [result valueForKey:@"result"];
-            GooglePlace *place = [[GooglePlace alloc] initWithJSONData:[result valueForKey:@"result"]];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                completion(place, nil);
-            });
         }
+        
+        GooglePlaceDetail *place = [[GooglePlaceDetail alloc] initWithJSONData:[result valueForKey:@"result"]];
+        completion(place, nil);
     }];
-    
-    [task resume];
 }
 
+// Demo : https://maps.googleapis.com/maps/api/geocode/json?latlng=10.794369,106.680117&sensor=true&key=AIzaSyBK_MVp9sT3n-klZ4BIMnKHi1cjHJyYNFA
+- (void)retrievePlaceDetailsByGps:(CLLocationCoordinate2D)location withCompletion:(void (^)(GooglePlaceDetail *place, NSError *error))completion
+{
+    NSString *urlString = [NSString stringWithFormat:apiUrlPlaceDetailByGps, location.latitude, location.longitude, self.apiKey];
+    
+    [self callGoogleServerApi:urlString withCompletion:^(NSDictionary *result, NSError *error) {
+        if (error != nil) {
+            completion(nil, error);
+            return;
+        }
+        // -- ket qua tra ve la array --
+        // -- not existed field name => name == [NSNull null] -- 
+        NSArray *results = [result valueForKey:@"results"];
+        GooglePlaceDetail *place = [[GooglePlaceDetail alloc] initWithJSONData:[results firstObject]];
+        completion(place, nil);
+    }];
+    
+}
 
 #pragma mark - Properties
 
@@ -170,6 +143,38 @@
         _searchResultsCache = [[NSCache alloc] init];
     }
     return _searchResultsCache;
+}
+
+- (void)callGoogleServerApi:(NSString *)urlString withCompletion:(void (^)(NSDictionary *result, NSError *error))completion
+{
+    NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        
+        if (error || [result[@"status"] isEqualToString:@"NOT_FOUND"] || [result[@"status"] isEqualToString:@"REQUEST_DENIED"]){
+            if (!error){
+                NSDictionary *userInfo = @{@"error":result[@"status"]};
+                NSError *newError = [NSError errorWithDomain:@"API Error" code:666 userInfo:userInfo];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(nil, newError);
+                });
+                return;
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(nil, error);
+            });
+            return;
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(result, nil);
+            });
+        }
+    }];
+    
+    [task resume];
 }
 
 @end
