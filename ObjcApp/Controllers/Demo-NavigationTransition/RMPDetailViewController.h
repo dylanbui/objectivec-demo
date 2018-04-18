@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RMPZoomTransitionAnimator.h"
+#import "DbZoomTransitionAnimator.h"
+//#import "DbZoomDismissAnimatedTransitioning.h"
+//#import "DbAnimatedTransitioning.h"
 
-@interface RMPDetailViewController : UIViewController<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>
+@interface RMPDetailViewController : UIViewController <DbZoomTransitionAnimating, DbZoomTransitionDelegate>
 
 @property (nonatomic) NSUInteger index;
 

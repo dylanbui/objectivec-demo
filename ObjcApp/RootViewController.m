@@ -25,7 +25,8 @@
 #import "DemoTextSearchGGViewController.h"
 #import "DbPlaceSearchViewController.h"
 
-#import "RMPImageCollectionViewController.h"
+#import "RMPExampleViewController.h"
+#import "DemoCropCollectionViewController.h"
 
 @interface RootViewController ()
 
@@ -71,7 +72,8 @@
 //    DemoTextSearchGGViewController *vcFirst = [[DemoTextSearchGGViewController alloc] init];
     
 //    DbPlaceSearchViewController *vcFirst = [[DbPlaceSearchViewController alloc] init];
-    RMPImageCollectionViewController *vcFirst = [[RMPImageCollectionViewController alloc] init];
+    // RMPExampleViewController *vcFirst = [[RMPExampleViewController alloc] init];
+    DemoCropCollectionViewController *vcFirst = [[DemoCropCollectionViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 

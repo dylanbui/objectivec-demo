@@ -1,26 +1,14 @@
-//  Copyright (c) 2015 Recruit Marketing Partners Co.,Ltd. All rights reserved.
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  DbZoomTransitionAnimator.m
+//  ObjcApp
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
+//  Created by Dylan Bui on 4/18/18.
+//  Copyright © 2018 Propzy Viet Nam. All rights reserved.
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
-#import "RMPZoomTransitionAnimator.h"
+#import "DbZoomTransitionAnimator.h"
 
-@implementation RMPZoomTransitionAnimator
+@implementation DbZoomTransitionAnimator
 {
     NSTimeInterval kForwardAnimationDuration;
     NSTimeInterval kForwardCompleteAnimationDuration;
@@ -40,7 +28,7 @@
 /**
  Init component with custom animation durations.
  */
-- (RMPZoomTransitionAnimator * _Nonnull)initWithAnimationDurationForward:(NSTimeInterval)forward
+- (DbZoomTransitionAnimator * _Nonnull)initWithAnimationDurationForward:(NSTimeInterval)forward
                                                          forwardComplete:(NSTimeInterval)forwardComplete
                                                                 backward:(NSTimeInterval)backward
                                                         backwardComplete:(NSTimeInterval)backwardComplete
@@ -87,7 +75,7 @@
     [containerView addSubview:toVC.view];
     
     // Without animation when you have not confirm the protocol
-    Protocol *animating = @protocol(RMPZoomTransitionAnimating);
+    Protocol *animating = @protocol(DbZoomTransitionAnimating);
     BOOL doesNotConfirmProtocol = ![self.sourceTransition conformsToProtocol:animating] || ![self.destinationTransition conformsToProtocol:animating];
     if (doesNotConfirmProtocol) {
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
@@ -96,26 +84,33 @@
     
     // Add a alphaView To be overexposed, so background becomes dark in animation
     UIView *alphaView = [[UIView alloc] initWithFrame:[transitionContext finalFrameForViewController:toVC]];
-    alphaView.backgroundColor = [self.sourceTransition transitionSourceBackgroundColor];
+//    alphaView.backgroundColor = toVC.view.backgroundColor;
+    alphaView.backgroundColor = (self.goingForward ? toVC.view.backgroundColor : fromVC.view.backgroundColor);
+    if ([self.sourceTransition respondsToSelector:@selector(transitionSourceBackgroundColor)]) {
+        alphaView.backgroundColor = [self.sourceTransition transitionSourceBackgroundColor];
+    }
     [containerView addSubview:alphaView];
     
+    // -- DucBui: Set toVC frame == fromVC frame  -- 
     toVC.view.frame = fromVC.view.frame;
     [toVC.view layoutIfNeeded];
     
     // Transition source of image to move me to add to the last
-    UIImageView *sourceImageView = [self.sourceTransition transitionSourceImageView];
-    [containerView addSubview:sourceImageView];
+    UIView *sourceView = [self.sourceTransition transitionSourceView];
+    [containerView addSubview:sourceView];
     
-    if (self.goingForward) {
+    if (self.goingForward) { // PUSH
         
-        [fromVC beginAppearanceTransition:NO animated:YES];
+        // -- DucBui: Remove --
+        // Warning : ios unbalanced calls to begin/end appearance transitions for uinavigationcontroller
+        // [fromVC beginAppearanceTransition:NO animated:YES];
         
         [UIView animateWithDuration:kForwardAnimationDuration
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
-                             sourceImageView.frame = [self.destinationTransition transitionDestinationImageViewFrame];
-                             sourceImageView.transform = CGAffineTransformMakeScale(1.02, 1.02);
+                             sourceView.frame = [self.destinationTransition transitionDestinationViewFrame];
+                             sourceView.transform = CGAffineTransformMakeScale(1.02, 1.02);
                              alphaView.alpha = 0.9;
                          }
                          completion:^(BOOL finished) {
@@ -124,33 +119,34 @@
                                                  options:UIViewAnimationOptionCurveEaseOut
                                               animations:^{
                                                   alphaView.alpha = 0;
-                                                  sourceImageView.transform = CGAffineTransformIdentity;
+                                                  sourceView.transform = CGAffineTransformIdentity;
                                               }
                                               completion:^(BOOL finished) {
-                                                  sourceImageView.alpha = 0;
-                                                  if ([self.destinationTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)] &&
-                                                      [self.destinationTransition respondsToSelector:@selector(zoomTransitionAnimator:didCompleteTransition:animatingSourceImageView:)]) {
+                                                  sourceView.alpha = 0;
+                                                  if ([self.destinationTransition conformsToProtocol:@protocol(DbZoomTransitionAnimating)] &&
+                                                      [self.destinationTransition respondsToSelector:@selector(zoomTransitionAnimator:didCompleteTransition:animatingSourceView:)]) {
                                                       [self.destinationTransition zoomTransitionAnimator:self
                                                                                    didCompleteTransition:![transitionContext transitionWasCancelled]
-                                                                                animatingSourceImageView:sourceImageView];
+                                                                                     animatingSourceView:sourceView];
                                                   }
                                                   [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
                                                   
                                                   // Remove the views from superviews to release the references
                                                   [alphaView removeFromSuperview];
-                                                  [sourceImageView removeFromSuperview];
+                                                  [sourceView removeFromSuperview];
                                                   
-                                                  [fromVC endAppearanceTransition];
-                                                  
+                                                  // -- DucBui: Remove --
+                                                  // Warning : ios unbalanced calls to begin/end appearance transitions for uinavigationcontroller
+                                                  // [fromVC endAppearanceTransition];
                                               }];
                          }];
         
-    } else {
+    } else { // DISMISS
         [UIView animateWithDuration:kBackwardAnimationDuration
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
-                             sourceImageView.frame = [self.destinationTransition transitionDestinationImageViewFrame];
+                             sourceView.frame = [self.destinationTransition transitionDestinationViewFrame];
                              alphaView.alpha = 0;
                          }
                          completion:^(BOOL finished) {
@@ -158,14 +154,14 @@
                                                    delay:0
                                                  options:UIViewAnimationOptionCurveEaseOut
                                               animations:^{
-                                                  sourceImageView.alpha = 0;
+                                                  sourceView.alpha = 0;
                                               }
                                               completion:^(BOOL finished) {
-                                                  if ([self.destinationTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)] &&
-                                                      [self.destinationTransition respondsToSelector:@selector(zoomTransitionAnimator:didCompleteTransition:animatingSourceImageView:)]) {
+                                                  if ([self.destinationTransition conformsToProtocol:@protocol(DbZoomTransitionAnimating)] &&
+                                                      [self.destinationTransition respondsToSelector:@selector(zoomTransitionAnimator:didCompleteTransition:animatingSourceView:)]) {
                                                       [self.destinationTransition zoomTransitionAnimator:self
                                                                                    didCompleteTransition:![transitionContext transitionWasCancelled]
-                                                                                animatingSourceImageView:sourceImageView];
+                                                                                animatingSourceView:sourceView];
                                                   }
                                                   [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
                                                   if(![[UIApplication sharedApplication].keyWindow.subviews containsObject:toVC.view]) {
@@ -173,11 +169,12 @@
                                                   }
                                                   // Remove the views from superviews to release the references
                                                   [alphaView removeFromSuperview];
-                                                  [sourceImageView removeFromSuperview];
+                                                  [sourceView removeFromSuperview];
                                               }];
                          }];
     }
 }
 
 @end
+
 

@@ -183,6 +183,16 @@
 		BBD1366C1F9A1187007A7763 /* HeaderJTCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1366B1F9A1187007A7763 /* HeaderJTCalendarView.m */; };
 		BBD136701F9A149D007A7763 /* STCalendarHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1366E1F9A149D007A7763 /* STCalendarHeaderViewController.m */; };
 		BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD1366F1F9A149D007A7763 /* STCalendarHeaderViewController.xib */; };
+		BBD1A7E52086FB2900D57B9E /* DbZoomTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1A7E42086FB2900D57B9E /* DbZoomTransitionAnimator.m */; };
+		BBD1A7EB208704DC00D57B9E /* DbZoomDismissAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1A7EA208704DC00D57B9E /* DbZoomDismissAnimatedTransitioning.m */; };
+		BBD1A7F0208724A500D57B9E /* RMPImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1A7EE208724A500D57B9E /* RMPImageTableViewController.m */; };
+		BBD1A7F1208724A500D57B9E /* RMPImageTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD1A7EF208724A500D57B9E /* RMPImageTableViewController.xib */; };
+		BBD1A7F52087256500D57B9E /* RMPImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1A7F32087256500D57B9E /* RMPImageTableViewCell.m */; };
+		BBD1A7F62087256500D57B9E /* RMPImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD1A7F42087256500D57B9E /* RMPImageTableViewCell.xib */; };
+		BBD1A7FB20872F8600D57B9E /* RMPExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1A7F920872F8600D57B9E /* RMPExampleViewController.m */; };
+		BBD1A7FC20872F8600D57B9E /* RMPExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD1A7FA20872F8600D57B9E /* RMPExampleViewController.xib */; };
+		BBD1A80220873F6600D57B9E /* DemoCropCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD1A80020873F6600D57B9E /* DemoCropCollectionViewController.m */; };
+		BBD1A80320873F6600D57B9E /* DemoCropCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD1A80120873F6600D57B9E /* DemoCropCollectionViewController.xib */; };
 		BBD289C1205116E100045830 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD289C0205116E100045830 /* CalendarView.m */; };
 		BBD289C52051170E00045830 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD289C42051170E00045830 /* CalendarView.xib */; };
 		BBD5C8082064FA7D00037E84 /* DbTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD5C8072064FA7D00037E84 /* DbTextField.m */; };
@@ -207,14 +217,12 @@
 		BBDBD8FB1F6A9A97009C9340 /* KeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDBD8F91F6A9A97009C9340 /* KeyboardViewController.xib */; };
 		BBDBD9001F6A9B6B009C9340 /* NSDictionary+DbHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD8FD1F6A9B6B009C9340 /* NSDictionary+DbHelper.m */; };
 		BBDBD9011F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD8FF1F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.m */; };
-		BBDE4A4C2085EB7500731A69 /* RMPZoomTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDE4A4B2085EB7500731A69 /* RMPZoomTransitionAnimator.m */; };
 		BBDE4A512085EC1E00731A69 /* RMPImageCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDE4A4F2085EC1E00731A69 /* RMPImageCollectionViewController.m */; };
 		BBDE4A522085EC1E00731A69 /* RMPImageCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDE4A502085EC1E00731A69 /* RMPImageCollectionViewController.xib */; };
 		BBDE4A562085EC8400731A69 /* RMPImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDE4A542085EC8400731A69 /* RMPImageCollectionViewCell.m */; };
 		BBDE4A572085EC8400731A69 /* RMPImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDE4A552085EC8400731A69 /* RMPImageCollectionViewCell.xib */; };
 		BBDE4A5B2085ECCB00731A69 /* RMPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDE4A592085ECCB00731A69 /* RMPDetailViewController.m */; };
 		BBDE4A5C2085ECCB00731A69 /* RMPDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDE4A5A2085ECCB00731A69 /* RMPDetailViewController.xib */; };
-		BBDE4A5F2085F32C00731A69 /* RMPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDE4A5E2085F32C00731A69 /* RMPNavigationController.m */; };
 		BBDE4A832085F58B00731A69 /* 01_L.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BBDE4A622085F58B00731A69 /* 01_L.jpeg */; };
 		BBDE4A842085F58B00731A69 /* 02_L.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BBDE4A632085F58B00731A69 /* 02_L.jpeg */; };
 		BBDE4A852085F58B00731A69 /* 03_L.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BBDE4A642085F58B00731A69 /* 03_L.jpeg */; };
@@ -607,6 +615,23 @@
 		BBD1366D1F9A149D007A7763 /* STCalendarHeaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STCalendarHeaderViewController.h; sourceTree = "<group>"; };
 		BBD1366E1F9A149D007A7763 /* STCalendarHeaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STCalendarHeaderViewController.m; sourceTree = "<group>"; };
 		BBD1366F1F9A149D007A7763 /* STCalendarHeaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STCalendarHeaderViewController.xib; sourceTree = "<group>"; };
+		BBD1A7E32086FB2900D57B9E /* DbZoomTransitionAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbZoomTransitionAnimator.h; sourceTree = "<group>"; };
+		BBD1A7E42086FB2900D57B9E /* DbZoomTransitionAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbZoomTransitionAnimator.m; sourceTree = "<group>"; };
+		BBD1A7E9208704DC00D57B9E /* DbZoomDismissAnimatedTransitioning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbZoomDismissAnimatedTransitioning.h; sourceTree = "<group>"; };
+		BBD1A7EA208704DC00D57B9E /* DbZoomDismissAnimatedTransitioning.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbZoomDismissAnimatedTransitioning.m; sourceTree = "<group>"; };
+		BBD1A7ED208724A500D57B9E /* RMPImageTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMPImageTableViewController.h; sourceTree = "<group>"; };
+		BBD1A7EE208724A500D57B9E /* RMPImageTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMPImageTableViewController.m; sourceTree = "<group>"; };
+		BBD1A7EF208724A500D57B9E /* RMPImageTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RMPImageTableViewController.xib; sourceTree = "<group>"; };
+		BBD1A7F22087256500D57B9E /* RMPImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMPImageTableViewCell.h; sourceTree = "<group>"; };
+		BBD1A7F32087256500D57B9E /* RMPImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMPImageTableViewCell.m; sourceTree = "<group>"; };
+		BBD1A7F42087256500D57B9E /* RMPImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RMPImageTableViewCell.xib; sourceTree = "<group>"; };
+		BBD1A7F820872F8600D57B9E /* RMPExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMPExampleViewController.h; sourceTree = "<group>"; };
+		BBD1A7F920872F8600D57B9E /* RMPExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMPExampleViewController.m; sourceTree = "<group>"; };
+		BBD1A7FA20872F8600D57B9E /* RMPExampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RMPExampleViewController.xib; sourceTree = "<group>"; };
+		BBD1A7FD2087331200D57B9E /* read_me.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
+		BBD1A7FF20873F6600D57B9E /* DemoCropCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCropCollectionViewController.h; sourceTree = "<group>"; };
+		BBD1A80020873F6600D57B9E /* DemoCropCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCropCollectionViewController.m; sourceTree = "<group>"; };
+		BBD1A80120873F6600D57B9E /* DemoCropCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoCropCollectionViewController.xib; sourceTree = "<group>"; };
 		BBD289BF205116E100045830 /* CalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarView.h; sourceTree = "<group>"; };
 		BBD289C0205116E100045830 /* CalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
 		BBD289C42051170E00045830 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
@@ -648,8 +673,6 @@
 		BBDBD8FD1F6A9B6B009C9340 /* NSDictionary+DbHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DbHelper.m"; sourceTree = "<group>"; };
 		BBDBD8FE1F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+DbHelper.h"; sourceTree = "<group>"; };
 		BBDBD8FF1F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+DbHelper.m"; sourceTree = "<group>"; };
-		BBDE4A4A2085EB7500731A69 /* RMPZoomTransitionAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMPZoomTransitionAnimator.h; sourceTree = "<group>"; };
-		BBDE4A4B2085EB7500731A69 /* RMPZoomTransitionAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMPZoomTransitionAnimator.m; sourceTree = "<group>"; };
 		BBDE4A4E2085EC1E00731A69 /* RMPImageCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMPImageCollectionViewController.h; sourceTree = "<group>"; };
 		BBDE4A4F2085EC1E00731A69 /* RMPImageCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMPImageCollectionViewController.m; sourceTree = "<group>"; };
 		BBDE4A502085EC1E00731A69 /* RMPImageCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RMPImageCollectionViewController.xib; sourceTree = "<group>"; };
@@ -659,8 +682,6 @@
 		BBDE4A582085ECCB00731A69 /* RMPDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMPDetailViewController.h; sourceTree = "<group>"; };
 		BBDE4A592085ECCB00731A69 /* RMPDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMPDetailViewController.m; sourceTree = "<group>"; };
 		BBDE4A5A2085ECCB00731A69 /* RMPDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RMPDetailViewController.xib; sourceTree = "<group>"; };
-		BBDE4A5D2085F32C00731A69 /* RMPNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMPNavigationController.h; sourceTree = "<group>"; };
-		BBDE4A5E2085F32C00731A69 /* RMPNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMPNavigationController.m; sourceTree = "<group>"; };
 		BBDE4A622085F58B00731A69 /* 01_L.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01_L.jpeg; sourceTree = "<group>"; };
 		BBDE4A632085F58B00731A69 /* 02_L.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02_L.jpeg; sourceTree = "<group>"; };
 		BBDE4A642085F58B00731A69 /* 03_L.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03_L.jpeg; sourceTree = "<group>"; };
@@ -1286,6 +1307,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBD1A7FE20873F2100D57B9E /* Demo-CropViewControllerFromCollectionView */,
 				BBDE4A492085EB3000731A69 /* Demo-NavigationTransition */,
 				BBCFCA52207B198B0091C01A /* Demo-SearchGoogle */,
 				BBB01889204F9D4600153BD6 /* Demo-CalendarActionSheet */,
@@ -1542,6 +1564,42 @@
 			path = "Demo-AutoLayoutViewController";
 			sourceTree = "<group>";
 		};
+		BBD1A7EC2087245700D57B9E /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BBDE4A4E2085EC1E00731A69 /* RMPImageCollectionViewController.h */,
+				BBDE4A4F2085EC1E00731A69 /* RMPImageCollectionViewController.m */,
+				BBDE4A502085EC1E00731A69 /* RMPImageCollectionViewController.xib */,
+				BBDE4A532085EC8400731A69 /* RMPImageCollectionViewCell.h */,
+				BBDE4A542085EC8400731A69 /* RMPImageCollectionViewCell.m */,
+				BBDE4A552085EC8400731A69 /* RMPImageCollectionViewCell.xib */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		BBD1A7F720872F3D00D57B9E /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BBD1A7ED208724A500D57B9E /* RMPImageTableViewController.h */,
+				BBD1A7EE208724A500D57B9E /* RMPImageTableViewController.m */,
+				BBD1A7EF208724A500D57B9E /* RMPImageTableViewController.xib */,
+				BBD1A7F22087256500D57B9E /* RMPImageTableViewCell.h */,
+				BBD1A7F32087256500D57B9E /* RMPImageTableViewCell.m */,
+				BBD1A7F42087256500D57B9E /* RMPImageTableViewCell.xib */,
+			);
+			path = TableViewController;
+			sourceTree = "<group>";
+		};
+		BBD1A7FE20873F2100D57B9E /* Demo-CropViewControllerFromCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BBD1A7FF20873F6600D57B9E /* DemoCropCollectionViewController.h */,
+				BBD1A80020873F6600D57B9E /* DemoCropCollectionViewController.m */,
+				BBD1A80120873F6600D57B9E /* DemoCropCollectionViewController.xib */,
+			);
+			path = "Demo-CropViewControllerFromCollectionView";
+			sourceTree = "<group>";
+		};
 		BBD6CA90207E168B004129BE /* GoogleMapUtils */ = {
 			isa = PBXGroup;
 			children = (
@@ -1622,18 +1680,15 @@
 		BBDE4A492085EB3000731A69 /* Demo-NavigationTransition */ = {
 			isa = PBXGroup;
 			children = (
-				BBDE4A5D2085F32C00731A69 /* RMPNavigationController.h */,
-				BBDE4A5E2085F32C00731A69 /* RMPNavigationController.m */,
 				BBDE4A4D2085EBE000731A69 /* RMPZoomTransitionAnimator */,
-				BBDE4A4E2085EC1E00731A69 /* RMPImageCollectionViewController.h */,
-				BBDE4A4F2085EC1E00731A69 /* RMPImageCollectionViewController.m */,
-				BBDE4A502085EC1E00731A69 /* RMPImageCollectionViewController.xib */,
-				BBDE4A532085EC8400731A69 /* RMPImageCollectionViewCell.h */,
-				BBDE4A542085EC8400731A69 /* RMPImageCollectionViewCell.m */,
-				BBDE4A552085EC8400731A69 /* RMPImageCollectionViewCell.xib */,
+				BBD1A7EC2087245700D57B9E /* UICollectionView */,
+				BBD1A7F720872F3D00D57B9E /* TableViewController */,
 				BBDE4A582085ECCB00731A69 /* RMPDetailViewController.h */,
 				BBDE4A592085ECCB00731A69 /* RMPDetailViewController.m */,
 				BBDE4A5A2085ECCB00731A69 /* RMPDetailViewController.xib */,
+				BBD1A7F820872F8600D57B9E /* RMPExampleViewController.h */,
+				BBD1A7F920872F8600D57B9E /* RMPExampleViewController.m */,
+				BBD1A7FA20872F8600D57B9E /* RMPExampleViewController.xib */,
 			);
 			path = "Demo-NavigationTransition";
 			sourceTree = "<group>";
@@ -1641,8 +1696,11 @@
 		BBDE4A4D2085EBE000731A69 /* RMPZoomTransitionAnimator */ = {
 			isa = PBXGroup;
 			children = (
-				BBDE4A4A2085EB7500731A69 /* RMPZoomTransitionAnimator.h */,
-				BBDE4A4B2085EB7500731A69 /* RMPZoomTransitionAnimator.m */,
+				BBD1A7E32086FB2900D57B9E /* DbZoomTransitionAnimator.h */,
+				BBD1A7E42086FB2900D57B9E /* DbZoomTransitionAnimator.m */,
+				BBD1A7E9208704DC00D57B9E /* DbZoomDismissAnimatedTransitioning.h */,
+				BBD1A7EA208704DC00D57B9E /* DbZoomDismissAnimatedTransitioning.m */,
+				BBD1A7FD2087331200D57B9E /* read_me.txt */,
 			);
 			path = RMPZoomTransitionAnimator;
 			sourceTree = "<group>";
@@ -2009,6 +2067,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBEDC4311FBC3EEA000317FD /* slider-default-trackBackground.png in Resources */,
+				BBD1A80320873F6600D57B9E /* DemoCropCollectionViewController.xib in Resources */,
 				BB85E1771FDBE2F400FFA738 /* demo_5_line.png in Resources */,
 				BBD965DF1F5A8B6200CCAF2C /* DemoButtonViewController.xib in Resources */,
 				BB4FD48D1F442AEE00C082C3 /* apnumberpad_backspace_icon.png in Resources */,
@@ -2027,6 +2086,7 @@
 				BB4FD3C91F4429E200C082C3 /* LaunchScreen.storyboard in Resources */,
 				BBEDC43A1FBC3EEA000317FD /* slider-default7-trackBackground@2x.png in Resources */,
 				BBDE4A902085F58B00731A69 /* 14_L.jpeg in Resources */,
+				BBD1A7FC20872F8600D57B9E /* RMPExampleViewController.xib in Resources */,
 				BBF1BD701FAC81300081E179 /* MapDrawingViewController.xib in Resources */,
 				BBB751EA1FCE9F87000E5A03 /* main_gate_img.png in Resources */,
 				BB4FD4BF1F442C8A00C082C3 /* OpenSans-Semibold.ttf in Resources */,
@@ -2103,6 +2163,7 @@
 				BBEDC42B1FBC3EEA000317FD /* slider-default-handle-highlighted.png in Resources */,
 				BB85E17D1FDBE50700FFA738 /* demo_6_line.png in Resources */,
 				BB4FD4BB1F442C8A00C082C3 /* OpenSans-Italic.ttf in Resources */,
+				BBD1A7F1208724A500D57B9E /* RMPImageTableViewController.xib in Resources */,
 				BBDE4A9A2085F58B00731A69 /* 08_S.jpeg in Resources */,
 				BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */,
 				BBEDC42F1FBC3EEA000317FD /* slider-default-track.png in Resources */,
@@ -2125,6 +2186,7 @@
 				BBDE4A932085F58B00731A69 /* 01_S.jpeg in Resources */,
 				BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */,
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
+				BBD1A7F62087256500D57B9E /* RMPImageTableViewCell.xib in Resources */,
 				BBB752071FCEAA76000E5A03 /* demo_1.jpg in Resources */,
 				BBEDC44E1FBC4060000317FD /* RangeSliderViewController.xib in Resources */,
 				BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */,
@@ -2278,12 +2340,13 @@
 				BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */,
 				BBA796141FF0DEB700066B73 /* DbConnection.m in Sources */,
 				BBB0187D204F961F00153BD6 /* THDatePickerViewController.m in Sources */,
+				BBD1A7F0208724A500D57B9E /* RMPImageTableViewController.m in Sources */,
 				BB4FD4821F442AEE00C082C3 /* DbViewFromXib.m in Sources */,
 				BBE5EF721FDFD018005F3900 /* HeaderMapView.m in Sources */,
-				BBDE4A4C2085EB7500731A69 /* RMPZoomTransitionAnimator.m in Sources */,
 				BB4FD4841F442AEE00C082C3 /* DateTimeUtil.m in Sources */,
 				BBEDC4451FBC3EEA000317FD /* NMRangeSlider.m in Sources */,
 				BBA796111FF0BCEC00066B73 /* DbResponse.m in Sources */,
+				BBD1A7FB20872F8600D57B9E /* RMPExampleViewController.m in Sources */,
 				BBD99B301F7CD7BD004B20AF /* TBTwoViewController.m in Sources */,
 				BB1320E31FD930F8003CCCA3 /* DbCameraViewController.m in Sources */,
 				BB4FD4911F442AEE00C082C3 /* APNumberPad.m in Sources */,
@@ -2300,7 +2363,6 @@
 				BBDBD9001F6A9B6B009C9340 /* NSDictionary+DbHelper.m in Sources */,
 				BBE143651F8240A20020C400 /* UIView+GSKLayoutHelper.m in Sources */,
 				BB4FD47F1F442AEE00C082C3 /* DbPopupView.m in Sources */,
-				BBDE4A5F2085F32C00731A69 /* RMPNavigationController.m in Sources */,
 				BBF1BD731FAC814A0081E179 /* CanvasView.m in Sources */,
 				BB595DB61F6303940003C0B9 /* BALabel.m in Sources */,
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
@@ -2341,6 +2403,7 @@
 				BBE143611F823F170020C400 /* HeaderViewOne.m in Sources */,
 				BB4FD49D1F442AEE00C082C3 /* UIImage+Resize.m in Sources */,
 				BB6CC5231F5D46B70073A0C1 /* DbLabel.m in Sources */,
+				BBD1A7F52087256500D57B9E /* RMPImageTableViewCell.m in Sources */,
 				BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */,
 				BB4FD4D31F443BC100C082C3 /* PathsViewController.m in Sources */,
 				BBCFCA6C207B2A450091C01A /* MLPAutoCompleteTextField.m in Sources */,
@@ -2349,6 +2412,7 @@
 				BB4FD4A71F442B4D00C082C3 /* RootViewController.m in Sources */,
 				BBCFCA56207B19B70091C01A /* DemoTextSearchGGViewController.m in Sources */,
 				BB4FD4931F442AEE00C082C3 /* NSBundle+APNumberPad.m in Sources */,
+				BBD1A80220873F6600D57B9E /* DemoCropCollectionViewController.m in Sources */,
 				BBD99B401F7CD851004B20AF /* TBTabbarViewController.m in Sources */,
 				BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */,
 				BBB01882204F962C00153BD6 /* UIViewController+KNSemiModal.m in Sources */,
@@ -2396,6 +2460,7 @@
 				BB4FD4D11F443BC100C082C3 /* DetailCoursesViewController.m in Sources */,
 				BB4FD4891F442AEE00C082C3 /* DbResponseObject.m in Sources */,
 				BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */,
+				BBD1A7EB208704DC00D57B9E /* DbZoomDismissAnimatedTransitioning.m in Sources */,
 				BBA7960E1FF0B45B00066B73 /* DbRequest.m in Sources */,
 				BBCFCA71207B66020091C01A /* AddressTableViewCell.m in Sources */,
 				BBA7961A1FF0F67200066B73 /* DbUploadRequest.m in Sources */,
@@ -2405,6 +2470,7 @@
 				BB1320E11FD930F8003CCCA3 /* AVCamPreviewView.m in Sources */,
 				BBD1366C1F9A1187007A7763 /* HeaderJTCalendarView.m in Sources */,
 				BBE5EF6E1FDFCE57005F3900 /* STMapHeaderViewController.m in Sources */,
+				BBD1A7E52086FB2900D57B9E /* DbZoomTransitionAnimator.m in Sources */,
 				BB4FD4811F442AEE00C082C3 /* DbViewController.m in Sources */,
 				BBF9A38E1FB04BEA00909F34 /* CanvasImageView.m in Sources */,
 				BB4FD4961F442AEE00C082C3 /* PhotoGalleryViewController.m in Sources */,

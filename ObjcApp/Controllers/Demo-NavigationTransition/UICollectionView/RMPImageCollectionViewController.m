@@ -12,9 +12,11 @@
 #import "RMPImageCollectionViewCell.h"
 #import "RMPDetailViewController.h"
 
-@interface RMPImageCollectionViewController ()<UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate, RMPZoomTransitionAnimating>
+@interface RMPImageCollectionViewController ()<UICollectionViewDelegateFlowLayout, DbZoomTransitionAnimating>
 
 @property (nonatomic, copy) NSArray *images;
+
+@property (nonatomic, strong) DbZoomDismissAnimatedTransitioning *transitioningDelegate;
 
 @end
 
@@ -28,6 +30,8 @@ static const CGFloat kCellMargin = 5;
     [super viewDidLoad];
 
     [self setupData];
+    
+    self.transitioningDelegate = [[DbZoomDismissAnimatedTransitioning alloc] initWithSourceController:self];
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"RMPImageCollectionViewCell" bundle:[NSBundle mainBundle]]
           forCellWithReuseIdentifier:reuseIdentifier];
@@ -91,11 +95,7 @@ static const CGFloat kCellMargin = 5;
     RMPDetailViewController *vc = [[RMPDetailViewController alloc] init];
     NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
     vc.index = selectedIndexPath.row;
-    vc.transitioningDelegate = self;
-    
-//    [self.navigationController pushViewController:vc animated:YES];
-//    [self.navigationController presentViewController:vc animated:YES completion:nil];
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    vc.transitioningDelegate = self.transitioningDelegate;
     
     [self presentViewController:vc animated:YES completion:nil];
 }
@@ -118,36 +118,9 @@ static const CGFloat kCellMargin = 5;
     return UIEdgeInsetsMake(0, kCellMargin, kCellMargin, kCellMargin);
 }
 
-//#pragma mark <RMPZoomTransitionAnimating>
-//
-//- (UIImageView *)transitionSourceImageView
-//{
-//    NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
-//    RMPImageCollectionViewCell *cell = (RMPImageCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
-//    UIImageView *imageView = [[UIImageView alloc] initWithImage:cell.imageView.image];
-//    imageView.contentMode = cell.imageView.contentMode;
-//    imageView.clipsToBounds = YES;
-//    imageView.userInteractionEnabled = NO;
-//    imageView.frame = [cell.imageView convertRect:cell.imageView.frame toView:self.collectionView.superview];
-//    return imageView;
-//}
-//
-//- (UIColor *)transitionSourceBackgroundColor
-//{
-//    return self.collectionView.backgroundColor;
-//}
-//
-//- (CGRect)transitionDestinationImageViewFrame
-//{
-//    NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
-//    RMPImageCollectionViewCell *cell = (RMPImageCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
-//    CGRect cellFrameInSuperview = [cell.imageView convertRect:cell.imageView.frame toView:self.collectionView.superview];
-//    return cellFrameInSuperview;
-//}
-
 #pragma mark - <RMPZoomTransitionAnimating>
 
-- (UIImageView *)transitionSourceImageView
+- (UIView *)transitionSourceView
 {
     NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
     RMPImageCollectionViewCell *cell = (RMPImageCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
@@ -160,54 +133,19 @@ static const CGFloat kCellMargin = 5;
     return imageView;
 }
 
-- (UIColor *)transitionSourceBackgroundColor
-{
-    return self.collectionView.backgroundColor;
-}
+//- (UIColor *)transitionSourceBackgroundColor
+//{
+//    return [UIColor lightGrayColor];
+////    return self.collectionView.backgroundColor;
+//}
 
-- (CGRect)transitionDestinationImageViewFrame
+- (CGRect)transitionDestinationViewFrame
 {
     NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
     RMPImageCollectionViewCell *cell = (RMPImageCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
     CGRect cellFrameInSuperview = [cell.imageView convertRect:cell.imageView.frame toView:self.collectionView.superview];
     return cellFrameInSuperview;
 }
-
-#pragma mark - <UIViewControllerTransitioningDelegate>
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
-                                                                  presentingController:(UIViewController *)presenting
-                                                                      sourceController:(UIViewController *)source
-{
-    id <RMPZoomTransitionAnimating, RMPZoomTransitionDelegate> sourceTransition = (id<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>)source;
-    id <RMPZoomTransitionAnimating, RMPZoomTransitionDelegate> destinationTransition = (id<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>)presented;
-    if ([sourceTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)] &&
-        [destinationTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)]) {
-        RMPZoomTransitionAnimator *animator = [[RMPZoomTransitionAnimator alloc] init];
-        animator.goingForward = YES;
-        animator.sourceTransition = sourceTransition;
-        animator.destinationTransition = destinationTransition;
-        return animator;
-    }
-    return nil;
-}
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-{
-    id <RMPZoomTransitionAnimating, RMPZoomTransitionDelegate> sourceTransition = (id<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>)dismissed;
-    id <RMPZoomTransitionAnimating, RMPZoomTransitionDelegate> destinationTransition = (id<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>)self;
-    if ([sourceTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)] &&
-        [destinationTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)]) {
-        RMPZoomTransitionAnimator *animator = [[RMPZoomTransitionAnimator alloc] init];
-        animator.goingForward = NO;
-        animator.sourceTransition = sourceTransition;
-        animator.destinationTransition = destinationTransition;
-        return animator;
-    }
-    return nil;
-}
-
-
 
 @end
 
