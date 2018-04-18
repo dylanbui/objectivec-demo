@@ -17,10 +17,12 @@
 @property (nonatomic, copy) NSArray *images;
 
 @property (nonatomic, assign) TOCropViewCroppingStyle croppingStyle; //The cropping style
-@property (nonatomic, assign) CGRect croppedFrame;
-@property (nonatomic, assign) NSInteger angle;
+//@property (nonatomic, assign) CGRect croppedFrame;
+//@property (nonatomic, assign) NSInteger angle;
 
 @property (nonatomic, strong) UIImage *image;           // The image we'll be cropping
+
+@property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 
 @end
 
@@ -93,40 +95,23 @@ static const CGFloat kCellMargin = 5;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
+    self.selectedIndexPath = indexPath;
     
-    NSString *filename = [NSString stringWithFormat:@"%02lu_L.jpeg", selectedIndexPath.row + 1];
+    NSString *filename = [NSString stringWithFormat:@"%02lu_L.jpeg", self.selectedIndexPath.row + 1];
     // -- The image we'll be cropping --
     self.image = [UIImage imageNamed:filename];
     
-    RMPImageCollectionViewCell *cell = (RMPImageCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
-    CGRect viewFrame = [cell.imageView convertRect:cell.imageView.frame toView:self.collectionView.superview];
-//    CGRect viewFrame = [self.view convertRect:self.imageView.frame toView:self.navigationController.view];
+    RMPImageCollectionViewCell *cell = (RMPImageCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:self.selectedIndexPath];
+    // CGRect viewFrame = [cell.imageView convertRect:cell.imageView.frame toView:self.collectionView.superview];
+    // CGRect viewFrame = [cell.imageView convertRect:cell.imageView.frame toView:self.navigationController.view];
     
     // When tapping the image view, restore the image to the previous cropping state
     TOCropViewController *cropController = [[TOCropViewController alloc] initWithCroppingStyle:TOCropViewCroppingStyleDefault
                                                                                          image:self.image];
     cropController.delegate = self;
-    
-//    - (void)presentAnimatedFromParentViewController:(nonnull UIViewController *)viewController
-//fromView:(nullable UIView *)fromView
-//fromFrame:(CGRect)fromFrame
-//setup:(nullable void (^)(void))setup
-//completion:(nullable void (^)(void))completion NS_SWIFT_NAME(presentAnimated(from:view:frame:setup:completion:));
-    
     [cropController presentAnimatedFromParentViewController:self
-                                                  fromImage:cell.imageView.image //self.imageView.image
-                                                   fromView:nil
-                                                  fromFrame:viewFrame
-                                                      angle:self.angle
-                                               toImageFrame:self.croppedFrame
-                                                      setup:^{
-                                                          //self.imageView.hidden = YES;
-                                                      }
-                                                 completion:nil];
-    
-    
-    // [cropController dismissAnimatedFromParentViewController:self toView:cell.imageView toFrame:viewFrame setup:nil completion:nil];
+                                                   fromView:cell.imageView
+                                                  fromFrame:CGRectZero setup:nil completion:nil];
     
 }
 
@@ -134,12 +119,7 @@ static const CGFloat kCellMargin = 5;
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    BOOL isPad = [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad;
     CGFloat length = (CGRectGetWidth(self.view.frame) / 2) - (kCellMargin * 2);
-    if (isPad) {
-        // fixed size for iPad in landscape and portrait
-        length = 256 - (kCellMargin * 2);
-    }
     return CGSizeMake(length, length);
 }
 
@@ -152,37 +132,33 @@ static const CGFloat kCellMargin = 5;
 
 - (void)cropViewController:(TOCropViewController *)cropViewController didCropToImage:(UIImage *)image withRect:(CGRect)cropRect angle:(NSInteger)angle
 {
-    self.croppedFrame = cropRect;
-    self.angle = angle;
-    // [self updateImageViewWithImage:image fromCropViewController:cropViewController];
-    NSLog(@"%@", @"didCropToImage");
-    NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
+    // -- Bien nay dung de way lai anh goc, cat lai hinh cu --
+//    self.croppedFrame = cropRect;
+//    self.angle = angle;
+    // NSLog(@"%@", @"didCropToImage");
     
-    NSString *filename = [NSString stringWithFormat:@"%02lu_L.jpeg", selectedIndexPath.row + 1];
+//    NSString *filename = [NSString stringWithFormat:@"%02lu_L.jpeg", self.selectedIndexPath.row + 1];
     // -- The image we'll be cropping --
-    self.image = [UIImage imageNamed:filename];
+//    self.image = [UIImage imageNamed:filename];
     
-    RMPImageCollectionViewCell *cell = (RMPImageCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
-    CGRect viewFrame = [cell.imageView convertRect:cell.imageView.frame toView:self.collectionView.superview];
+    RMPImageCollectionViewCell *cell = (RMPImageCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:self.selectedIndexPath];
+    // CGRect viewFrame = [cell.imageView convertRect:cell.imageView.frame toView:self.collectionView.superview];
+    cell.imageView.alpha = 0.3;
+    cell.imageView.image = image;
     
     [cropViewController dismissAnimatedFromParentViewController:self
                                                withCroppedImage:image
                                                          toView:cell.imageView
-                                                        toFrame:viewFrame
-                                                          setup:^{
-                                                              //[self layoutImageView];
-                                                              
-                                                          }
-                                                     completion:nil];
-}
+                                                        toFrame:CGRectZero
+                                                          setup:nil
+                                                     completion:^{
+                                                         [UIView animateWithDuration:0.5 animations:^{
+                                                             cell.imageView.alpha = 1.0;
+                                                         }];
+                                                     }];
+    
 
-//- (void)cropViewController:(TOCropViewController *)cropViewController didCropToCircularImage:(UIImage *)image withRect:(CGRect)cropRect angle:(NSInteger)angle
-//{
-//    self.croppedFrame = cropRect;
-//    self.angle = angle;
-//    NSLog(@"%@", @"didCropToCircularImage");
-//    // [self updateImageViewWithImage:image fromCropViewController:cropViewController];
-//}
+}
 
 @end
 
