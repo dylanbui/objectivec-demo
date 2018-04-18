@@ -25,6 +25,8 @@
 #import "DemoTextSearchGGViewController.h"
 #import "DbPlaceSearchViewController.h"
 
+#import "RMPImageCollectionViewController.h"
+
 @interface RootViewController ()
 
 @end
@@ -37,7 +39,7 @@
     self.edgesForExtendedLayout = NO;
     
 //    [self.navigationController setNavigationBarHidden:YES animated:NO];
-    [self navigationBarHiddenForThisController];
+//    [self navigationBarHiddenForThisController];
     // Do any additional setup after loading the view.
     
     // -- Save RootViewController --
@@ -66,9 +68,10 @@
     
 //    DemoCalendarViewController *vcFirst = [[DemoCalendarViewController alloc] init];
 //    DemoCalendarViewController *vcFirst = [[DemoCalendarViewController alloc] initFromDeviceNib];
-    DemoTextSearchGGViewController *vcFirst = [[DemoTextSearchGGViewController alloc] init];
+//    DemoTextSearchGGViewController *vcFirst = [[DemoTextSearchGGViewController alloc] init];
     
 //    DbPlaceSearchViewController *vcFirst = [[DbPlaceSearchViewController alloc] init];
+    RMPImageCollectionViewController *vcFirst = [[RMPImageCollectionViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 
