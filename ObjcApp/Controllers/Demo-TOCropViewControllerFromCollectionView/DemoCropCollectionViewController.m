@@ -147,7 +147,7 @@ static const CGFloat kCellMargin = 5;
     cell.imageView.image = image;
     
     [cropViewController dismissAnimatedFromParentViewController:self
-                                               withCroppedImage:image
+                                               // withCroppedImage:image
                                                          toView:cell.imageView
                                                         toFrame:CGRectZero
                                                           setup:nil
@@ -158,6 +158,21 @@ static const CGFloat kCellMargin = 5;
                                                      }];
     
 
+}
+
+- (void)cropViewController:(TOCropViewController *)cropViewController didFinishCancelled:(BOOL)cancelled
+{
+    RMPImageCollectionViewCell *cell = (RMPImageCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:self.selectedIndexPath];
+    cell.imageView.alpha = 0.3;
+    [cropViewController dismissAnimatedFromParentViewController:self
+                                                         toView:cell.imageView
+                                                        toFrame:CGRectZero
+                                                          setup:nil
+                                                     completion:^{
+                                                         [UIView animateWithDuration:0.5 animations:^{
+                                                             cell.imageView.alpha = 1.0;
+                                                         }];
+                                                     }];
 }
 
 @end

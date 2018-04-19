@@ -25,8 +25,9 @@
 #import "DemoTextSearchGGViewController.h"
 #import "DbPlaceSearchViewController.h"
 
-#import "RMPExampleViewController.h"
-#import "DemoCropCollectionViewController.h"
+#import "RMPExampleViewController.h" // run
+#import "DemoCropCollectionViewController.h" // run
+#import "ExampleMyCropViewController.h" // run
 
 @interface RootViewController ()
 
@@ -51,7 +52,7 @@
 {
     [super viewWillAppear:animated];
     
-//    ViewController *vcFirst = [[ViewController alloc] init];
+    ViewController *vcFirst = [[ViewController alloc] init];
     // STCalendarHeaderViewController *vcFirst = [[STCalendarHeaderViewController alloc] init];
 //    MapDrawingViewController *vcFirst = [[MapDrawingViewController alloc] init];
 //    RangeSliderViewController *vcFirst = [[RangeSliderViewController alloc] init];
@@ -72,8 +73,9 @@
 //    DemoTextSearchGGViewController *vcFirst = [[DemoTextSearchGGViewController alloc] init];
     
 //    DbPlaceSearchViewController *vcFirst = [[DbPlaceSearchViewController alloc] init];
-    // RMPExampleViewController *vcFirst = [[RMPExampleViewController alloc] init];
-    DemoCropCollectionViewController *vcFirst = [[DemoCropCollectionViewController alloc] init];
+//     RMPExampleViewController *vcFirst = [[RMPExampleViewController alloc] init];
+//    DemoCropCollectionViewController *vcFirst = [[DemoCropCollectionViewController alloc] init];
+//    ExampleMyCropViewController *vcFirst = [[ExampleMyCropViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 

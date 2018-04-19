@@ -15,7 +15,7 @@
 @interface DbUtils : NSObject
 
 // -- Utility --
-+ (NSString *_Nonnull)nibNamedForDevice:(NSString *)name;
++ (NSString *_Nonnull)nibNamedForDevice:(NSString *_Nonnull)name;
 + (NSString *_Nonnull)generateRandomString:(int)num;
 + (void)callPhoneNumber:(NSString *_Nonnull)phonenumber completionHandler:(void (^ __nullable)(BOOL success))completion;
 

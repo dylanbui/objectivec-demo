@@ -20,6 +20,10 @@
 #import "PTPhotoViewController.h"
 #import "SLTableViewController.h"
 #import "DemoMyCameraViewController.h"
+#import "DemoTextSearchGGViewController.h"
+#import "RMPExampleViewController.h"
+#import "DemoCropCollectionViewController.h"
+#import "ExampleMyCropViewController.h"
 
 
 @interface ViewController ()
@@ -49,7 +53,12 @@
                       @"Demo-User-Session",
                       @"Demo-Expand-Layout",
                       @"Demo-MyCameraViewController",
-                      @"Demo-Navigation-Bar" ];
+                      @"Demo-Navigation-Bar",
+                      @"Demo-SearchGoogle",
+                      @"Demo-NavigationTransition",
+                      @"Demo-TOCropViewControllerFromCollectionView",
+                      @"Demo-MyCropViewController"
+                      ];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -103,6 +112,14 @@
         vcFirst = [[DemoMyCameraViewController alloc] init];
     } else if (indexPath.row == 11) {
         vcFirst = [[PathsViewController alloc] init];
+    } else if (indexPath.row == 12) {
+        vcFirst = [[DemoTextSearchGGViewController alloc] init];
+    } else if (indexPath.row == 13) {
+        vcFirst = [[RMPExampleViewController alloc] init];
+    } else if (indexPath.row == 14) {
+        vcFirst = [[DemoCropCollectionViewController alloc] init];
+    } else if (indexPath.row == 15) {
+        vcFirst = [[ExampleMyCropViewController alloc] init];
     }
     
     return vcFirst;

@@ -143,6 +143,14 @@
 		BBA796141FF0DEB700066B73 /* DbConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA796131FF0DEB700066B73 /* DbConnection.m */; };
 		BBA796171FF0DF0C00066B73 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA796151FF0DF0B00066B73 /* Reachability.m */; };
 		BBA7961A1FF0F67200066B73 /* DbUploadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA796191FF0F67200066B73 /* DbUploadRequest.m */; };
+		BBA9CD4320884B86004C33CE /* ExampleMyCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA9CD4120884B86004C33CE /* ExampleMyCropViewController.m */; };
+		BBA9CD4420884B86004C33CE /* ExampleMyCropViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA9CD4220884B86004C33CE /* ExampleMyCropViewController.xib */; };
+		BBA9CD5020884BDB004C33CE /* PECropRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA9CD4720884BDB004C33CE /* PECropRectView.m */; };
+		BBA9CD5120884BDB004C33CE /* PECropView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA9CD4920884BDB004C33CE /* PECropView.m */; };
+		BBA9CD5220884BDB004C33CE /* PECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA9CD4B20884BDB004C33CE /* PECropViewController.m */; };
+		BBA9CD5320884BDB004C33CE /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA9CD4D20884BDB004C33CE /* PEResizeControl.m */; };
+		BBA9CD5420884BDB004C33CE /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA9CD4F20884BDB004C33CE /* UIImage+PECrop.m */; };
+		BBA9CD5620885B01004C33CE /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BBA9CD5520885B01004C33CE /* PEPhotoCropEditor.bundle */; };
 		BBB01879204F961F00153BD6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBB01870204F961E00153BD6 /* Images.xcassets */; };
 		BBB0187A204F961F00153BD6 /* NSDate+Difference.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB01872204F961E00153BD6 /* NSDate+Difference.m */; };
 		BBB0187B204F961F00153BD6 /* THDateDay.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB01874204F961F00153BD6 /* THDateDay.m */; };
@@ -551,6 +559,20 @@
 		BBA796161FF0DF0C00066B73 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		BBA796181FF0F67200066B73 /* DbUploadRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbUploadRequest.h; sourceTree = "<group>"; };
 		BBA796191FF0F67200066B73 /* DbUploadRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbUploadRequest.m; sourceTree = "<group>"; };
+		BBA9CD4020884B86004C33CE /* ExampleMyCropViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleMyCropViewController.h; sourceTree = "<group>"; };
+		BBA9CD4120884B86004C33CE /* ExampleMyCropViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleMyCropViewController.m; sourceTree = "<group>"; };
+		BBA9CD4220884B86004C33CE /* ExampleMyCropViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleMyCropViewController.xib; sourceTree = "<group>"; };
+		BBA9CD4620884BDB004C33CE /* PECropRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropRectView.h; sourceTree = "<group>"; };
+		BBA9CD4720884BDB004C33CE /* PECropRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropRectView.m; sourceTree = "<group>"; };
+		BBA9CD4820884BDB004C33CE /* PECropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropView.h; sourceTree = "<group>"; };
+		BBA9CD4920884BDB004C33CE /* PECropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropView.m; sourceTree = "<group>"; };
+		BBA9CD4A20884BDB004C33CE /* PECropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropViewController.h; sourceTree = "<group>"; };
+		BBA9CD4B20884BDB004C33CE /* PECropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropViewController.m; sourceTree = "<group>"; };
+		BBA9CD4C20884BDB004C33CE /* PEResizeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEResizeControl.h; sourceTree = "<group>"; };
+		BBA9CD4D20884BDB004C33CE /* PEResizeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEResizeControl.m; sourceTree = "<group>"; };
+		BBA9CD4E20884BDB004C33CE /* UIImage+PECrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PECrop.h"; sourceTree = "<group>"; };
+		BBA9CD4F20884BDB004C33CE /* UIImage+PECrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PECrop.m"; sourceTree = "<group>"; };
+		BBA9CD5520885B01004C33CE /* PEPhotoCropEditor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PEPhotoCropEditor.bundle; sourceTree = "<group>"; };
 		BBB01870204F961E00153BD6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BBB01871204F961E00153BD6 /* NSDate+Difference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Difference.h"; sourceTree = "<group>"; };
 		BBB01872204F961E00153BD6 /* NSDate+Difference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Difference.m"; sourceTree = "<group>"; };
@@ -1307,7 +1329,8 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BBD1A7FE20873F2100D57B9E /* Demo-CropViewControllerFromCollectionView */,
+				BBA9CD3F20884B54004C33CE /* Demo-MyCropViewController */,
+				BBD1A7FE20873F2100D57B9E /* Demo-TOCropViewControllerFromCollectionView */,
 				BBDE4A492085EB3000731A69 /* Demo-NavigationTransition */,
 				BBCFCA52207B198B0091C01A /* Demo-SearchGoogle */,
 				BBB01889204F9D4600153BD6 /* Demo-CalendarActionSheet */,
@@ -1440,6 +1463,35 @@
 				BB9A74331FD80BBE004BEE9D /* UploadFileViewController.xib */,
 			);
 			path = "Demo-UploadFileViewController";
+			sourceTree = "<group>";
+		};
+		BBA9CD3F20884B54004C33CE /* Demo-MyCropViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BBA9CD4520884BDB004C33CE /* PECropView */,
+				BBA9CD4020884B86004C33CE /* ExampleMyCropViewController.h */,
+				BBA9CD4120884B86004C33CE /* ExampleMyCropViewController.m */,
+				BBA9CD4220884B86004C33CE /* ExampleMyCropViewController.xib */,
+			);
+			path = "Demo-MyCropViewController";
+			sourceTree = "<group>";
+		};
+		BBA9CD4520884BDB004C33CE /* PECropView */ = {
+			isa = PBXGroup;
+			children = (
+				BBA9CD5520885B01004C33CE /* PEPhotoCropEditor.bundle */,
+				BBA9CD4620884BDB004C33CE /* PECropRectView.h */,
+				BBA9CD4720884BDB004C33CE /* PECropRectView.m */,
+				BBA9CD4820884BDB004C33CE /* PECropView.h */,
+				BBA9CD4920884BDB004C33CE /* PECropView.m */,
+				BBA9CD4A20884BDB004C33CE /* PECropViewController.h */,
+				BBA9CD4B20884BDB004C33CE /* PECropViewController.m */,
+				BBA9CD4C20884BDB004C33CE /* PEResizeControl.h */,
+				BBA9CD4D20884BDB004C33CE /* PEResizeControl.m */,
+				BBA9CD4E20884BDB004C33CE /* UIImage+PECrop.h */,
+				BBA9CD4F20884BDB004C33CE /* UIImage+PECrop.m */,
+			);
+			path = PECropView;
 			sourceTree = "<group>";
 		};
 		BBB0186F204F961E00153BD6 /* THCalendarDatePicker */ = {
@@ -1590,14 +1642,14 @@
 			path = TableViewController;
 			sourceTree = "<group>";
 		};
-		BBD1A7FE20873F2100D57B9E /* Demo-CropViewControllerFromCollectionView */ = {
+		BBD1A7FE20873F2100D57B9E /* Demo-TOCropViewControllerFromCollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				BBD1A7FF20873F6600D57B9E /* DemoCropCollectionViewController.h */,
 				BBD1A80020873F6600D57B9E /* DemoCropCollectionViewController.m */,
 				BBD1A80120873F6600D57B9E /* DemoCropCollectionViewController.xib */,
 			);
-			path = "Demo-CropViewControllerFromCollectionView";
+			path = "Demo-TOCropViewControllerFromCollectionView";
 			sourceTree = "<group>";
 		};
 		BBD6CA90207E168B004129BE /* GoogleMapUtils */ = {
@@ -1680,7 +1732,7 @@
 		BBDE4A492085EB3000731A69 /* Demo-NavigationTransition */ = {
 			isa = PBXGroup;
 			children = (
-				BBDE4A4D2085EBE000731A69 /* RMPZoomTransitionAnimator */,
+				BBDE4A4D2085EBE000731A69 /* DbZoomTransitionAnimator */,
 				BBD1A7EC2087245700D57B9E /* UICollectionView */,
 				BBD1A7F720872F3D00D57B9E /* TableViewController */,
 				BBDE4A582085ECCB00731A69 /* RMPDetailViewController.h */,
@@ -1693,7 +1745,7 @@
 			path = "Demo-NavigationTransition";
 			sourceTree = "<group>";
 		};
-		BBDE4A4D2085EBE000731A69 /* RMPZoomTransitionAnimator */ = {
+		BBDE4A4D2085EBE000731A69 /* DbZoomTransitionAnimator */ = {
 			isa = PBXGroup;
 			children = (
 				BBD1A7E32086FB2900D57B9E /* DbZoomTransitionAnimator.h */,
@@ -1702,7 +1754,7 @@
 				BBD1A7EA208704DC00D57B9E /* DbZoomDismissAnimatedTransitioning.m */,
 				BBD1A7FD2087331200D57B9E /* read_me.txt */,
 			);
-			path = RMPZoomTransitionAnimator;
+			path = DbZoomTransitionAnimator;
 			sourceTree = "<group>";
 		};
 		BBDE4A602085F58B00731A69 /* Demo Images */ = {
@@ -2090,6 +2142,7 @@
 				BBF1BD701FAC81300081E179 /* MapDrawingViewController.xib in Resources */,
 				BBB751EA1FCE9F87000E5A03 /* main_gate_img.png in Resources */,
 				BB4FD4BF1F442C8A00C082C3 /* OpenSans-Semibold.ttf in Resources */,
+				BBA9CD5620885B01004C33CE /* PEPhotoCropEditor.bundle in Resources */,
 				BBDE4A9D2085F58B00731A69 /* 11_S.jpeg in Resources */,
 				BBEDC4351FBC3EEA000317FD /* slider-default7-handle.png in Resources */,
 				BB85E16B1FDBCC6100FFA738 /* ImageAnimViewController.xib in Resources */,
@@ -2167,6 +2220,7 @@
 				BBDE4A9A2085F58B00731A69 /* 08_S.jpeg in Resources */,
 				BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */,
 				BBEDC42F1FBC3EEA000317FD /* slider-default-track.png in Resources */,
+				BBA9CD4420884B86004C33CE /* ExampleMyCropViewController.xib in Resources */,
 				BBDE4A912085F58B00731A69 /* 15_L.jpeg in Resources */,
 				BBEDC45A1FBC543C000317FD /* db_slider_handle@2x.png in Resources */,
 				BBEDC4391FBC3EEA000317FD /* slider-default7-trackBackground.png in Resources */,
@@ -2333,6 +2387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBA9CD5420884BDB004C33CE /* UIImage+PECrop.m in Sources */,
 				BB4FD48C1F442AEE00C082C3 /* UIButton+Activity.m in Sources */,
 				BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */,
 				BBE5EF7B1FDFD1B6005F3900 /* SLParallaxViewController.m in Sources */,
@@ -2363,6 +2418,7 @@
 				BBDBD9001F6A9B6B009C9340 /* NSDictionary+DbHelper.m in Sources */,
 				BBE143651F8240A20020C400 /* UIView+GSKLayoutHelper.m in Sources */,
 				BB4FD47F1F442AEE00C082C3 /* DbPopupView.m in Sources */,
+				BBA9CD5220884BDB004C33CE /* PECropViewController.m in Sources */,
 				BBF1BD731FAC814A0081E179 /* CanvasView.m in Sources */,
 				BB595DB61F6303940003C0B9 /* BALabel.m in Sources */,
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
@@ -2444,6 +2500,7 @@
 				BB4FD4851F442AEE00C082C3 /* DbUtils.m in Sources */,
 				BBD99B3A1F7CD7DE004B20AF /* TBFourViewController.m in Sources */,
 				BB1320DF1FD930F8003CCCA3 /* AVCamAssetLib.m in Sources */,
+				BBA9CD5320884BDB004C33CE /* PEResizeControl.m in Sources */,
 				BBD6CA9B207E168B004129BE /* GooglePlaceDetail.m in Sources */,
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
 				BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */,
@@ -2458,13 +2515,16 @@
 				BBD99B351F7CD7CF004B20AF /* TBThreeViewController.m in Sources */,
 				BBF2E8C71F548ED800064035 /* TaskTableViewHeader.m in Sources */,
 				BB4FD4D11F443BC100C082C3 /* DetailCoursesViewController.m in Sources */,
+				BBA9CD4320884B86004C33CE /* ExampleMyCropViewController.m in Sources */,
 				BB4FD4891F442AEE00C082C3 /* DbResponseObject.m in Sources */,
 				BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */,
 				BBD1A7EB208704DC00D57B9E /* DbZoomDismissAnimatedTransitioning.m in Sources */,
+				BBA9CD5120884BDB004C33CE /* PECropView.m in Sources */,
 				BBA7960E1FF0B45B00066B73 /* DbRequest.m in Sources */,
 				BBCFCA71207B66020091C01A /* AddressTableViewCell.m in Sources */,
 				BBA7961A1FF0F67200066B73 /* DbUploadRequest.m in Sources */,
 				BB4FD4CF1F443BC100C082C3 /* CoursesViewController.m in Sources */,
+				BBA9CD5020884BDB004C33CE /* PECropRectView.m in Sources */,
 				BBD5C8082064FA7D00037E84 /* DbTextField.m in Sources */,
 				BBE143691F8242C50020C400 /* UINavigationController+Transparency.m in Sources */,
 				BB1320E11FD930F8003CCCA3 /* AVCamPreviewView.m in Sources */,
