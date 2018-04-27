@@ -22,8 +22,11 @@
 #import "DemoMyCameraViewController.h"
 #import "DemoTextSearchGGViewController.h"
 #import "RMPExampleViewController.h"
+
 #import "DemoCropCollectionViewController.h"
 #import "ExampleMyCropViewController.h"
+
+#import "DemoAttributedStringViewController.h"
 
 
 @interface ViewController ()
@@ -57,7 +60,8 @@
                       @"Demo-SearchGoogle",
                       @"Demo-NavigationTransition",
                       @"Demo-TOCropViewControllerFromCollectionView",
-                      @"Demo-MyCropViewController"
+                      @"Demo-MyCropViewController",
+                      @"Demo-NSAttributedString"
                       ];
 }
 
@@ -120,6 +124,8 @@
         vcFirst = [[DemoCropCollectionViewController alloc] init];
     } else if (indexPath.row == 15) {
         vcFirst = [[ExampleMyCropViewController alloc] init];
+    } else if (indexPath.row == 16) {
+        vcFirst = [[DemoAttributedStringViewController alloc] init];
     }
     
     return vcFirst;

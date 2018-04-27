@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9120E771807AB7030C9F4283 /* Pods_ObjcApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D62C3C09D877F7693306C71 /* Pods_ObjcApp.framework */; };
+		BB06C8D82091D2F7008F42F5 /* NSMutableAttributedString+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = BB06C8D72091D2F7008F42F5 /* NSMutableAttributedString+Attributes.m */; };
 		BB121DEF1F85DEAD0053171B /* PTPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB121DED1F85DEAD0053171B /* PTPhotoViewController.m */; };
 		BB121DF01F85DEAD0053171B /* PTPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB121DEE1F85DEAD0053171B /* PTPhotoViewController.xib */; };
 		BB121DF41F861A200053171B /* PTPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB121DF21F861A200053171B /* PTPhotoDetailViewController.m */; };
@@ -119,6 +120,14 @@
 		BB6EBF471FB2F7EC006CC4EA /* SearchSession.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6EBF461FB2F7EC006CC4EA /* SearchSession.m */; };
 		BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */; };
 		BB79D8631F95B45100A0A7C2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB79D8621F95B45100A0A7C2 /* ViewController.xib */; };
+		BB85B0B62092E04E0060A8FA /* DemoAttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB85B0B42092E04E0060A8FA /* DemoAttributedStringViewController.m */; };
+		BB85B0B72092E04E0060A8FA /* DemoAttributedStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB85B0B52092E04E0060A8FA /* DemoAttributedStringViewController.xib */; };
+		BB85B0C82092E1210060A8FA /* UIFont+OHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB85B0BD2092E11F0060A8FA /* UIFont+OHAdditions.m */; };
+		BB85B0C92092E1210060A8FA /* NSAttributedString+OHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB85B0BE2092E1200060A8FA /* NSAttributedString+OHAdditions.m */; };
+		BB85B0CA2092E1210060A8FA /* UILabel+OHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB85B0C02092E1200060A8FA /* UILabel+OHAdditions.m */; };
+		BB85B0CB2092E1210060A8FA /* README.png in Resources */ = {isa = PBXBuildFile; fileRef = BB85B0C12092E1200060A8FA /* README.png */; };
+		BB85B0CC2092E1210060A8FA /* NSMutableAttributedString+OHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB85B0C32092E1200060A8FA /* NSMutableAttributedString+OHAdditions.m */; };
+		BB85B0CD2092E1210060A8FA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BB85B0C42092E1210060A8FA /* README.md */; };
 		BB85E16A1FDBCC6100FFA738 /* ImageAnimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB85E1681FDBCC6100FFA738 /* ImageAnimViewController.m */; };
 		BB85E16B1FDBCC6100FFA738 /* ImageAnimViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB85E1691FDBCC6100FFA738 /* ImageAnimViewController.xib */; };
 		BB85E1731FDBCFC600FFA738 /* demo_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB85E1711FDBCFC600FFA738 /* demo_3.jpg */; };
@@ -335,6 +344,8 @@
 		337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjcAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D62C3C09D877F7693306C71 /* Pods_ObjcApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjcApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		806131BC8A1DA902FB1E7935 /* Pods-ObjcAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcAppTests/Pods-ObjcAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		BB06C8D62091D2F7008F42F5 /* NSMutableAttributedString+Attributes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Attributes.h"; sourceTree = "<group>"; };
+		BB06C8D72091D2F7008F42F5 /* NSMutableAttributedString+Attributes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Attributes.m"; sourceTree = "<group>"; };
 		BB121DEC1F85DEAD0053171B /* PTPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTPhotoViewController.h; sourceTree = "<group>"; };
 		BB121DED1F85DEAD0053171B /* PTPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTPhotoViewController.m; sourceTree = "<group>"; };
 		BB121DEE1F85DEAD0053171B /* PTPhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PTPhotoViewController.xib; sourceTree = "<group>"; };
@@ -524,6 +535,20 @@
 		BB71F43F1FA89235007268BA /* UIView+LayoutHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutHelper.h"; sourceTree = "<group>"; };
 		BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutHelper.m"; sourceTree = "<group>"; };
 		BB79D8621F95B45100A0A7C2 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		BB85B0B32092E04E0060A8FA /* DemoAttributedStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoAttributedStringViewController.h; sourceTree = "<group>"; };
+		BB85B0B42092E04E0060A8FA /* DemoAttributedStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAttributedStringViewController.m; sourceTree = "<group>"; };
+		BB85B0B52092E04E0060A8FA /* DemoAttributedStringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoAttributedStringViewController.xib; sourceTree = "<group>"; };
+		BB85B0BD2092E11F0060A8FA /* UIFont+OHAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+OHAdditions.m"; sourceTree = "<group>"; };
+		BB85B0BE2092E1200060A8FA /* NSAttributedString+OHAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+OHAdditions.m"; sourceTree = "<group>"; };
+		BB85B0BF2092E1200060A8FA /* UILabel+OHAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+OHAdditions.h"; sourceTree = "<group>"; };
+		BB85B0C02092E1200060A8FA /* UILabel+OHAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+OHAdditions.m"; sourceTree = "<group>"; };
+		BB85B0C12092E1200060A8FA /* README.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = README.png; sourceTree = "<group>"; };
+		BB85B0C22092E1200060A8FA /* NSMutableAttributedString+OHAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+OHAdditions.h"; sourceTree = "<group>"; };
+		BB85B0C32092E1200060A8FA /* NSMutableAttributedString+OHAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+OHAdditions.m"; sourceTree = "<group>"; };
+		BB85B0C42092E1210060A8FA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BB85B0C52092E1210060A8FA /* NSAttributedString+OHAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+OHAdditions.h"; sourceTree = "<group>"; };
+		BB85B0C62092E1210060A8FA /* OHAttributedStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHAttributedStringAdditions.h; sourceTree = "<group>"; };
+		BB85B0C72092E1210060A8FA /* UIFont+OHAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+OHAdditions.h"; sourceTree = "<group>"; };
 		BB85E1671FDBCC6100FFA738 /* ImageAnimViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAnimViewController.h; sourceTree = "<group>"; };
 		BB85E1681FDBCC6100FFA738 /* ImageAnimViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAnimViewController.m; sourceTree = "<group>"; };
 		BB85E1691FDBCC6100FFA738 /* ImageAnimViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageAnimViewController.xib; sourceTree = "<group>"; };
@@ -838,6 +863,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB06C8D92091D2FD008F42F5 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				BB06C8D62091D2F7008F42F5 /* NSMutableAttributedString+Attributes.h */,
+				BB06C8D72091D2F7008F42F5 /* NSMutableAttributedString+Attributes.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
 		BB121DEB1F85DE7C0053171B /* Demo-PhotoController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1109,6 +1143,7 @@
 				BB4FD42B1F442AEE00C082C3 /* UINavigationController+Utils.m */,
 				BB71F43F1FA89235007268BA /* UIView+LayoutHelper.h */,
 				BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */,
+				BB06C8D92091D2FD008F42F5 /* NSString */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1356,6 +1391,7 @@
 				BB4FD4C31F442D1300C082C3 /* ViewController.m */,
 				BB79D8621F95B45100A0A7C2 /* ViewController.xib */,
 				BBF826501FF4DB9E00D25AD7 /* Demo-DbConnectionViewController */,
+				BB85B0B82092E0570060A8FA /* Demo-NSAttributedString */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1422,6 +1458,35 @@
 				BBD5C8072064FA7D00037E84 /* DbTextField.m */,
 			);
 			path = CustomControllClass;
+			sourceTree = "<group>";
+		};
+		BB85B0B82092E0570060A8FA /* Demo-NSAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				BB85B0CE2092E12D0060A8FA /* OHAttributedStringAdditions */,
+				BB85B0B32092E04E0060A8FA /* DemoAttributedStringViewController.h */,
+				BB85B0B42092E04E0060A8FA /* DemoAttributedStringViewController.m */,
+				BB85B0B52092E04E0060A8FA /* DemoAttributedStringViewController.xib */,
+			);
+			path = "Demo-NSAttributedString";
+			sourceTree = "<group>";
+		};
+		BB85B0CE2092E12D0060A8FA /* OHAttributedStringAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				BB85B0C52092E1210060A8FA /* NSAttributedString+OHAdditions.h */,
+				BB85B0BE2092E1200060A8FA /* NSAttributedString+OHAdditions.m */,
+				BB85B0C22092E1200060A8FA /* NSMutableAttributedString+OHAdditions.h */,
+				BB85B0C32092E1200060A8FA /* NSMutableAttributedString+OHAdditions.m */,
+				BB85B0C62092E1210060A8FA /* OHAttributedStringAdditions.h */,
+				BB85B0C42092E1210060A8FA /* README.md */,
+				BB85B0C12092E1200060A8FA /* README.png */,
+				BB85B0C72092E1210060A8FA /* UIFont+OHAdditions.h */,
+				BB85B0BD2092E11F0060A8FA /* UIFont+OHAdditions.m */,
+				BB85B0BF2092E1200060A8FA /* UILabel+OHAdditions.h */,
+				BB85B0C02092E1200060A8FA /* UILabel+OHAdditions.m */,
+			);
+			path = OHAttributedStringAdditions;
 			sourceTree = "<group>";
 		};
 		BB85E16C1FDBCC6800FFA738 /* Demo-ImageAnimViewController */ = {
@@ -2192,6 +2257,7 @@
 				BBD99B361F7CD7CF004B20AF /* TBThreeViewController.xib in Resources */,
 				BBEDC4361FBC3EEA000317FD /* slider-default7-handle@2x.png in Resources */,
 				BB25FC9A1F51DFC20005372B /* artists.json in Resources */,
+				BB85B0B72092E04E0060A8FA /* DemoAttributedStringViewController.xib in Resources */,
 				BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */,
 				BBDE4A9B2085F58B00731A69 /* 09_S.jpeg in Resources */,
 				BBDE4A982085F58B00731A69 /* 06_S.jpeg in Resources */,
@@ -2235,6 +2301,7 @@
 				BB4FD49E1F442AEE00C082C3 /* ic_hide_password.png in Resources */,
 				BBDE4A942085F58B00731A69 /* 02_S.jpeg in Resources */,
 				BB1320E61FD930F8003CCCA3 /* DbImageCollectionViewCell.xib in Resources */,
+				BB85B0CB2092E1210060A8FA /* README.png in Resources */,
 				BB4FD48F1F442AEE00C082C3 /* apnumberpad_backspace_icon@3x.png in Resources */,
 				BBB01879204F961F00153BD6 /* Images.xcassets in Resources */,
 				BBDE4A932085F58B00731A69 /* 01_S.jpeg in Resources */,
@@ -2266,6 +2333,7 @@
 				BBEDC4371FBC3EEA000317FD /* slider-default7-track.png in Resources */,
 				BBD99B2C1F7CD791004B20AF /* TBOneViewController.xib in Resources */,
 				BBDE4AA22085F58B00731A69 /* 16_S.jpeg in Resources */,
+				BB85B0CD2092E1210060A8FA /* README.md in Resources */,
 				BB25FC981F51DE850005372B /* ExpandViewCell.xib in Resources */,
 				BB85E17E1FDBE50700FFA738 /* demo_6_line@2x.png in Resources */,
 				BBD107701FCFA74A0009BAB1 /* AutoLayoutViewController.xib in Resources */,
@@ -2389,6 +2457,7 @@
 			files = (
 				BBA9CD5420884BDB004C33CE /* UIImage+PECrop.m in Sources */,
 				BB4FD48C1F442AEE00C082C3 /* UIButton+Activity.m in Sources */,
+				BB85B0C92092E1210060A8FA /* NSAttributedString+OHAdditions.m in Sources */,
 				BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */,
 				BBE5EF7B1FDFD1B6005F3900 /* SLParallaxViewController.m in Sources */,
 				BBCFCA6D207B2A450091C01A /* NSString+Levenshtein.m in Sources */,
@@ -2423,6 +2492,7 @@
 				BB595DB61F6303940003C0B9 /* BALabel.m in Sources */,
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
 				BBD289C1205116E100045830 /* CalendarView.m in Sources */,
+				BB85B0CA2092E1210060A8FA /* UILabel+OHAdditions.m in Sources */,
 				BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */,
 				BBCFCA4F207B193C0091C01A /* MVPlaceSearchTextField.m in Sources */,
 				BBDE4A512085EC1E00731A69 /* RMPImageCollectionViewController.m in Sources */,
@@ -2438,8 +2508,10 @@
 				BB4FD4871F442AEE00C082C3 /* NSObject+SimpleMapping.m in Sources */,
 				BB4FD4941F442AEE00C082C3 /* ATAppUpdater.m in Sources */,
 				BB3FC34C1FC957DA000D37F2 /* DbErrorView.m in Sources */,
+				BB85B0CC2092E1210060A8FA /* NSMutableAttributedString+OHAdditions.m in Sources */,
 				BB4FD4881F442AEE00C082C3 /* UINavigationController+Utils.m in Sources */,
 				BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */,
+				BB85B0C82092E1210060A8FA /* UIFont+OHAdditions.m in Sources */,
 				BB6EBF471FB2F7EC006CC4EA /* SearchSession.m in Sources */,
 				BBCFCA50207B193C0091C01A /* PlaceDetail.m in Sources */,
 				BB4FD4951F442AEE00C082C3 /* CropPhotoViewController.m in Sources */,
@@ -2461,6 +2533,7 @@
 				BB6CC5231F5D46B70073A0C1 /* DbLabel.m in Sources */,
 				BBD1A7F52087256500D57B9E /* RMPImageTableViewCell.m in Sources */,
 				BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */,
+				BB85B0B62092E04E0060A8FA /* DemoAttributedStringViewController.m in Sources */,
 				BB4FD4D31F443BC100C082C3 /* PathsViewController.m in Sources */,
 				BBCFCA6C207B2A450091C01A /* MLPAutoCompleteTextField.m in Sources */,
 				BB1320E81FD930F8003CCCA3 /* UIBarButtonItem+Badge.m in Sources */,
@@ -2522,6 +2595,7 @@
 				BBA9CD5120884BDB004C33CE /* PECropView.m in Sources */,
 				BBA7960E1FF0B45B00066B73 /* DbRequest.m in Sources */,
 				BBCFCA71207B66020091C01A /* AddressTableViewCell.m in Sources */,
+				BB06C8D82091D2F7008F42F5 /* NSMutableAttributedString+Attributes.m in Sources */,
 				BBA7961A1FF0F67200066B73 /* DbUploadRequest.m in Sources */,
 				BB4FD4CF1F443BC100C082C3 /* CoursesViewController.m in Sources */,
 				BBA9CD5020884BDB004C33CE /* PECropRectView.m in Sources */,
