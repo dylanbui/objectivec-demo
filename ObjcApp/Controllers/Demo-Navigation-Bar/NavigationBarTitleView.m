@@ -75,6 +75,22 @@
 //        self.vclContainer.navigationItem.titleView = label;
 //        label.text = @"My Custom Title";
 //        [label sizeToFit];
+        
+        // -- Config NavigationBar Back button (Change icon) --
+        UIImage *backBtn = [UIImage imageNamed:@"iconIosBack"];
+        backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        //     self.navigationItem.backBarButtonItem.title = @"";
+        //    self.navigationController.navigationBar.topItem.title = @"";
+        
+        self.vclContainer.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                                                 style:UIBarButtonItemStylePlain
+                                                                                target:nil
+                                                                                action:nil];
+        
+        self.vclContainer.navigationController.navigationBar.tintColor = [UIColor clearColor];
+        self.vclContainer.navigationController.navigationBar.backIndicatorImage = backBtn;
+        self.vclContainer.navigationController.navigationBar.backIndicatorTransitionMaskImage = backBtn;
+        
     }
 }
 

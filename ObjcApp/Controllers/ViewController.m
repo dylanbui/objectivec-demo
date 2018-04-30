@@ -12,6 +12,7 @@
 #import "UserSessionViewController.h"
 #import "ExpandLayoutViewController.h"
 #import "ScrollViewFormViewController.h"
+#import "ScrollViewType1ViewController.h"
 #import "DemoButtonViewController.h"
 #import "TableExpandCellViewController.h"
 #import "KeyboardViewController.h"
@@ -101,7 +102,8 @@
     } else if (indexPath.row == 5) {
         vcFirst = [[DemoButtonViewController alloc] init];
     } else if (indexPath.row == 6) {
-        vcFirst = [[ScrollViewFormViewController alloc] init];
+//        vcFirst = [[ScrollViewFormViewController alloc] init];
+        vcFirst = [[ScrollViewType1ViewController alloc] init];
     } else if (indexPath.row == 7) {
         vcFirst = [[TableExpandCellViewController alloc] init];
     } else if (indexPath.row == 8) {
