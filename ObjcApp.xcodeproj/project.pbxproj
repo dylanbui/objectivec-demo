@@ -171,6 +171,8 @@
 		BBB01887204F972200153BD6 /* CalendarActionSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB01885204F972200153BD6 /* CalendarActionSheetViewController.xib */; };
 		BBB0188D204F9D6B00153BD6 /* DemoCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB0188B204F9D6B00153BD6 /* DemoCalendarViewController.m */; };
 		BBB0188E204F9D6B00153BD6 /* DemoCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB0188C204F9D6B00153BD6 /* DemoCalendarViewController.xib */; };
+		BBB26C652097915500D1CA61 /* ScrollViewType1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB26C632097915500D1CA61 /* ScrollViewType1ViewController.m */; };
+		BBB26C662097915500D1CA61 /* ScrollViewType1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB26C642097915500D1CA61 /* ScrollViewType1ViewController.xib */; };
 		BBB751E71FCE9F87000E5A03 /* main_gate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E31FCE9F86000E5A03 /* main_gate@2x.png */; };
 		BBB751E81FCE9F87000E5A03 /* main_gate.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E41FCE9F86000E5A03 /* main_gate.png */; };
 		BBB751E91FCE9F87000E5A03 /* main_gate_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBB751E51FCE9F87000E5A03 /* main_gate_img@2x.png */; };
@@ -615,6 +617,9 @@
 		BBB0188A204F9D6B00153BD6 /* DemoCalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCalendarViewController.h; sourceTree = "<group>"; };
 		BBB0188B204F9D6B00153BD6 /* DemoCalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCalendarViewController.m; sourceTree = "<group>"; };
 		BBB0188C204F9D6B00153BD6 /* DemoCalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoCalendarViewController.xib; sourceTree = "<group>"; };
+		BBB26C622097915500D1CA61 /* ScrollViewType1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewType1ViewController.h; sourceTree = "<group>"; };
+		BBB26C632097915500D1CA61 /* ScrollViewType1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewType1ViewController.m; sourceTree = "<group>"; };
+		BBB26C642097915500D1CA61 /* ScrollViewType1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewType1ViewController.xib; sourceTree = "<group>"; };
 		BBB751E31FCE9F86000E5A03 /* main_gate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_gate@2x.png"; sourceTree = "<group>"; };
 		BBB751E41FCE9F86000E5A03 /* main_gate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_gate.png; sourceTree = "<group>"; };
 		BBB751E51FCE9F87000E5A03 /* main_gate_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_gate_img@2x.png"; sourceTree = "<group>"; };
@@ -1436,6 +1441,9 @@
 				BB5DDD931F5329B60009AFDC /* ScrollViewFormViewController.h */,
 				BB5DDD941F5329B60009AFDC /* ScrollViewFormViewController.m */,
 				BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */,
+				BBB26C622097915500D1CA61 /* ScrollViewType1ViewController.h */,
+				BBB26C632097915500D1CA61 /* ScrollViewType1ViewController.m */,
+				BBB26C642097915500D1CA61 /* ScrollViewType1ViewController.xib */,
 			);
 			path = "Demo-ScrollView";
 			sourceTree = "<group>";
@@ -2290,6 +2298,7 @@
 				BBDE4A912085F58B00731A69 /* 15_L.jpeg in Resources */,
 				BBEDC45A1FBC543C000317FD /* db_slider_handle@2x.png in Resources */,
 				BBEDC4391FBC3EEA000317FD /* slider-default7-trackBackground.png in Resources */,
+				BBB26C662097915500D1CA61 /* ScrollViewType1ViewController.xib in Resources */,
 				BB4FD4B81F442C8A00C082C3 /* OpenSans-BoldItalic.ttf in Resources */,
 				BBE5EF7C1FDFD1B6005F3900 /* SLParallaxViewController.xib in Resources */,
 				BBEDC4571FBC543C000317FD /* db_slider_handle.png in Resources */,
@@ -2521,6 +2530,7 @@
 				BB4FD4801F442AEE00C082C3 /* DbTableViewCell.m in Sources */,
 				BB4FD4D91F443FEE00C082C3 /* NavigationBarView.m in Sources */,
 				BBB0187A204F961F00153BD6 /* NSDate+Difference.m in Sources */,
+				BBB26C652097915500D1CA61 /* ScrollViewType1ViewController.m in Sources */,
 				BB4FD49A1F442AEE00C082C3 /* SYPhotoBrowser.m in Sources */,
 				BBD6CA9C207E168B004129BE /* GooglePlacesApiClient.m in Sources */,
 				BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */,

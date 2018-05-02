@@ -18,6 +18,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    NSLog(@"self.view.frame = %@", NSStringFromCGRect(self.view.frame));
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSLog(@"self.view.frame = %@", NSStringFromCGRect(self.view.frame));
 }
 
 
