@@ -27,6 +27,8 @@
 #import "NSAttributedString+OHAdditions.h"
 #import "NSMutableAttributedString+OHAdditions.h"
 #import "UIFont+OHAdditions.h"
+// -- Third part library --
+#import "NSMutableAttributedString+Helper.h"
 
 #if __has_include("UILabel+OHAdditions.h")
 #import "UILabel+OHAdditions.h"

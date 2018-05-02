@@ -10,4 +10,9 @@
 
 @interface RMPExampleViewController : UIViewController
 
+
+@property (weak, nonatomic) IBOutlet UIButton *pushButton;
+@property (weak, nonatomic) IBOutlet UIButton *presentButton;
+
+
 @end

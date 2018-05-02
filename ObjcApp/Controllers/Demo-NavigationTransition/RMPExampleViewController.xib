@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RMPExampleViewController">
             <connections>
+                <outlet property="presentButton" destination="1Ce-pi-HQZ" id="gFs-4t-itd"/>
+                <outlet property="pushButton" destination="ciw-Db-4vR" id="RJn-to-CzK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,6 +35,22 @@
                     <state key="normal" title="Demo UICollectionView"/>
                     <connections>
                         <action selector="btn_Click:" destination="-1" eventType="touchUpInside" id="Rod-X6-9Rv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciw-Db-4vR">
+                    <rect key="frame" x="32" y="323" width="311" height="57"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Demo Push"/>
+                    <connections>
+                        <action selector="pushButton_Click:" destination="-1" eventType="touchUpInside" id="7jb-Ak-QUn"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ce-pi-HQZ">
+                    <rect key="frame" x="32" y="428" width="311" height="57"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Demo Persent"/>
+                    <connections>
+                        <action selector="presentButton_Click:" destination="-1" eventType="touchUpInside" id="5nw-WB-lQ0"/>
                     </connections>
                 </button>
             </subviews>

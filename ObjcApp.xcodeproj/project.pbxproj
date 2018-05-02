@@ -187,6 +187,13 @@
 		BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C491F49E72B007A3B5C /* NavigationBarTitleView.xib */; };
 		BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */; };
 		BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */; };
+		BBC4214020995FBF00B26D67 /* NSMutableAttributedString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC4213F20995FBF00B26D67 /* NSMutableAttributedString+Helper.m */; };
+		BBC421452099A99100B26D67 /* PresentReverseAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC421442099A99100B26D67 /* PresentReverseAnimator.m */; };
+		BBC421482099ADB800B26D67 /* RevealFromFrameAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC421472099ADB700B26D67 /* RevealFromFrameAnimator.m */; };
+		BBC4214C2099B82900B26D67 /* PushedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC4214A2099B82900B26D67 /* PushedViewController.m */; };
+		BBC4214D2099B82900B26D67 /* PushedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC4214B2099B82900B26D67 /* PushedViewController.xib */; };
+		BBC421512099B83E00B26D67 /* PresentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC4214F2099B83E00B26D67 /* PresentedViewController.m */; };
+		BBC421522099B83E00B26D67 /* PresentedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC421502099B83E00B26D67 /* PresentedViewController.xib */; };
 		BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCC62981F5E4C11006FF200 /* GBFlatButton.m */; };
 		BBCFCA4F207B193C0091C01A /* MVPlaceSearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFCA48207B193C0091C01A /* MVPlaceSearchTextField.m */; };
 		BBCFCA50207B193C0091C01A /* PlaceDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFCA4A207B193C0091C01A /* PlaceDetail.m */; };
@@ -638,6 +645,18 @@
 		BBC07C4B1F4A00B7007A3B5C /* DetailPathsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPathsViewController.h; sourceTree = "<group>"; };
 		BBC07C4C1F4A00B7007A3B5C /* DetailPathsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPathsViewController.m; sourceTree = "<group>"; };
 		BBC07C4D1F4A00B7007A3B5C /* DetailPathsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPathsViewController.xib; sourceTree = "<group>"; };
+		BBC4213E20995FBF00B26D67 /* NSMutableAttributedString+Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Helper.h"; sourceTree = "<group>"; };
+		BBC4213F20995FBF00B26D67 /* NSMutableAttributedString+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Helper.m"; sourceTree = "<group>"; };
+		BBC421432099A99100B26D67 /* PresentReverseAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentReverseAnimator.h; sourceTree = "<group>"; };
+		BBC421442099A99100B26D67 /* PresentReverseAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentReverseAnimator.m; sourceTree = "<group>"; };
+		BBC421462099ADB700B26D67 /* RevealFromFrameAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RevealFromFrameAnimator.h; sourceTree = "<group>"; };
+		BBC421472099ADB700B26D67 /* RevealFromFrameAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RevealFromFrameAnimator.m; sourceTree = "<group>"; };
+		BBC421492099B82900B26D67 /* PushedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushedViewController.h; sourceTree = "<group>"; };
+		BBC4214A2099B82900B26D67 /* PushedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushedViewController.m; sourceTree = "<group>"; };
+		BBC4214B2099B82900B26D67 /* PushedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PushedViewController.xib; sourceTree = "<group>"; };
+		BBC4214E2099B83E00B26D67 /* PresentedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentedViewController.h; sourceTree = "<group>"; };
+		BBC4214F2099B83E00B26D67 /* PresentedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentedViewController.m; sourceTree = "<group>"; };
+		BBC421502099B83E00B26D67 /* PresentedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresentedViewController.xib; sourceTree = "<group>"; };
 		BBCC62971F5E4C11006FF200 /* GBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBFlatButton.h; sourceTree = "<group>"; };
 		BBCC62981F5E4C11006FF200 /* GBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBFlatButton.m; sourceTree = "<group>"; };
 		BBCFCA47207B193C0091C01A /* MVPlaceSearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVPlaceSearchTextField.h; sourceTree = "<group>"; };
@@ -1493,6 +1512,8 @@
 				BB85B0BD2092E11F0060A8FA /* UIFont+OHAdditions.m */,
 				BB85B0BF2092E1200060A8FA /* UILabel+OHAdditions.h */,
 				BB85B0C02092E1200060A8FA /* UILabel+OHAdditions.m */,
+				BBC4213E20995FBF00B26D67 /* NSMutableAttributedString+Helper.h */,
+				BBC4213F20995FBF00B26D67 /* NSMutableAttributedString+Helper.m */,
 			);
 			path = OHAttributedStringAdditions;
 			sourceTree = "<group>";
@@ -1635,6 +1656,23 @@
 			name = NavigationBarUseTitleView;
 			sourceTree = "<group>";
 		};
+		BBC421532099C55700B26D67 /* DbZoomTransitionAnimator_Type2 */ = {
+			isa = PBXGroup;
+			children = (
+				BBC421432099A99100B26D67 /* PresentReverseAnimator.h */,
+				BBC421442099A99100B26D67 /* PresentReverseAnimator.m */,
+				BBC421462099ADB700B26D67 /* RevealFromFrameAnimator.h */,
+				BBC421472099ADB700B26D67 /* RevealFromFrameAnimator.m */,
+				BBC421492099B82900B26D67 /* PushedViewController.h */,
+				BBC4214A2099B82900B26D67 /* PushedViewController.m */,
+				BBC4214B2099B82900B26D67 /* PushedViewController.xib */,
+				BBC4214E2099B83E00B26D67 /* PresentedViewController.h */,
+				BBC4214F2099B83E00B26D67 /* PresentedViewController.m */,
+				BBC421502099B83E00B26D67 /* PresentedViewController.xib */,
+			);
+			path = DbZoomTransitionAnimator_Type2;
+			sourceTree = "<group>";
+		};
 		BBCFCA3E207B193C0091C01A /* MVPlaceSearchTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -1705,6 +1743,9 @@
 		BBD1A7F720872F3D00D57B9E /* TableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BBDE4A582085ECCB00731A69 /* RMPDetailViewController.h */,
+				BBDE4A592085ECCB00731A69 /* RMPDetailViewController.m */,
+				BBDE4A5A2085ECCB00731A69 /* RMPDetailViewController.xib */,
 				BBD1A7ED208724A500D57B9E /* RMPImageTableViewController.h */,
 				BBD1A7EE208724A500D57B9E /* RMPImageTableViewController.m */,
 				BBD1A7EF208724A500D57B9E /* RMPImageTableViewController.xib */,
@@ -1808,12 +1849,10 @@
 				BBDE4A4D2085EBE000731A69 /* DbZoomTransitionAnimator */,
 				BBD1A7EC2087245700D57B9E /* UICollectionView */,
 				BBD1A7F720872F3D00D57B9E /* TableViewController */,
-				BBDE4A582085ECCB00731A69 /* RMPDetailViewController.h */,
-				BBDE4A592085ECCB00731A69 /* RMPDetailViewController.m */,
-				BBDE4A5A2085ECCB00731A69 /* RMPDetailViewController.xib */,
 				BBD1A7F820872F8600D57B9E /* RMPExampleViewController.h */,
 				BBD1A7F920872F8600D57B9E /* RMPExampleViewController.m */,
 				BBD1A7FA20872F8600D57B9E /* RMPExampleViewController.xib */,
+				BBC421532099C55700B26D67 /* DbZoomTransitionAnimator_Type2 */,
 			);
 			path = "Demo-NavigationTransition";
 			sourceTree = "<group>";
@@ -2243,6 +2282,7 @@
 				BBEDC4341FBC3EEA000317FD /* slider-default_trackBackground@2x.png in Resources */,
 				BBE5EF6F1FDFCE57005F3900 /* STMapHeaderViewController.xib in Resources */,
 				BBEDC4551FBC543C000317FD /* db_slider_text_bg@2x.png in Resources */,
+				BBC421522099B83E00B26D67 /* PresentedViewController.xib in Resources */,
 				BBB9774D207CB21400992CE0 /* DbPlaceSearchViewController.xib in Resources */,
 				BBEDC43B1FBC3EEA000317FD /* slider-default7-trackCrossedOver.png in Resources */,
 				BBDE4A8E2085F58B00731A69 /* 12_L.jpeg in Resources */,
@@ -2320,6 +2360,7 @@
 				BBB752071FCEAA76000E5A03 /* demo_1.jpg in Resources */,
 				BBEDC44E1FBC4060000317FD /* RangeSliderViewController.xib in Resources */,
 				BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */,
+				BBC4214D2099B82900B26D67 /* PushedViewController.xib in Resources */,
 				BB85E17F1FDBE50700FFA738 /* demo_6.png in Resources */,
 				BB8DCAF21FB16CB800AB337B /* PriceMapIntroView.xib in Resources */,
 				BBB0188E204F9D6B00153BD6 /* DemoCalendarViewController.xib in Resources */,
@@ -2475,6 +2516,7 @@
 				BBB0187D204F961F00153BD6 /* THDatePickerViewController.m in Sources */,
 				BBD1A7F0208724A500D57B9E /* RMPImageTableViewController.m in Sources */,
 				BB4FD4821F442AEE00C082C3 /* DbViewFromXib.m in Sources */,
+				BBC4214020995FBF00B26D67 /* NSMutableAttributedString+Helper.m in Sources */,
 				BBE5EF721FDFD018005F3900 /* HeaderMapView.m in Sources */,
 				BB4FD4841F442AEE00C082C3 /* DateTimeUtil.m in Sources */,
 				BBEDC4451FBC3EEA000317FD /* NMRangeSlider.m in Sources */,
@@ -2552,8 +2594,10 @@
 				BBCFCA56207B19B70091C01A /* DemoTextSearchGGViewController.m in Sources */,
 				BB4FD4931F442AEE00C082C3 /* NSBundle+APNumberPad.m in Sources */,
 				BBD1A80220873F6600D57B9E /* DemoCropCollectionViewController.m in Sources */,
+				BBC4214C2099B82900B26D67 /* PushedViewController.m in Sources */,
 				BBD99B401F7CD851004B20AF /* TBTabbarViewController.m in Sources */,
 				BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */,
+				BBC421512099B83E00B26D67 /* PresentedViewController.m in Sources */,
 				BBB01882204F962C00153BD6 /* UIViewController+KNSemiModal.m in Sources */,
 				BB9A74341FD80BBE004BEE9D /* UploadFileViewController.m in Sources */,
 				BB4FD3BE1F4429E200C082C3 /* AppDelegate.m in Sources */,
@@ -2572,6 +2616,7 @@
 				BBF1BD6F1FAC81300081E179 /* MapDrawingViewController.m in Sources */,
 				BBD136701F9A149D007A7763 /* STCalendarHeaderViewController.m in Sources */,
 				BBB9774C207CB21400992CE0 /* DbPlaceSearchViewController.m in Sources */,
+				BBC421452099A99100B26D67 /* PresentReverseAnimator.m in Sources */,
 				BB8DCAF51FB16F3000AB337B /* RippleEffectView.m in Sources */,
 				BB4FD48A1F442AEE00C082C3 /* DbWebConnection.m in Sources */,
 				BB4FD4A21F442AEE00C082C3 /* UITextField+PasswordField.m in Sources */,
@@ -2601,6 +2646,7 @@
 				BBA9CD4320884B86004C33CE /* ExampleMyCropViewController.m in Sources */,
 				BB4FD4891F442AEE00C082C3 /* DbResponseObject.m in Sources */,
 				BBD965E21F5A8C9000CCAF2C /* JTImageButton.m in Sources */,
+				BBC421482099ADB800B26D67 /* RevealFromFrameAnimator.m in Sources */,
 				BBD1A7EB208704DC00D57B9E /* DbZoomDismissAnimatedTransitioning.m in Sources */,
 				BBA9CD5120884BDB004C33CE /* PECropView.m in Sources */,
 				BBA7960E1FF0B45B00066B73 /* DbRequest.m in Sources */,
