@@ -24,6 +24,9 @@
 		BB1320E71FD930F8003CCCA3 /* DbBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1320D91FD930F8003CCCA3 /* DbBarButtonItem.m */; };
 		BB1320E81FD930F8003CCCA3 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1320DB1FD930F8003CCCA3 /* UIBarButtonItem+Badge.m */; };
 		BB1321211FD93406003CCCA3 /* DbAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1321201FD93406003CCCA3 /* DbAssets.xcassets */; };
+		BB259A80209C0FB700213223 /* DemoLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB259A7E209C0FB700213223 /* DemoLocationViewController.m */; };
+		BB259A81209C0FB700213223 /* DemoLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB259A7F209C0FB700213223 /* DemoLocationViewController.xib */; };
+		BB259A84209C0FD000213223 /* DbLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB259A83209C0FD000213223 /* DbLocationManager.m */; };
 		BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC901F51DE330005372B /* TableExpandCellViewController.m */; };
 		BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */; };
 		BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC951F51DE850005372B /* ExpandViewCell.m */; };
@@ -380,6 +383,11 @@
 		BB1320DA1FD930F8003CCCA3 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
 		BB1320DB1FD930F8003CCCA3 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
 		BB1321201FD93406003CCCA3 /* DbAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DbAssets.xcassets; sourceTree = "<group>"; };
+		BB259A7D209C0FB700213223 /* DemoLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoLocationViewController.h; sourceTree = "<group>"; };
+		BB259A7E209C0FB700213223 /* DemoLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoLocationViewController.m; sourceTree = "<group>"; };
+		BB259A7F209C0FB700213223 /* DemoLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoLocationViewController.xib; sourceTree = "<group>"; };
+		BB259A82209C0FD000213223 /* DbLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbLocationManager.h; sourceTree = "<group>"; };
+		BB259A83209C0FD000213223 /* DbLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbLocationManager.m; sourceTree = "<group>"; };
 		BB25FC8F1F51DE330005372B /* TableExpandCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableExpandCellViewController.h; sourceTree = "<group>"; };
 		BB25FC901F51DE330005372B /* TableExpandCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableExpandCellViewController.m; sourceTree = "<group>"; };
 		BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableExpandCellViewController.xib; sourceTree = "<group>"; };
@@ -938,6 +946,26 @@
 			path = AVCamFromApple;
 			sourceTree = "<group>";
 		};
+		BB259A7C209C0F9400213223 /* Demo-LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				BB259A7D209C0FB700213223 /* DemoLocationViewController.h */,
+				BB259A7E209C0FB700213223 /* DemoLocationViewController.m */,
+				BB259A7F209C0FB700213223 /* DemoLocationViewController.xib */,
+				BB259A85209C0FD900213223 /* DbLocationManager */,
+			);
+			path = "Demo-LocationManager";
+			sourceTree = "<group>";
+		};
+		BB259A85209C0FD900213223 /* DbLocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				BB259A82209C0FD000213223 /* DbLocationManager.h */,
+				BB259A83209C0FD000213223 /* DbLocationManager.m */,
+			);
+			path = DbLocationManager;
+			sourceTree = "<group>";
+		};
 		BB25FC8D1F51DE090005372B /* Demo-TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1388,6 +1416,7 @@
 		BB4FD4C11F442D1300C082C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB259A7C209C0F9400213223 /* Demo-LocationManager */,
 				BBA9CD3F20884B54004C33CE /* Demo-MyCropViewController */,
 				BBD1A7FE20873F2100D57B9E /* Demo-TOCropViewControllerFromCollectionView */,
 				BBDE4A492085EB3000731A69 /* Demo-NavigationTransition */,
@@ -2310,6 +2339,7 @@
 				BBDE4A9B2085F58B00731A69 /* 09_S.jpeg in Resources */,
 				BBDE4A982085F58B00731A69 /* 06_S.jpeg in Resources */,
 				BBEDC42D1FBC3EEA000317FD /* slider-default-handle.png in Resources */,
+				BB259A81209C0FB700213223 /* DemoLocationViewController.xib in Resources */,
 				BBDE4A572085EC8400731A69 /* RMPImageCollectionViewCell.xib in Resources */,
 				BB4FD4BE1F442C8A00C082C3 /* OpenSans-Regular.ttf in Resources */,
 				BBDE4A832085F58B00731A69 /* 01_L.jpeg in Resources */,
@@ -2511,6 +2541,7 @@
 				BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */,
 				BBE5EF7B1FDFD1B6005F3900 /* SLParallaxViewController.m in Sources */,
 				BBCFCA6D207B2A450091C01A /* NSString+Levenshtein.m in Sources */,
+				BB259A80209C0FB700213223 /* DemoLocationViewController.m in Sources */,
 				BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */,
 				BBA796141FF0DEB700066B73 /* DbConnection.m in Sources */,
 				BBB0187D204F961F00153BD6 /* THDatePickerViewController.m in Sources */,
@@ -2527,6 +2558,7 @@
 				BB4FD4911F442AEE00C082C3 /* APNumberPad.m in Sources */,
 				BBEDC4481FBC3F41000317FD /* DbRangeSlider.m in Sources */,
 				BBDE4A5B2085ECCB00731A69 /* RMPDetailViewController.m in Sources */,
+				BB259A84209C0FD000213223 /* DbLocationManager.m in Sources */,
 				BBA796171FF0DF0C00066B73 /* Reachability.m in Sources */,
 				BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */,
 				BB121DF41F861A200053171B /* PTPhotoDetailViewController.m in Sources */,
