@@ -27,6 +27,7 @@
 		BB259A80209C0FB700213223 /* DemoLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB259A7E209C0FB700213223 /* DemoLocationViewController.m */; };
 		BB259A81209C0FB700213223 /* DemoLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB259A7F209C0FB700213223 /* DemoLocationViewController.xib */; };
 		BB259A84209C0FD000213223 /* DbLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB259A83209C0FD000213223 /* DbLocationManager.m */; };
+		BB259A88209C204B00213223 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB259A87209C204B00213223 /* MapKit.framework */; };
 		BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC901F51DE330005372B /* TableExpandCellViewController.m */; };
 		BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */; };
 		BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC951F51DE850005372B /* ExpandViewCell.m */; };
@@ -388,6 +389,8 @@
 		BB259A7F209C0FB700213223 /* DemoLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoLocationViewController.xib; sourceTree = "<group>"; };
 		BB259A82209C0FD000213223 /* DbLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbLocationManager.h; sourceTree = "<group>"; };
 		BB259A83209C0FD000213223 /* DbLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbLocationManager.m; sourceTree = "<group>"; };
+		BB259A86209C1C1B00213223 /* ObjcApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ObjcApp.entitlements; sourceTree = "<group>"; };
+		BB259A87209C204B00213223 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BB25FC8F1F51DE330005372B /* TableExpandCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableExpandCellViewController.h; sourceTree = "<group>"; };
 		BB25FC901F51DE330005372B /* TableExpandCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableExpandCellViewController.m; sourceTree = "<group>"; };
 		BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableExpandCellViewController.xib; sourceTree = "<group>"; };
@@ -871,6 +874,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB259A88209C204B00213223 /* MapKit.framework in Frameworks */,
 				9120E771807AB7030C9F4283 /* Pods_ObjcApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -889,6 +893,7 @@
 		B10F598D728321C95A8DD9FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB259A87209C204B00213223 /* MapKit.framework */,
 				7D62C3C09D877F7693306C71 /* Pods_ObjcApp.framework */,
 				337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */,
 			);
@@ -1079,6 +1084,7 @@
 		BB4FD3B81F4429E200C082C3 /* ObjcApp */ = {
 			isa = PBXGroup;
 			children = (
+				BB259A86209C1C1B00213223 /* ObjcApp.entitlements */,
 				BB4FD3BC1F4429E200C082C3 /* AppDelegate.h */,
 				BB4FD3BD1F4429E200C082C3 /* AppDelegate.m */,
 				BB4FD4A41F442B4D00C082C3 /* Constant.h */,
@@ -2225,6 +2231,12 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 					BB4FD3CE1F4429E200C082C3 = {
@@ -2847,6 +2859,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ObjcApp/ObjcApp.entitlements;
 				DEVELOPMENT_TEAM = 99JD3QH9V9;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = ObjcApp/Info.plist;
@@ -2863,6 +2876,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ObjcApp/ObjcApp.entitlements;
 				DEVELOPMENT_TEAM = 99JD3QH9V9;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = ObjcApp/Info.plist;

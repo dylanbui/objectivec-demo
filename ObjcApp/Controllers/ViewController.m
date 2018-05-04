@@ -26,8 +26,8 @@
 
 #import "DemoCropCollectionViewController.h"
 #import "ExampleMyCropViewController.h"
-
 #import "DemoAttributedStringViewController.h"
+#import "DemoLocationViewController.h"
 
 
 @interface ViewController ()
@@ -62,7 +62,8 @@
                       @"Demo-NavigationTransition",
                       @"Demo-TOCropViewControllerFromCollectionView",
                       @"Demo-MyCropViewController",
-                      @"Demo-NSAttributedString"
+                      @"Demo-NSAttributedString",
+                      @"Demo-LocationManager"
                       ];
 }
 
@@ -128,6 +129,8 @@
         vcFirst = [[ExampleMyCropViewController alloc] init];
     } else if (indexPath.row == 16) {
         vcFirst = [[DemoAttributedStringViewController alloc] init];
+    } else if (indexPath.row == 17) {
+        vcFirst = [[DemoLocationViewController alloc] init];
     }
     
     return vcFirst;

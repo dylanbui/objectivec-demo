@@ -29,6 +29,8 @@
 #import "DemoCropCollectionViewController.h" // run
 #import "ExampleMyCropViewController.h" // run
 
+#import "DemoLocationViewController.h"
+
 @interface RootViewController ()
 
 @end
@@ -52,7 +54,7 @@
 {
     [super viewWillAppear:animated];
     
-    ViewController *vcFirst = [[ViewController alloc] init];
+//    ViewController *vcFirst = [[ViewController alloc] init];
     // STCalendarHeaderViewController *vcFirst = [[STCalendarHeaderViewController alloc] init];
 //    MapDrawingViewController *vcFirst = [[MapDrawingViewController alloc] init];
 //    RangeSliderViewController *vcFirst = [[RangeSliderViewController alloc] init];
@@ -76,6 +78,8 @@
 //     RMPExampleViewController *vcFirst = [[RMPExampleViewController alloc] init];
 //    DemoCropCollectionViewController *vcFirst = [[DemoCropCollectionViewController alloc] init];
 //    ExampleMyCropViewController *vcFirst = [[ExampleMyCropViewController alloc] init];
+    
+    DemoLocationViewController *vcFirst = [[DemoLocationViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 

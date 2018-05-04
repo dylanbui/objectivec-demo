@@ -158,7 +158,7 @@ typedef void(^GeoCodeUpdateBlock)(BOOL success, NSDictionary *geoCodeDictionary,
  *   <p>
  *   Returns wheather location is permitted or not by the user
  *   </p>
- *   @param
+ *
  *   @return true or false based on permission given or not
  */
 + (BOOL)locationPermission;
@@ -169,17 +169,14 @@ typedef void(^GeoCodeUpdateBlock)(BOOL success, NSDictionary *geoCodeDictionary,
  *   If user havn't seen any permission requests yet, calling this method will ask user for location permission
  *   For knowing permission status, call the @locationPermission method
  *   </p>
- *   @param
- *   @return
  */
--(void)getPermissionForStartUpdatingLocation;
+- (BOOL)getPermissionForStartUpdatingLocation;
 
 /**
  *   Gives an Array of dictionary formatted DbFenceInfo which are currently active
  *   <p>
  *   Gives an Array of dictionary formatted DbFenceInfo which are currently active
  *   </p>
- *   @param
  *   @return an Array of dictionary formatted DbFenceInfo
  */
 - (NSArray*)getCurrentFences;
@@ -189,8 +186,6 @@ typedef void(^GeoCodeUpdateBlock)(BOOL success, NSDictionary *geoCodeDictionary,
  *   <p>
  *   Those fences we created and are currently active, delete all of'em.
  *   </p>
- *   @param
- *   @return
  */
 -(void)deleteCurrentFences;
 
@@ -199,19 +194,25 @@ typedef void(^GeoCodeUpdateBlock)(BOOL success, NSDictionary *geoCodeDictionary,
  *   <p>
  *   Gives location of device using delegate DbLocationManagerDidUpdateLocation:
  *   </p>
- *   @param class where the location will be delivered, which implements DbLocationManagerDelegate
- *   @return gives an Dictionary using keys DB_LATITUDE, DB_LONGITUDE, DB_ALTITUDE
+ *   @param delegate where the location will be delivered, which implements DbLocationManagerDelegate
  */
 - (void)getCurrentLocationWithDelegate:(id)delegate;
-
 
 /**
  *   Returns current location, can be adjusted using the desiredAcuracy and distanceFilter properties.
  *   <p>
  *   Gives location of device using the completion block
  *   </p>
- *   @param A block which will be called when the location is updated
- *   @return
+ *   @param completion : A block which will be called when the location is updated
+ */
+- (void)getCurrentLocationWithCompletion:(LocationUpdateBlock)completion skipAuthAlert:(BOOL)skipAlert;
+
+/**
+ *   Returns current location, can be adjusted using the desiredAcuracy and distanceFilter properties.
+ *   <p>
+ *   Gives location of device using the completion block
+ *   </p>
+ *   @param completion : A block which will be called when the location is updated
  */
 - (void)getCurrentLocationWithCompletion:(LocationUpdateBlock)completion;
 

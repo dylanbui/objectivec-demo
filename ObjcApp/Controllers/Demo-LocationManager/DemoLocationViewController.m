@@ -7,15 +7,13 @@
 //
 
 #import "DemoLocationViewController.h"
-
 #import "DbLocationManager.h"
-#import <MapKit/MapKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface DemoLocationViewController () <DbLocationManagerDelegate> //use this if you want to get response from delegate not from block
 
 @property(nonatomic, weak) IBOutlet UITextView *logTextView;
-@property(nonatomic, weak) IBOutlet MKMapView *mapView;
-@property(nonatomic, strong) MKPointAnnotation *annotation;
+@property (nonatomic, strong) IBOutlet GMSMapView *vwMap;
 @end
 
 @implementation DemoLocationViewController
@@ -27,13 +25,15 @@
     DbLocationManager *manager = [DbLocationManager sharedManager];
     manager.delegate = self; //not mandatory here, just to get the delegate calls
     
-    [self.mapView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    self.mapView.layer.cornerRadius = 6.0f;
-    self.annotation = [[MKPointAnnotation alloc] init];
-    
+    self.vwMap.settings.rotateGestures = NO;
+    self.vwMap.settings.allowScrollGesturesDuringRotateOrZoom = NO;
+    self.vwMap.layer.cornerRadius = 6.0f;
+    CLLocationCoordinate2D defaultPosition = CLLocationCoordinate2DMake(10.772154, 106.704367);
+    GMSCameraPosition *newCameraPosition = [GMSCameraPosition cameraWithTarget:defaultPosition zoom:12];
+    [self.vwMap animateToCameraPosition:newCameraPosition];
 }
 
--(IBAction)showAllGeoFences:(id)sender
+- (IBAction)showAllGeoFences:(id)sender
 {
     DbLocationManager *manager = [DbLocationManager sharedManager];
     
@@ -94,33 +94,42 @@
     //[manager getCurrentLocationWithDelegate:self]; //can be used
 }
 
--(IBAction)getContiniousLocation:(id)sender
+- (IBAction)getContiniousLocation:(id)sender
 {
     DbLocationManager *manager = [DbLocationManager sharedManager];
     [manager getContiniousLocationWithDelegate:self];
 }
 
--(IBAction)getSignificantLocationChange:(id)sender
+- (IBAction)getSignificantLocationChange:(id)sender
 {
     DbLocationManager *manager = [DbLocationManager sharedManager];
     [manager getSingificantLocationChangeWithDelegate:self];
 }
 
--(IBAction)stopGettingLocation
+- (IBAction)stopGettingLocation
 {
     DbLocationManager *manager = [DbLocationManager sharedManager];
     [manager stopGettingLocation];
 }
 
--(void)showInMapsWithDictionary:(NSDictionary*)locationDict title:(NSString*)title
+- (void)showInMapsWithDictionary:(NSDictionary*)locationDict title:(NSString*)title
 {
     CLLocationCoordinate2D infiniteLoopCoordinate = CLLocationCoordinate2DMake([locationDict[DB_LATITUDE] floatValue], [locationDict[DB_LONGITUDE] floatValue]);
     
-    [self.annotation setCoordinate:infiniteLoopCoordinate];
-    [self.annotation setTitle:title];;
-    [self.mapView addAnnotation:self.annotation];
+    GMSCameraPosition *newCameraPosition = [GMSCameraPosition cameraWithTarget:infiniteLoopCoordinate zoom:15];
+    [self.vwMap animateToCameraPosition:newCameraPosition];
     
-    self.mapView.region = MKCoordinateRegionMakeWithDistance(infiniteLoopCoordinate, 3000.0f, 3000.0f);
+    [self.vwMap clear];
+    GMSMarker *endMarker = [[GMSMarker alloc] init];
+    endMarker.position = infiniteLoopCoordinate;
+    endMarker.title = title;
+    endMarker.map = self.vwMap;
+    
+//    [self.annotation setCoordinate:infiniteLoopCoordinate];
+//    [self.annotation setTitle:title];;
+//    [self.mapView addAnnotation:self.annotation];
+//
+//    self.mapView.region = MKCoordinateRegionMakeWithDistance(infiniteLoopCoordinate, 3000.0f, 3000.0f);
     
 }
 
