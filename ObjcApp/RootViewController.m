@@ -30,6 +30,7 @@
 #import "ExampleMyCropViewController.h" // run
 
 #import "DemoLocationViewController.h"
+#import "DemoBBLocationViewController.h"
 
 @interface RootViewController ()
 
@@ -79,7 +80,8 @@
 //    DemoCropCollectionViewController *vcFirst = [[DemoCropCollectionViewController alloc] init];
 //    ExampleMyCropViewController *vcFirst = [[ExampleMyCropViewController alloc] init];
     
-    DemoLocationViewController *vcFirst = [[DemoLocationViewController alloc] init];
+//    DemoLocationViewController *vcFirst = [[DemoLocationViewController alloc] init];
+    DemoBBLocationViewController *vcFirst = [[DemoBBLocationViewController alloc] init];
     [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 

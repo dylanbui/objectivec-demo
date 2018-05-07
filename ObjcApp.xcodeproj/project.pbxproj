@@ -117,6 +117,9 @@
 		BB595DB61F6303940003C0B9 /* BALabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB595DB51F6303940003C0B9 /* BALabel.m */; };
 		BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5DDD941F5329B60009AFDC /* ScrollViewFormViewController.m */; };
 		BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */; };
+		BB60E0F920A0B3C400EC7ACA /* BBLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E0F820A0B3C400EC7ACA /* BBLocationManager.m */; };
+		BB60E0FD20A0B43200EC7ACA /* DemoBBLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB60E0FB20A0B43200EC7ACA /* DemoBBLocationViewController.xib */; };
+		BB60E0FE20A0B43200EC7ACA /* DemoBBLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E0FC20A0B43200EC7ACA /* DemoBBLocationViewController.m */; };
 		BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC51C1F5D460A0073A0C1 /* DbActionView.m */; };
 		BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC51E1F5D460A0073A0C1 /* DbButton.m */; };
 		BB6CC5231F5D46B70073A0C1 /* DbLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6CC5221F5D46B70073A0C1 /* DbLabel.m */; };
@@ -547,6 +550,11 @@
 		BB5DDD931F5329B60009AFDC /* ScrollViewFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewFormViewController.h; sourceTree = "<group>"; };
 		BB5DDD941F5329B60009AFDC /* ScrollViewFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewFormViewController.m; sourceTree = "<group>"; };
 		BB5DDD951F5329B60009AFDC /* ScrollViewFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollViewFormViewController.xib; sourceTree = "<group>"; };
+		BB60E0F720A0B3C400EC7ACA /* BBLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBLocationManager.h; sourceTree = "<group>"; };
+		BB60E0F820A0B3C400EC7ACA /* BBLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBLocationManager.m; sourceTree = "<group>"; };
+		BB60E0FA20A0B43200EC7ACA /* DemoBBLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBBLocationViewController.h; sourceTree = "<group>"; };
+		BB60E0FB20A0B43200EC7ACA /* DemoBBLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoBBLocationViewController.xib; sourceTree = "<group>"; };
+		BB60E0FC20A0B43200EC7ACA /* DemoBBLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBBLocationViewController.m; sourceTree = "<group>"; };
 		BB6CC51B1F5D460A0073A0C1 /* DbActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbActionView.h; sourceTree = "<group>"; };
 		BB6CC51C1F5D460A0073A0C1 /* DbActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbActionView.m; sourceTree = "<group>"; };
 		BB6CC51D1F5D460A0073A0C1 /* DbButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbButton.h; sourceTree = "<group>"; };
@@ -972,6 +980,7 @@
 		BB259A7C209C0F9400213223 /* Demo-LocationManager */ = {
 			isa = PBXGroup;
 			children = (
+				BB60E0FF20A0B4E700EC7ACA /* BBLocationManager */,
 				BBFE279420A03D29004D387B /* INTULocationManager */,
 				BB259A7D209C0FB700213223 /* DemoLocationViewController.h */,
 				BB259A7E209C0FB700213223 /* DemoLocationViewController.m */,
@@ -1522,6 +1531,18 @@
 				BBB26C642097915500D1CA61 /* ScrollViewType1ViewController.xib */,
 			);
 			path = "Demo-ScrollView";
+			sourceTree = "<group>";
+		};
+		BB60E0FF20A0B4E700EC7ACA /* BBLocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				BB60E0FA20A0B43200EC7ACA /* DemoBBLocationViewController.h */,
+				BB60E0FC20A0B43200EC7ACA /* DemoBBLocationViewController.m */,
+				BB60E0FB20A0B43200EC7ACA /* DemoBBLocationViewController.xib */,
+				BB60E0F720A0B3C400EC7ACA /* BBLocationManager.h */,
+				BB60E0F820A0B3C400EC7ACA /* BBLocationManager.m */,
+			);
+			path = BBLocationManager;
 			sourceTree = "<group>";
 		};
 		BB6CC51A1F5D460A0073A0C1 /* CustomControllClass */ = {
@@ -2341,6 +2362,7 @@
 				BBDE4A8F2085F58B00731A69 /* 13_L.jpeg in Resources */,
 				BB3912FF1F8BE557002F1CE1 /* SLTableViewCell.xib in Resources */,
 				BBEDC4331FBC3EEA000317FD /* slider-default-trackCrossedOver@2x.png in Resources */,
+				BB60E0FD20A0B43200EC7ACA /* DemoBBLocationViewController.xib in Resources */,
 				BBDE4A8D2085F58B00731A69 /* 11_L.jpeg in Resources */,
 				BBE1435E1F823EA30020C400 /* STHeaderViewController.xib in Resources */,
 				BBB0187E204F961F00153BD6 /* THDatePickerViewController.xib in Resources */,
@@ -2612,6 +2634,7 @@
 				BBDE4A5B2085ECCB00731A69 /* RMPDetailViewController.m in Sources */,
 				BBA796171FF0DF0C00066B73 /* Reachability.m in Sources */,
 				BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */,
+				BB60E0FE20A0B43200EC7ACA /* DemoBBLocationViewController.m in Sources */,
 				BB121DF41F861A200053171B /* PTPhotoDetailViewController.m in Sources */,
 				BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */,
 				BBB0188D204F9D6B00153BD6 /* DemoCalendarViewController.m in Sources */,
@@ -2697,6 +2720,7 @@
 				BB1320E71FD930F8003CCCA3 /* DbBarButtonItem.m in Sources */,
 				BB4FD4971F442AEE00C082C3 /* DACircularProgressView.m in Sources */,
 				BBD6CA9A207E168B004129BE /* GoogleMapUtils.m in Sources */,
+				BB60E0F920A0B3C400EC7ACA /* BBLocationManager.m in Sources */,
 				BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */,
 				BB4FD4831F442AEE00C082C3 /* DbAppSession.m in Sources */,
 				BB3889EE207F67E300F1DC1D /* DbFontAwesome.m in Sources */,
