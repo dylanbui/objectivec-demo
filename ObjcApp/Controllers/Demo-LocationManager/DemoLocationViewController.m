@@ -10,7 +10,7 @@
 #import "DbLocationManager.h"
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface DemoLocationViewController () <DbLocationManagerDelegate> //use this if you want to get response from delegate not from block
+@interface DemoLocationViewController () // <DbLocationManagerDelegate> //use this if you want to get response from delegate not from block
 
 @property(nonatomic, weak) IBOutlet UITextView *logTextView;
 @property (nonatomic, strong) IBOutlet GMSMapView *vwMap;
@@ -22,8 +22,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    DbLocationManager *manager = [DbLocationManager sharedManager];
-    manager.delegate = self; //not mandatory here, just to get the delegate calls
+    //DbLocationManager *manager = [DbLocationManager sharedInstance];
+    // manager.delegate = self; //not mandatory here, just to get the delegate calls
     
     self.vwMap.settings.rotateGestures = NO;
     self.vwMap.settings.allowScrollGesturesDuringRotateOrZoom = NO;
@@ -33,164 +33,93 @@
     [self.vwMap animateToCameraPosition:newCameraPosition];
 }
 
-- (IBAction)showAllGeoFences:(id)sender
-{
-    DbLocationManager *manager = [DbLocationManager sharedManager];
-    
-    NSArray *geoFences = [manager getCurrentFences];
-    NSString *allFencetxt = @"All fences: ";
-    for (DbFenceInfo *geofence in geoFences)
-    {
-        NSString *txt = [NSString stringWithFormat:@"Geofence '%@' is Active at Coordinates: %@:%@ with %@ meter radious \n", geofence.fenceIDentifier, [geofence.fenceCoordinate objectForKey:DB_LATITUDE],[geofence.fenceCoordinate objectForKey:DB_LONGITUDE], [geofence.fenceCoordinate objectForKey:DB_RADIOUS]];
-        NSLog(@"%@", txt);
-        allFencetxt = [allFencetxt stringByAppendingString:txt];
-    }
-    [self logtext:allFencetxt];
-    if(geoFences.count == 0) [self logtext:@"No Geofence is added currently"];
-}
 
--(IBAction)addFenceGeoatCurrentLocation:(id)sender
+- (IBAction)getCurrentLocation:(id)sender
 {
-    DbLocationManager *manager = [DbLocationManager sharedManager];
-    manager.delegate = self;
-    [manager addGeofenceAtCurrentLocationWithRadious:100];
-    //[manager addGeofenceAtCoordinates:CLLocationCoordinate2DMake(59.331981f, 18.068435f) withRadious:100 withIdentifier:nil];
-    
-}
-
--(IBAction)removeAllGeofence:(id)sender
-{
-    DbLocationManager *manager = [DbLocationManager sharedManager];
-    
-    NSArray *geoFences = [manager getCurrentFences];
-    
-    for (DbFenceInfo *geofence in geoFences)
-    {
-        [manager deleteGeoFenceWithIdentifier:geofence.fenceIDentifier];
-    }
-    [self logtext:@"All Geofences deleted!"];
-}
-
--(IBAction)getCurrentLocation:(id)sender
-{
-    DbLocationManager *manager = [DbLocationManager sharedManager];
-    [manager getCurrentLocationWithCompletion:^(BOOL success, NSDictionary *latLongAltitudeDictionary, NSError *error) {
+    DbLocationManager *manager = [DbLocationManager sharedInstance];
+    [manager requestLocation:^(CLLocation *currentLocation, DbLocationAccuracy achievedAccuracy, DbLocationStatus status) {
         
-        [self logtext:[NSString stringWithFormat:@"Current Location: %@", latLongAltitudeDictionary.description]];
-        [self showInMapsWithDictionary:latLongAltitudeDictionary title:@"Current Location"];
+//        DbLocationStatusServicesNotDetermined,
+//        /** User has explicitly denied this app permission to access location services. */
+//        DbLocationStatusServicesDenied,
+//        /** User does not have ability to enable location services (e.g. parental controls, corporate policy, etc). */
+//        DbLocationStatusServicesRestricted,
+        
+        NSLog(@"Location status = %ld", status);
+//        if (! CLLocationCoordinate2DIsValid(currentLocation.coordinate)) {
+//
+//        }
+        
+        if (_isValidLocationCoordinate2D(currentLocation.coordinate)) {
+            // -- luon luon chay --
+            NSLog(@"%@", @" Hang ngon xai di");
+
+        } else {
+            NSLog(@"%@", @"Location la [EMPTY] , ko xai duoc");
+        }
+        
+//        DbLocationStatusServicesDenied,
+//        /** User does not have ability to enable location services (e.g. parental controls, corporate policy, etc). */
+//        DbLocationStatusServicesRestricted,
+//        /** User has turned off location services device-wide (for all apps) from the system Settings app. */
+//        DbLocationStatusServicesDisabled,
+        
+        // Khi khong cho phep DbLocationStatus == DbLocationStatusServicesDenied
+        // Khi tat location DbLocationStatus == DbLocationStatusServicesDisabled
+        
+        if (status == DbLocationStatusServicesNotDetermined
+            || status == DbLocationStatusServicesDenied
+            || status == DbLocationStatusServicesRestricted) {
+            [DbUtils showAlertMessage1ButtonWithController:self title:@"Thong bao" message:@"Khong co location"
+                                               buttonTitle:@"OK" tapBlock:nil];
+            return;
+        }
+        
+        [self logtext:[NSString stringWithFormat:@"Current Location: %@", currentLocation.description]];
+        [self showInMapsWithDictionary:currentLocation title:@"Current Location"];
     }];
+
+//    [manager getCurrentLocationWithCompletion:^(BOOL success, NSDictionary *latLongAltitudeDictionary, NSError *error) {
+//        [self logtext:[NSString stringWithFormat:@"Current Location: %@", latLongAltitudeDictionary.description]];
+//        [self showInMapsWithDictionary:latLongAltitudeDictionary title:@"Current Location"];
+//    }];
     //[manager getCurrentLocationWithDelegate:self]; //can be used
 }
 
--(IBAction)getCurrentGeoCodeAddress:(id)sender
-{
-    
-    DbLocationManager *manager = [DbLocationManager sharedManager];
-    [manager getCurrentGeoCodeAddressWithCompletion:^(BOOL success, NSDictionary *addressDictionary, NSError *error) {
-        //access the dict using DB_LATITUDE, DB_LONGITUDE, DB_ALTITUDE
-        [self logtext:[NSString stringWithFormat:@"Current Location GeoCode/Address: %@", addressDictionary.description]];
-        [self showInMapsWithDictionary:addressDictionary title:@"Geocode/Address"];
-    }];
-    //[manager getCurrentLocationWithDelegate:self]; //can be used
-}
 
 - (IBAction)getContiniousLocation:(id)sender
 {
-    DbLocationManager *manager = [DbLocationManager sharedManager];
-    [manager getContiniousLocationWithDelegate:self];
+//    DbLocationManager *manager = [DbLocationManager sharedManager];
+//    [manager getContiniousLocationWithDelegate:self];
 }
 
 - (IBAction)getSignificantLocationChange:(id)sender
 {
-    DbLocationManager *manager = [DbLocationManager sharedManager];
-    [manager getSingificantLocationChangeWithDelegate:self];
+//    DbLocationManager *manager = [DbLocationManager sharedManager];
+//    [manager getSingificantLocationChangeWithDelegate:self];
 }
 
 - (IBAction)stopGettingLocation
 {
-    DbLocationManager *manager = [DbLocationManager sharedManager];
-    [manager stopGettingLocation];
+//    DbLocationManager *manager = [DbLocationManager sharedManager];
+//    [manager stopGettingLocation];
 }
 
-- (void)showInMapsWithDictionary:(NSDictionary*)locationDict title:(NSString*)title
+- (void)showInMapsWithDictionary:(CLLocation*)currentLocation title:(NSString*)title
 {
-    CLLocationCoordinate2D infiniteLoopCoordinate = CLLocationCoordinate2DMake([locationDict[DB_LATITUDE] floatValue], [locationDict[DB_LONGITUDE] floatValue]);
-    
-    GMSCameraPosition *newCameraPosition = [GMSCameraPosition cameraWithTarget:infiniteLoopCoordinate zoom:15];
+    GMSCameraPosition *newCameraPosition = [GMSCameraPosition cameraWithTarget:currentLocation.coordinate zoom:15];
     [self.vwMap animateToCameraPosition:newCameraPosition];
     
     [self.vwMap clear];
     GMSMarker *endMarker = [[GMSMarker alloc] init];
-    endMarker.position = infiniteLoopCoordinate;
+    endMarker.position = currentLocation.coordinate;
     endMarker.title = title;
     endMarker.map = self.vwMap;
-    
-//    [self.annotation setCoordinate:infiniteLoopCoordinate];
-//    [self.annotation setTitle:title];;
-//    [self.mapView addAnnotation:self.annotation];
-//
-//    self.mapView.region = MKCoordinateRegionMakeWithDistance(infiniteLoopCoordinate, 3000.0f, 3000.0f);
-    
 }
 
-
--(void)logtext:(NSString*)text
+- (void)logtext:(NSString*)text
 {
     self.logTextView.text = text;
-}
-
-#pragma mark - DbLocationManagerDelegate
-
--(void)DbLocationManagerDidAddFence:(DbFenceInfo *)fenceInfo
-{
-    NSString *text = [NSString stringWithFormat:@"Added GeoFence: %@", fenceInfo.dictionary.description];
-    NSLog(@"%@", text);
-    [self logtext:text];
-    [self showInMapsWithDictionary:fenceInfo.fenceCoordinate title:@"Added GeoFence"];
-}
-
--(void)DbLocationManagerDidFailedFence:(DbFenceInfo *)fenceInfo
-{
-    NSString *text = [NSString stringWithFormat:@"Failed to add GeoFence: %@", fenceInfo.dictionary.description];
-    NSLog(@"%@", text);
-    [self logtext:text];
-    [self showInMapsWithDictionary:fenceInfo.fenceCoordinate title:@"Failed GeoFence"];
-}
-
-
--(void)DbLocationManagerDidEnterFence:(DbFenceInfo *)fenceInfo
-{
-    NSString *text = [NSString stringWithFormat:@"Entered GeoFence: %@", fenceInfo.dictionary.description];
-    NSLog(@"%@", text);
-    [self logtext:text];
-    [self showLocalNotification:[NSString stringWithFormat:@"Enter Fence %@", text] withDate:[NSDate dateWithTimeIntervalSinceNow:1]];
-    [self showInMapsWithDictionary:fenceInfo.fenceCoordinate title:@"Enter GeoFence"];
-}
-
-
--(void)DbLocationManagerDidExitFence:(DbFenceInfo *)fenceInfo
-{
-    NSString *text =[NSString stringWithFormat:@"Exit GeoFence: %@", fenceInfo.dictionary.description];
-    NSLog(@"%@", text);
-    [self logtext:text];
-    [self showLocalNotification:[NSString stringWithFormat:@"Exit Fence %@", text] withDate:[NSDate dateWithTimeIntervalSinceNow:1]];
-    [self showInMapsWithDictionary:fenceInfo.fenceCoordinate title:@"Exit GeoFence"];
-}
-
-
--(void)DbLocationManagerDidUpdateLocation:(NSDictionary *)latLongAltitudeDictionary
-{
-    NSLog(@"Current Location: %@", latLongAltitudeDictionary.description);
-    [self logtext:[NSString stringWithFormat:@"Current Location: %@ at time: %@", latLongAltitudeDictionary.description, NSDate.date.description]];
-    [self showInMapsWithDictionary:latLongAltitudeDictionary title:@"Current Location"];
-}
-
-
--(void)DbLocationManagerDidUpdateGeocodeAdress:(NSDictionary *)addressDictionary
-{
-    NSLog(@"Current Location GeoCode/Address: %@", addressDictionary.description);
-    [self logtext:[NSString stringWithFormat:@"Current Location: %@ at time: %@", addressDictionary.description, NSDate.date.description]];
-    [self showInMapsWithDictionary:addressDictionary title:@"Geocode Updated"];
 }
 
 #pragma mark-  Other methods
@@ -211,8 +140,6 @@
     [notification setUserInfo:userInfo];
     [app scheduleLocalNotification:notification];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -46,6 +46,46 @@
                         <action selector="getCurrentLocation:" destination="-1" eventType="touchUpInside" id="2Tc-ha-Cdk"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0d-Oa-nG8">
+                    <rect key="frame" x="6" y="185" width="176" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.24313725489999999" green="0.59607843140000005" blue="0.47450980390000003" alpha="0.75156250000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <state key="normal" title="Print All Geofences"/>
+                    <connections>
+                        <action selector="showAllGeoFences:" destination="-1" eventType="touchUpInside" id="FVz-oZ-yTy"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3S-Qm-LuX">
+                    <rect key="frame" x="47" y="148" width="282" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.24313725489999999" green="0.59607843140000005" blue="0.47450980390000003" alpha="0.75156250000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <state key="normal" title="Add Geofence at Current location"/>
+                    <connections>
+                        <action selector="addFenceGeoatCurrentLocation:" destination="-1" eventType="touchUpInside" id="tbP-vM-7n4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2q-cm-9XR">
+                    <rect key="frame" x="193" y="185" width="176" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.24313725489999999" green="0.59607843140000005" blue="0.47450980390000003" alpha="0.75156250000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <state key="normal" title="Remove All Geofence"/>
+                    <connections>
+                        <action selector="removeAllGeofence:" destination="-1" eventType="touchUpInside" id="LeL-Ox-wAO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qu-Gb-wSD">
+                    <rect key="frame" x="193" y="99" width="176" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.60784313729999995" blue="0.87843137250000003" alpha="0.74832974139999997" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <state key="normal" title="Get Geocode Address"/>
+                    <connections>
+                        <action selector="getCurrentGeoCodeAddress:" destination="-1" eventType="touchUpInside" id="u9h-kn-8AY"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZj-bK-8sb" customClass="GMSMapView">
                     <rect key="frame" x="6" y="320" width="363" height="337"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

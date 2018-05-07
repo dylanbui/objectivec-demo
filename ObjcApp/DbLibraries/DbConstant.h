@@ -183,6 +183,8 @@ typedef enum _CHANNELS {
 
 #define _getObjForKey(OBJ, key, defaultValue)   (_isNULL([OBJ objectForKey:key]) || _isNil([OBJ objectForKey:key]) ? defaultValue : [OBJ objectForKey:key])
 
+#define _isValidLocationCoordinate2D(coordinate)   ((coordinate.latitude != 0 && coordinate.longitude != 0) ? YES : NO)
+
 /***************** Simple Callback Delegate ******************/
 
 // -- Xu ly tra ve cua cac UIView action --

@@ -26,7 +26,6 @@
 		BB1321211FD93406003CCCA3 /* DbAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1321201FD93406003CCCA3 /* DbAssets.xcassets */; };
 		BB259A80209C0FB700213223 /* DemoLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB259A7E209C0FB700213223 /* DemoLocationViewController.m */; };
 		BB259A81209C0FB700213223 /* DemoLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB259A7F209C0FB700213223 /* DemoLocationViewController.xib */; };
-		BB259A84209C0FD000213223 /* DbLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB259A83209C0FD000213223 /* DbLocationManager.m */; };
 		BB259A88209C204B00213223 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB259A87209C204B00213223 /* MapKit.framework */; };
 		BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC901F51DE330005372B /* TableExpandCellViewController.m */; };
 		BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC911F51DE330005372B /* TableExpandCellViewController.xib */; };
@@ -339,6 +338,12 @@
 		BBF8264E1FF4DB9600D25AD7 /* DemoDbConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF8264C1FF4DB9600D25AD7 /* DemoDbConnectionViewController.m */; };
 		BBF8264F1FF4DB9600D25AD7 /* DemoDbConnectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF8264D1FF4DB9600D25AD7 /* DemoDbConnectionViewController.xib */; };
 		BBF9A38E1FB04BEA00909F34 /* CanvasImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF9A38D1FB04BEA00909F34 /* CanvasImageView.m */; };
+		BBFE279F20A03D2A004D387B /* INTULocationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFE279620A03D29004D387B /* INTULocationRequest.m */; };
+		BBFE27A020A03D2A004D387B /* INTUHeadingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFE279B20A03D29004D387B /* INTUHeadingRequest.m */; };
+		BBFE27A120A03D2A004D387B /* INTURequestIDGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFE279C20A03D29004D387B /* INTURequestIDGenerator.m */; };
+		BBFE27A220A03D2A004D387B /* INTULocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFE279D20A03D29004D387B /* INTULocationManager.m */; };
+		BBFE27A520A03E6A004D387B /* DbLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFE27A420A03E6A004D387B /* DbLocationManager.m */; };
+		BBFE27A820A03E84004D387B /* DbLocationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFE27A720A03E84004D387B /* DbLocationRequest.m */; };
 		D0D67C566CFEB09749ADFD21 /* Pods_ObjcAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337FBF5C5E6989CFEFBD3E48 /* Pods_ObjcAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -387,8 +392,6 @@
 		BB259A7D209C0FB700213223 /* DemoLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoLocationViewController.h; sourceTree = "<group>"; };
 		BB259A7E209C0FB700213223 /* DemoLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoLocationViewController.m; sourceTree = "<group>"; };
 		BB259A7F209C0FB700213223 /* DemoLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoLocationViewController.xib; sourceTree = "<group>"; };
-		BB259A82209C0FD000213223 /* DbLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbLocationManager.h; sourceTree = "<group>"; };
-		BB259A83209C0FD000213223 /* DbLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbLocationManager.m; sourceTree = "<group>"; };
 		BB259A86209C1C1B00213223 /* ObjcApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ObjcApp.entitlements; sourceTree = "<group>"; };
 		BB259A87209C204B00213223 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BB25FC8F1F51DE330005372B /* TableExpandCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableExpandCellViewController.h; sourceTree = "<group>"; };
@@ -865,6 +868,21 @@
 		BBF8264D1FF4DB9600D25AD7 /* DemoDbConnectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoDbConnectionViewController.xib; sourceTree = "<group>"; };
 		BBF9A38C1FB04BEA00909F34 /* CanvasImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasImageView.h; sourceTree = "<group>"; };
 		BBF9A38D1FB04BEA00909F34 /* CanvasImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasImageView.m; sourceTree = "<group>"; };
+		BBFE279520A03D29004D387B /* INTUHeadingRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTUHeadingRequest.h; sourceTree = "<group>"; };
+		BBFE279620A03D29004D387B /* INTULocationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTULocationRequest.m; sourceTree = "<group>"; };
+		BBFE279720A03D29004D387B /* INTURequestIDGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTURequestIDGenerator.h; sourceTree = "<group>"; };
+		BBFE279820A03D29004D387B /* INTULocationManager+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "INTULocationManager+Internal.h"; sourceTree = "<group>"; };
+		BBFE279920A03D29004D387B /* INTULocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTULocationManager.h; sourceTree = "<group>"; };
+		BBFE279A20A03D29004D387B /* INTULocationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTULocationRequest.h; sourceTree = "<group>"; };
+		BBFE279B20A03D29004D387B /* INTUHeadingRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTUHeadingRequest.m; sourceTree = "<group>"; };
+		BBFE279C20A03D29004D387B /* INTURequestIDGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTURequestIDGenerator.m; sourceTree = "<group>"; };
+		BBFE279D20A03D29004D387B /* INTULocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTULocationManager.m; sourceTree = "<group>"; };
+		BBFE279E20A03D29004D387B /* INTULocationRequestDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTULocationRequestDefines.h; sourceTree = "<group>"; };
+		BBFE27A320A03E6A004D387B /* DbLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbLocationManager.h; sourceTree = "<group>"; };
+		BBFE27A420A03E6A004D387B /* DbLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbLocationManager.m; sourceTree = "<group>"; };
+		BBFE27A620A03E84004D387B /* DbLocationRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbLocationRequest.h; sourceTree = "<group>"; };
+		BBFE27A720A03E84004D387B /* DbLocationRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbLocationRequest.m; sourceTree = "<group>"; };
+		BBFE27A920A03EB4004D387B /* DbLocationDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbLocationDefines.h; sourceTree = "<group>"; };
 		CF0433C27A628AE212F55DBF /* Pods-ObjcApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcApp/Pods-ObjcApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D2C1CC5C4A722D440973BCC1 /* Pods-ObjcApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcApp/Pods-ObjcApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -954,6 +972,7 @@
 		BB259A7C209C0F9400213223 /* Demo-LocationManager */ = {
 			isa = PBXGroup;
 			children = (
+				BBFE279420A03D29004D387B /* INTULocationManager */,
 				BB259A7D209C0FB700213223 /* DemoLocationViewController.h */,
 				BB259A7E209C0FB700213223 /* DemoLocationViewController.m */,
 				BB259A7F209C0FB700213223 /* DemoLocationViewController.xib */,
@@ -965,8 +984,11 @@
 		BB259A85209C0FD900213223 /* DbLocationManager */ = {
 			isa = PBXGroup;
 			children = (
-				BB259A82209C0FD000213223 /* DbLocationManager.h */,
-				BB259A83209C0FD000213223 /* DbLocationManager.m */,
+				BBFE27A320A03E6A004D387B /* DbLocationManager.h */,
+				BBFE27A420A03E6A004D387B /* DbLocationManager.m */,
+				BBFE27A620A03E84004D387B /* DbLocationRequest.h */,
+				BBFE27A720A03E84004D387B /* DbLocationRequest.m */,
+				BBFE27A920A03EB4004D387B /* DbLocationDefines.h */,
 			);
 			path = DbLocationManager;
 			sourceTree = "<group>";
@@ -2159,6 +2181,23 @@
 			path = "Demo-DbConnectionViewController";
 			sourceTree = "<group>";
 		};
+		BBFE279420A03D29004D387B /* INTULocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				BBFE279520A03D29004D387B /* INTUHeadingRequest.h */,
+				BBFE279B20A03D29004D387B /* INTUHeadingRequest.m */,
+				BBFE279820A03D29004D387B /* INTULocationManager+Internal.h */,
+				BBFE279920A03D29004D387B /* INTULocationManager.h */,
+				BBFE279D20A03D29004D387B /* INTULocationManager.m */,
+				BBFE279A20A03D29004D387B /* INTULocationRequest.h */,
+				BBFE279620A03D29004D387B /* INTULocationRequest.m */,
+				BBFE279720A03D29004D387B /* INTURequestIDGenerator.h */,
+				BBFE279C20A03D29004D387B /* INTURequestIDGenerator.m */,
+				BBFE279E20A03D29004D387B /* INTULocationRequestDefines.h */,
+			);
+			path = INTULocationManager;
+			sourceTree = "<group>";
+		};
 		FC67C540BC7131A23EBD8755 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2568,9 +2607,9 @@
 				BBD99B301F7CD7BD004B20AF /* TBTwoViewController.m in Sources */,
 				BB1320E31FD930F8003CCCA3 /* DbCameraViewController.m in Sources */,
 				BB4FD4911F442AEE00C082C3 /* APNumberPad.m in Sources */,
+				BBFE27A020A03D2A004D387B /* INTUHeadingRequest.m in Sources */,
 				BBEDC4481FBC3F41000317FD /* DbRangeSlider.m in Sources */,
 				BBDE4A5B2085ECCB00731A69 /* RMPDetailViewController.m in Sources */,
-				BB259A84209C0FD000213223 /* DbLocationManager.m in Sources */,
 				BBA796171FF0DF0C00066B73 /* Reachability.m in Sources */,
 				BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */,
 				BB121DF41F861A200053171B /* PTPhotoDetailViewController.m in Sources */,
@@ -2594,6 +2633,8 @@
 				BB3912F91F8BE527002F1CE1 /* SLTableViewController.m in Sources */,
 				BB4FD4861F442AEE00C082C3 /* NSObject+Json.m in Sources */,
 				BBE1435D1F823EA30020C400 /* STHeaderViewController.m in Sources */,
+				BBFE27A220A03D2A004D387B /* INTULocationManager.m in Sources */,
+				BBFE27A120A03D2A004D387B /* INTURequestIDGenerator.m in Sources */,
 				BB4FD4901F442AEE00C082C3 /* APNumberButton.m in Sources */,
 				BB4A3A691F814E3E0040CC61 /* TBFiveViewController.m in Sources */,
 				BBDBD9011F6A9B6B009C9340 /* NSMutableDictionary+DbHelper.m in Sources */,
@@ -2607,6 +2648,7 @@
 				BB4FD4881F442AEE00C082C3 /* UINavigationController+Utils.m in Sources */,
 				BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */,
 				BB85B0C82092E1210060A8FA /* UIFont+OHAdditions.m in Sources */,
+				BBFE27A820A03E84004D387B /* DbLocationRequest.m in Sources */,
 				BB6EBF471FB2F7EC006CC4EA /* SearchSession.m in Sources */,
 				BBCFCA50207B193C0091C01A /* PlaceDetail.m in Sources */,
 				BB4FD4951F442AEE00C082C3 /* CropPhotoViewController.m in Sources */,
@@ -2621,6 +2663,7 @@
 				BBD6CA9C207E168B004129BE /* GooglePlacesApiClient.m in Sources */,
 				BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */,
 				BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */,
+				BBFE27A520A03E6A004D387B /* DbLocationManager.m in Sources */,
 				BBD1076F1FCFA74A0009BAB1 /* AutoLayoutViewController.m in Sources */,
 				BB85E16A1FDBCC6100FFA738 /* ImageAnimViewController.m in Sources */,
 				BBD6CA99207E168B004129BE /* GoogleAutoCompleteResult.m in Sources */,
@@ -2701,6 +2744,7 @@
 				BBA9CD5020884BDB004C33CE /* PECropRectView.m in Sources */,
 				BBD5C8082064FA7D00037E84 /* DbTextField.m in Sources */,
 				BBE143691F8242C50020C400 /* UINavigationController+Transparency.m in Sources */,
+				BBFE279F20A03D2A004D387B /* INTULocationRequest.m in Sources */,
 				BB1320E11FD930F8003CCCA3 /* AVCamPreviewView.m in Sources */,
 				BBD1366C1F9A1187007A7763 /* HeaderJTCalendarView.m in Sources */,
 				BBE5EF6E1FDFCE57005F3900 /* STMapHeaderViewController.m in Sources */,
