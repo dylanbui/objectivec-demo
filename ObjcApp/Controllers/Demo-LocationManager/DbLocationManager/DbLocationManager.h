@@ -5,6 +5,7 @@
 //  Created by Dylan Bui on 5/4/18.
 //  Copyright © 2018 Propzy Viet Nam. All rights reserved.
 //  Base on : https://github.com/benzamin/BBLocationManager
+//  Co diem kem la khi Allow cho truy cap location thi ko lay du lieu ngay ma user phai bam lai lan nua
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
