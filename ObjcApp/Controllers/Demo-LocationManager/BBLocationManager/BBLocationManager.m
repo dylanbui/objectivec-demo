@@ -97,43 +97,24 @@ typedef enum : NSUInteger {
     return self;
 }
 
--(void)getPermissionForStartUpdatingLocation
+/**
+ Requests permission to use location services on devices with iOS 8+.
+ */
+
+- (BOOL)getPermissionForStartUpdatingLocation
 {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_7_1
+
+    BOOL isPermitted = YES;
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
-    
-    //******************* IMPORTANT FOR iOS 11 ***************************//
-    // 1. For app "WHEN IN USE" location access, you need to add "NSLocationWhenInUseUsageDescription" in info.plist
-    // 2. But if you need "ALWAYS" location access, you need BOTH "NSLocationWhenInUseUsageDescription" and "NSLocationAlwaysAndWhenInUseUsageDescription"
-    //    in your info.plist, other wise it'll encounter error: "This app has attempted to access privacy-sensitive data without a usage description ..... "
-    // Ref: https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services#topics
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"11.0"))
-    {
-        if ((status == kCLAuthorizationStatusNotDetermined) && ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]))
-        {
-            if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysAndWhenInUseUsageDescription"]) { //https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/request_always_authorization
-                if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
-                    [self.locationManager performSelector:@selector(requestAlwaysAuthorization)];
-                }
-                else{
-                    [[NSException exceptionWithName:@"[BBLocationManager] Fix needed for location permission key" reason:@"Your app's info.plist need both NSLocationWhenInUseUsageDescription and NSLocationAlwaysAndWhenInUseUsageDescription keys for asking 'Always usage of location' in iOS 11" userInfo:nil] raise];
-                }
-                
-            } else if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) { //https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_when_in_use_authorization
-                [self.locationManager performSelector:@selector(requestWhenInUseAuthorization)];
-            } else {
-                [[NSException exceptionWithName:@"[BBLocationManager] Fix needed for location permission key" reason:@"Your app's info.plist does not contain NSLocationWhenInUseUsageDescription and/or NSLocationAlwaysAndWhenInUseUsageDescription key required for iOS 11" userInfo:nil] raise];
-            }
-        }
-        else if(status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted){
-            NSLog(@"[BBLocationManager] Location Permission Denied by user, prompt user to allow location permission.");
-            NSString *title, *message;
-            if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"]) {
-                title = (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Background location is not enabled";
-                message = [NSString stringWithFormat:@"%@. %@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"], @"To use background location you must turn on 'Always' in the Location Services Settings"];
-            } else if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
-                title = (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Location Service is not enabled";
-                message = [NSString stringWithFormat:@"%@. %@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"], @"To use location you must turn on 'While Using the App' in the Location Services Settings"];
-            }
+
+    // -- Dung doan ma nay thay the cho thang thong bao mac dinh location --
+    if(status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted) {
+        isPermitted = NO;
+        if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationUsageDescription"]) {
+            NSString *title = (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Location Service is not enabled";
+            NSString *message = (status == kCLAuthorizationStatusDenied) ? [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationUsageDescription"] : @"To use location you must turn on 'While Using the App' in the Location Services Settings";
+
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
                                                                 message:message
                                                                delegate:self
@@ -141,40 +122,115 @@ typedef enum : NSUInteger {
                                                       otherButtonTitles:@"Settings", nil];
             [alertView show];
         }
-    }
-    //before iOS 8, no permission was needed to access location
-    else if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
-    {
-        if ((status == kCLAuthorizationStatusNotDetermined) && ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]))
-        {
-            if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"]) {
-                [self.locationManager performSelector:@selector(requestAlwaysAuthorization)];
-            } else if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
-                [self.locationManager performSelector:@selector(requestWhenInUseAuthorization)];
-            } else {
-                [[NSException exceptionWithName:@"[BBLocationManager] Location Permission Error" reason:@"Info.plist does not contain NSLocationWhenUse or NSLocationAlwaysUsageDescription key required for iOS 8" userInfo:nil] raise];
-            }
-        }
-        else if(status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted){
-            NSLog(@"[BBLocationManager] Location Permission Denied by user, prompt user to allow location permission.");
-            NSString *title, *message;
-            if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"]) {
-                title = (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Background location is not enabled";
-                message = [NSString stringWithFormat:@"%@. %@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"], @"To use background location you must turn on 'Always' in the Location Services Settings"];
-            } else if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
-                title = (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Location Service is not enabled";
-                message = [NSString stringWithFormat:@"%@. %@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"], @"To use location you must turn on 'While Using the App' in the Location Services Settings"];
-            }
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
-                                                                message:message
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Cancel"
-                                                      otherButtonTitles:@"Settings", nil];
-            [alertView show];
+        else {
+            NSAssert(NO, @"To use location services in iOS 8+, your Info.plist must provide a value for either NSLocationUsageDescription.");
         }
     }
 
+    // As of iOS 8, apps must explicitly request location services permissions. INTULocationManager supports both levels, "Always" and "When In Use".
+    // INTULocationManager determines which level of permissions to request based on which description key is present in your app's Info.plist
+    // If you provide values for both description keys, the more permissive "Always" level is requested.
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1 && [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        isPermitted = NO;
+        BOOL hasAlwaysKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"] != nil;
+        BOOL hasWhenInUseKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"] != nil;
+        if (hasAlwaysKey) {
+            [self.locationManager requestAlwaysAuthorization];
+        } else if (hasWhenInUseKey) {
+            [self.locationManager requestWhenInUseAuthorization];
+        } else {
+            // At least one of the keys NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsageDescription MUST be present in the Info.plist file to use location services on iOS 8+.
+            NSAssert(hasAlwaysKey || hasWhenInUseKey, @"To use location services in iOS 8+, your Info.plist must provide a value for either NSLocationWhenInUseUsageDescription or NSLocationAlwaysUsageDescription.");
+        }
+    }
+    
+    return (status == kCLAuthorizationStatusDenied);
+
+    //return isPermitted;
+#endif /* __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_7_1 */
 }
+
+//- (BOOL)getPermissionForStartUpdatingLocation
+//{
+//    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+//
+//    //******************* IMPORTANT FOR iOS 11 ***************************//
+//    // 1. For app "WHEN IN USE" location access, you need to add "NSLocationWhenInUseUsageDescription" in info.plist
+//    // 2. But if you need "ALWAYS" location access, you need BOTH "NSLocationWhenInUseUsageDescription" and "NSLocationAlwaysAndWhenInUseUsageDescription"
+//    //    in your info.plist, other wise it'll encounter error: "This app has attempted to access privacy-sensitive data without a usage description ..... "
+//    // Ref: https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services#topics
+//    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"11.0"))
+//    {
+//        if ((status == kCLAuthorizationStatusNotDetermined) && ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]))
+//        {
+//            if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysAndWhenInUseUsageDescription"]) { //https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/request_always_authorization
+//                if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
+//                    [self.locationManager performSelector:@selector(requestAlwaysAuthorization)];
+//                }
+//                else{
+//                    [[NSException exceptionWithName:@"[BBLocationManager] Fix needed for location permission key" reason:@"Your app's info.plist need both NSLocationWhenInUseUsageDescription and NSLocationAlwaysAndWhenInUseUsageDescription keys for asking 'Always usage of location' in iOS 11" userInfo:nil] raise];
+//                }
+//
+//            } else if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) { //https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_when_in_use_authorization
+//                [self.locationManager performSelector:@selector(requestWhenInUseAuthorization)];
+//            } else {
+//                [[NSException exceptionWithName:@"[BBLocationManager] Fix needed for location permission key" reason:@"Your app's info.plist does not contain NSLocationWhenInUseUsageDescription and/or NSLocationAlwaysAndWhenInUseUsageDescription key required for iOS 11" userInfo:nil] raise];
+//            }
+//        }
+//        else if(status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted){
+//            NSLog(@"[BBLocationManager] Location Permission Denied by user, prompt user to allow location permission.");
+//            NSString *title, *message;
+//            if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"]) {
+//                title = (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Background location is not enabled";
+//                message = [NSString stringWithFormat:@"%@. %@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"], @"To use background location you must turn on 'Always' in the Location Services Settings"];
+//            } else if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
+//                title = (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Location Service is not enabled";
+//                message = [NSString stringWithFormat:@"%@. %@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"], @"To use location you must turn on 'While Using the App' in the Location Services Settings"];
+//            }
+//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+//                                                                message:message
+//                                                               delegate:self
+//                                                      cancelButtonTitle:@"Cancel"
+//                                                      otherButtonTitles:@"Settings", nil];
+//            [alertView show];
+//        }
+//    }
+//    //before iOS 8, no permission was needed to access location
+//    else if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
+//    {
+//        if ((status == kCLAuthorizationStatusNotDetermined) && ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]))
+//        {
+//            if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"]) {
+//                [self.locationManager performSelector:@selector(requestAlwaysAuthorization)];
+//            } else if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
+//                [self.locationManager performSelector:@selector(requestWhenInUseAuthorization)];
+//            } else {
+//                [[NSException exceptionWithName:@"[BBLocationManager] Location Permission Error" reason:@"Info.plist does not contain NSLocationWhenUse or NSLocationAlwaysUsageDescription key required for iOS 8" userInfo:nil] raise];
+//            }
+//        }
+//        else if(status == kCLAuthorizationStatusRestricted) {
+//            // -- Trang thai kCLAuthorizationStatusDenied se duoc hien mac dinh cua iOS --
+////            else if(status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted) {
+//            NSLog(@"[BBLocationManager] Location Permission Denied by user, prompt user to allow location permission.");
+//            NSString *title, *message;
+//            if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"]) {
+//                title = (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Background location is not enabled";
+//                message = [NSString stringWithFormat:@"%@. %@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"], @"To use background location you must turn on 'Always' in the Location Services Settings"];
+//            } else if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
+//                title = (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Location Service is not enabled";
+//                message = [NSString stringWithFormat:@"%@. %@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"], @"To use location you must turn on 'While Using the App' in the Location Services Settings"];
+//            }
+//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+//                                                                message:message
+//                                                               delegate:self
+//                                                      cancelButtonTitle:@"Cancel"
+//                                                      otherButtonTitles:@"Settings", nil];
+//            [alertView show];
+//        }
+//    }
+//
+//    return YES;
+//}
 
 #pragma mark - AlerView delegate
 
@@ -529,7 +585,9 @@ typedef enum : NSUInteger {
 
 - (void)startUpdatingLocation
 {
-    [self getPermissionForStartUpdatingLocation];
+    // -- Trng thai Denied thi khong lam gi --
+    if ([self getPermissionForStartUpdatingLocation])
+        return;
     
     if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"] || [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysAndWhenInUseUsageDescription"]) {
         if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"UIBackgroundModes"])
@@ -715,7 +773,8 @@ typedef enum : NSUInteger {
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
-    if (status != kCLAuthorizationStatusDenied) {
+    // if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted)
+    if (status != kCLAuthorizationStatusDenied && status != kCLAuthorizationStatusRestricted) {
         if (self.activeLocationTaskType != LocationTaskTypeNone) {
             [self startUpdatingLocation];
         }

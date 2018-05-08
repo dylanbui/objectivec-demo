@@ -173,7 +173,8 @@ typedef void(^GeoCodeUpdateBlock)(BOOL success, NSDictionary *geoCodeDictionary,
  *   @param
  *   @return
  */
--(void)getPermissionForStartUpdatingLocation;
+//-(void)getPermissionForStartUpdatingLocation;
+- (BOOL)getPermissionForStartUpdatingLocation;
 
 /**
  *   Gives an Array of dictionary formatted BBFenceInfo which are currently active

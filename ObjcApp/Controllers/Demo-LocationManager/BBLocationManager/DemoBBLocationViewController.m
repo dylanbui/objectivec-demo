@@ -76,6 +76,7 @@
     BBLocationManager *manager = [BBLocationManager sharedManager];
     [manager getCurrentLocationWithCompletion:^(BOOL success, NSDictionary *latLongAltitudeDictionary, NSError *error) {
         // -- Phai luon luon kiem tra lat, long != 0 de tranh bay ra bien --
+        NSLog(@"Current Location: %@", latLongAltitudeDictionary.description);
         [self logtext:[NSString stringWithFormat:@"Current Location: %@", latLongAltitudeDictionary.description]];
         [self showInMapsWithDictionary:latLongAltitudeDictionary title:@"Current Location"];
     }];
