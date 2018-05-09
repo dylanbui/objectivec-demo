@@ -55,7 +55,7 @@
 {
     [super viewWillAppear:animated];
     
-//    ViewController *vcFirst = [[ViewController alloc] init];
+    ViewController *vcFirst = [[ViewController alloc] init];
     // STCalendarHeaderViewController *vcFirst = [[STCalendarHeaderViewController alloc] init];
 //    MapDrawingViewController *vcFirst = [[MapDrawingViewController alloc] init];
 //    RangeSliderViewController *vcFirst = [[RangeSliderViewController alloc] init];
@@ -81,8 +81,9 @@
 //    ExampleMyCropViewController *vcFirst = [[ExampleMyCropViewController alloc] init];
     
 //    DemoLocationViewController *vcFirst = [[DemoLocationViewController alloc] init];
-    DemoBBLocationViewController *vcFirst = [[DemoBBLocationViewController alloc] init];
-    [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
+//    DemoBBLocationViewController *vcFirst = [[DemoBBLocationViewController alloc] init];
+    [self.navigationController pushViewController:vcFirst animated:NO];
+    // [self.navigationController pushOrReplaceToFirstViewController:vcFirst animated:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated

@@ -28,6 +28,7 @@
 #import "ExampleMyCropViewController.h"
 #import "DemoAttributedStringViewController.h"
 #import "DemoLocationViewController.h"
+#import "DemoBBLocationViewController.h"
 
 
 @interface ViewController ()
@@ -63,7 +64,8 @@
                       @"Demo-TOCropViewControllerFromCollectionView",
                       @"Demo-MyCropViewController",
                       @"Demo-NSAttributedString",
-                      @"Demo-LocationManager"
+                      @"Demo-LocationManager",
+                      @"Demo-BBLocationManager"
                       ];
 }
 
@@ -87,7 +89,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self.navigationController pushOrReplaceToFirstViewController:[self getViewControllers:indexPath] animated:YES];
+//    [self.navigationController pushOrReplaceToFirstViewController:[self getViewControllers:indexPath] animated:YES];
+    [self.navigationController pushViewController:[self getViewControllers:indexPath] animated:YES];
 }
 
 - (UIViewController *)getViewControllers:(NSIndexPath *)indexPath
@@ -131,6 +134,8 @@
         vcFirst = [[DemoAttributedStringViewController alloc] init];
     } else if (indexPath.row == 17) {
         vcFirst = [[DemoLocationViewController alloc] init];
+    } else if (indexPath.row == 18) {
+        vcFirst = [[DemoBBLocationViewController alloc] init];
     }
     
     return vcFirst;
