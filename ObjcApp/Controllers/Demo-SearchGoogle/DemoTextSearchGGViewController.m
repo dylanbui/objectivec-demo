@@ -105,6 +105,26 @@
     [self.navigationController pushViewController:vcl animated:YES];
 }
 
+- (IBAction)btnGMSAutocomplete_Click:(id)sender
+{
+    GMSAutocompleteViewController *acController = [[GMSAutocompleteViewController alloc] init];
+    acController.delegate = self;
+    [self presentViewController:acController animated:YES completion:nil];
+    
+//    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(10.794369, 106.680117);
+//    
+//    DbPlaceSearchViewController *vcl = [[DbPlaceSearchViewController alloc] init];
+//    vcl.apiKey = @"AIzaSyBK_MVp9sT3n-klZ4BIMnKHi1cjHJyYNFA";
+//    vcl.currentLocation = location;
+//    vcl.didReturnPlace = ^(DbPlaceSearchViewController *owner, GooglePlaceDetail *place) {
+//        NSLog(@"Tra ve = %@", place.formattedAddress);
+//    };
+//    //    [vcl addSubViewPlaceSearch];
+//    
+//    [self.navigationController pushViewController:vcl animated:YES];
+}
+
+
 
 #pragma mark - Place search Textfield Delegates
 
@@ -169,5 +189,45 @@
 //    }
 //    return YES;
 //}
+
+// Handle the user's selection.
+#pragma mark GMSAutocompleteViewControllerDelegate
+#pragma mark -
+
+- (void)viewController:(GMSAutocompleteViewController *)viewController
+didAutocompleteWithPlace:(GMSPlace *)place
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    // Do something with the selected place.
+    NSLog(@"Place name %@", place.name);
+    NSLog(@"Place address %@", place.formattedAddress);
+    NSLog(@"Place attributions %@", place.attributions.string);
+}
+
+- (void)viewController:(GMSAutocompleteViewController *)viewController
+didFailAutocompleteWithError:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    // TODO: handle the error.
+    NSLog(@"Error: %@", [error description]);
+}
+
+// User canceled the operation.
+- (void)wasCancelled:(GMSAutocompleteViewController *)viewController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+// Turn the network activity indicator on and off again.
+- (void)didRequestAutocompletePredictions:(GMSAutocompleteViewController *)viewController
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+- (void)didUpdateAutocompletePredictions:(GMSAutocompleteViewController *)viewController
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
 
 @end

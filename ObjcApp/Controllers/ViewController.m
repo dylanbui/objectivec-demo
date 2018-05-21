@@ -88,6 +88,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"DbLibraries" ofType:@"bundle"];
+    NSBundle *DbLibraries = [NSBundle bundleWithPath:path];
+    
+    NSString* name = [DbLibraries localizedStringForKey:@"Name" value:@"Name Default" table:@"DbLibraries"];
+    NSString* group = [DbLibraries localizedStringForKey:@"Group" value:@"Group Default" table:@"DbLibraries"];
+    NSString* group_name = [DbLibraries localizedStringForKey:@"Group_Name" value:@"Khong co du lieu" table:@"DbLibraries"];
+    
+    NSLog(@"%@ - %@ - %@", name, group, group_name);
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //    [self.navigationController pushOrReplaceToFirstViewController:[self getViewControllers:indexPath] animated:YES];
     [self.navigationController pushViewController:[self getViewControllers:indexPath] animated:YES];

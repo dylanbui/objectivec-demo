@@ -31,6 +31,9 @@
     CLLocationCoordinate2D defaultPosition = CLLocationCoordinate2DMake(10.772154, 106.704367);
     GMSCameraPosition *newCameraPosition = [GMSCameraPosition cameraWithTarget:defaultPosition zoom:12];
     [self.vwMap animateToCameraPosition:newCameraPosition];
+    
+    
+
 }
 
 - (IBAction)showAllGeoFences:(id)sender

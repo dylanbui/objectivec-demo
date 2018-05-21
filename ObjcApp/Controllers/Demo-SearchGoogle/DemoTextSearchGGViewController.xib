@@ -38,9 +38,19 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KF1-BO-ML9">
                     <rect key="frame" x="17" y="122" width="340" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
+                    <color key="backgroundColor" red="0.75846853299805728" green="1" blue="0.068231325565346834" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="DbPlaceSearchViewController"/>
                     <connections>
                         <action selector="btnSearch_Click:" destination="-1" eventType="touchUpInside" id="9Xw-LV-QP3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcR-vu-6vd">
+                    <rect key="frame" x="16" y="220" width="340" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.75846853299999994" green="1" blue="0.068231325570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="GMSAutocompleteViewController"/>
+                    <connections>
+                        <action selector="btnGMSAutocomplete_Click:" destination="-1" eventType="touchUpInside" id="jnJ-jW-MR0"/>
                     </connections>
                 </button>
             </subviews>

@@ -7,9 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import <GooglePlaces/GooglePlaces.h>
 #import "MVPlaceSearchTextField.h"
 
-@interface DemoTextSearchGGViewController : BaseViewController <PlaceSearchTextFieldDelegate>
+@interface DemoTextSearchGGViewController : BaseViewController <PlaceSearchTextFieldDelegate, GMSAutocompleteViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet MVPlaceSearchTextField *txtAutoCompletePlace;
 

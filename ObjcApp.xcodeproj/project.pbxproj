@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9120E771807AB7030C9F4283 /* Pods_ObjcApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D62C3C09D877F7693306C71 /* Pods_ObjcApp.framework */; };
 		BB06C8D82091D2F7008F42F5 /* NSMutableAttributedString+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = BB06C8D72091D2F7008F42F5 /* NSMutableAttributedString+Attributes.m */; };
+		BB0A1D0720A54EEC002D9772 /* DbLibraries.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BB0A1D0620A54EEC002D9772 /* DbLibraries.bundle */; };
 		BB121DEF1F85DEAD0053171B /* PTPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB121DED1F85DEAD0053171B /* PTPhotoViewController.m */; };
 		BB121DF01F85DEAD0053171B /* PTPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB121DEE1F85DEAD0053171B /* PTPhotoViewController.xib */; };
 		BB121DF41F861A200053171B /* PTPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB121DF21F861A200053171B /* PTPhotoDetailViewController.m */; };
@@ -367,6 +368,7 @@
 		806131BC8A1DA902FB1E7935 /* Pods-ObjcAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcAppTests/Pods-ObjcAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB06C8D62091D2F7008F42F5 /* NSMutableAttributedString+Attributes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Attributes.h"; sourceTree = "<group>"; };
 		BB06C8D72091D2F7008F42F5 /* NSMutableAttributedString+Attributes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Attributes.m"; sourceTree = "<group>"; };
+		BB0A1D0620A54EEC002D9772 /* DbLibraries.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DbLibraries.bundle; sourceTree = "<group>"; };
 		BB121DEC1F85DEAD0053171B /* PTPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTPhotoViewController.h; sourceTree = "<group>"; };
 		BB121DED1F85DEAD0053171B /* PTPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTPhotoViewController.m; sourceTree = "<group>"; };
 		BB121DEE1F85DEAD0053171B /* PTPhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PTPhotoViewController.xib; sourceTree = "<group>"; };
@@ -1088,6 +1090,7 @@
 		BB3FC34E1FC958AE000D37F2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB0A1D0620A54EEC002D9772 /* DbLibraries.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -2400,6 +2403,7 @@
 				BB121DF01F85DEAD0053171B /* PTPhotoViewController.xib in Resources */,
 				BB1321211FD93406003CCCA3 /* DbAssets.xcassets in Resources */,
 				BBEDC4401FBC3EEA000317FD /* slider-metal-handle@2x.png in Resources */,
+				BB0A1D0720A54EEC002D9772 /* DbLibraries.bundle in Resources */,
 				BB4FD4BA1F442C8A00C082C3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				BBDE4A8B2085F58B00731A69 /* 09_L.jpeg in Resources */,
 				BBEDC42E1FBC3EEA000317FD /* slider-default-handle@2x.png in Resources */,
@@ -2931,7 +2935,7 @@
 				DEVELOPMENT_TEAM = 99JD3QH9V9;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = ObjcApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vn.propzy.ObjcApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2948,7 +2952,7 @@
 				DEVELOPMENT_TEAM = 99JD3QH9V9;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = ObjcApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vn.propzy.ObjcApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
