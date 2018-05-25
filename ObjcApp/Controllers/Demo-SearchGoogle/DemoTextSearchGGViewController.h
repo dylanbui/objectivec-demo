@@ -12,6 +12,7 @@
 
 @interface DemoTextSearchGGViewController : BaseViewController <PlaceSearchTextFieldDelegate, GMSAutocompleteViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *vwAddress;
 @property (weak, nonatomic) IBOutlet MVPlaceSearchTextField *txtAutoCompletePlace;
 
 @end
