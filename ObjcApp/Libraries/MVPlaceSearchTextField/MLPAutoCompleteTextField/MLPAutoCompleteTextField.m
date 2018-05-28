@@ -294,6 +294,17 @@ withAutoCompleteString:(NSString *)string
     [cell setBackgroundColor:self.autoCompleteTableCellBackgroundColor];
 }
 
+// -- DucBui 25/05/2018 : Add header & footer view  --
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return (self.headerView != nil ? self.headerView.frame.size.height : 0);
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return (self.headerView != nil ? self.headerView : nil);
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return (self.footerView != nil ? self.footerView.frame.size.height : 0);
@@ -303,7 +314,7 @@ withAutoCompleteString:(NSString *)string
 {
     return (self.footerView != nil ? self.footerView : nil);
 }
-
+// -- ---------------------------------------------- --
 #pragma mark - TableView Delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -629,7 +640,6 @@ withAutoCompleteString:(NSString *)string
     [self setReuseIdentifier:reuseIdentifier];
 }
 
-
 - (void)registerAutoCompleteCellClass:(Class)cellClass forCellReuseIdentifier:(NSString *)reuseIdentifier
 {
     NSAssert(self.autoCompleteTableView, @"Must have an autoCompleteTableView to register cells to.");
@@ -638,16 +648,23 @@ withAutoCompleteString:(NSString *)string
     }
     BOOL classSettingSupported = [self.autoCompleteTableView respondsToSelector:@selector(registerClass:forCellReuseIdentifier:)];
     NSAssert(classSettingSupported, @"Unable to set class for cell for autocomplete table, in iOS 5.0 you can set a custom NIB for a reuse identifier to get similar functionality.");
+    
+    // -- DucBui 25/05/2018 --
+    // -- Hide keyboard when drag UITableView --
+    self.autoCompleteShouldHideClosingKeyboard = NO;
+    self.autoCompleteTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    // -- Remove CellSeparator --
+    [self.autoCompleteTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    // -- ------------------ --
+    
     [self.autoCompleteTableView registerClass:cellClass forCellReuseIdentifier:reuseIdentifier];
     [self setReuseIdentifier:reuseIdentifier];
 }
-
 
 - (void)unregisterAutoCompleteCellForReuseIdentifier:(NSString *)reuseIdentifier
 {
     [self.autoCompleteTableView registerNib:nil forCellReuseIdentifier:reuseIdentifier];
 }
-
 
 - (void)styleAutoCompleteTableForBorderStyle:(UITextBorderStyle)borderStyle
 {
@@ -816,9 +833,13 @@ withAutoCompleteString:(NSString *)string
     if(!textField.autoCompleteTableAppearsAsKeyboardAccessory){
          newTableViewFrame.size.height += textField.autoCompleteTableView.contentInset.top;
     }
-    
+
+    // -- DucBui 25/05/2018 : Add header & footer view  --
+    if (self.headerView) {
+         newTableViewFrame.size.height += self.headerView.frame.size.height;
+    }
     if (self.footerView) {
-         newTableViewFrame.size.height += self.footerView.frame.size.height;
+        newTableViewFrame.size.height += self.footerView.frame.size.height;
     }
     
     return newTableViewFrame;

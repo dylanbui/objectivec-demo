@@ -67,6 +67,7 @@
 @property (strong) UIColor *autoCompleteTableCellTextColor;
 
 //Added by DucBui 09/04/2018 for MVPlaceSearchTextField
+@property (strong) UIView *headerView;
 @property (strong) UIView *footerView;
 - (void)closeAutoCompleteTableView;
 

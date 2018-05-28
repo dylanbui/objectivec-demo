@@ -9,6 +9,7 @@
 #import "DemoTextSearchGGViewController.h"
 #import "UIView+LayoutHelper.h"
 #import "AddressTableViewCell.h"
+#import "SuggestionAddressItemTableViewCell.h"
 #import "DbPlaceSearchViewController.h"
 
 @interface DemoTextSearchGGViewController ()
@@ -23,45 +24,63 @@
     // Do any additional setup after loading the view from its nib.
     [self navigationBarHiddenForThisController];
     
-//    [_txtAutoCompletePlace setValue:[UIFont fontWithName:@"OpenSans-Italic" size:15] forKeyPath:@"_placeholderLabel.font"];
+    // -- Conflicts with txtAutoCompletePlace when you choose row --
+    [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:NO];
     
     // -- AutoCompletePlace Properties --
 //    [self.txtAutoCompletePlace setValue:[UIFont fontWithName:@"OpenSans-Italic" size:15] forKeyPath:@"_placeholderLabel.font"];
-    [self.txtAutoCompletePlace registerAutoCompleteCellClass:[AddressTableViewCell class] forCellReuseIdentifier:@"AddressTableViewCell"];
-    [self.txtAutoCompletePlace registerAutoCompleteCellNib:[UINib nibWithNibName:@"AddressTableViewCell" bundle:nil]
-                                    forCellReuseIdentifier:@"AddressTableViewCell"];
+    [self.txtAutoCompletePlace registerAutoCompleteCellClass:[SuggestionAddressItemTableViewCell class]
+                                      forCellReuseIdentifier:@"SuggestionAddressItemTableViewCell"];
+    [self.txtAutoCompletePlace registerAutoCompleteCellNib:[UINib nibWithNibName:@"SuggestionAddressItemTableViewCell" bundle:nil]
+                                    forCellReuseIdentifier:@"SuggestionAddressItemTableViewCell"];
     
     self.txtAutoCompletePlace.placeSearchDelegate                 = self;
     self.txtAutoCompletePlace.superViewOfList                     = self.view;  // View, on which Autocompletion list should be appeared.
     self.txtAutoCompletePlace.autoCompleteShouldHideOnSelection   = YES;
-    self.txtAutoCompletePlace.maximumNumberOfAutoCompleteRows     = 5;
+    // -- Cho hien ra 20 item, nhung khung view chi hien 5 --
+    [self.txtAutoCompletePlace setMaximumNumberOfAutoCompleteRows:20]; // pai dung cach nay
     
 //    self.txtAutoCompletePlace.autoCompleteRegularFontName =  @"OpenSans-Semibold";
 //    self.txtAutoCompletePlace.autoCompleteBoldFontName = @"OpenSans";
     self.txtAutoCompletePlace.autoCompleteTableCornerRadius = 5.0;
-    self.txtAutoCompletePlace.autoCompleteRowHeight = 50;
+    self.txtAutoCompletePlace.autoCompleteRowHeight = 55;
     self.txtAutoCompletePlace.autoCompleteTableCellTextColor = [UIColor colorWithWhite:0.131 alpha:1.000];
     self.txtAutoCompletePlace.autoCompleteFontSize = 16;
     self.txtAutoCompletePlace.autoCompleteTableBorderWidth = 1.0;
     self.txtAutoCompletePlace.autoCompleteTableBorderColor = [DbUtils colorWithHexString:@"#e0e0e0"]; //[UIColor colorWithWhite:0.131 alpha:0.8];
     self.txtAutoCompletePlace.showTextFieldDropShadowWhenAutoCompleteTableIsOpen = YES;
     self.txtAutoCompletePlace.autoCompleteShouldHideOnSelection = YES;
-    self.txtAutoCompletePlace.autoCompleteShouldHideClosingKeyboard = YES;
+    
+    //self.autoCompleteTableView;
+//    self.txtAutoCompletePlace.autoCompleteKeyboardDismissModeOnDrag = YES;
+    //self.txtAutoCompletePlace.autoCompleteShouldHideClosingKeyboard = NO;
     self.txtAutoCompletePlace.autoCompleteShouldSelectOnExactMatchAutomatically = YES;
     
+    // -- headerView --
+    UIView *headerView = [[UIView alloc] initWithFrame:(CGRect){0, 0, 320, 50}];
+    headerView.backgroundColor = [UIColor lightGrayColor];
+    UIButton *btnHeader = [[UIButton alloc] initWithFrame:(CGRect){10, 10, 300, 30}];
+    btnHeader.tag = 1;
+    [btnHeader setTitle:@"Header Click Me!" forState:UIControlStateNormal];
+    [btnHeader setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    btnHeader.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    // add targets and actions
+    [btnHeader addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [headerView addSubview:btnHeader];
+    self.txtAutoCompletePlace.headerView = headerView;
+
+    // -- footerView --
     UIView *footerView = [[UIView alloc] initWithFrame:(CGRect){0, 0, 320, 50}];
     footerView.backgroundColor = [UIColor lightGrayColor];
-    UIButton *btn = [[UIButton alloc] initWithFrame:(CGRect){10, 10, 300, 30}];
-    [btn setTitle:@"Click Me!" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
-    btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    UIButton *btnFooter = [[UIButton alloc] initWithFrame:(CGRect){10, 10, 300, 30}];
+    btnFooter.tag = 2;
+    [btnFooter setTitle:@"Footer Click Me!" forState:UIControlStateNormal];
+    [btnFooter setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    btnFooter.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     //btn.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
-    
     // add targets and actions
-    [btn addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [footerView addSubview:btn];
-    
+    [btnFooter addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [footerView addSubview:btnFooter];
     self.txtAutoCompletePlace.footerView = footerView;
 }
 
@@ -69,15 +88,15 @@
 {
     [super viewDidAppear:animated];
     
-    // -- Conflicts with txtAutoCompletePlace when you choose row --
-    [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:NO];
+//    // -- Conflicts with txtAutoCompletePlace when you choose row --
+//    [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:NO];
     
     CGRect tableFrame = (CGRect){
-        17,
-        self.txtAutoCompletePlace.bottom + 25,
-        SCREEN_WIDTH - (17*2),
-        (5 * 60) + 50
-        //self.view.frame.size.height - (self.txtAutoCompletePlace.height + 10)
+        self.txtAutoCompletePlace.left,
+        self.vwAddress.bottom + 5,
+        self.txtAutoCompletePlace.width,
+        (5 * self.txtAutoCompletePlace.autoCompleteRowHeight) + 50 + 50
+        // chieu cao chi cho hien 5 + header + footer height
     };
      NSLog(@"tableFrame = %@", NSStringFromCGRect(tableFrame));
     self.txtAutoCompletePlace.autoCompleteTableFrame = tableFrame;
@@ -86,8 +105,9 @@
 
 - (IBAction)buttonClicked:(UIButton *)sender
 {
-    NSLog(@"%@", @"buttonClicked");
-    [self.txtAutoCompletePlace closeAutoCompleteTableView];
+    NSLog(@"%@", sender.titleLabel.text);
+    // [self.txtAutoCompletePlace closeAutoCompleteTableView];
+    [self.txtAutoCompletePlace resignFirstResponder];
 }
 
 - (IBAction)btnSearch_Click:(id)sender
@@ -138,7 +158,7 @@
 //    currentLocation = responseDict.coordinate;
 //    [self loadNewMarkerAndMoveTo:currentLocation];
 //
-//    self.txtAddress.text = responseDict.formattedAddress;
+    self.txtAutoCompletePlace.text = responseDict.formattedAddress;
 //
 //    // -- Save to user session --
 //    //    self.userSession.address = responseDict.formattedAddress;
@@ -158,7 +178,7 @@
 
 - (void)placeSearchWillHideResult:(MVPlaceSearchTextField*)textField { }
 
-- (BOOL)placeSearch:(MVPlaceSearchTextField*)textField ResultCell:(AddressTableViewCell*)cell
+- (BOOL)placeSearch:(MVPlaceSearchTextField*)textField ResultCell:(SuggestionAddressItemTableViewCell*)cell
     withPlaceObject:(PlaceObject*)placeObject atIndex:(NSInteger)index
 {
     // NSLog(@"%@", [placeObject.userInfo description]);
@@ -166,11 +186,9 @@
     NSLog(@"address = %@", address);
     
     NSMutableArray *arrString = [[address componentsSeparatedByString:@","] mutableCopy];
-    cell.lbl_1.text = [arrString firstObject];
+    cell.lblMainAddress.text = [arrString firstObject];
     [arrString removeObjectAtIndex:0];
-    cell.lbl_2.text = [DbUtils trimText:[arrString componentsJoinedByString:@", "]];
-
-    [cell.img_1 setImage:[UIImage imageNamed:@"ic_pin_local"]];
+    cell.lblSubAddress.text = [DbUtils trimText:[arrString componentsJoinedByString:@", "]];
     
     return NO;
     

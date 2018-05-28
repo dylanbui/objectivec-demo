@@ -205,6 +205,8 @@
 		BBC4214D2099B82900B26D67 /* PushedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC4214B2099B82900B26D67 /* PushedViewController.xib */; };
 		BBC421512099B83E00B26D67 /* PresentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC4214F2099B83E00B26D67 /* PresentedViewController.m */; };
 		BBC421522099B83E00B26D67 /* PresentedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC421502099B83E00B26D67 /* PresentedViewController.xib */; };
+		BBCB00B820B887C300DC9E1F /* SuggestionAddressItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB00B520B887C200DC9E1F /* SuggestionAddressItemTableViewCell.m */; };
+		BBCB00B920B887C300DC9E1F /* SuggestionAddressItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCB00B720B887C300DC9E1F /* SuggestionAddressItemTableViewCell.xib */; };
 		BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCC62981F5E4C11006FF200 /* GBFlatButton.m */; };
 		BBCFCA4F207B193C0091C01A /* MVPlaceSearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFCA48207B193C0091C01A /* MVPlaceSearchTextField.m */; };
 		BBCFCA50207B193C0091C01A /* PlaceDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFCA4A207B193C0091C01A /* PlaceDetail.m */; };
@@ -692,6 +694,9 @@
 		BBC4214E2099B83E00B26D67 /* PresentedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentedViewController.h; sourceTree = "<group>"; };
 		BBC4214F2099B83E00B26D67 /* PresentedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentedViewController.m; sourceTree = "<group>"; };
 		BBC421502099B83E00B26D67 /* PresentedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresentedViewController.xib; sourceTree = "<group>"; };
+		BBCB00B520B887C200DC9E1F /* SuggestionAddressItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionAddressItemTableViewCell.m; sourceTree = "<group>"; };
+		BBCB00B620B887C200DC9E1F /* SuggestionAddressItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionAddressItemTableViewCell.h; sourceTree = "<group>"; };
+		BBCB00B720B887C300DC9E1F /* SuggestionAddressItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuggestionAddressItemTableViewCell.xib; sourceTree = "<group>"; };
 		BBCC62971F5E4C11006FF200 /* GBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBFlatButton.h; sourceTree = "<group>"; };
 		BBCC62981F5E4C11006FF200 /* GBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBFlatButton.m; sourceTree = "<group>"; };
 		BBCFCA47207B193C0091C01A /* MVPlaceSearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVPlaceSearchTextField.h; sourceTree = "<group>"; };
@@ -1802,6 +1807,9 @@
 				BBCFCA53207B19B70091C01A /* DemoTextSearchGGViewController.h */,
 				BBCFCA54207B19B70091C01A /* DemoTextSearchGGViewController.m */,
 				BBCFCA55207B19B70091C01A /* DemoTextSearchGGViewController.xib */,
+				BBCB00B620B887C200DC9E1F /* SuggestionAddressItemTableViewCell.h */,
+				BBCB00B520B887C200DC9E1F /* SuggestionAddressItemTableViewCell.m */,
+				BBCB00B720B887C300DC9E1F /* SuggestionAddressItemTableViewCell.xib */,
 				BBCFCA6E207B66020091C01A /* AddressTableViewCell.h */,
 				BBCFCA6F207B66020091C01A /* AddressTableViewCell.m */,
 				BBCFCA70207B66020091C01A /* AddressTableViewCell.xib */,
@@ -2439,6 +2447,7 @@
 				BBEDC4361FBC3EEA000317FD /* slider-default7-handle@2x.png in Resources */,
 				BB25FC9A1F51DFC20005372B /* artists.json in Resources */,
 				BB85B0B72092E04E0060A8FA /* DemoAttributedStringViewController.xib in Resources */,
+				BBCB00B920B887C300DC9E1F /* SuggestionAddressItemTableViewCell.xib in Resources */,
 				BB25FC931F51DE330005372B /* TableExpandCellViewController.xib in Resources */,
 				BBDE4A9B2085F58B00731A69 /* 09_S.jpeg in Resources */,
 				BBDE4A982085F58B00731A69 /* 06_S.jpeg in Resources */,
@@ -2741,6 +2750,7 @@
 				BBD99B401F7CD851004B20AF /* TBTabbarViewController.m in Sources */,
 				BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */,
 				BBC421512099B83E00B26D67 /* PresentedViewController.m in Sources */,
+				BBCB00B820B887C300DC9E1F /* SuggestionAddressItemTableViewCell.m in Sources */,
 				BBB01882204F962C00153BD6 /* UIViewController+KNSemiModal.m in Sources */,
 				BB9A74341FD80BBE004BEE9D /* UploadFileViewController.m in Sources */,
 				BB4FD3BE1F4429E200C082C3 /* AppDelegate.m in Sources */,
