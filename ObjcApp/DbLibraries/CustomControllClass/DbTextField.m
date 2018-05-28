@@ -76,5 +76,30 @@
     self.leftViewMode = UITextFieldViewModeAlways;
 }
 
+- (void)addRightView:(UIView *)rightView
+{
+    self.rightView = rightView;
+    self.rightViewMode = UITextFieldViewModeAlways;
+}
+
+- (UIView *)addRightViewWithImage:(UIImageView*)imageView andPadding:(float)padding
+{
+    float height = CGRectGetHeight(imageView.frame);
+    float width =  CGRectGetWidth(imageView.frame) + padding;
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+    [paddingView addSubview:imageView];
+    [self addRightView:paddingView];
+    return paddingView;
+}
+
+- (UIView *)addLeftViewWithImage:(UIImageView*)imageView andPadding:(float)padding
+{
+    float height = CGRectGetHeight(imageView.frame);
+    float width =  CGRectGetWidth(imageView.frame) + padding;
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+    [paddingView addSubview:imageView];
+    [self addLeftView:paddingView];
+    return paddingView;
+}
 
 @end

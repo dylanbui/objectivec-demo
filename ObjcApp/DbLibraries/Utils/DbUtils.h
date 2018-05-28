@@ -61,6 +61,7 @@
 + (UIColor *_Nonnull)colorWithHexString:(NSString *_Nonnull)hexStr alpha:(float)alpha;
 // Create a color using a hex RGB value : ex. [Utils colorWithHexValue: 0x03047F]
 + (UIColor *_Nonnull)colorWithHexValue:(NSInteger) rgbValue alpha:(float)alpha;
++ (UIImage *_Nonnull)colorImageWithColor:(UIColor *_Nonnull)color;
 
 // -- Datetime --
 + (NSString *_Nonnull)dateToString:(NSNumber *_Nonnull)timeMiliSeconds withFormat:(NSString *_Nonnull)format;

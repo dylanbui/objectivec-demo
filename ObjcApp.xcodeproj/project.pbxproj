@@ -25,6 +25,10 @@
 		BB1320E71FD930F8003CCCA3 /* DbBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1320D91FD930F8003CCCA3 /* DbBarButtonItem.m */; };
 		BB1320E81FD930F8003CCCA3 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1320DB1FD930F8003CCCA3 /* UIBarButtonItem+Badge.m */; };
 		BB1321211FD93406003CCCA3 /* DbAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1321201FD93406003CCCA3 /* DbAssets.xcassets */; };
+		BB135C5C20B3BD3D00B0E02F /* PzTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BB135C5B20B3BD3D00B0E02F /* PzTextField.m */; };
+		BB23B42F20B2C5560095EC18 /* PzCustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23B42C20B2C5560095EC18 /* PzCustomTextField.m */; };
+		BB23B43020B2C5560095EC18 /* PzCustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB23B42D20B2C5560095EC18 /* PzCustomTextField.xib */; };
+		BB23B43320B2CD6C0095EC18 /* DbXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23B43220B2CD6C0095EC18 /* DbXibView.m */; };
 		BB259A80209C0FB700213223 /* DemoLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB259A7E209C0FB700213223 /* DemoLocationViewController.m */; };
 		BB259A81209C0FB700213223 /* DemoLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB259A7F209C0FB700213223 /* DemoLocationViewController.xib */; };
 		BB259A88209C204B00213223 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB259A87209C204B00213223 /* MapKit.framework */; };
@@ -394,6 +398,13 @@
 		BB1320DA1FD930F8003CCCA3 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
 		BB1320DB1FD930F8003CCCA3 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
 		BB1321201FD93406003CCCA3 /* DbAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DbAssets.xcassets; sourceTree = "<group>"; };
+		BB135C5A20B3BD3D00B0E02F /* PzTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PzTextField.h; sourceTree = "<group>"; };
+		BB135C5B20B3BD3D00B0E02F /* PzTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PzTextField.m; sourceTree = "<group>"; };
+		BB23B42C20B2C5560095EC18 /* PzCustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PzCustomTextField.m; sourceTree = "<group>"; };
+		BB23B42D20B2C5560095EC18 /* PzCustomTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PzCustomTextField.xib; sourceTree = "<group>"; };
+		BB23B42E20B2C5560095EC18 /* PzCustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PzCustomTextField.h; sourceTree = "<group>"; };
+		BB23B43120B2CD6C0095EC18 /* DbXibView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbXibView.h; sourceTree = "<group>"; };
+		BB23B43220B2CD6C0095EC18 /* DbXibView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbXibView.m; sourceTree = "<group>"; };
 		BB259A7D209C0FB700213223 /* DemoLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoLocationViewController.h; sourceTree = "<group>"; };
 		BB259A7E209C0FB700213223 /* DemoLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoLocationViewController.m; sourceTree = "<group>"; };
 		BB259A7F209C0FB700213223 /* DemoLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoLocationViewController.xib; sourceTree = "<group>"; };
@@ -977,6 +988,20 @@
 				BB1320D11FD930F8003CCCA3 /* AVCamViewController.m */,
 			);
 			path = AVCamFromApple;
+			sourceTree = "<group>";
+		};
+		BB23B42B20B2C5560095EC18 /* PzCustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				BB23B42E20B2C5560095EC18 /* PzCustomTextField.h */,
+				BB23B42C20B2C5560095EC18 /* PzCustomTextField.m */,
+				BB23B42D20B2C5560095EC18 /* PzCustomTextField.xib */,
+				BB23B43120B2CD6C0095EC18 /* DbXibView.h */,
+				BB23B43220B2CD6C0095EC18 /* DbXibView.m */,
+				BB135C5A20B3BD3D00B0E02F /* PzTextField.h */,
+				BB135C5B20B3BD3D00B0E02F /* PzTextField.m */,
+			);
+			path = PzCustomTextField;
 			sourceTree = "<group>";
 		};
 		BB259A7C209C0F9400213223 /* Demo-LocationManager */ = {
@@ -1865,6 +1890,7 @@
 		BBD965DA1F5A8B5500CCAF2C /* Demo-Button */ = {
 			isa = PBXGroup;
 			children = (
+				BB23B42B20B2C5560095EC18 /* PzCustomTextField */,
 				BBD965DB1F5A8B6200CCAF2C /* DemoButtonViewController.h */,
 				BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */,
 				BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */,
@@ -2345,6 +2371,7 @@
 				BBDE4A992085F58B00731A69 /* 07_S.jpeg in Resources */,
 				BBDE4A962085F58B00731A69 /* 04_S.jpeg in Resources */,
 				BBD289C52051170E00045830 /* CalendarView.xib in Resources */,
+				BB23B43020B2C5560095EC18 /* PzCustomTextField.xib in Resources */,
 				BBDE4A852085F58B00731A69 /* 03_L.jpeg in Resources */,
 				BBD99B311F7CD7BD004B20AF /* TBTwoViewController.xib in Resources */,
 				BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */,
@@ -2617,6 +2644,7 @@
 				BB85B0C92092E1210060A8FA /* NSAttributedString+OHAdditions.m in Sources */,
 				BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */,
 				BBE5EF7B1FDFD1B6005F3900 /* SLParallaxViewController.m in Sources */,
+				BB23B42F20B2C5560095EC18 /* PzCustomTextField.m in Sources */,
 				BBCFCA6D207B2A450091C01A /* NSString+Levenshtein.m in Sources */,
 				BB259A80209C0FB700213223 /* DemoLocationViewController.m in Sources */,
 				BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */,
@@ -2701,6 +2729,7 @@
 				BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */,
 				BB85B0B62092E04E0060A8FA /* DemoAttributedStringViewController.m in Sources */,
 				BB4FD4D31F443BC100C082C3 /* PathsViewController.m in Sources */,
+				BB23B43320B2CD6C0095EC18 /* DbXibView.m in Sources */,
 				BBCFCA6C207B2A450091C01A /* MLPAutoCompleteTextField.m in Sources */,
 				BB1320E81FD930F8003CCCA3 /* UIBarButtonItem+Badge.m in Sources */,
 				BB345F721F606E02009B7274 /* BTLabel.m in Sources */,
@@ -2757,6 +2786,7 @@
 				BBC07C4E1F4A00B7007A3B5C /* DetailPathsViewController.m in Sources */,
 				BBD99B351F7CD7CF004B20AF /* TBThreeViewController.m in Sources */,
 				BBF2E8C71F548ED800064035 /* TaskTableViewHeader.m in Sources */,
+				BB135C5C20B3BD3D00B0E02F /* PzTextField.m in Sources */,
 				BB4FD4D11F443BC100C082C3 /* DetailCoursesViewController.m in Sources */,
 				BBA9CD4320884B86004C33CE /* ExampleMyCropViewController.m in Sources */,
 				BB4FD4891F442AEE00C082C3 /* DbResponseObject.m in Sources */,
