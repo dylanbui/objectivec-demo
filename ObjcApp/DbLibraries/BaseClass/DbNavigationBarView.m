@@ -71,6 +71,7 @@
 - (void)controllerViewDidLoad:(NSNotification *)notification
 {
     if ([notification.object isEqual:self.vclContainer]) {
+//        [self showNavigation];
     }
 }
 
@@ -131,7 +132,8 @@
 - (void)hideAllItemNavigationBar
 {
     for (UIView *viewControl in self.subviews) {
-        if ([viewControl isKindOfClass:[UILabel class]]) {
+        if ([viewControl isKindOfClass:[UIView class]]
+            || [viewControl isKindOfClass:[UILabel class]]) {
             viewControl.alpha = 0;
             viewControl.tag = viewControl.frame.origin.x;
             viewControl.frame = (CGRect) {viewControl.frame.origin.x + 100, viewControl.frame.origin.y, viewControl.frame.size};
@@ -144,7 +146,8 @@
 - (void)showAllItemNavigationBar
 {
     for (UIView *viewControl in self.subviews) {
-        if ([viewControl isKindOfClass:[UILabel class]]) {
+        if ([viewControl isKindOfClass:[UIView class]]
+            || [viewControl isKindOfClass:[UILabel class]]) {
             viewControl.alpha = 1;
             viewControl.frame = (CGRect) {viewControl.tag, viewControl.frame.origin.y, viewControl.frame.size};
         } else if ([viewControl isKindOfClass:[UIButton class]] || [viewControl isKindOfClass:[UIBarButtonItem class]]) {

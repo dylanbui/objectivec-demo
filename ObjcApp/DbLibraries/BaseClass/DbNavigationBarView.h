@@ -34,6 +34,7 @@
 
 @property (nonatomic, weak) UIViewController *vclContainer;
 
+@property (weak, nonatomic) IBOutlet UIView *vwBarContent;
 @property (weak, nonatomic) IBOutlet UIButton *btnBack;
 
 - (id)initWithViewController:(UIViewController *)containerViewController;
@@ -47,6 +48,7 @@
 
 - (void)initView;
 
+// -- DucBui 31/05/2018 : Khong con su dung nua --
 - (void)hideAllItemNavigationBar;
 - (void)showAllItemNavigationBar;
 

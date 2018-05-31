@@ -9,10 +9,13 @@
 #import "DbViewFromXib.h"
 #import "DbConstant.h"
 
+// -- Demo : Khong ke thua tu lop goc --
+
 @interface NavigationBarTitleView : DbViewFromXib
 
 @property (nonatomic, weak) UIViewController *vclContainer;
 
+@property (weak, nonatomic) IBOutlet UIView *vwBarContent;
 @property (weak, nonatomic) IBOutlet UIButton *btnBack;
 
 - (id)initWithViewController:(UIViewController *)containerViewController;

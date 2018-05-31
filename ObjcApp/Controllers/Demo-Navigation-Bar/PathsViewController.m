@@ -10,6 +10,7 @@
 #import "CoursesViewController.h"
 #import "PhotoGalleryViewController.h"
 #import "DetailPathsViewController.h"
+#import "HeightBarViewController.h"
 //#import "NavigationBarView.h"
 //#import "Constant.h"
 
@@ -76,10 +77,15 @@
     [self.navigationController pushViewController:vcFirst animated:YES];
 }
 
+- (IBAction)btnHeightBar_Click:(id)sender
+{
+    HeightBarViewController *vcFirst = [[HeightBarViewController alloc] init];
+    [self.navigationController pushViewController:vcFirst animated:YES];
+}
 
 - (IBAction)btnChooseImg_Click:(id)sender
 {
-    PhotoGalleryViewController *vclCropPhoto = [[PhotoGalleryViewController alloc] init];
+    PhotoGalleryViewController *vclCropPhoto = [PhotoGalleryViewController sharedInstance];
     vclCropPhoto.singleSelect = NO;
     vclCropPhoto.maxSelected = 5;
     vclCropPhoto.sourceType = DKImagePickerControllerSourceTypeBoth;

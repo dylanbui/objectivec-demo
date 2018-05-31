@@ -25,6 +25,8 @@
 		BB1320E71FD930F8003CCCA3 /* DbBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1320D91FD930F8003CCCA3 /* DbBarButtonItem.m */; };
 		BB1320E81FD930F8003CCCA3 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1320DB1FD930F8003CCCA3 /* UIBarButtonItem+Badge.m */; };
 		BB1321211FD93406003CCCA3 /* DbAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1321201FD93406003CCCA3 /* DbAssets.xcassets */; };
+		BB17B0FB20C0622C00171435 /* HeightBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB17B0F920C0622C00171435 /* HeightBarViewController.m */; };
+		BB17B0FC20C0622C00171435 /* HeightBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB17B0FA20C0622C00171435 /* HeightBarViewController.xib */; };
 		BB259A80209C0FB700213223 /* DemoLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB259A7E209C0FB700213223 /* DemoLocationViewController.m */; };
 		BB259A81209C0FB700213223 /* DemoLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB259A7F209C0FB700213223 /* DemoLocationViewController.xib */; };
 		BB259A88209C204B00213223 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB259A87209C204B00213223 /* MapKit.framework */; };
@@ -396,6 +398,9 @@
 		BB1320DA1FD930F8003CCCA3 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
 		BB1320DB1FD930F8003CCCA3 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
 		BB1321201FD93406003CCCA3 /* DbAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DbAssets.xcassets; sourceTree = "<group>"; };
+		BB17B0F820C0622C00171435 /* HeightBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeightBarViewController.h; sourceTree = "<group>"; };
+		BB17B0F920C0622C00171435 /* HeightBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeightBarViewController.m; sourceTree = "<group>"; };
+		BB17B0FA20C0622C00171435 /* HeightBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeightBarViewController.xib; sourceTree = "<group>"; };
 		BB259A7D209C0FB700213223 /* DemoLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoLocationViewController.h; sourceTree = "<group>"; };
 		BB259A7E209C0FB700213223 /* DemoLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoLocationViewController.m; sourceTree = "<group>"; };
 		BB259A7F209C0FB700213223 /* DemoLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoLocationViewController.xib; sourceTree = "<group>"; };
@@ -1511,6 +1516,9 @@
 				BB4FD4C91F443BC100C082C3 /* DetailCoursesViewController.h */,
 				BB4FD4CA1F443BC100C082C3 /* DetailCoursesViewController.m */,
 				BB4FD4CB1F443BC100C082C3 /* DetailCoursesViewController.xib */,
+				BB17B0F820C0622C00171435 /* HeightBarViewController.h */,
+				BB17B0F920C0622C00171435 /* HeightBarViewController.m */,
+				BB17B0FA20C0622C00171435 /* HeightBarViewController.xib */,
 			);
 			path = "Demo-Navigation-Bar";
 			sourceTree = "<group>";
@@ -2495,6 +2503,7 @@
 				BBEDC43E1FBC3EEA000317FD /* slider-metal-handle-highlighted@2x.png in Resources */,
 				BBEDC43D1FBC3EEA000317FD /* slider-metal-handle-highlighted.png in Resources */,
 				BBDE4A9F2085F58B00731A69 /* 13_S.jpeg in Resources */,
+				BB17B0FC20C0622C00171435 /* HeightBarViewController.xib in Resources */,
 				BB1320E41FD930F8003CCCA3 /* DbCameraViewController.xib in Resources */,
 				BBEDC4371FBC3EEA000317FD /* slider-default7-track.png in Resources */,
 				BBD99B2C1F7CD791004B20AF /* TBOneViewController.xib in Resources */,
@@ -2626,6 +2635,7 @@
 				BB85B0C92092E1210060A8FA /* NSAttributedString+OHAdditions.m in Sources */,
 				BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */,
 				BBE5EF7B1FDFD1B6005F3900 /* SLParallaxViewController.m in Sources */,
+				BB17B0FB20C0622C00171435 /* HeightBarViewController.m in Sources */,
 				BBCFCA6D207B2A450091C01A /* NSString+Levenshtein.m in Sources */,
 				BB259A80209C0FB700213223 /* DemoLocationViewController.m in Sources */,
 				BBC07C481F49E718007A3B5C /* NavigationBarTitleView.m in Sources */,

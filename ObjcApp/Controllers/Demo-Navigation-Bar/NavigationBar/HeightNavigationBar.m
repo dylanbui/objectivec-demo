@@ -39,13 +39,31 @@
 //    
 //    [super showNavigation];
 
+    // -- Chinh chieu cao cua Navigator Bar --
+    // -- Goi hien thi Navigator Bar o super class--
     [UIView animateWithDuration:0.3 animations:^{
         UINavigationBar *navigationBar = [[self.vclContainer navigationController] navigationBar];
         CGRect frame = [navigationBar frame];
         frame.size.height = 65.0f;
         [navigationBar setFrame:frame];
     } completion:^(BOOL finished) {
-        [super showNavigation];
+//        [super showNavigation];
+        
+        [self.vclContainer.navigationController.navigationBar addSubview:self];
+        [self showAllItemNavigationBar];
+//        [UIView animateWithDuration:0.4 animations:^{
+//            [self showAllItemNavigationBar];
+//        }];
+        
+//        self.alpha = 0.5;
+//        [UIView animateWithDuration:0.1 animations:^{
+//            self.alpha = 1;
+//        } completion:^(BOOL finished) {
+//            [UIView animateWithDuration:0.4 animations:^{
+//                [self showAllItemNavigationBar];
+//            }];
+//        }];
+        
     }];
 }
 
@@ -59,18 +77,40 @@
 //    
 //    [super hideNavigation];
     
+    // -- Chinh chieu cao cua Navigator Bar --
+    // -- Goi hien thi Navigator Bar o super class--
     [UIView animateWithDuration:0.3 animations:^{
         UINavigationBar *navigationBar = [[self.vclContainer navigationController] navigationBar];
         CGRect frame = [navigationBar frame];
         frame.size.height = 44.0f;
         [navigationBar setFrame:frame];
-        [super hideNavigation];
+        
+        //[super hideNavigation];
+        
+        [UIView animateWithDuration:0.1 animations:^{
+            [self hideAllItemNavigationBar];
+        } completion:^(BOOL finished) {
+            [self removeFromSuperview];
+        }];
+        
     } completion:^(BOOL finished) {
         
     }];
     
 }
 
-
+// -- Override Parent Functions --
+- (void)showAllItemNavigationBar
+{
+    self.vwBarContent.alpha = 1;
+    self.vwBarContent.frame = (CGRect) {self.vwBarContent.tag, self.vwBarContent.frame.origin.y, self.vwBarContent.frame.size};
+}
+// -- Override Parent Functions --
+- (void)hideAllItemNavigationBar
+{
+    self.vwBarContent.alpha = 0;
+    self.vwBarContent.tag = self.vwBarContent.frame.origin.x;
+    self.vwBarContent.frame = (CGRect) {self.vwBarContent.frame.origin.x, self.vwBarContent.frame.origin.y, self.vwBarContent.frame.size};
+}
 
 @end
