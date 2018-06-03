@@ -11,11 +11,16 @@
 #import "BALabel.h"
 #import "DbLabel.h"
 
+#import "PzCustomTextField.h"
+#import "PzTextField.h"
+
 @interface DemoButtonViewController ()
 
 @property (weak, nonatomic) IBOutlet BTLabel *lblTopTitle;
 
 @property (weak, nonatomic) IBOutlet DbLabel *lblDucBui;
+
+@property (weak, nonatomic) IBOutlet PzTextField *txtCustom;
 
 
 @end
@@ -38,6 +43,21 @@
     //[lbl setTextAlignment:NSTextAlignmentRight];
     [lbl setText:@"Redistributions in binary form must reproduce the above copyright notice"];
     [self.view addSubview:lbl];
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.txtCustom touchInside:^(id owner) {
+        [DbUtils showAlertMessage1ButtonWithController:self title:@"Thong bao" message:@"Noi dung thong bao" buttonTitle:@"ok" tapBlock:^{
+            PzTextField *txt = (PzTextField *)owner;
+            txt.text = @"Tien duc bui van";
+        }];
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

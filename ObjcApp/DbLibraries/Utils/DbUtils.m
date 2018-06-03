@@ -324,6 +324,18 @@ static RMUniversalAlert *alertNetworkConnection = nil;
                            alpha:alpha];
 }
 
++ (UIImage *)colorImageWithColor:(UIColor *)color
+{
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 #pragma mark -
 #pragma mark Date Time
 #pragma mark -
