@@ -28,7 +28,8 @@
 {
     if ([[self viewControllers] count] > 1)
     {
-        [self replaceCurrentViewController:replaceViewController animated:animated];
+        [self pushArrayViewControllerToFirstViewController:@[replaceViewController] withAnimated:animated];
+        //[self replaceCurrentViewController:replaceViewController animated:animated];
     } else {
         [self pushViewController:replaceViewController animated:animated];
     }

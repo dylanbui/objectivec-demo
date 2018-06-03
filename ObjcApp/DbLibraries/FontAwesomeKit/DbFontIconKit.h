@@ -1,6 +1,6 @@
-#ifndef DbFontAwesomeKit
+#ifndef DbFontIconKit
 
-#define DbFontAwesomeKit
+#define DbFontIconKit
 
 #import "DbKitIcon.h"
 #import "DbFontAwesome.h"

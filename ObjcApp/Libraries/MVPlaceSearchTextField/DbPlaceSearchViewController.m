@@ -8,7 +8,7 @@
 
 #import "DbPlaceSearchViewController.h"
 #import "DbUtils.h"
-#import "DbFontAwesomeKit.h"
+#import "DbFontIconKit.h"
 #import "UIView+LayoutHelper.h"
 
 @interface DbPlaceSearchViewController ()

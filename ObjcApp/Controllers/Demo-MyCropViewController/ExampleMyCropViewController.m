@@ -7,7 +7,7 @@
 //
 
 #import "ExampleMyCropViewController.h"
-#import "DbFontAwesomeKit.h"
+#import "DbFontIconKit.h"
 #import "DbBarButtonItem.h"
 
 // -- Co the dung them --

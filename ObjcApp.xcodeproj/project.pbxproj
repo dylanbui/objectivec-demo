@@ -250,6 +250,15 @@
 		BBD99B3A1F7CD7DE004B20AF /* TBFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD99B381F7CD7DE004B20AF /* TBFourViewController.m */; };
 		BBD99B3B1F7CD7DE004B20AF /* TBFourViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD99B391F7CD7DE004B20AF /* TBFourViewController.xib */; };
 		BBD99B401F7CD851004B20AF /* TBTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD99B3F1F7CD851004B20AF /* TBTabbarViewController.m */; };
+		BBD9F14D20C43EEE00882108 /* DbUploadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD9F14820C43EEE00882108 /* DbUploadOperation.m */; };
+		BBD9F14E20C43EEE00882108 /* DbOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD9F14B20C43EEE00882108 /* DbOperation.m */; };
+		BBD9F14F20C43EEE00882108 /* DbOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD9F14C20C43EEE00882108 /* DbOperationQueue.m */; };
+		BBD9F15120C4401600882108 /* READ_ME.txt in Resources */ = {isa = PBXBuildFile; fileRef = BBD9F15020C4401600882108 /* READ_ME.txt */; };
+		BBD9F15520C44C8400882108 /* TaskManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD9F15320C44C8400882108 /* TaskManagerViewController.m */; };
+		BBD9F15620C44C8400882108 /* TaskManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD9F15420C44C8400882108 /* TaskManagerViewController.xib */; };
+		BBD9F15A20C44CE900882108 /* TaskOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD9F15920C44CE900882108 /* TaskOperator.m */; };
+		BBD9F15E20C45F6A00882108 /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD9F15D20C45F6A00882108 /* TaskManager.m */; };
+		BBD9F16120C4625300882108 /* TaskIDGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD9F16020C4625300882108 /* TaskIDGenerator.m */; };
 		BBDBD8FA1F6A9A97009C9340 /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD8F81F6A9A97009C9340 /* KeyboardViewController.m */; };
 		BBDBD8FB1F6A9A97009C9340 /* KeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDBD8F91F6A9A97009C9340 /* KeyboardViewController.xib */; };
 		BBDBD9001F6A9B6B009C9340 /* NSDictionary+DbHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDBD8FD1F6A9B6B009C9340 /* NSDictionary+DbHelper.m */; };
@@ -420,7 +429,7 @@
 		BB345F711F606E02009B7274 /* BTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLabel.m; sourceTree = "<group>"; };
 		BB3889E8207F67E300F1DC1D /* DbFontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbFontAwesome.h; sourceTree = "<group>"; };
 		BB3889E9207F67E300F1DC1D /* DbFontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbFontAwesome.m; sourceTree = "<group>"; };
-		BB3889EA207F67E300F1DC1D /* DbFontAwesomeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbFontAwesomeKit.h; sourceTree = "<group>"; };
+		BB3889EA207F67E300F1DC1D /* DbFontIconKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbFontIconKit.h; sourceTree = "<group>"; };
 		BB3889EB207F67E300F1DC1D /* DbKitIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbKitIcon.h; sourceTree = "<group>"; };
 		BB3889EC207F67E300F1DC1D /* DbKitIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbKitIcon.m; sourceTree = "<group>"; };
 		BB3889ED207F67E300F1DC1D /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
@@ -771,6 +780,23 @@
 		BBD99B391F7CD7DE004B20AF /* TBFourViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBFourViewController.xib; sourceTree = "<group>"; };
 		BBD99B3E1F7CD851004B20AF /* TBTabbarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBTabbarViewController.h; sourceTree = "<group>"; };
 		BBD99B3F1F7CD851004B20AF /* TBTabbarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBTabbarViewController.m; sourceTree = "<group>"; };
+		BBD9F14720C43EEE00882108 /* DbOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbOperation.h; sourceTree = "<group>"; };
+		BBD9F14820C43EEE00882108 /* DbUploadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbUploadOperation.m; sourceTree = "<group>"; };
+		BBD9F14920C43EEE00882108 /* DbOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbOperationQueue.h; sourceTree = "<group>"; };
+		BBD9F14A20C43EEE00882108 /* DbUploadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbUploadOperation.h; sourceTree = "<group>"; };
+		BBD9F14B20C43EEE00882108 /* DbOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbOperation.m; sourceTree = "<group>"; };
+		BBD9F14C20C43EEE00882108 /* DbOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbOperationQueue.m; sourceTree = "<group>"; };
+		BBD9F15020C4401600882108 /* READ_ME.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = READ_ME.txt; sourceTree = "<group>"; };
+		BBD9F15220C44C8400882108 /* TaskManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskManagerViewController.h; sourceTree = "<group>"; };
+		BBD9F15320C44C8400882108 /* TaskManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskManagerViewController.m; sourceTree = "<group>"; };
+		BBD9F15420C44C8400882108 /* TaskManagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskManagerViewController.xib; sourceTree = "<group>"; };
+		BBD9F15820C44CE900882108 /* TaskOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskOperator.h; sourceTree = "<group>"; };
+		BBD9F15920C44CE900882108 /* TaskOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskOperator.m; sourceTree = "<group>"; };
+		BBD9F15B20C4552900882108 /* TaskDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskDefines.h; sourceTree = "<group>"; };
+		BBD9F15C20C45F6A00882108 /* TaskManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskManager.h; sourceTree = "<group>"; };
+		BBD9F15D20C45F6A00882108 /* TaskManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskManager.m; sourceTree = "<group>"; };
+		BBD9F15F20C4625200882108 /* TaskIDGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskIDGenerator.h; sourceTree = "<group>"; };
+		BBD9F16020C4625300882108 /* TaskIDGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskIDGenerator.m; sourceTree = "<group>"; };
 		BBDBD8F71F6A9A97009C9340 /* KeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
 		BBDBD8F81F6A9A97009C9340 /* KeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
 		BBDBD8F91F6A9A97009C9340 /* KeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardViewController.xib; sourceTree = "<group>"; };
@@ -1057,7 +1083,7 @@
 		BB3889E7207F67E300F1DC1D /* FontAwesomeKit */ = {
 			isa = PBXGroup;
 			children = (
-				BB3889EA207F67E300F1DC1D /* DbFontAwesomeKit.h */,
+				BB3889EA207F67E300F1DC1D /* DbFontIconKit.h */,
 				BB3889E8207F67E300F1DC1D /* DbFontAwesome.h */,
 				BB3889E9207F67E300F1DC1D /* DbFontAwesome.m */,
 				BB3889EB207F67E300F1DC1D /* DbKitIcon.h */,
@@ -1189,6 +1215,7 @@
 		BB4FD40D1F442AEE00C082C3 /* DbLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				BBD9F14620C43EEE00882108 /* OperationQueue */,
 				BB3889E7207F67E300F1DC1D /* FontAwesomeKit */,
 				BB3FC34E1FC958AE000D37F2 /* Resources */,
 				BB6CC51A1F5D460A0073A0C1 /* CustomControllClass */,
@@ -1495,6 +1522,7 @@
 				BB79D8621F95B45100A0A7C2 /* ViewController.xib */,
 				BBF826501FF4DB9E00D25AD7 /* Demo-DbConnectionViewController */,
 				BB85B0B82092E0570060A8FA /* Demo-NSAttributedString */,
+				BBD9F15720C44C8E00882108 /* Demo-RegisterBackgroundTask */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1930,6 +1958,37 @@
 			path = VIewController;
 			sourceTree = "<group>";
 		};
+		BBD9F14620C43EEE00882108 /* OperationQueue */ = {
+			isa = PBXGroup;
+			children = (
+				BBD9F15020C4401600882108 /* READ_ME.txt */,
+				BBD9F14720C43EEE00882108 /* DbOperation.h */,
+				BBD9F14B20C43EEE00882108 /* DbOperation.m */,
+				BBD9F14920C43EEE00882108 /* DbOperationQueue.h */,
+				BBD9F14C20C43EEE00882108 /* DbOperationQueue.m */,
+				BBD9F14A20C43EEE00882108 /* DbUploadOperation.h */,
+				BBD9F14820C43EEE00882108 /* DbUploadOperation.m */,
+			);
+			path = OperationQueue;
+			sourceTree = "<group>";
+		};
+		BBD9F15720C44C8E00882108 /* Demo-RegisterBackgroundTask */ = {
+			isa = PBXGroup;
+			children = (
+				BBD9F15F20C4625200882108 /* TaskIDGenerator.h */,
+				BBD9F16020C4625300882108 /* TaskIDGenerator.m */,
+				BBD9F15220C44C8400882108 /* TaskManagerViewController.h */,
+				BBD9F15320C44C8400882108 /* TaskManagerViewController.m */,
+				BBD9F15420C44C8400882108 /* TaskManagerViewController.xib */,
+				BBD9F15B20C4552900882108 /* TaskDefines.h */,
+				BBD9F15820C44CE900882108 /* TaskOperator.h */,
+				BBD9F15920C44CE900882108 /* TaskOperator.m */,
+				BBD9F15C20C45F6A00882108 /* TaskManager.h */,
+				BBD9F15D20C45F6A00882108 /* TaskManager.m */,
+			);
+			path = "Demo-RegisterBackgroundTask";
+			sourceTree = "<group>";
+		};
 		BBDBD8F61F6A9A7F009C9340 /* Demo-Keyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -2299,7 +2358,7 @@
 		BB4FD3AE1F4429E200C082C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Propzy Viet Nam";
 				TargetAttributes = {
 					BB4FD3B51F4429E200C082C3 = {
@@ -2398,6 +2457,7 @@
 				BBEDC4441FBC3EEA000317FD /* slider-metal-trackBackground@2x.png in Resources */,
 				BBEDC4301FBC3EEA000317FD /* slider-default-track@2x.png in Resources */,
 				BBDE4A9C2085F58B00731A69 /* 10_S.jpeg in Resources */,
+				BBD9F15120C4401600882108 /* READ_ME.txt in Resources */,
 				BBEDC43C1FBC3EEA000317FD /* slider-default7-trackCrossedOver@2x.png in Resources */,
 				BBDE4A5C2085ECCB00731A69 /* RMPDetailViewController.xib in Resources */,
 				BBEDC4341FBC3EEA000317FD /* slider-default_trackBackground@2x.png in Resources */,
@@ -2468,6 +2528,7 @@
 				BBEDC4571FBC543C000317FD /* db_slider_handle.png in Resources */,
 				BB4FD4B91F442C8A00C082C3 /* OpenSans-ExtraBold.ttf in Resources */,
 				BB79D8631F95B45100A0A7C2 /* ViewController.xib in Resources */,
+				BBD9F15620C44C8400882108 /* TaskManagerViewController.xib in Resources */,
 				BBEDC4431FBC3EEA000317FD /* slider-metal-trackBackground.png in Resources */,
 				BBEDC4421FBC3EEA000317FD /* slider-metal-track@2x.png in Resources */,
 				BBDE4A522085EC1E00731A69 /* RMPImageCollectionViewController.xib in Resources */,
@@ -2665,8 +2726,10 @@
 				BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */,
 				BBD965E51F5B36B800CCAF2C /* LGButton.m in Sources */,
 				BBDBD9001F6A9B6B009C9340 /* NSDictionary+DbHelper.m in Sources */,
+				BBD9F15520C44C8400882108 /* TaskManagerViewController.m in Sources */,
 				BBE143651F8240A20020C400 /* UIView+GSKLayoutHelper.m in Sources */,
 				BB4FD47F1F442AEE00C082C3 /* DbPopupView.m in Sources */,
+				BBD9F14D20C43EEE00882108 /* DbUploadOperation.m in Sources */,
 				BBA9CD5220884BDB004C33CE /* PECropViewController.m in Sources */,
 				BBF1BD731FAC814A0081E179 /* CanvasView.m in Sources */,
 				BB595DB61F6303940003C0B9 /* BALabel.m in Sources */,
@@ -2707,6 +2770,7 @@
 				BBB26C652097915500D1CA61 /* ScrollViewType1ViewController.m in Sources */,
 				BB4FD49A1F442AEE00C082C3 /* SYPhotoBrowser.m in Sources */,
 				BBD6CA9C207E168B004129BE /* GooglePlacesApiClient.m in Sources */,
+				BBD9F16120C4625300882108 /* TaskIDGenerator.m in Sources */,
 				BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */,
 				BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */,
 				BBFE27A520A03E6A004D387B /* DbLocationManager.m in Sources */,
@@ -2740,6 +2804,7 @@
 				BBDBD8FA1F6A9A97009C9340 /* KeyboardViewController.m in Sources */,
 				BB4FD48B1F442AEE00C082C3 /* ActivityIndicatorButton.m in Sources */,
 				BB121DEF1F85DEAD0053171B /* PTPhotoViewController.m in Sources */,
+				BBD9F15A20C44CE900882108 /* TaskOperator.m in Sources */,
 				BB4FD4991F442AEE00C082C3 /* HHSlideView.m in Sources */,
 				BB1320E71FD930F8003CCCA3 /* DbBarButtonItem.m in Sources */,
 				BB4FD4971F442AEE00C082C3 /* DACircularProgressView.m in Sources */,
@@ -2758,6 +2823,7 @@
 				BB4FD4921F442AEE00C082C3 /* APNumberPadDefaultStyle.m in Sources */,
 				BB4FD49C1F442AEE00C082C3 /* SYPhotoViewController.m in Sources */,
 				BB3912FE1F8BE557002F1CE1 /* SLTableViewCell.m in Sources */,
+				BBD9F14F20C43EEE00882108 /* DbOperationQueue.m in Sources */,
 				BB25FC921F51DE330005372B /* TableExpandCellViewController.m in Sources */,
 				BBEDC44D1FBC4060000317FD /* RangeSliderViewController.m in Sources */,
 				BB4FD4851F442AEE00C082C3 /* DbUtils.m in Sources */,
@@ -2768,6 +2834,7 @@
 				BB4FD49B1F442AEE00C082C3 /* SYPhotoBrowserCaptionLabel.m in Sources */,
 				BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */,
 				BB1320E51FD930F8003CCCA3 /* DbImageCollectionViewCell.m in Sources */,
+				BBD9F14E20C43EEE00882108 /* DbOperation.m in Sources */,
 				BBF8264E1FF4DB9600D25AD7 /* DemoDbConnectionViewController.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
 				BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */,
@@ -2799,6 +2866,7 @@
 				BBD1A7E52086FB2900D57B9E /* DbZoomTransitionAnimator.m in Sources */,
 				BB4FD4811F442AEE00C082C3 /* DbViewController.m in Sources */,
 				BBF9A38E1FB04BEA00909F34 /* CanvasImageView.m in Sources */,
+				BBD9F15E20C45F6A00882108 /* TaskManager.m in Sources */,
 				BB4FD4961F442AEE00C082C3 /* PhotoGalleryViewController.m in Sources */,
 				BB3889EF207F67E300F1DC1D /* DbKitIcon.m in Sources */,
 				BB1320E01FD930F8003CCCA3 /* AVCameraFocusSquare.m in Sources */,
@@ -2857,6 +2925,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -2864,6 +2933,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -2911,6 +2981,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -2918,6 +2989,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
