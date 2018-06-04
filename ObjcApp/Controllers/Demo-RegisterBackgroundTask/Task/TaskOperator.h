@@ -11,6 +11,8 @@
 
 @interface TaskOperator : DbOperation <TaskProtocol>
 
+@property (nonatomic) TaskRegisterID taskID;
+
 @property (nonatomic, strong) NSURL *url;
 
 - (instancetype)initWithUrl:(NSURL *)url;

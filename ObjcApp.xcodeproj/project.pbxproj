@@ -38,6 +38,13 @@
 		BB25FCA01F51F46C0005372B /* ExpandTypeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB25FC9E1F51F46C0005372B /* ExpandTypeTwoCell.m */; };
 		BB25FCA11F51F46C0005372B /* ExpandTypeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */; };
 		BB345F721F606E02009B7274 /* BTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB345F711F606E02009B7274 /* BTLabel.m */; };
+		BB36C46A20C4E1B7009660D3 /* PzCustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BB36C46420C4E1B7009660D3 /* PzCustomTextField.m */; };
+		BB36C46B20C4E1B7009660D3 /* PzCustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB36C46620C4E1B7009660D3 /* PzCustomTextField.xib */; };
+		BB36C46C20C4E1B7009660D3 /* DbXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB36C46720C4E1B7009660D3 /* DbXibView.m */; };
+		BB36C46D20C4E1B7009660D3 /* PzTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BB36C46920C4E1B7009660D3 /* PzTextField.m */; };
+		BB36C47120C4E769009660D3 /* UpdateCountryUnitTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BB36C47020C4E769009660D3 /* UpdateCountryUnitTask.m */; };
+		BB36C47420C4F5AC009660D3 /* UpdateTaskOther.m in Sources */ = {isa = PBXBuildFile; fileRef = BB36C47320C4F5AC009660D3 /* UpdateTaskOther.m */; };
+		BB36C47720C4F5F9009660D3 /* UpdateTaskHard.m in Sources */ = {isa = PBXBuildFile; fileRef = BB36C47620C4F5F9009660D3 /* UpdateTaskHard.m */; };
 		BB3889EE207F67E300F1DC1D /* DbFontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3889E9207F67E300F1DC1D /* DbFontAwesome.m */; };
 		BB3889EF207F67E300F1DC1D /* DbKitIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3889EC207F67E300F1DC1D /* DbKitIcon.m */; };
 		BB3889F0207F67E300F1DC1D /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB3889ED207F67E300F1DC1D /* FontAwesome.ttf */; };
@@ -427,6 +434,19 @@
 		BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandTypeTwoCell.xib; sourceTree = "<group>"; };
 		BB345F701F606E02009B7274 /* BTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLabel.h; sourceTree = "<group>"; };
 		BB345F711F606E02009B7274 /* BTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLabel.m; sourceTree = "<group>"; };
+		BB36C46320C4E1B7009660D3 /* DbXibView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbXibView.h; sourceTree = "<group>"; };
+		BB36C46420C4E1B7009660D3 /* PzCustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PzCustomTextField.m; sourceTree = "<group>"; };
+		BB36C46520C4E1B7009660D3 /* PzTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PzTextField.h; sourceTree = "<group>"; };
+		BB36C46620C4E1B7009660D3 /* PzCustomTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PzCustomTextField.xib; sourceTree = "<group>"; };
+		BB36C46720C4E1B7009660D3 /* DbXibView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbXibView.m; sourceTree = "<group>"; };
+		BB36C46820C4E1B7009660D3 /* PzCustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PzCustomTextField.h; sourceTree = "<group>"; };
+		BB36C46920C4E1B7009660D3 /* PzTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PzTextField.m; sourceTree = "<group>"; };
+		BB36C46F20C4E769009660D3 /* UpdateCountryUnitTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateCountryUnitTask.h; sourceTree = "<group>"; };
+		BB36C47020C4E769009660D3 /* UpdateCountryUnitTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateCountryUnitTask.m; sourceTree = "<group>"; };
+		BB36C47220C4F5AC009660D3 /* UpdateTaskOther.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateTaskOther.h; sourceTree = "<group>"; };
+		BB36C47320C4F5AC009660D3 /* UpdateTaskOther.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateTaskOther.m; sourceTree = "<group>"; };
+		BB36C47520C4F5F9009660D3 /* UpdateTaskHard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateTaskHard.h; sourceTree = "<group>"; };
+		BB36C47620C4F5F9009660D3 /* UpdateTaskHard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateTaskHard.m; sourceTree = "<group>"; };
 		BB3889E8207F67E300F1DC1D /* DbFontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbFontAwesome.h; sourceTree = "<group>"; };
 		BB3889E9207F67E300F1DC1D /* DbFontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbFontAwesome.m; sourceTree = "<group>"; };
 		BB3889EA207F67E300F1DC1D /* DbFontIconKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbFontIconKit.h; sourceTree = "<group>"; };
@@ -1078,6 +1098,34 @@
 				BB25FC9F1F51F46C0005372B /* ExpandTypeTwoCell.xib */,
 			);
 			name = ExpandTypeTwo;
+			sourceTree = "<group>";
+		};
+		BB36C46220C4E1B7009660D3 /* PzCustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				BB36C46320C4E1B7009660D3 /* DbXibView.h */,
+				BB36C46420C4E1B7009660D3 /* PzCustomTextField.m */,
+				BB36C46520C4E1B7009660D3 /* PzTextField.h */,
+				BB36C46620C4E1B7009660D3 /* PzCustomTextField.xib */,
+				BB36C46720C4E1B7009660D3 /* DbXibView.m */,
+				BB36C46820C4E1B7009660D3 /* PzCustomTextField.h */,
+				BB36C46920C4E1B7009660D3 /* PzTextField.m */,
+			);
+			path = PzCustomTextField;
+			sourceTree = "<group>";
+		};
+		BB36C46E20C4E72D009660D3 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				BBD9F15B20C4552900882108 /* TaskDefines.h */,
+				BBD9F15F20C4625200882108 /* TaskIDGenerator.h */,
+				BBD9F16020C4625300882108 /* TaskIDGenerator.m */,
+				BBD9F15820C44CE900882108 /* TaskOperator.h */,
+				BBD9F15920C44CE900882108 /* TaskOperator.m */,
+				BBD9F15C20C45F6A00882108 /* TaskManager.h */,
+				BBD9F15D20C45F6A00882108 /* TaskManager.m */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 		BB3889E7207F67E300F1DC1D /* FontAwesomeKit */ = {
@@ -1909,6 +1957,7 @@
 		BBD965DA1F5A8B5500CCAF2C /* Demo-Button */ = {
 			isa = PBXGroup;
 			children = (
+				BB36C46220C4E1B7009660D3 /* PzCustomTextField */,
 				BBD965DB1F5A8B6200CCAF2C /* DemoButtonViewController.h */,
 				BBD965DC1F5A8B6200CCAF2C /* DemoButtonViewController.m */,
 				BBD965DD1F5A8B6200CCAF2C /* DemoButtonViewController.xib */,
@@ -1975,16 +2024,16 @@
 		BBD9F15720C44C8E00882108 /* Demo-RegisterBackgroundTask */ = {
 			isa = PBXGroup;
 			children = (
-				BBD9F15F20C4625200882108 /* TaskIDGenerator.h */,
-				BBD9F16020C4625300882108 /* TaskIDGenerator.m */,
+				BB36C46E20C4E72D009660D3 /* Task */,
 				BBD9F15220C44C8400882108 /* TaskManagerViewController.h */,
 				BBD9F15320C44C8400882108 /* TaskManagerViewController.m */,
 				BBD9F15420C44C8400882108 /* TaskManagerViewController.xib */,
-				BBD9F15B20C4552900882108 /* TaskDefines.h */,
-				BBD9F15820C44CE900882108 /* TaskOperator.h */,
-				BBD9F15920C44CE900882108 /* TaskOperator.m */,
-				BBD9F15C20C45F6A00882108 /* TaskManager.h */,
-				BBD9F15D20C45F6A00882108 /* TaskManager.m */,
+				BB36C46F20C4E769009660D3 /* UpdateCountryUnitTask.h */,
+				BB36C47020C4E769009660D3 /* UpdateCountryUnitTask.m */,
+				BB36C47220C4F5AC009660D3 /* UpdateTaskOther.h */,
+				BB36C47320C4F5AC009660D3 /* UpdateTaskOther.m */,
+				BB36C47520C4F5F9009660D3 /* UpdateTaskHard.h */,
+				BB36C47620C4F5F9009660D3 /* UpdateTaskHard.m */,
 			);
 			path = "Demo-RegisterBackgroundTask";
 			sourceTree = "<group>";
@@ -2358,7 +2407,7 @@
 		BB4FD3AE1F4429E200C082C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Propzy Viet Nam";
 				TargetAttributes = {
 					BB4FD3B51F4429E200C082C3 = {
@@ -2470,6 +2519,7 @@
 				BBEDC4591FBC543C000317FD /* db_slider_text_bg.png in Resources */,
 				BB4FD48E1F442AEE00C082C3 /* apnumberpad_backspace_icon@2x.png in Resources */,
 				BBDE4A8A2085F58B00731A69 /* 08_L.jpeg in Resources */,
+				BB36C46B20C4E1B7009660D3 /* PzCustomTextField.xib in Resources */,
 				BB4FD4DA1F443FEE00C082C3 /* NavigationBarView.xib in Resources */,
 				BBC07C4A1F49E72B007A3B5C /* NavigationBarTitleView.xib in Resources */,
 				BB4FD4BD1F442C8A00C082C3 /* OpenSans-LightItalic.ttf in Resources */,
@@ -2706,6 +2756,7 @@
 				BB4FD4821F442AEE00C082C3 /* DbViewFromXib.m in Sources */,
 				BBC4214020995FBF00B26D67 /* NSMutableAttributedString+Helper.m in Sources */,
 				BBE5EF721FDFD018005F3900 /* HeaderMapView.m in Sources */,
+				BB36C47120C4E769009660D3 /* UpdateCountryUnitTask.m in Sources */,
 				BB4FD4841F442AEE00C082C3 /* DateTimeUtil.m in Sources */,
 				BBEDC4451FBC3EEA000317FD /* NMRangeSlider.m in Sources */,
 				BBA796111FF0BCEC00066B73 /* DbResponse.m in Sources */,
@@ -2723,6 +2774,7 @@
 				BB6CC5201F5D460A0073A0C1 /* DbButton.m in Sources */,
 				BBB0188D204F9D6B00153BD6 /* DemoCalendarViewController.m in Sources */,
 				BBB752021FCEA85C000E5A03 /* DemoMyCameraViewController.m in Sources */,
+				BB36C46C20C4E1B7009660D3 /* DbXibView.m in Sources */,
 				BB25FC971F51DE850005372B /* ExpandViewCell.m in Sources */,
 				BBD965E51F5B36B800CCAF2C /* LGButton.m in Sources */,
 				BBDBD9001F6A9B6B009C9340 /* NSDictionary+DbHelper.m in Sources */,
@@ -2735,6 +2787,7 @@
 				BB595DB61F6303940003C0B9 /* BALabel.m in Sources */,
 				BB4FD4DD1F444E3700C082C3 /* HeightNavigationBar.m in Sources */,
 				BBD289C1205116E100045830 /* CalendarView.m in Sources */,
+				BB36C46D20C4E1B7009660D3 /* PzTextField.m in Sources */,
 				BB85B0CA2092E1210060A8FA /* UILabel+OHAdditions.m in Sources */,
 				BB4FD4C41F442D1300C082C3 /* ViewController.m in Sources */,
 				BBCFCA4F207B193C0091C01A /* MVPlaceSearchTextField.m in Sources */,
@@ -2795,6 +2848,7 @@
 				BBD99B401F7CD851004B20AF /* TBTabbarViewController.m in Sources */,
 				BB5DDD961F5329B60009AFDC /* ScrollViewFormViewController.m in Sources */,
 				BBC421512099B83E00B26D67 /* PresentedViewController.m in Sources */,
+				BB36C46A20C4E1B7009660D3 /* PzCustomTextField.m in Sources */,
 				BBCB00B820B887C300DC9E1F /* SuggestionAddressItemTableViewCell.m in Sources */,
 				BBB01882204F962C00153BD6 /* UIViewController+KNSemiModal.m in Sources */,
 				BB9A74341FD80BBE004BEE9D /* UploadFileViewController.m in Sources */,
@@ -2835,6 +2889,7 @@
 				BBCC62991F5E4C11006FF200 /* GBFlatButton.m in Sources */,
 				BB1320E51FD930F8003CCCA3 /* DbImageCollectionViewCell.m in Sources */,
 				BBD9F14E20C43EEE00882108 /* DbOperation.m in Sources */,
+				BB36C47420C4F5AC009660D3 /* UpdateTaskOther.m in Sources */,
 				BBF8264E1FF4DB9600D25AD7 /* DemoDbConnectionViewController.m in Sources */,
 				BB4FD3BB1F4429E200C082C3 /* main.m in Sources */,
 				BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */,
@@ -2864,6 +2919,7 @@
 				BBD1366C1F9A1187007A7763 /* HeaderJTCalendarView.m in Sources */,
 				BBE5EF6E1FDFCE57005F3900 /* STMapHeaderViewController.m in Sources */,
 				BBD1A7E52086FB2900D57B9E /* DbZoomTransitionAnimator.m in Sources */,
+				BB36C47720C4F5F9009660D3 /* UpdateTaskHard.m in Sources */,
 				BB4FD4811F442AEE00C082C3 /* DbViewController.m in Sources */,
 				BBF9A38E1FB04BEA00909F34 /* CanvasImageView.m in Sources */,
 				BBD9F15E20C45F6A00882108 /* TaskManager.m in Sources */,

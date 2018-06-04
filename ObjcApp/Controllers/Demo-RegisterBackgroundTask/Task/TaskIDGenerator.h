@@ -32,6 +32,6 @@
 /**
  Returns a unique request ID (within the lifetime of the application).
  */
-+(TaskRegisterID)getUniqueRegisterID;
++ (TaskRegisterID)getUniqueRegisterID;
 
 @end

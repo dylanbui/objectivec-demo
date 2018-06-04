@@ -14,6 +14,37 @@
 
 #import "DbConstant.h"
 
+//
+///** A unique ID that corresponds to one heading request. */
+//typedef NSInteger INTUHeadingRequestID;
+
+
+
+typedef NSInteger TaskRegisterID;
+
+//UIApplicationWillResignActiveNotification
+
+typedef enum _TASK_MODEL {
+    APP_DID_BECOME_ACTIVE,
+    APP_DID_ENTER_BACKGROUND,
+    APP_WILL_ENTER_FOREGROUND,
+    APP_WILL_RESIGN_ACTIVE
+} TASK_MODEL;
+
+@class TaskProtocol;
+
+@protocol TaskProtocol <NSObject>
+
+@property (nonatomic) TaskRegisterID taskID;
+
+@required
+- (void)taskStart;
+- (void)taskCancel;
+- (TASK_MODEL)taskRunBackgroundMode;
+- (NSInteger)taskPriority;
+
+@end
+
 ///** The possible states that heading services can be in. */
 //typedef NS_ENUM(NSInteger, INTUHeadingServicesState) {
 //    /** Heading services are available on the device */
@@ -24,24 +55,8 @@
 //
 /** A unique ID that corresponds to one location request. */
 typedef NSInteger TaskRegisterID;
-//
-///** A unique ID that corresponds to one heading request. */
-//typedef NSInteger INTUHeadingRequestID;
 
-typedef enum _TASK_MODEL {
-    APP_DID_BECOME_ACTIVE,
-    APP_DID_ENTER_BACKGROUND,
-    APP_WILL_ENTER_FOREGROUND,
-} TASK_MODEL;
-
-@protocol TaskProtocol <NSObject>
-
-@required
-- (void)taskStart;
-- (TASK_MODEL)taskRunBackgroundMode;
-- (NSInteger)taskPriority;
-
-@end
+typedef id<TaskProtocol> TaskObject;
 
 
 

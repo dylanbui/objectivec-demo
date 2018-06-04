@@ -11,8 +11,12 @@
 
 @interface TaskManager : NSObject
 
-+ (id)instance;
++ (id)sharedInstance;
 
-- (TaskRegisterID)subscribeTask;
+- (TaskRegisterID)subscribeTask:(TaskObject)task;
+
+- (void)removeTask:(TaskObject)task;
+
+- (void)removeTaskById:(TaskRegisterID)taskId;
 
 @end

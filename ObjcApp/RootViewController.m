@@ -32,6 +32,8 @@
 #import "DemoLocationViewController.h"
 #import "DemoBBLocationViewController.h"
 
+#import "TaskManagerViewController.h"
+
 @interface RootViewController ()
 
 @end
@@ -54,6 +56,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    TaskManagerViewController *vcFirstAaa = [[TaskManagerViewController alloc] init];
+    [self.navigationController pushViewController:vcFirstAaa animated:NO];
+    return;
     
     ViewController *vcFirst = [[ViewController alloc] init];
     // STCalendarHeaderViewController *vcFirst = [[STCalendarHeaderViewController alloc] init];

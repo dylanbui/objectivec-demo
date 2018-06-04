@@ -7,7 +7,7 @@
 //
 
 #import "PzTextField.h"
-#import "DbFontAwesomeKit.h"
+#import "DbFontIconKit.h"
 
 @interface PzTextField()
 
