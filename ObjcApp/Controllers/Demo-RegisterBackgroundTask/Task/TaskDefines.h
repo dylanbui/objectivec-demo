@@ -18,18 +18,18 @@
 ///** A unique ID that corresponds to one heading request. */
 //typedef NSInteger INTUHeadingRequestID;
 
-
+typedef NSArray<NSString *> LIST_TASK_MODE;
 
 typedef NSInteger TaskRegisterID;
 
 //UIApplicationWillResignActiveNotification
-
-typedef enum _TASK_MODEL {
-    APP_DID_BECOME_ACTIVE,
-    APP_DID_ENTER_BACKGROUND,
-    APP_WILL_ENTER_FOREGROUND,
-    APP_WILL_RESIGN_ACTIVE
-} TASK_MODEL;
+// -- Phai su dung kieu NSString --
+//typedef enum _TASK_MODEL {
+//    APP_DID_BECOME_ACTIVE,
+//    APP_DID_ENTER_BACKGROUND,
+//    APP_WILL_ENTER_FOREGROUND,
+//    APP_WILL_RESIGN_ACTIVE
+//} TASK_MODEL;
 
 @class TaskProtocol;
 
@@ -40,7 +40,7 @@ typedef enum _TASK_MODEL {
 @required
 - (void)taskStart;
 - (void)taskCancel;
-- (TASK_MODEL)taskRunBackgroundMode;
+- (NSArray<NSString *> *)taskRunBackgroundMode; // 1 chuc nang co the chay o nhieu mode
 - (NSInteger)taskPriority;
 
 @end
@@ -54,7 +54,7 @@ typedef enum _TASK_MODEL {
 //};
 //
 /** A unique ID that corresponds to one location request. */
-typedef NSInteger TaskRegisterID;
+//typedef NSInteger TaskRegisterID;
 
 typedef id<TaskProtocol> TaskObject;
 

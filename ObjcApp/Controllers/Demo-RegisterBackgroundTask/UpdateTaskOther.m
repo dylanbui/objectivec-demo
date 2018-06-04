@@ -24,9 +24,9 @@
     NSLog(@"taskCancel UpdateTaskOther : %ld", self.taskID);
 }
 
-- (TASK_MODEL)taskRunBackgroundMode
+- (NSArray<NSString *> *)taskRunBackgroundMode
 {
-    return APP_DID_ENTER_BACKGROUND;
+    return @[UIApplicationDidEnterBackgroundNotification];
 }
 
 - (NSInteger)taskPriority

@@ -25,9 +25,9 @@
 }
 
 
-- (TASK_MODEL)taskRunBackgroundMode
+- (NSArray<NSString *> *)taskRunBackgroundMode
 {
-    return APP_DID_BECOME_ACTIVE;
+    return @[UIApplicationDidBecomeActiveNotification];
 }
 
 - (NSInteger)taskPriority

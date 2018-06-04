@@ -19,4 +19,6 @@
 
 - (void)removeTaskById:(TaskRegisterID)taskId;
 
+- (void)removeAllTask;
+
 @end

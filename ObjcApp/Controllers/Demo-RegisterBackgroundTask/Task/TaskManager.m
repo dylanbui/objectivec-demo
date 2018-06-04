@@ -37,25 +37,39 @@ static id _sharedInstance;
         
         self.arrTaskRegisted = [[NSArray alloc] init];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(processNotificationCenter:)
-                                                     name:UIApplicationDidBecomeActiveNotification
-                                                   object:nil];
+        NSArray *supportMode = @[
+                                 UIApplicationDidBecomeActiveNotification,
+                                 UIApplicationWillResignActiveNotification,
+                                 UIApplicationWillEnterForegroundNotification,
+                                 UIApplicationDidEnterBackgroundNotification
+                                 ];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(processNotificationCenter:)
-                                                     name:UIApplicationWillResignActiveNotification
-                                                   object:nil];
+        for (NSString *mode in supportMode) {
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(processNotificationCenter:)
+                                                         name:mode
+                                                       object:nil];
+        }
         
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(processNotificationCenter:)
-                                                     name:UIApplicationWillEnterForegroundNotification
-                                                   object:nil];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(processNotificationCenter:)
-                                                     name:UIApplicationDidEnterBackgroundNotification
-                                                   object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                 selector:@selector(processNotificationCenter:)
+//                                                     name:UIApplicationDidBecomeActiveNotification
+//                                                   object:nil];
+//
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                 selector:@selector(processNotificationCenter:)
+//                                                     name:UIApplicationWillResignActiveNotification
+//                                                   object:nil];
+//
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                 selector:@selector(processNotificationCenter:)
+//                                                     name:UIApplicationWillEnterForegroundNotification
+//                                                   object:nil];
+//
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                 selector:@selector(processNotificationCenter:)
+//                                                     name:UIApplicationDidEnterBackgroundNotification
+//                                                   object:nil];
     }
     return self;
 }
@@ -94,6 +108,17 @@ static id _sharedInstance;
     }
 }
 
+- (void)removeAllTask
+{
+    for (TaskObject obj in self.arrTaskRegisted) {
+        [obj taskCancel];
+    }
+ 
+    NSMutableArray *newTaskRegisted = [[NSMutableArray alloc] initWithArray:self.arrTaskRegisted];
+    [newTaskRegisted removeAllObjects];
+    self.arrTaskRegisted = newTaskRegisted;
+}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -103,31 +128,11 @@ static id _sharedInstance;
 - (void)processNotificationCenter:(NSNotification *)notification
 {
     for (TaskObject obj in self.arrTaskRegisted) {
-        // -- Do khac kien truct nen phai if 2 lan de kiem tra --
-        if (notification.name == UIApplicationDidBecomeActiveNotification) {
-            if ([obj taskRunBackgroundMode] == APP_DID_BECOME_ACTIVE) {
-                [obj taskStart];
-            }
-        } else if (notification.name == UIApplicationWillResignActiveNotification) {
-            if ([obj taskRunBackgroundMode] == APP_WILL_RESIGN_ACTIVE) {
-                [obj taskStart];
-            }
-        } else if (notification.name == UIApplicationDidEnterBackgroundNotification) {
-            if ([obj taskRunBackgroundMode] == APP_DID_ENTER_BACKGROUND) {
-                [obj taskStart];
-            }
-        } else if (notification.name == UIApplicationWillEnterForegroundNotification) {
-            if ([obj taskRunBackgroundMode] == APP_WILL_ENTER_FOREGROUND) {
-                [obj taskStart];
-            }
+//        if ([[obj taskRunBackgroundMode] isEqualToString:notification.name]) {
+        if ([[obj taskRunBackgroundMode] containsObject:notification.name]) {
+            [obj taskStart];
         }
     }
-
-//    } else if ([notification.name isEqualToString:NOTIFY_REACHABLE_NETWORK]) {
-//        // -- Synchronize user data when network connected --
-//        [self synchronizeUserData:nil];
-//
-//    }
 }
 
 @end
