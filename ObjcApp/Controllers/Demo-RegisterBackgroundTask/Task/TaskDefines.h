@@ -38,7 +38,7 @@ typedef NSInteger TaskRegisterID;
 @property (nonatomic) TaskRegisterID taskID;
 
 @required
-- (void)taskStart;
+- (void)taskStart:(NSString *)runningMode;
 - (void)taskCancel;
 - (NSArray<NSString *> *)taskRunBackgroundMode; // 1 chuc nang co the chay o nhieu mode
 - (NSInteger)taskPriority;

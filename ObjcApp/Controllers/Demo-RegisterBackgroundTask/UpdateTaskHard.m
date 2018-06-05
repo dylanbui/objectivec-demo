@@ -14,16 +14,15 @@
 
 #pragma mark - TaskProtocol
 
-- (void)taskStart
+- (void)taskStart:(NSString *)runningMode
 {
-    NSLog(@"Start UpdateTaskHard : : %ld", self.taskID);
+    NSLog(@"Start mode : --- %@ --- UpdateTaskHard : %ld --- taskPriority : %d", runningMode, self.taskID, 3);
 }
 
 - (void)taskCancel
 {
     NSLog(@"taskCancel UpdateTaskHard : %ld", self.taskID);
 }
-
 
 - (NSArray<NSString *> *)taskRunBackgroundMode
 {

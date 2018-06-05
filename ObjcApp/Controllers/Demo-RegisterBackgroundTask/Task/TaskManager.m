@@ -14,7 +14,6 @@
 
 @property (nonatomic, strong) NSArray *arrTaskRegisted;
 
-
 @end
 
 @implementation TaskManager
@@ -33,15 +32,16 @@ static id _sharedInstance;
 {
     NSAssert(_sharedInstance == nil, @"Only one instance of TaskManager should be created. Use +[TaskManager sharedInstance] instead.");
     
-    if (self = [super init]) {
-        
+    if (self = [super init]) {        
         self.arrTaskRegisted = [[NSArray alloc] init];
         
         NSArray *supportMode = @[
                                  UIApplicationDidBecomeActiveNotification,
                                  UIApplicationWillResignActiveNotification,
                                  UIApplicationWillEnterForegroundNotification,
-                                 UIApplicationDidEnterBackgroundNotification
+                                 UIApplicationDidEnterBackgroundNotification,
+                                 NOTIFY_REACHABLE_NETWORK,
+                                 @"UPDATE_USER_INFORMATION"
                                  ];
         
         for (NSString *mode in supportMode) {
@@ -50,26 +50,6 @@ static id _sharedInstance;
                                                          name:mode
                                                        object:nil];
         }
-        
-//        [[NSNotificationCenter defaultCenter] addObserver:self
-//                                                 selector:@selector(processNotificationCenter:)
-//                                                     name:UIApplicationDidBecomeActiveNotification
-//                                                   object:nil];
-//
-//        [[NSNotificationCenter defaultCenter] addObserver:self
-//                                                 selector:@selector(processNotificationCenter:)
-//                                                     name:UIApplicationWillResignActiveNotification
-//                                                   object:nil];
-//
-//        [[NSNotificationCenter defaultCenter] addObserver:self
-//                                                 selector:@selector(processNotificationCenter:)
-//                                                     name:UIApplicationWillEnterForegroundNotification
-//                                                   object:nil];
-//
-//        [[NSNotificationCenter defaultCenter] addObserver:self
-//                                                 selector:@selector(processNotificationCenter:)
-//                                                     name:UIApplicationDidEnterBackgroundNotification
-//                                                   object:nil];
     }
     return self;
 }
@@ -82,7 +62,8 @@ static id _sharedInstance;
     self.arrTaskRegisted = [newTaskRegisted sortedArrayUsingComparator:^NSComparisonResult(TaskObject obj1, TaskObject obj2) {
         NSInteger priority_1 = [obj1 taskPriority];
         NSInteger priority_2 = [obj2 taskPriority];
-        return priority_1 - priority_2;
+        // return priority_2 - priority_1; // Desc giam dan
+        return priority_1 - priority_2; // Asc tang dan
     }];
 
     task.taskID = [TaskIDGenerator getUniqueRegisterID];
@@ -124,13 +105,12 @@ static id _sharedInstance;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-
 - (void)processNotificationCenter:(NSNotification *)notification
 {
     for (TaskObject obj in self.arrTaskRegisted) {
-//        if ([[obj taskRunBackgroundMode] isEqualToString:notification.name]) {
         if ([[obj taskRunBackgroundMode] containsObject:notification.name]) {
-            [obj taskStart];
+            [obj taskStart:notification.name];
+            NSLog(@"%@ -- obj = %@", notification.name, NSStringFromClass([obj class]));
         }
     }
 }

@@ -7,6 +7,7 @@
 //  Build on : http://williamboles.me/networking-with-nsoperation-as-your-wingman/ 
 
 #import <Foundation/Foundation.h>
+#import "DbOperationQueue.h"
 
 /**
  Abstract class for asynchronus operations.

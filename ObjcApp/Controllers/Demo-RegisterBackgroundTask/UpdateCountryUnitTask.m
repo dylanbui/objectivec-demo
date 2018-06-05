@@ -8,15 +8,31 @@
 
 #import "UpdateCountryUnitTask.h"
 
+@interface UpdateCountryUnitTask()
+
+@property (nonatomic, strong) NSString *runningMode;
+
+@end
+
 @implementation UpdateCountryUnitTask
 
 @synthesize taskID = _taskID;
 
 #pragma mark - TaskProtocol
 
-- (void)taskStart
+- (void)taskStart:(NSString *)runningMode
 {
-    NSLog(@"Start UpdateCountryUnitTask : %ld", self.taskID);
+    self.runningMode = runningMode;
+
+    RUN_ON_BACKGROUND_QUEUE(^{
+        NSLog(@"%@", @" -------------------");
+        NSLog(@"Start mode : --- %@ --- UpdateCountryUnitTask : %ld --- taskPriority : %d", runningMode, self.taskID, 15);
+        NSLog(@"%@", @" -------------------");
+        if ([runningMode isEqualToString:NOTIFY_REACHABLE_NETWORK]) {
+            [NSThread sleepForTimeInterval: 2];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"UPDATE_USER_INFORMATION" object:self userInfo:nil];
+        }
+    });
 }
 
 - (void)taskCancel
@@ -26,12 +42,14 @@
 
 - (NSArray<NSString *> *)taskRunBackgroundMode
 {
-    return @[UIApplicationDidBecomeActiveNotification];
+    return @[UIApplicationDidBecomeActiveNotification, NOTIFY_REACHABLE_NETWORK, @"UPDATE_USER_INFORMATION"];
 }
 
 - (NSInteger)taskPriority
 {
     return 15;
 }
+
+
 
 @end

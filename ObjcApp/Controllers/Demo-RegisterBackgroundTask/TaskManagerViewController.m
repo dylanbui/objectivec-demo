@@ -26,13 +26,16 @@
     TaskManager *taskManager = [TaskManager sharedInstance];
     
     UpdateCountryUnitTask *task_1 = [[UpdateCountryUnitTask alloc] init];
-    NSLog(@"TaskRegisterID = %ld", [taskManager subscribeTask:task_1]);
+    [taskManager subscribeTask:task_1];
+//    NSLog(@"TaskRegisterID = %ld", [taskManager subscribeTask:task_1]);
     
     UpdateTaskHard *task_2 = [[UpdateTaskHard alloc] init];
-    NSLog(@"TaskRegisterID = %ld", [taskManager subscribeTask:task_2]);
+    [taskManager subscribeTask:task_2];
+//    NSLog(@"TaskRegisterID = %ld", [taskManager subscribeTask:task_2]);
     
     UpdateTaskOther *task_3 = [[UpdateTaskOther alloc] init];
-    NSLog(@"TaskRegisterID = %ld", [taskManager subscribeTask:task_3]);
+    [taskManager subscribeTask:task_3];
+//    NSLog(@"TaskRegisterID = %ld", [taskManager subscribeTask:task_3]);
     
 }
 

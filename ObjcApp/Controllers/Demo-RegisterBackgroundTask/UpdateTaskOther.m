@@ -14,9 +14,9 @@
 
 #pragma mark - TaskProtocol
 
-- (void)taskStart
+- (void)taskStart:(NSString *)runningMode
 {
-    NSLog(@"Start UpdateTaskOther : : %ld", self.taskID);
+    NSLog(@"Start mode : --- %@ --- UpdateTaskOther : %ld --- taskPriority : %d", runningMode, self.taskID, 8);
 }
 
 - (void)taskCancel
@@ -26,7 +26,7 @@
 
 - (NSArray<NSString *> *)taskRunBackgroundMode
 {
-    return @[UIApplicationDidEnterBackgroundNotification];
+    return @[UIApplicationDidBecomeActiveNotification, UIApplicationWillEnterForegroundNotification, UIApplicationDidEnterBackgroundNotification];
 }
 
 - (NSInteger)taskPriority
