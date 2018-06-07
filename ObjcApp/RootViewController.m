@@ -34,6 +34,9 @@
 
 #import "TaskManagerViewController.h"
 
+#import "ProcessImageUploadViewController.h"
+#import "HudDemoViewController.h"
+
 @interface RootViewController ()
 
 @end
@@ -57,7 +60,7 @@
 {
     [super viewWillAppear:animated];
     
-    TaskManagerViewController *vcFirstAaa = [[TaskManagerViewController alloc] init];
+    HudDemoViewController *vcFirstAaa = [[HudDemoViewController alloc] init];
     [self.navigationController pushViewController:vcFirstAaa animated:NO];
     return;
     

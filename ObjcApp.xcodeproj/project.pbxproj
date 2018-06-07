@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9120E771807AB7030C9F4283 /* Pods_ObjcApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D62C3C09D877F7693306C71 /* Pods_ObjcApp.framework */; };
 		BB06C8D82091D2F7008F42F5 /* NSMutableAttributedString+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = BB06C8D72091D2F7008F42F5 /* NSMutableAttributedString+Attributes.m */; };
+		BB06ED2820C9A71D00218CB9 /* ProcessImageUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB06ED2620C9A71D00218CB9 /* ProcessImageUploadViewController.m */; };
+		BB06ED2920C9A71D00218CB9 /* ProcessImageUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB06ED2720C9A71D00218CB9 /* ProcessImageUploadViewController.xib */; };
 		BB0A1D0720A54EEC002D9772 /* DbLibraries.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BB0A1D0620A54EEC002D9772 /* DbLibraries.bundle */; };
 		BB121DEF1F85DEAD0053171B /* PTPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB121DED1F85DEAD0053171B /* PTPhotoViewController.m */; };
 		BB121DF01F85DEAD0053171B /* PTPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB121DEE1F85DEAD0053171B /* PTPhotoViewController.xib */; };
@@ -388,6 +390,9 @@
 		806131BC8A1DA902FB1E7935 /* Pods-ObjcAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcAppTests/Pods-ObjcAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB06C8D62091D2F7008F42F5 /* NSMutableAttributedString+Attributes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Attributes.h"; sourceTree = "<group>"; };
 		BB06C8D72091D2F7008F42F5 /* NSMutableAttributedString+Attributes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Attributes.m"; sourceTree = "<group>"; };
+		BB06ED2520C9A71D00218CB9 /* ProcessImageUploadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProcessImageUploadViewController.h; sourceTree = "<group>"; };
+		BB06ED2620C9A71D00218CB9 /* ProcessImageUploadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProcessImageUploadViewController.m; sourceTree = "<group>"; };
+		BB06ED2720C9A71D00218CB9 /* ProcessImageUploadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProcessImageUploadViewController.xib; sourceTree = "<group>"; };
 		BB0A1D0620A54EEC002D9772 /* DbLibraries.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DbLibraries.bundle; sourceTree = "<group>"; };
 		BB121DEC1F85DEAD0053171B /* PTPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTPhotoViewController.h; sourceTree = "<group>"; };
 		BB121DED1F85DEAD0053171B /* PTPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTPhotoViewController.m; sourceTree = "<group>"; };
@@ -993,6 +998,16 @@
 			path = NSString;
 			sourceTree = "<group>";
 		};
+		BB06ED2A20C9A72400218CB9 /* Demo-ProcessImageUpload */ = {
+			isa = PBXGroup;
+			children = (
+				BB06ED2520C9A71D00218CB9 /* ProcessImageUploadViewController.h */,
+				BB06ED2620C9A71D00218CB9 /* ProcessImageUploadViewController.m */,
+				BB06ED2720C9A71D00218CB9 /* ProcessImageUploadViewController.xib */,
+			);
+			path = "Demo-ProcessImageUpload";
+			sourceTree = "<group>";
+		};
 		BB121DEB1F85DE7C0053171B /* Demo-PhotoController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1571,6 +1586,7 @@
 				BBF826501FF4DB9E00D25AD7 /* Demo-DbConnectionViewController */,
 				BB85B0B82092E0570060A8FA /* Demo-NSAttributedString */,
 				BBD9F15720C44C8E00882108 /* Demo-RegisterBackgroundTask */,
+				BB06ED2A20C9A72400218CB9 /* Demo-ProcessImageUpload */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2593,6 +2609,7 @@
 				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
 				BBD1A7F62087256500D57B9E /* RMPImageTableViewCell.xib in Resources */,
 				BBB752071FCEAA76000E5A03 /* demo_1.jpg in Resources */,
+				BB06ED2920C9A71D00218CB9 /* ProcessImageUploadViewController.xib in Resources */,
 				BBEDC44E1FBC4060000317FD /* RangeSliderViewController.xib in Resources */,
 				BBD136711F9A149D007A7763 /* STCalendarHeaderViewController.xib in Resources */,
 				BBC4214D2099B82900B26D67 /* PushedViewController.xib in Resources */,
@@ -2810,6 +2827,7 @@
 				BB4FD4881F442AEE00C082C3 /* UINavigationController+Utils.m in Sources */,
 				BB6CC51F1F5D460A0073A0C1 /* DbActionView.m in Sources */,
 				BB85B0C82092E1210060A8FA /* UIFont+OHAdditions.m in Sources */,
+				BB06ED2820C9A71D00218CB9 /* ProcessImageUploadViewController.m in Sources */,
 				BBFE27A820A03E84004D387B /* DbLocationRequest.m in Sources */,
 				BB6EBF471FB2F7EC006CC4EA /* SearchSession.m in Sources */,
 				BBCFCA50207B193C0091C01A /* PlaceDetail.m in Sources */,
