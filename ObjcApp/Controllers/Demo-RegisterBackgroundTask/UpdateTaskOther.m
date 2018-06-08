@@ -29,10 +29,15 @@
     return @[UIApplicationDidBecomeActiveNotification, UIApplicationWillEnterForegroundNotification, UIApplicationDidEnterBackgroundNotification];
 }
 
-- (NSInteger)taskPriority
-{
-    return 8;
-}
+//- (NSString *)taskGroup
+//{
+//    return USER_TASK;
+//}
+//
+//- (NSInteger)taskPriority
+//{
+//    return 8;
+//}
 
 @end
 

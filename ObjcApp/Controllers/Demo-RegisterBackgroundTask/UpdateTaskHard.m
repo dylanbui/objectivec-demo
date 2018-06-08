@@ -29,10 +29,15 @@
     return @[UIApplicationDidBecomeActiveNotification];
 }
 
-- (NSInteger)taskPriority
-{
-    return 3;
-}
+//- (NSString *)taskGroup
+//{
+//    return USER_TASK;
+//}
+//
+//- (NSInteger)taskPriority
+//{
+//    return 3;
+//}
 
 @end
 

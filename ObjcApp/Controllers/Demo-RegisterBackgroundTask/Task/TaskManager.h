@@ -15,6 +15,8 @@
 
 - (TaskRegisterID)subscribeTask:(TaskObject)task;
 
+- (void)addExtendRunMode:(NSArray *)arrMode;
+
 - (void)removeTask:(TaskObject)task;
 
 - (void)removeTaskById:(TaskRegisterID)taskId;

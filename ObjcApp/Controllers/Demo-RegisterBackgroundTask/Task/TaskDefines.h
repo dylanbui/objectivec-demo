@@ -22,6 +22,10 @@ typedef NSArray<NSString *> LIST_TASK_MODE;
 
 typedef NSInteger TaskRegisterID;
 
+#define SYSTEM_TASK     @"SYSTEM_TASK"
+#define USER_TASK       @"USER_TASK"
+
+
 //UIApplicationWillResignActiveNotification
 // -- Phai su dung kieu NSString --
 //typedef enum _TASK_MODEL {
@@ -41,7 +45,10 @@ typedef NSInteger TaskRegisterID;
 - (void)taskStart:(NSString *)runningMode;
 - (void)taskCancel;
 - (NSArray<NSString *> *)taskRunBackgroundMode; // 1 chuc nang co the chay o nhieu mode
-- (NSInteger)taskPriority;
+
+@optional
+- (NSInteger)taskPriority;  // -- Default : 1 --
+- (NSString *)taskGroup;    // -- Default : SYSTEM_TASK --
 
 @end
 

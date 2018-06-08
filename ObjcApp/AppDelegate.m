@@ -12,6 +12,12 @@
 @import GoogleMaps;
 @import GooglePlaces;
 
+#import "TaskManager.h"
+#import "UpdateCountryUnitTask.h"
+#import "UpdateTaskHard.h"
+#import "UpdateTaskOther.h"
+
+
 @interface AppDelegate ()
 
 @end
@@ -40,12 +46,29 @@
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:YES];
     
     [[IQKeyboardManager sharedManager] setShouldShowTextFieldPlaceholder:YES];
-
+    
+    TaskManager *taskManager = [TaskManager sharedInstance];
+    [taskManager addExtendRunMode:@[NOTIFY_REACHABLE_NETWORK,
+                                    @"UPDATE_USER_INFORMATION"]];
+    
+    UpdateCountryUnitTask *task_1 = [[UpdateCountryUnitTask alloc] init];
+    [taskManager subscribeTask:task_1];
+    
+    UpdateTaskHard *task_2 = [[UpdateTaskHard alloc] init];
+    [taskManager subscribeTask:task_2];
+    
+    UpdateTaskOther *task_3 = [[UpdateTaskOther alloc] init];
+    [taskManager subscribeTask:task_3];
     
     return YES;
 }
 
-
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    [super applicationDidBecomeActive:application];
+    
+    
+}
 
 
 @end

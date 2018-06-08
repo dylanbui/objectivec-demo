@@ -25,7 +25,6 @@
     self.runningMode = runningMode;
 
     RUN_ON_BACKGROUND_QUEUE(^{
-        NSLog(@"%@", @" -------------------");
         NSLog(@"Start mode : --- %@ --- UpdateCountryUnitTask : %ld --- taskPriority : %d", runningMode, self.taskID, 15);
         NSLog(@"%@", @" -------------------");
         if ([runningMode isEqualToString:NOTIFY_REACHABLE_NETWORK]) {
@@ -42,7 +41,12 @@
 
 - (NSArray<NSString *> *)taskRunBackgroundMode
 {
-    return @[UIApplicationDidBecomeActiveNotification, NOTIFY_REACHABLE_NETWORK, @"UPDATE_USER_INFORMATION"];
+    return @[UIApplicationDidFinishLaunchingNotification, UIApplicationDidBecomeActiveNotification, NOTIFY_REACHABLE_NETWORK, @"UPDATE_USER_INFORMATION"];
+}
+
+- (NSString *)taskGroup
+{
+    return SYSTEM_TASK;
 }
 
 - (NSInteger)taskPriority

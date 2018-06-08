@@ -14,6 +14,11 @@
 
 @property (nonatomic, strong) NSArray *arrTaskRegisted;
 
+
+
+
+@property (nonatomic, strong) NSArray *arrSupportMode;
+
 @end
 
 @implementation TaskManager
@@ -34,24 +39,27 @@ static id _sharedInstance;
     
     if (self = [super init]) {        
         self.arrTaskRegisted = [[NSArray alloc] init];
-        
-        NSArray *supportMode = @[
-                                 UIApplicationDidBecomeActiveNotification,
-                                 UIApplicationWillResignActiveNotification,
-                                 UIApplicationWillEnterForegroundNotification,
-                                 UIApplicationDidEnterBackgroundNotification,
-                                 NOTIFY_REACHABLE_NETWORK,
-                                 @"UPDATE_USER_INFORMATION"
-                                 ];
-        
-        for (NSString *mode in supportMode) {
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(processNotificationCenter:)
-                                                         name:mode
-                                                       object:nil];
-        }
+        // -- Default system mode --
+        self.arrSupportMode = @[
+                                UIApplicationDidEnterBackgroundNotification,
+                                UIApplicationWillEnterForegroundNotification,
+                                UIApplicationDidFinishLaunchingNotification,
+                                UIApplicationDidBecomeActiveNotification,
+                                UIApplicationWillResignActiveNotification,
+                                UIApplicationDidReceiveMemoryWarningNotification,
+                                UIApplicationWillTerminateNotification,
+                                UIApplicationSignificantTimeChangeNotification];
+        // -- Start AddObserver --
+        [self reAddObserver];
     }
     return self;
+}
+
+- (void)addExtendRunMode:(NSArray *)arrMode
+{
+    self.arrSupportMode = [self.arrSupportMode arrayByAddingObjectsFromArray:arrMode];
+    // -- Start AddObserver --
+    [self reAddObserver];
 }
 
 - (TaskRegisterID)subscribeTask:(TaskObject)task
@@ -60,8 +68,8 @@ static id _sharedInstance;
     [newTaskRegisted addObject:task];
     // -- Sort --
     self.arrTaskRegisted = [newTaskRegisted sortedArrayUsingComparator:^NSComparisonResult(TaskObject obj1, TaskObject obj2) {
-        NSInteger priority_1 = [obj1 taskPriority];
-        NSInteger priority_2 = [obj2 taskPriority];
+        NSInteger priority_1 = [self getPriorityByTaskObject:obj1];
+        NSInteger priority_2 = [self getPriorityByTaskObject:obj2];
         // return priority_2 - priority_1; // Desc giam dan
         return priority_1 - priority_2; // Asc tang dan
     }];
@@ -89,6 +97,16 @@ static id _sharedInstance;
     }
 }
 
+- (void)removeTaskByGroup:(NSString *)taskGroup
+{
+    for (TaskObject obj in self.arrTaskRegisted) {
+        NSString *groupName = [self getGroupNameByTaskObject:obj];
+        if ([groupName isEqualToString:taskGroup]) {
+            [self removeTask:obj];
+        }
+    }
+}
+
 - (void)removeAllTask
 {
     for (TaskObject obj in self.arrTaskRegisted) {
@@ -100,9 +118,38 @@ static id _sharedInstance;
     self.arrTaskRegisted = newTaskRegisted;
 }
 
+#pragma mark - Cycle Live
+#pragma mark -
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Private function
+#pragma mark -
+
+- (NSString *)getGroupNameByTaskObject:(TaskObject)taskObj
+{
+    return [taskObj respondsToSelector:@selector(taskGroup)] ? [taskObj taskGroup] : SYSTEM_TASK;
+}
+
+- (NSInteger)getPriorityByTaskObject:(TaskObject)taskObj
+{
+    return [taskObj respondsToSelector:@selector(taskPriority)] ? [taskObj taskPriority] : 1;
+}
+
+- (void)reAddObserver
+{
+    // -- Remove all Notify --
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    for (NSString *mode in self.arrSupportMode) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(processNotificationCenter:)
+                                                     name:mode
+                                                   object:nil];
+    }
 }
 
 - (void)processNotificationCenter:(NSNotification *)notification
