@@ -100,6 +100,10 @@
 
 - (void)start
 {
+    if (self.cancelled) {
+        return;
+    }
+    
     if (!self.isExecuting)
     {
         self.ready = NO;

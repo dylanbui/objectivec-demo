@@ -24,6 +24,10 @@
 
 - (void)start
 {
+    if (self.cancelled) {
+        return;
+    }
+    
     // -- Start task --
     [super start];
     
