@@ -10,4 +10,6 @@
 
 @interface ProcessImageUploadViewController : BaseViewController
 
+@property (nonatomic, weak) IBOutlet UICollectionView *clvContent;
+
 @end

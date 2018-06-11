@@ -138,6 +138,7 @@
 		BB6EBF471FB2F7EC006CC4EA /* SearchSession.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6EBF461FB2F7EC006CC4EA /* SearchSession.m */; };
 		BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */; };
 		BB79D8631F95B45100A0A7C2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB79D8621F95B45100A0A7C2 /* ViewController.xib */; };
+		BB7D195720CEF520003284AF /* DemoUploadPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7D195620CEF520003284AF /* DemoUploadPhotoOperation.m */; };
 		BB85B0B62092E04E0060A8FA /* DemoAttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB85B0B42092E04E0060A8FA /* DemoAttributedStringViewController.m */; };
 		BB85B0B72092E04E0060A8FA /* DemoAttributedStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB85B0B52092E04E0060A8FA /* DemoAttributedStringViewController.xib */; };
 		BB85B0C82092E1210060A8FA /* UIFont+OHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB85B0BD2092E11F0060A8FA /* UIFont+OHAdditions.m */; };
@@ -609,6 +610,8 @@
 		BB71F43F1FA89235007268BA /* UIView+LayoutHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutHelper.h"; sourceTree = "<group>"; };
 		BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutHelper.m"; sourceTree = "<group>"; };
 		BB79D8621F95B45100A0A7C2 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		BB7D195520CEF520003284AF /* DemoUploadPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoUploadPhotoOperation.h; sourceTree = "<group>"; };
+		BB7D195620CEF520003284AF /* DemoUploadPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUploadPhotoOperation.m; sourceTree = "<group>"; };
 		BB85B0B32092E04E0060A8FA /* DemoAttributedStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoAttributedStringViewController.h; sourceTree = "<group>"; };
 		BB85B0B42092E04E0060A8FA /* DemoAttributedStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAttributedStringViewController.m; sourceTree = "<group>"; };
 		BB85B0B52092E04E0060A8FA /* DemoAttributedStringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoAttributedStringViewController.xib; sourceTree = "<group>"; };
@@ -1004,6 +1007,8 @@
 				BB06ED2520C9A71D00218CB9 /* ProcessImageUploadViewController.h */,
 				BB06ED2620C9A71D00218CB9 /* ProcessImageUploadViewController.m */,
 				BB06ED2720C9A71D00218CB9 /* ProcessImageUploadViewController.xib */,
+				BB7D195520CEF520003284AF /* DemoUploadPhotoOperation.h */,
+				BB7D195620CEF520003284AF /* DemoUploadPhotoOperation.m */,
 			);
 			path = "Demo-ProcessImageUpload";
 			sourceTree = "<group>";
@@ -2842,6 +2847,7 @@
 				BB4FD49A1F442AEE00C082C3 /* SYPhotoBrowser.m in Sources */,
 				BBD6CA9C207E168B004129BE /* GooglePlacesApiClient.m in Sources */,
 				BBD9F16120C4625300882108 /* TaskIDGenerator.m in Sources */,
+				BB7D195720CEF520003284AF /* DemoUploadPhotoOperation.m in Sources */,
 				BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */,
 				BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */,
 				BBFE27A520A03E6A004D387B /* DbLocationManager.m in Sources */,

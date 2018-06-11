@@ -60,7 +60,7 @@
 {
     [super viewWillAppear:animated];
     
-    HudDemoViewController *vcFirstAaa = [[HudDemoViewController alloc] init];
+    ProcessImageUploadViewController *vcFirstAaa = [[ProcessImageUploadViewController alloc] init];
     [self.navigationController pushViewController:vcFirstAaa animated:NO];
     return;
     
