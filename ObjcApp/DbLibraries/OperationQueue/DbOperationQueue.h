@@ -13,8 +13,12 @@
 
 - (instancetype)init;
 
-- (instancetype)initCompletionQueueWithBlock:(void(^)(void)) block;
+- (instancetype)initCompletionQueueWithBlock:(void(^)(void))block;
 
-- (void)setCompletionQueue:(void(^)(void)) block;
+- (void)setCompletionQueue:(void(^)(void))block;
+
+- (void)setCancelQueue:(void(^)(NSError *))block;
+
+- (void)cancelAllOperations:(NSError *)reason;
 
 @end

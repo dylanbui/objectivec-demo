@@ -13,7 +13,8 @@
 /**
  Completion block for all operator.
  */
-@property (nonatomic, copy) void (^completion)(void);
+@property (nonatomic, copy) void (^completionBlock)(void);
+@property (nonatomic, copy) void (^cancelBlock)(NSError *);
 
 @end
 
@@ -38,9 +39,14 @@
     return self;
 }
 
+- (void)setCancelQueue:(void(^)(NSError *))block
+{
+    self.cancelBlock = block;
+}
+
 - (void)setCompletionQueue:(void(^)(void)) block
 {
-    self.completion = block;
+    self.completionBlock = block;
     // -- Add Observer notify when 'operations' property change --
     [self addObserver:self forKeyPath:@"operations" options:0 context:NULL];
 }
@@ -51,15 +57,34 @@
     if (object == self && [keyPath isEqualToString:@"operations"]) {
         if ([self.operations count] == 0) {
             // Do something here when your queue has completed
-            if (self.completion) {
+            if (self.completionBlock) {
                 // NSLog(@"queue has completed");
-                self.completion();
+                self.completionBlock();
             }            
         }
     }
     else {
         [super observeValueForKeyPath:keyPath ofObject:object
                                change:change context:context];
+    }
+}
+
+- (void)cancelAllOperations:(NSError *)reason
+{
+    // -- This method sends a cancel message to all operations currently in the queue. Queued operations are cancelled before they begin executing. If an operation is already executing, it is up to that operation to recognize the cancellation and stop what it is doing. --
+    /*
+     In NSOperation:
+     if (!self.isCancelled)
+     // then do something
+     else
+     return;
+     */
+    
+    [super cancelAllOperations];
+    // -- Still call completion when cancel --
+    if (self.cancelBlock) {
+        NSLog(@"cancelAllOperations");
+        self.cancelBlock(reason);
     }
 }
 
