@@ -59,9 +59,7 @@
 		BB4A3A6A1F814E3E0040CC61 /* TBFiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4A3A681F814E3E0040CC61 /* TBFiveViewController.xib */; };
 		BB4FD3BB1F4429E200C082C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3BA1F4429E200C082C3 /* main.m */; };
 		BB4FD3BE1F4429E200C082C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3BD1F4429E200C082C3 /* AppDelegate.m */; };
-		BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD3C21F4429E200C082C3 /* Main.storyboard */; };
 		BB4FD3C61F4429E200C082C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD3C51F4429E200C082C3 /* Assets.xcassets */; };
-		BB4FD3C91F4429E200C082C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4FD3C71F4429E200C082C3 /* LaunchScreen.storyboard */; };
 		BB4FD3D41F4429E200C082C3 /* ObjcAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3D31F4429E200C082C3 /* ObjcAppTests.m */; };
 		BB4FD46C1F442AEE00C082C3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3EC1F442AEE00C082C3 /* BaseViewController.m */; };
 		BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4FD3FA1F442AEE00C082C3 /* UserSession.m */; };
@@ -138,7 +136,6 @@
 		BB6EBF471FB2F7EC006CC4EA /* SearchSession.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6EBF461FB2F7EC006CC4EA /* SearchSession.m */; };
 		BB71F4411FA89235007268BA /* UIView+LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */; };
 		BB79D8631F95B45100A0A7C2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB79D8621F95B45100A0A7C2 /* ViewController.xib */; };
-		BB7D195720CEF520003284AF /* DemoUploadPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7D195620CEF520003284AF /* DemoUploadPhotoOperation.m */; };
 		BB85B0B62092E04E0060A8FA /* DemoAttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB85B0B42092E04E0060A8FA /* DemoAttributedStringViewController.m */; };
 		BB85B0B72092E04E0060A8FA /* DemoAttributedStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB85B0B52092E04E0060A8FA /* DemoAttributedStringViewController.xib */; };
 		BB85B0C82092E1210060A8FA /* UIFont+OHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB85B0BD2092E11F0060A8FA /* UIFont+OHAdditions.m */; };
@@ -160,6 +157,11 @@
 		BB8DCAF01FB16CA700AB337B /* PriceMapIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DCAEF1FB16CA700AB337B /* PriceMapIntroView.m */; };
 		BB8DCAF21FB16CB800AB337B /* PriceMapIntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8DCAF11FB16CB800AB337B /* PriceMapIntroView.xib */; };
 		BB8DCAF51FB16F3000AB337B /* RippleEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DCAF41FB16F3000AB337B /* RippleEffectView.m */; };
+		BB993C0220CF81CC0075E03F /* DemoUploadPhotoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB993C0120CF81CB0075E03F /* DemoUploadPhotoOperation.m */; };
+		BB993C3420CFB2510075E03F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB993C2C20CFB2510075E03F /* LaunchScreen.storyboard */; };
+		BB993C3520CFB2510075E03F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB993C2E20CFB2510075E03F /* Main.storyboard */; };
+		BB993C3620CFB2510075E03F /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB993C3020CFB2510075E03F /* LaunchScreen.strings */; };
+		BB993C3720CFB2510075E03F /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB993C3220CFB2510075E03F /* Main.strings */; };
 		BB999CF41F4F4F2C00B29FDE /* ExpandLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */; };
 		BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */; };
 		BB999CFA1F4F4F3D00B29FDE /* UserSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB999CF81F4F4F3D00B29FDE /* UserSessionViewController.m */; };
@@ -474,9 +476,7 @@
 		BB4FD3BA1F4429E200C082C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BB4FD3BC1F4429E200C082C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB4FD3BD1F4429E200C082C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BB4FD3C31F4429E200C082C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB4FD3C51F4429E200C082C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BB4FD3C81F4429E200C082C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB4FD3CA1F4429E200C082C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB4FD3CF1F4429E200C082C3 /* ObjcAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjcAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4FD3D31F4429E200C082C3 /* ObjcAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcAppTests.m; sourceTree = "<group>"; };
@@ -610,8 +610,6 @@
 		BB71F43F1FA89235007268BA /* UIView+LayoutHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutHelper.h"; sourceTree = "<group>"; };
 		BB71F4401FA89235007268BA /* UIView+LayoutHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutHelper.m"; sourceTree = "<group>"; };
 		BB79D8621F95B45100A0A7C2 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		BB7D195520CEF520003284AF /* DemoUploadPhotoOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoUploadPhotoOperation.h; sourceTree = "<group>"; };
-		BB7D195620CEF520003284AF /* DemoUploadPhotoOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUploadPhotoOperation.m; sourceTree = "<group>"; };
 		BB85B0B32092E04E0060A8FA /* DemoAttributedStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoAttributedStringViewController.h; sourceTree = "<group>"; };
 		BB85B0B42092E04E0060A8FA /* DemoAttributedStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAttributedStringViewController.m; sourceTree = "<group>"; };
 		BB85B0B52092E04E0060A8FA /* DemoAttributedStringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoAttributedStringViewController.xib; sourceTree = "<group>"; };
@@ -642,6 +640,12 @@
 		BB8DCAF11FB16CB800AB337B /* PriceMapIntroView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceMapIntroView.xib; sourceTree = "<group>"; };
 		BB8DCAF31FB16F3000AB337B /* RippleEffectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RippleEffectView.h; sourceTree = "<group>"; };
 		BB8DCAF41FB16F3000AB337B /* RippleEffectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RippleEffectView.m; sourceTree = "<group>"; };
+		BB993C0020CF81B90075E03F /* DemoUploadPhotoOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUploadPhotoOperation.h; sourceTree = "<group>"; };
+		BB993C0120CF81CB0075E03F /* DemoUploadPhotoOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoUploadPhotoOperation.m; sourceTree = "<group>"; };
+		BB993C2D20CFB2510075E03F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB993C2F20CFB2510075E03F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB993C3120CFB2510075E03F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		BB993C3320CFB2510075E03F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
 		BB999CF11F4F4F2C00B29FDE /* ExpandLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpandLayoutViewController.h; path = "Demo-Expand-Layout/ExpandLayoutViewController.h"; sourceTree = "<group>"; };
 		BB999CF21F4F4F2C00B29FDE /* ExpandLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpandLayoutViewController.m; path = "Demo-Expand-Layout/ExpandLayoutViewController.m"; sourceTree = "<group>"; };
 		BB999CF31F4F4F2C00B29FDE /* ExpandLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpandLayoutViewController.xib; path = "Demo-Expand-Layout/ExpandLayoutViewController.xib"; sourceTree = "<group>"; };
@@ -1004,11 +1008,11 @@
 		BB06ED2A20C9A72400218CB9 /* Demo-ProcessImageUpload */ = {
 			isa = PBXGroup;
 			children = (
+				BB993C0020CF81B90075E03F /* DemoUploadPhotoOperation.h */,
+				BB993C0120CF81CB0075E03F /* DemoUploadPhotoOperation.m */,
 				BB06ED2520C9A71D00218CB9 /* ProcessImageUploadViewController.h */,
 				BB06ED2620C9A71D00218CB9 /* ProcessImageUploadViewController.m */,
 				BB06ED2720C9A71D00218CB9 /* ProcessImageUploadViewController.xib */,
-				BB7D195520CEF520003284AF /* DemoUploadPhotoOperation.h */,
-				BB7D195620CEF520003284AF /* DemoUploadPhotoOperation.m */,
 			);
 			path = "Demo-ProcessImageUpload";
 			sourceTree = "<group>";
@@ -1222,10 +1226,9 @@
 		BB4FD3B81F4429E200C082C3 /* ObjcApp */ = {
 			isa = PBXGroup;
 			children = (
-				BB259A86209C1C1B00213223 /* ObjcApp.entitlements */,
+				BB4FD4A41F442B4D00C082C3 /* Constant.h */,
 				BB4FD3BC1F4429E200C082C3 /* AppDelegate.h */,
 				BB4FD3BD1F4429E200C082C3 /* AppDelegate.m */,
-				BB4FD4A41F442B4D00C082C3 /* Constant.h */,
 				BB4FD4A51F442B4D00C082C3 /* RootViewController.h */,
 				BB4FD4A61F442B4D00C082C3 /* RootViewController.m */,
 				BB4FD4311F442AEE00C082C3 /* Libraries */,
@@ -1243,11 +1246,12 @@
 		BB4FD3B91F4429E200C082C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BB4FD4A31F442AF600C082C3 /* Storyboard */,
+				BB993C2B20CFB2510075E03F /* Storyboard */,
+				BB259A86209C1C1B00213223 /* ObjcApp.entitlements */,
 				BB4FD3CA1F4429E200C082C3 /* Info.plist */,
 				BB4FD3BA1F4429E200C082C3 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		BB4FD3D21F4429E200C082C3 /* ObjcAppTests */ = {
@@ -1500,15 +1504,6 @@
 			path = "UITextField+PasswordField";
 			sourceTree = "<group>";
 		};
-		BB4FD4A31F442AF600C082C3 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				BB4FD3C21F4429E200C082C3 /* Main.storyboard */,
-				BB4FD3C71F4429E200C082C3 /* LaunchScreen.storyboard */,
-			);
-			name = Storyboard;
-			sourceTree = "<group>";
-		};
 		BB4FD4A81F442C8A00C082C3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1717,6 +1712,17 @@
 				BB85E1691FDBCC6100FFA738 /* ImageAnimViewController.xib */,
 			);
 			name = "Demo-ImageAnimViewController";
+			sourceTree = "<group>";
+		};
+		BB993C2B20CFB2510075E03F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BB993C2C20CFB2510075E03F /* LaunchScreen.storyboard */,
+				BB993C2E20CFB2510075E03F /* Main.storyboard */,
+				BB993C3020CFB2510075E03F /* LaunchScreen.strings */,
+				BB993C3220CFB2510075E03F /* Main.strings */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		BB999CF01F4F4F2200B29FDE /* Demo-Expand-Layout */ = {
@@ -2462,6 +2468,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = BB4FD3AD1F4429E200C082C3;
 			productRefGroup = BB4FD3B71F4429E200C082C3 /* Products */;
@@ -2488,6 +2495,7 @@
 				BBDE4AA12085F58B00731A69 /* 15_S.jpeg in Resources */,
 				BBEDC4321FBC3EEA000317FD /* slider-default-trackCrossedOver.png in Resources */,
 				BBDE4A992085F58B00731A69 /* 07_S.jpeg in Resources */,
+				BB993C3420CFB2510075E03F /* LaunchScreen.storyboard in Resources */,
 				BBDE4A962085F58B00731A69 /* 04_S.jpeg in Resources */,
 				BBD289C52051170E00045830 /* CalendarView.xib in Resources */,
 				BBDE4A852085F58B00731A69 /* 03_L.jpeg in Resources */,
@@ -2496,7 +2504,6 @@
 				BB85E1731FDBCFC600FFA738 /* demo_3.jpg in Resources */,
 				BBEDC4411FBC3EEA000317FD /* slider-metal-track.png in Resources */,
 				BB4FD4B71F442C8A00C082C3 /* OpenSans-Bold.ttf in Resources */,
-				BB4FD3C91F4429E200C082C3 /* LaunchScreen.storyboard in Resources */,
 				BBEDC43A1FBC3EEA000317FD /* slider-default7-trackBackground@2x.png in Resources */,
 				BBDE4A902085F58B00731A69 /* 14_L.jpeg in Resources */,
 				BBD1A7FC20872F8600D57B9E /* RMPExampleViewController.xib in Resources */,
@@ -2532,6 +2539,7 @@
 				BBDE4A5C2085ECCB00731A69 /* RMPDetailViewController.xib in Resources */,
 				BBEDC4341FBC3EEA000317FD /* slider-default_trackBackground@2x.png in Resources */,
 				BBE5EF6F1FDFCE57005F3900 /* STMapHeaderViewController.xib in Resources */,
+				BB993C3620CFB2510075E03F /* LaunchScreen.strings in Resources */,
 				BBEDC4551FBC543C000317FD /* db_slider_text_bg@2x.png in Resources */,
 				BBC421522099B83E00B26D67 /* PresentedViewController.xib in Resources */,
 				BBB9774D207CB21400992CE0 /* DbPlaceSearchViewController.xib in Resources */,
@@ -2567,6 +2575,7 @@
 				BB259A81209C0FB700213223 /* DemoLocationViewController.xib in Resources */,
 				BBDE4A572085EC8400731A69 /* RMPImageCollectionViewCell.xib in Resources */,
 				BB4FD4BE1F442C8A00C082C3 /* OpenSans-Regular.ttf in Resources */,
+				BB993C3720CFB2510075E03F /* Main.strings in Resources */,
 				BBDE4A832085F58B00731A69 /* 01_L.jpeg in Resources */,
 				BBEDC43F1FBC3EEA000317FD /* slider-metal-handle.png in Resources */,
 				BB999CF51F4F4F2C00B29FDE /* ExpandLayoutViewController.xib in Resources */,
@@ -2590,6 +2599,7 @@
 				BB5DDD971F5329B60009AFDC /* ScrollViewFormViewController.xib in Resources */,
 				BBEDC42F1FBC3EEA000317FD /* slider-default-track.png in Resources */,
 				BBA9CD4420884B86004C33CE /* ExampleMyCropViewController.xib in Resources */,
+				BB993C3520CFB2510075E03F /* Main.storyboard in Resources */,
 				BBDE4A912085F58B00731A69 /* 15_L.jpeg in Resources */,
 				BBEDC45A1FBC543C000317FD /* db_slider_handle@2x.png in Resources */,
 				BBEDC4391FBC3EEA000317FD /* slider-default7-trackBackground.png in Resources */,
@@ -2611,7 +2621,6 @@
 				BBB01879204F961F00153BD6 /* Images.xcassets in Resources */,
 				BBDE4A932085F58B00731A69 /* 01_S.jpeg in Resources */,
 				BBC07C4F1F4A00B7007A3B5C /* DetailPathsViewController.xib in Resources */,
-				BB4FD3C41F4429E200C082C3 /* Main.storyboard in Resources */,
 				BBD1A7F62087256500D57B9E /* RMPImageTableViewCell.xib in Resources */,
 				BBB752071FCEAA76000E5A03 /* demo_1.jpg in Resources */,
 				BB06ED2920C9A71D00218CB9 /* ProcessImageUploadViewController.xib in Resources */,
@@ -2847,7 +2856,7 @@
 				BB4FD49A1F442AEE00C082C3 /* SYPhotoBrowser.m in Sources */,
 				BBD6CA9C207E168B004129BE /* GooglePlacesApiClient.m in Sources */,
 				BBD9F16120C4625300882108 /* TaskIDGenerator.m in Sources */,
-				BB7D195720CEF520003284AF /* DemoUploadPhotoOperation.m in Sources */,
+				BB993C0220CF81CC0075E03F /* DemoUploadPhotoOperation.m in Sources */,
 				BB4FD4731F442AEE00C082C3 /* UserSession.m in Sources */,
 				BBD965DE1F5A8B6200CCAF2C /* DemoButtonViewController.m in Sources */,
 				BBFE27A520A03E6A004D387B /* DbLocationManager.m in Sources */,
@@ -2972,20 +2981,36 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BB4FD3C21F4429E200C082C3 /* Main.storyboard */ = {
+		BB993C2C20CFB2510075E03F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BB4FD3C31F4429E200C082C3 /* Base */,
+				BB993C2D20CFB2510075E03F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BB993C2E20CFB2510075E03F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB993C2F20CFB2510075E03F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		BB4FD3C71F4429E200C082C3 /* LaunchScreen.storyboard */ = {
+		BB993C3020CFB2510075E03F /* LaunchScreen.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BB4FD3C81F4429E200C082C3 /* Base */,
+				BB993C3120CFB2510075E03F /* vi */,
 			);
-			name = LaunchScreen.storyboard;
+			name = LaunchScreen.strings;
+			sourceTree = "<group>";
+		};
+		BB993C3220CFB2510075E03F /* Main.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB993C3320CFB2510075E03F /* vi */,
+			);
+			name = Main.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -2995,6 +3020,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -3051,6 +3077,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -3103,10 +3130,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ObjcApp/ObjcApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "ObjcApp/Supporting Files/ObjcApp.entitlements";
 				DEVELOPMENT_TEAM = 99JD3QH9V9;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				INFOPLIST_FILE = ObjcApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ObjcApp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vn.propzy.ObjcApp;
@@ -3120,10 +3147,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ObjcApp/ObjcApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "ObjcApp/Supporting Files/ObjcApp.entitlements";
 				DEVELOPMENT_TEAM = 99JD3QH9V9;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				INFOPLIST_FILE = ObjcApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ObjcApp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vn.propzy.ObjcApp;
