@@ -60,9 +60,9 @@
 {
     [super viewWillAppear:animated];
     
-    ProcessImageUploadViewController *vcFirstAaa = [[ProcessImageUploadViewController alloc] init];
-    [self.navigationController pushViewController:vcFirstAaa animated:NO];
-    return;
+//    ProcessImageUploadViewController *vcFirstAaa = [[ProcessImageUploadViewController alloc] init];
+//    [self.navigationController pushViewController:vcFirstAaa animated:NO];
+//    return;
     
     ViewController *vcFirst = [[ViewController alloc] init];
     // STCalendarHeaderViewController *vcFirst = [[STCalendarHeaderViewController alloc] init];

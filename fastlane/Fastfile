@@ -1,0 +1,73 @@
+fastlane_version "2.41.0"
+
+default_platform :ios
+
+platform :ios do
+  #
+  # Learn more here: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
+  #             and: https://docs.fastlane.tools/getting-started/android/beta-deployment/
+  #
+
+  before_all do
+      # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+      #cocoapods # Nếu bỏ comment thì mỗi lần build nó sẽ chạy pod install trước
+  end
+  
+   # lane :testflight do
+#     # build your iOS app
+#     build_app(
+#       scheme: 'PropzyDiy',
+#       export_method: "app-store"
+#     )
+#
+#     # upload to Testflight
+#     pilot(skip_waiting_for_build_processing: true)
+#
+#     # upload_to_testflight => man function
+#     # testflight # alias for "upload_to_testflight"
+#     # pilot # alias for "upload_to_testflight"
+#     # upload_to_testflight(skip_submission: true) # to only upload the build
+#     # upload_to_testflight(
+#     #   username: "felix@krausefx.com",
+#     #   app_identifier: "com.krausefx.app",
+#     #   itc_provider: "abcde12345" # pass a specific value to the iTMSTransporter -itc_provider option
+#     # )
+#
+#
+#   end
+  
+
+  lane :beta do |values|
+
+    increment_build_number
+
+    # Fabric generated this lane for deployment to Crashlytics Beta
+    # set 'export_method' to 'ad-hoc' if your Crashlytics Beta distribution uses ad-hoc provisioning
+    #gym(scheme: 'ObjcApp')
+    gym(scheme: 'ObjcApp', export_method: 'development', configuration: 'Debug')
+
+    # build your iOS app
+    # build_app(
+    #   scheme: "ObjcApp",
+    #   export_method: "ad-hoc"
+    # )
+
+    #emails = values[:test_email] ? values[:test_email] : ['thuy.le@propzy.com', 'luc@propzy.com', 'david@propzy.com', 'ivytran289@gmail.com', 'vy@propzy.com'] # You can list more emails here
+    #groups = values[:test_email] ? nil : nil # You can define groups on the web and reference them here
+
+    crashlytics(api_token: '5d226b77fa483430c40259fe560c21d1e10589d0',
+             build_secret: '338fa1e676c93181a457332a52ea45df3104c5bc39a76718063566e77a34c748',
+                   groups: 'objc-tester',
+                    notes: (values[:notes] ? values[:notes] : 'Distributed with fastlane - DylanBui'), # Check out the changelog_from_git_commits action
+            notifications: true) # Should this distribution notify your testers via email?
+
+    # for all available options run `fastlane action crashlytics`
+
+    # You can notify your team in chat that a beta build has been uploaded
+    # slack(
+    #   slack_url: "https://hooks.slack.com/services/YOUR/TEAM/INFO"
+    #   channel: "beta-releases",
+    #   message: "Successfully uploaded a beta release - see it at https://fabric.io/_/beta"
+    # )
+  end
+end

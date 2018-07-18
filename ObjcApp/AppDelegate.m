@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 #import "UserSession.h"
 
 @import GoogleMaps;
@@ -28,6 +31,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [super application:application didFinishLaunchingWithOptions:launchOptions];
+    
+    // -- Fabric attack with Gooogle Firebase --
+    [Fabric with:@[[Crashlytics class]]];
     
     // -- Google map --
     [GMSServices provideAPIKey:@"AIzaSyBK_MVp9sT3n-klZ4BIMnKHi1cjHJyYNFA"];

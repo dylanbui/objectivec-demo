@@ -6,12 +6,32 @@ use_frameworks!
 
 inhibit_all_warnings! # this will disable all the warnings for all pods
 
+# Available pods multiple targets
+#def available_pods
+#    pod 'AFNetworking', '1.1.0'
+#    pod 'Reachability', '~> 3.1.0'
+#end
+#
+#target 'demo' do
+#    available_pods
+#end
+#
+#target 'demoTests' do
+#    available_pods
+#end
+
 
 target 'ObjcApp' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
   # Pods for ObjcApp
+  
+  # Google Analytics
+  pod 'Firebase/Core'
+  pod 'Fabric', '~> 1.7.2'
+  pod 'Crashlytics', '~> 3.9.3'
+  # End Google Analytics
   
     # Libraries system
     pod 'Masonry', '1.1.0' # Thu vien  Constraints
