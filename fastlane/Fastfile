@@ -44,7 +44,12 @@ platform :ios do
     # Fabric generated this lane for deployment to Crashlytics Beta
     # set 'export_method' to 'ad-hoc' if your Crashlytics Beta distribution uses ad-hoc provisioning
     #gym(scheme: 'ObjcApp')
-    gym(scheme: 'ObjcApp', export_method: 'development', configuration: 'Debug')
+
+# For release => configuration: 'Release' defautl
+    gym(scheme: 'ObjcApp', export_method: 'development') 
+
+# For debug
+#    gym(scheme: 'ObjcApp', export_method: 'development', configuration: 'Debug')
 
     # build your iOS app
     # build_app(

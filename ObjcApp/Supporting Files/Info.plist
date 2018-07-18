@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Obj App</string>
+	<string>$(UD_BundleDisplayName)</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -20,7 +20,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>$(UD_BundleIdentifier)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -30,7 +30,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1002</string>
+	<string>1005</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MKDirectionsApplicationSupportedModes</key>
@@ -64,22 +64,20 @@
 	<string>$(PRODUCT_NAME) users photos</string>
 	<key>Privacy - NSMicrophoneUsageDescription</key>
 	<string>$(PRODUCT_NAME) microphone use.</string>
-    
-    <key>Fabric</key>
-    <dict>
-        <key>APIKey</key>
-        <string>5d226b77fa483430c40259fe560c21d1e10589d0</string>
-        <key>Kits</key>
-        <array>
-            <dict>
-                <key>KitInfo</key>
-                <dict/>
-                <key>KitName</key>
-                <string>Crashlytics</string>
-            </dict>
-        </array>
-    </dict>
-    
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>5d226b77fa483430c40259fe560c21d1e10589d0</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>FontAwesome.ttf</string>

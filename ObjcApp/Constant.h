@@ -9,6 +9,13 @@
 #ifndef Constant_h
 #define Constant_h
 
+#ifdef DEBUG
+// debug only code
+#define DEBUG_MODE          1
+#else
+// release only code
+#define DEBUG_MODE          0
+#endif
 
 #pragma mark - Facebook
 

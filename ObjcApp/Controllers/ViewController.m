@@ -44,7 +44,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.title = @"Danh sách Demo";
+    if (DEBUG_MODE) {
+        self.title = @"Danh sách DEBUG";
+    } else {
+        self.title = @"Danh sách RELEASE";
+    }
+    
     self.navigationItem.hidesBackButton = YES;
     
     self.arrApps = @[ @"Demo-ScrollingTableViewCell",
