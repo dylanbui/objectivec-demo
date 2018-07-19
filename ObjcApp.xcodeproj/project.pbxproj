@@ -2397,7 +2397,7 @@
 				BB4FD3B41F4429E200C082C3 /* Resources */,
 				5E0430C96B712BEDB9EDFAC9 /* [CP] Embed Pods Frameworks */,
 				353821B3CB21E047372B9502 /* [CP] Copy Pods Resources */,
-				BB08C7A020FF39440033608F /* ShellScript */,
+				BB0A01CC210092AC00F77ADF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2448,7 +2448,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -2802,7 +2802,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ObjcApp/Pods-ObjcApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BB08C7A020FF39440033608F /* ShellScript */ = {
+		BB0A01CC210092AC00F77ADF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3180,13 +3180,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon$(UD_BundleIdSuffix)";
-				CURRENT_PROJECT_VERSION = 1005;
+				CODE_SIGN_ENTITLEMENTS = "ObjcApp/Supporting Files/ObjcApp.entitlements";
+				CURRENT_PROJECT_VERSION = 1012;
 				DEVELOPMENT_TEAM = 99JD3QH9V9;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = "ObjcApp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = vn.propzy.ObjcApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(UD_BundleIdentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				UD_BundleDisplayName = "Objc Dev";
 				UD_BundleIdSuffix = .dev;
@@ -3201,13 +3202,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon$(UD_BundleIdSuffix)";
-				CURRENT_PROJECT_VERSION = 1005;
+				CODE_SIGN_ENTITLEMENTS = "ObjcApp/Supporting Files/ObjcApp.entitlements";
+				CURRENT_PROJECT_VERSION = 1012;
 				DEVELOPMENT_TEAM = 99JD3QH9V9;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = "ObjcApp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = vn.propzy.ObjcApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(UD_BundleIdentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				UD_BundleDisplayName = "Objc Product";
 				UD_BundleIdSuffix = "";

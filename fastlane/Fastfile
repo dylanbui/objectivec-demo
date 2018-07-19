@@ -45,11 +45,13 @@ platform :ios do
     # set 'export_method' to 'ad-hoc' if your Crashlytics Beta distribution uses ad-hoc provisioning
     #gym(scheme: 'ObjcApp')
 
-# For release => configuration: 'Release' defautl
-    gym(scheme: 'ObjcApp', export_method: 'development') 
+# For release => configuration: 'Release' defautl, van su dung key development for push notification
+    # gym(scheme: 'ObjcApp', export_method: 'development') 
 
 # For debug
-#    gym(scheme: 'ObjcApp', export_method: 'development', configuration: 'Debug')
+  gym(scheme: 'ObjcApp', export_method: 'development', configuration: 'Debug')
+   
+  # gym(scheme: 'ObjcAppDev', export_method: 'development', configuration: 'Debug')
 
     # build your iOS app
     # build_app(
